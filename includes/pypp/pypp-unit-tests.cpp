@@ -14,9 +14,18 @@
 #define googletest
 #include "pypp.hpp"
 
+#define jtest(name, ...) \
+struct name{\
+	name() {\
+		cout<<"now running code\n----------------\n"<<#name<<"() {\n\t"<<#__VA_ARGS__<<"\n}\n\nthe result\n----------\n";\
+	}\
+};\
+gtest(name) {\
+	name __tmp;\
+	__VA_ARGS__\
+}
 
-
-gtest(simpl_demo) {	
+jtest(simple_demo,
 	var a=2;
 	cout<<a<<endl;
 	string s="hi";
@@ -24,8 +33,8 @@ gtest(simpl_demo) {
 	cout<<a<<endl;
 }
 
-gtest(for_demo) {
-	for_n(i, 10) {
+jtest(for_demo,
+	for_n(i, 10,
 		var a=i+40;
 		cout<<a.uchar()<<" ";
 	}
@@ -36,22 +45,22 @@ gtest(for_demo) {
 	cout<<a<<"\t"<<b<<endl;
 }
 
-gtest(cstr_demo) {
+jtest(cstr_demo,
 	var a="s";
 }
 
-gtest(copy_construct_demo) {
+jtest(copy_construct_demo,
 	var b=1;
 	var a=b;
 	a="hi";
 }
 
-gtest(empty_list_demo) {
+jtest(empty_list_demo,
 	var a;
 	a=list();
 }
 
-gtest(empty_demo) {
+jtest(empty_demo,
 	var a;
 	a=str();
 	a=list();
@@ -59,7 +68,7 @@ gtest(empty_demo) {
 	a=dict();
 }
 
-gtest(str_demo) {
+jtest(str_demo,
 	string s="jadesoul";
 	char *p="jadesoul";
 	var s1="";
@@ -74,7 +83,7 @@ gtest(str_demo) {
 	var s10(p, p+3);
 }
 
-gtest(list_demo) {
+jtest(list_demo,
 	var a[]={1,2,3};
 	vector<var> tmp(a, a+3);
 	var b(a, a+3);//list
@@ -83,20 +92,20 @@ gtest(list_demo) {
 	//var d=tmp;//TODO
 }
 
-gtest(tuple_demo) {
+jtest(tuple_demo,
 	var a=1, b=2, c=3;
 	var x(a, b, c);//tuple, at least two vars
 	var y=tuple(a, b, c);
 	//x=tuple(3, 4, 5);//TOOD
 }
 
-gtest(set_demo) {
+jtest(set_demo,
 	var a[]={1,2,2};
 	var x(a, a+3, int());//set, int() is the flag to help init as set
 	var y=set(a, a+3);
 }
 
-gtest(dict_demo) {
+jtest(dict_demo,
 	var a[]={
 		"name", "jadesoul",
 		"age", 24,
