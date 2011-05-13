@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="utf-8">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: '微软雅黑';
+	font-size: 14pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	font-family: 'Consolas';
+	color: #008000;
+}
+.sc2 {
+	font-family: 'Consolas';
+	color: #008000;
+}
+.sc4 {
+	color: #FF8000;
+}
+.sc5 {
+	font-weight: bold;
+	color: #0000FF;
+}
+.sc6 {
+	color: #808080;
+}
+.sc9 {
+	color: #804000;
+}
+.sc10 {
+	font-weight: bold;
+	color: #000080;
+}
+.sc11 {
+}
+.sc16 {
+	color: #8000FF;
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc9">#define debug
+#include &lt;jade.hpp&gt;
+#include &lt;typeinfo&gt;
+</span><span class="sc0">
+</span><span class="sc9">#define showt(tmp) cout&lt;&lt;typeid(tmp).name()&lt;&lt;endl
+#define showp(p) cout&lt;&lt;p&lt;&lt;endl
+#define msg(s) cout&lt;&lt;#s&lt;&lt;endl
+</span><span class="sc0">
+
+</span><span class="sc2">// #define dbg(msg) cout&lt;&lt;"creating a new var: "&lt;&lt;#msg&lt;&lt;" : "&lt;&lt;r&lt;&lt;" : "&lt;&lt;this&lt;&lt;endl
+</span><span class="sc9">#define dbg(msg)
+</span><span class="sc0">
+</span><span class="sc2">// #define codemask(code) code
+</span><span class="sc9">#define codemask(code)
+</span><span class="sc0">
+</span><span class="sc16">class</span><span class="sc0"> </span><span class="sc11">var</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc0">     </span><span class="sc2">//12 bytes total for each var obj
+</span><span class="sc16">public</span><span class="sc10">:</span><span class="sc0">
+        </span><span class="sc16">int</span><span class="sc0"> </span><span class="sc10">*</span><span class="sc0"> </span><span class="sc11">p</span><span class="sc10">;</span><span class="sc2">//pointer to any type of non-const object, or hold any other kind of pointer
+</span><span class="sc0">        </span><span class="sc16">union</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc0"> </span><span class="sc2">//pool to hold one const built-in types
+</span><span class="sc0">                </span><span class="sc11">sint1</span><span class="sc0"> </span><span class="sc11">si1</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">uint1</span><span class="sc0"> </span><span class="sc11">ui1</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">sint2</span><span class="sc0"> </span><span class="sc11">si2</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">uint2</span><span class="sc0"> </span><span class="sc11">ui2</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">sint4</span><span class="sc0"> </span><span class="sc11">si4</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">uint4</span><span class="sc0"> </span><span class="sc11">ui4</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">sint8</span><span class="sc0"> </span><span class="sc11">si8</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">uint8</span><span class="sc0"> </span><span class="sc11">ui8</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc10">}</span><span class="sc0"> </span><span class="sc11">v</span><span class="sc10">;</span><span class="sc0">    </span><span class="sc2">//just 8 bytes
+</span><span class="sc0">        
+        </span><span class="sc11">var</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">codemask</span><span class="sc10">(</span><span class="sc11">cout</span><span class="sc10">&lt;&lt;</span><span class="sc6">"in defalt constructor: this="</span><span class="sc10">&lt;&lt;</span><span class="sc5">this</span><span class="sc10">&lt;&lt;</span><span class="sc6">" p="</span><span class="sc10">&lt;&lt;</span><span class="sc11">p</span><span class="sc10">&lt;&lt;</span><span class="sc11">endl</span><span class="sc10">;)</span><span class="sc11">p</span><span class="sc10">=</span><span class="sc4">0</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc10">~</span><span class="sc11">var</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">codemask</span><span class="sc10">(</span><span class="sc11">cout</span><span class="sc10">&lt;&lt;</span><span class="sc6">"in defalt destructor: this="</span><span class="sc10">&lt;&lt;</span><span class="sc5">this</span><span class="sc10">&lt;&lt;</span><span class="sc6">" p="</span><span class="sc10">&lt;&lt;</span><span class="sc11">p</span><span class="sc10">&lt;&lt;</span><span class="sc11">endl</span><span class="sc10">;)}</span><span class="sc0">
+        
+        </span><span class="sc2">//------------------------      for char
+</span><span class="sc0">        
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">sint1</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">sint1</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint1</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint1</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si1</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si1</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">uint1</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">uint1</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint1</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint1</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui1</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui1</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc16">char</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">schar</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc16">char</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">uint1</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">uchar</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc11">uint1</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc2">//------------------------      for short
+</span><span class="sc0">        
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">sint2</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">sint2</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint2</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint2</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si2</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si2</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">uint2</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">uint2</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint2</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint2</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui2</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui2</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc16">short</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">sshort</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc16">short</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">uint2</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">ushort</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc11">uint2</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc2">//------------------------      for int
+</span><span class="sc0">        
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">sint4</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">sint4</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint4</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint4</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si4</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si4</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">uint4</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">uint4</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint4</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint4</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui4</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui4</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc16">int</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">sint</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc16">int</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">uint4</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">uint</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc11">uint4</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc2">//------------------------      for long long
+</span><span class="sc0">        
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">sint8</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">sint8</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint8</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">sint8</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si8</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si8</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">uint8</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">uint8</span><span class="sc10">);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint8</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">uint8</span><span class="sc10">);</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui8</span><span class="sc10">=</span><span class="sc11">r</span><span class="sc10">;</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)&amp;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">ui8</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc11">int8</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">slong</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc11">int8</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">uint8</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">ulong</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">*(</span><span class="sc11">uint8</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        
+        </span><span class="sc2">//------------------------      for strings
+</span><span class="sc0">        </span><span class="sc2">//deal with ref and ptr to an exist string object and ptr to a char (C-style string)
+</span><span class="sc0">        </span><span class="sc2">//usage examples:
+</span><span class="sc0">        </span><span class="sc2">//              string s; 
+</span><span class="sc0">        </span><span class="sc2">//              var v=s;        var v(s);
+</span><span class="sc0">        </span><span class="sc2">//              var w=&amp;s;       var     w(&amp;s);
+</span><span class="sc0">        </span><span class="sc2">//              w=s;            w=
+</span><span class="sc0">        </span><span class="sc2">//              char *p="abc";  char p[10]="abc";
+</span><span class="sc0">        </span><span class="sc2">//              var s=p;        var s(p);
+</span><span class="sc0">        </span><span class="sc2">//              cout&lt;&lt;s.str();
+</span><span class="sc0">        </span><span class="sc2">//important notes:
+</span><span class="sc0">        </span><span class="sc2">//              will not work with temp object : for example var s=string("tmp");
+</span><span class="sc0">        </span><span class="sc2">//              because string("tmp") is destructed when calling var(string &amp;r)
+</span><span class="sc0">        </span><span class="sc2">//              assignment of a tmp obj will not working, var c;        c=string(tmp);
+</span><span class="sc0">        </span><span class="sc2">//              but string s("tmp"); var c; c=s;        works fine
+</span><span class="sc0">        </span><span class="sc2">//              because c=s fist construct a tmp var obj string(s), then copy construct it to c
+</span><span class="sc0">        
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">string</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">string</span><span class="sc0"> </span><span class="sc10">&amp;);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)</span><span class="sc11">r</span><span class="sc10">.</span><span class="sc11">c_str</span><span class="sc10">();}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">string</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">string</span><span class="sc0"> </span><span class="sc10">&amp;);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)</span><span class="sc11">r</span><span class="sc10">.</span><span class="sc11">c_str</span><span class="sc10">();}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc11">string</span><span class="sc10">*</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc11">string</span><span class="sc0"> </span><span class="sc10">*);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)</span><span class="sc11">r</span><span class="sc10">-&gt;</span><span class="sc11">c_str</span><span class="sc10">();}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">string</span><span class="sc10">*</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">string</span><span class="sc0"> </span><span class="sc10">*);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)</span><span class="sc11">r</span><span class="sc10">-&gt;</span><span class="sc11">c_str</span><span class="sc10">();}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">char</span><span class="sc10">*</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">char</span><span class="sc0"> </span><span class="sc10">*);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc11">var</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc16">char</span><span class="sc10">*</span><span class="sc0"> </span><span class="sc11">r</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">dbg</span><span class="sc10">(</span><span class="sc16">const</span><span class="sc0"> </span><span class="sc16">char</span><span class="sc0"> </span><span class="sc10">*);</span><span class="sc11">p</span><span class="sc10">=(</span><span class="sc16">int</span><span class="sc10">*)</span><span class="sc11">r</span><span class="sc10">;}</span><span class="sc2">//maybe there is some ploblem in this way
+</span><span class="sc0">        </span><span class="sc16">char</span><span class="sc10">*</span><span class="sc0"> </span><span class="sc11">str</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc16">const</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc5">return</span><span class="sc0"> </span><span class="sc10">(</span><span class="sc16">char</span><span class="sc10">*)</span><span class="sc11">p</span><span class="sc10">;}</span><span class="sc0">
+        </span><span class="sc2">//var(const string&amp; r) {dbg(const sint8);v.s=r;p=(int*)&amp;v.s;}
+</span><span class="sc0">        
+        </span><span class="sc16">friend</span><span class="sc0"> </span><span class="sc11">ostream</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc5">operator</span><span class="sc10">&lt;&lt;(</span><span class="sc11">ostream</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">out</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc16">const</span><span class="sc0"> </span><span class="sc11">var</span><span class="sc10">&amp;</span><span class="sc0"> </span><span class="sc11">v</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc0">
+                </span><span class="sc5">return</span><span class="sc0"> </span><span class="sc11">out</span><span class="sc10">&lt;&lt;</span><span class="sc6">"&lt;Var this="</span><span class="sc10">&lt;&lt;&amp;</span><span class="sc11">v</span><span class="sc10">&lt;&lt;</span><span class="sc6">" p="</span><span class="sc10">&lt;&lt;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">p</span><span class="sc10">&lt;&lt;</span><span class="sc6">" int="</span><span class="sc10">&lt;&lt;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si4</span><span class="sc10">&lt;&lt;</span><span class="sc6">" hex="</span><span class="sc10">&lt;&lt;</span><span class="sc11">hex</span><span class="sc10">&lt;&lt;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">si8</span><span class="sc0"> 
+                        </span><span class="sc11">codemask</span><span class="sc10">(&lt;&lt;</span><span class="sc6">" : "</span><span class="sc10">&lt;&lt;</span><span class="sc11">v</span><span class="sc10">.</span><span class="sc11">str</span><span class="sc10">())</span><span class="sc0"> 
+                        </span><span class="sc10">&lt;&lt;</span><span class="sc6">"&gt;"</span><span class="sc10">&lt;&lt;</span><span class="sc11">endl</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc10">}</span><span class="sc0">
+</span><span class="sc10">};</span><span class="sc0">
+
+</span><span class="sc16">int</span><span class="sc0"> </span><span class="sc11">main</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc0">
+
+        </span><span class="sc11">var</span><span class="sc0"> </span><span class="sc11">s</span><span class="sc10">=</span><span class="sc4">129</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc11">cout</span><span class="sc10">&lt;&lt;</span><span class="sc11">s</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc11">s</span><span class="sc10">=</span><span class="sc4">1</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc11">cout</span><span class="sc10">&lt;&lt;</span><span class="sc11">s</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc11">s</span><span class="sc10">=</span><span class="sc6">"jadesoul"</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc11">cout</span><span class="sc10">&lt;&lt;</span><span class="sc11">s</span><span class="sc10">;</span><span class="sc0">
+        
+        </span><span class="sc11">vector</span><span class="sc10">&lt;</span><span class="sc11">var</span><span class="sc10">&gt;</span><span class="sc0"> </span><span class="sc11">v</span><span class="sc10">(</span><span class="sc4">10</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc6">"jadesoul"</span><span class="sc10">);</span><span class="sc0">
+        </span><span class="sc11">v</span><span class="sc10">[</span><span class="sc4">0</span><span class="sc10">]=</span><span class="sc11">s</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc11">print</span><span class="sc10">(</span><span class="sc11">v</span><span class="sc10">);</span><span class="sc0">
+        </span><span class="sc5">return</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">;</span><span class="sc0">
+</span><span class="sc10">}</span><span class="sc0">
+
+</span><span class="sc1">/*
+Running Result:
+
+&lt;Var this=0012FF0C p=0012FF14 int=129 hex=fffffffe00000081&gt;
+&lt;Var this=0012FF0C p=0012FEFC int=1 hex=426ff700000001&gt;
+&lt;Var this=0012FF0C p=004281FC int=8 hex=40d28800000008&gt;
+v = [ &lt;Var this=001F1DC8 p=004281FC int=8 hex=40d28800000008&gt;
+ &lt;Var this=001F1DD8 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1DE8 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1DF8 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1E08 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1E18 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1E28 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1E38 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1E48 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ &lt;Var this=001F1E58 p=00428208 int=415a34 hex=4303c000415a34&gt;
+ ]
+ 
+*/</span><span class="sc0">
+</span><span class="sc2">//next step to do , implement the immutable object
+//to enable the str var
+</span><span class="sc0">
+</span></div></body>
+</html>

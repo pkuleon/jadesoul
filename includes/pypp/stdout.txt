@@ -1,0 +1,23 @@
+Setting environment for using Microsoft Visual Studio 2008 x86 tools.
+正在编译...
+:
+:
+main.cpp
+Microsoft (R) Incremental Linker Version 9.00.21022.08
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:main.exe 
+/out:main.cpp.exe 
+libboost_python-vc90-mt-s.lib 
+gtest.lib 
+python26.lib 
+main.obj 
+:
+:
+编译成功，开始运行...{
+[ mmgr: when init ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
+[ mmgr: before delete ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
+[ mmgr: after delete ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
+} 运行完毕
+:
+:

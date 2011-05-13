@@ -1,0 +1,14 @@
+#ifndef JADE_CONFIG_HPP
+#define JADE_CONFIG_HPP
+
+//#define ENABLE_BOOST_UNIT_TEST
+
+// #define ENABLE_GOOGLE_TEST
+
+#define ENABLE_UNIT_TEST_DYNAMIC_LINK
+
+//#define ENABLE_OPENGL_TEST
+
+// #define debug
+
+#endif // JADE_CONFIG_HPP

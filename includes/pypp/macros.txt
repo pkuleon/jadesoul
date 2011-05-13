@@ -1,0 +1,12 @@
+#undef macro_declare_ptr_ref_heap_str
+#undef macro_declare_ptr_ref_stack_str
+#undef macro_declare_ptr_ref_heap_list
+#undef macro_declare_ptr_ref_stack_list
+#undef macro_declare_ptr_ref_heap_tuple
+#undef macro_declare_ptr_ref_stack_tuple
+#undef macro_declare_ptr_ref_heap_set
+#undef macro_declare_ptr_ref_stack_set
+#undef macro_declare_ptr_ref_heap_dict
+#undef macro_declare_ptr_ref_stack_dict
+
+

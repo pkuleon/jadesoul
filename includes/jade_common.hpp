@@ -1,0 +1,86 @@
+#ifndef JADE_COMMON_HPP
+#define JADE_COMMON_HPP
+
+//this file works like the visual c++'s stdafx.h/stdafx.cpp ,
+//put the headers of code that merely change each time here
+//and all of the code here will be compiled only once, in
+//this way a lot of time will be saved during compiling
+
+//standard libaries
+#include <cstdio>
+#include <cstdlib>
+#include <cstdarg>
+#include <cassert>
+#include <ctime>
+#include <cmath>
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <list>
+#include <stack>
+#include <queue>
+#include <algorithm>
+#include <fstream>
+#include <map>
+#include <bitset>
+#include <set>
+#include <typeinfo>
+#include <iterator>
+#include <exception>
+
+//boost libs -- foreach
+//#include <boost/foreach.hpp>
+//#define foreach BOOST_FOREACH
+//#define reverse_foreach BOOST_REVERSE_FOREACH
+
+//namespaces
+// using namespace std;
+using std::vector;
+using std::pair;
+using std::map;
+using std::string;
+using std::ostream;
+using std::istream;
+// using std::set;
+using std::hex;
+using std::cout;
+using std::cin;
+using std::istringstream;
+using std::istream;
+using std::endl;
+using std::bitset;
+using std::ostream_iterator;
+using std::iterator_traits;
+
+//yaml for dumping
+//#include "yaml-cpp/yaml.h"
+
+//global configs and types
+#include "jade_config.hpp"
+#include "jade_types.hpp"
+
+typedef std::vector<int> vec_int;
+typedef std::vector<char> vec_char;
+
+
+
+#define AND &&
+#define OR ||
+#define NOT !
+
+//easy for loop
+#define forever FOREVER
+#define FOREVER         for (;;)
+
+//for i in 0-n
+#define for_n(i, n) for (int i=0; i<n; ++i)
+#define for_tn(type, i, n) for (type i=0; i<n; ++i)
+
+//for i in range start-step-stop
+#define for_in(i, start, end, step) for (int i=start; i<end; i+=step)
+#define for_tin(type, i, start, end, step) for (type i=start; i<end; i+=step)
+
+
+#endif // JADE_COMMON_HPP
