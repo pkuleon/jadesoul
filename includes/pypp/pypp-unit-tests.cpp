@@ -10,14 +10,17 @@
  * Written In: Peking University, beijing, China
  */
 
-// #define debug
+#define debug
 #define googletest
 #include "pypp.hpp"
 
 #define jtest(name, ...) \
 struct name{\
 	name() {\
-		cout<<"now running code\n----------------\n"<<#name<<"() {\n\t"<<#__VA_ARGS__<<"\n}\n\nthe result\n----------\n";\
+		cout<<"-------------------------------------- now running code\nvoid "\
+		<<#name<<"() {\n\t"\
+		<<#__VA_ARGS__\
+		<<"\n}\n\n-------------------------------------- the result\n";\
 	}\
 };\
 gtest(name) {\
@@ -25,40 +28,47 @@ gtest(name) {\
 	__VA_ARGS__\
 }
 
-jtest(simple_demo,
+jtest(simple_demo,//this is the test name
 	var a=2;
 	cout<<a<<endl;
 	string s="hi";
 	a=s;
 	cout<<a<<endl;
-}
+)
+
+
+jtest(var_demo,
+	var a=40;
+	cout<<a.uchar()<<" ";
+)
+
+jtest(cstr_demo,
+	var a="s";
+	a.dump();
+)
 
 jtest(for_demo,
-	for_n(i, 10,
-		var a=i+40;
-		cout<<a.uchar()<<" ";
+	for_n(i, 10) {
+		var x=i+40;
+		cout<<x.uchar()<<endl;
 	}
 	cout<<endl;
 	const char *p="abc";
 	var a=p;
 	var b="ac";
 	cout<<a<<"\t"<<b<<endl;
-}
-
-jtest(cstr_demo,
-	var a="s";
-}
+)
 
 jtest(copy_construct_demo,
 	var b=1;
 	var a=b;
 	a="hi";
-}
+)
 
 jtest(empty_list_demo,
 	var a;
 	a=list();
-}
+)
 
 jtest(empty_demo,
 	var a;
@@ -66,7 +76,7 @@ jtest(empty_demo,
 	a=list();
 	a=set();
 	a=dict();
-}
+)
 
 jtest(str_demo,
 	string s="jadesoul";
@@ -81,7 +91,7 @@ jtest(str_demo,
 	var s8(s.c_str());
 	var s9(s.c_str(), s.c_str()+s.size());
 	var s10(p, p+3);
-}
+)
 
 jtest(list_demo,
 	var a[]={1,2,3};
@@ -90,20 +100,20 @@ jtest(list_demo,
 	var c=list(a, a+3);//list
 	var d(tmp);
 	//var d=tmp;//TODO
-}
+)
 
 jtest(tuple_demo,
 	var a=1, b=2, c=3;
 	var x(a, b, c);//tuple, at least two vars
 	var y=tuple(a, b, c);
 	//x=tuple(3, 4, 5);//TOOD
-}
+)
 
 jtest(set_demo,
 	var a[]={1,2,2};
 	var x(a, a+3, int());//set, int() is the flag to help init as set
 	var y=set(a, a+3);
-}
+)
 
 jtest(dict_demo,
 	var a[]={
@@ -114,4 +124,4 @@ jtest(dict_demo,
 	};
 	var x(a, a+8, float());//dict, float() is the flag to help init as dict
 	var y=dict(a, a+8);
-}
+)
