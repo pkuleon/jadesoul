@@ -5,7 +5,8 @@ Including
 -----------------------------
 * Jade C++ Framework
 * Graph Framework 
-* Machien Learning Framework
+* Machine Learning Framework
+* pypp Framework 
 
 Notes
 -----------------------------
