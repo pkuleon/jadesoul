@@ -16,24 +16,17 @@ main.obj
 :
 编译成功，开始运行...{
 [ mmgr: when init ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
-[
-	1,
-	2,
-	3
-]
-vs size=5
-vs: [
-vs: i 1
-vs: i 2
-vs: i 3
-vs: ]
-in init_as_str increase the heapstr 003D1FA0 refcnt: 1=0+1
-good
-[var @ 0012FF24 data: 3d1fa0 3d1e78 attr: 00000010 00000001 00000000 00000000]
-in ~var release a heapstr refernce, 003D1FA0 -> 003D1E78 refcnt: 1-1=0
-in heapobj free(): free heapobj target with p=003D1E78 refcnt=0
-[ mmgr: before delete ]  str: 1 list: 0 tuple: 0 set: 0 dict: 0
-delete a heapobj in strlnk
+[1, 2, 3, -4.234, 9345, '你好', '我也好']
+[var @ 0012FF24 data: 371fa0 371a60 attr: 00000010 00000010 00000000 00000000]
+(1, 2, 0.2, 3, '你好', '你好')
+[var @ 0012FF24 data: 371ff0 4607f0 attr: 00000010 00000100 00000000 00000000]
+<'你好', 0.2, 1, 2, 3, 4, 5>
+[var @ 0012FF24 data: 371fe0 4608b8 attr: 00000010 00001000 00000000 00000000]
+{123:456, 'age':27, 'name':'jadesoul', '性别':'男'}
+[var @ 0012FF24 data: 371fb0 460840 attr: 00000010 00010000 00000000 00000000]
+{'campany':'gbsoft', 'dict':{1:1, 'nice':'nice'}, 'leafer':'jadesoul', 'list':[1, 2, 3, 4.1, 4.1, 'hello', 'hello', 1], 'set':<1, 'hello', 4.1, 1, 2, 3>, 'tuple':(1, 2, 3, 4.1, 4.1, 'hello', 'hello', 1)}
+[var @ 0012FF24 data: 372000 4608b8 attr: 00000010 00010000 00000000 00000000]
+[ mmgr: before delete ]  str: 1b list: 2 tuple: 2 set: 2 dict: 3
 [ mmgr: after delete ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
 } 运行完毕
 :

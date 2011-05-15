@@ -465,10 +465,10 @@ private:
 		} else bye(in init_as_dict: you should give me even numbers of vars);
 	};
 	
-	var& smart_clone_from_another_var(var& r) {//often used by copy constructions
+	var& smart_clone_from_another_var(const var& r) {//often used by copy constructions
 		var& me=*this;
 		if (this==&r) { msg(why you give me the same address?); return me; }
-		codemask(msg(before smart_clone_from_another_var);peek();msg(target is);r.peek();)
+		codemask(msg(before smart_clone_from_another_var);peek();/* msg(target is);r.peek(); */)
 		
 		//first check my heap
 		if (is_heap()) {
@@ -774,6 +774,11 @@ public://funcs
 		init_as_tuple(tmp, tmp+8);
 	}
 	
+	var(var* begin, var* end, char flag) {//for tuple from iterators, any char is flag
+		msg(init tuple with iterator var* begin and var* end);
+		init_as_undefined();
+		init_as_tuple(begin, end);
+	}
 	//now comes constructions for set from a stack object
 	var(set& r) {
 		msg(construct from a set& r);
@@ -947,7 +952,14 @@ public://funcs
 	var& operator =(var& r) {//for copy construction
 		//if r points to a heap obj, share it
 		//no need  to init here
-		msg(entering copy construct form var& r);
+		msg(in var assignment: now begin clone form var& r);
+		return smart_clone_from_another_var(r);
+	}
+	
+	var& operator =(const var& r) {//for copy construction
+		//if r points to a heap obj, share it
+		//no need  to init here
+		msg(in var assignment: now begin clone form var& r);
 		return smart_clone_from_another_var(r);
 	}
 	
@@ -1158,7 +1170,7 @@ public://funcs
 		return v;
 	}
 	
-	var& dump(ostream& out=cout, bool newline=false) {
+	var& dump(ostream& out=cout, bool newline=true) {
 		var& v=*this;
 		out<<v.repr();
 		if (newline) out<<endl;
@@ -1221,11 +1233,6 @@ public://funcs
 	bool haskey(var key) {
 		return false;
 	}
-	var append(var node) {//append a node to the end of a list
-		// list& l=lst();
-		// l.push_back(node);
-		return var();
-	}
 	
 	var& extend(var rlist) {//extend a list with another list
 		// list& l=lst();
@@ -1261,13 +1268,25 @@ public://funcs
 			return tmp;
 		}
 		
-		char parse(vector<string>* result=0, bool show=true, ostream& out=cout, string* errmsg=0) {//check the type
+		char parse(vector<string>* result=0, bool show=true, ostream* pout=0, string* errmsg=0) {//check the type
 			size_t i=0, l=strlen(p);
 			while (i<l && isspace(p[i]) || iscntrl(p[i])) ++i;
-			if (!strchr("{[<(-.0123456789", p[i])) return 'N';//normal string
+			if (!strchr("{[<(-.0123456789'", p[i])) return 'N';//normal string
 			char t;
-			anasys(p, t, result, show, out, errmsg);
+			bool succ=anasys(p, t, result, show, pout, errmsg);
+			if (!succ) {
+				if (t=='n' || t=='s' && result && result->size()==1) {//
+				} else {
+					result->clear();//only get some part of the full results, clear it
+					return '?';//failed
+				}
+			}
 			return t;
+		}
+		
+		bool test(string* errmsg=0) {//test if string s is a legal repr
+			char t;
+			return anasys(p, t, 0, false, 0, errmsg);
 		}
 		
 		char expect(char c, const char*p) {
@@ -1296,7 +1315,11 @@ public://funcs
 			return s;
 		}
 		
-		bool anasys(const char* p, char& type, vector<string>* vs=0, bool show=true, ostream& out=cout, string* errmsg=0) {
+		friend ostream& operator <<(ostream& out, parser& r) {
+			return out<<r.p<<endl;
+		}
+		
+		bool anasys(const char* p, char& type, vector<string>* vs=0, bool show=true, ostream* pout=0, string* errmsg=0) {
 			size_t length=strlen(p), i=0, j=0;
 			stack<char> stk;
 			stk.push('\0');
@@ -1328,9 +1351,9 @@ public://funcs
 					else {
 						if (pos=='B') type=m;//record the very first char as obj type
 						pos='B';
-						if (m!='n' && m!='s' && show) out<<tabs(stk.size())<<c<<endl;
+						if (m!='n' && m!='s' && show && pout) (*pout)<<tabs(stk.size())<<c<<endl;
 						stk.push(m);
-						if (vs) vs->push_back(char2str(tmp, m));
+						if (m!='n' && m!='s' && vs) vs->push_back(char2str(tmp, m));
 						if (m!='n') ++i;
 					}
 				} else if (t=='s') {
@@ -1338,12 +1361,12 @@ public://funcs
 					m=p[i-1];
 					while(j<length && p[j]!=m) ++j;
 					if (j==length) { msg(bad str); break; }
-					if (pos!='V' && show) out<<tabs(stk.size()-1);
+					if (pos!='V' && show && pout) (*pout)<<tabs(stk.size()-1);
 					tmp=string(p+i, p+j);
-					if (show) out<<(string("'")+tmp+"'");
+					if (show && pout) (*pout)<<(string("'")+tmp+"'");
 					if (vs) {
 						ostringstream oss;
-						oss<<'s'<<' '<<tmp.size()<<' '<<tmp;
+						oss<<'s'/* <<' '<<tmp.size() */<<' '<<tmp;
 						vs->push_back(oss.str());
 					}
 					stk.pop();
@@ -1358,16 +1381,16 @@ public://funcs
 					tmp=string(p+i, p+j);
 					const char* s=tmp.c_str();
 					if (strchr(s, '.')) {
-						if (pos!='V' && show) out<<tabs(stk.size()-1);
-						if (show) out<<atof(s);
+						if (pos!='V' && show && pout) (*pout)<<tabs(stk.size()-1);
+						if (show && pout) (*pout)<<atof(s);
 						if (vs) {
 							ostringstream oss;
 							oss<<'f'<<' '<<tmp;
 							vs->push_back(oss.str());
 						}
 					} else {
-						if (pos!='V' && show) out<<tabs(stk.size()-1);
-						if (show) out<<atoi(s);
+						if (pos!='V' && show && pout) (*pout)<<tabs(stk.size()-1);
+						if (show && pout) (*pout)<<atoi(s);
 						if (vs) {
 							ostringstream oss;
 							oss<<'i'<<' '<<tmp;
@@ -1387,24 +1410,24 @@ public://funcs
 					if (m==-1) break;
 					else if (m==']') {
 						stk.pop();
-						if (show) out<<endl<<tabs(stk.size())<<c;
+						if (show && pout) (*pout)<<endl<<tabs(stk.size())<<c;
 						if (vs) vs->push_back(char2str(tmp, m));
 						pos='E';
 						++i;
 					} else if (m==',') {
 						pos='B';
-						if (show) out<<c<<endl;
+						if (show && pout) (*pout)<<c<<endl;
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') out<<tabs(stk.size());
-						if (show) out<<c<<endl;
+						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
 						++i;
 					} else {
 						if (m!='n' && m!='s') {
-							if (show) out<<tabs(stk.size())<<c<<endl;
+							if (show && pout) (*pout)<<tabs(stk.size())<<c<<endl;
 							pos='B';
 							if (vs) vs->push_back(char2str(tmp, m));
 						}
@@ -1418,24 +1441,24 @@ public://funcs
 					if (m==-1) break;
 					else if (m==')') {
 						stk.pop();
-						if (show) out<<endl<<tabs(stk.size())<<c;
+						if (show && pout) (*pout)<<endl<<tabs(stk.size())<<c;
 						if (vs) vs->push_back(char2str(tmp, m));
 						pos='E';
 						++i;
 					} else if (m==',') {
 						pos='B';
-						if (show) out<<c<<endl;
+						if (show && pout) (*pout)<<c<<endl;
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') out<<tabs(stk.size());
-						if (show) out<<c<<endl;
+						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
 						++i;
 					} else {
 						if (m!='n' && m!='s') {
-							if (show) out<<tabs(stk.size())<<c<<endl;
+							if (show && pout) (*pout)<<tabs(stk.size())<<c<<endl;
 							pos='B';
 							if (vs) vs->push_back(char2str(tmp, m));							
 						}
@@ -1449,24 +1472,24 @@ public://funcs
 					if (m==-1) break;
 					else if (m=='>') {
 						stk.pop();
-						if (show) out<<endl<<tabs(stk.size())<<c;
+						if (show && pout) (*pout)<<endl<<tabs(stk.size())<<c;
 						if (vs) vs->push_back(char2str(tmp, m));
 						pos='E';
 						++i;
 					} else if (m==',') {
 						pos='B';
-						if (show) out<<c<<endl;
+						if (show && pout) (*pout)<<c<<endl;
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') out<<tabs(stk.size());
-						if (show) out<<c<<endl;
+						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
 						++i;
 					} else {
 						if (m!='n' && m!='s') {
-							if (show) out<<tabs(stk.size())<<c<<endl;
+							if (show && pout) (*pout)<<tabs(stk.size())<<c<<endl;
 							pos='B';
 							if (vs) vs->push_back(char2str(tmp, m));
 						}
@@ -1483,31 +1506,31 @@ public://funcs
 					else if (m=='}') {
 						dictflag[stk.size()]=false;
 						stk.pop();
-						if (show) out<<endl<<tabs(stk.size())<<c;
+						if (show && pout) (*pout)<<endl<<tabs(stk.size())<<c;
 						if (vs) vs->push_back(char2str(tmp, m));
 						pos='E';
 						++i;
 					} else if (m==',') {
 						dictflag[stk.size()]=false;
 						pos='K';
-						if (show) out<<c<<endl;
+						if (show && pout) (*pout)<<c<<endl;
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') out<<tabs(stk.size());
-						if (show) out<<c<<endl;
+						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
 						++i;
 					} else if (m==':') {
 						dictflag[stk.size()]=true;
 						pos='V';
-						if (show) out<<c;
+						if (show && pout) (*pout)<<c;
 						++i;
 					} else {
 						if (m!='n' && m!='s') {
-							if (!dictflag[stk.size()]) out<<tabs(stk.size());
-							if (show) out<<c<<endl;
+							if (!dictflag[stk.size()]) if (pout) (*pout)<<tabs(stk.size());
+							if (show && pout) (*pout)<<c<<endl;
 							pos='B';
 							if (vs) vs->push_back(char2str(tmp, m));
 						}
@@ -1521,160 +1544,177 @@ public://funcs
 				oss<<"expect '"<<(nextexp[0]?nextexp:"\\0")<<"' for 0x"<<hex<<int(t)<<":'"<<t<<'\'';
 				(*errmsg)=oss.str();
 			}
-			if (show) out<<endl;
+			if (show && pout) (*pout)<<endl;
 			return stk.empty();
 		}
 	};
 	
-	var(parser g) {
+	var(parser r) {
 		init_as_undefined();
+		dbg(constrct var from parser);
 		vector<string> vs;
 		string errmsg;
-		char t=g.parse(&vs, true, cout, &errmsg);
-	
-		cout<<"vs size="<<vs.size()<<endl;
-		for_iter(it, vector<string>, vs) {
-			cout<<"vs: "<<*it<<endl;
-		}
+		// char t=r.parse(&vs, true, &cout, &errmsg);
+		char t=r.parse(&vs, false, &cout, &errmsg);
+		// cout<<"type="<<t<<endl;
+		// cout<<"errmsg="<<errmsg<<endl;
+		// cout<<"vs size="<<vs.size()<<endl;
+		// for_iter(it, vector<string>, vs) {
+			// cout<<"vs: "<<*it<<endl;
+		// }
 		if (t=='N') {
-			init_as_str(g.p);
+			init_as_str(r.p);
 		} else if (t=='?') {
-			init_as_str("bad");
-		} else if (t=='n') {
-			init_as_str("number");
-		} else if (t=='i') {
-			init_as_str("int");
-		} else if (t=='f') {
-			init_as_str("float");
-		} else if (t=='s') {
-			init_as_str("string");
-		} else if (strchr("{[(<", t)) {
-			init_as_str("good");
-		}
+			init_as_str(r.p);
+		} else if (strchr("{[(<ns", t)) {
+			init_from_vs(vs);
+		} else assert(false);
 	}
 	
+	var& append(const var& r) {//append a node to the end of a list
+		assert(is_list());
+		macro_declare_ptr_ref_heap_list();
+		l.push_back(r);
+		return *this;
+	}
 	
-	enum objreprtypes {ortundef, ortstr, ortinteger, ortfloat, ortlist, orttuple, ortset, ortdict};
-	int checkrepr(const char* p, size_t& start, size_t& end) {//check if the str form p[start] to p[end] is a legal repr of a obj
-		
-		if (start>end) return ortundef;
-		
-		int i;
-		sint8 l;
-		float f;
-		double d;
-		char c, r;
-		
-		str s;
-		//first check if the str is a correct obj expresion
-		
-		while(p[start]==' ' AND start<end) ++start;
-		while(p[end]==' ' AND end>start) --end;
-		if (start==end) {//is a empty str or has only one char, just init as str
-			c=p[start];
-			if (c>='0' AND c<='9') {//only a digit char
-				// i=c-'0';
-				// set_type_builtin();
-				// set_builtin_sint4();
-				// data.builtin.i=i;
-				return ortinteger;
-			}
-			// init_as_str(string(p+start, p+start+1).c_str());
-			return ortstr;
-		}
-		
-		//scan it to test if all numbers or
-		bool isinteger=true;
-		bool isfloat=true;
-		bool isstr=true;
-		bool islist=true;
-		bool istuple=true;
-		bool isset=true;
-		bool isdict=true;
-		
-		for(size_t j=start; j<=end; ++j) {
-			c=p[j];
-			if (NOT ((c>='0' AND c<='9') OR c=='-')) {
-				isinteger=false;
-				if (c!='.') isfloat=false;
-			}
-		}
-		
-		if (isfloat) return ortfloat;
-		if (isinteger) return ortinteger;
-		
-		c=p[start];
-		r=p[end];
-		if (c!='[' OR r!=']') islist=false;
-		if (c!='(' OR r!=')') istuple=false;
-		if (c!='<' OR r!='>') isset=false;
-		if (c!='{' OR r!='}') isdict=false;
-		
-		size_t oldstart=start, oldend=end;//save old
-		
-		
-		if (islist) {
-			start=oldstart+1;
-			end=oldend-1;
-			if (start<=end) {
-				while(p[start]==' ' AND start<end) ++start;
-				while(p[end]==' ' AND end>start) --end;
-				if (start==end) {
-					c=p[start];
-					if (NOT (c>='0' AND c<='9')) {//should be only a digit char
-						islist=false;
-					}
-				}
-				else if (start<end) {
-					size_t substart=start;
-					size_t subend=substart+1;
-					while(subend<end) {
-						c=p[substart];
-						if (c=='\'' OR c=='"') {//check for quoted string
-							while((p[subend]!=c OR (p[subend]==c AND p[subend-1]=='\\')) AND subend<end) ++subend;
-							if (subend==end AND (NOT (p[subend]==c  AND p[subend-1]!='\\'))) {
-								islist=false;
-								break;
-							}
-							// else if (subend<end)
+private:
+	void init_from_vs(vector<str>& vs) {
+		assert(is_undefined());
+		size_t l=vs.size();
+		if (l==0) return;//impossible
+		smart_clone_from_another_var(parse_vs_slice(vs, 0, l));
+	}
+	
+	var parse_vs_slice(vector<str>& vs, size_t begin, size_t end) {//parse from begin, to end of vs
+		size_t l=end-begin, i=begin, e=end, j=e-1, k, m, n;
+		assert(l>0);//at least 1
+		char t, a, b, x, y;
+		if (l==1) {
+			t=vs[i][0];
+			if (t=='i') {
+				return var(atoi(vs[i].c_str()+2));
+			} else if (t=='f') {
+				return var(atof(vs[i].c_str()+2));
+			} else if (t=='s') {
+				return var(vs[i].c_str()+2);
+			} else assert(false);
+		} else {
+			a=vs[i][0];
+			b=vs[j][0];
+			if (a=='[' && b==']') {
+				var lst((var*)0, (var*)0);
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') lst.append(parse_vs_slice(vs, k, k+1));
+					else if (x=='[' || x=='(' || x=='<' || x=='{') {
+						stack<char> stk;
+						stk.push(x);
+						m=k;
+						while (! stk.empty()) {
+							++k;
+							if (k==e) assert(false);//if a legal repr, stk should be empty now
+							t=stk.top();
+							y=vs[k][0];
+							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+							else if (t=='[' && y==']') stk.pop();
+							else if (t=='(' && y==')') stk.pop();
+							else if (t=='<' && y=='>') stk.pop();
+							else if (t=='{' && y=='}') stk.pop();
+							else {} //pass
 						}
-						
-						// AND p[subend]!=',' 
-						
-					}
-					
+						lst.append(parse_vs_slice(vs, m, k+1));
+					} //strange that it do to run here
 				}
-			}
-			
-			// while(p[start]==' ' AND start<end) ++start;
-			// while(p[end]==' ' AND end>start) --end;
-			// if (start==end) {//is a empty str or has only one char, just init as str
-				// c=p[start];
-				// if (c>='0' AND c<='9') {//only a digit char
-					// return ortinteger;
-				// }
-				// return ortstr;
-			// }
-		
-			
-			// while(p[substart]==' ' AND substart<end) ++start;
-			// size_t subend=substart;
-			// c=p[substart];
-			// if (c=='\'' OR c=='"') {
-				// while(p[subend]==' ' AND subend<end) ++start;
-			// }
-			// while(substart<end AND subend<end) {
-				// while(p[subend]==' ' AND start<end) ++start;
-			// }
-		} else if (istuple) {
-		
-		} else if (isset) {
-		
-		} else if (isdict) {
-		
+				return lst;
+			} else if (a=='(' && b==')') {
+				var vtpl((var*)0, (var*)0, char(0));
+				tuple& tpl=*vtpl.data.heap.tuple.ptuple;
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') tpl.push_back(parse_vs_slice(vs, k, k+1));
+					else if (x=='[' || x=='(' || x=='<' || x=='{') {
+						stack<char> stk;
+						stk.push(x);
+						m=k;
+						while (! stk.empty()) {
+							++k;
+							if (k==e) assert(false);//if a legal repr, stk should be empty now
+							t=stk.top();
+							y=vs[k][0];
+							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+							else if (t=='[' && y==']') stk.pop();
+							else if (t=='(' && y==')') stk.pop();
+							else if (t=='<' && y=='>') stk.pop();
+							else if (t=='{' && y=='}') stk.pop();
+							else {} //pass
+						}
+						tpl.push_back(parse_vs_slice(vs, m, k+1));
+					} //strange that it do to run here
+				}
+				return vtpl;
+			} else if (a=='<' && b=='>') {
+				var vst((var*)0, (var*)0, int(0));
+				set& st=*vst.data.heap.set.pset;
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') st.insert(parse_vs_slice(vs, k, k+1));
+					else if (x=='[' || x=='(' || x=='<' || x=='{') {
+						stack<char> stk;
+						stk.push(x);
+						m=k;
+						while (! stk.empty()) {
+							++k;
+							if (k==e) assert(false);//if a legal repr, stk should be empty now
+							t=stk.top();
+							y=vs[k][0];
+							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+							else if (t=='[' && y==']') stk.pop();
+							else if (t=='(' && y==')') stk.pop();
+							else if (t=='<' && y=='>') stk.pop();
+							else if (t=='{' && y=='}') stk.pop();
+							else {} //pass
+						}
+						st.insert(parse_vs_slice(vs, m, k+1));
+					} //strange that it do to run here
+				}
+				return vst;
+			} else if (a=='{' && b=='}') {
+				var vdct((var*)0, (var*)0, float(0));
+				dict& dct=*vdct.data.heap.dict.pdict;
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') {
+						var key(parse_vs_slice(vs, k, k+1));
+						++k;
+						x=vs[k][0];
+						assert(k<e);
+						if (x=='i' || x=='f' || x=='s') {
+							dct.insert(pair<var, var>(key, parse_vs_slice(vs, k, k+1)));
+						} else if (x=='[' || x=='(' || x=='<' || x=='{') {
+							stack<char> stk;
+							stk.push(x);
+							m=k;
+							while (! stk.empty()) {
+								++k;
+								if (k==e) assert(false);//if a legal repr, stk should be empty now
+								t=stk.top();
+								y=vs[k][0];
+								if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+								else if (t=='[' && y==']') stk.pop();
+								else if (t=='(' && y==')') stk.pop();
+								else if (t=='<' && y=='>') stk.pop();
+								else if (t=='{' && y=='}') stk.pop();
+								else {} //pass
+							}
+							dct.insert(pair<var, var>(key, parse_vs_slice(vs, m, k+1)));
+						} //strange that it do to run here
+					}
+				}
+				return vdct;
+			}// else for_in(x, i, j+1, 1) cout<<"debug: vs["<<x<<"]="<<vs[x]<<endl;
 		}
-		
-		return ortstr;
+		return var();
 	}
 };
 
