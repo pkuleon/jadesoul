@@ -38,17 +38,25 @@
 //namespaces
 // using namespace std;
 using std::vector;
+using std::stack;
+using std::queue;
 using std::pair;
 using std::map;
 using std::string;
+using std::stringstream;
 using std::ostream;
 using std::istream;
+using std::boolalpha;
 // using std::set;
+// using std::list;
 using std::hex;
 using std::cout;
 using std::cin;
 using std::istringstream;
-using std::istream;
+using std::ostringstream;
+using std::fstream;
+using std::ifstream;
+using std::ofstream;
 using std::endl;
 using std::bitset;
 using std::ostream_iterator;
@@ -82,5 +90,9 @@ typedef std::vector<char> vec_char;
 #define for_in(i, start, end, step) for (int i=start; i<end; i+=step)
 #define for_tin(type, i, start, end, step) for (type i=start; i<end; i+=step)
 
+#define for_iter(it, type, con) for(type::iterator it=con.begin(); it!=con.end(); ++it)
+#define for_citer(it, type, con) for(type::const_iterator it=con.begin(); it!=con.end(); ++it)
+#define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+#define for_rciter(it, type, con) for(type::const_reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
 
 #endif // JADE_COMMON_HPP

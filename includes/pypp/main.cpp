@@ -15,7 +15,7 @@
 
 
 int main () {
-	int a;
-	
+	var s=eval("hi");
+	s.dump(cout, true).peek().dump(cout, true);
 }
 

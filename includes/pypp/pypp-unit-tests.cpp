@@ -28,6 +28,7 @@ gtest(name) {\
 	__VA_ARGS__\
 }
 
+/*
 jtest(simple_demo,//this is the test name
 	var a=2;
 	cout<<a<<endl;
@@ -44,7 +45,7 @@ jtest(var_demo,
 
 jtest(cstr_demo,
 	var a="s";
-	a.dump();
+	a.debug();
 )
 
 jtest(for_demo,
@@ -100,7 +101,7 @@ jtest(list_demo,
 	var c=list(a, a+3);//list
 	var d(tmp);
 	//var d=tmp;//TODO
-)
+)	
 
 jtest(tuple_demo,
 	var a=1, b=2, c=3;
@@ -125,3 +126,80 @@ jtest(dict_demo,
 	var x(a, a+8, float());//dict, float() is the flag to help init as dict
 	var y=dict(a, a+8);
 )
+
+
+jtest(demo_print_list_in_stack,
+	var tmp[]={1, 2, 3, "ÄãºÃ", 32.9};
+	py::list lst(tmp, tmp+5);
+	var l(lst);
+	cout<<l<<endl;
+)
+
+jtest(demo_print_list_in_heap,
+	var tmp[]={1, 2, 3, "hi", 32.9};
+	var l=list(tmp, tmp+5);
+	cout<<l<<endl;
+)
+
+jtest(demo_print_tuple_in_stack,
+	var tmp[]={1, 2, 3, "ÄãºÃ", 32.9};
+	py::tuple x(tmp, tmp+5);
+	var t(x);
+	cout<<t<<endl;
+)
+
+jtest(demo_print_tuple_in_heap,
+	var a=1, b=2, c="hi";
+	var t1(a, b, c);
+	var t2=tuple(a, b, c);
+	cout<<t1<<endl<<t2<<endl;
+)
+
+jtest(demo_print_set_in_stack,
+	var tmp[]={1, 2, 2, "ÄãºÃ", 32.9};
+	py::set x(tmp, tmp+5);
+	var s(x);
+	cout<<s<<endl;
+)
+
+jtest(demo_print_set_in_heap,
+	var tmp[]={1, 2, 2, 3.3, 3.3};
+	var s1(tmp, tmp+5, int())//dict, int() is the flag to help init as set
+	var s2=set(tmp, tmp+5);
+	cout<<s1<<endl<<s2<<endl;
+)
+
+*/
+
+jtest(demo_print_dict_in_stack,
+	var a[]={
+		"name", "jadesoul",
+		"age", 24,
+		"sex", 'A',
+		"height", 1.76
+	};
+	py::dict m;
+	for_in(i, 0, 8, 2) {
+		m[a[i]]=a[i+1];
+	}
+	var v=m;
+	cout<<v<<endl;
+	m["name"]=1;
+	cout<<var(m)<<endl;
+	cout<<v<<endl;
+)
+
+jtest(demo_print_dict_in_heap,
+	var a[]={
+		"name", "jadesoul",
+		"age", 24,
+		"sex", 'A',
+		"height", 1.76
+	};
+	var x(a, a+8, float());//dict, float() is the flag to help init as dict
+	var y=dict(a, a+8);
+	cout<<x<<endl<<y<<endl;
+)
+
+
+

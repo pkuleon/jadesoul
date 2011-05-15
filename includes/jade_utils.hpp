@@ -103,6 +103,6 @@ public:
 };
 
 
-#define LIST smart_parser::list
+// #define LIST smart_parser::list
 
 #endif // JADE_UTILS_HPP

@@ -283,40 +283,50 @@ private:
 	} attr;//4 bytes
 	
 	//for fast coding
-	#define macro_declare_ptr_ref_heap_str\
-	heapstr*& h=data.heap.str.pheap;\
-	str*& p=data.heap.str.pstr;
+	#define macro_declare_ptr_ref_heap_str(...)\
+	heapstr*& h=__VA_ARGS__ data.heap.str.pheap;\
+	str*& p=data.heap.str.pstr;\
+	str& s=*p;
 	
-	#define macro_declare_ptr_ref_stack_str\
-	str*& p=data.stack.pstr;
+	#define macro_declare_ptr_ref_stack_str(...)\
+	str*& p=__VA_ARGS__ data.stack.pstr;\
+	str& s=*p;
 	
-	#define macro_declare_ptr_ref_heap_list\
-	heaplist*& h=data.heap.list.pheap;\
-	list*& p=data.heap.list.plist;
+	#define macro_declare_ptr_ref_heap_list(...)\
+	heaplist*& h=__VA_ARGS__ data.heap.list.pheap;\
+	list*& p=__VA_ARGS__ data.heap.list.plist;\
+	list& l=*p;
 	
-	#define macro_declare_ptr_ref_stack_list\
-	list*& p=data.stack.plist;
+	#define macro_declare_ptr_ref_stack_list(...)\
+	list*& p=__VA_ARGS__ data.stack.plist;\
+	list& l=*p;
 	
-	#define macro_declare_ptr_ref_heap_tuple\
-	heaptuple*& h=data.heap.tuple.pheap;\
-	tuple*& p=data.heap.tuple.ptuple;
+	#define macro_declare_ptr_ref_heap_tuple(...)\
+	heaptuple*& h=__VA_ARGS__ data.heap.tuple.pheap;\
+	tuple*& p=__VA_ARGS__ data.heap.tuple.ptuple;\
+	tuple& t=*p;
 	
-	#define macro_declare_ptr_ref_stack_tuple\
-	tuple*& p=data.stack.ptuple;
+	#define macro_declare_ptr_ref_stack_tuple(...)\
+	tuple*& p=__VA_ARGS__ data.stack.ptuple;\
+	tuple& t=*p;
 	
-	#define macro_declare_ptr_ref_heap_set\
-	heapset*& h=data.heap.set.pheap;\
-	set*& p=data.heap.set.pset;
+	#define macro_declare_ptr_ref_heap_set(...)\
+	heapset*& h=__VA_ARGS__ data.heap.set.pheap;\
+	set*& p=__VA_ARGS__ data.heap.set.pset;\
+	set& st=*p;
 	
-	#define macro_declare_ptr_ref_stack_set\
-	set*& p=data.stack.pset;
+	#define macro_declare_ptr_ref_stack_set(...)\
+	set*& p=__VA_ARGS__ data.stack.pset;\
+	set& st=*p;
 	
-	#define macro_declare_ptr_ref_heap_dict\
-	heapdict*& h=data.heap.dict.pheap;\
-	dict*& p=data.heap.dict.pdict;
+	#define macro_declare_ptr_ref_heap_dict(...)\
+	heapdict*& h=__VA_ARGS__ data.heap.dict.pheap;\
+	dict*& p=__VA_ARGS__ data.heap.dict.pdict;\
+	dict& d=*p;
 	
-	#define macro_declare_ptr_ref_stack_dict\
-	dict*& p=data.stack.pdict;
+	#define macro_declare_ptr_ref_stack_dict(...)\
+	dict*& p=__VA_ARGS__ data.stack.pdict;\
+	dict& d=*p;
 	
 private:
 	//----------------------------------------- utils
@@ -381,7 +391,7 @@ private:
 							//each constructor should call init_as_undefined() first
 		set_type_heap();
 		set_obj_str();
-		macro_declare_ptr_ref_heap_str;
+		macro_declare_ptr_ref_heap_str();
 		h=&mmgr.newstr();//new a heapstr, automatically record it in link list
 		codemask(cout<<"in init_as_str increase the heapstr "<<hex<<h<<" refcnt: "
 					<<h->cnt()+1<<"="<<h->cnt()<<"+1"<<endl;)
@@ -397,7 +407,7 @@ private:
 		assert(is_undefined());
 		set_type_heap();
 		set_obj_list();
-		macro_declare_ptr_ref_heap_list;
+		macro_declare_ptr_ref_heap_list();
 		h=&mmgr.newlist();
 		codemask(cout<<"in init_as_list increase the heaplist "<<hex<<h<<" refcnt: "
 					<<h->cnt()+1<<"="<<h->cnt()<<"+1"<<endl;)
@@ -412,7 +422,7 @@ private:
 		assert(is_undefined());
 		set_type_heap();
 		set_obj_tuple();
-		macro_declare_ptr_ref_heap_tuple;
+		macro_declare_ptr_ref_heap_tuple();
 		h=&mmgr.newtuple();
 		codemask(cout<<"in init_as_tuple increase the heaptuple "<<hex<<h<<" refcnt: "
 					<<h->cnt()+1<<"="<<h->cnt()<<"+1"<<endl;)
@@ -427,7 +437,7 @@ private:
 		assert(is_undefined());
 		set_type_heap();
 		set_obj_set();
-		macro_declare_ptr_ref_heap_set;
+		macro_declare_ptr_ref_heap_set();
 		h=&mmgr.newset();
 		codemask(cout<<"in init_as_set increase the heapset "<<hex<<h<<" refcnt: "
 					<<h->cnt()+1<<"="<<h->cnt()<<"+1"<<endl;)
@@ -442,7 +452,7 @@ private:
 		assert(is_undefined());
 		set_type_heap();
 		set_obj_dict();
-		macro_declare_ptr_ref_heap_dict;
+		macro_declare_ptr_ref_heap_dict();
 		h=&mmgr.newdict();
 		codemask(cout<<"in init_as_dict increase the heapdict "<<hex<<h<<" refcnt: "
 					<<h->cnt()+1<<"="<<h->cnt()<<"+1"<<endl;)
@@ -458,7 +468,7 @@ private:
 	var& smart_clone_from_another_var(var& r) {//often used by copy constructions
 		var& me=*this;
 		if (this==&r) { msg(why you give me the same address?); return me; }
-		codemask(msg(before smart_clone_from_another_var);dump();msg(target is);r.dump();)
+		codemask(msg(before smart_clone_from_another_var);peek();msg(target is);r.peek();)
 		
 		//first check my heap
 		if (is_heap()) {
@@ -500,7 +510,7 @@ private:
 			} else  bye(in smart_clone_from_another_var: after copy : me is in heap but not a object);
 		}
 		
-		codemask(msg(after smart_clone_from_another_var);dump();)
+		codemask(msg(after smart_clone_from_another_var);peek();)
 		return me;
 	}
 	
@@ -566,10 +576,11 @@ public://funcs
 		smart_clone_from_another_var(r);
 	}
 	
-	var(const var& r) {
+	var(const var& rr) {
+		var& r=const_cast<var&>(rr);
 		dbg(construct form const var& r);
 		init_as_undefined();
-		smart_clone_from_another_var(const_cast<var&>(r));//TODO: maybe there is some problem in this way
+		smart_clone_from_another_var(r);//TODO: maybe there is some problem in this way
 	}
 	
 	
@@ -579,33 +590,33 @@ public://funcs
 		//check heap
 		if (is_heap()) {
 			if (is_str()) {
-				macro_declare_ptr_ref_heap_str;
+				macro_declare_ptr_ref_heap_str();
 				codemask(cout<<"in ~var release a heapstr refernce, "<<hex<<h<<" -> "<<hex<<p<<" refcnt: "
 					<<h->cnt()<<"-1="<<h->cnt()-1<<endl;)
 				h->release();
 			} else if (is_list()) {
-				macro_declare_ptr_ref_heap_list;
+				macro_declare_ptr_ref_heap_list();
 				codemask(cout<<"in ~var release a heaplist refernce, "<<hex<<h<<" -> "<<hex<<p<<" refcnt: "
 					<<h->cnt()<<"-1="<<h->cnt()-1<<endl;)
 				h->release();
 			} else if (is_tuple()) {
-				macro_declare_ptr_ref_heap_tuple;
+				macro_declare_ptr_ref_heap_tuple();
 				codemask(cout<<"in ~var release a heaptuple refernce, "<<hex<<h<<" -> "<<hex<<p<<" refcnt: "
 					<<h->cnt()<<"-1="<<h->cnt()-1<<endl;)
 				h->release();
 			} else if (is_set()) {
-				macro_declare_ptr_ref_heap_set;
+				macro_declare_ptr_ref_heap_set();
 				codemask(cout<<"in ~var release a heapset refernce, "<<hex<<h<<" -> "<<hex<<p<<" refcnt: "
 					<<h->cnt()<<"-1="<<h->cnt()-1<<endl;)
 				h->release();
 			} else if (is_dict()) {
-				macro_declare_ptr_ref_heap_dict;
+				macro_declare_ptr_ref_heap_dict();
 				codemask(cout<<"in ~var release a heapdict refernce, "<<hex<<h<<" -> "<<hex<<p<<" refcnt: "
 					<<h->cnt()<<"-1="<<h->cnt()-1<<endl;)
 				h->release();
 			} else {
 				msg(there is some problem in the var: now dump:);
-				dump();
+				peek();
 				assert(false);
 			}
 		}
@@ -1028,45 +1039,129 @@ public://funcs
 		return in;
 	}
 	
-	friend ostream& operator<<(ostream& out, const var& v) {
-		if (v.is_undefined()) {
-			out<<"undefined";
-		} else if (v.is_str()) {
-			out<<v.cstr();
-		} else if (v.is_num()) {
-			if (v.is_schar()) out<<v.schar();
-			else if (v.is_uchar()) out<<v.uchar();
-			else if (v.is_sshort()) out<<v.sshort();
-			else if (v.is_ushort()) out<<v.ushort();
-			else if (v.is_sint()) out<<v.sint();
-			else if (v.is_uint()) out<<v.uint();
-			else if (v.is_slong()) out<<v.slong();
-			else if (v.is_ulong()) out<<v.ulong();
-			else if (v.is_float()) out<<v.flt();
-			else if (v.is_double()) out<<v.dbl();
-		} else if (v.is_list()) {
-			out<<"TODO";
-		} else if (v.is_tuple()) {
-			out<<"TODO";
-		} else if (v.is_set()) {
-			out<<"TODO";
-		} else if (v.is_dict()) {
-			out<<"TODO";
+	string repr(bool quote=false) {//convert var to a string representation
+		ostringstream oss;
+		char *qt=(quote?"'":"");//if quote is true, quote for strings
+		if (is_undefined()) {
+			oss<<qt<<"undefined"<<qt;
+		} else if (is_str()) {
+			oss<<qt<<cstr()<<qt;
+		} else if (is_num()) {//the compare sequence is based on the using frequency of num type
+			if (is_sint()) oss<<sint();
+			else if (is_schar()) oss<<qt<<schar()<<qt;//TODO
+			else if (is_float()) oss<<flt();
+			else if (is_double()) oss<<dbl();
+			else if (is_slong()) oss<<slong();
+			else if (is_sshort()) oss<<sshort();
+			else if (is_uint()) oss<<uint();
+			else if (is_uchar()) oss<<qt<<uchar()<<qt;//TODO
+			else if (is_ulong()) oss<<ulong();
+			else if (is_ushort()) oss<<ushort();
+		} else if (is_list()) {
+			if (is_stack()) {
+				macro_declare_ptr_ref_stack_list();
+				oss<<'[';
+				size_t length=l.size();
+				for_tn(size_t, i, length) {
+					oss<<l[i].repr(true);
+					if (i!=length-1) oss<<", ";
+				}
+				oss<<']';
+			} else {
+				macro_declare_ptr_ref_heap_list();
+				oss<<'[';
+				size_t length=l.size();
+				for_tn(size_t, i, length) {
+					oss<<l[i].repr(true);
+					if (i!=length-1) oss<<", ";
+				}
+				oss<<']';
+			}
+		} else if (is_tuple()) {
+			if (is_stack()) {
+				macro_declare_ptr_ref_stack_tuple();
+				oss<<'(';
+				size_t length=t.size(), i=0;
+				for_iter(it, tuple, t) {
+					oss<<(*it).repr(true);
+					if (i++!=length-1) oss<<", ";
+				}
+				oss<<')';
+			} else {
+				macro_declare_ptr_ref_heap_tuple();
+				oss<<'(';
+				size_t length=t.size(), i=0;
+				for_iter(it, tuple, t) {
+					oss<<(*it).repr(true);
+					if (i++!=length-1) oss<<", ";
+				}
+				oss<<')';
+			}
+		} else if (is_set()) {
+			if (is_stack()) {
+				macro_declare_ptr_ref_stack_set();
+				oss<<'<';
+				size_t length=st.size(), i=0;
+				for_iter(it, set, st) {
+					oss<<(*it).repr(true);
+					if (i++!=length-1) oss<<", ";
+				}
+				oss<<'>';
+			} else {
+				macro_declare_ptr_ref_heap_set();
+				oss<<'<';
+				size_t length=st.size(), i=0;
+				for_iter(it, set, st) {
+					oss<<(*it).repr(true);
+					if (i++!=length-1) oss<<", ";
+				}
+				oss<<'>';
+			}
+		} else if (is_dict()) {
+			if (is_stack()) {
+				macro_declare_ptr_ref_stack_dict();
+				oss<<'{';
+				size_t length=d.size(), i=0;
+				for_iter(it, dict, d) {
+					oss<<const_cast<var&>(it->first).repr(true)<<':'<<(*it).second.repr(true);
+					if (i++!=length-1) oss<<", ";
+				}
+				oss<<'}';
+			} else {
+				macro_declare_ptr_ref_heap_dict();
+				oss<<'{';
+				size_t length=d.size(), i=0;
+				for_iter(it, dict, d) {
+					oss<<const_cast<var&>(it->first).repr(true)<<':'<<(*it).second.repr(true);
+					if (i++!=length-1) oss<<", ";
+				}
+				oss<<'}';
+			}
 		} else {
-			out<<"[Unknown Type]";
+			oss<<"unknown";//impossible running here
 		}
-		return out;
+		return oss.str();
+	}
+	
+	friend ostream& operator<<(ostream& out, var& v) {
+		return out<<v.repr();
 	}
 	
 	//debug utils
-	var& dump(ostream& out=cout) {
+	var& peek(ostream& out=cout) {
 		var& v=*this;
-		out<<"<Var this="<<this<<" data: "
+		out<<"[var @ "<<this<<" data: "
 			<<hex<<data.dwords.low4<<" "<<hex<<data.dwords.high4<<" attr: "
 			<<bitset<8>(attr.bytes.types)<<" "<<bitset<8>(attr.bytes.objs)<<" "
 			<<bitset<8>(attr.bytes.ints)<<" "<<bitset<8>(attr.bytes.floats)
-			<<">"<<endl;
-			
+			<<"]"<<endl;
+		return v;
+	}
+	
+	var& dump(ostream& out=cout, bool newline=false) {
+		var& v=*this;
+		out<<v.repr();
+		if (newline) out<<endl;
 		return v;
 	}
 	
@@ -1074,16 +1169,6 @@ public://funcs
 	//to delete it, the obj in heap if it points to , will remain not been deleted
 	//creating a var obj in stack is better, have fun using copy constructors :)
 	//just treat var as an built-in type like int
-	
-	
-	//------------------------	for list
-	// var(list& r) {	//only accept exist obj instead of tmp obj
-		// dbg(list&);
-		// p=(int*)&r;
-	// }
-	
-	// list& lst() const { return *(list*)p; }
-	//------------------------	others
 	
 	
 	// methods for sequences
@@ -1161,6 +1246,182 @@ public://funcs
 	var begin() { return var(); }
 	var next() { return var(); }
 	bool end() {}
+	
+	
+	class smart_var_generator {//used for eval a var from a string
+		const char* p;
+	public:
+		friend class var;
+		smart_var_generator(const string& s): p(s.c_str()) {}
+		smart_var_generator(const char* s): p(s) {}
+	};
+	
+	var(const smart_var_generator& g) {
+		init_as_undefined();
+		//istringstream iss(g.p);
+		// string s(g.p);
+		// s.push_back('\0')
+		const char* p=g.p;
+		size_t length=strlen(p);
+		size_t start=0, end=length;
+		string now;
+		stack<char> stk;
+		stk.push('\0');
+		char c, t;
+		while((NOT stk.empty()) AND start<=end) {
+			c=p[start];
+			t=stk.top();
+			if (t!='"' AND t!='\'' AND c==' ') ++start;
+			else if (c=='(') {
+				stk.push(c);
+			} else if (c==')') {
+				stk.pop();
+			} else if (c=='[') {
+				stk.push(c);
+			} else if (c==']') {
+				stk.pop();
+			} else if (c=='<') {
+				stk.push(c);
+			} else if (c=='>') {
+				stk.pop();
+			} else if (c=='{') {
+				stk.push(c);
+			} else if (c=='}') {
+				stk.pop();
+			} else if (c=='"' OR c=='\'') {
+				stk.push(c);
+			}
+			
+			stk.push(p[start++]);
+		}
+		// if (length==0) return;//no need
+		
+		// checkrepr(p, start, end);
+		// 
+	}
+	
+	enum objreprtypes {ortundef, ortstr, ortinteger, ortfloat, ortlist, orttuple, ortset, ortdict};
+	int checkrepr(const char* p, size_t& start, size_t& end) {//check if the str form p[start] to p[end] is a legal repr of a obj
+		
+		if (start>end) return ortundef;
+		
+		int i;
+		sint8 l;
+		float f;
+		double d;
+		char c, r;
+		
+		str s;
+		//first check if the str is a correct obj expresion
+		
+		while(p[start]==' ' AND start<end) ++start;
+		while(p[end]==' ' AND end>start) --end;
+		if (start==end) {//is a empty str or has only one char, just init as str
+			c=p[start];
+			if (c>='0' AND c<='9') {//only a digit char
+				// i=c-'0';
+				// set_type_builtin();
+				// set_builtin_sint4();
+				// data.builtin.i=i;
+				return ortinteger;
+			}
+			// init_as_str(string(p+start, p+start+1).c_str());
+			return ortstr;
+		}
+		
+		//scan it to test if all numbers or
+		bool isinteger=true;
+		bool isfloat=true;
+		bool isstr=true;
+		bool islist=true;
+		bool istuple=true;
+		bool isset=true;
+		bool isdict=true;
+		
+		for(size_t j=start; j<=end; ++j) {
+			c=p[j];
+			if (NOT ((c>='0' AND c<='9') OR c=='-')) {
+				isinteger=false;
+				if (c!='.') isfloat=false;
+			}
+		}
+		
+		if (isfloat) return ortfloat;
+		if (isinteger) return ortinteger;
+		
+		c=p[start];
+		r=p[end];
+		if (c!='[' OR r!=']') islist=false;
+		if (c!='(' OR r!=')') istuple=false;
+		if (c!='<' OR r!='>') isset=false;
+		if (c!='{' OR r!='}') isdict=false;
+		
+		size_t oldstart=start, oldend=end;//save old
+		
+		
+		if (islist) {
+			start=oldstart+1;
+			end=oldend-1;
+			if (start<=end) {
+				while(p[start]==' ' AND start<end) ++start;
+				while(p[end]==' ' AND end>start) --end;
+				if (start==end) {
+					c=p[start];
+					if (NOT (c>='0' AND c<='9')) {//should be only a digit char
+						islist=false;
+					}
+				}
+				else if (start<end) {
+					size_t substart=start;
+					size_t subend=substart+1;
+					while(subend<end) {
+						c=p[substart];
+						if (c=='\'' OR c=='"') {//check for quoted string
+							while((p[subend]!=c OR (p[subend]==c AND p[subend-1]=='\\')) AND subend<end) ++subend;
+							if (subend==end AND (NOT (p[subend]==c  AND p[subend-1]!='\\'))) {
+								islist=false;
+								break;
+							}
+							// else if (subend<end)
+						}
+						
+						// AND p[subend]!=',' 
+						
+					}
+					
+				}
+			}
+			
+			// while(p[start]==' ' AND start<end) ++start;
+			// while(p[end]==' ' AND end>start) --end;
+			// if (start==end) {//is a empty str or has only one char, just init as str
+				// c=p[start];
+				// if (c>='0' AND c<='9') {//only a digit char
+					// return ortinteger;
+				// }
+				// return ortstr;
+			// }
+		
+			
+			// while(p[substart]==' ' AND substart<end) ++start;
+			// size_t subend=substart;
+			// c=p[substart];
+			// if (c=='\'' OR c=='"') {
+				// while(p[subend]==' ' AND subend<end) ++start;
+			// }
+			// while(substart<end AND subend<end) {
+				// while(p[subend]==' ' AND start<end) ++start;
+			// }
+		} else if (istuple) {
+		
+		} else if (isset) {
+		
+		} else if (isdict) {
+		
+		}
+		
+		return ortstr;
+	}
 };
 
 
@@ -1185,6 +1446,43 @@ var sorted(var& v) {
 size_t len(var& v) { 
 	return v.len(); 
 }
+
+string repr(var& v) {
+	return string();
+}
+
+var eval(const string& s) {
+	return var(var::smart_var_generator(s));
+}
+
+var eval(const char* s) {
+	return var(var::smart_var_generator(s));
+}
+
+
+#define VAR(...) eval(#__VA_ARGS__)
+#define V VAR
+
+#define STR(...) var(#__VA_ARGS__)
+#define S STR
+
+#define LIST(...) eval(string("[")+#__VA_ARGS__+"]")
+#define L LIST
+
+#define TUPLE(...) eval(string("(")+#__VA_ARGS__+")")
+#define T TUPLE
+
+#define SET(...) eval(string("<")+#__VA_ARGS__+">")
+#define ST SET
+
+#define DICT(...) eval(string("{")+#__VA_ARGS__+"}")
+#define D DICT
+
+//usage: var a=V([1,2,3])
+// var(smart_var_generator(#expr))
+// var("asdasdl")
+#define R(expr) range(#expr)
+
 
 #undef macro_declare_ptr_ref_heap_str
 #undef macro_declare_ptr_ref_stack_str
