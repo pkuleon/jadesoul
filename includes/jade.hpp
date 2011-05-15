@@ -44,7 +44,7 @@ BOOST_AUTO_TEST_CASE(test_opengl) {
 #ifdef debug
 	#define show(msg, var) cout<< msg <<" = ";dump(var)
 	
-	#define print(var) show( #var , var)
+	#define printv(var) show( #var , var)
 	
 	// #define print2(var1, var2) show( #var1 , var1); show( #var2 , var2)
 
@@ -52,8 +52,8 @@ BOOST_AUTO_TEST_CASE(test_opengl) {
 	#undef show
 	#define show(a, b)
 	
-	#undef print
-	#define print(a)
+	#undef printv
+	#define printv(a)
 	
 #endif
 

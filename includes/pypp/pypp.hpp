@@ -183,6 +183,7 @@ public:
 	typedef heapobj<py::tuple> heaptuple;
 	typedef heapobj<py::set> heapset;
 	typedef heapobj<py::dict> heapdict;
+	
 private:
 	union {//data of all kinds of var, only one kind at a time
 		union {//for non-const ref=obj& or ptr=&obj in stack, save its pointer
@@ -328,6 +329,12 @@ private:
 	dict*& p=__VA_ARGS__ data.stack.pdict;\
 	dict& d=*p;
 	
+	#define macro_declare_me(...) var& me=*this;
+	#define macro_new_var_str(s) var s((char*)0);
+	#define macro_new_var_list(lst) var lst((var*)0, (var*)0);
+	#define macro_new_var_tuple(tpl) var tpl((var*)0, (var*)0, char(0));
+	#define macro_new_var_set(st) var st((var*)0, (var*)0, int(0));
+	#define macro_new_var_dict(dct) var dct((var*)0, (var*)0, float(0));
 private:
 	//----------------------------------------- utils
 	inline void init_as_undefined() {
@@ -465,8 +472,154 @@ private:
 		} else bye(in init_as_dict: you should give me even numbers of vars);
 	};
 	
+	void init_from_vs(vector<str>& vs) {//init from vector<string> parsed by parser
+		assert(is_undefined());
+		size_t l=vs.size();
+		if (l==0) return;//impossible
+		smart_clone_from_another_var(parse_vs_slice(vs, 0, l));
+	}
+	
+	var parse_vs_slice(vector<str>& vs, size_t begin, size_t end) {//parse from begin, to end of vs
+		size_t l=end-begin, i=begin, e=end, j=e-1, k, m, n;
+		assert(l>0);//at least 1
+		char t, a, b, x, y;
+		if (l==1) {
+			t=vs[i][0];
+			if (t=='i') {
+				return var(atoi(vs[i].c_str()+2));
+				// istringstream iss(vs[i].c_str()+2);//to make it bigger
+				// sint8 sl;
+				// iss>>sl;
+				// return var(sl);
+			} else if (t=='f') {
+				return var(atof(vs[i].c_str()+2));
+				// istringstream iss(vs[i].c_str()+2);
+				// double db;
+				// iss>>db;
+				// return var(db);
+			} else if (t=='s') {
+				return var(vs[i].c_str()+2);
+			} else assert(false);
+		} else {
+			a=vs[i][0];
+			b=vs[j][0];
+			if (a=='[' && b==']') {
+				var lst((var*)0, (var*)0);
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') lst.append(parse_vs_slice(vs, k, k+1));
+					else if (x=='[' || x=='(' || x=='<' || x=='{') {
+						stack<char> stk;
+						stk.push(x);
+						m=k;
+						while (! stk.empty()) {
+							++k;
+							if (k==e) assert(false);//if a legal repr, stk should be empty now
+							t=stk.top();
+							y=vs[k][0];
+							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+							else if (t=='[' && y==']') stk.pop();
+							else if (t=='(' && y==')') stk.pop();
+							else if (t=='<' && y=='>') stk.pop();
+							else if (t=='{' && y=='}') stk.pop();
+							else {} //pass
+						}
+						lst.append(parse_vs_slice(vs, m, k+1));
+					} //strange that it do to run here
+				}
+				return lst;
+			} else if (a=='(' && b==')') {
+				var vtpl((var*)0, (var*)0, char(0));
+				tuple& tpl=*vtpl.data.heap.tuple.ptuple;
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') tpl.push_back(parse_vs_slice(vs, k, k+1));
+					else if (x=='[' || x=='(' || x=='<' || x=='{') {
+						stack<char> stk;
+						stk.push(x);
+						m=k;
+						while (! stk.empty()) {
+							++k;
+							if (k==e) assert(false);//if a legal repr, stk should be empty now
+							t=stk.top();
+							y=vs[k][0];
+							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+							else if (t=='[' && y==']') stk.pop();
+							else if (t=='(' && y==')') stk.pop();
+							else if (t=='<' && y=='>') stk.pop();
+							else if (t=='{' && y=='}') stk.pop();
+							else {} //pass
+						}
+						tpl.push_back(parse_vs_slice(vs, m, k+1));
+					} //strange that it do to run here
+				}
+				return vtpl;
+			} else if (a=='<' && b=='>') {
+				var vst((var*)0, (var*)0, int(0));
+				set& st=*vst.data.heap.set.pset;
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') st.insert(parse_vs_slice(vs, k, k+1));
+					else if (x=='[' || x=='(' || x=='<' || x=='{') {
+						stack<char> stk;
+						stk.push(x);
+						m=k;
+						while (! stk.empty()) {
+							++k;
+							if (k==e) assert(false);//if a legal repr, stk should be empty now
+							t=stk.top();
+							y=vs[k][0];
+							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+							else if (t=='[' && y==']') stk.pop();
+							else if (t=='(' && y==')') stk.pop();
+							else if (t=='<' && y=='>') stk.pop();
+							else if (t=='{' && y=='}') stk.pop();
+							else {} //pass
+						}
+						st.insert(parse_vs_slice(vs, m, k+1));
+					} //strange that it do to run here
+				}
+				return vst;
+			} else if (a=='{' && b=='}') {
+				var vdct((var*)0, (var*)0, float(0));
+				dict& dct=*vdct.data.heap.dict.pdict;
+				for(k=i+1; k<e; ++k) {
+					x=vs[k][0];
+					if (x=='i' || x=='f' || x=='s') {
+						var key(parse_vs_slice(vs, k, k+1));
+						++k;
+						x=vs[k][0];
+						assert(k<e);
+						if (x=='i' || x=='f' || x=='s') {
+							dct.insert(pair<var, var>(key, parse_vs_slice(vs, k, k+1)));
+						} else if (x=='[' || x=='(' || x=='<' || x=='{') {
+							stack<char> stk;
+							stk.push(x);
+							m=k;
+							while (! stk.empty()) {
+								++k;
+								if (k==e) assert(false);//if a legal repr, stk should be empty now
+								t=stk.top();
+								y=vs[k][0];
+								if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
+								else if (t=='[' && y==']') stk.pop();
+								else if (t=='(' && y==')') stk.pop();
+								else if (t=='<' && y=='>') stk.pop();
+								else if (t=='{' && y=='}') stk.pop();
+								else {} //pass
+							}
+							dct.insert(pair<var, var>(key, parse_vs_slice(vs, m, k+1)));
+						} //strange that it do to run here
+					}
+				}
+				return vdct;
+			}// else for_in(x, i, j+1, 1) cout<<"debug: vs["<<x<<"]="<<vs[x]<<endl;
+		}
+		return var();
+	}
+	
 	var& smart_clone_from_another_var(const var& r) {//often used by copy constructions
-		var& me=*this;
+		macro_declare_me();
 		if (this==&r) { msg(why you give me the same address?); return me; }
 		codemask(msg(before smart_clone_from_another_var);peek();/* msg(target is);r.peek(); */)
 		
@@ -515,6 +668,11 @@ private:
 	}
 	
 public://funcs
+	//in member funcions of var, there is no need new var manually, because if forget
+	//to delete it, the obj in heap if it points to , will remain not been deleted
+	//creating a var obj in stack is better, have fun using copy constructors :)
+	//just treat var as an built-in type like int
+	
 	//memory utils
 	void mmclean(){//clean tmp mamory links, remove those whose target is empty
 		mmgr.auto_clean();//call this func for a period of run time will save heap memory
@@ -907,7 +1065,7 @@ public://funcs
 	//now is the funcs that let var change its original type to a new one
 	var& aslist() {//change itself to a list
 		//if it is a list before, nothing to do
-		var& me=*this;
+		macro_declare_me();
 		if (is_list()) return me;
 		else {
 			//TODO
@@ -915,7 +1073,7 @@ public://funcs
 		}
 	}
 	var& asstr() {//change itself to a str
-		var& me=*this;
+		macro_declare_me();
 		if (is_str()) return me;
 		else {
 			//TODO
@@ -923,7 +1081,7 @@ public://funcs
 		}
 	}
 	var& astuple() {//change itself to a str
-		var& me=*this;
+		macro_declare_me();
 		if (is_tuple()) return me;
 		else {
 			//TODO
@@ -931,7 +1089,7 @@ public://funcs
 		}
 	}
 	var& asset() {//change itself to a str
-		var& me=*this;
+		macro_declare_me();
 		if (is_set()) return me;
 		else {
 			//TODO
@@ -939,7 +1097,7 @@ public://funcs
 		}
 	}
 	var& asdict() {//change itself to a str
-		var& me=*this;
+		macro_declare_me();
 		if (is_dict()) return me;
 		else {
 			//TODO
@@ -1160,7 +1318,7 @@ public://funcs
 	}
 	
 	//debug utils
-	var& peek(ostream& out=cout) {
+	var& peek(ostream& out=cout) {//to see what is in memory
 		var& v=*this;
 		out<<"[var @ "<<this<<" data: "
 			<<hex<<data.dwords.low4<<" "<<hex<<data.dwords.high4<<" attr: "
@@ -1170,29 +1328,106 @@ public://funcs
 		return v;
 	}
 	
-	var& dump(ostream& out=cout, bool newline=true) {
+	var& print(ostream& out=cout, bool newline=true) {//simply print its repr
 		var& v=*this;
 		out<<v.repr();
 		if (newline) out<<endl;
 		return v;
 	}
 	
-	//in member funcions of var, there is no need new var manually, because if forget
-	//to delete it, the obj in heap if it points to , will remain not been deleted
-	//creating a var obj in stack is better, have fun using copy constructors :)
-	//just treat var as an built-in type like int
+	var& dump(ostream& out=cout, bool newline=false) {//formatted print its json
+		var& v=*this;
+		out<<tojson();
+		if (newline) out<<endl;
+		return v;
+	}
 	
+	string tojson() {//convert to formatted json
+		return parser(repr()).dumps();
+	}
 	
 	// methods for sequences
-	list split() {
-		assert(is_sequence());
-		// todo init python like str
+	var split(const var& by) {
+		assert(is_sequence());//use the split tamplate function
+		// macro_declare_me();
+		// macro_declare_ptr_ref_heap_list();
+		var lst((var*)0, (var*)0);
 		
+		return lst;
+	}
+	
+	var& join(var& by) {//a join(b) or b.join(a)
+		//string.join(list)
+		//or list.join(string)
+		assert(is_sequence());
+		macro_declare_me();
+		return me;
 	}
 	
 	// list opertions
-	var& join() {
-		assert(is_sequence());
+	
+	var& append(const var& elem) {//append a elem to the end of a list
+		assert(is_list());
+		macro_declare_me();
+		macro_declare_ptr_ref_heap_list();
+		l.push_back(elem);
+		return me;
+	}
+	
+	var& extend(var& rlist) {//extend a list with another list
+		assert(is_list());
+		macro_declare_me();
+		macro_declare_ptr_ref_heap_list();
+		l.insert(l.end(), rlist.reflist().begin(), rlist.reflist().end());
+		return me;
+	}
+	
+	var& push(const var& elem) {//push a elem to the front of a list
+		assert(is_list());
+		macro_declare_me();
+		macro_declare_ptr_ref_heap_list();
+		l.insert(l.begin(), elem);
+		return me;
+	}
+	
+	var& pop(var* hold=0) {//pop a elem from the front of a list
+		assert(is_list());
+		macro_declare_me();
+		macro_declare_ptr_ref_heap_list();
+		if (l.size()>0) {
+			if (hold) *hold=l.front();
+			l.erase(l.begin());
+		}
+		return me;
+	}
+	
+	var& sort() {
+		assert(is_list());
+		macro_declare_me();
+		macro_declare_ptr_ref_heap_list();
+		std::sort(l.begin(), l.end()/* , std::less<var>() */);
+		return me;
+	}
+	
+	var& rsort() {
+		assert(is_list());
+		macro_declare_me();
+		macro_declare_ptr_ref_heap_list();
+		std::sort(l.begin(), l.end(), std::greater<var>());
+		return me;
+	}
+	
+	var& clone(var& from) {//let's clone from another var
+		macro_declare_me();//will cause deep copy
+		return me;
+	}
+	
+	var tosorted() {
+		assert(is_list());
+		macro_declare_me();
+		macro_declare_ptr_ref_heap_list();
+		macro_new_var_list(lst);
+		return lst.clone(me).sort();
 	}
 	
 	// string replace() {//return a new string, allocate in heap, managed by this ptr
@@ -1234,14 +1469,7 @@ public://funcs
 		return false;
 	}
 	
-	var& extend(var rlist) {//extend a list with another list
-		// list& l=lst();
-		//TODO
-		return *this;
-	}
-	var tosorted() {
-		return var();
-	}
+	
 	void each() {}//for each
 	void foreach() {}
 	// void map(UnaryFunction) {	id, val, }//for list
@@ -1271,7 +1499,7 @@ public://funcs
 		char parse(vector<string>* result=0, bool show=true, ostream* pout=0, string* errmsg=0) {//check the type
 			size_t i=0, l=strlen(p);
 			while (i<l && isspace(p[i]) || iscntrl(p[i])) ++i;
-			if (!strchr("{[<(-.0123456789'", p[i])) return 'N';//normal string
+			if (!strchr("{[<(-+e.0123456789'", p[i])) return 'N';//normal string
 			char t;
 			bool succ=anasys(p, t, result, show, pout, errmsg);
 			if (!succ) {
@@ -1289,12 +1517,19 @@ public://funcs
 			return anasys(p, t, 0, false, 0, errmsg);
 		}
 		
+		string dumps() {
+			ostringstream oss;
+			char t;
+			anasys(p, t, 0, true, &oss, 0);
+			return oss.str();
+		}
+		
 		char expect(char c, const char*p) {
 			size_t l=strlen(p);
 			for_tn(size_t, i, l) {
 				char m=p[i];
 				if (m=='n') {
-					if (isdigit(c) || c=='-' || c=='.') return m;
+					if (isdigit(c) || c=='-' || c=='.' || c=='+' || c=='e') return m;
 				} else if (m=='s') {//str
 					if (c=='"' || c=='\'') return m;
 				} else if (m==c) {
@@ -1377,7 +1612,7 @@ public://funcs
 					} else pos='E';
 				} else if (t=='n') {
 					j=i;
-					while(j<length && strchr("-.0123456789", p[j])) ++j;
+					while(j<length && strchr("-.+0123456789e", p[j])) ++j;
 					tmp=string(p+i, p+j);
 					const char* s=tmp.c_str();
 					if (strchr(s, '.')) {
@@ -1420,7 +1655,7 @@ public://funcs
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (pos!='V') if (show && pout) (*pout)<<tabs(stk.size());
 						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
@@ -1451,7 +1686,7 @@ public://funcs
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (pos!='V') if (show && pout) (*pout)<<tabs(stk.size());
 						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
@@ -1482,7 +1717,7 @@ public://funcs
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (pos!='V') if (show && pout) (*pout)<<tabs(stk.size());
 						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
@@ -1517,7 +1752,7 @@ public://funcs
 						++i;
 					} else if (m=='{') {
 						if (vs) vs->push_back(char2str(tmp, m));
-						if (pos!='V') if (pout) (*pout)<<tabs(stk.size());
+						if (pos!='V') if (show && pout) (*pout)<<tabs(stk.size());
 						if (show && pout) (*pout)<<c<<endl;
 						pos='K';
 						stk.push(m);
@@ -1529,7 +1764,7 @@ public://funcs
 						++i;
 					} else {
 						if (m!='n' && m!='s') {
-							if (!dictflag[stk.size()]) if (pout) (*pout)<<tabs(stk.size());
+							if (!dictflag[stk.size()]) if (show && pout) (*pout)<<tabs(stk.size());
 							if (show && pout) (*pout)<<c<<endl;
 							pos='B';
 							if (vs) vs->push_back(char2str(tmp, m));
@@ -1571,151 +1806,11 @@ public://funcs
 		} else assert(false);
 	}
 	
-	var& append(const var& r) {//append a node to the end of a list
-		assert(is_list());
-		macro_declare_ptr_ref_heap_list();
-		l.push_back(r);
-		return *this;
-	}
+	
+	
 	
 private:
-	void init_from_vs(vector<str>& vs) {
-		assert(is_undefined());
-		size_t l=vs.size();
-		if (l==0) return;//impossible
-		smart_clone_from_another_var(parse_vs_slice(vs, 0, l));
-	}
 	
-	var parse_vs_slice(vector<str>& vs, size_t begin, size_t end) {//parse from begin, to end of vs
-		size_t l=end-begin, i=begin, e=end, j=e-1, k, m, n;
-		assert(l>0);//at least 1
-		char t, a, b, x, y;
-		if (l==1) {
-			t=vs[i][0];
-			if (t=='i') {
-				return var(atoi(vs[i].c_str()+2));
-			} else if (t=='f') {
-				return var(atof(vs[i].c_str()+2));
-			} else if (t=='s') {
-				return var(vs[i].c_str()+2);
-			} else assert(false);
-		} else {
-			a=vs[i][0];
-			b=vs[j][0];
-			if (a=='[' && b==']') {
-				var lst((var*)0, (var*)0);
-				for(k=i+1; k<e; ++k) {
-					x=vs[k][0];
-					if (x=='i' || x=='f' || x=='s') lst.append(parse_vs_slice(vs, k, k+1));
-					else if (x=='[' || x=='(' || x=='<' || x=='{') {
-						stack<char> stk;
-						stk.push(x);
-						m=k;
-						while (! stk.empty()) {
-							++k;
-							if (k==e) assert(false);//if a legal repr, stk should be empty now
-							t=stk.top();
-							y=vs[k][0];
-							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
-							else if (t=='[' && y==']') stk.pop();
-							else if (t=='(' && y==')') stk.pop();
-							else if (t=='<' && y=='>') stk.pop();
-							else if (t=='{' && y=='}') stk.pop();
-							else {} //pass
-						}
-						lst.append(parse_vs_slice(vs, m, k+1));
-					} //strange that it do to run here
-				}
-				return lst;
-			} else if (a=='(' && b==')') {
-				var vtpl((var*)0, (var*)0, char(0));
-				tuple& tpl=*vtpl.data.heap.tuple.ptuple;
-				for(k=i+1; k<e; ++k) {
-					x=vs[k][0];
-					if (x=='i' || x=='f' || x=='s') tpl.push_back(parse_vs_slice(vs, k, k+1));
-					else if (x=='[' || x=='(' || x=='<' || x=='{') {
-						stack<char> stk;
-						stk.push(x);
-						m=k;
-						while (! stk.empty()) {
-							++k;
-							if (k==e) assert(false);//if a legal repr, stk should be empty now
-							t=stk.top();
-							y=vs[k][0];
-							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
-							else if (t=='[' && y==']') stk.pop();
-							else if (t=='(' && y==')') stk.pop();
-							else if (t=='<' && y=='>') stk.pop();
-							else if (t=='{' && y=='}') stk.pop();
-							else {} //pass
-						}
-						tpl.push_back(parse_vs_slice(vs, m, k+1));
-					} //strange that it do to run here
-				}
-				return vtpl;
-			} else if (a=='<' && b=='>') {
-				var vst((var*)0, (var*)0, int(0));
-				set& st=*vst.data.heap.set.pset;
-				for(k=i+1; k<e; ++k) {
-					x=vs[k][0];
-					if (x=='i' || x=='f' || x=='s') st.insert(parse_vs_slice(vs, k, k+1));
-					else if (x=='[' || x=='(' || x=='<' || x=='{') {
-						stack<char> stk;
-						stk.push(x);
-						m=k;
-						while (! stk.empty()) {
-							++k;
-							if (k==e) assert(false);//if a legal repr, stk should be empty now
-							t=stk.top();
-							y=vs[k][0];
-							if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
-							else if (t=='[' && y==']') stk.pop();
-							else if (t=='(' && y==')') stk.pop();
-							else if (t=='<' && y=='>') stk.pop();
-							else if (t=='{' && y=='}') stk.pop();
-							else {} //pass
-						}
-						st.insert(parse_vs_slice(vs, m, k+1));
-					} //strange that it do to run here
-				}
-				return vst;
-			} else if (a=='{' && b=='}') {
-				var vdct((var*)0, (var*)0, float(0));
-				dict& dct=*vdct.data.heap.dict.pdict;
-				for(k=i+1; k<e; ++k) {
-					x=vs[k][0];
-					if (x=='i' || x=='f' || x=='s') {
-						var key(parse_vs_slice(vs, k, k+1));
-						++k;
-						x=vs[k][0];
-						assert(k<e);
-						if (x=='i' || x=='f' || x=='s') {
-							dct.insert(pair<var, var>(key, parse_vs_slice(vs, k, k+1)));
-						} else if (x=='[' || x=='(' || x=='<' || x=='{') {
-							stack<char> stk;
-							stk.push(x);
-							m=k;
-							while (! stk.empty()) {
-								++k;
-								if (k==e) assert(false);//if a legal repr, stk should be empty now
-								t=stk.top();
-								y=vs[k][0];
-								if (y=='[' || y=='(' || y=='<' || y=='{') stk.push(y);
-								else if (t=='[' && y==']') stk.pop();
-								else if (t=='(' && y==')') stk.pop();
-								else if (t=='<' && y=='>') stk.pop();
-								else if (t=='{' && y=='}') stk.pop();
-								else {} //pass
-							}
-							dct.insert(pair<var, var>(key, parse_vs_slice(vs, m, k+1)));
-						} //strange that it do to run here
-					}
-				}
-				return vdct;
-			}// else for_in(x, i, j+1, 1) cout<<"debug: vs["<<x<<"]="<<vs[x]<<endl;
-		}
-		return var();
-	}
 };
 
 
@@ -1734,7 +1829,7 @@ var set(var* begin=0, var* end=0, int flag=0) { return var(begin, end, flag); }
 var dict(var* begin=0, var* end=0, float flag=.0) { return var(begin, end, flag); }
 
 var sorted(var& v) { 
-	return v.tosorted(); 
+	return v.tosorted();
 }
 
 size_t len(var& v) { 
@@ -1788,5 +1883,5 @@ var eval(const char* s) {
 #undef macro_declare_ptr_ref_stack_set
 #undef macro_declare_ptr_ref_heap_dict
 #undef macro_declare_ptr_ref_stack_dict
-
+#undef macro_declare_me
 #endif /* PYPP_HPP_BY_JADESOUL */

@@ -201,5 +201,52 @@ jtest(demo_print_dict_in_heap,
 	cout<<x<<endl<<y<<endl;
 )
 
+jtest(demo_eval,
+	var s;
+	s=LIST(1,2,3,  -4.234,9345   ,'你好',"我也好");
+	s.dump().peek();
+	s=TUPLE(1,2,.2,3,'你好','你好');
+	s.dump().peek();
+	s=SET(1,2,.2,3,3,4,4,5,'你好','你好');
+	s.dump().peek();
+	s=DICT(
+		'name':'jadesoul',
+		'age':27,
+		'性别':'男',
+		123:456
+	);
+	s.dump().peek();
+	
+	s=VAR(
+		{
+			'campany':'gbsoft',
+			'leafer':'jadesoul',
+			'list':[1,2,3 , 4.1, 4.1, 'hello', 'hello', 1],
+			'tuple':(1,2,3 , 4.1, 4.1, 'hello', 'hello', 1),
+			'set':<1,2,3 , 4.1, 4.1, 'hello', 'hello', 1>,
+			'dict':{'nice':'nice', 1:1}
+		}
+	);
+)
 
 
+jtest(demo_pprint,
+	string s="[1,2,3]";
+	var v=eval(s);
+	v.dump().append(2).dump();
+	s="([1,2,3,4,{'a':1, 'b':2, 3:3}, (1,2,3), <1,2,2>])";
+	v=eval(s);
+	v.pprint();
+)
+
+jtest(demo_json,
+	string s, l;
+	char buf[4096];
+	fstream fs("test.json");
+	while (fs.getline(buf, 4096)) {
+		s+=buf;
+	}
+	var v=eval(s);
+	v.dump();
+	cin>>s;
+)
