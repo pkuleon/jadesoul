@@ -34,20 +34,50 @@ string tabs(int depth) {
 	return tmp;
 }
 
+char opposite(char c) {
+	if (c=='(') return ')';
+	if (c=='<') return '>';
+	if (c=='[') return ']';
+	if (c=='{') return '}';
+	if (c==')') return '()';
+	if (c=='>') return '<';
+	if (c==']') return '[';
+	if (c=='}') return '{';
+	assert(false);
+	return ' ';
+}
+
 char expect(char c, const char*p) {
 	uint l=strlen(p);
 	for_tn(uint, i, l) {
 		char m=p[i];
 		if (m=='n') {
 			if (isdigit(c) || c=='-' || c=='.') return m;
+		} else if (m=='f') {
+			if (isdigit(c) || c=='-' || c=='.') return m;
+		} else if (m=='i') {
+			if (isdigit(c) || c=='-') return m;
 		} else if (m=='s') {//str
 			if (c=='"' || c=='\'') return m;
+		} else if (m=='S') {//end-of-str
+			if (c=='"' || c=='\'') return m;
+		} else if (m==',') {
+			if (c==',') return m;
 		} else if (m==c) {
 			return m;
 		}
 	}
+	cout<<"expect: "<<p<<" but get: "<<c<<endl;
 	return -1;
 }
+
+//move i to the next expected char
+// #define move_i_to_next_expected\
+// if (nextexp!=0) {\
+	// while(i<length && (isspace(p[i]) || iscntrl(p[i]))) ++i;\
+	// if (strchr(nextexp, p[i])) { cout<<nextexp<<" expected, but not found"<<endl; return false; }\
+	// nextexp=0;\
+// }\
 
 bool anasys(const char* p) {
 	size_t length=strlen(p), i=0, j=0;
@@ -66,17 +96,20 @@ bool anasys(const char* p) {
 	for_n(i, 1000) dictflag[i]=false;
 	while(! stk.empty()) {
 		t=stk.top();
-		if (i==length && t=='\0') { stk.pop(); break; }
-		if (i>length) { msg(i got out of range);break; }
+		if (i==length && t=='\0') return true;
+		if (i>length) { msg(i got out of range);return false; }
 		c=p[i];
+		// cout<<"d="<<stk.size()<<" c="<<c<<" top="<<stk.top()<<" pos="
+		//	<<pos<<boolalpha<<" "<<dictflag[stk.size()]<<" i="<<i<<" j="<<j<<endl;
+		
 		if (isspace(c) || iscntrl(c)) {
 			if (t!='s' && t!='n') ++i;
-			continue;
 		} else if (t=='\0') {
 			if (pos=='B') nextexp="{[(<ns";
 			if (pos=='E') nextexp="\0";
 			m=expect(c, nextexp);
-			if (m==-1) break;
+			if (m==-1) return false;
+			else if (m=='\0') return true;
 			else {
 				pos='B';
 				if (m!='n' && m!='s') cout<<tabs(stk.size())<<c<<endl;
@@ -87,30 +120,36 @@ bool anasys(const char* p) {
 			j=i;
 			m=p[i-1];
 			while(j<length && p[j]!=m) ++j;
-			if (j==length) { msg(bad str); break; }
+			if (j==length) { msg(bad str); return false; }
 			if (pos!='V') cout<<tabs(stk.size()-1);
 			cout<<(string("'")+string(p+i, p+j)+"'");
 			stk.pop();
 			i=j+1;
+			
 			if (stk.top()=='{') {
 				if (dictflag[stk.size()]==false) pos='M';
 				else pos='E';
 			} else pos='E';
 		} else if (t=='n') {
 			j=i;
+			// cout<<"num begin: "<<(p+i)<<endl;
 			while(j<length && strchr("-.0123456789", p[j])) ++j;
 			tmp=string(p+i, p+j);
+			// cout<<"tmp: "<<tmp<<endl;
 			const char* s=tmp.c_str();
 			if (strchr(s, '.')) {
 				if (pos!='V') cout<<tabs(stk.size()-1);
-				cout<<atof(s);
+				cout/* <<"float: " */<<atof(s);
 			} else {
 				if (pos!='V') cout<<tabs(stk.size()-1);
-				cout<<atoi(s);
+				cout/* <<"int: " */<<atoi(s);
 			}
 			stk.pop();
-			i=j;
+			i=j;	
+			
 			if (stk.top()=='{') {
+				// cout<<"d="<<stk.size()<<" c="<<c<<" top="<<stk.top()<<" pos="
+				// <<pos<<boolalpha<<" "<<dictflag[stk.size()]<<" i="<<i<<" j="<<j<<endl;
 				if (dictflag[stk.size()]==false) pos='M';
 				else pos='E';
 			} else pos='E';
@@ -118,7 +157,7 @@ bool anasys(const char* p) {
 			if (pos=='B') nextexp="{[(<ns]";
 			if (pos=='E') nextexp=",]";
 			m=expect(c, nextexp);
-			if (m==-1) break;
+			if (m==-1) return false;
 			else if (m==']') {
 				stk.pop();
 				cout<<endl<<tabs(stk.size())<<c;
@@ -145,7 +184,7 @@ bool anasys(const char* p) {
 			if (pos=='B') nextexp="{[(<ns)";
 			if (pos=='E') nextexp=",)";
 			m=expect(c, nextexp);
-			if (m==-1) break;
+			if (m==-1) return false;
 			else if (m==')') {
 				stk.pop();
 				cout<<endl<<tabs(stk.size())<<c;
@@ -172,7 +211,7 @@ bool anasys(const char* p) {
 			if (pos=='B') nextexp="{[(<ns>";
 			if (pos=='E') nextexp=",>";
 			m=expect(c, nextexp);
-			if (m==-1) break;
+			if (m==-1) return false;
 			else if (m=='>') {
 				stk.pop();
 				cout<<endl<<tabs(stk.size())<<c;
@@ -201,7 +240,7 @@ bool anasys(const char* p) {
 			if (pos=='V') nextexp="{[(<ns";//value can be any thing
 			if (pos=='E') nextexp=",}";
 			m=expect(c, nextexp);
-			if (m==-1) break;
+			if (m==-1) return false;
 			else if (m=='}') {
 				dictflag[stk.size()]=false;
 				stk.pop();
@@ -234,16 +273,13 @@ bool anasys(const char* p) {
 			}
 		}
 	}
-	if (m==-1) cout<<"expect '"<<(nextexp[0]?nextexp:"\\0")<<"' for 0x"<<hex<<int(t)<<":'"<<t<<'\'';
-	cout<<endl;
 	return stk.empty();
 }
 
-int main () {
-	// anasys("[1,2,3,4]");
-	anasys(" 34234 'asdasdalksdjfl asdkfla sdjf las dfls dlksd'");
 
-	// cout<<boolalpha<<endl<<anasys("{1.7878:(-1.867868,2,3,4),3:{'hi':2,'jadesoul':{1:2,3:{-1:     2,3.2:[1,2,'hello'],  5:'asdas' },5:{1:  2,3  :{1:2,3 :4,5  :6},5:6}},5:6},5:6}")<<endl;
+int main () {
+	// cout<<boolalpha<<anasys("[1,2,3,4]")<<endl;
+	cout<<boolalpha<<endl<<anasys("{1.7878:(-1.867868,2,3,4),3:{'hi':2,'jadesoul':{1:2,3:{-1:     2,3.2:[1,2,'hello'],  5:'asdas' },5:{1:  2,3  :{1:2,3 :4,5  :6},5:6}},5:6},5:6}")<<endl;
 }
 
 

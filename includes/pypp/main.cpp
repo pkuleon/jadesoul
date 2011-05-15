@@ -15,7 +15,8 @@
 
 
 int main () {
-	var s=eval("hi");
-	s.dump(cout, true).peek().dump(cout, true);
+	// var s=eval("[1,<1,3,(1,[2,3,4],3)>,{'age':2, 'set':<1,2,3,>, 'tuple':(1,2,3)},'hi', 1232.213]  ");
+	var s=eval("[1,2,3]");
+	s.dump(cout, true).peek();
 }
 

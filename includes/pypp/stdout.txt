@@ -7,7 +7,7 @@ Microsoft (R) Incremental Linker Version 9.00.21022.08
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 /out:main.exe 
-/out:main.cpp.exe 
+/out:E:\svnprojects-linux\jadesoul\includes\pypp\main.cpp.exe 
 libboost_python-vc90-mt-s.lib 
 gtest.lib 
 python26.lib 
@@ -16,10 +16,24 @@ main.obj
 :
 编译成功，开始运行...{
 [ mmgr: when init ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
-undefined
-[var @ 0012FF24 data: 0 0 attr: 00000000 00000000 00000000 00000000]
-undefined
-[ mmgr: before delete ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
+[
+	1,
+	2,
+	3
+]
+vs size=5
+vs: [
+vs: i 1
+vs: i 2
+vs: i 3
+vs: ]
+in init_as_str increase the heapstr 003D1FA0 refcnt: 1=0+1
+good
+[var @ 0012FF24 data: 3d1fa0 3d1e78 attr: 00000010 00000001 00000000 00000000]
+in ~var release a heapstr refernce, 003D1FA0 -> 003D1E78 refcnt: 1-1=0
+in heapobj free(): free heapobj target with p=003D1E78 refcnt=0
+[ mmgr: before delete ]  str: 1 list: 0 tuple: 0 set: 0 dict: 0
+delete a heapobj in strlnk
 [ mmgr: after delete ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
 } 运行完毕
 :

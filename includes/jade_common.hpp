@@ -7,8 +7,9 @@
 //this way a lot of time will be saved during compiling
 
 //standard libaries
-#include <cstdio>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <cstdarg>
 #include <cassert>
 #include <ctime>
