@@ -15,10 +15,12 @@
 
 
 int main () {
-	var s=LIST(-789,
-	1e-12);
-	s.print().append(2).print().sort().print().rsort().print()
-		.push(0).print().pop().print().extend(LIST(5,5,5)).print();
-	cout<<(sizeof(var));
+	// var s=LIST(-789,
+	// 1e-12);
+	// s.print().append(2).print().sort().print().rsort().print()
+		// .push(0).print().pop().print().extend(LIST(5,5,5)).print();
+	// cout<<(sizeof(var));
+	var a=LIST(1,2,3,[4,5,'ahsdfhasjdh']);
+	a.dump();
 }
 

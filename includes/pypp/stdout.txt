@@ -16,14 +16,17 @@ main.obj
 :
 编译成功，开始运行...{
 [ mmgr: when init ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
-[-789, 1]
-[-789, 1, 2]
-[1, 2, -789]
-[-789, 2, 1]
-[0, -789, 2, 1]
-[-789, 2, 1]
-[-789, 2, 1, 5, 5, 5]
-16[ mmgr: before delete ]  str: 0 list: 2 tuple: 0 set: 0 dict: 0
+[
+	1,
+	2,
+	3,
+	[
+		4,
+		5,
+		'ahsdfhasjdh'
+	]
+]
+[ mmgr: before delete ]  str: 1 list: 2 tuple: 0 set: 0 dict: 0
 [ mmgr: after delete ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
 } 运行完毕
 :
