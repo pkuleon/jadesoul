@@ -20,7 +20,13 @@ int main () {
 	// s.print().append(2).print().sort().print().rsort().print()
 		// .push(0).print().pop().print().extend(LIST(5,5,5)).print();
 	// cout<<(sizeof(var));
-	var a=LIST(1,2,3,[4,5,'ahsdfhasjdh']);
-	a.dump();
+	
+	// var a=LIST(1,2,3,[4,5,'ahsdfhasjdh']);
+	// a.dump();
+	
+	var a=123;
+	var b="abc";
+	var c=list().append(a).append(b);
+	c.dump();
 }
 

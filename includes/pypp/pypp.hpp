@@ -1813,11 +1813,39 @@ private:
 	
 };
 
+class shit {};//a helper class, its type is usefull, beside that it is useless
 
 //useful init functions, often used to get a empty var
 var str(const char* p=0) { return var(p); }
 var str(const char* begin, const char* end) { return var(begin, end); }
 var list(var* begin=0, var* end=0) { return var(begin, end); }
+var list(var a, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, var t, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, var t, var u, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, var t, var u, var v, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, var t, var u, var v, var w, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, var t, var u, var v, var w, var x, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, var t, var u, var v, var w, var x, var y, shit end=shit()) { return var(&a, (var*)&end); }
+var list(var a, var b, var c, var d, var e, var f, var g, var h, var i, var j, var k, var l, var m, var n, var o, var p, var q, var r, var s, var t, var u, var v, var w, var x, var y, var z, shit end=shit()) { return var(&a, (var*)&end); }
+
 var tuple(var a, var b) { return var(a, b); }
 var tuple(var a, var b, var c) { return var(a, b, c); }
 var tuple(var a, var b, var c, var d) { return var(a, b, c, d); }
