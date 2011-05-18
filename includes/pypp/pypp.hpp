@@ -1883,6 +1883,8 @@ var eval(const char* s) {
 #define STR(...) var(#__VA_ARGS__)
 #define S STR
 
+#define STRING(...) string(#__VA_ARGS__)
+
 #define LIST(...) eval(string("[")+#__VA_ARGS__+"]")
 #define L LIST
 
