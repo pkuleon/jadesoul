@@ -10,7 +10,7 @@
  * Written In: Peking University, beijing, China
  */
 
-#define debug
+// #define debug
 #define googletest
 #include "pypp.hpp"
 
@@ -169,7 +169,6 @@ jtest(demo_print_set_in_heap,
 	cout<<s1<<endl<<s2<<endl;
 )
 
-*/
 
 jtest(demo_print_dict_in_stack,
 	var a[]={
@@ -236,7 +235,7 @@ jtest(demo_pprint,
 	v.dump().append(2).dump();
 	s="([1,2,3,4,{'a':1, 'b':2, 3:3}, (1,2,3), <1,2,2>])";
 	v=eval(s);
-	v.pprint();
+	v.print();
 )
 
 jtest(demo_json,
@@ -247,6 +246,40 @@ jtest(demo_json,
 		s+=buf;
 	}
 	var v=eval(s);
-	v.dump();
-	cin>>s;
+	// v.dump();
 )
+
+jtest(demo_sort1,
+	int a=2;
+	float b=1.1;
+	string c="hi";
+	var v=list(1, a, b, c);
+	v
+		.dump()
+		.print()
+		.sort()
+		.print()
+		.rsort()
+		.print()
+	;
+)
+
+jtest(demo_sort2,
+	var v=range(10);
+	v.print();
+)
+*/
+
+
+jtest(demo_sort2,
+	int a=1;
+	float b=2;
+	string c="hi";
+	var d=list(a, b, c, 4);
+	var e=tuple(a, b, "oh");
+	var f=list(d, e, 7);
+	f.dump();
+)
+
+// a['1:2:3']
+

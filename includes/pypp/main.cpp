@@ -26,7 +26,9 @@ int main () {
 	
 	var a=123;
 	var b="abc";
-	var c=list().append(a).append(b);
-	c.dump();
+	var x=1.1;
+	var c=list(a, b, x);
+	c.append(123);
+	c.print();
 }
 

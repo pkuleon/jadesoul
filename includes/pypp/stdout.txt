@@ -16,10 +16,7 @@ main.obj
 :
 编译成功，开始运行...{
 [ mmgr: when init ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
-[
-	123,
-	'abc'
-]
+[123, 'abc', 1.1, 123]
 [ mmgr: before delete ]  str: 1 list: 1 tuple: 0 set: 0 dict: 0
 [ mmgr: after delete ]  str: 0 list: 0 tuple: 0 set: 0 dict: 0
 } 运行完毕

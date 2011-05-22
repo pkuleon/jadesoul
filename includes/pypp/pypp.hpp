@@ -1806,12 +1806,23 @@ public://funcs
 		} else assert(false);
 	}
 	
+	//for ranges
+	var(range r) {
+		vec_int vi=r.to_vec();
+		init_as_undefined();
+		init_as_list();
+		macro_declare_ptr_ref_heap_list();
+		for_iter(it, vec_int, vi) l.push_back(*it);
+	}
 	
-	
-	
+	//for slices
+	var operator [](const range& r) {
+		
+	}
 private:
-	
 };
+
+
 
 class shit {};//a helper class, its type is usefull, beside that it is useless
 
@@ -1865,7 +1876,7 @@ size_t len(var& v) {
 }
 
 string repr(var& v) {
-	return string();
+	return v.repr();
 }
 
 var eval(const string& s) {
@@ -1901,7 +1912,6 @@ var eval(const char* s) {
 // var(parser(#expr))
 // var("asdasdl")
 #define R(expr) range(#expr)
-
 
 #undef macro_declare_ptr_ref_heap_str
 #undef macro_declare_ptr_ref_stack_str
