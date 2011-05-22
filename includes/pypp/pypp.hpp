@@ -4,7 +4,7 @@
  * File: pypp.hpp
  * Description:
  * 		a simple framework to make C++ programming as easy as python
- * 		仅以这两千行代码纪念曾经逝去的那三个美好的通宵
+ * 		仅以这两千行代码纪念那逝去的三个美好的通宵
  *
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * Licensed under the GNU General Public License:
