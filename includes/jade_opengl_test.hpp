@@ -2,7 +2,6 @@
 #define OPENGLTEST_HPP
 
 
-#include <GL/glu.h>
 #include <GL/glut.h>
 #include <string>
 #include <assert.h>
@@ -30,7 +29,7 @@ static void init();
 void keyboard(unsigned char, int, int);
 
 static void display() {
-	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glRotatef(spin_r_y, 1.0, 0.0, 0.0);
 	glRotatef(spin_r_x, 0.0, 1.0, 0.0);
@@ -45,7 +44,7 @@ static void display() {
 
 static void reshape( int w, int h ) {
 	glViewport( 0, 0, w, h );
-	glMatrixMode( GL_PROJECTION );
+	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	/* if(w <= h)
 	        glOrtho(-1.5, 1.5, -1.5*(GLfloat)h/(GLfloat)w, 1.5*(GLfloat)h/(GLfloat)w, -10.0, 10.0);
@@ -53,7 +52,7 @@ static void reshape( int w, int h ) {
 	        glOrtho(-1.5*(GLfloat)w/(GLfloat)h, 1.5*(GLfloat)w/(GLfloat)h, -1.5, 1.5, -10.0, 10.0); */
 	gluPerspective(45.0, (GLfloat)w/(GLfloat)h, 1, 20);
 	gluLookAt(0.0, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-	glMatrixMode( GL_MODELVIEW );
+	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
 
@@ -223,6 +222,7 @@ static void draw() {
 	glEnd();
 	glPopMatrix();
 }
+
 static void init() {
 	glClearColor(0.1, 0.1, 0.1, 0.0);
 	glDisable(GL_LIGHTING);

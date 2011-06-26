@@ -1823,6 +1823,10 @@ public://funcs
 		
 	}
 private:
+	//function implementation
+	class function {
+//		var args;
+	};
 };
 
 

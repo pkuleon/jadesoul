@@ -89,8 +89,6 @@ void show2(const Container& c, const char* deli="", const char* left="{", const 
 */
 
 
-
-
 class smart_parser {
 public:
 	static vec_int list(const string& s) {
@@ -101,6 +99,32 @@ public:
 		return r;
 	}
 };
+
+
+
+class datetime {
+	time_t t;
+public:
+	datetime():t(time(NULL)) {
+		//init as now time
+	}
+	friend ostream& operator <<(ostream& o, datetime& dt) {
+		char str[30];
+		const char* fmt="%Y-%m-%d %H:%M:%S";
+		strftime(str, 30, fmt, localtime(&dt.t));
+		return o<<str;
+	}
+};
+
+void log(const char* fmt, ...) {
+	va_list ap;
+	datetime now;
+	cout<<"LOG : "<<now<<" : ";
+	va_start(ap, fmt);
+	vfprintf(stdout, fmt, ap);
+	va_end(ap);
+	cout<<endl;
+}
 
 
 // #define LIST smart_parser::list

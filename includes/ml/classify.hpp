@@ -12,17 +12,7 @@
  * Written In: Peking University, beijing, China$
  */
 
-#define debug
-#include "jadesoul.hpp"
+#include "ml_types.hpp"
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-using namespace std;
-
-int main () {
-	cout<<"hello, world"<<endl;
-}
 
 #endif /* CLASSIFY_HPP_BY_JADESOUL */

@@ -31,7 +31,11 @@ typedef	signed	long	long	int8;
 typedef	signed	long	long	sint8;
 typedef	signed	long	long	slong;
 typedef	unsigned	long	long	uint8;
+
+//do not work in linux
+#ifdef __MSVC__
 typedef	unsigned	long	long	ulong;
+#endif
 
 //ptr
 typedef void* vptr;

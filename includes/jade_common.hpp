@@ -30,6 +30,7 @@
 #include <typeinfo>
 #include <iterator>
 #include <exception>
+#include <numeric>
 
 //boost libs -- foreach
 //#include <boost/foreach.hpp>
@@ -48,6 +49,8 @@ using std::stringstream;
 using std::ostream;
 using std::istream;
 using std::boolalpha;
+using std::accumulate;
+
 // using std::set;
 // using std::list;
 using std::hex;
@@ -72,8 +75,6 @@ using std::iterator_traits;
 
 typedef std::vector<int> vec_int;
 typedef std::vector<char> vec_char;
-
-
 
 #define AND &&
 #define OR ||

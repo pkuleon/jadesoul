@@ -6,21 +6,20 @@
  * Licensed under the GNU General Public License:
  * http://www.gnu.org/licenses/gpl.html
  * 
- * Date: 2011-05-12 15:19:55.560000
+ * Date: 2011-06-11 13:10:03.823000
  * Written In: Peking University, beijing, China
  */
 
-// #define debug
-#include "pypp.hpp"
+// #define ENABLE_OPENGL_TEST
+#include "jadesoul.hpp"
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
 int main () {
-	int a=1;
-        float b=2;
-        string c="hi";
-        var d=list(a, b, c, 4);
-	d.dump();
-        var e=tuple(a, b, "oh");
-        var f=list(d, e, 7);
-	d.append(1000);
-        f.dump();
+	cout<<"hello, world"<<endl;
 }
+

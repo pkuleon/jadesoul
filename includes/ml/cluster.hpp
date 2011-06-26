@@ -12,17 +12,20 @@
  * Written In: Peking University, beijing, China$
  */
 
-#define debug
-#include "jadesoul.hpp"
+#include "ml_types.hpp"
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-using namespace std;
 
-int main () {
-	cout<<"hello, world"<<endl;
-}
+//TODO
+//´ØµÄ±íÊ¾
+//
+
+		// ptrdiff_t len=end1-begin1;
+
+// sequence<double*> x(begin1, end1);
+// sequence<double*> y(begin2, begin2+len);
+class kmeans {
+	
+};
 
 #endif /* CLUSTER_HPP_BY_JADESOUL */
+

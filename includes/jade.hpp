@@ -30,14 +30,14 @@
 
 #ifdef ENABLE_BOOST_UNIT_TEST
 #   include "jade_all_tests.hpp"
+#endif
+
 
 #ifdef ENABLE_OPENGL_TEST
 #   include "jade_opengl_test.hpp"
-BOOST_AUTO_TEST_CASE(test_opengl) {
-	char * argv[]={"", ""};
-	opengltest::opengltest_main(2, argv);
+int main(int argc, char * argv[]) {
+	return opengltest::opengltest_main(argc, argv);
 }
-#endif
 #endif
 
 //for debug option
