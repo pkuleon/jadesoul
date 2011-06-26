@@ -17,15 +17,15 @@
 *   includes
 ****************************************/
 
-#include "jade_config.hpp"
-#include "jade_types.hpp"
-#include "jade_common.hpp"
-#include "jade_functions.hpp"
-#include "jade_classes.hpp"
-#include "jade_global.hpp"
-#include "jade_utils.hpp"
-#include "jade_algorithm.hpp"
-#include "jade_objectworld.hpp"
+#include "jade/jade_config.hpp"
+#include "jade/jade_types.hpp"
+#include "jade/jade_common.hpp"
+#include "jade/jade_functions.hpp"
+#include "jade/jade_classes.hpp"
+#include "jade/jade_global.hpp"
+#include "jade/jade_utils.hpp"
+#include "jade/jade_algorithm.hpp"
+#include "jade/jade_objectworld.hpp"
 
 
 #ifdef ENABLE_BOOST_UNIT_TEST

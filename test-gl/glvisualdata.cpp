@@ -11,10 +11,10 @@
  */
 
 #define debug
-#include "jade.hpp"
-#include "opengl.hpp"
-using namespace gl;
+#include "gl.hpp"
+#include "ml.hpp"
 
+using namespace gl;
 
 class glvisualdata : public opengl {
 public:
@@ -39,10 +39,10 @@ public:
 	};
 	
 	void buildmenu() {
-		glutAddSubMenu("cluster by k-means", MI_CLUSTER_BY_KMEANS);
-		glutAddSubMenu("cluster by k-medios", MI_CLUSTER_BY_KMEDIOS);
-		glutAddSubMenu("set cluster class count k=2", MI_SET_CLASS_CNT_2);
-		glutAddSubMenu("set cluster class count k=3", MI_SET_CLASS_CNT_3);
+		glutAddMenuEntry("cluster by k-means", MI_CLUSTER_BY_KMEANS);
+		glutAddMenuEntry("cluster by k-medios", MI_CLUSTER_BY_KMEDIOS);
+		glutAddMenuEntry("set cluster class count k=2", MI_SET_CLASS_CNT_2);
+		glutAddMenuEntry("set cluster class count k=3", MI_SET_CLASS_CNT_3);
 		glutAddMenuEntry("save data", MI_SAVE_DATA);
 		glutAddMenuEntry("load data", MI_LOAD_DATA);
 		glutAddMenuEntry("full screen", MI_FULL_SCREEN);

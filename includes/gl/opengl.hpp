@@ -12,10 +12,8 @@
  * Written In: Peking University, beijing, China
  */
 
-#include <cmath>
-// #include <glut.h>
+#include "jade.hpp"
 #include <gl/glut.h>
-using namespace std;
 
 namespace gl {
 

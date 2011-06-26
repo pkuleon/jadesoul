@@ -12,7 +12,7 @@
  * Date: 2011-05-07 13:19:26.984000
  * Written In: Peking University, beijing, China$
  */
- 
+
 /**
   * jadesoul c++ framework
   *
@@ -21,6 +21,7 @@
   */
 
 #include "jade.hpp"	//for basic framework
+#include "gl.hpp"	//for opengl framework
 #include "ml.hpp"	//for machine learning framework
 // #include "graph.hpp"	//for graph framework
 

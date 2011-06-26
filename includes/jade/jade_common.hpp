@@ -43,6 +43,7 @@ using std::vector;
 using std::stack;
 using std::queue;
 using std::pair;
+using std::swap;
 using std::map;
 using std::string;
 using std::stringstream;

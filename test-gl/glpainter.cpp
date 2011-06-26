@@ -11,8 +11,7 @@
  */
 
 #define debug
-#include "jade.hpp"
-#include "opengl.hpp"
+#include "gl.hpp"
 using namespace gl;
 
 
@@ -55,7 +54,7 @@ public:
 
 	glpainter(): opengl(800, 600, "glpainter") {
 		pmode=PM_POINT;
-		pen.set(pal.red);
+		pen.forecolor(pal.red);
 		glPointSize(3);
 	}
 
@@ -134,7 +133,7 @@ public:
 		p.draw(line(point(0, 0), point(800, 600)));
 		p.draw(line(point(0, 150), point(800, 450)));
 		
-		pen.set(c);
+		pen.forecolor(c);
 		
 		pen.draw(ps);
 		pen.draw(ls);

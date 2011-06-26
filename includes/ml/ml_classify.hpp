@@ -12,5 +12,8 @@
  * Written In: Peking University, beijing, China$
  */
 
+#include "ml_types.hpp"
+
+//common classes for classify
 
 #endif /* ML_CLASSIFY_HPP_BY_JADESOUL */

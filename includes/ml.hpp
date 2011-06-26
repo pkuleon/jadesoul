@@ -12,9 +12,11 @@
  * Written In: Peking University, beijing, China$
  */
 
-
-#include "jade.hpp"
 #include "ml/classify.hpp"
 #include "ml/cluster.hpp"
 
 #endif /* ML_HPP_BY_JADESOUL */
+
+
+
+
