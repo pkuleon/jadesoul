@@ -5,6 +5,21 @@
 #ifndef JADE_TYPES_HPP
 #define JADE_TYPES_HPP
 
+//detect OS type
+#if defined( __WIN32__ ) || defined( _WIN32 )
+	#define OS_WIN32
+#elif defined( __APPLE_CC__)
+	#include <TargetConditionals.h>
+	#if (TARGET_OF_IPHONE_SIMULATOR) || (TARGET_OS_IPHONE) || (TARGET_IPHONE)
+		#define OS_IPHONE
+		#define OS_OPENGLES
+	#else
+		#define OS_OSX
+	#endif
+#else
+	#define OS_LINUX
+#endif
+
 //char
 typedef   signed char        int1;
 typedef   signed char        sint1;
@@ -32,8 +47,8 @@ typedef	signed	long	long	sint8;
 typedef	signed	long	long	slong;
 typedef	unsigned	long	long	uint8;
 
-//do not work in linux
-#ifdef __MSVC__
+//do not define in linux
+#ifdef OS_WIN32
 typedef	unsigned	long	long	ulong;
 #endif
 

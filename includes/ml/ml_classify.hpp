@@ -13,6 +13,7 @@
  */
 
 #include "ml_types.hpp"
+#include "ml_classify_bayes.hpp"
 
 //common classes for classify
 

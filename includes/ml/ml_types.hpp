@@ -110,28 +110,55 @@ class datatable {
 	vector<type> data;
 	uint rows;
 	uint cols;
-	void resize(uint row, uint col) {
-		rows=row;
-		cols=col;
-		ulong size=row*col;
-		data=vector<type>(size);
-	}
+	
+	
 public:
-	typedef vector<type>::iterator iterator;
+	typedef typename vector<type>::iterator iterator;
 	datatable(uint row=1, uint col=1) {
 		resize(row, col);
 	}
 	
+	void resize() {
+		ulong size=rows*cols;
+		data=vector<type>(size);
+	}
+	
+	void clear() {
+		resize();
+	}
+	
+	void resize(uint row, uint col) {
+		rows=row;
+		cols=col;
+		resize();
+	}
+	
 	type* begin() {
-		return &data.front()+1;
+		return &data.front();
 	}
 	
 	type* end() {
-		return &data.back();
+		return &data.back()+1;
 	}
-
+	
+	type* rowbegin(uint r) {
+		return addr(r, 0);
+	}
+	
+	type* rowend(uint r) {
+		return addr(r, cols);
+	}
+	
+	type* rowlast(uint r) {
+		return addr(r, cols-1);
+	}
+	
 	inline type& at(uint i, uint j) {
 		return data[i*cols+j];
+	}
+	
+	inline type& addr(uint i, uint j) {
+		return &data[0]+i*cols+j;
 	}
 
 	inline uint row() const {
@@ -142,7 +169,15 @@ public:
 		return cols;
 	}
 
-	void row_shuffle(int times=0) {
+	void shuffle(int times) {
+		row_shuffle(times);
+	}
+	
+	void shuffle() {
+		row_shuffle(rows);
+	}
+	
+	void row_shuffle(int times) {
 		if(times==0) times=rows;
 		for_n(i, times) {
 			int a=rand() % rows;
@@ -179,6 +214,30 @@ public:
 		slice(dt, -(int)(percent*rows), max_sint4);
 	}
 	
+	void save(ostream& out=cout) {
+		out<<rows<<"\t"<<cols<<endl;
+		for(uint i=0; i<rows; ++i) {
+			for(uint j=0; j<cols; ++j) out<<at(i, j)<<"\t";
+			out<<endl;
+		}
+	}
+	
+	void save(const char* fn) {
+		save(ofstream(fn));
+	}
+
+	void load(istream& in=cin) {
+		in>>rows>>cols;
+		resize();
+		for(uint i=0; i<rows; ++i)
+			for(uint j=0; j<cols; ++j) 
+				in >> at(i, j);
+	}
+	
+	void load(const char* fn) {
+		load(ifstream(fn));
+	}
+	
 	void input(istream& in=cin) {
 		for(uint i=0; i<rows; ++i)
 			for(uint j=0; j<cols; ++j) {
@@ -187,7 +246,7 @@ public:
 				at(i, j)=tmp;
 			}
 	}
-
+	
 	void print(ostream& out=cout) {
 		out<<"datatable: rows="<<rows<<" cols="<<cols<<endl;
 		for(uint i=0; i<rows; ++i) {
@@ -213,12 +272,96 @@ class sequence {
 	iterator end;
 public:
 	typedef typename iterator_traits<iterator>::value_type type;
-	sequence(iterator first, iterator last): begin(first), end(last) {}
+	sequence(iterator first, iterator last): begin(first), end(last) {
+		assert(end-begin>0);
+	}
 
+	sequence(const sequence& r) {
+		assert(r.end-r.begin>0);
+		begin=r.begin;
+		end=r.end;
+	}
+	
+	void clone_from(const sequence& r) {
+		if (r.begin==begin || r.end==end) return;
+		std::copy(r.begin, r.end, begin);
+	}
+	
+	void clone_to(sequence& r) {
+		r.clone_from(*this);
+	}
+	
+	void zero() {
+		// for_each(begin, end, assign_zero());
+		std::fill(begin, end, type());
+	}
+	
+	sequence& operator =(const sequence& r) {
+		if (this!=&r) {
+			assert(r.end-r.begin>0);
+			this->begin=r.begin;
+			this->end=r.end;
+		}
+		return *this;
+	}
+	
+	bool operator ==(const sequence& r) const {
+		return this->begin==r.begin && this->end==r.end;
+	}
+	
+	bool operator !=(const sequence& r) const {
+		return !(*this == r);
+	}
+	
+	
 	type dot(sequence& r) {
 		type sum=0;
 		return accumulate(begin, end, r.begin, sum, multiply());
 	}
+	
+	type operator *(sequence& r) {
+		return this->dot(r);
+	}
+	
+	#define macro_new_operator(op, op_name) 	\
+	template<class T>						\
+	struct op_name {						\
+		const T& t;						\
+		op_name(const T& t):t(t) {}			\
+		inline void operator()(type& x) {		\
+			x op t;						\
+		}								\
+	};									\
+										\
+	template<class T>						\
+	sequence& operator op (const T& t) {		\
+		std::for_each(begin, end, op_name<T>(t));	\
+		return *this;						\
+	}
+	macro_new_operator(+=, op_addby)
+	macro_new_operator(-=, op_subby)
+	macro_new_operator(*=, op_multiplyby)
+	macro_new_operator(/=, op_divideby)
+	#undef macro_new_operator
+	
+	#define macro_new_operator(op, op_name)	\
+	struct op_name {						\
+		inline type operator()(type& x, type& y) {	\
+			return x op y;					\
+		}								\
+	};									\
+										\
+	sequence& operator op= (const sequence& r) {	\
+		std::transform(begin, end, r.begin, begin, op_name());\
+		return *this;						\
+	}
+	macro_new_operator(+, op_eachaddby)
+	macro_new_operator(-, op_eachsubby)
+	macro_new_operator(*, op_eachmultiplyby)
+	macro_new_operator(/, op_eachdivideby)
+	#undef macro_new_operator
+	
+	
 	
 	iterator first() {
 		return beign;
@@ -238,6 +381,10 @@ public:
 	
 	type& operator [] (int i) {
 		return at(i);
+	}
+	
+	int row_diff(const sequence& r) {
+		return (begin-r.begin)/size();
 	}
 	
 	type sum() {
@@ -267,9 +414,16 @@ public:
 		double p;
 		power(double p): p(p) {}
 		inline type operator()(type& init, type& x) {
-			return init+pow(x, p);
+			return init+pow((double)x, p);
 		}
 	};
+	
+	struct assign_zero {
+		inline void operator()(type& x) {
+			x=type();
+		}
+	};
+	
 	
 	struct square_root {
 		inline type operator()(type& init, type& x) {
@@ -283,6 +437,12 @@ public:
 		}
 	};
 	
+	struct diff_square {
+		inline type operator()(type& init, type& a, type& b) {
+			return init+(a-b)*(a-b);
+		}
+	};
+	
 	uint size() {
 		return end-begin;
 	}
@@ -291,11 +451,22 @@ public:
 		return sqrt(this->square_sum());
 	}
 	
-	double cosine(sequence& y) {
+	type cosine(sequence& y) {
 		return 1.0 * this->dot(y) / this->mo() / y.mo();
 	}
 	
-	double pearson(sequence& y) {
+	type euler(sequence& r) {
+		type sum=0;
+		accumulate(begin, end, r.begin, sum, diff_square());
+		return sqrt(sum);
+	}
+	
+	type euler_square(sequence& r) {
+		type sum=0;
+		return accumulate(begin, end, r.begin, sum, diff_square());
+	}
+	
+	type pearson(sequence& y) {
 		sequence& x=*this;
 		uint len=size();
 		type sum1=x.sum();
@@ -308,7 +479,6 @@ public:
 		return den==0 ? 0 : 1.0-num/den;
 	}
 };
-
 
 template<class iterator>
 class matrix2d {
@@ -389,13 +559,17 @@ public:
 	sequence<iterator> seq_row(int row) {
 		while (row<0) row+=rows;
 		while (row>rows-1) row-=rows;
-		return sequence<iterator>(&at(row, 0), &at(row, cols));
+		return sequence<iterator>(&at(row, 0), &at(row, -1)+1);
+	}
+	
+	sequence<iterator> operator [](int row) {
+		return seq_row(row);
 	}
 	
 	vector<type> vec_row(int row) {
 		while (row<0) row+=rows;
 		while (row>rows-1) row-=rows;
-		vector<type> tmp(&at(row, 0), &at(row, cols));
+		vector<type> tmp(&at(row, 0), &at(row, -1)+1);
 		return tmp
 	}
 	

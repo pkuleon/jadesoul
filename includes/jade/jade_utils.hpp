@@ -127,6 +127,7 @@ void log(const char* fmt, ...) {
 }
 
 
+
 // #define LIST smart_parser::list
 
 #endif // JADE_UTILS_HPP

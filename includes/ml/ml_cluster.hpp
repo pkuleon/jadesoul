@@ -13,7 +13,7 @@
  */
 
 #include "ml_types.hpp"
-
+#include "ml_cluster_kmeans.hpp"
 
 
 //much more need to implement

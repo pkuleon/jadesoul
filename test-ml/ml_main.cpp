@@ -15,12 +15,11 @@
 
 
 int main () {
-	fstream fin("dataset.txt");
-	examples ds;
-	input_examples(fin, ds);
-	
-	for_n(i, ds.size()) {
-		print(ds[i]);
+	typedef FeatureSet<int, 4> array;
+	array t;
+	for_n(j, 10) {
+		t.push_back(1);
+		for_n(i, t.size()) cout<<t[i]<<"\t";
+		cout<<endl;
 	}
 }
-

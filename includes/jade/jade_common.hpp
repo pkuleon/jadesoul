@@ -32,6 +32,10 @@
 #include <exception>
 #include <numeric>
 
+#ifdef OS_WIN32
+	#include <conio.h>
+#endif
+
 //boost libs -- foreach
 //#include <boost/foreach.hpp>
 //#define foreach BOOST_FOREACH
@@ -97,5 +101,10 @@ typedef std::vector<char> vec_char;
 #define for_citer(it, type, con) for(type::const_iterator it=con.begin(); it!=con.end(); ++it)
 #define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
 #define for_rciter(it, type, con) for(type::const_reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+
+#define is_in(val, con) (find(con.begin(), con.end(), val)!=con.end())
+#define is_in_rg(val, begin, end) (find(begin, end, val)!=end)
+
+#define magic(...) {log("now running code: %s", #__VA_ARGS__); __VA_ARGS__;log("done!");}
 
 #endif // JADE_COMMON_HPP

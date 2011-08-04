@@ -12,8 +12,8 @@
  * Written In: Peking University, beijing, China$
  */
 
-#include "ml/classify.hpp"
-#include "ml/cluster.hpp"
+#include "ml/ml_classify.hpp"
+#include "ml/ml_cluster.hpp"
 
 #endif /* ML_HPP_BY_JADESOUL */
 

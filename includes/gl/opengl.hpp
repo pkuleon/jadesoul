@@ -29,6 +29,12 @@ struct color {
 	friend ostream& operator << (ostream& os, const color& c){
 		return os<<"[color : r="<<c.r<<" g="<<c.g<<" b="<<c.b<<"]"<<endl;
 	}
+	color deeper(float rate=0.8) {
+		return color(r*rate, g*rate, b*rate);
+	}
+	color lower(float rate=0.8) {
+		return color(r/rate, g/rate, b/rate);
+	}
 };
 
 struct palette {
@@ -235,12 +241,12 @@ public:
 	float size;
 	bool fill;
 	
-	pen_t():c(pal.black), width(1), fill(false) {
+	pen_t():c(pal.black), width(1), fill(false), size(1) {
 		glColor3f(c.r, c.g, c.b);
 		glLineWidth(width);
 	}
 	
-	pen_t(const color& c, int width=1, bool fill=false):c(c), width(width), fill(fill) {
+	pen_t(const color& c, float width=1, bool fill=false, float psize=1):c(c), width(width), fill(fill), size(psize) {
 		glColor3f(c.r, c.g, c.b);
 		glLineWidth(width);
 	}
@@ -400,9 +406,6 @@ public:
 		win.height=h;
 		win.x=x;
 		win.y=y;
-		world.x=-w/2;
-		world.y=-h/2;
-		world.z=-700;
 		win.fullscreen=fullscreen;
 		int argc=0;
 		char * argv[]={""};
@@ -443,9 +446,16 @@ public:
 	
 	
 	void mainloop() {
+		resetworld();
 		buildmenu();
 		glutAttachMenu(GLUT_RIGHT_BUTTON);
 		glutMainLoop();
+	}
+	
+	void resetworld() {
+		world.x=-win.width/2;
+		world.y=-win.height/2;
+		world.z=-700;
 	}
 	
 	virtual void init(int w, int h) {

@@ -10,8 +10,9 @@
  * Written In: Peking University, beijing, China$
  */
 
-#define debug
-#include <jadesoul>
+// #define debug
+#include <jade.hpp>
+#include <ml.hpp>
 
 #include <iostream>
 #include <string>
@@ -20,8 +21,13 @@
 using namespace std;
 
 int main () {
-	cout<<"hello, world"<<endl;
-	string s="asdasdasd";
-	print(s);
+	char *s="asdasdasd";
+	char *s1="asdasdasd";
+	
+	for_n(i, 28/4) cout<<(int*)(&s)+i<<endl;
+	cout<<endl;
+	for_n(i, 28/4) cout<<(int*)(&s1)+i<<endl;
+	// cout<<"hello, world"<<endl;
+	// cout<<&(s1.c_str())<<endl;
 }
 

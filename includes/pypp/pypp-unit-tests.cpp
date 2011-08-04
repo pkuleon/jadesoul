@@ -268,8 +268,6 @@ jtest(demo_sort2,
 	var v=range(10);
 	v.print();
 )
-*/
-
 
 jtest(demo_sort2,
 	int a=1;
@@ -279,6 +277,17 @@ jtest(demo_sort2,
 	var e=tuple(a, b, "oh");
 	var f=list(d, e, 7);
 	f.dump();
+)
+*/
+
+
+jtest(demo_sort2,
+	char s[]="{'a':{'b':1}}";
+	var a=eval(s);
+	a.dump();
+	
+	
+	
 )
 
 // a['1:2:3']
