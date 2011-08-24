@@ -21,8 +21,8 @@
   */
 
 #include "jade.hpp"	//for basic framework
-#include "gl.hpp"	//for opengl framework
-#include "ml.hpp"	//for machine learning framework
+// #include "gl.hpp"	//for opengl framework
+// #include "ml.hpp"	//for machine learning framework
 // #include "graph.hpp"	//for graph framework
 
 //that's all, thank you~

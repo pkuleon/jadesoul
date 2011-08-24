@@ -1,0 +1,1 @@
+1141_final_min.cpp.exe < data.txt	
