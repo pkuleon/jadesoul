@@ -1,0 +1,18 @@
+Setting environment for using Microsoft Visual Studio 2008 x86 tools.
+正在编译...
+:
+:
+main.cpp
+main.cpp(33) : error C2065: “trie”: 未声明的标识符
+main.cpp(33) : error C2146: 语法错误 : 缺少“;”(在标识符“t”的前面)
+main.cpp(33) : error C2065: “t”: 未声明的标识符
+main.cpp(34) : error C2065: “t”: 未声明的标识符
+main.cpp(34) : error C2228: “.build”的左边必须有类/结构/联合
+        类型是“'unknown-type'”
+main.cpp(41) : error C2065: “t”: 未声明的标识符
+main.cpp(41) : error C2228: “.search”的左边必须有类/结构/联合
+        类型是“'unknown-type'”
+:
+:
+:
+:
