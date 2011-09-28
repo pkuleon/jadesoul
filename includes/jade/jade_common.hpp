@@ -80,6 +80,7 @@ using std::iterator_traits;
 
 typedef std::vector<int> vec_int;
 typedef std::vector<char> vec_char;
+typedef std::vector<string> vec_str;
 
 #define AND &&
 #define OR ||
@@ -100,8 +101,10 @@ typedef std::vector<char> vec_char;
 #define for_iter(it, type, con) for(type::iterator it=con.begin(); it!=con.end(); ++it)
 #define for_citer(it, type, con) for(type::const_iterator it=con.begin(); it!=con.end(); ++it)
 #define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
-#define for_rciter(it, type, con) for(type::const_reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+#define for_criter(it, type, con) for(type::const_reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
 
+#define if_in(val, con) if (con.find(val)!=con.end())
+#define if_not_in(val, con) if (con.find(val)==con.end())
 #define is_in(val, con) (find(con.begin(), con.end(), val)!=con.end())
 #define is_in_rg(val, begin, end) (find(begin, end, val)!=end)
 
