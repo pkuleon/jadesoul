@@ -49,7 +49,7 @@ namespace jade {
 			dbglog("in datrie build");
 			groups_t groups;
 			word_t first_codes;
-			dbglog("make groups");
+			// dbglog("make groups");
 			size_t len=wordlist.size();
 			for_tn(uint, i, len) {
 				word_t& word=wordlist[i];
@@ -60,16 +60,16 @@ namespace jade {
 				}
 				groups[first].push_back(word);
 			}
-			dbglog("done make groups");
+			// dbglog("done make groups");
 			
-			dbglog("begin add first codes");
-			size_t root=0;
+			// dbglog("begin add first codes");
+			size_t root=1;
 			add_codes(root, first_codes);
-			dbglog("done add first codes");
+			// dbglog("done add first codes");
 			
 			for_iter(it, groups_t, groups) {
 				const code_t& code=it->first;
-				dbglog("for group %d", code);
+				// dbglog("for group %d", code);
 				wordlist_t& wordlist=it->second;
 				trie_t *t=new trie_t(*adaptor, wordlist);
 				size_t parent_id=abs(array[root].base)+code;
@@ -166,14 +166,12 @@ namespace jade {
 		}
 		
 		bool search(word_t& word) {
-			size_t parent=0;
-			int base;
-			size_t len=word.size();
-			for_tn(uint, i, len) {
+			size_t parent=1, child;
+			for_tn(uint, i, word.size()) {
 				code_t& code=word[i];
-				base=abs(array[parent].base);
-				parent=base+code;
-				if (array[parent].check!=base) return false;
+				child=abs(array[parent].base)+code;
+				if (array[child].check!=parent) return false;
+				parent=child;
 			}
 			return array[parent].base<0;
 		}

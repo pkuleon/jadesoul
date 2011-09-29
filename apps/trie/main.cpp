@@ -22,51 +22,41 @@ typedef jade::double_array_trie<char_t, code_t> datrie_t;
 
 
 int main () {
-	
-	datetime now;
-	printl("before build", now);
-	
-	fstream fin("words_huge.txt");
-	// fstream fin("words_45000.txt");
+	// fstream fin("words_huge.txt");
+	time_seed();
+	fstream fin("words_45000.txt");
 	vec_str vs;
 	string s;
 	while (fin>>s) vs.push_back(s);
 	fin.close();
+	printl("build word count", vs.size());
+	time_gap("load words");
+	
+	vec_str vs2(vs);
+	for(size_t i=0; i<vs2.size(); i+=3) reverse(vs2[i].begin(), vs2[i].end());
+	printl("test word count", vs2.size());
+	time_gap("reverse words");
 	
 	trie_t t(vs);
+	time_gap("build trie");
 	
-	datetime end1;
-	printl("after build", end1);
-	
-	printl("word count", vs.size());
 	int hit=0;
-	for_iter(it, vec_str, vs) {
-		string& s=*it;
-		if (t.search(s)) ++hit;
-	}
+	for_tn(uint, i, vs2.size()) if (t.search(vs2[i])) ++hit;
 	printl("match count", hit);
-	
-	datetime end2;
-	printl("after search", end2);
+	printl("miss count", vs2.size()-hit);
+	time_gap("test trie");
 	
 	
 	datrie_t dat(vs);
+	time_gap("build datrie");
 	
-	datetime end3;
-	printl("after build", end3);
-	
-	printl("word count", vs.size());
 	hit=0;
-	for_iter(it, vec_str, vs) {
-		string& s=*it;
-		if (dat.search(s)) ++hit;
-	}
+	for_tn(uint, i, vs2.size()) if (dat.search(vs2[i])) ++hit;
 	printl("match count", hit);
+	printl("miss count", vs2.size()-hit);
+	time_gap("test datrie");
 	
-	datetime end4;
-	printl("after search", end4);
-	
-	printl("array.size=", dat.get_array_size());
-	getch();
+	printl("array.size", dat.get_array_size());
+	// getch();
 }
 

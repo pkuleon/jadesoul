@@ -106,13 +106,12 @@ namespace jade {
 	private:
 		void build(wordlist_t& wordlist) {
 			root=new node;
-			for_iter(itwl, wordlist_t, wordlist) {
-				word_t word=*itwl;
-				code_t code;
+			for_tn(size_t, i, wordlist.size()) {
+				word_t& word=wordlist[i];
 				node* p=root;
 				node* child;
-				for_iter(itw, word_t, word) {
-					code=*itw;
+				for_tn(size_t, j, word.size()) {
+					code_t& code=word[j];
 					child=p->find_child(code);
 					if (child==NULL) {
 						p->check_alloc_children_map();
@@ -128,10 +127,9 @@ namespace jade {
 	public:
 		bool search(word_t& word) {
 			node* p=root;
-			code_t code;
-			node* child;
-			for_iter(itw, word_t, word) {
-				code=*itw;
+			node* child;			
+			for_tn(uint, i, word.size()) {
+				code_t& code=word[i];
 				child=p->find_child(code);
 				if (child)
 					p=child;
