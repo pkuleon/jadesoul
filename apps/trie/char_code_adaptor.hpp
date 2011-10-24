@@ -80,7 +80,7 @@ namespace jade {
 		}
 		
 		code_t get_code(char_t ch) {
-			map_t::iterator it=char_to_code.find(ch);
+			typename map_t::iterator it=char_to_code.find(ch);
 			if (it==char_to_code.end()) return 0;	//not found, return special code
 			return it->second;
 		}

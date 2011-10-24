@@ -34,6 +34,29 @@
 
 #ifdef OS_WIN32
 	#include <conio.h>
+	#include <windows.h>
+	
+	//for psapi
+	#include <psapi.h>
+	#ifdef CPL_MSVC
+		#pragma comment(lib,"psapi.lib")
+	#endif
+#endif
+
+#ifdef OS_LINUX
+	#include <sys/time.h>
+	#include <unistd.h>
+#endif
+
+//for hash map
+#if (defined CPL_GNUC) && (__GNUC__>2)
+	#include <ext/hash_set>
+	#include <ext/hash_map>
+	using namespace __gnu_cxx;
+#else
+	#include <hash_set>
+	#include <hash_map>
+	using namespace stdext;
 #endif
 
 //boost libs -- foreach
@@ -98,10 +121,10 @@ typedef std::vector<string> vec_str;
 #define for_in(i, start, end, step) for (int i=start; i<end; i+=step)
 #define for_tin(type, i, start, end, step) for (type i=start; i<end; i+=step)
 
-#define for_iter(it, type, con) for(type::iterator it=con.begin(); it!=con.end(); ++it)
-#define for_citer(it, type, con) for(type::const_iterator it=con.begin(); it!=con.end(); ++it)
-#define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
-#define for_criter(it, type, con) for(type::const_reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+#define for_iter(it, type, con) for(typename type::iterator it=con.begin(); it!=con.end(); ++it)
+#define for_citer(it, type, con) for(typename type::const_iterator it=con.begin(); it!=con.end(); ++it)
+#define for_riter(it, type, con) for(typename type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+#define for_criter(it, type, con) for(typename type::const_reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
 
 #define if_in(val, con) if (con.find(val)!=con.end())
 #define if_not_in(val, con) if (con.find(val)==con.end())

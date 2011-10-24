@@ -53,7 +53,7 @@ namespace jade {
 			
 			node* find_child(code_t code) {
 				if (children!=NULL) {
-					subnode_map_t::iterator it=children->find(code);
+					typename subnode_map_t::iterator it=children->find(code);
 					if (it!=children->end()) return it->second;
 				}
 				return NULL;

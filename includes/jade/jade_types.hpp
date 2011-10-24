@@ -5,7 +5,7 @@
 #ifndef JADE_TYPES_HPP
 #define JADE_TYPES_HPP
 
-//detect OS type
+//detect OS types
 #if defined( __WIN32__ ) || defined( _WIN32 )
 	#define OS_WIN32
 #elif defined( __APPLE_CC__)
@@ -19,6 +19,28 @@
 #else
 	#define OS_LINUX
 #endif
+
+//detect compiler types
+#if defined(__GNUC__)
+	#define CPL_GNUC
+	#define CPL_VER __GNUC__
+#endif
+
+#if defined(_MSC_VER)
+	#define CPL_MSVC
+	#define CPL_VER _MSC_VER
+#endif
+
+#if (defined OS_WIN32) && (defined CPL_MSVC)
+	#define ENV_WIN32_MSVC
+#endif
+// #if defined(__STDC__) || defined(__cplusplus) || defined(_MSC_EXTENSIONS)
+// #else
+// #endif
+
+// #if defined(_MSC_VER) && (_MSC_VER >= 1020)
+// #pragma once
+// #endif
 
 //char
 typedef   signed char        int1;
@@ -64,23 +86,20 @@ typedef const char* const ccptrc;
 
 
 const	sint1		min_sint1		=	0x80;
-const	sint1		max_sint1	=	0x7F;
+const	sint1		max_sint1		=	0x7F;
 const	uint1	min_uint1		=	0x00;
 const	uint1	max_uint1	=	0xFF;
 const	sint2		min_sint2		=	0x8000;
-const	sint2		max_sint2	=	0x7FFF;
+const	sint2		max_sint2		=	0x7FFF;
 const	uint2	min_uint2		=	0x0000;
 const	uint2	max_uint2	=	0xFFFF;
 const	sint4		min_sint4		=	0x80000000;
-const	sint4		max_sint4	=	0x7FFFFFFF;
+const	sint4		max_sint4		=	0x7FFFFFFF;
 const	uint4	min_uint4		=	0x00000000;
 const	uint4	max_uint4	=	0xFFFFFFFF;
 const	sint8		min_sint8		=	0x8000000000000000LL;
-const	sint8		max_sint8	=	0x7FFFFFFFFFFFFFFFLL;
+const	sint8		max_sint8		=	0x7FFFFFFFFFFFFFFFLL;
 const	uint8	min_uint8		=	0x0000000000000000LL;
 const	uint8	max_uint8	=	0xFFFFFFFFFFFFFFFFLL;
-
-
-
 
 #endif // JADE_TYPES_HPP
