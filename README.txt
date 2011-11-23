@@ -1,6 +1,6 @@
 Jadesoul's C++ ToolSet
 ===============
-
+ 
 Including
 -----------------------------
 * Jade C++ Framework
