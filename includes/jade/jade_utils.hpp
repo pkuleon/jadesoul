@@ -10,7 +10,7 @@
   * dump -- show all elements in a iterable container
   * usage:  dump< vector<int> >(v, ", ", "[", "]", cout) or show(v, ", ", "[", "]", cout) or just show(v);
   */
-
+  
 const char* default_show_deli=" ";
 const char* default_show_left="[ ";
 const char* default_show_right="]";
