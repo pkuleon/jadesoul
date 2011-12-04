@@ -98,11 +98,11 @@ public:
 	typedef py::set set;
 	typedef py::dict dict;
 	
-	typedef heapobj<py::str> heapstr;
-	typedef heapobj<py::list> heaplist;
-	typedef heapobj<py::tuple> heaptuple;
-	typedef heapobj<py::set> heapset;
-	typedef heapobj<py::dict> heapdict;
+	typedef heapobj<str> heapstr;
+	typedef heapobj<list> heaplist;
+	typedef heapobj<tuple> heaptuple;
+	typedef heapobj<set> heapset;
+	typedef heapobj<dict> heapdict;
 	
 	typedef std::list<heapstr*> strlink;
 	typedef std::list<heaplist*> listlink;
@@ -181,11 +181,11 @@ public:
 	typedef py::set set;
 	typedef py::dict dict;
 	
-	typedef heapobj<py::str> heapstr;
-	typedef heapobj<py::list> heaplist;
-	typedef heapobj<py::tuple> heaptuple;
-	typedef heapobj<py::set> heapset;
-	typedef heapobj<py::dict> heapdict;
+	typedef heapobj<str> heapstr;
+	typedef heapobj<list> heaplist;
+	typedef heapobj<tuple> heaptuple;
+	typedef heapobj<set> heapset;
+	typedef heapobj<dict> heapdict;
 	
 private:
 	union {//data of all kinds of var, only one kind at a time
