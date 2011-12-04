@@ -11,7 +11,7 @@
  */
 
 
-#include "../includes/jadesoul"
+#include "jadesoul.hpp"
 
 #include <iostream>
 #include <string>
