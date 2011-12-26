@@ -33,14 +33,24 @@ namespace objectworld {
 	public:
 	};
 	
+	template<class T>
+	class reference {
+	private:
+		T* ptr;
+		size_t ref_cnt;
+	public:
+		reference(T* ptr):ptr(ptr), ref_cnt(0) {}
+	};
+	
 	class object {
 		typedef heap_ptr<object*> reference;
 	public:
-	
 		template<class T>
-		__add__(const T& t)
+		__add__(const reference<T>& ref) {
+			
+		}
 	};
-
+	
 	class number : public object {
 	public:
 		
@@ -76,7 +86,7 @@ namespace objectworld {
 class App {
 public:
 	App() {
-		cout<<"hello, world"<<endl;
+		cout<<"hello, world"*3<<endl;
 	}
 };
 
