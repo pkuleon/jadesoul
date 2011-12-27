@@ -35,9 +35,21 @@ public:
 	friend ostream& operator <<(ostream& o, meminfo& mi) {
 #ifdef ENV_WIN32_MSVC
 		return o<<"Mem Usage:"
+				<<endl
+				
+				<<"WorkingSetSize="
 				<<mi.nice_repr(mi.pmc.WorkingSetSize)
+				<<endl
+				
+				<<"PeakWorkingSetSize="
 				<<mi.nice_repr(mi.pmc.PeakWorkingSetSize)
+				<<endl
+				
+				<<"PagefileUsage="
 				<<mi.nice_repr(mi.pmc.PagefileUsage)
+				<<endl
+				
+				<<"PeakPagefileUsage"
 				<<mi.nice_repr(mi.pmc.PeakPagefileUsage)
 				<<endl;
 #else
@@ -99,7 +111,7 @@ void mem_seed(uint id=0) {
 	__gmt[id]=meminfo();
 }
 
-void mem_gap(char* msg, uint id=0, bool update=true) {
+void mem_gap(char* msg="", uint id=0, bool update=true) {
 	if_not_in(id, __gmt) return;
 	meminfo now;
 	cout<<msg<<": "<<now.nice_repr(now.virtu()-__gmt[id].virtu())<<endl;
