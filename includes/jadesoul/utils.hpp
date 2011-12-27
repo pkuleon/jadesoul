@@ -1,16 +1,14 @@
-#ifndef JADESOUL_HPP_1324964317_10
-#define JADESOUL_HPP_1324964317_10
+#ifndef UTILS_HPP_1324964318_15
+#define UTILS_HPP_1324964318_15
 /**
- * File: jadesoul.hpp
+ * File: utils.hpp
  * Description: 
- * 
+ *
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * 
- * Date: 2011-12-04 14:28:37.770000
+ * Date: 2011-12-27 13:38:38.137000
  * Written In: MSRA, beijing, China
  */
-
-// #define debug
 
 #include "os.hpp"
 #include "compiler.hpp"
@@ -18,6 +16,6 @@
 #include "macros.hpp"
 #include "includes.hpp"
 #include "algorithms.hpp"
-#include "utils.hpp"
+#include "utils/utils.hpp"
 
-#endif /* JADESOUL_HPP_1324964317_10 */
+#endif /* UTILS_HPP_1324964318_15 */

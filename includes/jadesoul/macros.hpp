@@ -1,5 +1,5 @@
-#ifndef MACROS_HPP_BY_JADESOUL
-#define MACROS_HPP_BY_JADESOUL
+#ifndef MACROS_HPP_1324964318_13
+#define MACROS_HPP_1324964318_13
 /**
  * File: macros.hpp
  * Description: 
@@ -9,6 +9,10 @@
  * Date: 2011-12-26 18:27:36.135000
  * Written In: MSRA, beijing, China
  */
+
+#include "os.hpp"
+#include "compiler.hpp"
+#include "types.hpp"
 
 #define AND &&
 #define OR ||
@@ -65,4 +69,4 @@
 	#define magic(...)
 #endif
 
-#endif /* MACROS_HPP_BY_JADESOUL */
+#endif /* MACROS_HPP_1324964318_13 */

@@ -1,5 +1,5 @@
-#ifndef OS_HPP_BY_JADESOUL
-#define OS_HPP_BY_JADESOUL
+#ifndef OS_HPP_1324964318_10
+#define OS_HPP_1324964318_10
 /**
  * File: os.hpp
  * Description: 
@@ -25,4 +25,4 @@
 	#define OS_LINUX
 #endif
 
-#endif /* OS_HPP_BY_JADESOUL */
+#endif /* OS_HPP_1324964318_10 */

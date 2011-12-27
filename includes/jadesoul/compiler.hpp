@@ -1,5 +1,5 @@
-#ifndef COMPILER_HPP_BY_JADESOUL
-#define COMPILER_HPP_BY_JADESOUL
+#ifndef COMPILER_HPP_1324964318_11
+#define COMPILER_HPP_1324964318_11
 /**
  * File: compiler.hpp
  * Description: 
@@ -34,4 +34,4 @@
 // #pragma once
 // #endif
 
-#endif /* COMPILER_HPP_BY_JADESOUL */
+#endif /* COMPILER_HPP_1324964318_11 */

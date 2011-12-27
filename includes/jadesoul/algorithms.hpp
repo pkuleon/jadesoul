@@ -1,23 +1,20 @@
-#ifndef JADESOUL_HPP_1324964317_10
-#define JADESOUL_HPP_1324964317_10
+#ifndef ALGORITHMS_HPP_1324966685_32
+#define ALGORITHMS_HPP_1324966685_32
 /**
- * File: jadesoul.hpp
+ * File: algorithms.hpp
  * Description: 
- * 
+ *
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * 
- * Date: 2011-12-04 14:28:37.770000
+ * Date: 2011-12-27 14:18:05.315000
  * Written In: MSRA, beijing, China
  */
-
-// #define debug
 
 #include "os.hpp"
 #include "compiler.hpp"
 #include "types.hpp"
 #include "macros.hpp"
 #include "includes.hpp"
-#include "algorithms.hpp"
-#include "utils.hpp"
+#include "algorithms/algorithms.hpp"
 
-#endif /* JADESOUL_HPP_1324964317_10 */
+#endif /* ALGORITHMS_HPP_1324966685_32 */

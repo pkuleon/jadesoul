@@ -1,5 +1,5 @@
-#ifndef INCLUDES_HPP_BY_JADESOUL
-#define INCLUDES_HPP_BY_JADESOUL
+#ifndef INCLUDES_HPP_1324964318_14
+#define INCLUDES_HPP_1324964318_14
 /**
  * File: includes.hpp
  * Description: 
@@ -12,6 +12,9 @@
 
 #include "os.hpp"
 #include "compiler.hpp"
+#include "types.hpp"
+#include "macros.hpp"
+
 
 //standard libaries
 #include <stdio.h>
@@ -107,4 +110,4 @@ typedef std::vector<char> vec_char;
 typedef std::vector<string> vec_str;
 
 
-#endif /* INCLUDES_HPP_BY_JADESOUL */
+#endif /* INCLUDES_HPP_1324964318_14 */

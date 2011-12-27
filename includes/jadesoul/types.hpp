@@ -1,5 +1,5 @@
-#ifndef TYPES_HPP_BY_JADESOUL
-#define TYPES_HPP_BY_JADESOUL
+#ifndef TYPES_HPP_1324964318_12
+#define TYPES_HPP_1324964318_12
 /**
  * File: types.hpp
  * Description: 
@@ -11,6 +11,7 @@
  */
 
 #include "os.hpp"
+#include "compiler.hpp"
 
 //char
 typedef	signed char	int1;
@@ -71,4 +72,4 @@ const	sint8		max_sint8		=	0x7FFFFFFFFFFFFFFFLL;
 const	uint8	min_uint8		=	0x0000000000000000LL;
 const	uint8	max_uint8	=	0xFFFFFFFFFFFFFFFFLL;
 
-#endif /* TYPES_HPP_BY_JADESOUL */
+#endif /* TYPES_HPP_1324964318_12 */
