@@ -10,12 +10,6 @@
  * Written In: MSRA, beijing, China
  */
 
-// #define debug
-
-#include "os.hpp"
-#include "compiler.hpp"
-#include "types.hpp"
-#include "macros.hpp"
 #include "includes.hpp"
 #include "algorithms.hpp"
 #include "utils.hpp"

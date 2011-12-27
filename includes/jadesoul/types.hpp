@@ -11,7 +11,6 @@
  */
 
 #include "os.hpp"
-#include "compiler.hpp"
 
 //char
 typedef	signed char	int1;

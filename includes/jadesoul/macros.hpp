@@ -10,10 +10,6 @@
  * Written In: MSRA, beijing, China
  */
 
-#include "os.hpp"
-#include "compiler.hpp"
-#include "types.hpp"
-
 #define AND &&
 #define OR ||
 #define NOT !

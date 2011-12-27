@@ -9,6 +9,8 @@
  * Date: 2011-12-27 14:13:40.548000
  * Written In: MSRA, beijing, China
  */
+ 
+#include "includes.hpp"
 
 /**
  *  split -- split a big container into many subcontainers by a specified small delimiter container

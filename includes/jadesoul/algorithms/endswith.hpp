@@ -9,7 +9,8 @@
  * Date: 2011-12-27 14:15:38.224000
  * Written In: MSRA, beijing, China
  */
-
+ 
+#include "includes.hpp"
 
 /* endswith { */
 

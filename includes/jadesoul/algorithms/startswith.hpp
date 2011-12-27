@@ -10,8 +10,7 @@
  * Written In: MSRA, beijing, China
  */
 
-
-/* startswith { */
+#include "includes.hpp"
 
 /**
  *  startswith
@@ -23,10 +22,8 @@
 */
 template <  class InputIterator1,
 class InputIterator2    >
-bool startswith(    InputIterator1 first1,
-                    InputIterator1 last1,
-                    InputIterator2 first2,
-                    InputIterator2 last2    ) {
+bool startswith(InputIterator1 first1, InputIterator1 last1,
+			InputIterator2 first2, InputIterator2 last2 ) {
 	ptrdiff_t len1 = distance(first1, last1), len2 = distance(first2, last2);
 	if (len1 < len2) return false;
 	while (first2 != last2) {

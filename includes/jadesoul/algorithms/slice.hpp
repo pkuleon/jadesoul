@@ -10,6 +10,8 @@
  * Written In: MSRA, beijing, China
  */
 
+#include "includes.hpp"
+
 
 /**
  *  slice -- slice a big container by a range to get a smaller one (will copy a new one)

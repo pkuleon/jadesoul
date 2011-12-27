@@ -10,11 +10,6 @@
  * Written In: MSRA, beijing, China
  */
 
-#include "os.hpp"
-#include "compiler.hpp"
-#include "types.hpp"
-#include "macros.hpp"
-#include "includes.hpp"
 #include "algorithms/algorithms.hpp"
 
 #endif /* ALGORITHMS_HPP_1324966685_32 */
