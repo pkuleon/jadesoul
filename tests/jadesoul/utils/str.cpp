@@ -63,7 +63,7 @@ int main () {
 	// test_constructors();
 	test_slice();
 	// test_substr();
-	str a=str("hi")+"asdkasd"+1+0.34234;
-	cout<<a<<endl;
+	// str a=str("hi")+"asdkasd"+1+0.34234;
+	// cout<<a<<endl;
 }
 
