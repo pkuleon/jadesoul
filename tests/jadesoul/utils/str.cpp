@@ -12,9 +12,9 @@
 
 #include <jadesoul.hpp>
 
-int main () {
+void test_constructors() {
 	// str a=str("hi")+str(2147483648L);
-	str a=str("hi")+"shit";
+	str a=str("hi")+str(1);
 	// string c("shit");
 	// str a=c;
 	for_n(i, a.size()) cout<<a.at(i);
@@ -28,5 +28,42 @@ int main () {
 	str d(e.begin(), e.end());
 	cout<<c[-1]<<endl;
 	cout<<d[-2]<<endl;
+}
+
+void test_slice() {
+	str a="0123456789";
+	cout<<a["1:4"]<<endl;
+	cout<<a[":4"]<<endl;
+	cout<<a["4:"]<<endl;
+	cout<<a["1:8:2"]<<endl;
+	cout<<a["::-1"]<<endl;
+	cout<<a["::-2"]<<endl;
+	cout<<a["-1::-3"]<<endl;
+}
+
+void test_substr() {
+	str a="0123456789";
+	
+	cout<<a(1, 5)<<endl;
+	cout<<a(1, 5, 2)<<endl;
+	cout<<a(1, 5, -2)<<endl;
+	cout<<a(5, 1, -2)<<endl;
+	cout<<a(-5, -1)<<endl;
+	cout<<a(-5, -1, -1)<<endl;
+	cout<<a(5, -1)<<endl;
+	cout<<a(5, -1, 1)<<endl;
+	
+	for_n(i, 10) cout<<a(i)<<endl;
+	for_n(i, 10) cout<<a(-i-1)<<endl;
+	for_n(i, 10) cout<<a(0, i)<<endl;
+	for_n(i, 10) cout<<a(0, -i)<<endl;
+}
+
+int main () {
+	// test_constructors();
+	test_slice();
+	// test_substr();
+	str a=str("hi")+"asdkasd"+1+0.34234;
+	cout<<a<<endl;
 }
 

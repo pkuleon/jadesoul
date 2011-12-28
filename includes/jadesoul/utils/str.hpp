@@ -13,6 +13,7 @@
  */
 
 #include "includes.hpp"
+#include "range.hpp"
 
 class str {
 private:
@@ -31,11 +32,8 @@ public:
 	}
 	
 	//construction from two iterators
-	inline str(const char* begin, const char* end):s(begin, end) {
-	}
-	
-	//construction from two iterators-2
-	inline str(const string::iterator begin, const string::iterator end):s(begin, end) {
+	template<class iterator>
+	inline str(iterator begin, iterator end):s(begin, end) {
 	}
 	
 	// construction from char
@@ -133,18 +131,67 @@ public:
 		return s.at(i);
 	}
 	
+	//for slice
+	inline str slice(const range& r) {
+		cout<<r<<endl;
+		return ::slice(s, r);
+	}
+	
+	inline str operator [](const char* cstr) {
+		return str::slice(range(cstr));
+	}
+	
+	//for substring getter
+	inline str operator()(int pos) {
+		size_t l=len();		
+		if (pos<0) pos+=l;
+		assert(pos>=0 AND pos<l);
+		return s.substr(pos);
+	}
+	
 	//for substr
 	//for substring
-	
-	//for slice
-	
-	str slice(range r) {
-	
+	str operator()(int start, int stop, int step=1) {
+		if (step==0) return "";
+		size_t l=len();
+		if (start<0) start+=l;
+		assert(start>=0 AND start<l);
+		if (stop<0) stop+=l;
+		if (step>0) {
+			assert(stop>=0 AND stop<=l);
+			int sl=stop-start;
+			if (sl<=0) return "";
+			if (step==1) return s.substr(start, sl);
+			string ret;
+			ret.reserve(sl);
+			for (size_t i=start; i<stop; i+=step) ret.push_back(s[i]);
+			return ret;
+		} else {
+			assert(stop>=-1 AND stop<l);
+			int sl=start-stop;
+			if (sl<=0) return "";
+			if (step==-1) return string(s.rbegin()+start, s.rbegin()+(start+sl));
+			string ret;
+			ret.reserve(sl);
+			for (size_t i=start; i>stop; i+=step) ret.push_back(s[i]);
+			return ret;
+		}
 	}
 	
-	str operator [](const char* cstr) {
-		return slice(range(cstr));
+	inline str& reverse() {
+		for(size_t i=0, j=len()-1; i<j; ++i,--j) swap(s[i], s[j]);
+		return *this;
 	}
+	
+	const str reversed() {
+		return string(s.rbegin(), s.rend());
+	}
+	
+	//for split
+	
+	//for glue
+	
+	//
 };
 
 

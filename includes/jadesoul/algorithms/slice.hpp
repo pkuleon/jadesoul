@@ -21,61 +21,66 @@
 */
 
 template <  class Container >
-Container slice(Container& c, int start, int stop) {
+Container slice(Container& c, int start, int stop, int step) {
+	const static int first=min_sint4;
+	const static int last=max_sint4;
 	typedef typename Container::iterator iterator;
 	typedef typename Container::reverse_iterator reverse_iterator;
-	assert( r.step!=0 );
+	assert( step!=0 );
 	int len=c.size();
 	if (len==0) return Container();
 
-	if (r.step<0) {
-		if (r.very_begin()) r.start=start;
-		if (r.very_end()) r.stop=stop;
+	
+	if (step>0 AND start==first AND stop==last) {
+		start=0;
+		stop=len;
+	} else if (step<0 AND start==last AND stop==first) {
+		start=len-1;
+		stop=-1;
+	} else {
+		//adjust start
+		if (start<0)
+			if (start+len<0) start=0;
+			else start+=len;
+		else if (start>len) start=len;
+
+		//adjust stop
+		if (stop<0)
+			if (stop+len<0) stop=0;
+			else stop+=len;
+		else if (stop>len) stop=len;
+
+		if (start==stop) return Container();
+
+		//empty situation
+		if ((start<stop AND step<0) || (start>stop AND step>0)) return Container();
 	}
-
-	//adjust start
-	if (r.start<0)
-		if (r.start+len<0) r.start=0;
-		else r.start+=len;
-	else if (r.start>len) r.start=len;
-
-	//adjust stop
-	if (r.stop<0)
-		if (r.stop+len<0) r.stop=0;
-		else r.stop+=len;
-	else if (r.stop>len) r.stop=len;
-
-	if (r.start==r.stop) return Container();
-
-	//empty situation
-	if ((r.start<r.stop AND r.step<0) || (r.start>r.stop AND r.step>0)) return Container();
-
-	if (r.step==1) {
+	if (step==1) {
 		iterator first=c.begin(), last=first;
-		if (r.start!=0)
-			advance(first, r.start);
-		if (r.stop==len)
+		if (start!=0)
+			advance(first, start);
+		if (stop==len)
 			last=c.end();
 		else
-			advance(last, r.stop);
+			advance(last, stop);
 		return Container(first, last);
-	} else if (r.step==-1) {
-		r.start=len-r.start;
-		r.stop=len-r.stop;
+	} else if (step==-1) {
+		start=len-start;
+		stop=len+stop+1;
 		reverse_iterator first=c.rbegin(), last=first;
-		if (r.start!=0)
-			advance(first, r.start);
-		if (r.stop==len)
+		if (start!=0)
+			advance(first, start);
+		if (stop==len)
 			last=c.rend();
 		else
-			advance(last, r.stop);
+			advance(last, stop);
 		return Container(first, last);
 	} else {
 		Container ret;
-		if (r.start<r.stop AND r.step>0)
-			for (int i=r.start; i<r.stop; i+=r.step) ret.push_back(c[i]);
-		if (r.start>r.stop AND r.step<0)
-			for (int i=r.start; i>r.stop; i+=r.step) ret.push_back(c[i]);
+		if (start<stop AND step>0)
+			for (int i=start; i<stop; i+=step) ret.push_back(c[i]);
+		if (start>stop AND step<0)
+			for (int i=start; i>stop; i+=step) ret.push_back(c[i]);
 		return ret;
 	}
 }

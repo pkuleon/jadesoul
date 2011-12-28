@@ -55,10 +55,28 @@ public:
 	}
 
 	friend ostream& operator<<(ostream& out, const range& r) {
-		out<<"["<<r.start<<":"<<r.stop<<":"<<r.step<<"] = ";
-
-		if (r.start==range::first || r.stop==last ) {
-			return out<<"can not expand"<<endl;
+		out<<"range("<<r.start<<":"<<r.stop<<":"<<r.step<<") = ";
+		
+		if ((r.start==r.stop) || (r.start<r.stop AND r.step<0)
+			|| (r.start>r.stop AND r.step>0)) return out<<"[]";
+		
+		bool a= (r.start==first || r.start==last);
+		bool b= (r.stop==last || r.stop==first);
+		if (a || b) {
+			out<<"[ ";
+			
+			if (r.start==first) out<<"-Limit";
+			else if (r.start==last) out<<"+Limit";
+			else out<<r.start;
+			
+			out<<" ... ";
+			
+			if (r.stop==first) out<<"-Limit";
+			else if (r.stop==last) out<<"+Limit";
+			else out<<r.stop;
+			
+			out<<" , "<<r.step;
+			return out<<" )"<<endl;
 		}
 		out<<"[";
 		if (r.stop>r.start AND r.step>0)
@@ -99,8 +117,14 @@ private:
 		} else stop=last;
 
 		if (nums_size==2) step=1;
-		else step = atoi( string(nums[2].first, nums[2].second).c_str() );
+		else {
+			string s_step(nums[2].first, nums[2].second);
+			step = atoi( s_step.c_str() );
+		}
 		if (step==0) step=1;
+		if (start==first && stop==last && step<0) {
+			swap(start, stop);
+		}
 	}
 } __tmp_range;
 
@@ -116,8 +140,8 @@ typedef range rg;
 
 //improve slice
 template <  class Container >
-inline Container slice(Container& c, range r) {
-	return slice(c, r.start, r.stop);
+inline Container slice(Container& c, const range& r) {
+	return slice(c, r.start, r.stop, r.step);
 }
 
 #endif /* RANGE_HPP_1324966597_26 */
