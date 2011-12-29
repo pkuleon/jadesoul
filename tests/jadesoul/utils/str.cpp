@@ -59,11 +59,20 @@ void test_substr() {
 	for_n(i, 10) cout<<a(0, -i)<<endl;
 }
 
+void test_join() {
+	str a="123";
+	str b="-";
+	str c[]={1, 2, '3', '4', '5'};
+	dump(a.join(b));
+	dump(b.join(a));
+	dump(b.join("ABC"));
+	// dump(b.join(c, c+5));
+}
+
 int main () {
 	// test_constructors();
-	test_slice();
+	// test_slice();
 	// test_substr();
-	// str a=str("hi")+"asdkasd"+1+0.34234;
-	// cout<<a<<endl;
+	test_join();
 }
 

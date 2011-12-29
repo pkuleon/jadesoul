@@ -199,27 +199,39 @@ public:
 	//for split
 	
 	
+	
 	//for glue
 	
 	
 	//for join
-	template<class Iterator>
-	const str join(const Iterator begin, const Iterator end) const {
-		size_t fsize=end-begin, gsize=s.size(), size;
-		assert(fsize>=0);
+	// template<class Iterator>
+	// const str join(const Iterator begin, const Iterator end) const {
+		// size_t fsize=end-begin, gsize=s.size(), size;
+		// assert(fsize>=0);
 		
-		if (fsize==0) size=0;
+		// if (fsize==0) size=0;
+		// else if (gsize==0) size=fsize;
+		// else size=(fsize-1)*gsize+fsize;
+		
+		// string ret(size, 0);
+		// ::join(begin, end, s.begin(), s.end(), ret.begin());
+		// return ret;
+	// }
+	
+	// template<class Container>
+	// inline const str join(const Container& c) const {
+		// return join(c.begin(), c.end());
+	// }
+	
+	inline const str join(const str& r) const {
+		size_t fsize=r.size(), gsize=s.size(), size;		
+		if (fsize==0) return "";
 		else if (gsize==0) size=fsize;
 		else size=(fsize-1)*gsize+fsize;
 		
 		string ret(size, 0);
-		::join(begin, end, s.begin(), s.end(), ret.begin());
+		::join(r.begin(), r.end(), s.begin(), s.end(), ret.begin(), 1);
 		return ret;
-	}
-	
-	template<class Container>
-	inline const str join(const Container& c) const {
-		return join(c.begin(), c.end());
 	}
 };
 
