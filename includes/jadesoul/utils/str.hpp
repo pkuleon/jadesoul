@@ -204,24 +204,25 @@ public:
 	
 	
 	//for join
-	// template<class Iterator>
-	// const str join(const Iterator begin, const Iterator end) const {
-		// size_t fsize=end-begin, gsize=s.size(), size;
-		// assert(fsize>=0);
+	template<class Iterator>
+	const str join(Iterator begin, Iterator end) const {
+		size_t fsize=end-begin, gsize=s.size(), size, fsize2=0;
+		assert(fsize>=0);
+		for (Iterator it=begin; it!=end; ++it) fsize2+=it->size();
 		
-		// if (fsize==0) size=0;
-		// else if (gsize==0) size=fsize;
-		// else size=(fsize-1)*gsize+fsize;
+		if (fsize==0) return "";
+		else if (gsize==0) size=fsize2;
+		else size=(fsize-1)*gsize+fsize2;
 		
-		// string ret(size, 0);
-		// ::join(begin, end, s.begin(), s.end(), ret.begin());
-		// return ret;
-	// }
+		string ret(size, 0);
+		::join(begin, end, s.begin(), s.end(), ret.begin());
+		return ret;
+	}
 	
-	// template<class Container>
-	// inline const str join(const Container& c) const {
-		// return join(c.begin(), c.end());
-	// }
+	template<class Container>
+	inline const str join(const Container& c) const {
+		return join(c.begin(), c.end());
+	}
 	
 	inline const str join(const str& r) const {
 		size_t fsize=r.size(), gsize=s.size(), size;		
@@ -232,6 +233,10 @@ public:
 		string ret(size, 0);
 		::join(r.begin(), r.end(), s.begin(), s.end(), ret.begin(), 1);
 		return ret;
+	}
+	
+	inline const str join(const char* cstr) const {
+		return join(str(cstr));
 	}
 };
 

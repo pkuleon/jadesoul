@@ -66,6 +66,9 @@ void test_join() {
 	dump(a.join(b));
 	dump(b.join(a));
 	dump(b.join("ABC"));
+	dump(b.join(string("ABC")));
+	dump(b.join(str(234234)));
+	// dump(b.join(string()+234234));
 	// dump(b.join(c, c+5));
 }
 
