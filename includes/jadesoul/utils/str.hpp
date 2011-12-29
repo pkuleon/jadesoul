@@ -32,8 +32,8 @@ public:
 	}
 	
 	//construction from two iterators
-	template<class iterator>
-	inline str(iterator begin, iterator end):s(begin, end) {
+	template<class Iterator>
+	inline str(Iterator begin, Iterator end):s(begin, end) {
 	}
 	
 	// construction from char
@@ -141,7 +141,7 @@ public:
 		return str::slice(range(cstr));
 	}
 	
-	//for substring getter
+	//for substr getter
 	inline str operator()(int pos) {
 		size_t l=len();		
 		if (pos<0) pos+=l;
@@ -150,7 +150,6 @@ public:
 	}
 	
 	//for substr
-	//for substring
 	str operator()(int start, int stop, int step=1) {
 		if (step==0) return "";
 		size_t l=len();
@@ -178,6 +177,16 @@ public:
 		}
 	}
 	
+	inline string::iterator begin() { return s.begin(); } 
+	inline string::iterator end() { return s.end(); }
+	inline string::reverse_iterator rbegin() { return s.rbegin(); }
+	inline string::reverse_iterator rend() { return s.rend(); }
+	
+	inline string::const_iterator begin() const { return s.begin(); } 
+	inline string::const_iterator end() const { return s.end(); }
+	inline string::const_reverse_iterator rbegin() const { return s.rbegin(); }
+	inline string::const_reverse_iterator rend() const { return s.rend(); }
+	
 	inline str& reverse() {
 		for(size_t i=0, j=len()-1; i<j; ++i,--j) swap(s[i], s[j]);
 		return *this;
@@ -189,10 +198,32 @@ public:
 	
 	//for split
 	
+	
 	//for glue
 	
-	//
+	
+	//for join
+	template<class Iterator>
+	const str join(const Iterator begin, const Iterator end) const {
+		size_t fsize=end-begin, gsize=s.size(), size;
+		assert(fsize>=0);
+		
+		if (fsize==0) size=0;
+		else if (gsize==0) size=fsize;
+		else size=(fsize-1)*gsize+fsize;
+		
+		string ret(size, 0);
+		::join(begin, end, s.begin(), s.end(), ret.begin());
+		return ret;
+	}
+	
+	template<class Container>
+	inline const str join(const Container& c) const {
+		return join(c.begin(), c.end());
+	}
 };
+
+Macro__over_load_dump__ValueType(str);
 
 
 #endif /* STR_HPP_1324997558_33 */
