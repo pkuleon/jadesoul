@@ -110,9 +110,14 @@ void test_rfind() {
 
 void test_replace() {
 	str a="ABCDEFCG";
-	str b="C";
-	dump(a.rfind(b));
-	dump(a.rfind("H"));
+	str b="B";
+	str c="C";
+	dump(a.replace(b, c));
+	dump(a);
+	dump(a.replaced(c, b));
+	dump(a.replaced(c, b, 2));
+	dump(a.replaced(c, b, 1));
+	dump(a);
 }
 
 int main () {

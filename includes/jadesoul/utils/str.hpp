@@ -193,57 +193,107 @@ public:
 	inline const_reverse_iterator rbegin() const { return s.rbegin(); }
 	inline const_reverse_iterator rend() const { return s.rend(); }
 	
+	//reverse the str
 	inline str& reverse() {
 		for(size_t i=0, j=len()-1; i<j; ++i,--j) swap(s[i], s[j]);
 		return *this;
 	}
 	
-	const str reversed() {
+	//return a reversed new str
+	inline str reversed() {
 		return string(s.rbegin(), s.rend());
 	}
 	
-	//for split, faster version
-	template<class Container>
-	inline Container& split(const str& d, Container& c) {
-		vector<string::iterator> o;
-		::split(s, d, o);
-		for (size_t i=0; i<o.size(); i+=2) c.insert(c.end(), Container::value_type(o[i], o[i+1]));
-		return c;
+	//sort the str
+	inline str& sort() {
+		::sort(s.begin(), s.end());
+		return *this;
 	}
 	
-	//for split, slower version
-	inline const vec_str split(const str& d) {
+	//return a sorted new str
+	inline str sorted() {
+		return clone().sort();
+	}
+	
+	/*************************************************
+	S.split([sep [,results]]) -> list of strings
+		Return a list of the words in the string S, using sep as the
+		delimiter string. If results is given, it will get all the 
+		result list of strings. If sep is not specified, any
+		whitespace string is a separator and empty strings are removed
+		from the result.
+	*************************************************/
+	template<class Container>
+	inline Container& split(const str& sep, Container& results) {	//faster version
+		vector<string::iterator> o;
+		::split(s, sep, o);
+		for (size_t i=0; i<o.size(); i+=2) results.insert(results.end(), Container::value_type(o[i], o[i+1]));
+		return results;
+	}
+	
+	inline const vec_str split(const str& d) {	//slower version
 		vec_str vs;
 		vs.reserve(20);
 		return this->split(d, vs);
 	}
 	
-	//for join
+	vec_str split() {
+		vec_str vs;
+		vs.reserve(20);
+		//TODO
+		return this->split(d, vs);
+	}
+	
+	/*************************************************
+	S.join(sequence) -> str
+		Return a string which is the concatenation of the strings in the
+		sequence.  The separator between elements is S.
+	*************************************************/
 	template<class Container>
-	inline const str join(const Container& c) {
+	inline str join(const Container& c) {
 		string r;
 		r.reserve(1024);
 		return ::join(s, c, r);
 	}
 	
-	//find a substr st in the str from start, left to right, return the index if found, or -1 if not
-	int find(const str& st, int start=0) const {
+	/*************************************************
+	S.find(sub [,start [,end]]) -> int
+		Search from left to right.
+		Return the lowest index in S where substring sub is found,
+		such that sub is contained within s[start:end].  Optional
+		arguments start and end are interpreted as in slice notation.
+		Return -1 on failure.
+	*************************************************/
+	int find(const str& sub, int start=0) const {
 		size_t l=len(), r;
 		if (l==0) return -1;
 		if (start<0) start+=l;
 		assert(start>=0 AND start<l);
-		return s.find(st.s, start);
+		return s.find(sub.s, start);
 	}
 	
+	inline int find(const str& sub, int start, int end) const {
+		return (*this)(start, end).find(sub);
+	}
 	
-
-	//find a substr st in the str from start, right to left, return the index if found, or -1 if not
-	int rfind(const str& st, int start=-1) const {
+	/*************************************************
+	S.rfind(sub [,start [,end]]) -> int
+		Search from right to left.
+		Return the highest index in S where substring sub is found,
+		such that sub is contained within s[start:end].  Optional
+		arguments start and end are interpreted as in slice notation.
+		Return -1 on failure.
+	*************************************************/
+	int rfind(const str& sub, int start=-1) const {
 		size_t l=len(), r;
 		if (l==0) return -1;
 		if (start<0) start+=l;
 		assert(start>=0 AND start<l);
-		return s.rfind(st.s, start);
+		return s.rfind(sub.s, start);
+	}
+	
+	int rfind(const str& sub, int start, int end) const {
+		return (*this)(start, end).rfind(sub);
 	}
 	
 	/*************************************************
@@ -257,10 +307,9 @@ public:
 	
 	/*************************************************
 	S.replace(old, new[, count]) -> S
-		Return string S with all occurrences 
-		of substring old replaced by new.  If the optional 
-		argument count is given, only the first count 
-		occurrences are replaced.
+		Return string S with all occurrences of substring old 
+		replaced by new.  If the optional argument count is 
+		given, only the first count occurrences are replaced.
 	*************************************************/
 	str& replace(const str& old, const str& new_, size_t count=-1) {
 		size_t start=0, olen=old.len(), nlen=new_.len();
@@ -283,6 +332,13 @@ public:
 	inline str replaced(const str& old, const str& new_, size_t count=-1) {
 		return clone().replace(old, new_, count);
 	}
+	
+	/*************************************************
+	S.count(sub[, start[, end]]) -> int
+		Return the number of non-overlapping occurrences of substring sub in
+		string S[start:end].  Optional arguments start and end are interpreted
+		as in slice notation.
+	*************************************************/
 	
 	
 };
