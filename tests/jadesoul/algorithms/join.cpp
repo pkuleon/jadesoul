@@ -18,7 +18,7 @@ void test1() {
 	cout<<b<<endl;
 	
 	char buf[100];
-	string c(buf, join(a.begin(), a.end(), b.begin(), b.end(), buf));
+	string c(buf, join(a.begin(), a.end(), b.begin(), b.end(), buf, 1));
 	cout<<c.size()<<endl;
 	cout<<c<<endl;
 }
@@ -35,7 +35,7 @@ void test2() {
 	cout<<c.size()<<endl;
 	cout<<"["<<c<<"]"<<endl;
 	
-	string d(c.begin(), join(a.begin(), a.end(), b.begin(), b.end(), c.begin()));
+	string d(c.begin(), join(a.begin(), a.end(), b.begin(), b.end(), c.begin(), 1));
 	cout<<c.size()<<endl;
 	cout<<"["<<c<<"]"<<endl;
 	cout<<d.size()<<endl;
@@ -57,7 +57,7 @@ void test3() {
 	else size=(fsize-1)*gsize+fsize;
 	
 	string c(size, 0);
-	join(frags.begin(), frags.end(), glue.begin(), glue.end(), c.begin());
+	join(frags.begin(), frags.end(), glue.begin(), glue.end(), c.begin(), 1);
 	
 	cout<<c.size()<<endl;
 	cout<<"["<<c<<"]"<<endl;
@@ -65,11 +65,20 @@ void test3() {
 
 void test4() {
 	str a="123";
-	str b="ABC";
-	str c[]={1, 2, '3', '4', '5'};
-	dump(a.join(b));
-	dump(b.join(a));
-	dump(b.join(c, c+5));
+	str b="(^_^)";
+	str c[]={1, "HI", '3', 3.14, "world"};
+	
+	for_n(i, 5) dump(c[i]);
+	
+	vector<str> d(c, c+5);
+	dump(d);
+	str e=b.join(d);
+	
+	dump(e);
+	
+	string f(100, '+');
+	string g(f.begin(), join(b.begin(), b.end(), c, c+5, f.begin()));
+	cout<<g<<endl;
 }
 
 int main () {

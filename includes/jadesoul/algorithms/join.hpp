@@ -24,24 +24,37 @@
 
 // List_join_ListOfList
 // Elememt_join_List
-template <class FragmentsInputIterator, class GlueInputIterator, class OutputIterator>
-OutputIterator join(FragmentsInputIterator fbegin, FragmentsInputIterator fend,
-	GlueInputIterator gbegin, GlueInputIterator gend, OutputIterator result) {
+template <class GlueInputIterator, class FragmentsInputIterator, class OutputIterator>
+OutputIterator join(GlueInputIterator gbegin, GlueInputIterator gend, FragmentsInputIterator fbegin, FragmentsInputIterator fend, OutputIterator result) {
 	
 	// for special cases, move fast
 	if (fbegin==fend) return result;
 	
 	// copy first frag
-	std::copy(fbegin->begin(), fbegin->end(), result);
+	result=std::copy(fbegin->begin(), fbegin->end(), result);
+	
+	// advance(result, distance(fbegin->begin(), fbegin->end()));
+	// iterator_traits<FragmentsInputIterator>::value_type::iterator begin, end;
+	
+	// begin=fbegin->begin(), end=fbegin->end();
+	
+	
 	GlueInputIterator stump=gbegin;
 	while (++fbegin!=fend) {
 		// insert a glue before each frag
 		while (gbegin!=gend) *result++=*gbegin++;
 		gbegin=stump;
 		// copy frag
-		std::copy(fbegin->begin(), fbegin->end(), result);
+		result=std::copy(fbegin->begin(), fbegin->end(), result);
 	}
 	return result;
+}
+
+// Container Version
+template <class GlueContainer, class FragmentsContainer, class OutputContainer>
+inline OutputContainer& join(const GlueContainer& glue, const FragmentsContainer& fragments, OutputContainer& out) {
+	join(glue.begin(), glue.end(), fragments.begin(), fragments.end(), inserter(out, out.end()));
+	return out;
 }
 
 /**
@@ -54,9 +67,8 @@ OutputIterator join(FragmentsInputIterator fbegin, FragmentsInputIterator fend,
 
 // List_join_List
 // Elememts_join_Elememts
-template <class FragmentsInputIterator, class GlueInputIterator, class OutputIterator>
-OutputIterator join(FragmentsInputIterator fbegin, FragmentsInputIterator fend,
-	GlueInputIterator gbegin, GlueInputIterator gend, OutputIterator result, int /*flag*/) {
+template <class GlueInputIterator, class FragmentsInputIterator, class OutputIterator>
+OutputIterator join(GlueInputIterator gbegin, GlueInputIterator gend, FragmentsInputIterator fbegin, FragmentsInputIterator fend, OutputIterator result, int /*flag*/) {
 	
 	// for special cases, move fast
 	if (gbegin==gend) return std::copy(fbegin, fend, result);

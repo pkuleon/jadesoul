@@ -61,21 +61,68 @@ void test_substr() {
 
 void test_join() {
 	str a="123";
-	str b="-";
-	str c[]={1, 2, '3', '4', '5'};
-	dump(a.join(b));
-	dump(b.join(a));
-	dump(b.join("ABC"));
-	dump(b.join(string("ABC")));
-	dump(b.join(str(234234)));
-	// dump(b.join(string()+234234));
-	// dump(b.join(c, c+5));
+	str b="(^_^)";
+	str c[]={1, "HI", '3', 3.14, "world"};
+	
+	for_n(i, 5) dump(c[i]);
+	
+	vector<str> d(c, c+5);
+	dump(d);
+	str e=b.join(d);
+	
+	dump(e);
+	
+	string f(100, '+');
+	string g(f.begin(), join(b.begin(), b.end(), c, c+5, f.begin()));
+	cout<<g<<endl;
+}
+
+void test_split() {
+	str a="1233243243234234";
+	str b="3243";
+	vec_str c;
+	a.split(b, c);
+	dump(c);
+	
+	std::set<string> d;
+	a.split(b, d);
+	dump(d);
+	
+	dump(a.split(b));
+}
+
+void test_find() {
+	cout<<string::npos<<endl;
+	cout<<size_t(-1)<<endl;
+	cout<<int(string::npos)<<endl;
+	
+	str a="ABCDEFCG";
+	str b="C";
+	dump(a.find(b));
+}
+
+void test_rfind() {
+	str a="ABCDEFCG";
+	str b="C";
+	dump(a.rfind(b));
+	dump(a.rfind("H"));
+}
+
+void test_replace() {
+	str a="ABCDEFCG";
+	str b="C";
+	dump(a.rfind(b));
+	dump(a.rfind("H"));
 }
 
 int main () {
 	// test_constructors();
 	// test_slice();
 	// test_substr();
-	test_join();
+	// test_join();
+	// test_split();
+	// test_find();
+	// test_rfind();
+	test_replace();
 }
 

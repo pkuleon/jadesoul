@@ -44,4 +44,31 @@ vector<pair<InputIterator1, InputIterator1> > split(
 	return result;
 }
 
+// Better Version
+template <class SequenceIterator, class DelimiterIterator, class OutputIterator>
+OutputIterator split(SequenceIterator sbegin, SequenceIterator send, DelimiterIterator dbegin, DelimiterIterator dend, OutputIterator result) {
+	ptrdiff_t slen = distance(sbegin, send), dlen = distance(dbegin, dend);
+	if (slen<dlen) return result;
+	SequenceIterator start = sbegin, stop=search(sbegin, send, dbegin, dend);
+	if (stop==send) return result;
+	do {
+		*result++=start;
+		*result++=stop;
+		advance(stop, dlen);
+		start = stop;
+		stop = search(start, send, dbegin, dend);
+	} while (stop!=send);
+	assert(stop==send);
+	*result++=start;
+	*result++=send;
+	return result;
+}
+
+// Container Version
+template <class SequenceContainer, class DelimiterContainer, class OutputContainer>
+inline OutputContainer& split(SequenceContainer& seq, DelimiterContainer& deli, OutputContainer& out) {
+	split(seq.begin(), seq.end(), deli.begin(), deli.end(), inserter(out, out.end()));
+	return out;
+}
+
 #endif /* SPLIT_HPP_1324966420_55 */

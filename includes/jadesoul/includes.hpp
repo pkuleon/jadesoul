@@ -104,6 +104,12 @@ using std::endl;
 using std::bitset;
 using std::ostream_iterator;
 using std::iterator_traits;
+using std::insert_iterator;
+using std::inserter;
+using std::back_inserter;
+using std::front_inserter;
+using std::back_insert_iterator;
+using std::front_insert_iterator;
 
 typedef std::vector<int> vec_int;
 typedef std::vector<char> vec_char;

@@ -19,12 +19,18 @@ class str {
 private:
 	string s;
 public:
-	inline str() {
+	typedef string::iterator iterator;
+	typedef string::const_iterator const_iterator;
+	typedef string::reverse_iterator reverse_iterator;
+	typedef string::const_reverse_iterator const_reverse_iterator;
 	
+	inline str() {
+		//
 	}
 	
 	//construction from c-style string
 	inline str(const char* cstr):s(cstr) {
+		// cout<<"s.size()="<<s.size()<<endl;
 	}
 	
 	//construction from std string
@@ -177,15 +183,15 @@ public:
 		}
 	}
 	
-	inline string::iterator begin() { return s.begin(); } 
-	inline string::iterator end() { return s.end(); }
-	inline string::reverse_iterator rbegin() { return s.rbegin(); }
-	inline string::reverse_iterator rend() { return s.rend(); }
+	inline iterator begin() { return s.begin(); } 
+	inline iterator end() { return s.end(); }
+	inline reverse_iterator rbegin() { return s.rbegin(); }
+	inline reverse_iterator rend() { return s.rend(); }
 	
-	inline string::const_iterator begin() const { return s.begin(); } 
-	inline string::const_iterator end() const { return s.end(); }
-	inline string::const_reverse_iterator rbegin() const { return s.rbegin(); }
-	inline string::const_reverse_iterator rend() const { return s.rend(); }
+	inline const_iterator begin() const { return s.begin(); } 
+	inline const_iterator end() const { return s.end(); }
+	inline const_reverse_iterator rbegin() const { return s.rbegin(); }
+	inline const_reverse_iterator rend() const { return s.rend(); }
 	
 	inline str& reverse() {
 		for(size_t i=0, j=len()-1; i<j; ++i,--j) swap(s[i], s[j]);
@@ -196,49 +202,93 @@ public:
 		return string(s.rbegin(), s.rend());
 	}
 	
-	//for split
+	//for split, faster version
+	template<class Container>
+	inline Container& split(const str& d, Container& c) {
+		vector<string::iterator> o;
+		::split(s, d, o);
+		for (size_t i=0; i<o.size(); i+=2) c.insert(c.end(), Container::value_type(o[i], o[i+1]));
+		return c;
+	}
 	
-	
-	
-	//for glue
-	
+	//for split, slower version
+	inline const vec_str split(const str& d) {
+		vec_str vs;
+		vs.reserve(20);
+		return this->split(d, vs);
+	}
 	
 	//for join
-	template<class Iterator>
-	const str join(Iterator begin, Iterator end) const {
-		size_t fsize=end-begin, gsize=s.size(), size, fsize2=0;
-		assert(fsize>=0);
-		for (Iterator it=begin; it!=end; ++it) fsize2+=it->size();
-		
-		if (fsize==0) return "";
-		else if (gsize==0) size=fsize2;
-		else size=(fsize-1)*gsize+fsize2;
-		
-		string ret(size, 0);
-		::join(begin, end, s.begin(), s.end(), ret.begin());
-		return ret;
-	}
-	
 	template<class Container>
-	inline const str join(const Container& c) const {
-		return join(c.begin(), c.end());
+	inline const str join(const Container& c) {
+		string r;
+		r.reserve(1024);
+		return ::join(s, c, r);
 	}
 	
-	inline const str join(const str& r) const {
-		size_t fsize=r.size(), gsize=s.size(), size;		
-		if (fsize==0) return "";
-		else if (gsize==0) size=fsize;
-		else size=(fsize-1)*gsize+fsize;
-		
-		string ret(size, 0);
-		::join(r.begin(), r.end(), s.begin(), s.end(), ret.begin(), 1);
-		return ret;
+	//find a substr st in the str from start, left to right, return the index if found, or -1 if not
+	int find(const str& st, int start=0) const {
+		size_t l=len(), r;
+		if (l==0) return -1;
+		if (start<0) start+=l;
+		assert(start>=0 AND start<l);
+		return s.find(st.s, start);
 	}
 	
-	inline const str join(const char* cstr) const {
-		return join(str(cstr));
+	
+
+	//find a substr st in the str from start, right to left, return the index if found, or -1 if not
+	int rfind(const str& st, int start=-1) const {
+		size_t l=len(), r;
+		if (l==0) return -1;
+		if (start<0) start+=l;
+		assert(start>=0 AND start<l);
+		return s.rfind(st.s, start);
 	}
+	
+	/*************************************************
+	S.clone() -> new str
+		Return a deep copy of string S, which is a clone
+		of S.
+	*************************************************/
+	inline str clone() {
+		return s;
+	}
+	
+	/*************************************************
+	S.replace(old, new[, count]) -> S
+		Return string S with all occurrences 
+		of substring old replaced by new.  If the optional 
+		argument count is given, only the first count 
+		occurrences are replaced.
+	*************************************************/
+	str& replace(const str& old, const str& new_, size_t count=-1) {
+		size_t start=0, olen=old.len(), nlen=new_.len();
+		while(count==-1 OR count-->0) {
+			start=s.find(old.s, start);
+			if (start==string::npos) break;
+			s.replace(start, olen, new_.s);
+			start+=nlen;
+		}
+		return *this;
+	}
+	
+	/*************************************************
+	S.replaced(old, new[, count]) -> new str
+		Return a copy of string S with all occurrences 
+		of substring old replaced by new.  If the optional 
+		argument count is given, only the first count 
+		occurrences are replaced.
+	*************************************************/
+	inline str replaced(const str& old, const str& new_, size_t count=-1) {
+		return clone().replace(old, new_, count);
+	}
+	
+	
 };
+
+
+//for glue
 
 Macro__over_load_dump__ValueType(str);
 
