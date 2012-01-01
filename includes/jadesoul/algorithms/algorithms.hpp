@@ -16,6 +16,8 @@
 #include "endswith.hpp"
 #include "split.hpp"
 #include "join.hpp"
+#include "count.hpp"
+#include "repeat.hpp"
 #include "sorts.hpp"
 #include "dynamic_programming.hpp"
 

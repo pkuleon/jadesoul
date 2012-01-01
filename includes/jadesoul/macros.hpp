@@ -10,6 +10,8 @@
  * Written In: MSRA, beijing, China
  */
 
+#define debug
+
 #define AND &&
 #define OR ||
 #define NOT !
@@ -64,5 +66,17 @@
 	#undef magic
 	#define magic(...)
 #endif
+
+#define jtest(name, id, ...) \
+struct name{\
+	name() {\
+		cout<<"-------------------------------------------------- "\
+		<<#id<<" : "\
+		<<#name\
+		<<"\n";\
+		__VA_ARGS__\
+	}\
+} id;
+
 
 #endif /* MACROS_HPP_1324964318_13 */

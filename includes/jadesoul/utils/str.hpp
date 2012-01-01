@@ -119,7 +119,11 @@ public:
 	
 	//for output
 	inline friend ostream& operator <<(ostream& o, const str& s) {
+#ifdef debug
+		return o<<'"'<<s.s<<'"';
+#else
 		return o<<s.s;
+#endif
 	}
 	
 	//for connection
@@ -233,10 +237,10 @@ public:
 		sequence.  The separator between elements is S.
 	*************************************************/
 	template<class Container>
-	inline str join(const Container& c) {
-		string r;
-		r.reserve(1024);
-		return ::join(s, c, r);
+	inline str join(const Container& con) {
+		string ret;
+		ret.reserve(1024);
+		return ::join(s, con, ret);
 	}
 	
 	/*************************************************
@@ -262,14 +266,6 @@ public:
 		arguments start and end are interpreted as in slice notation.
 		Return -1 on failure.
 	*************************************************/
-	int rfind(const str& sub, int start=-1) const {
-		size_t l=len(), r;
-		if (l==0) return -1;
-		if (start<0) start+=l;
-		assert(start>=0 AND start<l);
-		return s.rfind(sub.s, start);
-	}
-	
 	inline int rfind(const str& sub, int start=0, int end=0) const {
 		uint l=len();
 		start=(start>0)?l-1-start:-start-l;
@@ -323,20 +319,8 @@ public:
 		string S[start:end].  Optional arguments start and end are interpreted
 		as in slice notation.
 	*************************************************/
-	uint count(const str& sub, int start=0) const {
-		size_t l=len(), cnt=0, lsub=sub.len();
-		if (l==0) return 0;
-		if (start<0) start+=l;
-		assert(start>=0 AND start<l);
-		while ((start=s.find(sub.s, start))!=string::npos) {
-			++cnt;
-			start+=lsub;
-		}
-		return cnt;
-	}
-	
-	inline uint count(const str& sub, int start, int end) const {
-		return (this->operator()(start, end)).count(sub);
+	inline uint count(const str& prefix, int start=0, int end=0) {
+		return ::count((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, prefix.begin(), prefix.end());
 	}
 	
 	/*************************************************
@@ -347,9 +331,13 @@ public:
 	inline str center(uint width, char fillchar) {
 		string ret(width, fillchar);
 		uint l=len();
-		int r=(width-l)/2;
-		if (r>=0) std::copy(s.begin(), s.end(), ret.begin()+r);
-		else std::copy(s.begin()+(-r), s.begin()+(width-r), ret.begin());
+		if (width>=l) {
+			int r=(width-l)/2;
+			std::copy(s.begin(), s.end(), ret.begin()+r);
+		} else {
+			int r=(l-width)/2;
+			std::copy(s.begin()+r, s.begin()+(width+r), ret.begin());
+		}
 		return ret;
 	}
 	
@@ -375,16 +363,13 @@ public:
 		return ::endswith((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, prefix.begin(), prefix.end());
 	}
 	
-
-	
-	
 	/*************************************************
 	S.expandtabs([tabsize]) -> string
 		Return a copy of S where all tab characters are expanded using spaces.
 		If tabsize is not given, a tab size of 8 characters is assumed.
 	*************************************************/
 	str expandtabs(uint tabsize=8) {
-		return replaced("\t", str(" ")*tabsize);
+		return replaced("\t", str(" ").repeated(tabsize));
 	}
 	
 	/*************************************************
@@ -414,6 +399,7 @@ public:
 			char& c=s[i];
 			if (c>='A' AND c<='Z') c+='a'-'A';
 		}
+		return *this;
 	}
 	
 	inline str lowered() {
@@ -432,6 +418,7 @@ public:
 			if (c>='a' AND c<='z') c+='A'-'a';
 			else if (c>='A' AND c<='Z') c+='a'-'A';
 		}
+		return *this;
 	}
 	
 	inline str swapcased() {
@@ -520,22 +507,158 @@ public:
 		return *this;
 	}
 	
-	inline str& striped(const str& chars=" \t\v\r\n\b") {
-		return clone().rstrip(chars).lstrip(chars);
+	inline str striped(const str& chars=" \t\v\r\n\b") {
+		return clone().strip(chars);
 	}
 	
-	inline str& lstriped(const str& chars=" \t\v\r\n\b") {
+	inline str lstriped(const str& chars=" \t\v\r\n\b") {
 		return clone().lstrip(chars);
 	}
 	
-	inline str& rstriped(const str& chars=" \t\v\r\n\b") {
+	inline str rstriped(const str& chars=" \t\v\r\n\b") {
 		return clone().rstrip(chars);
 	}
+
+	// for i in [''.isalnum, ''.isalpha, ''.isdigit, ''.islower, ''.isspace, ''.isupper, ''.partition, ''.ljust, ''.rjust, ''.splitlines, ''.translate, ''.zfill]: print '/*************************************************\n%s\n\n%s\n*************************************************/\n\n\n' % (i, i.__doc__)
 	
+	/*************************************************
+	<built-in method isalnum of str object at 0x0159C050>
+
+	S.isalnum() -> bool
+
+	Return True if all characters in S are alphanumeric
+	and there is at least one character in S, False otherwise.
+	*************************************************/
+	
+
+
+	/*************************************************
+	<built-in method isalpha of str object at 0x0159C050>
+
+	S.isalpha() -> bool
+
+	Return True if all characters in S are alphabetic
+	and there is at least one character in S, False otherwise.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method isdigit of str object at 0x0159C050>
+
+	S.isdigit() -> bool
+
+	Return True if all characters in S are digits
+	and there is at least one character in S, False otherwise.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method islower of str object at 0x0159C050>
+
+	S.islower() -> bool
+
+	Return True if all cased characters in S are lowercase and there is
+	at least one cased character in S, False otherwise.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method isspace of str object at 0x0159C050>
+
+	S.isspace() -> bool
+
+	Return True if all characters in S are whitespace
+	and there is at least one character in S, False otherwise.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method isupper of str object at 0x0159C050>
+
+	S.isupper() -> bool
+
+	Return True if all cased characters in S are uppercase and there is
+	at least one cased character in S, False otherwise.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method partition of str object at 0x0159C050>
+
+	S.partition(sep) -> (head, sep, tail)
+
+	Searches for the separator sep in S, and returns the part before it,
+	the separator itself, and the part after it.  If the separator is not
+	found, returns S and two empty strings.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method ljust of str object at 0x0159C050>
+
+	S.ljust(width[, fillchar]) -> string
+
+	Return S left justified in a string of length width. Padding is
+	done using the specified fill character (default is a space).
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method rjust of str object at 0x0159C050>
+
+	S.rjust(width[, fillchar]) -> string
+
+	Return S right justified in a string of length width. Padding is
+	done using the specified fill character (default is a space)
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method splitlines of str object at 0x0159C050>
+
+	S.splitlines([keepends]) -> list of strings
+
+	Return a list of the lines in S, breaking at line boundaries.
+	Line breaks are not included in the resulting list unless keepends
+	is given and true.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method translate of str object at 0x0159C050>
+
+	S.translate(table [,deletechars]) -> string
+
+	Return a copy of the string S, where all characters occurring
+	in the optional argument deletechars are removed, and the
+	remaining characters have been mapped through the given
+	translation table, which must be a string of length 256.
+	*************************************************/
+
+
+
+	/*************************************************
+	<built-in method zfill of str object at 0x0159C050>
+
+	S.zfill(width) -> string
+
+	Pad a numeric string S with zeros on the left, to fill a field
+	of the specified width.  The string S is never truncated.
+	*************************************************/
+
+
+
 };
 
-
-//for glue
 
 Macro__over_load_dump__ValueType(str);
 
