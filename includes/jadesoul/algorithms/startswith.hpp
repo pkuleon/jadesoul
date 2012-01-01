@@ -14,10 +14,10 @@
 
 /**
  *  startswith
- *
+ *	
  *  test if the elements in [first1, last1) startswith the elements in [first2, last2)
  *  by jadesoul @ 2010-9-30
- *
+ *	
  *  usage sample: cout<<boolalpha<<startswith(p, p+12, q, q+5);
 */
 template <  class InputIterator1,
@@ -31,7 +31,6 @@ bool startswith(InputIterator1 first1, InputIterator1 last1,
 	}
 	return true;
 }
-
 
 /**
  *  startswith using comp function

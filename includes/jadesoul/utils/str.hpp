@@ -24,8 +24,18 @@ public:
 	typedef string::reverse_iterator reverse_iterator;
 	typedef string::const_reverse_iterator const_reverse_iterator;
 	
+	inline iterator begin() { return s.begin(); } 
+	inline iterator end() { return s.end(); }
+	inline reverse_iterator rbegin() { return s.rbegin(); }
+	inline reverse_iterator rend() { return s.rend(); }
+	
+	inline const_iterator begin() const { return s.begin(); } 
+	inline const_iterator end() const { return s.end(); }
+	inline const_reverse_iterator rbegin() const { return s.rbegin(); }
+	inline const_reverse_iterator rend() const { return s.rend(); }
+	
 	inline str() {
-		//
+		// nothing to do
 	}
 	
 	//construction from c-style string
@@ -113,8 +123,13 @@ public:
 	}
 	
 	//for connection
-	inline const str operator +(const str& r) {
+	inline str operator +(const str& r) {
 		return str(s+r.s);
+	}
+	
+	//for multiply
+	inline str operator *(int n) {
+		return repeated(n);
 	}
 	
 	//for size query
@@ -183,38 +198,6 @@ public:
 		}
 	}
 	
-	inline iterator begin() { return s.begin(); } 
-	inline iterator end() { return s.end(); }
-	inline reverse_iterator rbegin() { return s.rbegin(); }
-	inline reverse_iterator rend() { return s.rend(); }
-	
-	inline const_iterator begin() const { return s.begin(); } 
-	inline const_iterator end() const { return s.end(); }
-	inline const_reverse_iterator rbegin() const { return s.rbegin(); }
-	inline const_reverse_iterator rend() const { return s.rend(); }
-	
-	//reverse the str
-	inline str& reverse() {
-		for(size_t i=0, j=len()-1; i<j; ++i,--j) swap(s[i], s[j]);
-		return *this;
-	}
-	
-	//return a reversed new str
-	inline str reversed() {
-		return string(s.rbegin(), s.rend());
-	}
-	
-	//sort the str
-	inline str& sort() {
-		::sort(s.begin(), s.end());
-		return *this;
-	}
-	
-	//return a sorted new str
-	inline str sorted() {
-		return clone().sort();
-	}
-	
 	/*************************************************
 	S.split([sep [,results]]) -> list of strings
 		Return a list of the words in the string S, using sep as the
@@ -241,7 +224,7 @@ public:
 		vec_str vs;
 		vs.reserve(20);
 		//TODO
-		return this->split(d, vs);
+		return this->split(" ", vs);
 	}
 	
 	/*************************************************
@@ -264,16 +247,11 @@ public:
 		arguments start and end are interpreted as in slice notation.
 		Return -1 on failure.
 	*************************************************/
-	int find(const str& sub, int start=0) const {
-		size_t l=len(), r;
-		if (l==0) return -1;
-		if (start<0) start+=l;
-		assert(start>=0 AND start<l);
-		return s.find(sub.s, start);
-	}
-	
-	inline int find(const str& sub, int start, int end) const {
-		return (*this)(start, end).find(sub);
+	inline int find(const str& sub, int start=0, int end=0) const {
+		const_iterator a=(start<0?s.end():s.begin())+start, b=(end<=0?s.end():s.begin())+end;
+		if (a>=b) return -1;
+		const_iterator c=std::search(a, b, sub.begin(), sub.end());
+		return (c==b)?-1:c-a;
 	}
 	
 	/*************************************************
@@ -292,8 +270,14 @@ public:
 		return s.rfind(sub.s, start);
 	}
 	
-	int rfind(const str& sub, int start, int end) const {
-		return (*this)(start, end).rfind(sub);
+	inline int rfind(const str& sub, int start=0, int end=0) const {
+		uint l=len();
+		start=(start>0)?l-1-start:-start-l;
+		end=(end>0)?l-1-end:-end-l;
+		const_reverse_iterator a=(end<=0?s.rend():s.rbegin())+end, b=(start<0?s.rend():s.rbegin())+start;
+		if (a>=b) return -1;
+		const_reverse_iterator c=std::search(a, b, sub.rbegin(), sub.rend());
+		return (c==b)?-1:(b-c)-sub.len()-1;
 	}
 	
 	/*************************************************
@@ -334,12 +318,219 @@ public:
 	}
 	
 	/*************************************************
-	S.count(sub[, start[, end]]) -> int
+	S.count(sub[, start[, end]]) -> uint
 		Return the number of non-overlapping occurrences of substring sub in
 		string S[start:end].  Optional arguments start and end are interpreted
 		as in slice notation.
 	*************************************************/
+	uint count(const str& sub, int start=0) const {
+		size_t l=len(), cnt=0, lsub=sub.len();
+		if (l==0) return 0;
+		if (start<0) start+=l;
+		assert(start>=0 AND start<l);
+		while ((start=s.find(sub.s, start))!=string::npos) {
+			++cnt;
+			start+=lsub;
+		}
+		return cnt;
+	}
 	
+	inline uint count(const str& sub, int start, int end) const {
+		return (this->operator()(start, end)).count(sub);
+	}
+	
+	/*************************************************
+	S.center(width[, fillchar]) -> string
+		Return S centered in a string of length width. Padding is
+		done using the specified fill character (default is a space)
+	*************************************************/
+	inline str center(uint width, char fillchar) {
+		string ret(width, fillchar);
+		uint l=len();
+		int r=(width-l)/2;
+		if (r>=0) std::copy(s.begin(), s.end(), ret.begin()+r);
+		else std::copy(s.begin()+(-r), s.begin()+(width-r), ret.begin());
+		return ret;
+	}
+	
+	/*************************************************
+	S.startswith(prefix[, start[, end]]) -> bool
+		Return True if S starts with the specified prefix, False otherwise.
+		With optional start, test S beginning at that position.
+		With optional end, stop comparing S at that position.
+		prefix can also be a tuple of strings to try.
+	*************************************************/
+	bool startswith(const str& prefix, int start=0, int end=0) {
+		return ::startswith((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, prefix.begin(), prefix.end());
+	}
+	
+	/*************************************************
+	S.endswith(suffix[, start[, end]]) -> bool
+		Return True if S ends with the specified suffix, False otherwise.
+		With optional start, test S beginning at that position.
+		With optional end, stop comparing S at that position.
+		suffix can also be a tuple of strings to try.
+	*************************************************/
+	bool endswith(const str& prefix, int start=0, int end=0) {
+		return ::endswith((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, prefix.begin(), prefix.end());
+	}
+	
+
+	
+	
+	/*************************************************
+	S.expandtabs([tabsize]) -> string
+		Return a copy of S where all tab characters are expanded using spaces.
+		If tabsize is not given, a tab size of 8 characters is assumed.
+	*************************************************/
+	str expandtabs(uint tabsize=8) {
+		return replaced("\t", str(" ")*tabsize);
+	}
+	
+	/*************************************************
+	S.upper() -> S
+	S.uppered() -> new string
+		Return a copy of the string S converted to uppercase.
+	*************************************************/
+	str& upper() {
+		for (uint l=len(), i=0; i<l; ++i) {
+			char& c=s[i];
+			if (c>='a' AND c<='z') c+='A'-'a';
+		}
+		return *this;
+	}
+	
+	inline str uppered() {
+		return clone().upper();
+	}
+	
+	/*************************************************
+	S.lower() -> S
+	S.lowered() -> new string
+		Return a copy of the string S converted to lowercase.
+	*************************************************/
+	str& lower() {
+		for (uint l=len(), i=0; i<l; ++i) {
+			char& c=s[i];
+			if (c>='A' AND c<='Z') c+='a'-'A';
+		}
+	}
+	
+	inline str lowered() {
+		return clone().lower();
+	}
+	
+	/*************************************************
+	S.swapcase() -> S
+	S.swapcased() -> new string
+		Return a copy of the string S with uppercase characters
+		converted to lowercase and vice versa.
+	*************************************************/
+	str& swapcase() {
+		for (uint l=len(), i=0; i<l; ++i) {
+			char& c=s[i];
+			if (c>='a' AND c<='z') c+='A'-'a';
+			else if (c>='A' AND c<='Z') c+='a'-'A';
+		}
+	}
+	
+	inline str swapcased() {
+		return clone().swapcase();
+	}
+	
+	/*************************************************
+	S.reverse() -> S
+	S.reversed() -> new string
+		Return a copy of the string S with all chars
+		reversed.
+	*************************************************/
+	str& reverse() {
+		std::reverse(s.begin(), s.end());
+		return *this;
+	}
+	
+	inline str reversed() {
+		return string(s.rbegin(), s.rend());
+	}
+	
+	/*************************************************
+	S.repeat(n) -> S
+	S.repeated(n) -> new string
+		Return a copy of the string S with itself repeated
+		for n times. if n<0, the reversed S will be repeated.
+	*************************************************/
+	str& repeat(int n) {
+		str& me=*this;
+		uint l=len();
+		if (l==0) return me;
+		if (n==0) {
+			s.clear();
+			return me;
+		}
+		else if (n<0) {
+			me.reverse();
+			n=-n;
+		}
+		for (uint i=1; i<n; ++i) s.append(s.begin(), s.begin()+l);
+		return me;
+	}
+	
+	inline str repeated(int n) {
+		return clone().repeat(n);
+	}
+	
+	/*************************************************
+	S.sort() -> S
+	S.sorted() -> new string
+		Return a copy of the string S with all chars
+		sorted.
+	*************************************************/
+	str& sort() {
+		std::sort(s.begin(), s.end());
+		return *this;
+	}
+	
+	//return a sorted new str
+	inline str sorted() {
+		return clone().sort();
+	}
+	
+	/*************************************************
+	S.strip([chars]) -> S
+	S.lstrip([chars]) -> S
+	S.rstrip([chars]) -> S
+	S.striped([chars]) -> string
+	S.lstriped([chars]) -> string
+	S.rstriped([chars]) -> string
+		Return a copy of the string S with leading and trailing
+		whitespace removed.
+		If chars is given, remove characters in chars instead.
+	*************************************************/
+	inline str& strip(const str& chars=" \t\v\r\n\b") {
+		return rstrip(chars).lstrip(chars);
+	}
+	
+	inline str& lstrip(const str& chars=" \t\v\r\n\b") {
+		s.erase(0, s.find_first_not_of(chars.s));
+		return *this;
+	}
+	
+	inline str& rstrip(const str& chars=" \t\v\r\n\b") {
+		s.erase(s.find_last_not_of(chars.s));
+		return *this;
+	}
+	
+	inline str& striped(const str& chars=" \t\v\r\n\b") {
+		return clone().rstrip(chars).lstrip(chars);
+	}
+	
+	inline str& lstriped(const str& chars=" \t\v\r\n\b") {
+		return clone().lstrip(chars);
+	}
+	
+	inline str& rstriped(const str& chars=" \t\v\r\n\b") {
+		return clone().rstrip(chars);
+	}
 	
 };
 

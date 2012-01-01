@@ -120,6 +120,15 @@ void test_replace() {
 	dump(a);
 }
 
+void test_count() {
+	str a="ABCDEFCG";
+	str b="B";
+	str c="C";
+	dump(a.count(b));
+	dump(a.count(c));
+}
+
+
 int main () {
 	// test_constructors();
 	// test_slice();
@@ -128,6 +137,7 @@ int main () {
 	// test_split();
 	// test_find();
 	// test_rfind();
-	test_replace();
+	// test_replace();
+	test_count();
 }
 
