@@ -13,9 +13,10 @@
  */
 
 #include "includes.hpp"
+#include "object.hpp"
 #include "range.hpp"
 
-class str {
+class str : public object {
 private:
 	string s;
 public:
@@ -618,9 +619,9 @@ public:
 	Return S right justified in a string of length width. Padding is
 	done using the specified fill character (default is a space)
 	*************************************************/
-
-
-
+	
+	
+	
 	/*************************************************
 	<built-in method splitlines of str object at 0x0159C050>
 
@@ -630,9 +631,9 @@ public:
 	Line breaks are not included in the resulting list unless keepends
 	is given and true.
 	*************************************************/
-
-
-
+	
+	
+	
 	/*************************************************
 	<built-in method translate of str object at 0x0159C050>
 
@@ -643,9 +644,9 @@ public:
 	remaining characters have been mapped through the given
 	translation table, which must be a string of length 256.
 	*************************************************/
-
-
-
+	
+	
+	
 	/*************************************************
 	<built-in method zfill of str object at 0x0159C050>
 
@@ -654,9 +655,19 @@ public:
 	Pad a numeric string S with zeros on the left, to fill a field
 	of the specified width.  The string S is never truncated.
 	*************************************************/
-
-
-
+	
+	size_t hash() {
+		//TODO
+	}
+	
+	str& repr() {
+		//TODO
+		return *this;
+	}
+	
+	inline str torepr() {
+		return clone().repr();
+	}
 };
 
 
