@@ -15,3 +15,4 @@ def del_all(dp):
 		if isdir(dp2): del_all(dp2)
 
 del_all('..')
+sleep(3)
