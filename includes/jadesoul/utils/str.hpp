@@ -660,9 +660,9 @@ public:
 		//TODO
 	}
 	
-	str& repr() {
+	string repr() {
 		//TODO
-		return *this;
+		return s;
 	}
 	
 	inline str torepr() {

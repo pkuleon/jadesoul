@@ -19,6 +19,25 @@ public:
 	object() {
 	
 	}
+	
+	friend ostream& operator<<(ostream& out, const object& obj) {
+		return out<<"[object]";
+	}
+	
+	virtual object& print() {
+		cout<<this->repr();
+		return *this;
+	}
+	
+	virtual string repr() {
+		ostringstream oss;
+		oss<<*this;
+		return oss.str();
+	}
+	
+	inline const size_t len() const {
+		return 0; 
+	}
 };
 
 #endif /* OBJECT_HPP_1325430546_23 */

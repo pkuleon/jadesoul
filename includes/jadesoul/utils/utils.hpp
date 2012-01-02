@@ -15,7 +15,10 @@
 #include "meminfo.hpp"
 #include "dump.hpp"
 #include "range.hpp"
+#include "object.hpp"
 #include "str.hpp"
+#include "list.hpp"
+#include "tuple.hpp"
 
 void sys_seed(uint id=0) {
 	time_seed(id);

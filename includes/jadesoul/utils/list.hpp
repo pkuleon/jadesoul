@@ -15,7 +15,20 @@
 
 #include "includes.hpp"
 
-class  
+template<class T>
+class  list : public object {
+private:
+	std::vector<T> vec;
+public:
+	typedef std::vector<T> container;
+	// typedef container::iterator iterator;
+	// typedef container::conse_iterator const_iterator;
+	// typedef container::reverse_iterator reverse_iterator;
+	// typedef container::const_reverse_iterator const_reverse_iterator;
+	
+	// list(iterator begin, iterator end):vec(begin, end) {}
+	
+};
 
 
 #endif /* LIST_HPP_1325430399_29 */
