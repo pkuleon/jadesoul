@@ -20,6 +20,8 @@ class str : public object {
 private:
 	string s;
 public:
+	static string letters;
+public:
 	typedef string::iterator iterator;
 	typedef string::const_iterator const_iterator;
 	typedef string::reverse_iterator reverse_iterator;
@@ -670,6 +672,7 @@ public:
 	}
 };
 
+string str::letters="abcdefghijklmnopqrstuvwxyz";
 
 Macro__over_load_dump__ValueType(str);
 

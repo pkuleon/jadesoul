@@ -10,7 +10,7 @@
  * 
  * Date: 2012-01-02 12:18:27.450000
  * Written In: Peking University, beijing, China
- * Genetated Date: 2012-01-02 20:12:29.753000
+ * Genetated Date: 2012-01-02 22:00:41.702000
  */
 
 #include "includes.hpp"
@@ -27,11 +27,19 @@ public:
 	
 	tuple(tuple& t):v1(t.v1), v2(t.v2), ... {}
 	
-	tuple& operator=(const tuple& t) {
+	template<class R1, class R2...>
+	tuple& operator=(const tuple<R1, R2...>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		...
 		return *this;
+	}
+	
+	//TODO
+	template<class R1, class R2...>
+	tuple& assign(R1& r1, R2& r2, ...) {
+		v1=r1;
+		v2=r2;
 	}
 	
 	friend ostream& operator <<(ostream& o, const tuple& t) {
@@ -71,7 +79,8 @@ public:
 	
 	tuple1(tuple1& t):v1(t.v1) {}
 	
-	tuple1& operator=(const tuple1& t) {
+	template<class R1>
+	tuple1& operator=(const tuple1<R1>& t) {
 		v1=t.v1;
 		return *this;
 	}
@@ -107,7 +116,8 @@ public:
 	
 	tuple2(tuple2& t):v1(t.v1), v2(t.v2) {}
 	
-	tuple2& operator=(const tuple2& t) {
+	template<class R1, class R2>
+	tuple2& operator=(const tuple2<R1, R2>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		return *this;
@@ -145,7 +155,8 @@ public:
 	
 	tuple3(tuple3& t):v1(t.v1), v2(t.v2), v3(t.v3) {}
 	
-	tuple3& operator=(const tuple3& t) {
+	template<class R1, class R2, class R3>
+	tuple3& operator=(const tuple3<R1, R2, R3>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;
@@ -185,7 +196,8 @@ public:
 	
 	tuple4(tuple4& t):v1(t.v1), v2(t.v2), v3(t.v3), v4(t.v4) {}
 	
-	tuple4& operator=(const tuple4& t) {
+	template<class R1, class R2, class R3, class R4>
+	tuple4& operator=(const tuple4<R1, R2, R3, R4>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;
@@ -227,7 +239,8 @@ public:
 	
 	tuple5(tuple5& t):v1(t.v1), v2(t.v2), v3(t.v3), v4(t.v4), v5(t.v5) {}
 	
-	tuple5& operator=(const tuple5& t) {
+	template<class R1, class R2, class R3, class R4, class R5>
+	tuple5& operator=(const tuple5<R1, R2, R3, R4, R5>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;
@@ -271,7 +284,8 @@ public:
 	
 	tuple6(tuple6& t):v1(t.v1), v2(t.v2), v3(t.v3), v4(t.v4), v5(t.v5), v6(t.v6) {}
 	
-	tuple6& operator=(const tuple6& t) {
+	template<class R1, class R2, class R3, class R4, class R5, class R6>
+	tuple6& operator=(const tuple6<R1, R2, R3, R4, R5, R6>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;
@@ -317,7 +331,8 @@ public:
 	
 	tuple7(tuple7& t):v1(t.v1), v2(t.v2), v3(t.v3), v4(t.v4), v5(t.v5), v6(t.v6), v7(t.v7) {}
 	
-	tuple7& operator=(const tuple7& t) {
+	template<class R1, class R2, class R3, class R4, class R5, class R6, class R7>
+	tuple7& operator=(const tuple7<R1, R2, R3, R4, R5, R6, R7>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;
@@ -365,7 +380,8 @@ public:
 	
 	tuple8(tuple8& t):v1(t.v1), v2(t.v2), v3(t.v3), v4(t.v4), v5(t.v5), v6(t.v6), v7(t.v7), v8(t.v8) {}
 	
-	tuple8& operator=(const tuple8& t) {
+	template<class R1, class R2, class R3, class R4, class R5, class R6, class R7, class R8>
+	tuple8& operator=(const tuple8<R1, R2, R3, R4, R5, R6, R7, R8>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;
@@ -415,7 +431,8 @@ public:
 	
 	tuple9(tuple9& t):v1(t.v1), v2(t.v2), v3(t.v3), v4(t.v4), v5(t.v5), v6(t.v6), v7(t.v7), v8(t.v8), v9(t.v9) {}
 	
-	tuple9& operator=(const tuple9& t) {
+	template<class R1, class R2, class R3, class R4, class R5, class R6, class R7, class R8, class R9>
+	tuple9& operator=(const tuple9<R1, R2, R3, R4, R5, R6, R7, R8, R9>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;
@@ -467,7 +484,8 @@ public:
 	
 	tuple10(tuple10& t):v1(t.v1), v2(t.v2), v3(t.v3), v4(t.v4), v5(t.v5), v6(t.v6), v7(t.v7), v8(t.v8), v9(t.v9), v10(t.v10) {}
 	
-	tuple10& operator=(const tuple10& t) {
+	template<class R1, class R2, class R3, class R4, class R5, class R6, class R7, class R8, class R9, class R10>
+	tuple10& operator=(const tuple10<R1, R2, R3, R4, R5, R6, R7, R8, R9, R10>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		v3=t.v3;

@@ -1,20 +1,17 @@
+#ifndef SET_HPP_1325514702_2
+#define SET_HPP_1325514702_2
 /**
- * File: list.cpp
+ * File: set.hpp
  * Description: 
  *
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * Licensed under the GNU General Public License:
  * http://www.gnu.org/licenses/gpl.html
  * 
- * Date: 2012-01-01 23:07:15.518000
+ * Date: 2012-01-02 22:31:42.204000
  * Written In: Peking University, beijing, China
  */
 
-#include "jadesoul.hpp"
+#include "includes.hpp"
 
-jtest(constructors, test1
-	list(1, 2, 3);
-)
-
-int main () {}
-
+#endif /* SET_HPP_1325514702_2 */

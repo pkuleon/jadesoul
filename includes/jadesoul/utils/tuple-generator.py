@@ -32,11 +32,19 @@ public:
 	
 	tuple(tuple& t):v1(t.v1), v2(t.v2), ... {}
 	
-	tuple& operator=(const tuple& t) {
+	template<class R1, class R2...>
+	tuple& operator=(const tuple<R1, R2...>& t) {
 		v1=t.v1;
 		v2=t.v2;
 		...
 		return *this;
+	}
+	
+	//TODO
+	template<class R1, class R2...>
+	tuple& assign(R1& r1, R2& r2, ...) {
+		v1=r1;
+		v2=r2;
 	}
 	
 	friend ostream& operator <<(ostream& o, const tuple& t) {
@@ -83,7 +91,8 @@ public:
 	
 	tuple(tuple& t):%s {}
 	
-	tuple& operator=(const tuple& t) {
+	template<%s>
+	tuple& operator=(const tuple<%s>& t) {
 		%s
 		return *this;
 	}
@@ -117,37 +126,47 @@ for j in range(0, 10):
 	params=', '.join(['T1& t1']+['T%d& t%d' % (i, i) for i in all])
 	initials=', '.join(['v1(t1)']+['v%d(t%d)' % (i, i) for i in all])
 	copyinitials=', '.join(['v1(t.v1)']+['v%d(t.v%d)' % (i, i) for i in all])
+	
+	templates2=', '.join(['class R1']+['class R%d' % i for i in all])
+	types=', '.join(['R1']+['R%d' % i for i in all])
+	
 	assigns='\n\t\t'.join(['v1=t.v1;']+['v%d=t.v%d;' % (i, i) for i in all])
 	inputs=''.join(['t.v1']+['<<", "<<t.v%d' % i for i in all])
 	outputs=''.join(['t.v1']+['>>t.v%d' % i for i in all])
 	
-	templates2=', '.join(['class T1']+['class T%d' % i for i in all])
+	templates3=', '.join(['class T1']+['class T%d' % i for i in all])
 	returns=', '.join(['T1']+['T%d' % i for i in all])
 	params2=', '.join(['T1& t1']+['T%d& t%d' % (i, i) for i in all])
 	params3=', '.join(['t1']+['t%d' % i for i in all])
 	
 	new_tpl_class=tpl_class.replace('tuple', 'tuple%d' % id).replace('TUPLE', 'tuple')
-	s=new_tpl_class % (templates, members, params, initials, copyinitials, \
-		assigns, inputs, outputs, id, templates2, returns, params2, returns, params3)
+	s=new_tpl_class % (templates, members, params, initials, copyinitials, templates2, types, \
+		assigns, inputs, outputs, id, templates3, returns, params2, returns, params3)
 	ss.append(s)
 
 s=tpl_file % (datetime.now(), '\n\n'.join(ss))
 open(fn, 'w').write(s)
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
