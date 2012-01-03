@@ -24,8 +24,14 @@ public:
 		return out<<"[object]";
 	}
 	
-	virtual object& print() {
-		cout<<this->repr();
+	virtual object& print(ostream& out=cout) {
+		out<<this->repr();
+		return *this;
+	}
+	
+	virtual object& printl(ostream& out=cout) {
+		print(out);
+		out<<std::endl;
 		return *this;
 	}
 	
@@ -35,9 +41,16 @@ public:
 		return oss.str();
 	}
 	
-	inline const size_t len() const {
+	virtual inline const size_t len() const {
 		return 0; 
 	}
+	
+	//common iterfaces
+	//--------------------------------------------------
+	
+	
+	
+	//---------------------------------------------------
 };
 
 #endif /* OBJECT_HPP_1325430546_23 */
