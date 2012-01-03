@@ -17,10 +17,10 @@
 #include "range.hpp"
 
 class str : public object {
-private:
-	string s;
 public:
 	static string letters;
+private:
+	string s;
 public:
 	typedef string::iterator iterator;
 	typedef string::const_iterator const_iterator;
@@ -142,7 +142,6 @@ public:
 	//for size query
 	inline const size_t size() const { return s.size(); }
 	inline const size_t len() const { return s.size(); }
-	inline const size_t length() const { return s.size(); }
 	
 	//for element visiting
 	inline char& operator[](int i) {

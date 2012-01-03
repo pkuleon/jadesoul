@@ -14,8 +14,6 @@
 
 #include "includes.hpp"
 
-
-
 class list : public object {
 public:
 	typedef object* ref;
@@ -29,19 +27,29 @@ private:
 	container vec;
 	
 public:
+	inline iterator begin() { return vec.begin(); } 
+	inline iterator end() { return vec.end(); }
+	inline reverse_iterator rbegin() { return vec.rbegin(); }
+	inline reverse_iterator rend() { return vec.rend(); }
+	
+	inline const_iterator begin() const { return vec.begin(); } 
+	inline const_iterator end() const { return vec.end(); }
+	inline const_reverse_iterator rbegin() const { return vec.rbegin(); }
+	inline const_reverse_iterator rend() const { return vec.rend(); }
+	
 	template<class T1>
-	list(T1 t1) {
+	list(const T1& t1) {
 		append(&t1);
 	}
 	
 	template<class T1, class T2>
-	list(T1 t1, T2 t2) {
+	list(const T1& t1, const T2& t2) {
 		append(&t1);
 		append(&t2);
 	}
 	
 	template<class T1, class T2, class T3>
-	list(T1 t1, T2 t2, T3 t3) {
+	list(const T1& t1, const T2& t2, const T3& t3) {
 		append(&t1);
 		append(&t2);
 		append(&t3);
@@ -53,8 +61,24 @@ public:
 		vec.push_back(r);
 	}
 	
+	inline insert(ref& r, int i=0) {
+		vec.insert(i+(i<0)?end():begin(), r);
+	}
+	
+	inline ref pop() {
+		if (vec.empty()) return NULL;
+		ref tmp=vec.back();
+		vec.pop_back();
+	}
+	
+	inline ref shift() {
+		if (vec.empty()) return NULL;
+		ref tmp=vec.back();
+		vec.pop_back();
+	}
+	
 	inline object& operator [](int i) {
-		return **(i+(i<0)?vec.end():vec.begin());
+		return **(i+(i<0)?end():begin());
 	}
 	
 	object& at(int i) {
@@ -64,9 +88,9 @@ public:
 		return this->operator[](i);
 	}
 	
-	inline const size_t len() const {
-		return vec.size();
-	}
+	//for size query
+	inline const size_t size() const { return vec.size(); }
+	inline const size_t len() const { return vec.size(); }
 	
 };
 
