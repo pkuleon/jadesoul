@@ -44,6 +44,13 @@ public:
 	//for size query
 	inline const size_t size() const { return con.size(); }
 	inline const size_t len() const { return con.size(); }
+	inline const bool empty() const { return con.empty(); }
+	
+	//for pos to iter
+	inline iterator iter(const int& i) { return ((i<0)?end():begin())+i; }
+	inline iterator jter(const int& i) { return ((i<=0)?end():begin())+i; }
+	inline const_iterator iter(const int& i) const { return ((i<0)?end():begin())+i; }
+	inline const_iterator jter(const int& i) const { return ((i<=0)?end():begin())+i; }
 	
 	/**************************************************
 	constructors:
@@ -67,6 +74,8 @@ public:
 		// append(&t3);
 	// }
 	
+	list() {}
+	list(const list& r):con(r.con) {
 	list(pointer begin, pointer end):con(begin, end) {}
 	list(iterator begin, iterator end):con(begin, end) {}
 	list(const_iterator begin, const_iterator end):con(begin, end) {}
@@ -79,6 +88,17 @@ public:
 	**************************************************/
 	friend ostream& operator<<(ostream& out, const list& l) {
 		return out<<"[list]";
+	}
+	
+	/**************************************************
+	assign operator: =
+	**************************************************/
+	inline list& operator=(const list& r) {
+		return assign(r);
+	}
+	inline list& assign(const list& r) {
+		con=r.con;
+		return *this;
 	}
 	
 	/**************************************************
@@ -128,7 +148,7 @@ public:
 		return *this;
 	}
 	list operator*(cosnt list& l, const uint& n) {
-		list tmp=l.clone();
+		list tmp=l.copy();
 		tmp*=n;
 		return tmp;
 	}
@@ -192,15 +212,6 @@ public:
 	list& del(const int& i, const int& j) {
 		con.erase(iter(i), jter(j));
 		return *this;
-	}
-	
-	/**************************************************
-	doc:	str(object) -> string
-		Return a nice string representation of the object.
-		If the argument is a string, the return value is the same object.
-	**************************************************/
-	string doc() {
-		return "doc of list: TODO";
 	}
 
 	uint hash() {
@@ -323,7 +334,7 @@ public:
 	reverse:		L.reverse() -> L
 				reverse *IN PLACE*
 	reversed:	L.reversed() -> new L
-				reverse with clone
+				reverse with copy
 	**************************************************/
 	list& reverse() {
 		std::reverse(begin(), end());
@@ -333,13 +344,13 @@ public:
 	inline list reversed() {
 		return list(rbegin(), rend());
 	}
-
+ 
 	/**************************************************
 	sort:	L.sort(cmp=None, key=None, reverse=False)
 			stable sort *IN PLACE*;
 			cmp(x, y) -> -1, 0, 1
 	sorted:	L.sort(cmp=None, key=None, reverse=False) -> new L
-			return a sorted clone
+			return a sorted copy
 	**************************************************/
 	list& sort() {
 		std::sort(begin(), end());
@@ -347,39 +358,32 @@ public:
 	}
 	
 	inline list sorted() {
-		return clone().sort();
+		return copy().sort();
+	}
+	
+	/*************************************************
+	L.copy() -> new L
+		Return a shadow copy of list L, is the same to L
+		in the first level
+	*************************************************/
+	inline list copy() {
+		return list(*this);
 	}
 	
 	/*************************************************
 	L.clone() -> new L
 		Return a deep copy of list L, which is a clone
-		of L.
+		of L. The same in all level
 	*************************************************/
 	inline list clone() {
-		return list(*this);
+		//TODO
+		return list();
 	}
 	
 	//foreach
 	template<class Function>
 	void foreach(Function f) {
 		std::for_each(begin(), end(), f);
-	}
-	
-private:
-	inline iterator iter(const int& i) {
-		return ((i<0)?end():begin())+i;
-	}
-	
-	inline const_iterator iter(const int& i) const {
-		return ((i<0)?end():begin())+i;
-	}
-	
-	inline iterator jter(const int& i) {
-		return ((i<=0)?end():begin())+i;
-	}
-	
-	inline const_iterator jter(const int& i) const {
-		return ((i<=0)?end():begin())+i;
 	}
 };
 

@@ -26,6 +26,10 @@ public:
 	typedef container::reverse_iterator reverse_iterator;
 	typedef container::const_reverse_iterator const_reverse_iterator;
 	
+	typedef const_iterator citerator;
+	typedef reverse_iterator riterator;
+	typedef const_reverse_iterator criterator;
+	
 private:
 	container con;
 	
@@ -45,28 +49,31 @@ public:
 	//for size query
 	inline const size_t size() const { return con.size(); }
 	inline const size_t len() const { return con.size(); }
+	inline const bool empty() const { return con.empty(); }
 	
 	/**************************************************
 	constructors:
 	**************************************************/
-	template<class T1>
-	set(T1& t1) {
-		append(&t1);
-	}
+	// template<class T1>
+	// set(T1& t1) {
+		// add(&t1);
+	// }
 	
-	template<class T1, class T2>
-	set(T1& t1, T2& t2) {
-		append(&t1);
-		append(&t2);
-	}
+	// template<class T1, class T2>
+	// set(T1& t1, T2& t2) {
+		// add(&t1);
+		// add(&t2);
+	// }
 	
-	template<class T1, class T2, class T3>
-	set(T1& t1, T2& t2, T3& t3) {
-		append(&t1);
-		append(&t2);
-		append(&t3);
-	}
-
+	// template<class T1, class T2, class T3>
+	// set(T1& t1, T2& t2, T3& t3) {
+		// add(&t1);
+		// add(&t2);
+		// add(&t3);
+	// }
+	
+	set() {}
+	set(const set& r):con(r.con) {
 	set(pointer begin, pointer end):con(begin, end) {}
 	set(iterator begin, iterator end):con(begin, end) {}
 	set(const_iterator begin, const_iterator end):con(begin, end) {}
@@ -82,130 +89,239 @@ public:
 	}
 	
 	/**************************************************
-	bool expressions:	== != > >= < <=
+	assign operator: =
 	**************************************************/
-	bool operator==(const set& r) {
+	inline set& operator=(const set& r) {
+		return assign(r);
+	}
+	inline set& assign(const set& r) {
+		con=r.con;
+		return *this;
+	}
+	
+	/**************************************************
+	bool expressions:	== != > >= < <= ! & &= | |= ^ ^=
+	math expressions:	+= + -= -
+	**************************************************/
+	inline bool operator==(const set& r) { return equals(r); }
+	inline bool operator>(const set& r) { return this>&r; }
+	inline bool operator<(const set& r) { return this<&r; }
+	inline bool operator!=(const set& r) { return !(*this==r); }
+	inline bool operator<=(const set& r) { return !(*this>r); }
+	inline bool operator>=(const set& r) { return !(*this<r); }
+	inline bool operator!() { return empty(); }
+	inline set operator &(const set& x, const set& y) { return x.intersection(y); }
+	inline set operator |(const set& x, const set& y) { return x.unioned(y); }
+	inline set operator +(const set& x, const set& y) { return x.unioned(y); }
+	inline set operator -(const set& x, const set& y) { return x.difference(y); }
+	inline set operator ^(const set& x, const set& y) { return x.crossed(y); }
+	inline set& operator &=(const set& r) { return intersect(r); }
+	inline set& operator |=(const set& r) { return unionto(r); }
+	inline set& operator +=(const set& r) { return unionto(r); }
+	inline set& operator -=(const set& r) { return differ(r); }
+	inline set& operator ^=(const set& r) { return cross(r); }
+	
+	/**************************************************
+	add:	Add an element to a set.
+			This has no effect if the element is already present.
+	**************************************************/
+	inline set& add(const element& r) {
+		con.insert(r);
+		return *this;
+	}
+	
+	/**************************************************
+	del:	Delete an element from a set.
+			This has no effect if the element is not yet present.
+	**************************************************/
+	inline set& del(iterator i) {
+		con.erase(i);
+		return *this;
+	}
+	inline set& del(const element& e) {
+		con.erase(e);
+		return *this;
+	}
+	
+	/**************************************************
+	find:	Find element iterator from this set.
+	**************************************************/
+	inline iterator find(const element& e) {
+		return con.find(e);
+	}
+	
+	/**************************************************
+	contains:	x.contains(y) <==> y in x.
+	**************************************************/
+	bool contains(const element& e) const {
+		return find(e)!=end();
+	}
+	
+	/**************************************************
+	equals:	x.equals(y) <==> x == y.
+	**************************************************/
+	bool equals(const set& r) const {
 		if (this==&r) return true;
 		if (len()!=r.len()) return false;
 		return std::equal(begin(), end(), r.begin());
 	}
-	bool operator!=(const set& r) {
-		return !(*this==r);
-	}
-	bool operator>(const set& r) {
-		return len()>r.len();
-	}
-	bool operator<=(const set& r) {
-		return !(*this>r);
-	}
-	bool operator<(const set& r) {
-		return len()<r.len();
-	}
-	bool operator>=(const set& r) {
-		return !(*this<r);
-	}
+	
 	
 	/**************************************************
-	operators:	+= + *= *
+	clear:	Remove all elements from this set.
 	**************************************************/
-	set& operator+=(const set& r) {
-		this->union_(r);
-		return *this;
-	}
-	set operator+(const set& r) {
-		set t(*this);
-		t.union_(r);
-		return t;
-	}
-	set& operator*=(const uint& n) {
-		if (n==0) {
-			clear();
-		} else if (n!=1) {
-			con.reserve(len()*(n-1);
-			::repeat(begin(), end(), inserter(end()), n);
-		}
-		return *this;
-	}
-	set operator*(cosnt set& l, const uint& n) {
-		set tmp=l.clone();
-		tmp*=n;
-		return tmp;
-	}
-	set operator*(const uint& n, cosnt set& l) {
-		return l*n;
-	}
-
-	// for modifiers
-	inline set& append(const element& r) {
-		con.push_back(r);
-		return *this;
-	}
-	
-	inline set& insert(const element& r, int i=0) {
-		con.insert(iter(i), r);
-		return *this;
-	}
-	
-	inline set& del(int i=0) {
-		con.erase(iter(i));
-		return *this;
-	}
-	
 	inline set& clear() {
 		con.clear();
 		return *this;
 	}
-	
-	//push - pop
-	inline set& push(const element& r) {
-		return append(r);
+
+	/*************************************************
+	S.copy() -> new S
+		Return a shadow copy of list L, is the same to L
+		in the first level
+	*************************************************/
+	inline set copy() {
+		return set(*this);
 	}
 	
+	/*************************************************
+	S.clone() -> new S
+		Return a deep copy of list L, which is a clone
+		of L. The same in all level
+	*************************************************/
+	inline set clone() {
+		//TODO
+		return set();
+	}
+
+
+	/**************************************************
+	discard:
+		Remove an element from a set if it is a member.
+		If the element is not a member, do nothing.
+	**************************************************/
+	inline set& discard(const element& e) {
+		// iterator i=find(e);
+		// if (i!=end()) del(i);
+		return del(e);
+	}
+	
+	/**************************************************
+	intersect:
+		Update a set with the intersection of itself and another.
+	intersection:
+		Return the intersection of two sets as a new set.
+	(i.e. all elements that are in both sets.)
+	**************************************************/
+	set& intersect(const set& r) {
+		return assign(intersection(r));
+	}
+	inline set intersection(const set& r) {
+		set inter;
+		for (citerator i(r.begin()), e(r.end()); i!=e; ++i) if (contains(*i)) inter.add(*i);
+		return inter;
+	}
+	
+	/**************************************************
+	unionto:
+		update a set with the union of sets
+	unioned:
+		Return the union of sets as a new set.
+		(i.e. all elements that are in either set.)
+	**************************************************/
+	set& unionto(const set& r) {
+		con.insert(r.begin(), r.end());
+		return *this;
+	}
+	inline set unioned(const set& r) {
+		return copy().unionto(r);
+	}
+	
+	/**************************************************
+	differ:	
+		remove elements from this set which are both 
+		in this set and other other set
+	difference:	
+		Return the difference of two or more sets as a new set.
+		(i.e. all elements that are in this set but not the others.)
+	**************************************************/
+	set& differ(const set& r) {
+		for (iterator i=r.begin(), e=r.end(), f; i!=e; ++i) {
+			f=find(*i);
+			if (f!=end()) del(f);
+		}
+		return *this;
+	}
+	inline set difference(const set& r) {
+		return copy().differ(r);
+	}
+	
+	/**************************************************
+	cross:
+		Update a set with the symmetric difference of itself and another.
+		remove all in both set and add all this set don't have
+	crossed:
+		Return the symmetric difference of two sets as a new set.
+		(i.e. all elements that are in exactly one of the sets.)
+	**************************************************/
+	set& cross(const set& r) {
+		for (iterator i=r.begin(), e=r.end(), f; i!=e; ++i) {
+			f=find(*i);
+			if (f!=end()) del(f);
+			else add(*i);
+		}
+		return *this;
+	}
+	inline set crossed(const set& r) {
+		return copy().cross(r);
+	}
+
+	/**************************************************
+	isdisjoint:
+		Return True if two sets have a null intersection.
+	**************************************************/
+	bool isdisjoint(const set& r) const {
+		return unioned(*this, r).empty();
+	}
+	
+	/**************************************************
+	issubset:
+		Report whether another set contains this set.
+	**************************************************/
+	bool issubset(const set& r) const {
+		iterator i=r.con.lower_bound(*begin());
+		if (i<r.begin()) return false;
+		iterator j=r.con.upper_bound(*rbegin());
+		if (j>=r.end()) return false;
+		return true;
+	}
+	
+	/**************************************************
+	issuperset:
+		Report whether this set contains another set.
+	**************************************************/
+	bool issuperset(const set& r) const {
+		return r.issubset(*this);
+	}
+	
+	/**************************************************
+	pop:	
+		Remove and return an arbitrary set element.
+		just remove and return the first element
+	**************************************************/
 	inline element pop() {
-		if (con.empty()) return NULL;
-		element tmp=con.back();
-		con.pop_back();
+		iterator i=begin();
+		element e=*i;
+		del(i);
+		return e;
 	}
 	
-	//inject - shift
-	inline set& inject(const element& r) {
-		return insert(r);
+	/**************************************************
+	remove:	Remove an element from a set;
+	**************************************************/
+	inline set& remove(const element& e) {
+		return del(e);
 	}
-	
-	inline element shift() {
-		if (con.empty()) return NULL;
-		element tmp=con.front();
-		del(0);
-		return tmp;
-	}
-	
-	//for elements
-	inline object& operator [](int i) {
-		return *elem(i);
-	}
-	
-	inline const object& operator [](int i) const {
-		return *elem(i);
-	}
-	
-	inline element& elem(int i) {
-		return *iter(i);
-	}
-	
-	inline const element& elem(int i) const {
-		return *iter(i);
-	}
-	
-	object& at(int i) {
-		uint l=len();
-		if (i<0) i+=l;
-		assert(i>=0 AND i<l);
-		return this->operator[](i);
-	}
-	
-	//for size query
-	inline const size_t size() const { return con.size(); }
-	inline const size_t len() const { return con.size(); }
 	
 	//foreach
 	template<class Function>
@@ -213,369 +329,9 @@ public:
 		std::for_each(begin(), end(), f);
 	}
 	
-	/**************************************************
-	__and__:	x.__and__(y) <==> x&y
-	**************************************************/
-	
-
-
-	/**************************************************
-	__class__:	type(object) -> the object's type
-	type(name, bases, dict) -> a new type
-	**************************************************/
-
-
-
-	/**************************************************
-	__cmp__:	x.__cmp__(y) <==> cmp(x,y)
-	**************************************************/
-
-
-
-	/**************************************************
-	__contains__:	x.__contains__(y) <==> y in x.
-	**************************************************/
-
-
-
-	/**************************************************
-	__delattr__:	x.__delattr__('name') <==> del x.name
-	**************************************************/
-
-
-
-	/**************************************************
-	__doc__:	str(object) -> string
-
-	Return a nice string representation of the object.
-	If the argument is a string, the return value is the same object.
-	**************************************************/
-
-
-
-	/**************************************************
-	__eq__:	x.__eq__(y) <==> x==y
-	**************************************************/
-
-
-
-	/**************************************************
-	__format__:	default object formatter
-	**************************************************/
-
-
-
-	/**************************************************
-	__ge__:	x.__ge__(y) <==> x>=y
-	**************************************************/
-
-
-
-	/**************************************************
-	__getattribute__:	x.__getattribute__('name') <==> x.name
-	**************************************************/
-
-
-
-	/**************************************************
-	__gt__:	x.__gt__(y) <==> x>y
-	**************************************************/
-
-
-
-	/**************************************************
-	__hash__:	None
-	**************************************************/
-
-
-
-	/**************************************************
-	__iand__:	x.__iand__(y) <==> x&y
-	**************************************************/
-
-
-
-	/**************************************************
-	__init__:	x.__init__(...) initializes x; see x.__class__.__doc__ for signature
-	**************************************************/
-
-
-
-	/**************************************************
-	__ior__:	x.__ior__(y) <==> x|y
-	**************************************************/
-
-
-
-	/**************************************************
-	__isub__:	x.__isub__(y) <==> x-y
-	**************************************************/
-
-
-
-	/**************************************************
-	__iter__:	x.__iter__() <==> iter(x)
-	**************************************************/
-
-
-
-	/**************************************************
-	__ixor__:	x.__ixor__(y) <==> x^y
-	**************************************************/
-
-
-
-	/**************************************************
-	__le__:	x.__le__(y) <==> x<=y
-	**************************************************/
-
-
-
-	/**************************************************
-	__len__:	x.__len__() <==> len(x)
-	**************************************************/
-
-
-
-	/**************************************************
-	__lt__:	x.__lt__(y) <==> x<y
-	**************************************************/
-
-
-
-	/**************************************************
-	__ne__:	x.__ne__(y) <==> x!=y
-	**************************************************/
-
-
-
-	/**************************************************
-	__new__:	T.__new__(S, ...) -> a new object with type S, a subtype of T
-	**************************************************/
-
-
-
-	/**************************************************
-	__or__:	x.__or__(y) <==> x|y
-	**************************************************/
-
-
-
-	/**************************************************
-	__rand__:	x.__rand__(y) <==> y&x
-	**************************************************/
-
-
-
-	/**************************************************
-	__reduce__:	Return state information for pickling.
-	**************************************************/
-
-
-
-	/**************************************************
-	__reduce_ex__:	helper for pickle
-	**************************************************/
-
-
-
-	/**************************************************
-	__repr__:	x.__repr__() <==> repr(x)
-	**************************************************/
-
-
-
-	/**************************************************
-	__ror__:	x.__ror__(y) <==> y|x
-	**************************************************/
-
-
-
-	/**************************************************
-	__rsub__:	x.__rsub__(y) <==> y-x
-	**************************************************/
-
-
-
-	/**************************************************
-	__rxor__:	x.__rxor__(y) <==> y^x
-	**************************************************/
-
-
-
-	/**************************************************
-	__setattr__:	x.__setattr__('name', value) <==> x.name = value
-	**************************************************/
-
-
-
-	/**************************************************
-	__sizeof__:	S.__sizeof__() -> size of S in memory, in bytes
-	**************************************************/
-
-
-
-	/**************************************************
-	__str__:	x.__str__() <==> str(x)
-	**************************************************/
-
-
-
-	/**************************************************
-	__sub__:	x.__sub__(y) <==> x-y
-	**************************************************/
-
-
-
-	/**************************************************
-	__subclasshook__:	Abstract classes can override this to customize issubclass().
-
-	This is invoked early on by abc.ABCMeta.__subclasscheck__().
-	It should return True, False or NotImplemented.  If it returns
-	NotImplemented, the normal algorithm is used.  Otherwise, it
-	overrides the normal algorithm (and the outcome is cached).
-
-	**************************************************/
-
-
-
-	/**************************************************
-	__xor__:	x.__xor__(y) <==> x^y
-	**************************************************/
-
-
-
-	/**************************************************
-	add:	Add an element to a set.
-
-	This has no effect if the element is already present.
-	**************************************************/
-
-
-
-	/**************************************************
-	clear:	Remove all elements from this set.
-	**************************************************/
-
-
-
-	/**************************************************
-	copy:	Return a shallow copy of a set.
-	**************************************************/
-
-
-
-	/**************************************************
-	difference:	Return the difference of two or more sets as a new set.
-
-	(i.e. all elements that are in this set but not the others.)
-	**************************************************/
-
-
-
-	/**************************************************
-	difference_update:	Remove all elements of another set from this set.
-	**************************************************/
-
-
-
-	/**************************************************
-	discard:	Remove an element from a set if it is a member.
-
-	If the element is not a member, do nothing.
-	**************************************************/
-
-
-
-	/**************************************************
-	intersection:	Return the intersection of two sets as a new set.
-
-	(i.e. all elements that are in both sets.)
-	**************************************************/
-
-
-
-	/**************************************************
-	intersection_update:	Update a set with the intersection of itself and another.
-	**************************************************/
-
-
-
-	/**************************************************
-	isdisjoint:	Return True if two sets have a null intersection.
-	**************************************************/
-
-
-
-	/**************************************************
-	issubset:	Report whether another set contains this set.
-	**************************************************/
-
-
-
-	/**************************************************
-	issuperset:	Report whether this set contains another set.
-	**************************************************/
-
-
-
-	/**************************************************
-	pop:	Remove and return an arbitrary set element.
-	**************************************************/
-
-
-
-	/**************************************************
-	remove:	Remove an element from a set; it must be a member.
-
-	If the element is not a member, raise a KeyError.
-	**************************************************/
-
-
-
-	/**************************************************
-	symmetric_difference:	Return the symmetric difference of two sets as a new set.
-
-	(i.e. all elements that are in exactly one of the sets.)
-	**************************************************/
-
-
-
-	/**************************************************
-	symmetric_difference_update:	Update a set with the symmetric difference of itself and another.
-	**************************************************/
-
-
-
-	/**************************************************
-	union:	Return the union of sets as a new set.
-
-	(i.e. all elements that are in either set.)
-	**************************************************/
-
-
-
-	/**************************************************
-	update:	Update a set with the union of itself and others.
-	**************************************************/
-
-
-
-private:
-	inline iterator iter(const int& i) {
-		return ((i<0)?end():begin())+i;
-	}
-	
-	inline const_iterator iter(const int& i) const {
-		return ((i<0)?end():begin())+i;
-	}
-	
-	inline iterator jter(const int& i) {
-		return ((i<=0)?end():begin())+i;
-	}
-	
-	inline const_iterator jter(const int& i) const {
-		return ((i<=0)?end():begin())+i;
+	uint hash() {
+		//TODO
+		return 0;
 	}
 };
 

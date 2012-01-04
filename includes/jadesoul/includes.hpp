@@ -112,8 +112,13 @@ using std::back_insert_iterator;
 using std::front_insert_iterator;
 
 typedef std::vector<int> vec_int;
+typedef vec_int vecint;
+typedef std::vector<uint> vec_uint;
+typedef vec_uint vecuint;
 typedef std::vector<char> vec_char;
+typedef vec_char vecchar;
 typedef std::vector<string> vec_str;
+typedef vec_str vecstr;
 
 
 #endif /* INCLUDES_HPP_1324964318_14 */
