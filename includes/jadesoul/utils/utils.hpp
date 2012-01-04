@@ -19,7 +19,7 @@
 #include "object.hpp"
 #include "str.hpp"
 #include "tuple.hpp"
-#include "list.hpp"
+// #include "list.hpp"
 // #include "set.hpp"
 // #include "dict.hpp"
 
