@@ -321,8 +321,8 @@ public:
 		string S[start:end].  Optional arguments start and end are interpreted
 		as in slice notation.
 	*************************************************/
-	inline uint count(const str& prefix, int start=0, int end=0) {
-		return ::count((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, prefix.begin(), prefix.end());
+	inline uint count(const str& sub, int start=0, int end=0) {
+		return ::count((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, sub.begin(), sub.end());
 	}
 	
 	/*************************************************
@@ -479,7 +479,6 @@ public:
 		return *this;
 	}
 	
-	//return a sorted new str
 	inline str sorted() {
 		return clone().sort();
 	}
