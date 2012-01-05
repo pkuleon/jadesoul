@@ -120,7 +120,6 @@ public:
 	inline set& operator +=(const set& r) { return unionto(r); }
 	inline set& operator -=(const set& r) { return differ(r); }
 	inline set& operator ^=(const set& r) { return cross(r); }
-	
 
 	/**************************************************
 	clear:	D.clear() -> None.  Remove all items from D.
@@ -153,7 +152,7 @@ public:
 	fromkeys:	dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
 	v defaults to None.
 	**************************************************/
-	
+	//TODO
 	
 	/**************************************************
 	get:	D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
@@ -217,20 +216,19 @@ public:
 	/**************************************************
 	iteritems:	D.iteritems() -> an iterator over the (key, value) items of D
 	**************************************************/
-	
+	//TODO
 
 
 	/**************************************************
 	iterkeys:	D.iterkeys() -> an iterator over the keys of D
 	**************************************************/
-
+	//TODO
 
 
 	/**************************************************
 	itervalues:	D.itervalues() -> an iterator over the values of D
 	**************************************************/
-
-
+	//TODO
 
 	/**************************************************
 	keys:	D.keys() -> list of D's keys
@@ -266,11 +264,7 @@ public:
 		remove and return some (key, value) pair as a
 		2-tuple; but raise KeyError if D is empty
 	**************************************************/
-
-
-
-
-	
+	//TODO
 
 	/**************************************************
 	update:	D.update(D2) -> None.  
@@ -285,7 +279,6 @@ public:
 			if (has_key(key)) set(key, val);
 		}
 	}
-	
 	
 	//foreach
 	template<class Function>
