@@ -13,6 +13,7 @@
  */
 
 #include "includes.hpp"
+#include "list.hpp"
 #include "str.hpp"
 
 class dict : public object {
@@ -21,8 +22,14 @@ public:
 	typedef object& refence;
 	typedef str key;
 	typedef pointer value;
+	
+	// typedef struct dict_entry { key k; value v; } entry;
+	// typedef std::vector<entry> hashvec;
+	// typedef std::list<entry> hashtable;
+	
 	typedef std::pair<key, value> pair;
 	typedef std::list<pair> pairs;
+	
 	typedef std::hash_map<key, value> container;
 	
 	typedef container::iterator iterator;

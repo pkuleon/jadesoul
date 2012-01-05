@@ -45,6 +45,20 @@ public:
 		return 0; 
 	}
 	
+	/**************************************************
+	equals:	x.equals(y) <==> x == y.
+	**************************************************/
+	virtual inline const bool equals(const object& r) const {
+		return this==&r;
+	}
+	
+	/**************************************************
+	hash:	x.hash() <==> Return DWORD hash
+	**************************************************/
+	virtual inline const size_t hash() const {
+		return (size_t)this;
+	}
+	
 	//common iterfaces
 	//--------------------------------------------------
 	

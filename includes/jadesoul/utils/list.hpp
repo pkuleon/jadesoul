@@ -13,6 +13,7 @@
  */
 
 #include "includes.hpp"
+#include "object.hpp"
 
 class list : public object {
 public:
@@ -29,6 +30,7 @@ public:
 	typedef const_iterator citerator;
 	typedef reverse_iterator riterator;
 	typedef const_reverse_iterator criterator;
+	
 private:
 	container con;
 	
@@ -144,7 +146,7 @@ public:
 		if (n==0) {
 			clear();
 		} else if (n!=1) {
-			con.reserve(len()*(n-1);
+			con.reserve(len()*(n-1));
 			::repeat(begin(), end(), inserter(end()), n);
 		}
 		return *this;
@@ -388,6 +390,5 @@ public:
 		std::for_each(begin(), end(), f);
 	}
 };
-
 
 #endif /* LIST_HPP_1325430399_29 */

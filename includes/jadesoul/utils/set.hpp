@@ -57,20 +57,17 @@ public:
 	// set(T1& t1) {
 		// add(&t1);
 	// }
-	
 	// template<class T1, class T2>
 	// set(T1& t1, T2& t2) {
 		// add(&t1);
 		// add(&t2);
 	// }
-	
 	// template<class T1, class T2, class T3>
 	// set(T1& t1, T2& t2, T3& t3) {
 		// add(&t1);
 		// add(&t2);
 		// add(&t3);
 	// }
-	
 	set() {}
 	set(const set& r):con(r.con) {
 	set(iterator begin, iterator end):con(begin, end) {}
@@ -167,6 +164,10 @@ public:
 		return std::equal(begin(), end(), r.begin());
 	}
 	
+	uint hash() {
+		//TODO
+		return 0;
+	}
 	
 	/**************************************************
 	clear:	Remove all elements from this set.
@@ -329,10 +330,7 @@ public:
 		std::for_each(begin(), end(), f);
 	}
 	
-	uint hash() {
-		//TODO
-		return 0;
-	}
+
 };
 
 #endif /* SET_HPP_1325514702_2 */

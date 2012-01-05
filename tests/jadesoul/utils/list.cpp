@@ -12,9 +12,10 @@
 
 #include "jadesoul.hpp"
 
-typedef object& var;
+
 
 jtest(constructors, test1,
+	typedef object& var;
 	int a=1, b=2, c=3;
 	str x="asdasd";
 	str y="87989";
@@ -27,9 +28,7 @@ jtest(constructors, test1,
 	// var p=l[0];
 	// p.printl();
 	// printv((str&)p[0]);
-	// (l[1]).printl();
-	
+	// (l[1]).printl();	
 )
 
 int main () {}
-

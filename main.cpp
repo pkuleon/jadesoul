@@ -11,8 +11,8 @@
  */
 
 // #define debug
-#include <jade.hpp>
-#include <ml.hpp>
+// #include <jade.hpp>
+// #include <ml.hpp>
 
 #include <iostream>
 #include <string>
@@ -21,13 +21,10 @@
 using namespace std;
 
 int main () {
-	char *s="asdasdasd";
-	char *s1="asdasdasd";
+	unsigned long h = 0;
+	unsigned int z = 0;
+	cout<<sizeof(h)<<endl;
+	cout<<sizeof(z)<<endl;
 	
-	for_n(i, 28/4) cout<<(int*)(&s)+i<<endl;
-	cout<<endl;
-	for_n(i, 28/4) cout<<(int*)(&s1)+i<<endl;
-	// cout<<"hello, world"<<endl;
-	// cout<<&(s1.c_str())<<endl;
 }
 
