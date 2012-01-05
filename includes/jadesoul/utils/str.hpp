@@ -18,28 +18,33 @@
 
 class str : public object {
 public:
+	typedef std::vector<str> vecstr;
+	typedef string container;
+	typedef container::iterator iterator;
+	typedef container::const_iterator citerator;
+	typedef container::reverse_iterator riterator;
+	typedef container::const_reverse_iterator criterator;
+	
 	static string letters;
 private:
 	string s;
 public:
-	typedef string::iterator iterator;
-	typedef string::const_iterator const_iterator;
-	typedef string::reverse_iterator reverse_iterator;
-	typedef string::const_reverse_iterator const_reverse_iterator;
+
 	
 	inline iterator begin() { return s.begin(); } 
 	inline iterator end() { return s.end(); }
-	inline reverse_iterator rbegin() { return s.rbegin(); }
-	inline reverse_iterator rend() { return s.rend(); }
+	inline riterator rbegin() { return s.rbegin(); }
+	inline riterator rend() { return s.rend(); }
 	
-	inline const_iterator begin() const { return s.begin(); } 
-	inline const_iterator end() const { return s.end(); }
-	inline const_reverse_iterator rbegin() const { return s.rbegin(); }
-	inline const_reverse_iterator rend() const { return s.rend(); }
+	inline citerator begin() const { return s.begin(); } 
+	inline citerator end() const { return s.end(); }
+	inline criterator rbegin() const { return s.rbegin(); }
+	inline criterator rend() const { return s.rend(); }
 	
 	//for size query
 	inline const size_t size() const { return s.size(); }
 	inline const size_t len() const { return s.size(); }
+	inline const bool empty() const { return s.empty(); }
 	
 	/**************************************************
 	constructors:
@@ -95,6 +100,17 @@ public:
 		s=buf;
 	}
 	inline str(const str& s):s(s.s) {}	//copy construction
+	
+	/**************************************************
+	bool expressions:	== != > >= < <= ! 
+	**************************************************/
+	inline bool operator==(const str& r) const { return equals(r); }
+	inline bool operator>(const str& r) const { return *this>r; }
+	inline bool operator<(const str& r) const { return *this<r; }
+	inline bool operator!=(const str& r) const { return !(*this==r); }
+	inline bool operator<=(const str& r) const { return !(*this>r); }
+	inline bool operator>=(const str& r) const { return !(*this<r); }
+	inline bool operator!() const { return empty(); }
 	
 	/**************************************************
 	output operator: <<
@@ -221,14 +237,14 @@ public:
 		return results;
 	}
 	
-	inline const vec_str split(const str& d) {	//slower version
-		vec_str vs;
+	inline const vecstr split(const str& sep) {	//slower version
+		vecstr vs;
 		vs.reserve(20);
-		return this->split(d, vs);
+		return this->split(sep, vs);
 	}
 	
-	vec_str split() {
-		vec_str vs;
+	vecstr split() {
+		vecstr vs;
 		vs.reserve(20);
 		//TODO
 		return this->split(" ", vs);
@@ -255,9 +271,9 @@ public:
 		Return -1 on failure.
 	*************************************************/
 	inline int find(const str& sub, int start=0, int end=0) const {
-		const_iterator a=(start<0?s.end():s.begin())+start, b=(end<=0?s.end():s.begin())+end;
+		citerator a=(start<0?s.end():s.begin())+start, b=(end<=0?s.end():s.begin())+end;
 		if (a>=b) return -1;
-		const_iterator c=std::search(a, b, sub.begin(), sub.end());
+		citerator c=std::search(a, b, sub.begin(), sub.end());
 		return (c==b)?-1:c-a;
 	}
 	
@@ -273,9 +289,9 @@ public:
 		uint l=len();
 		start=(start>0)?l-1-start:-start-l;
 		end=(end>0)?l-1-end:-end-l;
-		const_reverse_iterator a=(end<=0?s.rend():s.rbegin())+end, b=(start<0?s.rend():s.rbegin())+start;
+		criterator a=(end<=0?s.rend():s.rbegin())+end, b=(start<0?s.rend():s.rbegin())+start;
 		if (a>=b) return -1;
-		const_reverse_iterator c=std::search(a, b, sub.rbegin(), sub.rend());
+		criterator c=std::search(a, b, sub.rbegin(), sub.rend());
 		return (c==b)?-1:(b-c)-sub.len()-1;
 	}
 	
@@ -533,17 +549,9 @@ public:
 
 string str::letters="abcdefghijklmnopqrstuvwxyz";
 
-template<class T> struct hash;
-
-template<> struct hash<str> {
-	inline size_t operator()(const str& s) const { 
-		return s.hash();
-	}
-};
-
 Macro__over_load_dump__ValueType(str);
 
-
+typedef str::vecstr vecstr;
 
 
 #endif /* STR_HPP_1324997558_33 */

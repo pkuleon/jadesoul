@@ -20,11 +20,11 @@
 #include "str.hpp"
 #include "tuple.hpp"
 #include "list.hpp"
-// #include "set.hpp"
-// #include "dict.hpp"
+#include "set.hpp"
+#include "dict.hpp"
 
 // #include "filesys.hpp"
-// #include "network.hpp"
+#include "network.hpp"
 
 void sys_seed(uint id=0) {
 	time_seed(id);

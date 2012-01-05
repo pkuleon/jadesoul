@@ -15,6 +15,20 @@
 #include "includes.hpp"
 #include "str.hpp"
 
+template<class key>
+struct hashkey {
+	enum {
+		bucket_size=1<<2,
+		min_buckets=1<<3
+	};
+	inline const size_t operator()(const key& k) const { 
+		return k.hash();
+	}
+	bool operator()(const key& key1, const key& key2) const {
+		return key1<key2;
+	}
+};
+
 class dict : public object {
 public:
 	typedef object* pointer;
@@ -23,16 +37,14 @@ public:
 	typedef pointer value;
 	typedef std::pair<key, value> pair;
 	typedef std::list<pair> pairs;
-	typedef std::hash_map<key, value> container;
+	
+	typedef hashkey<key> key_hash;
+	typedef hash_map<key, value, key_hash> container;
 	
 	typedef container::iterator iterator;
-	typedef container::const_iterator const_iterator;
-	typedef container::reverse_iterator reverse_iterator;
-	typedef container::const_reverse_iterator const_reverse_iterator;
-	
-	typedef const_iterator citerator;
-	typedef reverse_iterator riterator;
-	typedef const_reverse_iterator criterator;
+	typedef container::const_iterator citerator;
+	typedef container::reverse_iterator riterator;
+	typedef container::const_reverse_iterator criterator;
 private:
 	container con;
 	
@@ -40,13 +52,13 @@ public:
 	//for iterators
 	inline iterator begin() { return con.begin(); } 
 	inline iterator end() { return con.end(); }
-	inline reverse_iterator rbegin() { return con.rbegin(); }
-	inline reverse_iterator rend() { return con.rend(); }
+	inline riterator rbegin() { return con.rbegin(); }
+	inline riterator rend() { return con.rend(); }
 	
-	inline const_iterator begin() const { return con.begin(); } 
-	inline const_iterator end() const { return con.end(); }
-	inline const_reverse_iterator rbegin() const { return con.rbegin(); }
-	inline const_reverse_iterator rend() const { return con.rend(); }
+	inline citerator begin() const { return con.begin(); } 
+	inline citerator end() const { return con.end(); }
+	inline criterator rbegin() const { return con.rbegin(); }
+	inline criterator rend() const { return con.rend(); }
 	
 	//for size query
 	inline const size_t size() const { return con.size(); }
@@ -73,15 +85,13 @@ public:
 	// }
 	
 	dict() {}
-	dict(const dict& r):con(r.con) {
+	dict(const dict& r):con(r.con) {}
 	dict(iterator begin, iterator end):con(begin, end) {}
-	dict(const_iterator begin, const_iterator end):con(begin, end) {}
-	dict(reverse_iterator begin, reverse_iterator end):con(begin, end) {}
-	dict(const_reverse_iterator begin, const_reverse_iterator end):con(begin, end) {}
+	dict(citerator begin, citerator end):con(begin, end) {}
+	dict(riterator begin, riterator end):con(begin, end) {}
+	dict(criterator begin, criterator end):con(begin, end) {}
 	
-	//for size query
-	inline const size_t size() const { return con.size(); }
-	inline const size_t len() const { return con.size(); }
+
 	
 	/**************************************************
 	output operator: <<
@@ -106,22 +116,22 @@ public:
 	math expressions:	+= + -= -
 	**************************************************/
 	inline bool operator==(const dict& r) { return equals(r); }
-	inline bool operator>(const dict& r) { return this>&r; }
-	inline bool operator<(const dict& r) { return this<&r; }
-	inline bool operator!=(const dict& r) { return !(*this==r); }
-	inline bool operator<=(const dict& r) { return !(*this>r); }
-	inline bool operator>=(const dict& r) { return !(*this<r); }
-	inline bool operator!() { return empty(); }
-	inline dict operator &(const dict& x, const dict& y) { return x.intersection(y); }
-	inline dict operator |(const dict& x, const dict& y) { return x.unioned(y); }
-	inline dict operator +(const dict& x, const dict& y) { return x.unioned(y); }
-	inline dict operator -(const dict& x, const dict& y) { return x.difference(y); }
-	inline dict operator ^(const dict& x, const dict& y) { return x.crossed(y); }
-	inline dict& operator &=(const dict& r) { return intersect(r); }
-	inline dict& operator |=(const dict& r) { return unionto(r); }
-	inline dict& operator +=(const dict& r) { return unionto(r); }
-	inline dict& operator -=(const dict& r) { return differ(r); }
-	inline dict& operator ^=(const dict& r) { return cross(r); }
+	// inline bool operator>(const dict& r) { return this>&r; }
+	// inline bool operator<(const dict& r) { return this<&r; }
+	// inline bool operator!=(const dict& r) { return !(*this==r); }
+	// inline bool operator<=(const dict& r) { return !(*this>r); }
+	// inline bool operator>=(const dict& r) { return !(*this<r); }
+	// inline bool operator!() { return empty(); }
+	// inline dict operator &(const dict& x, const dict& y) { return x.intersection(y); }
+	// inline dict operator |(const dict& x, const dict& y) { return x.unioned(y); }
+	// inline dict operator +(const dict& x, const dict& y) { return x.unioned(y); }
+	// inline dict operator -(const dict& x, const dict& y) { return x.difference(y); }
+	// inline dict operator ^(const dict& x, const dict& y) { return x.crossed(y); }
+	// inline dict& operator &=(const dict& r) { return intersect(r); }
+	// inline dict& operator |=(const dict& r) { return unionto(r); }
+	// inline dict& operator +=(const dict& r) { return unionto(r); }
+	// inline dict& operator -=(const dict& r) { return differ(r); }
+	// inline dict& operator ^=(const dict& r) { return cross(r); }
 
 	/**************************************************
 	clear:	D.clear() -> None.  Remove all items from D.
@@ -159,51 +169,51 @@ public:
 	/**************************************************
 	get:	D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
 	**************************************************/
-	inline element get(const element& key, const element& defaultkey=0) {
-		return has_key(key)?con[key]:defaultkey;
+	inline value get(const key& k, const value& dval=0) {
+		return has_key(k)?con[k]:dval;
 	}
 	
 	/**************************************************
 	superget:	D.setdefault(k[,d]) -> D.get(k,d), 
 				also set D[k]=d if k not in D
 	**************************************************/
-	inline element superget(const element& key, const element& defaultval) {
-		if (has_key(key)) return con[key];
-		con[key]=defaultval;
-		return defaultval;
+	inline value superget(const key& k, const value& dval) {
+		if (has_key(k)) return con[k];
+		con[k]=dval;
+		return dval;
 	}
 	
 	/**************************************************
 	set:	D.set(k, v) -> D[k]=v
 	**************************************************/
-	inline void set(const element& key, const element& value) {
-		con[key]=value;
+	inline void set(const key& k, const value& v) {
+		con[k]=v;
 	}
 	
 	//for element 
-	inline object& operator [](const object& key) {
-		return con[&key];
+	inline refence operator [](const key& k) {
+		return *(con[k]);
 	}
 	
-	inline const object& operator [](const object& key) const {
-		return con[&key];
-	}
+	// inline const refence operator [](const key& k) const {
+		// return *(con[k]);
+	// }
 	
 	/**************************************************
 	find:	Find element iterator from this dict.
 	**************************************************/
-	inline iterator find(const element& key) {
-		return con.find(key);
+	inline iterator find(const key& k) {
+		return con.find(k);
 	}
-	inline citerator find(const element& key) const {
-		return con.find(key);
+	inline citerator find(const key& k) const {
+		return con.find(k);
 	}
 	
 	/**************************************************
 	has_key:	D.has_key(k) -> True if D has a key k, else False
 	**************************************************/
-	bool has_key(const element& key) const {
-		return find(key)!=end();
+	bool has_key(const key& k) const {
+		return find(k)!=end();
 	}
 	
 	/**************************************************
@@ -235,8 +245,8 @@ public:
 	/**************************************************
 	keys:	D.keys() -> list of D's keys
 	**************************************************/
-	list keys() {
-		list ks;
+	vecstr keys() {
+		vecstr ks;
 		for (iterator i=begin(), j=end(); i!=j; ++i) ks.push_back(i->first);
 		return ks;
 	}
@@ -245,19 +255,21 @@ public:
 	values:	D.values() -> list of D's values
 	**************************************************/
 	list values() {
-		list ks;
-		for (iterator i=begin(), j=end(); i!=j; ++i) ks.push_back(i->second);
-		return ks;
+		list vs;
+		for (iterator i=begin(), j=end(); i!=j; ++i) vs.append(i->second);
+		return vs;
 	}
 	
 	/**************************************************
 	pop:	D.pop(k[,d]) -> v, remove specified key and return the corresponding value
 	If key is not found, d is returned if given, otherwise KeyError is raised
 	**************************************************/
-	inline element pop() {
+	inline value pop() {
 		if (con.empty()) return NULL;
-		element tmp=con.back();
-		con.pop_back();
+		iterator i=con.begin();
+		value tmp=i->second;
+		con.erase(i);
+		return tmp;
 	}
 
 
@@ -274,11 +286,11 @@ public:
 		(if E has keys else: for (k, v) in E: D[k] = v) 
 		then: for k in F: D[k] = F[k]
 	**************************************************/
-	void update(const dict& d) {
+	void update(dict& d) {
 		for(iterator i=begin(), j=end(); i!=j; ++i) {
-			element& key=i->first;
-			element& val=i->second;
-			if (has_key(key)) set(key, val);
+			const key& k=i->first;
+			value& val=i->second;
+			if (has_key(k)) set(k, val);
 		}
 	}
 	

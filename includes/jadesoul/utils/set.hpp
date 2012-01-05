@@ -22,13 +22,9 @@ public:
 	typedef std::set<element> container;
 	
 	typedef container::iterator iterator;
-	typedef container::const_iterator const_iterator;
-	typedef container::reverse_iterator reverse_iterator;
-	typedef container::const_reverse_iterator const_reverse_iterator;
-	
-	typedef const_iterator citerator;
-	typedef reverse_iterator riterator;
-	typedef const_reverse_iterator criterator;
+	typedef container::const_iterator citerator;
+	typedef container::reverse_iterator riterator;
+	typedef container::const_reverse_iterator criterator;
 	
 private:
 	container con;
@@ -37,13 +33,13 @@ public:
 	//for iterators
 	inline iterator begin() { return con.begin(); } 
 	inline iterator end() { return con.end(); }
-	inline reverse_iterator rbegin() { return con.rbegin(); }
-	inline reverse_iterator rend() { return con.rend(); }
+	inline riterator rbegin() { return con.rbegin(); }
+	inline riterator rend() { return con.rend(); }
 	
-	inline const_iterator begin() const { return con.begin(); } 
-	inline const_iterator end() const { return con.end(); }
-	inline const_reverse_iterator rbegin() const { return con.rbegin(); }
-	inline const_reverse_iterator rend() const { return con.rend(); }
+	inline citerator begin() const { return con.begin(); } 
+	inline citerator end() const { return con.end(); }
+	inline criterator rbegin() const { return con.rbegin(); }
+	inline criterator rend() const { return con.rend(); }
 	
 	//for size query
 	inline const size_t size() const { return con.size(); }
@@ -69,12 +65,12 @@ public:
 		// add(&t3);
 	// }
 	set() {}
-	set(const set& r):con(r.con) {
-	set(iterator begin, iterator end):con(begin, end) {}
-	set(const_iterator begin, const_iterator end):con(begin, end) {}
-	set(reverse_iterator begin, reverse_iterator end):con(begin, end) {}
-	set(const_reverse_iterator begin, const_reverse_iterator end):con(begin, end) {}
-	set(const pointer& begin, const pointer& end):con(begin, end) {}
+	set(const set& r):con(r.con) {}
+	// set(iterator begin, iterator end):con(begin, end) {}
+	set(citerator begin, citerator end):con(begin, end) {}
+	// set(riterator begin, riterator end):con(begin, end) {}
+	set(criterator begin, criterator end):con(begin, end) {}
+	set(const pointer*& begin, const pointer*& end):con(begin, end) {}
 
 	/**************************************************
 	output operator: <<
@@ -105,16 +101,16 @@ public:
 	inline bool operator<=(const set& r) { return !(*this>r); }
 	inline bool operator>=(const set& r) { return !(*this<r); }
 	inline bool operator!() { return empty(); }
-	inline set operator &(const set& x, const set& y) { return x.intersection(y); }
-	inline set operator |(const set& x, const set& y) { return x.unioned(y); }
-	inline set operator +(const set& x, const set& y) { return x.unioned(y); }
-	inline set operator -(const set& x, const set& y) { return x.difference(y); }
-	inline set operator ^(const set& x, const set& y) { return x.crossed(y); }
-	inline set& operator &=(const set& r) { return intersect(r); }
-	inline set& operator |=(const set& r) { return unionto(r); }
-	inline set& operator +=(const set& r) { return unionto(r); }
-	inline set& operator -=(const set& r) { return differ(r); }
-	inline set& operator ^=(const set& r) { return cross(r); }
+	inline set operator &(set& y) { return intersection(y); }
+	inline set operator |(set& y) { return unioned(y); }
+	inline set operator +(set& y) { return unioned(y); }
+	inline set operator -(set& y) { return difference(y); }
+	inline set operator ^(set& y) { return crossed(y); }
+	inline set& operator &=(set& r) { return intersect(r); }
+	inline set& operator |=(set& r) { return unionto(r); }
+	inline set& operator +=(set& r) { return unionto(r); }
+	inline set& operator -=(set& r) { return differ(r); }
+	inline set& operator ^=(set& r) { return cross(r); }
 	
 	/**************************************************
 	add:	Add an element to a set.
@@ -214,10 +210,10 @@ public:
 		Return the intersection of two sets as a new set.
 	(i.e. all elements that are in both sets.)
 	**************************************************/
-	set& intersect(const set& r) {
+	set& intersect(set& r) {
 		return assign(intersection(r));
 	}
-	inline set intersection(const set& r) {
+	inline set intersection(set& r) {
 		set inter;
 		for (citerator i(r.begin()), e(r.end()); i!=e; ++i) if (contains(*i)) inter.add(*i);
 		return inter;
@@ -230,11 +226,11 @@ public:
 		Return the union of sets as a new set.
 		(i.e. all elements that are in either set.)
 	**************************************************/
-	set& unionto(const set& r) {
+	set& unionto(set& r) {
 		con.insert(r.begin(), r.end());
 		return *this;
 	}
-	inline set unioned(const set& r) {
+	inline set unioned(set& r) {
 		return copy().unionto(r);
 	}
 	
@@ -246,14 +242,14 @@ public:
 		Return the difference of two or more sets as a new set.
 		(i.e. all elements that are in this set but not the others.)
 	**************************************************/
-	set& differ(const set& r) {
+	set& differ(set& r) {
 		for (iterator i=r.begin(), e=r.end(), f; i!=e; ++i) {
 			f=find(*i);
 			if (f!=end()) del(f);
 		}
 		return *this;
 	}
-	inline set difference(const set& r) {
+	inline set difference(set& r) {
 		return copy().differ(r);
 	}
 	
@@ -265,7 +261,7 @@ public:
 		Return the symmetric difference of two sets as a new set.
 		(i.e. all elements that are in exactly one of the sets.)
 	**************************************************/
-	set& cross(const set& r) {
+	set& cross(set& r) {
 		for (iterator i=r.begin(), e=r.end(), f; i!=e; ++i) {
 			f=find(*i);
 			if (f!=end()) del(f);
@@ -273,7 +269,7 @@ public:
 		}
 		return *this;
 	}
-	inline set crossed(const set& r) {
+	inline set crossed(set& r) {
 		return copy().cross(r);
 	}
 
@@ -281,19 +277,19 @@ public:
 	isdisjoint:
 		Return True if two sets have a null intersection.
 	**************************************************/
-	bool isdisjoint(const set& r) const {
-		return unioned(*this, r).empty();
+	bool isdisjoint(set& r) {
+		return unioned(r).empty();
 	}
 	
 	/**************************************************
 	issubset:
 		Report whether another set contains this set.
 	**************************************************/
-	bool issubset(const set& r) const {
-		iterator i=r.con.lower_bound(*begin());
-		if (i<r.begin()) return false;
-		iterator j=r.con.upper_bound(*rbegin());
-		if (j>=r.end()) return false;
+	bool issubset(set& r) {
+		// iterator i=r.con.lower_bound(*begin());
+		// if (r.begin()-i>0) return false;
+		// iterator j=r.con.upper_bound(*rbegin());
+		// if (j>=r.end()) return false;
 		return true;
 	}
 	
@@ -301,7 +297,7 @@ public:
 	issuperset:
 		Report whether this set contains another set.
 	**************************************************/
-	bool issuperset(const set& r) const {
+	bool issuperset(set& r) {
 		return r.issubset(*this);
 	}
 	

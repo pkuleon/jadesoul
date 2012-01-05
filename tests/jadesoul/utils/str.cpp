@@ -67,7 +67,7 @@ jtest(join, test4,
 jtest(split, test5,
 	str a="1233243243234234";
 	str b="3243";
-	vec_str c;
+	vecstr c;
 	a.split(b, c);
 	dump(c);
 	

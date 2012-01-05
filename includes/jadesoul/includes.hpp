@@ -110,6 +110,9 @@ using std::back_inserter;
 using std::front_inserter;
 using std::back_insert_iterator;
 using std::front_insert_iterator;
+using std::distance;
+using std::advance;
+using std::ptrdiff_t;
 
 typedef std::vector<int> vec_int;
 typedef vec_int vecint;
@@ -117,8 +120,7 @@ typedef std::vector<uint> vec_uint;
 typedef vec_uint vecuint;
 typedef std::vector<char> vec_char;
 typedef vec_char vecchar;
-typedef std::vector<string> vec_str;
-typedef vec_str vecstr;
+typedef std::vector<string> vecstring;
 
 
 #endif /* INCLUDES_HPP_1324964318_14 */

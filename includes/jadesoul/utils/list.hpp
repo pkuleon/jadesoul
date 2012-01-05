@@ -23,28 +23,24 @@ public:
 	typedef std::vector<element> container;
 	
 	typedef container::iterator iterator;
-	typedef container::const_iterator const_iterator;
-	typedef container::reverse_iterator reverse_iterator;
-	typedef container::const_reverse_iterator const_reverse_iterator;
-	
-	typedef const_iterator citerator;
-	typedef reverse_iterator riterator;
-	typedef const_reverse_iterator criterator;
+	typedef container::const_iterator citerator;
+	typedef container::reverse_iterator riterator;
+	typedef container::const_reverse_iterator criterator;
 	
 private:
 	container con;
 	
 public:
 	//for iterators
-	inline iterator begin() { return con.begin(); } 
+	inline iterator begin() { return con.begin(); }
 	inline iterator end() { return con.end(); }
-	inline reverse_iterator rbegin() { return con.rbegin(); }
-	inline reverse_iterator rend() { return con.rend(); }
+	inline riterator rbegin() { return con.rbegin(); }
+	inline riterator rend() { return con.rend(); }
 	
-	inline const_iterator begin() const { return con.begin(); } 
-	inline const_iterator end() const { return con.end(); }
-	inline const_reverse_iterator rbegin() const { return con.rbegin(); }
-	inline const_reverse_iterator rend() const { return con.rend(); }
+	inline citerator begin() const { return con.begin(); }
+	inline citerator end() const { return con.end(); }
+	inline criterator rbegin() const { return con.rbegin(); }
+	inline criterator rend() const { return con.rend(); }
 	
 	//for size query
 	inline const size_t size() const { return con.size(); }
@@ -54,13 +50,16 @@ public:
 	//for pos to iter
 	inline iterator iter(const int& i) { return ((i<0)?end():begin())+i; }
 	inline iterator jter(const int& i) { return ((i<=0)?end():begin())+i; }
-	inline const_iterator iter(const int& i) const { return ((i<0)?end():begin())+i; }
-	inline const_iterator jter(const int& i) const { return ((i<=0)?end():begin())+i; }
+	inline citerator iter(const int& i) const { return ((i<0)?end():begin())+i; }
+	inline citerator jter(const int& i) const { return ((i<=0)?end():begin())+i; }
 	
+	inline riterator riter(const int& i) { return ((i<0)?rend():rbegin())+i; }
+	inline riterator rjter(const int& i) { return ((i<=0)?rend():rbegin())+i; }
+	inline criterator riter(const int& i) const { return ((i<0)?rend():rbegin())+i; }
+	inline criterator rjter(const int& i) const { return ((i<=0)?rend():rbegin())+i; }
 	/**************************************************
 	constructors:
 	**************************************************/
-	//constructors
 	// template<class T1>
 	// list(T1& t1) {
 		// append(&t1);
@@ -72,20 +71,20 @@ public:
 		// append(&t2);
 	// }
 	
-	// template<class T1, class T2, class T3>
-	// list(T1& t1, T2& t2, T3& t3) {
-		// append(&t1);
-		// append(&t2);
-		// append(&t3);
-	// }
+	template<class T1, class T2, class T3>
+	list(T1& t1, T2& t2, T3& t3) {
+		append(&t1);
+		append(&t2);
+		append(&t3);
+	}
 	
 	list() {}
-	list(const list& r):con(r.con) {
+	list(const list& r):con(r.con) {};
 	list(iterator begin, iterator end):con(begin, end) {}
-	list(const_iterator begin, const_iterator end):con(begin, end) {}
-	list(reverse_iterator begin, reverse_iterator end):con(begin, end) {}
-	list(const_reverse_iterator begin, const_reverse_iterator end):con(begin, end) {}
-	list(const pointer& begin, const pointer& end):con(begin, end) {}
+	list(citerator begin, citerator end):con(begin, end) {}
+	list(riterator begin, riterator end):con(begin, end) {}
+	list(criterator begin, criterator end):con(begin, end) {}
+	list(const pointer*& begin, const pointer*& end):con(begin, end) {}
 	
 	/**************************************************
 	output operator: <<
@@ -147,17 +146,14 @@ public:
 			clear();
 		} else if (n!=1) {
 			con.reserve(len()*(n-1));
-			::repeat(begin(), end(), inserter(end()), n);
+			::repeat(begin(), end(), inserter(con, end()), n);
 		}
 		return *this;
 	}
-	list operator*(cosnt list& l, const uint& n) {
-		list tmp=l.copy();
+	list operator*(const uint& n) {
+		list tmp(*this);
 		tmp*=n;
 		return tmp;
-	}
-	list operator*(const uint& n, cosnt list& l) {
-		return l*n;
 	}
 	
 	/**************************************************
@@ -246,7 +242,7 @@ public:
 	count:	L.count(value) -> integer
 			return number of occurrences of value
 	**************************************************/
-	inline uint count(const &element e, int start=0, int end=0) {
+	inline uint count(const element& e, int start=0, int end=0) {
 		return ::count(iter(start), jter(end), (&e), (&e)+1);
 	}
 
@@ -254,8 +250,8 @@ public:
 	extend:	L.extend(iterable)
 			extend list by appending elements from the iterable
 	**************************************************/
-	inline list& extend(object& iterable) {
-		con.insert(con.end(), iterable.begin(), iterable.end());
+	inline list& extend(const list& r) {
+		con.insert(con.end(), r.begin(), r.end());
 	}
 
 	/**************************************************
@@ -265,9 +261,9 @@ public:
 			return the last index of value
 	**************************************************/
 	inline int find(const list& sub, int start=0, int end=0) const {
-		const_iterator a=iter(start), b=jter(end);
+		citerator a=iter(start), b=jter(end);
 		if (a>=b) return -1;
-		const_iterator c=std::search(a, b, sub.begin(), sub.end());
+		citerator c=std::search(a, b, sub.begin(), sub.end());
 		return (c==b)?-1:c-a;
 	}
 
@@ -275,9 +271,9 @@ public:
 		uint l=len();
 		start=(start>0)?l-1-start:-start-l;
 		end=(end>0)?l-1-end:-end-l;
-		const_reverse_iterator a=jter(end), b=iter(start);
+		criterator a=rjter(end), b=riter(start);
 		if (a>=b) return -1;
-		const_reverse_iterator c=std::search(a, b, sub.rbegin(), sub.rend());
+		criterator c=std::search(a, b, sub.rbegin(), sub.rend());
 		return (c==b)?-1:(b-c)-sub.len()-1;
 	}
 	
@@ -325,11 +321,22 @@ public:
 	}
 
 	/**************************************************
+	index:	L.index(value) -> int
+			return the position if found, or -1
+			O(n)
+	**************************************************/
+	inline int index(const element& e) const {
+		uint l=len();
+		for_n(i, l) if (con[i]->equals(*e)) return i;
+		return -1;
+	}
+	
+	/**************************************************
 	remove:	L.remove(value)
 			remove first occurrence of value
 	**************************************************/
 	inline list& remove(const element& e) {
-		uint i=find(e);
+		uint i=index(e);
 		if (i!=-1) del(i);
 		return *this;
 	}

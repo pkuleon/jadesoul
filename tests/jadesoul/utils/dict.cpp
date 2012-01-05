@@ -10,16 +10,13 @@
  * Written In: Peking University, beijing, China
  */
 
-#define debug
+
 #include "jadesoul.hpp"
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-using namespace std;
 
-int main () {
-	cout<<"hello, world"<<endl;
-}
+jtest(cons, test1,
+	dict a;
+	
+)
+int main () {}
 
