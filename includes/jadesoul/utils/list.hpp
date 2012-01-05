@@ -26,6 +26,9 @@ public:
 	typedef container::reverse_iterator reverse_iterator;
 	typedef container::const_reverse_iterator const_reverse_iterator;
 	
+	typedef const_iterator citerator;
+	typedef reverse_iterator riterator;
+	typedef const_reverse_iterator criterator;
 private:
 	container con;
 	
@@ -76,7 +79,6 @@ public:
 	
 	list() {}
 	list(const list& r):con(r.con) {
-	list(pointer begin, pointer end):con(begin, end) {}
 	list(iterator begin, iterator end):con(begin, end) {}
 	list(const_iterator begin, const_iterator end):con(begin, end) {}
 	list(reverse_iterator begin, reverse_iterator end):con(begin, end) {}

@@ -45,7 +45,6 @@ public:
 	inline const_reverse_iterator rbegin() const { return con.rbegin(); }
 	inline const_reverse_iterator rend() const { return con.rend(); }
 	
-	
 	//for size query
 	inline const size_t size() const { return con.size(); }
 	inline const size_t len() const { return con.size(); }
@@ -74,7 +73,6 @@ public:
 	
 	set() {}
 	set(const set& r):con(r.con) {
-	set(pointer begin, pointer end):con(begin, end) {}
 	set(iterator begin, iterator end):con(begin, end) {}
 	set(const_iterator begin, const_iterator end):con(begin, end) {}
 	set(reverse_iterator begin, reverse_iterator end):con(begin, end) {}
@@ -149,6 +147,9 @@ public:
 	inline iterator find(const element& e) {
 		return con.find(e);
 	}
+	inline citerator find(const element& e) const {
+		return con.find(e);
+	}
 	
 	/**************************************************
 	contains:	x.contains(y) <==> y in x.
@@ -193,8 +194,7 @@ public:
 		//TODO
 		return set();
 	}
-
-
+	
 	/**************************************************
 	discard:
 		Remove an element from a set if it is a member.
