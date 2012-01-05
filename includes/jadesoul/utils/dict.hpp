@@ -13,11 +13,14 @@
  */
 
 #include "includes.hpp"
+#include "list.hpp"
+#include "str.hpp"
 
 class dict : public object {
 public:
 	typedef object* pointer;
 	typedef object& refence;
+	typedef str element;
 	typedef pointer element;
 	typedef std::pair<element, element> pair;
 	typedef std::list<pair> pairlist;
@@ -84,17 +87,17 @@ public:
 	/**************************************************
 	output operator: <<
 	**************************************************/
-	friend ostream& operator<<(ostream& out, const set& l) {
-		return out<<"[set]";
+	friend ostream& operator<<(ostream& out, const dict& l) {
+		return out<<"[dict]";
 	}
 	
 	/**************************************************
 	assign operator: =
 	**************************************************/
-	inline set& operator=(const set& r) {
+	inline dict& operator=(const dict& r) {
 		return assign(r);
 	}
-	inline set& assign(const set& r) {
+	inline dict& assign(const dict& r) {
 		con=r.con;
 		return *this;
 	}
@@ -103,23 +106,23 @@ public:
 	bool expressions:	== != > >= < <= ! & &= | |= ^ ^=
 	math expressions:	+= + -= -
 	**************************************************/
-	inline bool operator==(const set& r) { return equals(r); }
-	inline bool operator>(const set& r) { return this>&r; }
-	inline bool operator<(const set& r) { return this<&r; }
-	inline bool operator!=(const set& r) { return !(*this==r); }
-	inline bool operator<=(const set& r) { return !(*this>r); }
-	inline bool operator>=(const set& r) { return !(*this<r); }
+	inline bool operator==(const dict& r) { return equals(r); }
+	inline bool operator>(const dict& r) { return this>&r; }
+	inline bool operator<(const dict& r) { return this<&r; }
+	inline bool operator!=(const dict& r) { return !(*this==r); }
+	inline bool operator<=(const dict& r) { return !(*this>r); }
+	inline bool operator>=(const dict& r) { return !(*this<r); }
 	inline bool operator!() { return empty(); }
-	inline set operator &(const set& x, const set& y) { return x.intersection(y); }
-	inline set operator |(const set& x, const set& y) { return x.unioned(y); }
-	inline set operator +(const set& x, const set& y) { return x.unioned(y); }
-	inline set operator -(const set& x, const set& y) { return x.difference(y); }
-	inline set operator ^(const set& x, const set& y) { return x.crossed(y); }
-	inline set& operator &=(const set& r) { return intersect(r); }
-	inline set& operator |=(const set& r) { return unionto(r); }
-	inline set& operator +=(const set& r) { return unionto(r); }
-	inline set& operator -=(const set& r) { return differ(r); }
-	inline set& operator ^=(const set& r) { return cross(r); }
+	inline dict operator &(const dict& x, const dict& y) { return x.intersection(y); }
+	inline dict operator |(const dict& x, const dict& y) { return x.unioned(y); }
+	inline dict operator +(const dict& x, const dict& y) { return x.unioned(y); }
+	inline dict operator -(const dict& x, const dict& y) { return x.difference(y); }
+	inline dict operator ^(const dict& x, const dict& y) { return x.crossed(y); }
+	inline dict& operator &=(const dict& r) { return intersect(r); }
+	inline dict& operator |=(const dict& r) { return unionto(r); }
+	inline dict& operator +=(const dict& r) { return unionto(r); }
+	inline dict& operator -=(const dict& r) { return differ(r); }
+	inline dict& operator ^=(const dict& r) { return cross(r); }
 
 	/**************************************************
 	clear:	D.clear() -> None.  Remove all items from D.
