@@ -13,10 +13,10 @@
 
 #include "jadesoul.hpp"
 
-
 jtest(cons, test1,
 	dict a;
-	
+	str b="asdasd";
+	a[b]=b;
 )
 int main () {}
 
