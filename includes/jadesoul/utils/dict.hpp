@@ -20,11 +20,15 @@ class dict : public object {
 public:
 	typedef object* pointer;
 	typedef object& refence;
-	typedef str element;
-	typedef pointer element;
-	typedef std::pair<element, element> pair;
+	typedef str key;
+	typedef pointer value;
+	struct entry {
+		key k;
+		value v;
+	};
+	typedef std::pair<key, value> pair;
 	typedef std::list<pair> pairlist;
-	typedef std::map<element, element> container;
+	typedef std::map<key, value> container;
 	
 	typedef container::iterator iterator;
 	typedef container::const_iterator const_iterator;
