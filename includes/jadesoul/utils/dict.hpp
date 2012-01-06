@@ -62,7 +62,6 @@ namespace py {
 		
 		//for size query
 		inline const size_t size() const { return con.size(); }
-		inline const size_t len() const { return con.size(); }
 		inline const bool empty() const { return con.empty(); }
 		
 		//constructors
@@ -310,5 +309,7 @@ namespace py {
 	};
 
 }
+
+using py::dict
 
 #endif /* DICT_HPP_1325515224_71 */

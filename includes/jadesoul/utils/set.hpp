@@ -44,7 +44,6 @@ namespace py {
 		
 		//for size query
 		inline const size_t size() const { return con.size(); }
-		inline const size_t len() const { return con.size(); }
 		inline const bool empty() const { return con.empty(); }
 		
 		/**************************************************
@@ -157,7 +156,7 @@ namespace py {
 		**************************************************/
 		bool equals(const set& r) const {
 			if (this==&r) return true;
-			if (len()!=r.len()) return false;
+			if (size()!=r.size()) return false;
 			return std::equal(begin(), end(), r.begin());
 		}
 		
@@ -331,5 +330,7 @@ namespace py {
 	};
 
 }
+
+using py::set
 
 #endif /* SET_HPP_1325514702_2 */

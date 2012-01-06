@@ -46,7 +46,6 @@ namespace py {
 		
 		// for size query
 		inline const size_t size() const { return con.size(); }
-		inline const size_t len() const { return con.size(); }
 		inline const bool empty() const { return con.empty(); }
 		
 		// for pos to iter
@@ -112,20 +111,20 @@ namespace py {
 		// for 
 		bool operator==(const list& r) {
 			if (this==&r) return true;
-			if (len()!=r.len()) return false;
+			if (size()!=r.size()) return false;
 			return std::equal(begin(), end(), r.begin());
 		}
 		bool operator!=(const list& r) {
 			return !(*this==r);
 		}
 		bool operator>(const list& r) {
-			return len()>r.len();
+			return size()>r.size();
 		}
 		bool operator<=(const list& r) {
 			return !(*this>r);
 		}
 		bool operator<(const list& r) {
-			return len()<r.len();
+			return size()<r.size();
 		}
 		bool operator>=(const list& r) {
 			return !(*this<r);
@@ -147,7 +146,7 @@ namespace py {
 			if (n==0) {
 				clear();
 			} else if (n!=1) {
-				con.reserve(len()*(n-1));
+				con.reserve(size()*(n-1));
 				::repeat(begin(), end(), inserter(con, end()), n);
 			}
 			return *this;
@@ -179,7 +178,7 @@ namespace py {
 		}
 		
 		element& at(int i) {
-			uint l=len();
+			uint l=size();
 			if (i<0) i+=l;
 			assert(i>=0 AND i<l);
 			return this->operator[](i);
@@ -270,13 +269,13 @@ namespace py {
 		}
 
 		inline int rfind(const list& sub, int start=0, int end=0) const {
-			uint l=len();
+			uint l=size();
 			start=(start>0)?l-1-start:-start-l;
 			end=(end>0)?l-1-end:-end-l;
 			criterator a=rjter(end), b=riter(start);
 			if (a>=b) return -1;
 			criterator c=std::search(a, b, sub.rbegin(), sub.rend());
-			return (c==b)?-1:(b-c)-sub.len()-1;
+			return (c==b)?-1:(b-c)-sub.size()-1;
 		}
 		
 		/**************************************************
@@ -328,7 +327,7 @@ namespace py {
 				O(n)
 		**************************************************/
 		inline int index(const element& e) const {
-			uint l=len();
+			uint l=size();
 			for_n(i, l) if (con[i]->equals(*e)) return i;
 			return -1;
 		}
@@ -399,7 +398,11 @@ namespace py {
 			std::for_each(begin(), end(), f);
 		}
 	};
-	
 }
+
+using py::list
+typedef list<str> liststr;
+typedef list<int> listint;
+typedef list<uint> listuint;
 
 #endif /* LIST_HPP_1325430399_29 */

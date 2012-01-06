@@ -62,7 +62,7 @@ public:
 			...;
 	}
 	
-	uint len() const {
+	uint size() const {
 		return 2;
 	}
 };
@@ -105,7 +105,7 @@ public:
 		return i>>%s;
 	}
 	
-	uint len() const {
+	uint size() const {
 		return %d;
 	}
 };
@@ -117,7 +117,7 @@ inline tuple<%s> TUPLE(%s) {
 
 '''
 
-for j in range(0, 10):
+for j in range(0, 20):
 	id=j+1
 	all=range(2, 2+j)
 	templates=', '.join(['class T1=str']+['class T%d=T1' % i for i in all])

@@ -26,7 +26,7 @@ namespace py {
 		typedef typename container::const_iterator citerator;
 		typedef typename container::reverse_iterator riterator;
 		typedef typename container::const_reverse_iterator criterator;
-
+		
 	private:
 		container s;
 		
@@ -43,7 +43,6 @@ namespace py {
 		
 		//for size query
 		inline const size_t size() const { return s.size(); }
-		inline const size_t len() const { return s.size(); }
 		inline const bool empty() const { return s.empty(); }
 		
 		/**************************************************
@@ -187,7 +186,7 @@ namespace py {
 		
 		//for substr getter
 		inline str operator()(int pos) {
-			size_t l=len();		
+			size_t l=size();		
 			if (pos<0) pos+=l;
 			assert(pos>=0 AND pos<l);
 			return s.substr(pos);
@@ -196,7 +195,7 @@ namespace py {
 		//for substr
 		str operator()(int start, int stop, int step=1) {
 			if (step==0) return "";
-			size_t l=len();
+			size_t l=size();
 			if (start<0) start+=l;
 			assert(start>=0 AND start<l);
 			if (stop<0) stop+=l;
@@ -286,13 +285,13 @@ namespace py {
 			Return -1 on failure.
 		*************************************************/
 		inline int rfind(const str& sub, int start=0, int end=0) const {
-			uint l=len();
+			uint l=size();
 			start=(start>0)?l-1-start:-start-l;
 			end=(end>0)?l-1-end:-end-l;
 			criterator a=(end<=0?s.rend():s.rbegin())+end, b=(start<0?s.rend():s.rbegin())+start;
 			if (a>=b) return -1;
 			criterator c=std::search(a, b, sub.rbegin(), sub.rend());
-			return (c==b)?-1:(b-c)-sub.len()-1;
+			return (c==b)?-1:(b-c)-sub.size()-1;
 		}
 		
 		/*************************************************
@@ -311,7 +310,7 @@ namespace py {
 			given, only the first count occurrences are replaced.
 		*************************************************/
 		str& replace(const str& old, const str& new_, size_t count=-1) {
-			size_t start=0, olen=old.len(), nlen=new_.len();
+			size_t start=0, olen=old.size(), nlen=new_.size();
 			while(count==-1 OR count-->0) {
 				start=s.find(old.s, start);
 				if (start==string::npos) break;
@@ -349,7 +348,7 @@ namespace py {
 		*************************************************/
 		inline str center(uint width, char fillchar) {
 			string ret(width, fillchar);
-			uint l=len();
+			uint l=size();
 			if (width>=l) {
 				int r=(width-l)/2;
 				std::copy(s.begin(), s.end(), ret.begin()+r);
@@ -397,7 +396,7 @@ namespace py {
 			Return a copy of the string S converted to uppercase.
 		*************************************************/
 		str& upper() {
-			for (uint l=len(), i=0; i<l; ++i) {
+			for (uint l=size(), i=0; i<l; ++i) {
 				char& c=s[i];
 				if (c>='a' AND c<='z') c+='A'-'a';
 			}
@@ -414,7 +413,7 @@ namespace py {
 			Return a copy of the string S converted to lowercase.
 		*************************************************/
 		str& lower() {
-			for (uint l=len(), i=0; i<l; ++i) {
+			for (uint l=size(), i=0; i<l; ++i) {
 				char& c=s[i];
 				if (c>='A' AND c<='Z') c+='a'-'A';
 			}
@@ -432,7 +431,7 @@ namespace py {
 			converted to lowercase and vice versa.
 		*************************************************/
 		str& swapcase() {
-			for (uint l=len(), i=0; i<l; ++i) {
+			for (uint l=size(), i=0; i<l; ++i) {
 				char& c=s[i];
 				if (c>='a' AND c<='z') c+='A'-'a';
 				else if (c>='A' AND c<='Z') c+='a'-'A';
@@ -467,7 +466,7 @@ namespace py {
 		*************************************************/
 		str& repeat(int n) {
 			str& me=*this;
-			uint l=len();
+			uint l=size();
 			if (l==0) return me;
 			if (n==0) {
 				s.clear();

@@ -15,60 +15,36 @@
 #include "includes.hpp"
 
 namespace py {
-
 	class object {
 	public:
-		object() {
-		
-		}
-		
-		friend ostream& operator<<(ostream& out, const object& obj) {
-			return out<<"[object]";
-		}
-		
-		virtual object& print(ostream& out=cout) {
-			out<<this->repr();
-			return *this;
-		}
-		
-		virtual object& printl(ostream& out=cout) {
-			print(out);
-			out<<std::endl;
-			return *this;
-		}
-		
-		virtual string repr() {
-			ostringstream oss;
-			oss<<*this;
-			return oss.str();
-		}
-		
-		virtual inline const size_t len() const {
-			return 0; 
-		}
-		
-		/**************************************************
-		equals:	x.equals(y) <==> x == y.
-		**************************************************/
-		virtual inline const bool equals(const object& r) const {
-			return this==&r;
-		}
-		
-		/**************************************************
-		hash:	x.hash() <==> Return DWORD hash
-		**************************************************/
-		virtual inline const size_t hash() const {
-			return (size_t)this;
-		}
-		
-		//common iterfaces
-		//--------------------------------------------------
-		
-		
-		
-		//---------------------------------------------------
+		object() {}
+		friend ostream& operator<<(ostream& out, const object& obj) { return out<<repr(); }
+		virtual string repr() { return ""; }
+		virtual inline const bool equals(const object& r) const { return this==&r; }
+		virtual inline const size_t size() const { return 0; }
+		virtual inline const size_t hash() const { return (size_t)this; }
 	};
-
 }
 
 #endif /* OBJECT_HPP_1325430546_23 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
