@@ -23,7 +23,7 @@
 #include "set.hpp"
 #include "dict.hpp"
 
-// #include "filesys.hpp"
+#include "filesys.hpp"
 #include "network.hpp"
 
 void sys_seed(uint id=0) {

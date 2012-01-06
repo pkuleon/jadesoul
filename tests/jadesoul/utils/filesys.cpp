@@ -12,6 +12,13 @@
 
 #include "jadesoul.hpp"
 
+jtest(hi, test1,
+	listint a;
+	a.append(1);
+	printv(a);
+)
+
+
 int main () {
 	cout<<"hello, world"<<endl;
 }

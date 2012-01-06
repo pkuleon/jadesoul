@@ -14,29 +14,16 @@
 
 #include "includes.hpp"
 
-namespace py {
-	class object {
-	public:
-		object() {}
-		friend ostream& operator<<(ostream& out, const object& obj) { return out<<repr(); }
-		virtual string repr() { return ""; }
-		virtual inline const bool equals(const object& r) const { return this==&r; }
-		virtual inline const size_t size() const { return 0; }
-		virtual inline const size_t hash() const { return (size_t)this; }
-	};
-}
+class object {
+public:
+	object() {}
+	virtual inline const bool equals(const object& r) const { return this==&r; }
+	virtual inline const bool cmp(const object& r) const { return this<&r; }
+	virtual inline const uint hash() const { return (uint)this; }
+	virtual inline string repr() { return ""; }
+};
 
 #endif /* OBJECT_HPP_1325430546_23 */
-
-
-
-
-
-
-
-
-
-
 
 
 
