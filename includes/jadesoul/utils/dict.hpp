@@ -38,8 +38,8 @@ public:
 	typedef std::pair<key, value> pair;
 	typedef std::list<pair> pairs;
 	
-	typedef hashkey<key> key_hash;
-	typedef hash_map<key, value, key_hash> container;
+	typedef hashkey<key> keyhash;
+	typedef hash_map<key, value, keyhash> container;
 	
 	typedef container::iterator iterator;
 	typedef container::const_iterator citerator;

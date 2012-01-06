@@ -16,18 +16,20 @@
 #include "object.hpp"
 #include "range.hpp"
 
+namespace jadesoul {
+
+template<class container>
 class str : public object {
 public:
 	typedef std::vector<str> vecstr;
-	typedef string container;
 	typedef container::iterator iterator;
 	typedef container::const_iterator citerator;
 	typedef container::reverse_iterator riterator;
 	typedef container::const_reverse_iterator criterator;
 	
-	static string letters;
+	static container letters;
 private:
-	string s;
+	container s;
 public:
 
 	
@@ -546,6 +548,8 @@ public:
 		return clone().repr();
 	}
 };
+
+}
 
 string str::letters="abcdefghijklmnopqrstuvwxyz";
 
