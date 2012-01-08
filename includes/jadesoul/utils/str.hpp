@@ -122,11 +122,7 @@ public:
 	output operator: <<
 	**************************************************/
 	inline friend ostream& operator <<(ostream& o, const str& s) {
-#ifdef debug
-		return o<<'"'<<s.s<<'"';
-#else
-		return s.s;
-#endif
+		return o<<s.s;
 	}
 	
 	inline const string tostr() const { return s; }
@@ -297,12 +293,16 @@ public:
 	*************************************************/
 	inline int rfind(const str& sub, int start=0, int end=0) const {
 		uint l=size();
-		start=(start>0)?l-1-start:-start-l;
-		end=(end>0)?l-1-end:-end-l;
-		criterator a=(end<=0?s.rend():s.rbegin())+end, b=(start<0?s.rend():s.rbegin())+start;
+		if (start<0) start+=l;
+		if (end<=0) end+=l;
+		start=l-start;
+		end=l-end;
+		assert(start>0);
+		assert(end>=0);
+		criterator a=s.rbegin()+end, b=s.rbegin()+start;
 		if (a>=b) return -1;
 		criterator c=std::search(a, b, sub.rbegin(), sub.rend());
-		return (c==b)?-1:(b-c)-sub.size()-1;
+		return (c==b)?-1:(b-c)-sub.size();
 	}
 	
 	/*************************************************

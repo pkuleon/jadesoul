@@ -10,10 +10,7 @@
  * Written In: Peking University, beijing, China
  */
 
-
-
 //非递归遍历文件夹
-
 #include <windows.h>
 #include <iostream>
 #include <stack>
@@ -22,7 +19,7 @@ using namespace std;
 
 void TraverseFolder(string& path)
 {
-	stack < string > find_file;
+	stack<string> find_file;
 	WIN32_FIND_DATA FindFileData;
 	HANDLE hFind;
 

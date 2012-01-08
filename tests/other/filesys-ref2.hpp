@@ -55,16 +55,13 @@ BOOL  DirectoryList(LPCSTR Path)
 			printf("<Dir>");
 			DirectoryList(FullPathName);
 		}
-
-
-
 	}
 	return 0;
 }
 
 void main()
 {
-	DirectoryList("D:eclipse-J2EE");
+	DirectoryList("D:\\kankan");
 }
 
 #endif /* FILESYS-REF2_HPP_1325867695_37 */

@@ -13,12 +13,37 @@
 #include "jadesoul.hpp"
 
 jtest(hi, test1,
-	listint a;
-	a.append(1);
-	printv(a);
+	path p("D:\\GreenSoft\\myentunnel.tar.gz");
+	printv(p.tostr());
+	printv(p.dirname());
+	printv(p.filename());
+	printv(p.extension());
+	printv(p.exists());
+	printv(p.isdir());
+	printv(p.isfile());
+	
+	printv(p.listdirs());
+	printv(p.listfiles());
 )
 
+void travel(path p, int d=0) {
+	str prefix=str("\t")*d;
+	
+	liststr files=p.listfiles("*.txt");
+	for_n(i, files.size()) {
+		cout<<prefix<<"FILE-"<<i<<"\t"<<files[i]<<endl;
+	}
+	
+	liststr dirs=p.listdirs();
+	for_n(i, dirs.size()) {
+		cout<<prefix<<"DIR-"<<i<<"\t"<<dirs[i]<<endl;
+		travel(p/dirs[i], d+1);
+	}
+
+}
+
 int main () {
+	// travel(path("D:\\eclipse"));
 	cout<<"hello, world"<<endl;
 }
 

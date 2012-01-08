@@ -57,24 +57,90 @@ public:
 	/**************************************************
 	constructors:
 	**************************************************/
-	// template<class T1>
-	// list(T1& t1) {
-		// append(&t1);
-	// }
-	
-	// template<class T1, class T2>
-	// list(T1& t1, T2& t2) {
-		// append(&t1);
-		// append(&t2);
-	// }
-	
-	template<class T1, class T2, class T3>
-	list(T1& t1, T2& t2, T3& t3) {
-		append(&t1);
-		append(&t2);
-		append(&t3);
+/* python code
+def generate_template_constructors():
+	ss=[]
+	for i in range(1, 10):
+		r=range(1, 1+i)
+		a='template<%s>' % ', '.join(['class T%d' % j for j in r])
+		b='inline list(%s) {' % ', '.join(['const T%d& t%d' % (j, j) for j in r])
+		c='\t%s' % '\n\t'.join(['append(t%d);' % j for j in r])
+		s='\n'.join([a, b, c, '}'])
+		ss.append(s)
+	print '\n'.join(ss)
+*/
+	template<class T1>
+	inline list(const T1& t1) {
+		append(t1);
 	}
-	
+	template<class T1, class T2>
+	inline list(const T1& t1, const T2& t2) {
+		append(t1);
+		append(t2);
+	}
+	template<class T1, class T2, class T3>
+	inline list(const T1& t1, const T2& t2, const T3& t3) {
+		append(t1);
+		append(t2);
+		append(t3);
+	}
+	template<class T1, class T2, class T3, class T4>
+	inline list(const T1& t1, const T2& t2, const T3& t3, const T4& t4) {
+		append(t1);
+		append(t2);
+		append(t3);
+		append(t4);
+	}
+	template<class T1, class T2, class T3, class T4, class T5>
+	inline list(const T1& t1, const T2& t2, const T3& t3, const T4& t4, const T5& t5) {
+		append(t1);
+		append(t2);
+		append(t3);
+		append(t4);
+		append(t5);
+	}
+	template<class T1, class T2, class T3, class T4, class T5, class T6>
+	inline list(const T1& t1, const T2& t2, const T3& t3, const T4& t4, const T5& t5, const T6& t6) {
+		append(t1);
+		append(t2);
+		append(t3);
+		append(t4);
+		append(t5);
+		append(t6);
+	}
+	template<class T1, class T2, class T3, class T4, class T5, class T6, class T7>
+	inline list(const T1& t1, const T2& t2, const T3& t3, const T4& t4, const T5& t5, const T6& t6, const T7& t7) {
+		append(t1);
+		append(t2);
+		append(t3);
+		append(t4);
+		append(t5);
+		append(t6);
+		append(t7);
+	}
+	template<class T1, class T2, class T3, class T4, class T5, class T6, class T7, class T8>
+	inline list(const T1& t1, const T2& t2, const T3& t3, const T4& t4, const T5& t5, const T6& t6, const T7& t7, const T8& t8) {
+		append(t1);
+		append(t2);
+		append(t3);
+		append(t4);
+		append(t5);
+		append(t6);
+		append(t7);
+		append(t8);
+	}
+	template<class T1, class T2, class T3, class T4, class T5, class T6, class T7, class T8, class T9>
+	inline list(const T1& t1, const T2& t2, const T3& t3, const T4& t4, const T5& t5, const T6& t6, const T7& t7, const T8& t8, const T9& t9) {
+		append(t1);
+		append(t2);
+		append(t3);
+		append(t4);
+		append(t5);
+		append(t6);
+		append(t7);
+		append(t8);
+		append(t9);
+	}
 	list() {}
 	list(const list& r):con(r.con) {};
 	list(iterator begin, iterator end):con(begin, end) {}
@@ -87,7 +153,13 @@ public:
 	output operator: <<
 	**************************************************/
 	friend ostream& operator<<(ostream& out, const list& l) {
-		return out<<"[list]";
+		uint s=l.size();
+		out<<"[";
+		for_n(i, s) {
+			if (i!=s-1) out<<l[i]<<", ";
+			else out<<l[i];
+		}
+		return out<<"]";
 	}
 	
 	/**************************************************
@@ -158,11 +230,11 @@ public:
 	**************************************************/
 	// for elements
 	inline element& operator [](int i) {
-		return *elem(i);
+		return elem(i);
 	}
 	
 	inline const element& operator [](int i) const {
-		return *elem(i);
+		return elem(i);
 	}
 	
 	inline element& elem(int i) {
@@ -184,8 +256,6 @@ public:
 	list operator()(const int& i, const int& j) {
 		return list(iter(i), jter(j));
 	}
-	
-
 	
 	/**************************************************
 	contains:	x.contains(y) <==> y in x
@@ -399,6 +469,8 @@ public:
 typedef list<str> liststr;
 typedef list<int> listint;
 typedef list<uint> listuint;
+typedef list<short> listshort;
+typedef list<ushort> listushort;
 
 Macro__over_load_dump__ValueType(liststr);
 Macro__over_load_dump__ValueType(listint);

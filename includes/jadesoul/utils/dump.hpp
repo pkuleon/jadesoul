@@ -50,15 +50,11 @@ void log(const char* fmt, ...) {
   * usage:  dump< vector<int> >(v, ", ", "[", "]", cout) or show(v, ", ", "[", "]", cout) or just show(v);
   */
 
-const char* default_show_deli=" ";
-const char* default_show_left="[ ";
-const char* default_show_right="]";
-
 template<class Container >
 void dump(const Container& c,
-          const char* deli=default_show_deli,
-          const char* left=default_show_left,
-          const char* right=default_show_right,
+          const char* deli=" ",
+          const char* left="[ ",
+          const char* right="]",
 	  ostream& out=cout ) {
 	out<<left;
 	ostream_iterator<typename Container::value_type> osit(out, deli);
@@ -99,7 +95,7 @@ Macro__over_load_dump__ValueType(double);
 //this macro below is important
 #define Macro__over_load_operator_out__ContainerTemplate_ValueType( CT, T )  \
 inline ostream& operator <<(ostream& os, const CT < T >& c) { \
-    dump(c, default_show_deli, default_show_left, default_show_right, os);    \
+    dump(c, " ", "[ ", "]", os);    \
     return os;  \
 }
 
