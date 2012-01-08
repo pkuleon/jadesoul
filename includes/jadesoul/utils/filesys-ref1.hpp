@@ -12,7 +12,7 @@
  * Written In: Peking University, beijing, China
  */
 
-/*
+
 //非递归遍历文件夹
 
 #include <windows.h>
@@ -76,6 +76,6 @@ int main()
     getchar();
     return 0 ;
 }
-*/
+
 
 #endif /* FILESYS-REF1_HPP_1325867598_87 */

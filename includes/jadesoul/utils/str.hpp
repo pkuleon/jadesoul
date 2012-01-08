@@ -42,6 +42,7 @@ public:
 	//for size query
 	inline const uint size() const { return s.size(); }
 	inline const bool empty() const { return s.empty(); }
+	inline const bool equals(const str& r) const { return s==r.s; }
 	
 	/**************************************************
 	constructors:
@@ -63,8 +64,16 @@ public:
 		buf[1]=0;
 		s=buf;
 	}
-	// TODO:construction from short
-	// TODO:construction from ushort
+	inline str(const short& n) {	// construction from short
+		char buf[16];
+		sprintf(buf, "%d", n);
+		s=buf;
+	}
+	inline str(const ushort& n) {	// construction from ushort
+		char buf[16];
+		sprintf(buf, "%d", n);
+		s=buf;
+	}
 	inline str(const int& n) {	// construction from int
 		char buf[16];
 		sprintf(buf, "%d", n);
@@ -80,12 +89,11 @@ public:
 		sprintf(buf, "%l", n);
 		s=buf;
 	}
-	// construction from ulong
-	// str(const ulong& n) {
-		// char buf[32];
-		// sprintf(buf, "%d", n);
-		// s=buf;
-	// }
+	str(const ulong& n) {	// construction from ulong
+		char buf[32];
+		sprintf(buf, "%d", n);
+		s=buf;
+	}
 	inline str(const float& n) {	// construction from float
 		char buf[32];
 		sprintf(buf, "%f", n);
@@ -93,7 +101,7 @@ public:
 	}
 	inline str(const double& n) {	// construction from double
 		char buf[32];
-		sprintf(buf, "%g", n);
+		sprintf(buf, "%g", n); 
 		s=buf;
 	}
 	inline str(const str& s):s(s.s) {}	//copy construction
@@ -101,27 +109,31 @@ public:
 	/**************************************************
 	bool expressions:	== != > >= < <= ! 
 	**************************************************/
-	inline bool operator==(const str& r) const { return equals(r); }
-	inline bool operator>(const str& r) const { return *this>r; }
-	inline bool operator<(const str& r) const { return *this<r; }
-	inline bool operator!=(const str& r) const { return !(*this==r); }
-	inline bool operator<=(const str& r) const { return !(*this>r); }
-	inline bool operator>=(const str& r) const { return !(*this<r); }
-	inline bool operator!() const { return empty(); }
+	inline const bool operator==(const str& r) const { return s==r.s; }
+	inline const bool operator<(const str& r) const { return s<r.s; }
+	inline const bool operator>(const str& r) const { return s>r.s; }
+	inline const bool operator!=(const str& r) const { return s!=r.s; }
+	inline const bool operator<=(const str& r) const { return s<=r.s; }
+	inline const bool operator>=(const str& r) const { return s>=r.s; }
+	inline const bool operator!() const { return empty(); }
 	
 	/**************************************************
+	tostr
 	output operator: <<
 	**************************************************/
 	inline friend ostream& operator <<(ostream& o, const str& s) {
 #ifdef debug
 		return o<<'"'<<s.s<<'"';
 #else
-		return o<<s.s;
+		return s.s;
 #endif
 	}
 	
+	inline const string tostr() const { return s; }
+	
 	/**************************************************
-	assign operator: =
+	assign
+	operator: =
 	**************************************************/
 	inline str& operator=(const str& r) {
 		return assign(r);
@@ -132,39 +144,39 @@ public:
 	}
 	
 	/**************************************************
-	equals:	x.equals(y) <==> x == y.
+	operator: + += * *=
 	**************************************************/
-	inline const bool equals(const str& r) const {
-		return s==r.s;
+	inline str operator +(const str& r) {	//for connection
+		return str(s+r.s);
+	}
+	inline str& operator +=(const str& r) {
+		s+=r.s;
+		return *this;
+	}
+	inline str operator *(int n) {	//for multiply
+		return repeated(n);
+	}
+	inline str& operator *=(int n) {
+		return repeat(n);
 	}
 	
 	/**************************************************
-	hash:	x.hash() <==> Return DWORD hash
+	operator: [](int)
+	operator: [](string)
+	at
 	**************************************************/
-	inline const uint hash() const {
-		uint h=0, i=s.size();
-		while(--i>=0) h=107*h+s[i];
-		return h;
-	}
-	
-	//for connection
-	inline str operator +(const str& r) {
-		return str(s+r.s);
-	}
-	
-	//for multiply
-	inline str operator *(int n) {
-		return repeated(n);
-	}
-	
-	//for element visiting
-	inline char& operator[](int i) {
+	inline char& operator[](int i) {	//for element visiting
 		if (i<0) i+=s.size();
 		return s[i];
 	}
-	
-	//for element visiting, much more safe
-	inline char& at(int i) {
+	inline const char& operator[](int i) const {
+		if (i<0) i+=s.size();
+		return s[i];
+	}
+	inline str operator [](const char* cstr) {
+		return str::slice(range(cstr));
+	}
+	inline char& at(int i) {	//for element visiting, much more safe
 		uint len=s.size();
 		assert(len>0);
 		while(i<0) i+=len;
@@ -172,18 +184,13 @@ public:
 		return s.at(i);
 	}
 	
-	//for slice
-	inline str slice(const range& r) {
-		// cout<<r<<endl;
-		return ::slice(s, r);
-	}
-	
-	inline str operator [](const char* cstr) {
-		return str::slice(range(cstr));
-	}
-	
+	/**************************************************
+	slice: substr 
+	operator: ()(pos)
+	operator: ()(start, stop, step)
+	**************************************************/
 	//for substr getter
-	inline str operator()(int pos) {
+	inline str operator()(int pos) const {
 		uint l=size();		
 		if (pos<0) pos+=l;
 		assert(pos>=0 AND pos<l);
@@ -191,7 +198,7 @@ public:
 	}
 	
 	//for substr
-	str operator()(int start, int stop, int step=1) {
+	str operator()(int start, int stop, int step=1) const {
 		if (step==0) return "";
 		uint l=size();
 		if (start<0) start+=l;
@@ -216,6 +223,12 @@ public:
 			for (uint i=start; i>stop; i+=step) ret.push_back(s[i]);
 			return ret;
 		}
+	}
+	
+	//for slice
+	inline str slice(const range& r) {
+		// cout<<r<<endl;
+		return ::slice(s, r);
 	}
 	
 	/*************************************************
@@ -534,9 +547,13 @@ public:
 		return clone().rstrip(chars);
 	}
 	
-	string repr() {
-		//TODO
-		return s;
+	/**************************************************
+	hash:	x.hash() <==> Return DWORD hash
+	**************************************************/
+	inline const uint hash() const {
+		uint h=0, i=s.size();
+		while(--i>=0) h=107*h+s[i];
+		return h;
 	}
 };
 

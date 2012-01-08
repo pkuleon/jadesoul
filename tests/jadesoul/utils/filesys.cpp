@@ -18,7 +18,6 @@ jtest(hi, test1,
 	printv(a);
 )
 
-
 int main () {
 	cout<<"hello, world"<<endl;
 }

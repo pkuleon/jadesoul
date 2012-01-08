@@ -12,7 +12,7 @@
  * Written In: Peking University, beijing, China
  */
 
-/*
+
 
 
 c++文件操作，vc文件操作，目录操作
@@ -175,6 +175,6 @@ void main()
 3。
 
 C++没有目录操作的支持，需要平台的支持了，比如WINDOWS的MoveFile，FindFirstFile等，建议参看平台的开发文档！
-*/
+
 
 #endif /* FILESYS-REF3_HPP_1325867739_02 */

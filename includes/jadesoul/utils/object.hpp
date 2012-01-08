@@ -20,7 +20,9 @@ public:
 	virtual inline const bool equals(const object& r) const { return this==&r; }
 	virtual inline const bool cmp(const object& r) const { return this<&r; }
 	virtual inline const uint hash() const { return (uint)this; }
-	virtual inline string repr() { return ""; }
+	
+	virtual inline const string tostr() const { return string(); }
+	virtual inline const char* tocstr() const { return tostr().c_str(); }
 };
 
 #endif /* OBJECT_HPP_1325430546_23 */
