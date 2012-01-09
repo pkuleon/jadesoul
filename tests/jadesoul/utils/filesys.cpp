@@ -42,7 +42,7 @@ void travel(path p, int d=0) {
 }
 
 jtest(openfile, test2,
-	path p("D:/Download/picaqiu.cmd");
+	path p("D:\\WorkSpace\\2012-1-6\\readme.txt");
 	printv(p.tostr());
 	printv(p.dirname());
 	printv(p.filename());

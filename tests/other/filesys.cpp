@@ -67,7 +67,7 @@ void TraverseFolder(string& path)
 
 int main()
 {
-	string path("D:\\kankan");
+	string path("D:");
 	TraverseFolder(path);
 	getchar();
 	return 0 ;
