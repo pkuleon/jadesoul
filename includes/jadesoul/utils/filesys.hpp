@@ -20,6 +20,14 @@
 #include "tuple.hpp"
 #include "dict.hpp"
 
+#ifdef OS_WIN32
+	#define ENDL "\r\n"
+	#define SLASH "\\"
+#else
+	#define ENDL "\n"
+	#define SLASH "/"
+#endif
+
 class walker {
 public:
 	void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
@@ -458,61 +466,86 @@ private:
 	str m;
 	char* buf;
 	//forbidden copy and assign
-	file(const file& r):p(0), m(0) {}
-	file& operator=(const file& r) { return *this; }
+	cfile(const cfile& r) {}
+	cfile& operator=(const cfile& r) { return *this; }
 public:
-	cfile():fp(0), fn(""), m("r"), buf(0) {}
-	cfile(const str& fn, const str& mode="r"):fp(0), fn(fn), m(mode), buf(0) {}
-	
-	inline cfile& open() {
+	cfile(const str& filename, const str& mode="rt"):fp(0), fn(filename), m(mode), buf(0) {
 		fp=fopen(fn.tocstr(), m.tocstr());
-		if (fp==NULL) cerr<<"Could not open file:"<<fn<<" with mode:"<<m;
-		return *this;
+		if (fp==NULL) {
+			cout<<"Could not open file:"<<fn<<" with mode:"<<m;
+			exit(1);
+		}
 	}
-	inline open(const str& fn, const str& mode="r") {
-		if (opened()) close();
-		this->fn=fn;
-		this->m=mode;
-		open();
-	}
-	inline const bool opened() const { return fp!=NULL; }
-	inline const bool ended() const { return feof(fp); }
+	
 	inline cfile& flush() {
 		fflush(fp);
 		return *this;
 	}
-	inline cfile& close() { 
-		fclose(fp);
-		fp=NULL;
-		return *this; 
-	}
 	
-	inline str read(uint size) {
+	inline str read(uint size=0) {
 		assert(opened());
-		check_buf();
-		
+		if (size==0) {
+			fseek(fp, 0, SEEK_END);
+			size=ftell(fp);
+			rewind(fp);
+		}
+		char* buffer=new char[size];
+		if (buffer==NULL) {
+			fputs("Memory error: No buffer for read", stderr);
+			exit(2);
+		}
+		string s(buffer, buffer+fread(buffer, 1, size, fp));
+		delete buffer;
+		return s;
 	}
 	inline str readline() {
 		assert(opened());
 		check_buf();
-		if (fgets(buf, 64*1024+1, fp)) return buf;
-		else return "";
+		string ret;
+		if (fgets(buf, 64*1024+1, fp)) ret=buf;
+		uint l=ret.size();
+		if (l>=2 AND ret[l-2]=='\r' AND ret[l-1]=='\n') return str(ret.begin(), ret.end()-2);
+		if (l>=1 AND ret[l-1]=='\n') return str(ret.begin(), ret.end()-1);
+		return ret;
 	}
 	inline L readlines() {
-		assert(opened());
 		L rets;
-		while (NOT ended()) rets.append(readline());
+		while (notend()) rets.append(readline());
 		return rets;
 	}
 	
-	inline write()
-	inline writeline()
-	inline writelines()
+	inline cfile& write(const str& s) {
+		assert(opened());
+		uint l=s.size();
+		if (l==0) return *this;
+		fwrite(s.tocstr(), 1, l, fp);
+		return *this;
+	}
+	inline cfile& writeline(const str& s) {
+		write(s);
+		fputs(ENDL, fp);
+		return *this;
+	}
+	inline cfile& writelines(L lst) {
+		uint l=lst.size();
+		for_n(i, l) writeline(lst[i]);
+		return *this;
+	}
+	
+	inline const bool notend() const { return !feof(fp); }
 	
 	~cfile() {
+		flush().close();
 		delete buf;
 	}
 private:
+	inline const bool opened() const { return fp!=NULL; }
+
+	inline cfile& close() {
+		if (fp) fclose(fp);
+		fp=NULL;
+		return *this; 
+	}
 	inline void check_buf() {
 		if (!buf) buf=new char[64*1024+1];
 	}

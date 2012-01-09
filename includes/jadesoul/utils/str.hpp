@@ -126,6 +126,7 @@ public:
 	}
 	
 	inline const string tostr() const { return s; }
+	inline const char* tocstr() const { return s.c_str(); }
 	
 	/**************************************************
 	assign
