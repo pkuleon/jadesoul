@@ -83,7 +83,8 @@ Macro__over_load_dump__ValueType(long);
 Macro__over_load_dump__ValueType(unsigned long);
 Macro__over_load_dump__ValueType(float);
 Macro__over_load_dump__ValueType(double);
-
+Macro__over_load_dump__ValueType(int8);
+Macro__over_load_dump__ValueType(uint8);
 
 
 //now is ostream overloads

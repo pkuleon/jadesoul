@@ -13,6 +13,7 @@
  */
 
 #include "includes.hpp"
+#include "object.hpp"
 #include "str.hpp"
 #include "list.hpp"
 #include "set.hpp"
@@ -356,7 +357,13 @@ private:
 	file(const file& r):p(0), m(0) {}
 	file& operator=(const file& r) { return *this; }
 public:
-	file(path p, const char m='r'):p(p), m(m) {
+	file(path p, const char m='r') {
+		open(p, m);
+	}
+	
+	file& open(const path& pth, const char mode='r') {
+		p=pth;
+		m=mode;
 		if (m=='r') {
 			assert(p.isfile());
 			ifs.open(p.tocstr());
@@ -364,11 +371,13 @@ public:
 		else if (m=='w') ofs.open(p.tocstr());
 		else if (m=='a') ofs.open(p.tocstr(), ofstream::app);
 		else assert(false);
+		return *this;
 	}
 	
 	str read(uint size=0) {
 		assert(m=='r');
 		if (size==0) size=p.fsize();
+		// printv(size);
 		if (size==0) return "";
 		char* s=new char[size];
 		ifs.read(s, size);
@@ -403,9 +412,13 @@ public:
 		write(nl);
 	}
 	
-	~file() {
+	void close() {
 		if (m=='r') ifs.close();
 		else ofs.close();
+	}
+	
+	~file() {
+		close();
 	}
 };
 

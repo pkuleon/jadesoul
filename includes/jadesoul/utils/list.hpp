@@ -475,6 +475,9 @@ typedef list<ushort> listushort;
 Macro__over_load_dump__ValueType(liststr);
 Macro__over_load_dump__ValueType(listint);
 Macro__over_load_dump__ValueType(listuint);
+Macro__over_load_dump__ValueType(listshort);
+Macro__over_load_dump__ValueType(listushort);
 
+// Macro__over_load_operator_out__ContainerTemplate_ValueType(list, str);
 
 #endif /* LIST_HPP_1325430399_29 */
