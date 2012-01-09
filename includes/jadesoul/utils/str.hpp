@@ -377,7 +377,7 @@ public:
 		With optional end, stop comparing S at that position.
 		prefix can also be a tuple of strings to try.
 	*************************************************/
-	bool startswith(const str& prefix, int start=0, int end=0) {
+	bool startswith(const str& prefix, int start=0, int end=0) const {
 		return ::startswith((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, prefix.begin(), prefix.end());
 	}
 	
@@ -388,7 +388,7 @@ public:
 		With optional end, stop comparing S at that position.
 		suffix can also be a tuple of strings to try.
 	*************************************************/
-	bool endswith(const str& prefix, int start=0, int end=0) {
+	bool endswith(const str& prefix, int start=0, int end=0) const {
 		return ::endswith((start<0?s.end():s.begin())+start, (end<=0?s.end():s.begin())+end, prefix.begin(), prefix.end());
 	}
 	

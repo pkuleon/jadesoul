@@ -465,19 +465,21 @@ def generate_template_constructors():
 	}
 };
 
+#define Macro__typedefs_of_list__Element_Name_Alias(E, N, A)\
+typedef list<E> N;\
+typedef N A;\
+Macro__over_load_dump__ValueType(N);
 
-typedef list<str> liststr;
-typedef list<int> listint;
-typedef list<uint> listuint;
-typedef list<short> listshort;
-typedef list<ushort> listushort;
+Macro__typedefs_of_list__Element_Name_Alias(char, listchar, Lchar)
+Macro__typedefs_of_list__Element_Name_Alias(uchar, listuchar, Luchar)
+Macro__typedefs_of_list__Element_Name_Alias(int, listint, Lint)
+Macro__typedefs_of_list__Element_Name_Alias(uint, listuint, Luint)
+Macro__typedefs_of_list__Element_Name_Alias(short, listshort, Lshort)
+Macro__typedefs_of_list__Element_Name_Alias(ushort, listushort, Lushort)
+Macro__typedefs_of_list__Element_Name_Alias(float, listfloat, Lfloat)
+Macro__typedefs_of_list__Element_Name_Alias(double, listdouble, Ldouble)
+Macro__typedefs_of_list__Element_Name_Alias(str, liststr, Lstr)
 
-Macro__over_load_dump__ValueType(liststr);
-Macro__over_load_dump__ValueType(listint);
-Macro__over_load_dump__ValueType(listuint);
-Macro__over_load_dump__ValueType(listshort);
-Macro__over_load_dump__ValueType(listushort);
-
-// Macro__over_load_operator_out__ContainerTemplate_ValueType(list, str);
+typedef liststr L;
 
 #endif /* LIST_HPP_1325430399_29 */

@@ -11,7 +11,6 @@
  * Date: 2011-05-07 13:17:37.893000
  * Written In: Peking University, beijing, China$
  */
-
  
 /****************************************
 *   includes
@@ -27,11 +26,9 @@
 #include "jade/jade_algorithm.hpp"
 #include "jade/jade_objectworld.hpp"
 
-
 #ifdef ENABLE_BOOST_UNIT_TEST
 #   include "jade_all_tests.hpp"
 #endif
-
 
 #ifdef ENABLE_OPENGL_TEST
 #   include "jade_opengl_test.hpp"

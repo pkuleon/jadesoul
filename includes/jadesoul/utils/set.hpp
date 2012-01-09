@@ -325,5 +325,8 @@ public:
 	}
 };
 
+typedef set<str> S;
+typedef set<int> IS;
+typedef set<uint> US;
 
 #endif /* SET_HPP_1325514702_2 */

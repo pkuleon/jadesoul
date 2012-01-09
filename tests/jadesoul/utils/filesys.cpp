@@ -26,47 +26,54 @@
 	// printv(p.listfiles());
 // )
 
-void travel(path p, int d=0) {
-	str prefix=str("\t")*d;
+// jtest(openfile, test2,
+	// path p("D:\\WorkSpace\\2012-1-6\\readme.txt");
+	// printv(p.tostr());
+	// printv(p.dirname());
+	// printv(p.filename());
+	// printv(p.extension());
+	// printv(p.exists());
+	// printv(p.isdir());
+	// printv(p.isfile());
 	
-	liststr files=p.listfiles("*.txt");
-	for_n(i, files.size()) {
-		cout<<prefix<<"FILE-"<<i<<"\t"<<files[i]<<endl;
-	}
+	// printv(p.fsize());
+	// printv(p.fctime());
+	// printv(p.fmtime());
+	// printv(p.fatime());
 	
-	liststr dirs=p.listdirs();
-	for_n(i, dirs.size()) {
-		cout<<prefix<<"DIR-"<<i<<"\t"<<dirs[i]<<endl;
-		travel(p/dirs[i], d+1);
-	}
-}
+	// file f(p);
+	// printv(f.read());
+	// f.close();
+	
+	// f.open(p, 'w');
+	// f.write("shit");
+	// f.close();
+// )
 
-jtest(openfile, test2,
-	path p("D:\\WorkSpace\\2012-1-6\\readme.txt");
-	printv(p.tostr());
-	printv(p.dirname());
-	printv(p.filename());
-	printv(p.extension());
-	printv(p.exists());
-	printv(p.isdir());
-	printv(p.isfile());
-	
-	printv(p.fsize());
-	printv(p.fctime());
-	printv(p.fmtime());
-	printv(p.fatime());
-	
-	file f(p);
-	printv(f.read());
-	f.close();
-	
-	f.open(p, 'w');
-	f.write("shit");
-	f.close();
+// jtest(walker1, test3,
+	// path p(".");
+	// p.walk();
+// )
+
+class mywalker {
+public:
+	void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
+		str prefix=str(" ")*depth;
+		uint l=files.size();
+		for_n(i, l) ;//cout<<prefix<<"-"<<" "<<files[i]<<" "<<path(root).join(files[i]).fsize()<<endl;
+		l=dirs.size();
+		for_n(i, l) ;//cout<<prefix<<"+"<<" "<<dirs[i]<<endl;
+	}
+};
+
+jtest(walker2, test4,
+	path p(".");
+	time_seed();
+	p.walk(mywalker());
+	time_gap("time");
+	// intotal 1233ms
 )
 
-int main () {
-	// travel(path("D:\\eclipse"));
-	cout<<"hello, world"<<endl;
-}
+int main () {}
+
 

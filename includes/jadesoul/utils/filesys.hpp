@@ -20,6 +20,17 @@
 #include "tuple.hpp"
 #include "dict.hpp"
 
+class walker {
+public:
+	void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
+		str prefix=str("\t")*depth;
+		uint l=files.size();
+		for_n(i, l) cout<<prefix<<"- "<<files[i]<<endl;
+		l=dirs.size();
+		for_n(i, l) cout<<prefix<<"+ "<<dirs[i]<<endl;
+	}
+};
+
 #ifdef OS_WIN32
 	class path {
 	private:
@@ -228,8 +239,23 @@
 			return (c==-1)?p:p(c+1);
 		}
 		
-
+		template<class walker>
+		void walk(walker& w) {
+			travel(w);
+		}
+		
+		void walk() {
+			travel(walker());
+		}
 	private:
+		template<class walker>
+		void travel(walker& w, uint d=0) {
+			L files=listfiles();
+			L dirs=listdirs();
+			w(p, dirs, files, d);
+			uint l=dirs.size();
+			for_n(i, l) clone().join(dirs[i]).travel(w, d+1);
+		}
 		inline const listushort ftime2list(FILETIME& ftime) {
 			TIME_ZONE_INFORMATION zoneinfo;
 			GetTimeZoneInformation(&zoneinfo);
@@ -348,6 +374,8 @@
 	};
 #endif
 
+
+
 class file {
 private:
 	ifstream ifs;
@@ -422,6 +450,73 @@ public:
 	}
 };
 
+class cfile {
+private:
+	FILE* fp;
+	str fn;
+	//modes: rt wt at rb wb ab rt+ wt+ at+ rb+ wb+ ab+
+	str m;
+	char* buf;
+	//forbidden copy and assign
+	file(const file& r):p(0), m(0) {}
+	file& operator=(const file& r) { return *this; }
+public:
+	cfile():fp(0), fn(""), m("r"), buf(0) {}
+	cfile(const str& fn, const str& mode="r"):fp(0), fn(fn), m(mode), buf(0) {}
+	
+	inline cfile& open() {
+		fp=fopen(fn.tocstr(), m.tocstr());
+		if (fp==NULL) cerr<<"Could not open file:"<<fn<<" with mode:"<<m;
+		return *this;
+	}
+	inline open(const str& fn, const str& mode="r") {
+		if (opened()) close();
+		this->fn=fn;
+		this->m=mode;
+		open();
+	}
+	inline const bool opened() const { return fp!=NULL; }
+	inline const bool ended() const { return feof(fp); }
+	inline cfile& flush() {
+		fflush(fp);
+		return *this;
+	}
+	inline cfile& close() { 
+		fclose(fp);
+		fp=NULL;
+		return *this; 
+	}
+	
+	inline str read(uint size) {
+		assert(opened());
+		check_buf();
+		
+	}
+	inline str readline() {
+		assert(opened());
+		check_buf();
+		if (fgets(buf, 64*1024+1, fp)) return buf;
+		else return "";
+	}
+	inline L readlines() {
+		assert(opened());
+		L rets;
+		while (NOT ended()) rets.append(readline());
+		return rets;
+	}
+	
+	inline write()
+	inline writeline()
+	inline writelines()
+	
+	~cfile() {
+		delete buf;
+	}
+private:
+	inline void check_buf() {
+		if (!buf) buf=new char[64*1024+1];
+	}
+};
 
 
 #endif /* FILESYS_HPP_1325514009_53 */
