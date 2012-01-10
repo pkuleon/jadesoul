@@ -107,13 +107,6 @@ public:
 		inline const ulong fsize() {
 			update();
 			return (pwfd->nFileSizeHigh * (MAXDWORD+1)) + pwfd->nFileSizeLow;
-			// ulong size=0;
-			// HANDLE handle=CreateFile(tocstr(), FILE_READ_EA, FILE_SHARE_READ, 0, OPEN_EXISTING, 0, 0);
-			// if (valid(handle)) {
-				// size=GetFileSize(handle, NULL);
-				// CloseHandle(handle);
-			// }
-			// return size;
 		}
 		inline const listushort fctime() {
 			update();
