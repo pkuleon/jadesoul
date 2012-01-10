@@ -109,31 +109,4 @@ Macro__over_load_operator_out__ContainerTemplate_ValueType(std::list, char);
 Macro__over_load_operator_out__ContainerTemplate_ValueType(std::list, string);
 
 
-/*no use now
-template<class Container, class Iterator>
-void show_old(const Container& c, const char* deli="", const char* left="{", const char* right="}") {
-    cout<<left;
-    ostream_iterator<typename Container::value_type> osit(cout, deli);
-    copy(c.begin(), c.end(), osit);
-    cout<<right<<endl;
-}
-
-template<class Container, class ValueType>
-void show2(const Container& c, const char* deli="", const char* left="{", const char* right="}") {
-    show_old<Container, iterator<input_iterator_tag, ValueType> >(c, deli, left, right);
-}
-*/
-
-
-// class smart_parser {
-// public:
-	// static vec_int list(const string& s) {
-		// istringstream iss(s);
-		// int i;
-		// vec_int r;
-		// while(iss>>i) r.push_back(i);
-		// return r;
-	// }
-// };
-
 #endif /* DUMP_HPP_1324964966_23 */

@@ -41,7 +41,7 @@
 
 //for debug option
 #ifdef debug
-	#define show(msg, var) cout<< msg <<" = ";dump(var)
+	#define show(msg, var) { cout<< msg <<" = ";dump(var); }
 	#define printv(var) show(#var , var)
 	// #define printl(msg, var) cout<<msg<<": "<<var<<endl;
 	#define dbglog(...) log(__VA_ARGS__)
