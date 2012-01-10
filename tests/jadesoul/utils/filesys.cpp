@@ -76,41 +76,56 @@ public:
 
 str p="E:\\svnprojects-linux\\jadesoul\\tests\\jadesoul\\utils\\compile.log";
 
-// jtest(cfile_read, test5,
-	// cfile f(p.tocstr());
+// jtest(file_read, test5,
+	// file f(p.tocstr());
 	// str s=f.read();
 	// printv(s);
 // )
 
 
-// jtest(cfile_readline, test6,
-	// cfile f(p.tocstr());
+// jtest(file_readline, test6,
+	// file f(p.tocstr());
 	// while(f.notend()) {
 		// str s=f.readline();
 		// printv(s);
 	// }
 // )
 
-// jtest(cfile_readlines, test7,
-	// cfile f(p.tocstr());
+// jtest(file_readlines, test7,
+	// file f(p.tocstr());
 	// printv(f.readlines());
 // )
 
-// jtest(cfile_write, test8,
-	// cfile f(p.tocstr(), "wt");
+// jtest(file_write, test8,
+	// file f(p.tocstr(), "wt");
 	// str s="hi, jadesoul";
 	// f.write(s);
 	// printv(s);
 // )
 
-jtest(cfile_writeline, test9,
-	cfile f(p.tocstr(), "wb");
-	f.write("shit");
-)
+// jtest(file_writeline, test9,
+	// file f(p.tocstr(), "wb");
+	// f.write("shit");
+// )
 
-jtest(cfile_writelines, test10,
-	cfile f(p.tocstr(), "wt");
-	f.writelines(L("haida", "asaskdj"));
+// jtest(file_writelines, test10,
+	// file f(p.tocstr(), "wt");
+	// f.writelines(L("haida", "asaskdj"));
+// )
+
+// jtest(fwrite_func, test11,
+	// fwrite("shit\nasasd\nasdaks", "compile.txt");
+// )
+
+// jtest(fread_func, test12,
+	// printv(fread("compile.txt"));
+// )
+
+jtest(mkdir_func, test13,
+	str p="mkdir_test2";
+	if (isndir(p)) md(p);
+	// printv(cwd());
+	// printv(cwd().repr());
 )
 
 int main () {}

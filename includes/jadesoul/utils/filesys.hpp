@@ -20,17 +20,22 @@
 #include "tuple.hpp"
 #include "dict.hpp"
 
-#ifdef OS_WIN32
+#if defined(OS_WIN32)
 	#define ENDL "\r\n"
 	#define SLASH "\\"
-#else
+#elif defined(OS_LINUX)
 	#define ENDL "\n"
 	#define SLASH "/"
+#elif defined(OS_OSX)
+	#define ENDL "\r"
+	#define SLASH "/"
+#else
+	#error "TODO:OS"
 #endif
 
 class walker {
 public:
-	void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
+	inline void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
 		str prefix=str("\t")*depth;
 		uint l=files.size();
 		for_n(i, l) cout<<prefix<<"- "<<files[i]<<endl;
@@ -47,8 +52,10 @@ public:
 		HANDLE hFind;
 		bool updated;
 	public:
-		path(const str& s="."):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
-		path(const path& r):p(r.p), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
+		inline path(const char* s="."):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
+		inline path(const string& s="."):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
+		inline path(const str& s="."):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
+		inline path(const path& r):p(r.p), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
 		
 		inline path& operator +=(const path& r) { return add(r); }
 		inline path operator +(const path& r) const { return clone()+=r; }
@@ -61,8 +68,9 @@ public:
 		
 		inline path& operator /=(str r) { return join(path(r)); }
 		inline path operator /(str r) const { return clone()/=r; }
+		inline operator str() { return p; }
 		
-		~path() { free(); }
+		inline ~path() { free(); }
 		
 		inline path clone() const { 
 			return path(p); 
@@ -100,10 +108,12 @@ public:
 			update();
 			return find_valid() AND !(pwfd->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
 		}
+		inline const bool isnfile() { return !isfile(); }
 		inline const bool isdir() {
 			update();
 			return find_valid() AND (pwfd->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
 		}
+		inline const bool isndir() { return !isdir(); }
 		inline const ulong fsize() {
 			update();
 			return (pwfd->nFileSizeHigh * (MAXDWORD+1)) + pwfd->nFileSizeLow;
@@ -279,7 +289,7 @@ public:
 				free();
 				pwfd=new WIN32_FIND_DATAA;
 				assert(pwfd);
-				hFind=FindFirstFileA(string(tostr()).c_str(), pwfd);
+				hFind=FindFirstFileA(tocstr(), pwfd);
 			}
 			updated=true;
 		}
@@ -375,83 +385,97 @@ public:
 	};
 #endif
 
+inline const bool exists(const str& p) { return path(p).exists(); }
+inline const bool isfile(const str& p) { return path(p).isfile(); }
+inline const bool isnfile(const str& p) { return path(p).isnfile(); }
+inline const bool isdir(const str& p) { return path(p).isdir(); }
+inline const bool isndir(const str& p) { return path(p).isndir(); }
+inline str dirname(const str& p) { return path(p).dirname(); }
+inline str filename(const str& p) { return path(p).filename(); }
+inline str extension(const str& p) { return path(p).extension(); }
+inline L splitdir(const str& p) { return path(p).splitdir(); }
+inline L splitext(const str& p) { return path(p).splitext(); }
+inline L split(const str& p) { return path(p).split(); }
 
+#if defined(OS_WIN32)
+
+// get current work dir
+// DWORD GetCurrentDirectory(
+// DWORD nBufferLength, // size of directory buffer
+// LPTSTR lpBuffer // directory buffer
+// );
+inline str cwd() {
+	char buf[1024];
+	return string(buf, buf+GetCurrentDirectory(1024, buf));
+}
+
+
+// copy a file from src to dst
+// BOOL CopyFile(LPCTSTR lpExistingFileName,LPCTSTR lpNewFileName,BOOL bFailIfExists );
+inline const bool cp(const str& src, const str& dst) {
+	return CopyFile(src.tocstr(), dst.tocstr(), 1);
+}
+
+// move a file or dir from src to dst
+// BOOL MoveFile(
+	// LPCTSTR lpExistingFileName, // file name or dir name
+	// LPCTSTR lpNewFileName // new file name or dir name
+// );
+inline const bool mv(const str& src, const str& dst) {
+	return MoveFile(src.tocstr(), dst.tocstr());
+}
+
+// delete a file
+// BOOL DeleteFile(LPCTSTR lpFileName);
+inline const bool rm(const str& p) {
+	return DeleteFile(p.tocstr());
+}
+
+// delete a dir
+// BOOL RemoveDirectory(LPCTSTR lpPathName);
+// inline const bool rmdir(const str& p) {
+inline const bool rd(const str& p) {
+	return RemoveDirectory(p.tocstr());
+}
+
+// make a dir
+// BOOL CreateDirectory(LPCTSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes );
+// inline const bool mkdir(const str& p) {
+inline const bool md(const str& p) {
+	// return mkdir(p.tocstr());
+	return CreateDirectory(p.tocstr(), NULL);
+}
+
+//make a dir, auto make dirs if parent not exist
+// inline const bool mkdirs(const str& p) {
+inline const bool mds(const str& p) {
+	str parent=dirname(p);
+	if (isndir(parent)) mds(parent);
+	return md(p);
+}
+
+//recursively delete a dir
+// inline const bool rmdirs(const str& p) {
+inline const bool rds(const str& p) {
+	path top(p);
+	if (top.isndir()) return false;
+	L files=top.listfiles();
+	uint l=files.size();
+	for_n(i, l) if (!rm(files[i])) return false;
+	L dirs=top.listdirs();
+	l=dirs.size();
+	for_n(i, l) if (!rds(top / dirs[i])) return false;
+	rd(p);
+	return true;
+}
+
+
+
+#elif defined(OS_LINUX)
+#elif defined(OS_OSX)
+#endif
 
 class file {
-private:
-	ifstream ifs;
-	ofstream ofs;
-	path p;
-	char m;
-	file(const file& r):p(0), m(0) {}
-	file& operator=(const file& r) { return *this; }
-public:
-	file(path p, const char m='r') {
-		open(p, m);
-	}
-	
-	file& open(const path& pth, const char mode='r') {
-		p=pth;
-		m=mode;
-		if (m=='r') {
-			assert(p.isfile());
-			ifs.open(p.tocstr());
-		}
-		else if (m=='w') ofs.open(p.tocstr());
-		else if (m=='a') ofs.open(p.tocstr(), ofstream::app);
-		else assert(false);
-		return *this;
-	}
-	
-	str read(uint size=0) {
-		assert(m=='r');
-		if (size==0) size=p.fsize();
-		// printv(size);
-		if (size==0) return "";
-		char* s=new char[size];
-		ifs.read(s, size);
-		string ret(s, s+size);
-		delete s;
-		return ret;
-	}
-	
-	str readline() {
-		assert(m=='r');
-		uint size=64*1024;
-		char* s=new char[size];
-		ifs.getline(s, size);
-		string ret(s, s+size);
-		delete s;
-		return ret;
-	}
-	
-	file& write(const str& s) {
-		assert(m!='r');
-		ofs.write(s.tocstr(), s.size());
-		return *this;
-	}
-	
-	file& writeline(const str& s) {
-#ifdef OS_WIN32
-		str nl="\r\n";
-#else
-		str nl="\n";
-#endif
-		write(s);
-		write(nl);
-	}
-	
-	void close() {
-		if (m=='r') ifs.close();
-		else ofs.close();
-	}
-	
-	~file() {
-		close();
-	}
-};
-
-class cfile {
 private:
 	FILE* fp;
 	str fn;
@@ -459,10 +483,10 @@ private:
 	str m;
 	char* buf;
 	//forbidden copy and assign
-	cfile(const cfile& r) {}
-	cfile& operator=(const cfile& r) { return *this; }
+	file(const file& r) {}
+	file& operator=(const file& r) { return *this; }
 public:
-	cfile(const str& filename, const str& mode="rt"):fp(0), fn(filename), m(mode), buf(0) {
+	inline file(const path& filename, const str& mode="rt"):fp(0), fn(filename.tostr()), m(mode), buf(0) {
 		fp=fopen(fn.tocstr(), m.tocstr());
 		if (fp==NULL) {
 			cout<<"Could not open file:"<<fn<<" with mode:"<<m;
@@ -470,7 +494,8 @@ public:
 		}
 	}
 	
-	inline cfile& flush() {
+	inline const bool notend() const { return !feof(fp); }
+	inline file& flush() {
 		fflush(fp);
 		return *this;
 	}
@@ -507,34 +532,31 @@ public:
 		return rets;
 	}
 	
-	inline cfile& write(const str& s) {
+	inline file& write(const str& s) {
 		assert(opened());
 		uint l=s.size();
 		if (l==0) return *this;
 		fwrite(s.tocstr(), 1, l, fp);
 		return *this;
 	}
-	inline cfile& writeline(const str& s) {
+	inline file& writeline(const str& s) {
 		write(s);
 		fputs(ENDL, fp);
 		return *this;
 	}
-	inline cfile& writelines(L lst) {
+	inline file& writelines(L lst) {
 		uint l=lst.size();
 		for_n(i, l) writeline(lst[i]);
 		return *this;
 	}
 	
-	inline const bool notend() const { return !feof(fp); }
-	
-	~cfile() {
+	~file() {
 		flush().close();
 		delete buf;
 	}
 private:
 	inline const bool opened() const { return fp!=NULL; }
-
-	inline cfile& close() {
+	inline file& close() {
 		if (fp) fclose(fp);
 		fp=NULL;
 		return *this; 
@@ -544,5 +566,39 @@ private:
 	}
 };
 
+inline str fread(const path& p, const bool binary=false) {
+	FILE* fp;
+	uint size;
+	char* buf;
+	fp=fopen(p.tocstr(), binary?"rb":"rt");
+	assert(fp AND "File error: Could not open file for read");
+	fseek(fp, 0, SEEK_END);
+	size=ftell(fp);
+	if (size==0) {
+		fclose(fp);
+		return "";
+	}
+	rewind(fp);
+	buf=new char[size];
+	assert(buf AND "Memory error: Could not allocate buffer for read");
+	size=fread(buf, 1, size, fp);
+	fclose(fp);
+	str ret(buf, buf+size);
+	delete buf;
+	return ret;
+}
+
+inline uint fwrite(const str& s, const path& p, const bool append=false, const bool binary=false) {
+	FILE* fp;
+	uint size=s.size();
+	const char* buf=s.tocstr();
+	fp=fopen(p.tocstr(), append?(binary?"ab":"at"):(binary?"wb":"wt"));
+	assert(fp AND "File error: Could not open file for write");
+	size=fwrite(buf, 1, size, fp);
+	fclose(fp);
+	return size;
+}
 
 #endif /* FILESYS_HPP_1325514009_53 */
+
+

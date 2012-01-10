@@ -127,7 +127,11 @@ public:
 	
 	inline const string tostr() const { return s; }
 	inline const char* tocstr() const { return s.c_str(); }
-	
+	inline const string repr() const { return string("\"")+clone()
+		.replace("\\", "\\\\").replace("\t", "\\t")
+		.replace("\v", "\\v").replace("\r", "\\r")
+		.replace("\n", "\\n").tostr()+"\""; }
+		
 	/**************************************************
 	assign
 	operator: =
@@ -148,6 +152,14 @@ public:
 	}
 	inline str& operator +=(const str& r) {
 		s+=r.s;
+		return *this;
+	}
+	inline str& operator +=(const string& r) {
+		s+=r;
+		return *this;
+	}
+	inline str& operator +=(const char* r) {
+		s+=r;
 		return *this;
 	}
 	inline str operator *(int n) {	//for multiply
@@ -311,7 +323,7 @@ public:
 		Return a deep copy of string S, which is a clone
 		of S.
 	*************************************************/
-	inline str clone() {
+	inline str clone() const {
 		return s;
 	}
 	

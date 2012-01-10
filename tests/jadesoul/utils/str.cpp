@@ -207,5 +207,13 @@ jtest(multiply, test21,
 	printv(str("ABC")*-10);
 )
 
+jtest(repr, test22,
+	printv(str("ABC").repr());
+	printv(str("A\tB"));
+	printv(str("A\tB").repr());
+	printv(str("A\\B"));
+	printv(str("A\\B").repr());
+)
+
 int main () {}
 
