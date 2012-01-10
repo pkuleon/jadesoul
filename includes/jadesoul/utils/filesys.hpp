@@ -134,13 +134,13 @@ public:
 			update();
 			return ftime2list(pwfd->ftLastAccessTime);
 		}
-		inline liststr files(const str& pattern="*.*") {
+		inline L files(const str& pattern="*.*") {
 			str old=p;
 			if (NOT isdir()) p=dirname();
 			join(pattern);
 			updated=false;
 			update();
-			liststr fns;
+			L fns;
 			if (find_valid()) {
 				do {
 					if (!(pwfd->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
@@ -154,13 +154,13 @@ public:
 			updated=false;
 			return fns;
 		}
-		inline liststr dirs(const str& pattern="*.*") {
+		inline L dirs(const str& pattern="*.*") {
 			str old=p;
 			if (NOT isdir()) p=dirname();
 			join(pattern);
 			updated=false;
 			update();
-			liststr fns;
+			L fns;
 			if (find_valid()) {
 				do {
 					if (pwfd->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
@@ -174,13 +174,13 @@ public:
 			updated=false;
 			return fns;
 		}
-		inline liststr listall(const str& pattern="*.*") {
+		inline L items(const str& pattern="*.*") {
 			str old=p;
 			if (NOT isdir()) p=dirname();
 			join(pattern);
 			updated=false;
 			update();
-			liststr fns;
+			L fns;
 			if (find_valid()) {
 				do {
 					const char* fname=(const char*)pwfd->cFileName;
@@ -196,7 +196,7 @@ public:
 			updated=false;
 			return fns;
 		}
-		inline liststr split() const {
+		inline L split() const {
 			int a=p.rfind("/"), b=p.rfind("\\"), c=max(a, b);
 			str dp, fn, name, ext;
 			if (c==-1) {
@@ -214,11 +214,11 @@ public:
 				name=fn(0, c);
 				ext=fn(c);
 			}
-			return liststr(p, dp, fn, name, ext);
+			return L(p, dp, fn, name, ext);
 		}
-		inline liststr splitdir() const {
+		inline L splitdir() const {
 			int a=p.rfind("/"), b=p.rfind("\\"), c=max(a, b);
-			liststr rets;
+			L rets;
 			if (c==-1) {
 				rets.append(".");
 				rets.append(p);
@@ -228,9 +228,9 @@ public:
 			}
 			return rets;
 		}
-		inline liststr splitext() const {
+		inline L splitext() const {
 			int c=p.rfind(".");
-			liststr rets;
+			L rets;
 			if (c==-1) {
 				rets.append(p);
 				rets.append("");
@@ -366,13 +366,13 @@ public:
 		inline const uint fatime() const {}
 		inline const uint fctime() const {}
 
-		inline liststr files() const {}
-		inline liststr dirs() const {}
-		inline liststr listall() const {}
+		inline L files() const {}
+		inline L dirs() const {}
+		inline L items() const {}
 		
-		inline liststr split() const {}
-		inline liststr splitdir() const {}
-		inline liststr splitext() const {}
+		inline L split() const {}
+		inline L splitdir() const {}
+		inline L splitext() const {}
 		inline str dirname() const {
 			int a=p.rfind("/"), b=p.rfind("\\"), c=std::max(a, b);
 			return (c==-1)?p:p(0, c);
@@ -402,9 +402,7 @@ inline L splitext(const str& p) { return path(p).splitext(); }
 inline L split(const str& p) { return path(p).split(); }
 inline L listfiles(const str& p) { return path(p).files(); }
 inline L listdirs(const str& p) { return path(p).dirs(); }
-inline L listall(const str& p) { return path(p).listall(); }
-
-
+inline L listall(const str& p) { return path(p).items(); }
 
 #if defined(OS_WIN32)
 
