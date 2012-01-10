@@ -53,8 +53,8 @@ public:
 		bool updated;
 	public:
 		inline path(const char* s="."):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
-		inline path(const string& s="."):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
-		inline path(const str& s="."):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
+		inline path(const string& s):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
+		inline path(const str& s):p(s), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
 		inline path(const path& r):p(r.p), pwfd(0), hFind(INVALID_HANDLE_VALUE), updated(false) {}
 		
 		inline path& operator +=(const path& r) { return add(r); }
@@ -68,6 +68,10 @@ public:
 		
 		inline path& operator /=(str r) { return join(path(r)); }
 		inline path operator /(str r) const { return clone()/=r; }
+		
+		// inline path& operator /=(const char* r) { return join(path(r)); }
+		// inline path operator /(const char* r) const { return clone()/=r; }
+		
 		inline operator str() { return p; }
 		
 		inline ~path() { free(); }
@@ -130,7 +134,7 @@ public:
 			update();
 			return ftime2list(pwfd->ftLastAccessTime);
 		}
-		inline liststr listfiles(const str& pattern="*.*") {
+		inline liststr files(const str& pattern="*.*") {
 			str old=p;
 			if (NOT isdir()) p=dirname();
 			join(pattern);
@@ -150,7 +154,7 @@ public:
 			updated=false;
 			return fns;
 		}
-		inline liststr listdirs(const str& pattern="*.*") {
+		inline liststr dirs(const str& pattern="*.*") {
 			str old=p;
 			if (NOT isdir()) p=dirname();
 			join(pattern);
@@ -196,7 +200,7 @@ public:
 			int a=p.rfind("/"), b=p.rfind("\\"), c=max(a, b);
 			str dp, fn, name, ext;
 			if (c==-1) {
-				dp="";
+				dp=".";
 				fn=p;
 			} else {
 				dp=p(0, c);
@@ -216,7 +220,7 @@ public:
 			int a=p.rfind("/"), b=p.rfind("\\"), c=max(a, b);
 			liststr rets;
 			if (c==-1) {
-				rets.append("");
+				rets.append(".");
 				rets.append(p);
 			} else {
 				rets.append(p(0, c));
@@ -238,7 +242,7 @@ public:
 		}
 		inline str dirname() const {
 			int a=p.rfind("/"), b=p.rfind("\\"), c=max(a, b);
-			return (c==-1)?p:p(0, c);
+			return (c==-1)?".":p(0, c);
 		}
 		inline str extension() const {
 			str fn=filename();
@@ -261,8 +265,8 @@ public:
 	private:
 		template<class walker>
 		void travel(walker& w, uint d=0) {
-			L files=listfiles();
-			L dirs=listdirs();
+			L files=this->files();
+			L dirs=this->dirs();
 			w(p, dirs, files, d);
 			uint l=dirs.size();
 			for_n(i, l) clone().join(dirs[i]).travel(w, d+1);
@@ -362,8 +366,8 @@ public:
 		inline const uint fatime() const {}
 		inline const uint fctime() const {}
 
-		inline liststr listfiles() const {}
-		inline liststr listdirs() const {}
+		inline liststr files() const {}
+		inline liststr dirs() const {}
 		inline liststr listall() const {}
 		
 		inline liststr split() const {}
@@ -396,6 +400,11 @@ inline str extension(const str& p) { return path(p).extension(); }
 inline L splitdir(const str& p) { return path(p).splitdir(); }
 inline L splitext(const str& p) { return path(p).splitext(); }
 inline L split(const str& p) { return path(p).split(); }
+inline L listfiles(const str& p) { return path(p).files(); }
+inline L listdirs(const str& p) { return path(p).dirs(); }
+inline L listall(const str& p) { return path(p).listall(); }
+
+
 
 #if defined(OS_WIN32)
 
@@ -408,7 +417,6 @@ inline str cwd() {
 	char buf[1024];
 	return string(buf, buf+GetCurrentDirectory(1024, buf));
 }
-
 
 // copy a file from src to dst
 // BOOL CopyFile(LPCTSTR lpExistingFileName,LPCTSTR lpNewFileName,BOOL bFailIfExists );
@@ -459,17 +467,15 @@ inline const bool mds(const str& p) {
 inline const bool rds(const str& p) {
 	path top(p);
 	if (top.isndir()) return false;
-	L files=top.listfiles();
+	L files=top.files();
 	uint l=files.size();
 	for_n(i, l) if (!rm(files[i])) return false;
-	L dirs=top.listdirs();
+	L dirs=top.dirs();
 	l=dirs.size();
 	for_n(i, l) if (!rds(top / dirs[i])) return false;
 	rd(p);
 	return true;
 }
-
-
 
 #elif defined(OS_LINUX)
 #elif defined(OS_OSX)

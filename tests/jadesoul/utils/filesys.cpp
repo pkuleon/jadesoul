@@ -58,21 +58,20 @@
 class mywalker {
 public:
 	void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
-		str prefix=str(" ")*depth;
+		str prefix=str("\t")*depth;
 		uint l=files.size();
-		for_n(i, l) ;//cout<<prefix<<"-"<<" "<<files[i]<<" "<<path(root).join(files[i]).fsize()<<endl;
+		for_n(i, l) cout<<prefix<<"-"<<" "<<files[i]<<" "<<path(root).join(files[i]).fsize()<<endl;
 		l=dirs.size();
-		for_n(i, l) ;//cout<<prefix<<"+"<<" "<<dirs[i]<<endl;
+		for_n(i, l) cout<<prefix<<"+"<<" "<<dirs[i]<<endl;
 	}
 };
 
-// jtest(walker2, test4,
-	// path p(".");
-	// time_seed();
-	// p.walk(mywalker());
-	// time_gap("time");
-	// intotal 1233ms
-// )
+jtest(walker2, test4,
+	path p(".");
+	time_seed();
+	p.walk(mywalker());
+	time_gap("time"); // intotal 1233ms
+)
 
 str p="E:\\svnprojects-linux\\jadesoul\\tests\\jadesoul\\utils\\compile.log";
 
@@ -121,11 +120,19 @@ str p="E:\\svnprojects-linux\\jadesoul\\tests\\jadesoul\\utils\\compile.log";
 	// printv(fread("compile.txt"));
 // )
 
-jtest(mkdir_func, test13,
-	str p="mkdir_test2";
-	if (isndir(p)) md(p);
-	// printv(cwd());
-	// printv(cwd().repr());
+jtest(file_dir_op_func, test13,
+	// str p="mkdir_test3";
+	// if (isndir(p)) md(p);
+	// printv(cp("dict.cpp", p+"/hi.hpp"));
+	// printv(rm(p+"/hi2.hpp"));
+	// printv(mv("compile.txt", p+"/hi2.hpp"));
+	// printv(mds("e/b/v/d"));
+	printv(path().isdir());
+	printv(path("..").isdir());
+	printv(path(cwd()).isdir());
+	printv(path("\\").isdir());
+	printv(path("C:\\").isdir());
+	printv(path("C:/app").isdir());
 )
 
 int main () {}
