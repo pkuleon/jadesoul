@@ -15,15 +15,14 @@
 
 
 jtest(constructors, test1,
-	typedef object& var;
-	int a=1, b=2, c=3;
 	str x="asdasd";
 	str y="87989";
 	str z="JOIOJ";
-	list l(x, y, z);
+	list<str> l(x, y, z);
 	printv(x);
 	printv(y);
 	printv(z);
+	printv(l);
 	
 	// var p=l[0];
 	// p.printl();

@@ -143,6 +143,7 @@ def generate_template_constructors():
 	}
 	list() {}
 	list(const list& r):con(r.con) {};
+	list(const container& r):con(r) {};
 	list(iterator begin, iterator end):con(begin, end) {}
 	list(citerator begin, citerator end):con(begin, end) {}
 	list(riterator begin, riterator end):con(begin, end) {}
@@ -154,10 +155,10 @@ def generate_template_constructors():
 	**************************************************/
 	friend ostream& operator<<(ostream& out, const list& l) {
 		uint s=l.size();
-		out<<"[";
+		out<<"[ ";
 		for_n(i, s) {
 			if (i!=s-1) out<<l[i]<<", ";
-			else out<<l[i];
+			else out<<l[i]<<" ";
 		}
 		return out<<"]";
 	}
@@ -481,5 +482,6 @@ Macro__typedefs_of_list__Element_Name_Alias(double, listdouble, Ldouble)
 Macro__typedefs_of_list__Element_Name_Alias(str, liststr, Lstr)
 
 typedef liststr L;
+
 
 #endif /* LIST_HPP_1325430399_29 */

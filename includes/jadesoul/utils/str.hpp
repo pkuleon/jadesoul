@@ -266,7 +266,7 @@ public:
 		vecstr vs;
 		vs.reserve(20);
 		//TODO
-		return this->split(" ", vs);
+		return striped().split(" ", vs);
 	}
 	
 	/*************************************************
@@ -573,7 +573,8 @@ public:
 typedef vector<str> vecstr;
 
 Macro__over_load_dump__ValueType(str);
-
+// Macro__over_load_dump__ValueType(vecstr);
+Macro__over_load_operator_out__ContainerTemplate_ValueType(vector, str);
 
 #endif /* STR_HPP_1324997558_33 */
 

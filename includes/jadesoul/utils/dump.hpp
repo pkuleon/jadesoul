@@ -47,12 +47,12 @@ void log(const char* fmt, ...) {
 
 /**
   * dump -- show all elements in a iterable container
-  * usage:  dump< vector<int> >(v, ", ", "[", "]", cout) or show(v, ", ", "[", "]", cout) or just show(v);
+  * usage:  dump< vector<int> >(v, ", ", "[", "]", cout) or dump(v, ", ", "[", "]", cout) or just show(v);
   */
 
 template<class Container >
 void dump(const Container& c,
-          const char* deli=" ",
+          const char* deli=", ",
           const char* left="[ ",
           const char* right="]",
 	  ostream& out=cout ) {
@@ -97,14 +97,16 @@ Macro__over_load_dump__ValueType(string);
 //this macro below is important
 #define Macro__over_load_operator_out__ContainerTemplate_ValueType( CT, T )  \
 inline ostream& operator <<(ostream& os, const CT < T >& c) { \
-    dump(c, " ", "[ ", "]", os);    \
+    dump(c, ", ", "[ ", "]", os);    \
     return os;  \
 }
 
 Macro__over_load_operator_out__ContainerTemplate_ValueType(vector, int);
 Macro__over_load_operator_out__ContainerTemplate_ValueType(vector, char);
+Macro__over_load_operator_out__ContainerTemplate_ValueType(vector, string);
 Macro__over_load_operator_out__ContainerTemplate_ValueType(std::list, int);
 Macro__over_load_operator_out__ContainerTemplate_ValueType(std::list, char);
+Macro__over_load_operator_out__ContainerTemplate_ValueType(std::list, string);
 
 
 /*no use now

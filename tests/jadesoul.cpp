@@ -11,6 +11,16 @@
 #include <jadesoul.hpp>
 
 int main () {
-	cout<<"hello, world"<<endl;
+	str s=" ssjflak sdjfiwejlk sjfd ";
+	printv(s);
+	printv(s.repr());
+	printv(s.striped().repr());
+	printv(s.split());
+	printv(L(s.split()));
+	printv(L("asdasd", "123"));
+	
+	int a[]={1,2,3};
+	vecint b(a, a+3);
+	printv(b);
 }
 
