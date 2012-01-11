@@ -21,7 +21,7 @@ struct hashkey {
 		bucket_size=1<<2,
 		min_buckets=1<<3
 	};
-	inline const uint operator()(const key& k) const { 
+	inline const uint operator()(const key& k) const {
 		return k.hash();
 	}
 	inline const bool operator()(const key& key1, const key& key2) const {

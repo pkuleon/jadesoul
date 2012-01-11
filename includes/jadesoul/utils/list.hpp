@@ -20,6 +20,7 @@ class list : public object {
 public:
 	// typedef std::list<element> container;
 	typedef std::vector<element> container;
+	typedef element value_type;
 	typedef typename container::iterator iterator;
 	typedef typename container::const_iterator citerator;
 	typedef typename container::reverse_iterator riterator;

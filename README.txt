@@ -7,6 +7,7 @@ Including
 * Graph Framework 
 * Machine Learning Framework
 * pypp Framework 
+* And the Newest: Jadesoul Framework 
 
 Notes
 -----------------------------
@@ -14,5 +15,5 @@ Notes
 
 
 
-============================
-Hard work By Jadesoul @ 2010-2011 in PKU, haha
+================================
+Hard work By Jadesoul in PKU @ 2010-2012, aha

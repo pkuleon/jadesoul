@@ -30,7 +30,8 @@
 	#define ENDL "\r"
 	#define SLASH "/"
 #else
-	#error "TODO:OS"
+	#define ENDL "\n"
+	#define SLASH "/"
 #endif
 
 class walker {
