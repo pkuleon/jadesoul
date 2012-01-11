@@ -58,7 +58,7 @@ public:
 
 	bool isrunning() const { return running; }
 
-	void start(bool blocking, bool verbose) {
+	void start(bool blocking=false, bool verbose=true) {
 		if (running) {
 			if (verbose)printf("thread: thread already running\n");
 			return;
@@ -68,7 +68,6 @@ public:
 		running   = true;
 #ifdef OS_WIN32
 		// InitializeCriticalSection(&critSec);
-		
 		// unsigned long _beginthreadex(
 			// void *security,
 			// unsigned stack_size,
@@ -77,7 +76,6 @@ public:
 			// unsigned initflag,
 			// unsigned *thrdaddr
 		// );
-
 		myThread = (HANDLE)_beginthreadex(NULL, 0, this->run,  (void *)this, 0, NULL);
 #else
 		// pthread_mutex_init(&myMutex, NULL);

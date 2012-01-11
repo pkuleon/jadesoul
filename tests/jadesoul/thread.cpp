@@ -9,18 +9,16 @@
  * Date: 2012-01-11 11:52:04.632000
  * Written In: Peking University, beijing, China
  */
-
-#define debug
+ 
 #include "jadesoul.hpp"
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-using namespace std;
+struct mythread : public thread {
+
+};
 
 int main () {
-	thread a;
+	mythread a;
+	a.start();
 	cout<<"hello, world"<<endl;
 }
 
