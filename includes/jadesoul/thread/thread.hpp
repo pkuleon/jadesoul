@@ -14,12 +14,11 @@
 
 #include "includes.hpp"
 
-
-#ifdef TARGET_WIN32
+#ifdef OS_WIN32
 	#include <process.h>
 #else
-    #include <pthread.h>
-    #include <semaphore.h>
+	#include <pthread.h>
+	#include <semaphore.h>
 #endif
 
 class ofxThread{
