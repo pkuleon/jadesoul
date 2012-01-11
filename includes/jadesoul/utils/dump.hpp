@@ -75,7 +75,6 @@ Macro__over_load_dump__ValueType(bool);
 Macro__over_load_dump__ValueType(int);
 Macro__over_load_dump__ValueType(unsigned int);
 Macro__over_load_dump__ValueType(char);
-Macro__over_load_dump__ValueType(char*);
 Macro__over_load_dump__ValueType(unsigned char);
 Macro__over_load_dump__ValueType(short);
 Macro__over_load_dump__ValueType(unsigned short);

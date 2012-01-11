@@ -36,12 +36,10 @@ protected:
 #endif
 	bool running;
 	bool blocking;
-	bool verbose;
 	
 public:
 	thread() {
 		running = false;
-		verbose = false;
 #ifdef OS_WIN32
 		InitializeCriticalSection(&critSec);
 #else
@@ -53,15 +51,15 @@ public:
 #ifndef OS_WIN32
 		pthread_mutex_destroy(&myMutex);
 #endif
-		stop();
+		if (running) stop();
 	}
 
 	bool isrunning() const { return running; }
 
-	void start(bool blocking=false, bool verbose=true) {
+	bool start(bool blocking=false, bool verbose=true) {
 		if (running) {
-			if (verbose)printf("thread: thread already running\n");
-			return;
+			magic("thread: thread already running\n");
+			return false;
 		}
 		// have to put this here because the thread can be running
 		// before the call to create it returns
@@ -82,7 +80,7 @@ public:
 		pthread_create(&myThread, NULL, run, (void *)this);
 #endif
 		this->blocking=blocking;
-		this->verbose=verbose;
+		return true;
 	}
 	
 	bool lock() {	//returns false if it can't lock
@@ -90,23 +88,23 @@ public:
 		if (blocking) EnterCriticalSection(&critSec);
 		else {
 			if (!TryEnterCriticalSection(&critSec)) {
-				if (verbose)printf("thread: mutext is busy \n");
+				magic("thread: mutext is busy \n");
 				return false;
 			}
 		}
-		if (verbose)printf("thread: we are in -- mutext is now locked \n");
+		magic("thread: we are in -- mutext is now locked \n");
 #else
 		if (blocking) {
-			if (verbose)printf("thread: waiting till mutext is unlocked\n");
+			magic("thread: waiting till mutext is unlocked\n");
 			pthread_mutex_lock(&myMutex);
-			if (verbose)printf("thread: we are in -- mutext is now locked \n");
+			magic("thread: we are in -- mutext is now locked \n");
 		} else {
 			int value=pthread_mutex_trylock(&myMutex);
 			if (value==0) {
-				if (verbose)printf("thread: we are in -- mutext is now locked \n");
+				magic("thread: we are in -- mutext is now locked \n");
 			}
 			else {
-				if (verbose)printf("thread: mutext is busy - already locked\n");
+				magic("thread: mutext is busy - already locked\n");
 				return false;
 			}
 		}
@@ -120,39 +118,38 @@ public:
 #else
 		pthread_mutex_unlock(&myMutex);
 #endif
-		if (verbose)printf("thread: we are out -- mutext is now unlocked \n");
+		magic("thread: we are out -- mutext is now unlocked \n");
 		return true;
 	}
 
 	void stop() {
 		if (running) {
+			running=false;
 #ifdef OS_WIN32
 			CloseHandle(myThread);
 #else
 			pthread_detach(myThread);
 #endif
-			if (verbose)printf("thread: thread stopped\n");
-			running=false;
+			magic("thread: thread stopped\n");
 		} else {
-			if (verbose)printf("thread: thread already stopped\n");
+			magic("thread: thread already stopped\n");
 		}
 	}
 
 protected:
-	//overide this with the function to put thread main code
 	virtual void run() {
-		if (verbose)printf("thread: overide run method with your own\n");
+		magic("thread: please overide this run method for thead main code\n");
 	}
 #ifdef OS_WIN32
 	static unsigned int __stdcall run(void * ptr) {
-		thread* me	= (thread*)ptr;
+		thread* me=(thread*)ptr;
 		me->run();
 		me->stop();
 		return 0;
 	}
 #else
-	static void * run(void * ptr) {
-		thread* me	= (thread*)ptr;
+	static void* run(void * ptr) {
+		thread* me=(thread*)ptr;
 		me->run();
 		me->stop();
 		return 0;
