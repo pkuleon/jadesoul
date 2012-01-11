@@ -14,35 +14,35 @@
 
 // jtest(hi, test1,
 	// path p("D:\\GreenSoft\\myentunnel.tar.gz");
-	// printv(p.tostr());
-	// printv(p.dirname());
-	// printv(p.filename());
-	// printv(p.extension());
-	// printv(p.exists());
-	// printv(p.isdir());
-	// printv(p.isfile());
+	// print(p.tostr());
+	// print(p.dirname());
+	// print(p.filename());
+	// print(p.extension());
+	// print(p.exists());
+	// print(p.isdir());
+	// print(p.isfile());
 	
-	// printv(p.listdirs());
-	// printv(p.listfiles());
+	// print(p.listdirs());
+	// print(p.listfiles());
 // )
 
 // jtest(openfile, test2,
 	// path p("D:\\WorkSpace\\2012-1-6\\readme.txt");
-	// printv(p.tostr());
-	// printv(p.dirname());
-	// printv(p.filename());
-	// printv(p.extension());
-	// printv(p.exists());
-	// printv(p.isdir());
-	// printv(p.isfile());
+	// print(p.tostr());
+	// print(p.dirname());
+	// print(p.filename());
+	// print(p.extension());
+	// print(p.exists());
+	// print(p.isdir());
+	// print(p.isfile());
 	
-	// printv(p.fsize());
-	// printv(p.fctime());
-	// printv(p.fmtime());
-	// printv(p.fatime());
+	// print(p.fsize());
+	// print(p.fctime());
+	// print(p.fmtime());
+	// print(p.fatime());
 	
 	// file f(p);
-	// printv(f.read());
+	// print(f.read());
 	// f.close();
 	
 	// f.open(p, 'w');
@@ -78,7 +78,7 @@ str p="E:\\svnprojects-linux\\jadesoul\\tests\\jadesoul\\utils\\compile.log";
 // jtest(file_read, test5,
 	// file f(p.tocstr());
 	// str s=f.read();
-	// printv(s);
+	// print(s);
 // )
 
 
@@ -86,20 +86,20 @@ str p="E:\\svnprojects-linux\\jadesoul\\tests\\jadesoul\\utils\\compile.log";
 	// file f(p.tocstr());
 	// while(f.notend()) {
 		// str s=f.readline();
-		// printv(s);
+		// print(s);
 	// }
 // )
 
 // jtest(file_readlines, test7,
 	// file f(p.tocstr());
-	// printv(f.readlines());
+	// print(f.readlines());
 // )
 
 // jtest(file_write, test8,
 	// file f(p.tocstr(), "wt");
 	// str s="hi, jadesoul";
 	// f.write(s);
-	// printv(s);
+	// print(s);
 // )
 
 // jtest(file_writeline, test9,
@@ -117,22 +117,22 @@ str p="E:\\svnprojects-linux\\jadesoul\\tests\\jadesoul\\utils\\compile.log";
 // )
 
 // jtest(fread_func, test12,
-	// printv(fread("compile.txt"));
+	// print(fread("compile.txt"));
 // )
 
 jtest(file_dir_op_func, test13,
 	// str p="mkdir_test3";
 	// if (isndir(p)) md(p);
-	// printv(cp("dict.cpp", p+"/hi.hpp"));
-	// printv(rm(p+"/hi2.hpp"));
-	// printv(mv("compile.txt", p+"/hi2.hpp"));
-	// printv(mds("e/b/v/d"));
-	printv(path().isdir());
-	printv(path("..").isdir());
-	printv(path(cwd()).isdir());
-	printv(path("\\").isdir());
-	printv(path("C:\\").isdir());
-	printv(path("C:/app").isdir());
+	// print(cp("dict.cpp", p+"/hi.hpp"));
+	// print(rm(p+"/hi2.hpp"));
+	// print(mv("compile.txt", p+"/hi2.hpp"));
+	// print(mds("e/b/v/d"));
+	print(path().isdir());
+	print(path("..").isdir());
+	print(path(cwd()).isdir());
+	print(path("\\").isdir());
+	print(path("C:\\").isdir());
+	print(path("C:/app").isdir());
 )
 
 int main () {}

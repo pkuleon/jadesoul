@@ -25,7 +25,7 @@ struct hashkey {
 		return k.hash();
 	}
 	inline const bool operator()(const key& key1, const key& key2) const {
-		return key1.cmp(key2);
+		return key1<key2;
 	}
 };
 
@@ -34,6 +34,8 @@ class dict : public object {
 public:
 	typedef std::pair<key, value> pair;
 	typedef std::list<pair> pairs;
+	typedef list<key> klist;
+	typedef list<value> vlist;
 	
 	typedef hashkey<key> keyhash;
 	typedef hash_map<key, value, keyhash> container;
@@ -78,8 +80,17 @@ public:
 	/**************************************************
 	output operator: <<
 	**************************************************/
-	friend ostream& operator<<(ostream& out, const dict& l) {
-		return out<<"[dict]";
+	friend ostream& operator<<(ostream& out, dict& d) {
+		uint l=d.size(), cnt=0;
+		out<<"{ ";
+		for (iterator i=d.begin(), j=d.end(); i!=j; ++i, ++cnt) {
+			const key& k=i->first;
+			const value& v=i->second;
+			out<<k<<':'<<v;
+			if (cnt!=l-1) out<<',';
+			out<<' ';
+		}
+		return out<<'}';
 	}
 	
 	/**************************************************
@@ -172,13 +183,13 @@ public:
 		con[k]=v;
 	}
 	
-	//for element 
+	//for element
 	inline value& operator [](const key& k) {
-		return *(con[k]);
+		return con[k];
 	}
 	
 	inline const value& operator [](const key& k) const {
-		return *(con[k]);
+		return con[k];
 	}
 	
 	/**************************************************
@@ -201,7 +212,7 @@ public:
 	/**************************************************
 	items:	D.items() -> list of D's (key, value) pairs, as 2-tuples
 	**************************************************/
-	pairs items() {
+	inline pairs items() {
 		pairs pl;
 		for (iterator i=begin(), j=end(); i!=j; ++i) pl.push_back(pair(i->first, i->second));
 		return pl;
@@ -218,7 +229,6 @@ public:
 	**************************************************/
 	//TODO
 
-
 	/**************************************************
 	itervalues:	D.itervalues() -> an iterator over the values of D
 	**************************************************/
@@ -227,8 +237,8 @@ public:
 	/**************************************************
 	keys:	D.keys() -> list of D's keys
 	**************************************************/
-	vecstr keys() {
-		vecstr ks;
+	inline klist keys() {
+		klist ks;
 		for (iterator i=begin(), j=end(); i!=j; ++i) ks.push_back(i->first);
 		return ks;
 	}
@@ -236,8 +246,8 @@ public:
 	/**************************************************
 	values:	D.values() -> list of D's values
 	**************************************************/
-	list values() {
-		list vs;
+	inline vlist values() {
+		vlist vs;
 		for (iterator i=begin(), j=end(); i!=j; ++i) vs.append(i->second);
 		return vs;
 	}
@@ -287,5 +297,7 @@ public:
 	**************************************************/
 	inline uint hash() { return uint(this); }
 };
+
+typedef dict<str, str> D;
 
 #endif /* DICT_HPP_1325515224_71 */

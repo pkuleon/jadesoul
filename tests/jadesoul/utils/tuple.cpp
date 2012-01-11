@@ -34,24 +34,24 @@ jtest(jtest2, test2,
 	str abcdef=x(0, 6);
 	str def=x(3, 6);
 	str f=x(5, 6);
-	printv(abc);
-	printv(abcdef);
-	printv(def);
-	printv(f);
+	print(abc);
+	print(abcdef);
+	print(def);
+	print(f);
 	
 	tuple(abc, def)=tuple(abcdef, f);
 	
-	printv(abc);
-	printv(abcdef);
-	printv(def);
-	printv(f);
+	print(abc);
+	print(abcdef);
+	print(def);
+	print(f);
 	
 	tuple(abc, def)=tuple("HI", "jadesoul");
 	
-	printv(abc);
-	printv(abcdef);
-	printv(def);
-	printv(f);
+	print(abc);
+	print(abcdef);
+	print(def);
+	print(f);
 )
 
 // -------------------------------------------------- test2 : jtest2

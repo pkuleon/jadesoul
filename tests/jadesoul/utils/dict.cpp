@@ -14,9 +14,15 @@
 #include "jadesoul.hpp"
 
 jtest(cons, test1,
-	dict a;
+	dict<str, str> d;
 	str b="asdasd";
-	a[b]=b;
+	d[b]=b;
+	d["a"]=b;
+	print(d);
+	print(tuple(b, b, d));
+	print(d["a"]);
 )
+
+
 int main () {}
 

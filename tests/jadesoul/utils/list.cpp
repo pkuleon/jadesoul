@@ -19,14 +19,14 @@ jtest(constructors, test1,
 	str y="87989";
 	str z="JOIOJ";
 	list<str> l(x, y, z);
-	printv(x);
-	printv(y);
-	printv(z);
-	printv(l);
+	print(x);
+	print(y);
+	print(z);
+	print(l);
 	
 	// var p=l[0];
 	// p.printl();
-	// printv((str&)p[0]);
+	// print((str&)p[0]);
 	// (l[1]).printl();	
 )
 

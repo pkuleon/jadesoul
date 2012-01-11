@@ -108,111 +108,111 @@ jtest(replace, test8,
 )
 
 jtest(count, test9,
-	printv(str("ABCDEFCDG2").count("B"));
-	printv(str("ABCDEFCDG2").count("C"));
-	printv(str("ABCDEFCDG2").count("CD"));
-	printv(str("ABCDEFCDG2").count(1));
-	printv(str("ABCDEFCDG2").count(2));
-	printv(str("ABCDEFCDG2").count("C", 2));
-	printv(str("ABCDEFCDG2").count("C", 3));
-	printv(str("ABCDEFCDG2").count("C", 3, -4));
-	printv(str("ABCDEFCDG2").count("C", 3, -3));
-	printv(str("ABCDEFCDG2").count("C", -3));
-	printv(str("ABCDEFCDG2").count("C", -4));
+	print(str("ABCDEFCDG2").count("B"));
+	print(str("ABCDEFCDG2").count("C"));
+	print(str("ABCDEFCDG2").count("CD"));
+	print(str("ABCDEFCDG2").count(1));
+	print(str("ABCDEFCDG2").count(2));
+	print(str("ABCDEFCDG2").count("C", 2));
+	print(str("ABCDEFCDG2").count("C", 3));
+	print(str("ABCDEFCDG2").count("C", 3, -4));
+	print(str("ABCDEFCDG2").count("C", 3, -3));
+	print(str("ABCDEFCDG2").count("C", -3));
+	print(str("ABCDEFCDG2").count("C", -4));
 )
 
 jtest(center, test10,
-	printv(str("ABC").center(10, ' '));
-	printv(str("ABC").center(10, '*'));
-	printv(str("ABC").center(10, '-'));
-	printv(str("ABCDEFG").center(2, '-'));
-	printv(str("ABCDEFG").center(3, '-'));
-	printv(str("ABC").center(2, '-'));
-	printv(str("ABC").center(1, '-'));
+	print(str("ABC").center(10, ' '));
+	print(str("ABC").center(10, '*'));
+	print(str("ABC").center(10, '-'));
+	print(str("ABCDEFG").center(2, '-'));
+	print(str("ABCDEFG").center(3, '-'));
+	print(str("ABC").center(2, '-'));
+	print(str("ABC").center(1, '-'));
 )
 
 jtest(startswith, test11,
-	printv(str("ABCDEFG").startswith("A"));
-	printv(str("ABCDEFG").startswith("B"));
-	printv(str("ABCDEFG").startswith("AB"));
-	printv(str("ABCDEFG").startswith("AC"));
-	printv(str("ABCDEFG").startswith("ABC"));
-	printv(str("ABCDEFG").startswith("CDE"));
-	printv(str("ABCDEFG").startswith("CDE", 1));
-	printv(str("ABCDEFG").startswith("CDE", 2));
-	printv(str("ABCDEFG")(2).startswith("CDE"));
-	printv(str("ABCDEFG")(2, -1).startswith("CDE"));
-	printv(str("ABCDEFG")(2, -1, 2).startswith("CDE"));
-	printv(str("ABCDEFG").startswith("CDE", 3));
-	printv(str("ABCDEFG").startswith("CDE", 3, 5));
-	printv(str("ABCDEFG").startswith("CDE", 3, 6));
-	printv(str("ABCDEFG").startswith("CDE", 3, -1));
+	print(str("ABCDEFG").startswith("A"));
+	print(str("ABCDEFG").startswith("B"));
+	print(str("ABCDEFG").startswith("AB"));
+	print(str("ABCDEFG").startswith("AC"));
+	print(str("ABCDEFG").startswith("ABC"));
+	print(str("ABCDEFG").startswith("CDE"));
+	print(str("ABCDEFG").startswith("CDE", 1));
+	print(str("ABCDEFG").startswith("CDE", 2));
+	print(str("ABCDEFG")(2).startswith("CDE"));
+	print(str("ABCDEFG")(2, -1).startswith("CDE"));
+	print(str("ABCDEFG")(2, -1, 2).startswith("CDE"));
+	print(str("ABCDEFG").startswith("CDE", 3));
+	print(str("ABCDEFG").startswith("CDE", 3, 5));
+	print(str("ABCDEFG").startswith("CDE", 3, 6));
+	print(str("ABCDEFG").startswith("CDE", 3, -1));
 )
 
 jtest(endswith, test12,
-	printv(str("ABCDEFG").endswith("G"));
-	printv(str("ABCDEFG").endswith("FG"));
-	printv(str("ABCDEFG").endswith("AB"));
-	printv(str("ABCDEFG").endswith("AC"));
-	printv(str("ABCDEFG").endswith("ABC"));
-	printv(str("ABCDEFG").endswith("CDE"));
-	printv(str("ABCDEFG").endswith("CDE", 0, -1));
-	printv(str("ABCDEFG").endswith("CDE", 0, -2));
-	printv(str("ABCDEFG").endswith("CDE", 0, -3));
+	print(str("ABCDEFG").endswith("G"));
+	print(str("ABCDEFG").endswith("FG"));
+	print(str("ABCDEFG").endswith("AB"));
+	print(str("ABCDEFG").endswith("AC"));
+	print(str("ABCDEFG").endswith("ABC"));
+	print(str("ABCDEFG").endswith("CDE"));
+	print(str("ABCDEFG").endswith("CDE", 0, -1));
+	print(str("ABCDEFG").endswith("CDE", 0, -2));
+	print(str("ABCDEFG").endswith("CDE", 0, -3));
 )
 
 jtest(expandtabs, test13,
-	printv(str("ABCDEFG\n\tsadasd\n\tsadas").expandtabs(18));
+	print(str("ABCDEFG\n\tsadasd\n\tsadas").expandtabs(18));
 )
 
 jtest(upper, test14,
-	printv(str("abCDefG").upper());
+	print(str("abCDefG").upper());
 )
 
 jtest(lower, test15,
-	printv(str("abCDefG").lower());
+	print(str("abCDefG").lower());
 )
 
 jtest(swapcase, test16,
-	printv(str("abCDefG").swapcase());
+	print(str("abCDefG").swapcase());
 )
 
 jtest(reverse, test17,
-	printv(str("abCDefG").reverse());
-	printv(str("abCDefG").reversed());
+	print(str("abCDefG").reverse());
+	print(str("abCDefG").reversed());
 )
 
 jtest(repeat, test18,
-	printv(str("abCDefG").repeated(-2));
-	printv(str("abCDefG").repeated(3));
+	print(str("abCDefG").repeated(-2));
+	print(str("abCDefG").repeated(3));
 )
 
 jtest(sort, test19,
-	printv(str("qnmaldoep").sort());
-	printv(str("qnmaldoep").sorted());
+	print(str("qnmaldoep").sort());
+	print(str("qnmaldoep").sorted());
 )
 
 jtest(strip, test20,
-	printv(str("  aqnmaldoep\t   ").strip());
-	printv(str("  aqnmaldoep\t   ").lstrip());
-	printv(str("  aqnmaldoep\t   ").rstrip());
-	printv(str("  aqnmaldoep\t   ").striped());
-	printv(str("  aqnmaldoep\t   ").lstriped());
-	printv(str("  aqnmaldoep\t   ").rstriped());
+	print(str("  aqnmaldoep\t   ").strip());
+	print(str("  aqnmaldoep\t   ").lstrip());
+	print(str("  aqnmaldoep\t   ").rstrip());
+	print(str("  aqnmaldoep\t   ").striped());
+	print(str("  aqnmaldoep\t   ").lstriped());
+	print(str("  aqnmaldoep\t   ").rstriped());
 )
 
 jtest(multiply, test21,
-	printv(str("ABC")*10);
-	printv(str("ABC")*0);
-	printv(str("ABC")*-10);
+	print(str("ABC")*10);
+	print(str("ABC")*0);
+	print(str("ABC")*-10);
 )
 
 jtest(repr, test22,
-	printv(str("ABC").repr());
-	printv(str("A\tB"));
-	printv(str("A\tB").repr());
-	printv(str("A\\B"));
-	printv(str("A\\B").repr());
+	print(str("ABC").repr());
+	print(str("A\tB"));
+	print(str("A\tB").repr());
+	print(str("A\\B"));
+	print(str("A\\B").repr());
 )
 
 int main () {}

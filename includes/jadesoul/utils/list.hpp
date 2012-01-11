@@ -155,13 +155,14 @@ def generate_template_constructors():
 	output operator: <<
 	**************************************************/
 	friend ostream& operator<<(ostream& out, const list& l) {
-		uint s=l.size();
+		uint n=l.size();
 		out<<"[ ";
-		for_n(i, s) {
-			if (i!=s-1) out<<l[i]<<", ";
-			else out<<l[i]<<" ";
+		for_n(i, n) {
+			out<<l[i];
+			if (i!=n-1) out<<',';
+			out<<' ';
 		}
-		return out<<"]";
+		return out<<']';
 	}
 	
 	/**************************************************
@@ -469,8 +470,7 @@ def generate_template_constructors():
 
 #define Macro__typedefs_of_list__Element_Name_Alias(E, N, A)\
 typedef list<E> N;\
-typedef N A;\
-Macro__over_load_dump__ValueType(N);
+typedef N A;
 
 Macro__typedefs_of_list__Element_Name_Alias(char, listchar, Lchar)
 Macro__typedefs_of_list__Element_Name_Alias(uchar, listuchar, Luchar)

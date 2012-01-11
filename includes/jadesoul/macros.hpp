@@ -41,21 +41,10 @@
 
 //for debug option
 #ifdef debug
-	#define show(msg, var) { cout<< msg <<" = ";dump(var); }
-	#define printv(var) show(#var , var)
-	#define dbglog(...) log(__VA_ARGS__)
-	#define magicode(...) {log("now running code: %s", #__VA_ARGS__); __VA_ARGS__;log("done!");}
+	#define print(var) cout<<#var<<"="<<var<<endl;
 	#define magic(...) log(__VA_ARGS__)
 #else
-	#undef show
-	#define show(a, b)
-	#undef printv
-	#define printv(a) a;
-	#undef dbglog
-	#define dbglog(...)
-	#undef magicode
-	#define magicode(...)
-	#undef magic
+	#define print(var)
 	#define magic(...)
 #endif
 

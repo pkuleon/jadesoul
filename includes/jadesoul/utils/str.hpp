@@ -122,7 +122,7 @@ public:
 	output operator: <<
 	**************************************************/
 	inline friend ostream& operator <<(ostream& o, const str& s) {
-		return o<<s.s;
+		return o<<'"'<<s.s<<'"';
 	}
 	
 	inline const string tostr() const { return s; }
@@ -564,17 +564,14 @@ public:
 	hash:	x.hash() <==> Return DWORD hash
 	**************************************************/
 	inline const uint hash() const {
-		uint h=0, i=s.size();
-		while(--i>=0) h=107*h+s[i];
-		return h;
-	}
+		return uint(this);
+		// uint h=0, i=s.size();
+		// while(i>0) h=107*h+s[--i];
+		// return h;
+	} 
 };
 
 typedef vector<str> vecstr;
-
-Macro__over_load_dump__ValueType(str);
-// Macro__over_load_dump__ValueType(vecstr);
-Macro__over_load_operator_out__ContainerTemplate_ValueType(vector, str);
 
 #endif /* STR_HPP_1324997558_33 */
 
