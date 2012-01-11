@@ -68,6 +68,16 @@ public:
 		running   = true;
 #ifdef OS_WIN32
 		// InitializeCriticalSection(&critSec);
+		
+		// unsigned long _beginthreadex(
+			// void *security,
+			// unsigned stack_size,
+			// unsigned ( __stdcall *start_address )( void * ),
+			// void *arglist,
+			// unsigned initflag,
+			// unsigned *thrdaddr
+		// );
+
 		myThread = (HANDLE)_beginthreadex(NULL, 0, this->run,  (void *)this, 0, NULL);
 #else
 		// pthread_mutex_init(&myMutex, NULL);
@@ -135,22 +145,21 @@ protected:
 	virtual void run() {
 		if (verbose)printf("thread: overide run method with your own\n");
 	}
-	
-// #ifdef OS_WIN32
-	// static unsigned int __stdcall launch(void * ptr) {
-		// thread* me	= (thread*)ptr;
-		// me->run();
-		// me->stop();
-		// return 0;
-	// }
-// #else
-	// static void * launch(void * ptr) {
-		// thread* me	= (thread*)ptr;
-		// me->run();
-		// me->stop();
-		// return 0;
-	// }
-// #endif
+#ifdef OS_WIN32
+	static unsigned int __stdcall run(void * ptr) {
+		thread* me	= (thread*)ptr;
+		me->run();
+		me->stop();
+		return 0;
+	}
+#else
+	static void * run(void * ptr) {
+		thread* me	= (thread*)ptr;
+		me->run();
+		me->stop();
+		return 0;
+	}
+#endif
 };
 
 
