@@ -22,8 +22,8 @@ public:
 protected:
 	void run() {
 		// for_n(i, 2) printf("running my thread: %d\n", id);
-		printf("in thread %d, x=%d\n", id, x++);
-		while(1);
+		while(1) printf("in thread %d, x=%d\n", id, x++);
+		
 	}
 };
 
