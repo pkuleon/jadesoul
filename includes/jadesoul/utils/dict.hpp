@@ -47,7 +47,7 @@ private:
 	container con;
 	
 public:
-	//for iterators
+	// for iterators
 	inline iterator begin() { return con.begin(); } 
 	inline iterator end() { return con.end(); }
 	inline riterator rbegin() { return con.rbegin(); }
@@ -58,27 +58,14 @@ public:
 	inline criterator rbegin() const { return con.rbegin(); }
 	inline criterator rend() const { return con.rend(); }
 	
-	//for size query
+	// for size query
 	inline const uint size() const { return con.size(); }
 	inline const bool empty() const { return con.empty(); }
 	
-	//constructors
-	// template<class T1>
-	// dict(T1& t1) {
-		// append(&t1);
-	// }
-	
-	// template<class T1, class T2>
-	// dict(T1& t1, T2& t2) {
-		// append(&t1);
-		// append(&t2);
-	// }
-	
-	// template<class T1, class T2, class T3>
-	// dict(T1& t1, T2& t2, T3& t3) {
-		// append(&t1);
-		// append(&t2);
-		// append(&t3);
+	// for constructors
+	// template<class K1, class V1>
+	// dict(const K1& k1, V1& v1) {
+		// con[k1]=v1;
 	// }
 	
 	dict() {}
@@ -87,8 +74,6 @@ public:
 	dict(citerator begin, citerator end):con(begin, end) {}
 	dict(riterator begin, riterator end):con(begin, end) {}
 	dict(criterator begin, criterator end):con(begin, end) {}
-	
-
 	
 	/**************************************************
 	output operator: <<
@@ -291,19 +276,16 @@ public:
 		}
 	}
 	
-	//foreach
+	/**************************************************
+	foreach:	apply function on each element
+	**************************************************/
 	template<class Function>
-	void foreach(Function f) {
-		std::for_each(begin(), end(), f);
-	}
+	inline void foreach(Function f) { std::for_each(begin(), end(), f); }
 	
 	/**************************************************
-	__hash__:	None
+	hash:	return an uint hash value
 	**************************************************/
-	uint hash() {
-		//TODO
-		return 0;
-	}
+	inline uint hash() { return uint(this); }
 };
 
 #endif /* DICT_HPP_1325515224_71 */
