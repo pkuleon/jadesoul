@@ -13,5 +13,6 @@
 #include "includes.hpp"
 #include "algorithms.hpp"
 #include "utils.hpp"
+#include "thread.hpp"
 
 #endif /* JADESOUL_HPP_1324964317_10 */
