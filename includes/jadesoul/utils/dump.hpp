@@ -46,11 +46,9 @@ void log(const char* fmt, ...) {
 	cout<<endl;
 }
 
-/**
-  * dump -- show all elements in a iterable container
-  * usage:  dump< vector<int> >(v, ", ", "[", "]", cout) or dump(v, ", ", "[", "]", cout) or just show(v);
-  */
-
+/**************************************************
+dump: show a variable in the readable format
+**************************************************/
 // template<class Container >
 // void dump(const Container& c,
           // const char* deli=", ",
