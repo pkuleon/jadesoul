@@ -14,6 +14,7 @@
 
 #include "includes.hpp"
 #include "str.hpp"
+#include "list.hpp"
 
 template<class key>
 struct hashkey {
