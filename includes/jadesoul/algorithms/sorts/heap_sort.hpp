@@ -7,7 +7,7 @@
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * 
  * Date: 2011-12-27 14:26:33.528000
- * Written In: MSRA, beijing, China
+ * Written In: Peking University, beijing, China
  */
 
 //heap_sort

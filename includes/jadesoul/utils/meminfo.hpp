@@ -7,7 +7,7 @@
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * 
  * Date: 2011-12-27 13:53:22.367000
- * Written In: MSRA, beijing, China
+ * Written In: Peking University, beijing, China
  */
 
 #include "includes.hpp"

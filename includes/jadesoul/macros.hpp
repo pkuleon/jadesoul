@@ -7,7 +7,7 @@
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * 
  * Date: 2011-12-26 18:27:36.135000
- * Written In: MSRA, beijing, China
+ * Written In: Peking University, beijing, China
  */
 
 #define debug
