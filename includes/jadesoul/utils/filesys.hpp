@@ -604,6 +604,9 @@ inline uint fwrite(const str& s, const path& p, const bool append=false, const b
 	return size;
 }
 
+#undef ENDL
+#undef SLASH
+
 #endif /* FILESYS_HPP_1325514009_53 */
 
 

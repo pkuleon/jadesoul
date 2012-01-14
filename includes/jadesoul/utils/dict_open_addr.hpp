@@ -64,6 +64,9 @@ public:
 
 private:
 	sequence seq;
+	uint len;
+	uint active;
+	uint dummy;
 	
 public:
 	// for iterators
@@ -83,8 +86,8 @@ public:
 		// seq[k1]=v1;
 	// }
 	
-	dict():sequence(INIT_ENTRY_CNT, NULL) {}
-	dict(const dict& r):seq(r.seq) {}
+	dict():sequence(INIT_ENTRY_CNT, NULL), len(INIT_ENTRY_CNT), active(0), dummy(0) {}
+	dict(const dict& r):seq(r.seq), len(r.len), active(r.active), dummy(r.dummy) {}
 	
 	/**************************************************
 	output operator: <<
@@ -117,7 +120,7 @@ public:
 	for query: size empty less grater cmp
 	bool expressions:	== != > >= < <= !
 	**************************************************/
-	inline const uint size() const { return seq.size(); }
+	inline const uint size() const { return active; }
 	inline const bool empty() const { return seq.empty(); }
 	inline const bool equals(const dict& r) const { return seq==r.seq; }
 	inline const bool less(const dict& r) const { return seq<r.seq; }
@@ -143,30 +146,75 @@ public:
 	// inline dict& operator ^=(const dict& r) { return cross(r); }
 	
 	/**************************************************
-	find:	Find entry iterator from this dict.
+	locate: 
+		Find the index of the key if exists or return a empty 
+		or dummy entry index to put the key
 	**************************************************/
-	inline iterator find(const key& k) {
+	inline const uint locate(const key& k) {
 		//first hash
-		uint first=k.hash() % size();
+		uint first=k.hash() % len;
+		uint now=first, times=0, last=-1;
+		if (isempty(now) OR isdummy(now)) return now;
+		else if (equals(now, k) return now; 
 		
-		//again hash
-		return seq.find(k);
-	}
-	inline citerator find(const key& k) const {
-		return seq.find(k);
+		while (1) {
+			//again hash
+			next(first, now, times, last)
+			if (isempty(now)) return (last!=-1)?last:now;
+			else if isdummy(now) {
+				if (last==-1) last=now;
+			}
+			else if (equals(now, k) return now;
+		)
 	}
 	
-private:
-	inline uint next(uint& first, uint& now, uint& len, uint& times) {//again hash strategy
-		
+	/**************************************************
+	find:	Find a key from this dict. return -1 if not found
+	**************************************************/
+	inline const uint find(const key& k) {
+		uint i=locate(k);
+		return isactive(i)?i:-1;
 	}
+	
 public:
 	/**************************************************
 	haskey:	D.haskey(k) -> True if D has a key k, else False
 	**************************************************/
-	bool haskey(const key& k) const {
-		return find(k)!=end();
+	inline const bool haskey(const key& k) {
+		return isactive(locate(k));
 	}
+	
+private:
+	inline const bool isactive(const entry* &p) const {
+		return p!=NULL AND p!=DUMMY_PTR;
+	}
+	inline const bool isactive(const uint& i) const {
+		return isactive(seq[i]);
+	}
+	inline const bool isdummy(const entry* &p) const {
+		return p==DUMMY_PTR;
+	}
+	inline const bool isdummy(const uint& i) const {
+		return isdummy(seq[i]);
+	}
+	inline const bool isempty(const entry* &p) const {
+		return p==NULL;
+	}
+	inline const bool isempty(const uint& i) const {
+		return isempty(seq[i]);
+	}
+	inline void next(const uint& first, uint& now, uint& times, uint& last) {//again hash strategy
+		times+=1;
+		now+=1;
+		if (now==len) {
+			// TODO: expand
+			now=0;
+		}
+	}
+	inline const bool equals(const uint& i, const key& k) const {
+		return seq[i]->k==k;
+	}
+
 	
 	/**************************************************
 	get:	D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
@@ -207,7 +255,7 @@ public:
 	clear:	D.clear() -> None.  Remove all items from D.
 	**************************************************/
 	inline dict& clear() {
-		uint l=size();
+		uint l=seq.size();
 		for_n(i, l) {
 			entry*& p=seq[i];
 			if ((p==NULL) //empty ptr
@@ -215,6 +263,9 @@ public:
 			delete p;
 		}
 		seq.assign(INIT_ENTRY_CNT, NULL);
+		len=INIT_ENTRY_CNT;
+		active=0;
+		dummy=0;
 		return *this;
 	}
 	
@@ -332,5 +383,8 @@ public:
 };
 
 typedef dict<str, str> D;
+
+#undef INIT_ENTRY_CNT
+#undef DUMMY_PTR
 
 #endif /* DICT_HPP_1325515224_71 */
