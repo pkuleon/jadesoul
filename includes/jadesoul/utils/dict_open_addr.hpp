@@ -39,9 +39,9 @@ template<class key, class value, class hash=uint>
 class dict : public object {
 public:
 	struct entry {
-		key k;
+		const key k;
 		value v;
-		hash h;
+		const hash h;
 		entry(const key& k, const value& v, const hash& h):k(k), v(v), h(h) {}
 	};
 	typedef std::vector<entry*> sequence;
@@ -152,10 +152,11 @@ public:
 	**************************************************/
 	inline const uint locate(const key& k) {
 		//first hash
-		uint first=k.hash() % len;
+		uint h=k.hash;
+		uint first=h % len;
 		uint now=first, times=0, last=-1;
 		if (isempty(now) OR isdummy(now)) return now;
-		else if (equals(now, k) return now; 
+		else if (equals(now, k, h) return now; 
 		
 		while (1) {
 			//again hash
@@ -164,8 +165,8 @@ public:
 			else if isdummy(now) {
 				if (last==-1) last=now;
 			}
-			else if (equals(now, k) return now;
-		)
+			else if (equals(now, k, h)) return now;
+		}
 	}
 	
 	/**************************************************
@@ -176,7 +177,7 @@ public:
 		return isactive(i)?i:-1;
 	}
 	
-public:
+
 	/**************************************************
 	haskey:	D.haskey(k) -> True if D has a key k, else False
 	**************************************************/
@@ -211,42 +212,59 @@ private:
 			now=0;
 		}
 	}
-	inline const bool equals(const uint& i, const key& k) const {
-		return seq[i]->k==k;
+	inline const bool equals(const uint& i, const key& k, const hash& h) const {
+		return seq[i]->h==h AND seq[i]->k==k;
 	}
-
-	
-	/**************************************************
-	get:	D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
-	**************************************************/
-	inline value get(const key& k, const value& dval=0) {
-		return haskey(k)?seq[k]:dval;
+	inline void insert(const uint& i, const key& k, const value& v) {
+		if (isdummy(i)) dummy-=1;
+		seq[i]=new entry(k, v, k.hash());
+		active+=1;
 	}
 	
+public:
 	/**************************************************
-	superget:	D.setdefault(k[,d]) -> D.get(k,d), 
-				also set D[k]=d if k not in D
+	get:	
+		D.get(k[,d]) -> D[k] if k in D, else d.  
+		d defaults to None.
 	**************************************************/
-	inline value superget(const key& k, const value& dval) {
-		if (haskey(k)) return seq[k];
-		seq[k]=dval;
-		return dval;
+	inline value get(const key& k, const value& d=0) {
+		uint i=locate(k);
+		return isactive(i)?seq[i]->v:d;
+	}
+	
+	/**************************************************
+	sget:
+		D.sget(k[,d]) -> D.get(k,d), 
+		At the same time, set D[k]=d if k not in D
+	**************************************************/
+	inline value sget(const key& k, const value& d=0) {
+		uint i=locate(k);
+		if (isactive(i)) return seq[i]->v;
+		insert(i, k, d);
+		return d;
 	}
 	
 	/**************************************************
 	set:	D.set(k, v) -> D[k]=v
 	**************************************************/
 	inline void set(const key& k, const value& v) {
-		seq[k]=v;
+		uint i=locate(k);
+		if (isactive(i)) seq[i]->v=v;
+		else insert(i, k, v);
 	}
 	
-	//for element
+	// for element
 	inline value& operator [](const key& k) {
-		return seq[k];
+		uint i=locate(k);
+		if (isactive(i)) return seq[i]->v;
+		insert(i, k, 0);
+		return seq[i]->v;
 	}
 	
 	inline const value& operator [](const key& k) const {
-		return seq[k];
+		uint i=locate(k);
+		assert(isactive(i) AND "The key must exists to get value") 
+		return seq[i]->v=v;
 	}
 	
 
