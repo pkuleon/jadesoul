@@ -42,13 +42,16 @@ public:
 		const key k;
 		value v;
 		const hash h;
+		entry() {}
 		entry(const key& k, const value& v, const hash& h):k(k), v(v), h(h) {}
+		entry(const entry& e):k(e.k), v(e.v), h(e.h) {}
 	};
 	typedef std::vector<entry*> sequence;
 	// typedef std::list<entry> sequence;
 	
 	typedef list<entry> elist;
 	typedef list<key> klist;
+	typedef set<key> kset;
 	typedef list<value> vlist;
 	
 	typedef list<const entry const*> cpelist;
@@ -285,7 +288,8 @@ public:
 	}
 	
 	/*************************************************
-	copy:	D.copy() -> new D
+	copy:	
+		D.copy() -> new D
 		Return a shadow copy of dict D
 	*************************************************/
 	inline dict copy() {
@@ -293,35 +297,41 @@ public:
 	}
 	
 	/*************************************************
-	clone:	D.clone() -> new D
+	clone:	
+		D.clone() -> new D
 		Return a deep copy of dict D, which is a clone
 		of D.
 	*************************************************/
 	inline dict clone() {
-		//TODO
-		return copy();
+		dict d=copy();
+		for_n(i, len) if (isactive(i)) d.seq[i]=new entry(*seq[i]);
+		return d;
 	}
 	
 	/**************************************************
-	items:	D.items() -> list of D's (key, value) pairs, as 2-tuples
+	items:
+		D.items() -> list of D's (key, value) pairs, as 2-tuples
 	**************************************************/
-	inline pairs items() {
-		pairs pl;
-		for (iterator i=begin(), j=end(); i!=j; ++i) pl.push_back(pair(i->first, i->second));
-		return pl;
+	inline elist items() {
+		elist el;
+		for_n(i, len) if (isactive(i)) el.append(*seq[i]);
+		return el;
 	}
 
 	/**************************************************
-	iteritems:	D.iteritems() -> an iterator over the (key, value) items of D
+	fromkeys:	
+		dict.fromkeys(ks [,v]) -> New dict with keys from ks
+		and values equal to v. v defaults to value().
 	**************************************************/
-	//TODO
-
-	/**************************************************
-	fromkeys:	dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
-	v defaults to None.
-	**************************************************/
-	//TODO
-	
+	inline dict& fromkeys(const kset& ks, const value& v=value()) {
+		clear();
+		
+		for_iter(kset
+		set(k, v);
+		
+		
+		return *this;
+	}
 	
 	/**************************************************
 	iterkeys:	D.iterkeys() -> an iterator over the keys of D

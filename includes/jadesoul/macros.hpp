@@ -28,10 +28,11 @@
 #define for_in(i, start, end, step) for (int i=start; i<end; i+=step)
 #define for_tin(type, i, start, end, step) for (type i=start; i<end; i+=step)
 
-#define for_iter(it, type, con) for(type::iterator it=con.begin(); it!=con.end(); ++it)
-#define for_citer(it, type, con) for(type::const_iterator it=con.begin(); it!=con.end(); ++it)
-#define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
-#define for_criter(it, type, con) for(type::const_reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+//for container iterations, in for_iterc, the 'c' means the container can be changes in the for loop
+#define for_iter(it, type, con) for(type::iterator it=con.begin(), itend=con.end(); it!=itend; ++it)
+#define for_iterc(it, type, con) for(type::iterator it=con.begin(); it!=con.end(); ++it)
+#define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(), itend=con.end(); it!=itend; ++it)
+#define for_riterc(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
 
 #define if_in(val, con) if (con.find(val)!=con.end())
 #define if_not_in(val, con) if (con.find(val)==con.end())
