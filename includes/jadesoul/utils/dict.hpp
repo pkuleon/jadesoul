@@ -61,9 +61,6 @@ public:
 	inline criterator rbegin() const { return con.rbegin(); }
 	inline criterator rend() const { return con.rend(); }
 	
-	// for size query
-	inline const uint size() const { return con.size(); }
-	inline const bool empty() const { return con.empty(); }
 	
 	// for constructors
 	// template<class K1, class V1>
@@ -77,6 +74,25 @@ public:
 	dict(citerator begin, citerator end):con(begin, end) {}
 	dict(riterator begin, riterator end):con(begin, end) {}
 	dict(criterator begin, criterator end):con(begin, end) {}
+	
+	/**************************************************
+	query: size empty less grater cmp
+	bool expressions:	== != > >= < <= !
+	**************************************************/
+	inline const uint size() const { return con.size(); }
+	inline const bool empty() const { return con.empty(); }
+	inline const bool equals(const dict& r) const { return con==r.con; }
+	inline const bool less(const dict& r) const { return con<r.con; }
+	inline const bool grater(const dict& r) const { return con>r.con; }
+	inline const bool cmp(const dict& r) const { return less(r); }
+	
+	inline bool operator==(const dict& r) { return equals(r); }
+	inline bool operator!=(const dict& r) { return !equals(r); }
+	inline bool operator<(const dict& r) { return less(r); }
+	inline bool operator<=(const dict& r) { return !grater(r); }
+	inline bool operator>(const dict& r) { return grater(r); }
+	inline bool operator>=(const dict& r) { return !less(r); }
+	inline bool operator!() { return empty(); }
 	
 	/**************************************************
 	output operator: <<
@@ -105,27 +121,7 @@ public:
 		return *this;
 	}
 	
-	/**************************************************
-	bool expressions:	== != > >= < <= ! & &= | |= ^ ^=
-	math expressions:	+= + -= -
-	**************************************************/
-	inline bool operator==(const dict& r) { return equals(r); }
-	// inline bool operator>(const dict& r) { return this>&r; }
-	// inline bool operator<(const dict& r) { return this<&r; }
-	// inline bool operator!=(const dict& r) { return !(*this==r); }
-	// inline bool operator<=(const dict& r) { return !(*this>r); }
-	// inline bool operator>=(const dict& r) { return !(*this<r); }
-	// inline bool operator!() { return empty(); }
-	// inline dict operator &(const dict& x, const dict& y) { return x.intersection(y); }
-	// inline dict operator |(const dict& x, const dict& y) { return x.unioned(y); }
-	// inline dict operator +(const dict& x, const dict& y) { return x.unioned(y); }
-	// inline dict operator -(const dict& x, const dict& y) { return x.difference(y); }
-	// inline dict operator ^(const dict& x, const dict& y) { return x.crossed(y); }
-	// inline dict& operator &=(const dict& r) { return intersect(r); }
-	// inline dict& operator |=(const dict& r) { return unionto(r); }
-	// inline dict& operator +=(const dict& r) { return unionto(r); }
-	// inline dict& operator -=(const dict& r) { return differ(r); }
-	// inline dict& operator ^=(const dict& r) { return cross(r); }
+
 
 	/**************************************************
 	clear:	D.clear() -> None.  Remove all items from D.

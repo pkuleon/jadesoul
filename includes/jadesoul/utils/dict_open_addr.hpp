@@ -16,6 +16,9 @@
 #include "str.hpp"
 #include "list.hpp"
 
+#define INIT_ENTRY_CNT 8
+#define DUMMY_PTR -1
+
 template<class key>
 struct hashkey {
 	enum {
@@ -30,7 +33,6 @@ struct hashkey {
 	}
 };
 
-
 //first hash
 //second hash
 template<class key, class value, class hash=uint>
@@ -42,11 +44,16 @@ public:
 		hash h;
 		entry(const key& k, const value& v, const hash& h):k(k), v(v), h(h) {}
 	};
-	typedef std::vector<entry> sequence;
+	typedef std::vector<entry*> sequence;
 	// typedef std::list<entry> sequence;
 	
+	typedef list<entry> elist;
 	typedef list<key> klist;
 	typedef list<value> vlist;
+	
+	typedef list<const entry const*> cpelist;
+	typedef list<const key const*> cpklist;
+	typedef list<const value const*> cpvlist;
 	
 	// typedef hashkey<key> keyhash;
 	
@@ -70,22 +77,14 @@ public:
 	inline criterator rbegin() const { return seq.rbegin(); }
 	inline criterator rend() const { return seq.rend(); }
 	
-	// for size query
-	inline const uint size() const { return seq.size(); }
-	inline const bool empty() const { return seq.empty(); }
-	
 	// for constructors
 	// template<class K1, class V1>
 	// dict(const K1& k1, V1& v1) {
 		// seq[k1]=v1;
 	// }
 	
-	dict() {}
+	dict():sequence(INIT_ENTRY_CNT, NULL) {}
 	dict(const dict& r):seq(r.seq) {}
-	dict(iterator begin, iterator end):seq(begin, end) {}
-	dict(citerator begin, citerator end):seq(begin, end) {}
-	dict(riterator begin, riterator end):seq(begin, end) {}
-	dict(criterator begin, criterator end):seq(begin, end) {}
 	
 	/**************************************************
 	output operator: <<
@@ -115,16 +114,23 @@ public:
 	}
 	
 	/**************************************************
-	bool expressions:	== != > >= < <= ! & &= | |= ^ ^=
-	math expressions:	+= + -= -
+	for query: size empty less grater cmp
+	bool expressions:	== != > >= < <= !
 	**************************************************/
+	inline const uint size() const { return seq.size(); }
+	inline const bool empty() const { return seq.empty(); }
+	inline const bool equals(const dict& r) const { return seq==r.seq; }
+	inline const bool less(const dict& r) const { return seq<r.seq; }
+	inline const bool grater(const dict& r) const { return seq>r.seq; }
+	inline const bool cmp(const dict& r) const { return less(r); }
+	
 	inline bool operator==(const dict& r) { return equals(r); }
-	// inline bool operator>(const dict& r) { return this>&r; }
-	// inline bool operator<(const dict& r) { return this<&r; }
-	// inline bool operator!=(const dict& r) { return !(*this==r); }
-	// inline bool operator<=(const dict& r) { return !(*this>r); }
-	// inline bool operator>=(const dict& r) { return !(*this<r); }
-	// inline bool operator!() { return empty(); }
+	inline bool operator!=(const dict& r) { return !equals(r); }
+	inline bool operator<(const dict& r) { return less(r); }
+	inline bool operator<=(const dict& r) { return !grater(r); }
+	inline bool operator>(const dict& r) { return grater(r); }
+	inline bool operator>=(const dict& r) { return !less(r); }
+	inline bool operator!() { return empty(); }
 	// inline dict operator &(const dict& x, const dict& y) { return x.intersection(y); }
 	// inline dict operator |(const dict& x, const dict& y) { return x.unioned(y); }
 	// inline dict operator +(const dict& x, const dict& y) { return x.unioned(y); }
@@ -135,45 +141,38 @@ public:
 	// inline dict& operator +=(const dict& r) { return unionto(r); }
 	// inline dict& operator -=(const dict& r) { return differ(r); }
 	// inline dict& operator ^=(const dict& r) { return cross(r); }
-
-	/**************************************************
-	clear:	D.clear() -> None.  Remove all items from D.
-	**************************************************/
-	inline dict& clear() {
-		seq.clear();
-		return *this;
-	}
-	
-	/*************************************************
-	copy:	D.copy() -> new D
-		Return a shadow copy of dict D, is the same to D
-		in the first level
-	*************************************************/
-	inline dict copy() {
-		return dict(*this);
-	}
-	
-	/*************************************************
-	clone:	D.clone() -> new D
-		Return a deep copy of dict D, which is a clone
-		of D. The same in all level
-	*************************************************/
-	inline dict clone() {
-		//TODO
-		return dict();
-	}
 	
 	/**************************************************
-	fromkeys:	dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
-	v defaults to None.
+	find:	Find entry iterator from this dict.
 	**************************************************/
-	//TODO
+	inline iterator find(const key& k) {
+		//first hash
+		uint first=k.hash() % size();
+		
+		//again hash
+		return seq.find(k);
+	}
+	inline citerator find(const key& k) const {
+		return seq.find(k);
+	}
+	
+private:
+	inline uint next(uint& first, uint& now, uint& len, uint& times) {//again hash strategy
+		
+	}
+public:
+	/**************************************************
+	haskey:	D.haskey(k) -> True if D has a key k, else False
+	**************************************************/
+	bool haskey(const key& k) const {
+		return find(k)!=end();
+	}
 	
 	/**************************************************
 	get:	D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
 	**************************************************/
 	inline value get(const key& k, const value& dval=0) {
-		return has_key(k)?seq[k]:dval;
+		return haskey(k)?seq[k]:dval;
 	}
 	
 	/**************************************************
@@ -181,7 +180,7 @@ public:
 				also set D[k]=d if k not in D
 	**************************************************/
 	inline value superget(const key& k, const value& dval) {
-		if (has_key(k)) return seq[k];
+		if (haskey(k)) return seq[k];
 		seq[k]=dval;
 		return dval;
 	}
@@ -202,21 +201,39 @@ public:
 		return seq[k];
 	}
 	
-	/**************************************************
-	find:	Find element iterator from this dict.
-	**************************************************/
-	inline iterator find(const key& k) {
-		return seq.find(k);
-	}
-	inline citerator find(const key& k) const {
-		return seq.find(k);
-	}
+
 	
 	/**************************************************
-	has_key:	D.has_key(k) -> True if D has a key k, else False
+	clear:	D.clear() -> None.  Remove all items from D.
 	**************************************************/
-	bool has_key(const key& k) const {
-		return find(k)!=end();
+	inline dict& clear() {
+		uint l=size();
+		for_n(i, l) {
+			entry*& p=seq[i];
+			if ((p==NULL) //empty ptr
+			OR (p==DUMMY_PTR)) continue; //dummy ptr
+			delete p;
+		}
+		seq.assign(INIT_ENTRY_CNT, NULL);
+		return *this;
+	}
+	
+	/*************************************************
+	copy:	D.copy() -> new D
+		Return a shadow copy of dict D
+	*************************************************/
+	inline dict copy() {
+		return dict(*this);
+	}
+	
+	/*************************************************
+	clone:	D.clone() -> new D
+		Return a deep copy of dict D, which is a clone
+		of D.
+	*************************************************/
+	inline dict clone() {
+		//TODO
+		return copy();
 	}
 	
 	/**************************************************
@@ -233,7 +250,13 @@ public:
 	**************************************************/
 	//TODO
 
-
+	/**************************************************
+	fromkeys:	dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+	v defaults to None.
+	**************************************************/
+	//TODO
+	
+	
 	/**************************************************
 	iterkeys:	D.iterkeys() -> an iterator over the keys of D
 	**************************************************/
@@ -273,8 +296,8 @@ public:
 		seq.erase(i);
 		return tmp;
 	}
-
-
+	
+	
 	/**************************************************
 	popitem:	D.popitem() -> (k, v), 
 		remove and return some (key, value) pair as a
@@ -292,7 +315,7 @@ public:
 		for(iterator i=begin(), j=end(); i!=j; ++i) {
 			const key& k=i->first;
 			value& val=i->second;
-			if (has_key(k)) set(k, val);
+			if (haskey(k)) set(k, val);
 		}
 	}
 	
