@@ -227,7 +227,7 @@ public:
 		D.get(k[,d]) -> D[k] if k in D, else d.  
 		d defaults to None.
 	**************************************************/
-	inline value get(const key& k, const value& d=0) {
+	inline value get(const key& k, const value& d=value()) {
 		uint i=locate(k);
 		return isactive(i)?seq[i]->v:d;
 	}
@@ -237,7 +237,7 @@ public:
 		D.sget(k[,d]) -> D.get(k,d), 
 		At the same time, set D[k]=d if k not in D
 	**************************************************/
-	inline value sget(const key& k, const value& d=0) {
+	inline value sget(const key& k, const value& d=value()) {
 		uint i=locate(k);
 		if (isactive(i)) return seq[i]->v;
 		insert(i, k, d);
@@ -257,7 +257,7 @@ public:
 	inline value& operator [](const key& k) {
 		uint i=locate(k);
 		if (isactive(i)) return seq[i]->v;
-		insert(i, k, 0);
+		insert(i, k, value());
 		return seq[i]->v;
 	}
 	
@@ -267,14 +267,11 @@ public:
 		return seq[i]->v=v;
 	}
 	
-
-	
 	/**************************************************
 	clear:	D.clear() -> None.  Remove all items from D.
 	**************************************************/
 	inline dict& clear() {
-		uint l=seq.size();
-		for_n(i, l) {
+		for_n(i, len) {
 			entry*& p=seq[i];
 			if ((p==NULL) //empty ptr
 			OR (p==DUMMY_PTR)) continue; //dummy ptr
