@@ -14,6 +14,7 @@
 
 #include "includes.hpp"
 #include "object.hpp"
+#include "str.hpp"
 
 template<class element>
 class list : public object {
@@ -465,6 +466,11 @@ def generate_template_constructors():
 	template<class Function>
 	void foreach(Function f) {
 		std::for_each(begin(), end(), f);
+	}
+	
+	// use g as a glue to join this list
+	inline str glue(const str& g) {
+		return g.join(*this);
 	}
 };
 

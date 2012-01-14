@@ -91,6 +91,7 @@ public:
 	
 	dict():sequence(INIT_ENTRY_CNT, NULL), len(INIT_ENTRY_CNT), active(0), dummy(0) {}
 	dict(const dict& r):seq(r.seq), len(r.len), active(r.active), dummy(r.dummy) {}
+	~dict() { clean(); }
 	
 	/**************************************************
 	output operator: <<
@@ -158,8 +159,11 @@ public:
 		uint h=k.hash;
 		uint first=h % len;
 		uint now=first, times=0, last=-1;
-		if (isempty(now) OR isdummy(now)) return now;
-		else if (equals(now, k, h) return now; 
+		if (isempty(now)) return now;
+		else if (isdummy(now)) {
+			if (last==-1) last=now;
+		}
+		else if (equals(now, k, h)) return now; 
 		
 		while (1) {
 			//again hash
@@ -207,23 +211,35 @@ private:
 	inline const bool isempty(const uint& i) const {
 		return isempty(seq[i]);
 	}
-	inline void next(const uint& first, uint& now, uint& times, uint& last) {//again hash strategy
-		times+=1;
-		now+=1;
-		if (now==len) {
-			// TODO: expand
-			now=0;
-		}
-	}
 	inline const bool equals(const uint& i, const key& k, const hash& h) const {
 		return seq[i]->h==h AND seq[i]->k==k;
+	}
+	inline void next(uint& first, uint& now, uint& times, uint& last) {//again hash strategy
+		times+=1;
+		now+=1;
+		if (now==len) expand(first, now, last);
+	}
+	inline void expand(uint& first, uint& now, uint& times, uint& last) {
+		//first scan
+		//second scan
 	}
 	inline void insert(const uint& i, const key& k, const value& v) {
 		if (isdummy(i)) dummy-=1;
 		seq[i]=new entry(k, v, k.hash());
 		active+=1;
 	}
-	
+	inline void remove(const uint& i) {
+		assert(isactive(i));
+		dummy+=1;
+		delete seq[i];
+		seq[i]=DUMMY_PTR;
+		active-=1;
+	}
+	//expand
+	//clean memory by new
+	inline void clean() {
+		for_n(i, len) if (isactive(i)) delete seq[i];
+	}
 public:
 	/**************************************************
 	get:	
@@ -274,12 +290,7 @@ public:
 	clear:	D.clear() -> None.  Remove all items from D.
 	**************************************************/
 	inline dict& clear() {
-		for_n(i, len) {
-			entry*& p=seq[i];
-			if ((p==NULL) //empty ptr
-			OR (p==DUMMY_PTR)) continue; //dummy ptr
-			delete p;
-		}
+		clean();
 		seq.assign(INIT_ENTRY_CNT, NULL);
 		len=INIT_ENTRY_CNT;
 		active=0;
@@ -325,30 +336,17 @@ public:
 	**************************************************/
 	inline dict& fromkeys(const kset& ks, const value& v=value()) {
 		clear();
-		
-		for_iter(kset
-		set(k, v);
-		
-		
+		for_iter(i, kset, ks) set(*i, v);
 		return *this;
 	}
 	
-	/**************************************************
-	iterkeys:	D.iterkeys() -> an iterator over the keys of D
-	**************************************************/
-	//TODO
-
-	/**************************************************
-	itervalues:	D.itervalues() -> an iterator over the values of D
-	**************************************************/
-	//TODO
 
 	/**************************************************
 	keys:	D.keys() -> list of D's keys
 	**************************************************/
 	inline klist keys() {
 		klist ks;
-		for (iterator i=begin(), j=end(); i!=j; ++i) ks.push_back(i->first);
+		for_n(i, len) if (isactive(i)) ks.append(seq[i]->k);
 		return ks;
 	}
 
@@ -357,7 +355,7 @@ public:
 	**************************************************/
 	inline vlist values() {
 		vlist vs;
-		for (iterator i=begin(), j=end(); i!=j; ++i) vs.append(i->second);
+		for_n(i, len) if (isactive(i)) vs.append(seq[i]->v);
 		return vs;
 	}
 	
@@ -365,46 +363,70 @@ public:
 	pop:	D.pop(k[,d]) -> v, remove specified key and return the corresponding value
 	If key is not found, d is returned if given, otherwise KeyError is raised
 	**************************************************/
-	inline value pop() {
-		if (seq.empty()) return NULL;
-		iterator i=seq.begin();
-		value tmp=i->second;
-		seq.erase(i);
-		return tmp;
+	inline value pop(const key& k) {
+		uint i=locate(k);
+		assert(isactive(i));
+		value v=seq[i]->v;
+		remove(i);
+		return v;
 	}
-	
+	inline value pop(const key& k, const value& v) {
+		uint i=locate(k);
+		value ret=v;
+		if (isactive(i)) {
+			ret=seq[i]->v;
+			remove(i);
+		}
+		return ret;
+	}
 	
 	/**************************************************
 	popitem:	D.popitem() -> (k, v), 
 		remove and return some (key, value) pair as a
 		2-tuple; but raise KeyError if D is empty
 	**************************************************/
-	//TODO
-
+	inline elist popitems(uint cnt=1) {
+		elist el;
+		if (cnt>0 AND active>0) {
+			for_n(i, len) if (isactive(i)) {
+				el.append(*seq[i]);
+				remove(i);
+				--cnt;
+				if (cnt==0) break;
+			}
+		}
+		return el;
+	}
+	
 	/**************************************************
 	update:	D.update(D2) -> None.  
 		Update D from E and F: for k in E: D[k] = E[k]
 		(if E has keys else: for (k, v) in E: D[k] = v) 
 		then: for k in F: D[k] = F[k]
 	**************************************************/
-	void update(dict& d) {
-		for(iterator i=begin(), j=end(); i!=j; ++i) {
-			const key& k=i->first;
-			value& val=i->second;
-			if (haskey(k)) set(k, val);
-		}
+	inline void update(dict& d) {
+		for_n(i, d.len) if (d.isactive(i)) set(d.seq[i]->k, d.seq[i]->v);
 	}
 	
 	/**************************************************
 	foreach:	apply function on each element
 	**************************************************/
 	template<class Function>
-	inline void foreach(Function f) { std::for_each(begin(), end(), f); }
+	inline void foreach(Function f) { 
+		cpelist cpel;
+		for_n(i, len) if (isactive(i)) cpel.append(seq[i]);
+		std::for_each(cpel.begin(), cpel.end(), f);
+	}
 	
 	/**************************************************
 	hash:	return an uint hash value
 	**************************************************/
-	inline uint hash() { return uint(this); }
+	inline uint hash() {
+		L ss;
+		for_n(i, len) if (isactive(i)) ss.append(seq[i]->k).append(seq[i]->v);
+		str signature=ss.glue(",");
+		return signature.hash();
+	}
 };
 
 typedef dict<str, str> D;
