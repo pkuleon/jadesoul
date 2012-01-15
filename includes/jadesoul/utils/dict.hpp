@@ -160,7 +160,7 @@ public:
 	get:	D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
 	**************************************************/
 	inline value get(const key& k, const value& dval=0) {
-		return has_key(k)?con[k]:dval;
+		return haskey(k)?con[k]:dval;
 	}
 	
 	/**************************************************
@@ -168,7 +168,7 @@ public:
 				also set D[k]=d if k not in D
 	**************************************************/
 	inline value superget(const key& k, const value& dval) {
-		if (has_key(k)) return con[k];
+		if (haskey(k)) return con[k];
 		con[k]=dval;
 		return dval;
 	}
@@ -200,9 +200,9 @@ public:
 	}
 	
 	/**************************************************
-	has_key:	D.has_key(k) -> True if D has a key k, else False
+	haskey:	D.haskey(k) -> True if D has a key k, else False
 	**************************************************/
-	bool has_key(const key& k) const {
+	bool haskey(const key& k) const {
 		return find(k)!=end();
 	}
 	
@@ -279,7 +279,7 @@ public:
 		for(iterator i=begin(), j=end(); i!=j; ++i) {
 			const key& k=i->first;
 			value& val=i->second;
-			if (has_key(k)) set(k, val);
+			if (haskey(k)) set(k, val);
 		}
 	}
 	

@@ -74,7 +74,7 @@ void time_seed(uint id=0) {
 	__gdt[id]=datetime();
 }
 
-void time_gap(char* msg, uint id=0, bool update=true) {
+void time_gap(const char* msg, uint id=0, bool update=true) {
 	if_not_in(id, __gdt) return;
 	cout<<msg<<": "<<datetime().gap(__gdt[id])<<"ms"<<endl;
 	if (update) __gdt[id]=datetime();

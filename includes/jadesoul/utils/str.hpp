@@ -122,7 +122,8 @@ public:
 	output operator: <<
 	**************************************************/
 	inline friend ostream& operator <<(ostream& o, const str& s) {
-		return o<<'"'<<s.s<<'"';
+		// return o<<'"'<<s.s<<'"';
+		return o<<s.s;
 	}
 	
 	inline const string tostr() const { return s; }
@@ -534,29 +535,31 @@ public:
 		whitespace removed.
 		If chars is given, remove characters in chars instead.
 	*************************************************/
-	inline str& strip(const str& chars=" \t\v\r\n\b") {
+	inline str& strip(const str& chars=" \t\v\r\n\f") {
 		return rstrip(chars).lstrip(chars);
 	}
 	
-	inline str& lstrip(const str& chars=" \t\v\r\n\b") {
+	inline str& lstrip(const str& chars=" \t\v\r\n\f") {
 		s.erase(0, s.find_first_not_of(chars.s));
 		return *this;
 	}
 	
-	inline str& rstrip(const str& chars=" \t\v\r\n\b") {
-		s.erase(s.find_last_not_of(chars.s));
+	inline str& rstrip(const str& chars=" \t\v\r\n\f") {
+		uint i=s.find_last_not_of(chars.s);
+		if (i==s.npos) return *this;
+		s.erase(i+1);
 		return *this;
 	}
 	
-	inline str striped(const str& chars=" \t\v\r\n\b") {
+	inline str striped(const str& chars=" \t\v\r\n\f") {
 		return clone().strip(chars);
 	}
 	
-	inline str lstriped(const str& chars=" \t\v\r\n\b") {
+	inline str lstriped(const str& chars=" \t\v\r\n\f") {
 		return clone().lstrip(chars);
 	}
 	
-	inline str rstriped(const str& chars=" \t\v\r\n\b") {
+	inline str rstriped(const str& chars=" \t\v\r\n\f") {
 		return clone().rstrip(chars);
 	}
 	
@@ -564,11 +567,10 @@ public:
 	tohash:	x.tohash() <==> Return DWORD hash
 	**************************************************/
 	inline const uint tohash() const {
-		return uint(this);
-		// uint h=0, i=s.size();
-		// while(i>0) h=107*h+s[--i];
-		// return h;
-	} 
+		uint h=0, i=s.size();
+		while(i>0) h=107*h+s[--i];
+		return h;
+	}
 };
 
 typedef vector<str> vecstr;

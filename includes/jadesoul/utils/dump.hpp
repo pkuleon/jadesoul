@@ -25,13 +25,15 @@ inline string va_format(const char* fmt, va_list ap) {
 	return ret;
 }
 
-string format(const char* fmt, ...) {
+string c_format(const char* fmt, ...) {
 	va_list ap;
 	va_start(ap, fmt);
 	string ret=va_format(fmt, ap);
 	va_end(ap);
 	return ret;
 }
+
+#include "dump_format.hpp"
 
 /**************************************************
 log: log massage by format, auto add time
@@ -93,7 +95,7 @@ inline ostream& operator<<(ostream& o, const Container<T> c) {\
 	o<<left;\
 	ostream_iterator<typename Container<T>::value_type> osit(o, deli);\
 	copy(c.begin(), c.end(), osit);\
-	return out<<right;\
+	return o<<right;\
 }
 
 Macro__over_load_operator_out__SequenceContainer_Left_Deli_Right(vector, "[ ", ", ", " ]");

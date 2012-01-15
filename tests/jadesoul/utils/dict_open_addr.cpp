@@ -19,18 +19,34 @@ jtest(cons, test1,
 	a[2]=1;
 	a[3]=1;
 	print(a);
-	print(a.get(1));
-	print(a.get(5));
 	print(a[1]);
+	if (a.haskey(4)) print(a(4));
 	print(a[4]);
+	if (a.haskey(4)) print(a(4));
+	print(a);
+	a[3]=1;print(a);
+	a[7]=1;print(a);
+	a[8]=1;print(a);
+	a[9]=1;print(a);
+	a[10]=1;print(a);
+	a[11]=1;print(a);
+	a[12]=1;print(a);
+	a.del(1);print(a);
+	a.pop();print(a);
+	a.pop();print(a);
+	a.pop();print(a);
 )
 
-int main () {
-	
-	D d;
-	str b="asdasd";
-	d[b]=b;
-	cout<<d;
-	
-}
+// jtest(tstr, test2,
+	// D d;
+	// str b="asdasd";
+	// d[b]=b;
+	// d["hi"]=b;
+	// print(d);
+	// print(d.haskey(str("hi")));
+	// print(d["hi"]);
+// )
+
+
+int main () {}
 

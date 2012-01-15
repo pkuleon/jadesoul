@@ -16,15 +16,14 @@
 #include "str.hpp"
 #include "list.hpp"
 
-#define INIT_ENTRY_CNT 8
-#define DUMMY_PTR (const entry*)(-1)
+#define INIT_ENTRY_CNT	8
+#define DUMMY_PTR		(entry*)(-1)
 
-//first hash
-//second hash
 template<class key, class value>
 class dict : public object {
 public:
 	typedef uint hash;
+	
 	struct entry {
 		const key k;
 		value v;
@@ -33,19 +32,17 @@ public:
 		entry(const key& k, const value& v, const hash& h):k(k), v(v), h(h) {}
 		entry(const entry& e):k(e.k), v(e.v), h(e.h) {}
 	};
-	typedef std::vector<entry*> sequence;
-	// typedef std::list<entry> sequence;
 	
-	typedef ::list<entry> elist;
+	typedef std::vector<entry*> sequence;
+	
 	typedef ::list<key> klist;
-	typedef ::set<key> kset;
 	typedef ::list<value> vlist;
+	typedef ::set<key> kset;
+	typedef ::set<value> vset;
 	
 	typedef ::list<const entry *const> cpelist;
 	typedef ::list<const key *const> cpklist;
 	typedef ::list<const value *const> cpvlist;
-	
-	// typedef hashkey<key> keyhash;
 	
 	typedef typename sequence::iterator iterator;
 	typedef typename sequence::const_iterator citerator;
@@ -60,15 +57,15 @@ private:
 	
 public:
 	// for iterators
-	inline iterator begin() { return seq.begin(); } 
-	inline iterator end() { return seq.end(); }
-	inline riterator rbegin() { return seq.rbegin(); }
-	inline riterator rend() { return seq.rend(); }
+	// inline iterator begin() { return seq.begin(); } 
+	// inline iterator end() { return seq.end(); }
+	// inline riterator rbegin() { return seq.rbegin(); }
+	// inline riterator rend() { return seq.rend(); }
 	
-	inline citerator begin() const { return seq.begin(); } 
-	inline citerator end() const { return seq.end(); }
-	inline criterator rbegin() const { return seq.rbegin(); }
-	inline criterator rend() const { return seq.rend(); }
+	// inline citerator begin() const { return seq.begin(); } 
+	// inline citerator end() const { return seq.end(); }
+	// inline criterator rbegin() const { return seq.rbegin(); }
+	// inline criterator rend() const { return seq.rend(); }
 	
 	// for constructors
 	// template<class K1, class V1>
@@ -146,6 +143,7 @@ public:
 	**************************************************/
 	inline const uint locate(const key& k) {
 		uint h=gethash(k);
+		// cout<<"key="<<k<<" hash="<<h<<endl;
 		return locate(k, h);
 	}
 	inline const uint locate(const key& k, const hash& h) {
@@ -186,6 +184,9 @@ public:
 	}
 	
 private:
+	/**************************************************
+	gethash:	D.gethash(k) -> get hash of a key
+	**************************************************/
 	template<class K>
 	inline const uint gethash(const K& k) const { return k.tohash(); }
 	template<class K>
@@ -204,28 +205,33 @@ private:
 	Macro__over_load_gethash__KeyType(double);
 	#undef Macro__over_load_gethash__KeyType
 	
-	inline const bool isactive(const entry* p) const {
-		return p!=NULL AND 
-			p!=DUMMY_PTR;
-	}
+	/**************************************************
+	isactive:D.isactive(i) -> test whether if the 
+		position i is a active entry
+	isdummy:	D.isdummy(i) -> test whether if the 
+		position i is a dummy pointer
+	isempty:	D.isempty(i) -> test whether if the 
+		position i is a null pointer
+	**************************************************/
 	inline const bool isactive(const uint& i) const {
-		return isactive(seq[i]);
-	}
-	inline const bool isdummy(const entry* p) const {
-		return p==DUMMY_PTR;
+		return seq[i]!=NULL AND seq[i]!=DUMMY_PTR;
 	}
 	inline const bool isdummy(const uint& i) const {
-		return isdummy(seq[i]);
-	}
-	inline const bool isempty(const entry* p) const {
-		return p==NULL;
+		return seq[i]==DUMMY_PTR;
 	}
 	inline const bool isempty(const uint& i) const {
-		return isempty(seq[i]);
+		return seq[i]==NULL;
 	}
+	
+	/**************************************************
+	equals:	D.equals(i, key, hash) -> test whether if the 
+		position equals to a key and has the same hash
+	**************************************************/
 	inline const bool equals(const uint& i, const key& k, const hash& h) const {
 		return seq[i]->h==h AND seq[i]->k==k;
 	}
+	
+	
 	inline const float usage() const {
 		return 1.0*(active+dummy)/len;
 	}
@@ -303,7 +309,13 @@ public:
 		else insert(i, k, v);
 	}
 	
-	// for element
+	/**************************************************
+	operator []: D[k]
+		use it to get or set the value of any key
+		not that if the k not exists, a new entry will 
+		be inserted, no matter when get or set
+		(it's better to use it to set: D[k]=v)
+	**************************************************/
 	inline value& operator [](const key& k) {
 		uint i=locate(k);
 		if (isactive(i)) return seq[i]->v;
@@ -311,10 +323,16 @@ public:
 		return seq[i]->v;
 	}
 	
-	inline const value operator [](const key& k) const {
+	/**************************************************
+	operator (): D(k)
+		use it to get or set the value of existed key
+		not that the key must exists
+		(it's better to use it to get: D(k))
+	**************************************************/
+	inline value& operator ()(const key& k) {
 		uint i=locate(k);
-		assert(isactive(i)); //The key must exists to get value
-		return seq[i]->v=v;
+		assert(isactive(i));
+		return seq[i]->v;
 	}
 	
 	/**************************************************
@@ -350,15 +368,7 @@ public:
 		return d;
 	}
 	
-	/**************************************************
-	items:
-		D.items() -> list of D's (key, value) pairs, as 2-tuples
-	**************************************************/
-	inline elist items() {
-		elist el;
-		for_n(i, len) if (isactive(i)) el.append(*seq[i]);
-		return el;
-	}
+
 
 	/**************************************************
 	fromkeys:	
@@ -391,17 +401,46 @@ public:
 	}
 	
 	/**************************************************
-	pop:	D.pop(k[,d]) -> v, remove specified key and return the corresponding value
+	pkeys:	D.pkeys() -> list of D's keys as pointers
+	**************************************************/
+	inline cpklist pkeys() {
+		cpklist ks;
+		for_n(i, len) if (isactive(i)) ks.append(&(seq[i]->k));
+		return ks;
+	}
+
+	/**************************************************
+	pvalues:	D.pvalues() -> list of D's values as pointers
+	**************************************************/
+	inline cpvlist pvalues() {
+		cpvlist vs;
+		for_n(i, len) if (isactive(i)) vs.append(&(seq[i]->v));
+		return vs;
+	}
+	
+	/**************************************************
+	pitems:
+		D.pitems() -> return all entry pointers as items
+	**************************************************/
+	inline cpelist pitems() {
+		cpelist el;
+		for_n(i, len) if (isactive(i)) el.append(seq[i]);
+		return el;
+	}
+	
+	
+	/**************************************************
+	del:	D.del(k[,d]) -> v, remove specified key and return the corresponding value
 	If key is not found, d is returned if given, otherwise KeyError is raised
 	**************************************************/
-	inline value pop(const key& k) {
+	inline value del(const key& k) {
 		uint i=locate(k);
 		assert(isactive(i));
 		value v=seq[i]->v;
 		remove(i);
 		return v;
 	}
-	inline value pop(const key& k, const value& v) {
+	inline value del(const key& k, const value& v) {
 		uint i=locate(k);
 		value ret=v;
 		if (isactive(i)) {
@@ -412,21 +451,17 @@ public:
 	}
 	
 	/**************************************************
-	popitem:	D.popitem() -> (k, v), 
-		remove and return some (key, value) pair as a
-		2-tuple; but raise KeyError if D is empty
+	pop:	D.pop()
+		remove some (key, value) pair 
 	**************************************************/
-	inline elist popitems(uint cnt=1) {
-		elist el;
+	inline void pop(uint cnt=1) {
 		if (cnt>0 AND active>0) {
 			for_n(i, len) if (isactive(i)) {
-				el.append(*seq[i]);
 				remove(i);
 				--cnt;
 				if (cnt==0) break;
 			}
 		}
-		return el;
 	}
 	
 	/**************************************************
