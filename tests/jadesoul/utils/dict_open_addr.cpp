@@ -15,11 +15,14 @@
 jtest(cons, test1,
 	dict<int, int> a;
 	print(a);
-	// a[1]=1;
-	// a[2]=1;
-	// a[3]=1;
-	
+	a[1]=1;
+	a[2]=1;
+	a[3]=1;
 	print(a);
+	print(a.get(1));
+	print(a.get(5));
+	print(a[1]);
+	print(a[4]);
 )
 
 int main () {

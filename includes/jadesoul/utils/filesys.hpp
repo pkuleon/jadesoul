@@ -576,7 +576,7 @@ inline str fread(const path& p, const bool binary=false) {
 	uint size;
 	char* buf;
 	fp=fopen(p.tocstr(), binary?"rb":"rt");
-	assert(fp AND "File error: Could not open file for read");
+	assert(fp);//File error: Could not open file for read
 	fseek(fp, 0, SEEK_END);
 	size=ftell(fp);
 	if (size==0) {
@@ -585,7 +585,7 @@ inline str fread(const path& p, const bool binary=false) {
 	}
 	rewind(fp);
 	buf=new char[size];
-	assert(buf AND "Memory error: Could not allocate buffer for read");
+	assert(buf);//Memory error: Could not allocate buffer for read
 	size=fread(buf, 1, size, fp);
 	fclose(fp);
 	str ret(buf, buf+size);
@@ -598,7 +598,7 @@ inline uint fwrite(const str& s, const path& p, const bool append=false, const b
 	uint size=s.size();
 	const char* buf=s.tocstr();
 	fp=fopen(p.tocstr(), append?(binary?"ab":"at"):(binary?"wb":"wt"));
-	assert(fp AND "File error: Could not open file for write");
+	assert(fp);//File error: Could not open file for write
 	size=fwrite(buf, 1, size, fp);
 	fclose(fp);
 	return size;

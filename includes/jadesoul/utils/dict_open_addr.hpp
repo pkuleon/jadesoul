@@ -272,7 +272,12 @@ public:
 		D.get(k[,d]) -> D[k] if k in D, else d.  
 		d defaults to None.
 	**************************************************/
-	inline value get(const key& k, const value& d=value()) {
+	inline value get(const key& k) {
+		uint i=locate(k);
+		assert(isactive(i));
+		return seq[i]->v;
+	}
+	inline value get(const key& k, const value& d) {
 		uint i=locate(k);
 		return isactive(i)?seq[i]->v:d;
 	}
@@ -306,9 +311,9 @@ public:
 		return seq[i]->v;
 	}
 	
-	inline const value& operator [](const key& k) const {
+	inline const value operator [](const key& k) const {
 		uint i=locate(k);
-		assert(isactive(i) AND "The key must exists to get value") 
+		assert(isactive(i)); //The key must exists to get value
 		return seq[i]->v=v;
 	}
 	
