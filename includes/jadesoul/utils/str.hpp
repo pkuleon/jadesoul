@@ -561,9 +561,9 @@ public:
 	}
 	
 	/**************************************************
-	hash:	x.hash() <==> Return DWORD hash
+	tohash:	x.tohash() <==> Return DWORD hash
 	**************************************************/
-	inline const uint hash() const {
+	inline const uint tohash() const {
 		return uint(this);
 		// uint h=0, i=s.size();
 		// while(i>0) h=107*h+s[--i];

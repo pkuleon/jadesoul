@@ -23,7 +23,7 @@ struct hashkey {
 		min_buckets=1<<3
 	};
 	inline const uint operator()(const key& k) const {
-		return k.hash();
+		return k.tohash();
 	}
 	inline const bool operator()(const key& key1, const key& key2) const {
 		return key1<key2;
@@ -290,9 +290,9 @@ public:
 	inline void foreach(Function f) { std::for_each(begin(), end(), f); }
 	
 	/**************************************************
-	hash:	return an uint hash value
+	tohash:	return an uint hash value
 	**************************************************/
-	inline uint hash() { return uint(this); }
+	inline uint tohash() { return uint(this); }
 };
 
 typedef dict<str, str> D;

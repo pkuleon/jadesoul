@@ -158,7 +158,7 @@ public:
 		return std::equal(begin(), end(), r.begin());
 	}
 	
-	uint hash() {
+	uint tohash() {
 		//TODO
 		return 0;
 	}

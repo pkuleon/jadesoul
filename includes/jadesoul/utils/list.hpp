@@ -285,7 +285,7 @@ def generate_template_constructors():
 		return *this;
 	}
 
-	uint hash() {
+	uint tohash() {
 		// TODO
 		return 0;
 	}

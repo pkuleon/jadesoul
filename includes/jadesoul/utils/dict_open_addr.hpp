@@ -17,27 +17,14 @@
 #include "list.hpp"
 
 #define INIT_ENTRY_CNT 8
-#define DUMMY_PTR -1
-
-template<class key>
-struct hashkey {
-	enum {
-		bucket_size=1<<2,
-		min_buckets=1<<3
-	};
-	inline const uint operator()(const key& k) const {
-		return k.hash();
-	}
-	inline const bool operator()(const key& key1, const key& key2) const {
-		return key1<key2;
-	}
-};
+#define DUMMY_PTR (const entry*)(-1)
 
 //first hash
 //second hash
-template<class key, class value, class hash=uint>
+template<class key, class value>
 class dict : public object {
 public:
+	typedef uint hash;
 	struct entry {
 		const key k;
 		value v;
@@ -49,14 +36,14 @@ public:
 	typedef std::vector<entry*> sequence;
 	// typedef std::list<entry> sequence;
 	
-	typedef list<entry> elist;
-	typedef list<key> klist;
-	typedef set<key> kset;
-	typedef list<value> vlist;
+	typedef ::list<entry> elist;
+	typedef ::list<key> klist;
+	typedef ::set<key> kset;
+	typedef ::list<value> vlist;
 	
-	typedef list<const entry const*> cpelist;
-	typedef list<const key const*> cpklist;
-	typedef list<const value const*> cpvlist;
+	typedef ::list<const entry *const> cpelist;
+	typedef ::list<const key *const> cpklist;
+	typedef ::list<const value *const> cpvlist;
 	
 	// typedef hashkey<key> keyhash;
 	
@@ -89,7 +76,10 @@ public:
 		// seq[k1]=v1;
 	// }
 	
-	dict():sequence(INIT_ENTRY_CNT, NULL), len(INIT_ENTRY_CNT), active(0), dummy(0) {}
+	dict():seq(INIT_ENTRY_CNT, NULL), len(INIT_ENTRY_CNT), active(0), dummy(0) {}
+private:
+	dict(const uint& cnt):seq(cnt, NULL), len(cnt), active(0), dummy(0) {}
+public:
 	dict(const dict& r):seq(r.seq), len(r.len), active(r.active), dummy(r.dummy) {}
 	~dict() { clean(); }
 	
@@ -97,13 +87,13 @@ public:
 	output operator: <<
 	**************************************************/
 	friend ostream& operator<<(ostream& out, dict& d) {
-		uint l=d.size(), cnt=0;
+		uint cnt=0;
+		out<<"[dict len="<<d.len<<" active="<<d.active<<" dummy="<<d.dummy<<" usage="<<d.usage()<<"] ";
 		out<<"{ ";
-		for (iterator i=d.begin(), j=d.end(); i!=j; ++i, ++cnt) {
-			const key& k=i->first;
-			const value& v=i->second;
-			out<<k<<':'<<v;
-			if (cnt!=l-1) out<<',';
+		for_n(i, d.len) if (d.isactive(i)) {
+			++cnt;
+			out<< d.seq[i]->k <<':'<< d.seq[i]->v;
+			if (cnt!=d.active) out<<',';
 			out<<' ';
 		}
 		return out<<'}';
@@ -155,8 +145,11 @@ public:
 		or dummy entry index to put the key
 	**************************************************/
 	inline const uint locate(const key& k) {
+		uint h=gethash(k);
+		return locate(k, h);
+	}
+	inline const uint locate(const key& k, const hash& h) {
 		//first hash
-		uint h=k.hash;
 		uint first=h % len;
 		uint now=first, times=0, last=-1;
 		if (isempty(now)) return now;
@@ -167,9 +160,9 @@ public:
 		
 		while (1) {
 			//again hash
-			next(first, now, times, last)
+			next(first, now, times, last);
 			if (isempty(now)) return (last!=-1)?last:now;
-			else if isdummy(now) {
+			else if (isdummy(now)) {
 				if (last==-1) last=now;
 			}
 			else if (equals(now, k, h)) return now;
@@ -193,19 +186,38 @@ public:
 	}
 	
 private:
-	inline const bool isactive(const entry* &p) const {
-		return p!=NULL AND p!=DUMMY_PTR;
+	template<class K>
+	inline const uint gethash(const K& k) const { return k.tohash(); }
+	template<class K>
+	inline const uint gethash(const K* k) const { return (uint)k; }
+	#define Macro__over_load_gethash__KeyType(K)\
+	inline const uint gethash(const K& k) const { return (uint)k; }
+	Macro__over_load_gethash__KeyType(char);
+	Macro__over_load_gethash__KeyType(uchar);
+	Macro__over_load_gethash__KeyType(short);
+	Macro__over_load_gethash__KeyType(ushort);
+	Macro__over_load_gethash__KeyType(int);
+	Macro__over_load_gethash__KeyType(uint);
+	Macro__over_load_gethash__KeyType(long);
+	Macro__over_load_gethash__KeyType(ulong);
+	Macro__over_load_gethash__KeyType(float);
+	Macro__over_load_gethash__KeyType(double);
+	#undef Macro__over_load_gethash__KeyType
+	
+	inline const bool isactive(const entry* p) const {
+		return p!=NULL AND 
+			p!=DUMMY_PTR;
 	}
 	inline const bool isactive(const uint& i) const {
 		return isactive(seq[i]);
 	}
-	inline const bool isdummy(const entry* &p) const {
+	inline const bool isdummy(const entry* p) const {
 		return p==DUMMY_PTR;
 	}
 	inline const bool isdummy(const uint& i) const {
 		return isdummy(seq[i]);
 	}
-	inline const bool isempty(const entry* &p) const {
+	inline const bool isempty(const entry* p) const {
 		return p==NULL;
 	}
 	inline const bool isempty(const uint& i) const {
@@ -214,18 +226,34 @@ private:
 	inline const bool equals(const uint& i, const key& k, const hash& h) const {
 		return seq[i]->h==h AND seq[i]->k==k;
 	}
+	inline const float usage() const {
+		return 1.0*(active+dummy)/len;
+	}
 	inline void next(uint& first, uint& now, uint& times, uint& last) {//again hash strategy
 		times+=1;
 		now+=1;
-		if (now==len) expand(first, now, last);
+		if (now==len) {
+			if (usage()>0.8) expand(first, now, last);
+			else now=0;
+		}
 	}
-	inline void expand(uint& first, uint& now, uint& times, uint& last) {
-		//first scan
-		//second scan
+	inline void expand(uint& first, uint& now, uint& last) {	//expand
+		dict tmp(len*2);
+		for_n(i, len) if (isactive(i)) {
+			uint j=tmp.locate(seq[i]->k, seq[i]->h);
+			tmp.seq[j]=seq[i];
+		}
+		seq=tmp.seq;
+		len=tmp.len;
+		dummy=0;
+		tmp.seq.clear();
+		tmp.len=0;
+		tmp.active=0;
+		tmp.dummy=0;
 	}
 	inline void insert(const uint& i, const key& k, const value& v) {
 		if (isdummy(i)) dummy-=1;
-		seq[i]=new entry(k, v, k.hash());
+		seq[i]=new entry(k, v, gethash(k));
 		active+=1;
 	}
 	inline void remove(const uint& i) {
@@ -235,9 +263,7 @@ private:
 		seq[i]=DUMMY_PTR;
 		active-=1;
 	}
-	//expand
-	//clean memory by new
-	inline void clean() {
+	inline void clean() {	//clean memory by new
 		for_n(i, len) if (isactive(i)) delete seq[i];
 	}
 public:
@@ -412,20 +438,20 @@ public:
 	foreach:	apply function on each element
 	**************************************************/
 	template<class Function>
-	inline void foreach(Function f) { 
+	inline void foreach(Function f) {
 		cpelist cpel;
 		for_n(i, len) if (isactive(i)) cpel.append(seq[i]);
 		std::for_each(cpel.begin(), cpel.end(), f);
 	}
 	
 	/**************************************************
-	hash:	return an uint hash value
+	tohash:	return an uint hash value
 	**************************************************/
-	inline uint hash() {
+	inline uint tohash() {
 		L ss;
 		for_n(i, len) if (isactive(i)) ss.append(seq[i]->k).append(seq[i]->v);
 		str signature=ss.glue(",");
-		return signature.hash();
+		return signature.tohash();
 	}
 };
 
