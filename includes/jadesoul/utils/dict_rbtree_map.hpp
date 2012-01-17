@@ -16,19 +16,6 @@
 #include "str.hpp"
 #include "list.hpp"
 
-template<class key>
-struct hashkey {
-	enum {
-		bucket_size=1<<2,
-		min_buckets=1<<14
-	};
-	inline const uint operator()(const key& k) const {
-		return k.tohash();
-	}
-	inline const bool operator()(const key& key1, const key& key2) const {
-		return key1<key2;
-	}
-};
 
 template<class key, class value>
 class dict : public object {
@@ -38,8 +25,7 @@ public:
 	typedef list<key> klist;
 	typedef list<value> vlist;
 	
-	typedef hashkey<key> keyhash;
-	typedef hash_map<key, value, keyhash> container;
+	typedef map<key, value> container;
 	
 	typedef typename container::iterator iterator;
 	typedef typename container::const_iterator citerator;

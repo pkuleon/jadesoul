@@ -1,5 +1,5 @@
-#ifndef DICT_HPP_1325515224_71
-#define DICT_HPP_1325515224_71
+#ifndef DICT_OPEN_ADDR_HPP_1325515224_73
+#define DICT_OPEN_ADDR_HPP_1325515224_73
 /**
  * File: dict.hpp
  * Description: this file implement a dict using open address method to solve the confiliction as python does
@@ -506,4 +506,4 @@ typedef dict<str, str> D;
 #undef INIT_ENTRY_CNT
 #undef DUMMY_PTR
 
-#endif /* DICT_HPP_1325515224_71 */
+#endif /* DICT_OPEN_ADDR_HPP_1325515224_73 */

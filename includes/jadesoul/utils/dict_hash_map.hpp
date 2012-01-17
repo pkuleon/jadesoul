@@ -1,5 +1,5 @@
-#ifndef DICT_HPP_1325515224_71
-#define DICT_HPP_1325515224_71
+#ifndef DICT_HASH_MAP_HPP_1325515224_72
+#define DICT_HASH_MAP_HPP_1325515224_72
 /**
  * File: dict.hpp
  * Description: 
@@ -16,6 +16,20 @@
 #include "str.hpp"
 #include "list.hpp"
 
+template<class key>
+struct hashkey {
+	enum {
+		bucket_size=1<<2,
+		min_buckets=1<<14
+	};
+	inline const uint operator()(const key& k) const {
+		return k.tohash();
+	}
+	inline const bool operator()(const key& key1, const key& key2) const {
+		return key1<key2;
+	}
+};
+
 template<class key, class value>
 class dict : public object {
 public:
@@ -24,12 +38,14 @@ public:
 	typedef list<key> klist;
 	typedef list<value> vlist;
 	
-	typedef hash_map<key, value> container;
+	typedef hashkey<key> keyhash;
+	typedef hash_map<key, value, keyhash> container;
 	
 	typedef typename container::iterator iterator;
 	typedef typename container::const_iterator citerator;
 	typedef typename container::reverse_iterator riterator;
 	typedef typename container::const_reverse_iterator criterator;
+	
 
 private:
 	container con;
@@ -287,4 +303,4 @@ public:
 
 typedef dict<str, str> D;
 
-#endif /* DICT_HPP_1325515224_71 */
+#endif /* DICT_HASH_MAP_HPP_1325515224_72 */
