@@ -12,13 +12,14 @@
  * Written In: Peking University, beijing, China
  */
  
-//hash map
+// dict based on hash map
 // #include "dict_hash_map.hpp"
 
-// red black tree map
+// dict based on red black tree map
 // #include "dict_rbtree_map.hpp"
 
-//open address map implementation
+// dict based on hashtable using open address to solve confliction
+// disigned while learning python dict implementation
 #include "dict_open_addr.hpp"
 
 #endif /* DICT_HPP_1325515224_71 */
