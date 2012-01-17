@@ -158,7 +158,7 @@ public:
 		
 		while (1) {
 			//again hash
-			next(first, now, times, last);
+			next(first, now, times, last, h);
 			if (isempty(now)) return (last!=-1)?last:now;
 			else if (isdummy(now)) {
 				if (last==-1) last=now;
@@ -235,16 +235,18 @@ private:
 	inline const float usage() const {
 		return 1.0*(active+dummy)/len;
 	}
-	inline void next(uint& first, uint& now, uint& times, uint& last) {//again hash strategy
+	inline void next(uint& first, uint& now, uint& times, uint& last, const hash& h) {//again hash strategy
 		times+=1;
 		now+=1;
 		if (now==len) {
-			if (usage()>0.8) expand(first, now, last);
+			if (usage()>0.8) expand(first, now, last, h);
 			else now=0;
 		}
 	}
-	inline void expand(uint& first, uint& now, uint& last) {	//expand
-		dict tmp(len*2);
+	inline void expand(uint& first, uint& now, uint& last, const hash& h) {	//expand
+		uint dblen=len*2;
+		dict tmp(dblen);
+		
 		for_n(i, len) if (isactive(i)) {
 			uint j=tmp.locate(seq[i]->k, seq[i]->h);
 			tmp.seq[j]=seq[i];
@@ -256,6 +258,10 @@ private:
 		tmp.len=0;
 		tmp.active=0;
 		tmp.dummy=0;
+		
+		last=-1;
+		first=h % len;
+		now=first;
 	}
 	inline void insert(const uint& i, const key& k, const value& v) {
 		if (isdummy(i)) dummy-=1;

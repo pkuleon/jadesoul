@@ -18,18 +18,22 @@ L test=file("words_test.txt").readlines();
 void test_map(L& ws) {
 	map<str, int> m;
 	dict<str, int> d;
-	print(d);
+	// print(d);
 	time_seed();
 	for_iter(i, L, ws) {
 		m[*i]=1;
 		d[*i]=1;
 	}
-	print(d);
+	// print(d);
 	time_gap("init");
-	for_iter(i, L, test) if(m.find(*i)!=m.end() AND !d.haskey(*i)) print(*i);
+	for_iter(i, L, test) assert((m.find(*i)!=m.end())==(d.haskey(*i)));
+	// print(d.haskey("Aden"));
+	// print(d.haskey(str("Aden")));
+	// print(d.haskey(str("Aden\n")));
+	// print(d.haskey(str("Aden\r\n")));
 	time_gap("search");
-	int a;
-	cin>>a;
+	// int a;
+	// cin>>a;
 }
 
 int main () {
