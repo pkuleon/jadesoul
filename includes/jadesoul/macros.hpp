@@ -29,11 +29,17 @@
 #define for_tin(type, i, start, end, step) for (type i=start; i<end; i+=step)
 
 //for container iterations, in for_iterc, the 'c' means the container can be changes in the for loop
-#define for_iter(it, type, con) for(type::iterator it=con.begin(), itend=con.end(); it!=itend; ++it)
-#define for_iterc(it, type, con) for(type::iterator it=con.begin(); it!=con.end(); ++it)
-#define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(), itend=con.end(); it!=itend; ++it)
-#define for_riterc(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
-
+#ifdef CPL_MSVC
+	#define for_iter(it, type, con) for(type::iterator it=con.begin(), itend=con.end(); it!=itend; ++it)
+	#define for_iterc(it, type, con) for(type::iterator it=con.begin(); it!=con.end(); ++it)
+	#define for_riter(it, type, con) for(type::reverse_iterator it=con.rbegin(), itend=con.end(); it!=itend; ++it)
+	#define for_riterc(it, type, con) for(type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+#else
+	#define for_iter(it, type, con) for(typename type::iterator it=con.begin(), itend=con.end(); it!=itend; ++it)
+	#define for_iterc(it, type, con) for(typename type::iterator it=con.begin(); it!=con.end(); ++it)
+	#define for_riter(it, type, con) for(typename type::reverse_iterator it=con.rbegin(), itend=con.end(); it!=itend; ++it)
+	#define for_riterc(it, type, con) for(typename type::reverse_iterator it=con.rbegin(); it!=con.rend(); ++it)
+#endif
 #define if_in(val, con) if (con.find(val)!=con.end())
 #define if_not_in(val, con) if (con.find(val)==con.end())
 #define is_in(val, con) (find(con.begin(), con.end(), val)!=con.end())

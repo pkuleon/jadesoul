@@ -20,7 +20,7 @@ template<class key>
 struct hashkey {
 	enum {
 		bucket_size=1<<2,
-		min_buckets=1<<3
+		min_buckets=1<<14
 	};
 	inline const uint operator()(const key& k) const {
 		return k.tohash();

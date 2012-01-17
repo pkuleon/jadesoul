@@ -57,7 +57,7 @@
 
 class mywalker {
 public:
-	void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
+	void operator()(const str& root, const L& dirs, const L& files, const uint depth) const {
 		str prefix=str("\t")*depth;
 		uint l=files.size();
 		for_n(i, l) cout<<prefix<<"-"<<" "<<files[i]<<" "<<path(root).join(files[i]).fsize()<<endl;
@@ -69,6 +69,7 @@ public:
 jtest(walker2, test4,
 	path p(".");
 	time_seed();
+	// p.walk<mywalker>(mywalker());
 	p.walk(mywalker());
 	time_gap("time"); // intotal 1233ms
 )

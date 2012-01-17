@@ -22,18 +22,24 @@ void test_map(L& ws) {
 	time_seed();
 	for_iter(i, L, ws) {
 		m[*i]=1;
+	}
+	time_gap("init map");
+	
+	for_iter(i, L, ws) {
 		d[*i]=1;
 	}
 	// print(d);
-	time_gap("init");
-	for_iter(i, L, test) assert((m.find(*i)!=m.end())==(d.haskey(*i)));
-	// print(d.haskey("Aden"));
-	// print(d.haskey(str("Aden")));
-	// print(d.haskey(str("Aden\n")));
-	// print(d.haskey(str("Aden\r\n")));
-	time_gap("search");
-	// int a;
-	// cin>>a;
+	time_gap("init dict");
+	uint hit=0;
+	for_iter(i, L, test) if (m.find(*i)!=m.end()) ++hit;
+	print(hit);
+	time_gap("search map");
+	
+	hit=0;
+	for_iter(i, L, test) if (d.haskey(*i)) ++hit;
+	print(hit);
+	time_gap("search dict");
+	print("\n")
 }
 
 int main () {

@@ -253,7 +253,7 @@ public:
 	inline Container& split(const str& sep, Container& results) {	//faster version
 		vector<string::iterator> o;
 		::split(s, sep, o);
-		for (uint i=0; i<o.size(); i+=2) results.insert(results.end(), Container::value_type(o[i], o[i+1]));
+		for (uint i=0; i<o.size(); i+=2) results.insert(results.end(), typename Container::value_type(o[i], o[i+1]));
 		return results;
 	}
 	

@@ -36,7 +36,7 @@
 
 class walker {
 public:
-	inline void operator()(const str& root, const L& dirs, const L& files, const uint depth) {
+	inline void operator()(const str& root, const L& dirs, const L& files, const uint depth) const {
 		str prefix=str("\t")*depth;
 		uint l=files.size();
 		for_n(i, l) cout<<prefix<<"- "<<files[i]<<endl;
@@ -256,7 +256,7 @@ public:
 		}
 		
 		template<class walker>
-		void walk(walker& w) {
+		void walk(const walker& w) {
 			travel(w);
 		}
 		
@@ -265,7 +265,7 @@ public:
 		}
 	private:
 		template<class walker>
-		void travel(walker& w, uint d=0) {
+		void travel(const walker& w, uint d=0) {
 			L files=this->files();
 			L dirs=this->dirs();
 			w(p, dirs, files, d);
@@ -375,7 +375,7 @@ public:
 		inline L splitdir() const {}
 		inline L splitext() const {}
 		inline str dirname() const {
-			int a=p.rfind("/"), b=p.rfind("\\"), c=std::max(a, b);
+			int a=p.rfind("/"), b=p.rfind("\\"), c=max(a, b);
 			return (c==-1)?p:p(0, c);
 		}
 		inline str extension() const {
@@ -384,7 +384,7 @@ public:
 			return (a==-1)?"":fn(a);
 		}
 		inline str filename() const {
-			int a=p.rfind("/"), b=p.rfind("\\"), c=std::max(a, b);
+			int a=p.rfind("/"), b=p.rfind("\\"), c=max(a, b);
 			return (c==-1)?p:p(c+1);
 		}
 	};
