@@ -95,7 +95,7 @@ int sockbuf::connect(const string& sServer, int nPort) {
 	return 0;
 }
 
-sockbuf::disconnect() {
+int sockbuf::disconnect() {
 	if (fConnected) {
 		closesocket(sock);
 		fConnected=false;

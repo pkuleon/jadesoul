@@ -15,7 +15,7 @@ void CGGSAlias::In(istream& is) {
 void CGGSWhoUser::In(istream& is) {
 	string sLine;
 	getline(is, sLine);
-	istrstream isl(sLine.begin(), sLine.size());
+	istrstream isl(sLine.c_str(), sLine.size());
 	isl >> sLogin >> cRegistered >> sIdle >> sOnline >> sIPAddr >> sHostName;
 }
 

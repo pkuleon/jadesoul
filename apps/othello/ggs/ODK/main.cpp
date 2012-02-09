@@ -5,22 +5,25 @@
 
 #include "ODKstream.h"
 
-main() {
+int main() {
 	int err;
 	CODKStream gs;	
 
 	// Connect(server, port)
-	if (err = gs.Connect("external.nj.nec.com",5000)) {
+	if (err = gs.Connect("skatgame.net",5000)) {
 		cerr << gs.ErrText(err) << "\n";
 		return err;
 	}
-
+	
 	// Login(name, password)
-	if (err = gs.Login("greedy","password")) {
+	if (err = gs.Login("jadesoul","gbsoft")) {
 		cerr << gs.ErrText(err) << "\n";
-		gs.Disconnect();
+
+
+		gs.Disconnect();	
 		return err;
 	}
+	
 
 	gs.Process();			// receive, parse, and pass on messages
 

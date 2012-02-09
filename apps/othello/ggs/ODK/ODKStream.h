@@ -13,10 +13,11 @@ public:
 	virtual void HandleGGSTell			(const CMsgGGSTell* pmsg);
 	virtual void HandleGGSUnknown		(const CMsgGGSUnknown* pmsg);
 
-	virtual void HandleOsJoin			(const CMsgOsJoin* pmsg);
+	virtual void HandleOsJoin				(const CMsgOsJoin* pmsg);
 	virtual void HandleOsLogin			();
-	virtual void HandleOsUnknown		(const CMsgOsUnknown* pmsg);
+	virtual void HandleOsUnknown			(const CMsgOsUnknown* pmsg);
 	virtual void HandleOsUpdate			(const CMsgOsUpdate* pmsg);
+	virtual void HandleOsRequestDelta		(const CMsgOsRequestDelta* pmsg);
 
 	virtual void MakeMoveIfNeeded(const string& idg);
 };

@@ -663,7 +663,7 @@ void COsBoard::In(istream& is) {
 	nsq=bt.NTotalSquares();
 	for (i=0; i<nsq; i++) {
 		// find the next non-dummy square
-		while (sBoard[i]=='d' && i<nsq)
+		while (i<nsq && sBoard[i]=='d')
 			i++;
 		if (i==nsq)
 			break;
@@ -1130,7 +1130,8 @@ void COsGame::Out(ostream& os) const {
 	// move list
 	const COsMoveListItem* pmli;
 	bool fBlackMove=posStart.board.fBlackMove;
-	for (pmli=ml.begin(); pmli!=ml.end(); pmli++) {
+	for (int i=0; i<ml.size(); ++i) {
+		pmli=&ml[i];
 		os << (fBlackMove?"]B[":"]W[") << *pmli;
 		fBlackMove=!fBlackMove;
 	}
@@ -1187,9 +1188,10 @@ void COsGame::CalcCurrentPos() {
 	pos=posStart;
 	if (mt.fKomi && !ml.empty())
 		pos.UpdateKomiSet(mlisKomi);
-
-	for (pmli=ml.begin(); pmli!=ml.end(); pmli++) 
+	for (int i=0; i<ml.size(); ++i) {
+		pmli=&ml[i];
 		pos.Update(*pmli);
+	}
 }
 
 void COsGame::Update(const COsMoveListItem& mli) {

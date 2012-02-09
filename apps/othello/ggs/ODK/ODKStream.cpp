@@ -23,7 +23,7 @@ void CODKStream::HandleGGSLogin() {
 
 void CODKStream::HandleGGSTell(const CMsgGGSTell* pmsg) {
 	cout << pmsg->sFrom << " " << pmsg->sText << "\n";
-	if (pmsg->sFrom=="n2") {
+	if (pmsg->sFrom=="lemonj") {
 		if (pmsg->sText=="quit")
 			Logout();
 		else {
@@ -49,6 +49,21 @@ void CODKStream::HandleOsLogin() {
 			<< "tell /os open 1\n";
 	flush();
 }
+
+
+
+/*
+Replace the GetMove() function with your own, see GetMove.
+(optional) Insert an ODKStream::HandleOsRequestDelta() 
+function to automatically accept or decline incoming match requests
+
+(optional) Insert an ODKStream::HandleOsGameOver() 
+function to learn from the game
+
+(optional) Insert an ODKStream::HandleOsMatchDelta() 
+function to do things when matches start and end
+*/
+
 
 /*
 
@@ -81,14 +96,13 @@ void CODKStream::HandleOsMatchDelta(const CMsgOsMatchDelta* pmsg) {
 }
 */
 
-/*
-  // Example handler from ntest:
+
 void CODKStream::HandleOsRequestDelta(const CMsgOsRequestDelta* pmsg) {
 	BaseOsRequestDelta(pmsg);
 
 	if (pmsg->fPlus && pmsg->IAmChallenged()) {
 		if (pmsg->RequireBoardSize(8) && pmsg->RequireKomi(false) && pmsg->RequireAnti(false) &&
-			pmsg->RequireRated(true) && 
+			//pmsg->RequireRated(false) && 
 			pmsg->RequireMaxOpponentClock(COsClock(15*60,0,2*60)) &&
 			pmsg->RequireMinMyClock(COsClock(60,0,0)))
 			(*this) << "t /os accept " << pmsg->idr << "\n";
@@ -98,7 +112,7 @@ void CODKStream::HandleOsRequestDelta(const CMsgOsRequestDelta* pmsg) {
 		flush();
 	}
 }
-*/
+
 
 void CODKStream::HandleOsUnknown(const CMsgOsUnknown* pmsg) {
 	cout << "Unknown /os message: ";

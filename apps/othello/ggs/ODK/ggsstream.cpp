@@ -476,8 +476,11 @@ void ggsstream::BaseOsMatch(const CMsgOsMatch* pmsg) {
 	idToMatch.clear();
 	const COsMatch* i;
 
-	for (i=pmsg->matches.begin(); i!=pmsg->matches.end(); i++)
+
+	for (int j=0; j< pmsg->matches.size(); ++j) {
+		i=&pmsg->matches[j];
 		idToMatch[i->idm]=*i;
+	}
 }
 
 // helper function for BaseOsMatchDelta
