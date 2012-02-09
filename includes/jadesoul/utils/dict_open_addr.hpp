@@ -175,7 +175,6 @@ public:
 		return isactive(i)?i:-1;
 	}
 	
-
 	/**************************************************
 	haskey:	D.haskey(k) -> True if D has a key k, else False
 	**************************************************/
@@ -354,7 +353,7 @@ public:
 	}
 	
 	/*************************************************
-	copy:	
+	copy:
 		D.copy() -> new D
 		Return a shadow copy of dict D
 	*************************************************/
@@ -374,8 +373,6 @@ public:
 		return d;
 	}
 	
-
-
 	/**************************************************
 	fromkeys:	
 		dict.fromkeys(ks [,v]) -> New dict with keys from ks

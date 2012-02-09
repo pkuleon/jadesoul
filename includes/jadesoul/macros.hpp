@@ -25,6 +25,8 @@
 #define for_tn(type, i, n) for (type i=0; i<n; ++i)
 
 //for i in range start-step-stop
+#define for_any(i, start, end) for (int i=start; i<=end; ++i)
+#define for_tany(type, i, start, end) for (type i=start; i<=end; ++i)
 #define for_in(i, start, end, step) for (int i=start; i<end; i+=step)
 #define for_tin(type, i, start, end, step) for (type i=start; i<end; i+=step)
 

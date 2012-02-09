@@ -17,12 +17,14 @@
 #include "range.hpp"
 
 #include "object.hpp"
+#include "num.hpp"
 #include "str.hpp"
 #include "tuple.hpp"
 #include "list.hpp"
 #include "set.hpp"
 #include "dict.hpp"
 
+// #include "json.hpp"
 #include "filesys.hpp"
 #include "network.hpp"
 

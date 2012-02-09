@@ -29,12 +29,12 @@ private:
 	container s;
 	
 public:
-	inline iterator begin() { return s.begin(); } 
+	inline iterator begin() { return s.begin(); }
 	inline iterator end() { return s.end(); }
 	inline riterator rbegin() { return s.rbegin(); }
 	inline riterator rend() { return s.rend(); }
 	
-	inline citerator begin() const { return s.begin(); } 
+	inline citerator begin() const { return s.begin(); }
 	inline citerator end() const { return s.end(); }
 	inline criterator rbegin() const { return s.rbegin(); }
 	inline criterator rend() const { return s.rend(); }
@@ -150,6 +150,9 @@ public:
 	**************************************************/
 	inline str operator +(const str& r) {	//for connection
 		return str(s+r.s);
+	}
+	inline str operator +(const char* r) {	//for connection
+		return clone()+=r;
 	}
 	inline str& operator +=(const str& r) {
 		s+=r.s;
@@ -276,7 +279,7 @@ public:
 		sequence.  The separator between elements is S.
 	*************************************************/
 	template<class Container>
-	inline str join(const Container& con) {
+	inline str join(const Container& con) const {
 		string ret;
 		ret.reserve(1024);
 		return ::join(s, con, ret);

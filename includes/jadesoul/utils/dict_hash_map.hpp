@@ -46,7 +46,6 @@ public:
 	typedef typename container::reverse_iterator riterator;
 	typedef typename container::const_reverse_iterator criterator;
 	
-
 private:
 	container con;
 	
@@ -61,7 +60,6 @@ public:
 	inline citerator end() const { return con.end(); }
 	inline criterator rbegin() const { return con.rbegin(); }
 	inline criterator rend() const { return con.rend(); }
-	
 	
 	// for constructors
 	// template<class K1, class V1>
@@ -122,8 +120,6 @@ public:
 		return *this;
 	}
 	
-
-
 	/**************************************************
 	clear:	D.clear() -> None.  Remove all items from D.
 	**************************************************/
@@ -215,23 +211,22 @@ public:
 		for (iterator i=begin(), j=end(); i!=j; ++i) pl.push_back(pair(i->first, i->second));
 		return pl;
 	}
-
+	
 	/**************************************************
 	iteritems:	D.iteritems() -> an iterator over the (key, value) items of D
 	**************************************************/
 	//TODO
-
-
+	
 	/**************************************************
 	iterkeys:	D.iterkeys() -> an iterator over the keys of D
 	**************************************************/
 	//TODO
-
+	
 	/**************************************************
 	itervalues:	D.itervalues() -> an iterator over the values of D
 	**************************************************/
 	//TODO
-
+	
 	/**************************************************
 	keys:	D.keys() -> list of D's keys
 	**************************************************/
@@ -240,7 +235,7 @@ public:
 		for (iterator i=begin(), j=end(); i!=j; ++i) ks.push_back(i->first);
 		return ks;
 	}
-
+	
 	/**************************************************
 	values:	D.values() -> list of D's values
 	**************************************************/
@@ -261,15 +256,14 @@ public:
 		con.erase(i);
 		return tmp;
 	}
-
-
+	
 	/**************************************************
 	popitem:	D.popitem() -> (k, v), 
 		remove and return some (key, value) pair as a
 		2-tuple; but raise KeyError if D is empty
 	**************************************************/
 	//TODO
-
+	
 	/**************************************************
 	update:	D.update(D2) -> None.  
 		Update D from E and F: for k in E: D[k] = E[k]

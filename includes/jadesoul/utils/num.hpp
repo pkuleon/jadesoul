@@ -1,26 +1,24 @@
-#ifndef REGEXP_HPP_1326290949_26
-#define REGEXP_HPP_1326290949_26
+#ifndef NUM_HPP_1326984067_49
+#define NUM_HPP_1326984067_49
 /**
- * File: regexp.hpp
+ * File: num.hpp
  * Description: 
  *
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * Licensed under the GNU General Public License:
  * http://www.gnu.org/licenses/gpl.html
  * 
- * Date: 2012-01-11 22:09:09.271000
+ * Date: 2012-01-19 22:41:07.490000
  * Written In: Peking University, beijing, China
  */
 
-#include "includes.hpp"
-#include "str.hpp"
-
-//the regular expression implementation
-
-class regexp {
+ 
+class num: public object {
 public:
 	//TODO
+	num() {}
+	operator string() { return ""; }
 };
 
 
-#endif /* REGEXP_HPP_1326290949_26 */
+#endif /* NUM_HPP_1326984067_49 */

@@ -16,7 +16,6 @@
 #include "str.hpp"
 #include "list.hpp"
 
-
 template<class key, class value>
 class dict : public object {
 public:
@@ -107,8 +106,6 @@ public:
 		return *this;
 	}
 	
-
-
 	/**************************************************
 	clear:	D.clear() -> None.  Remove all items from D.
 	**************************************************/

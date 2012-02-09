@@ -3,7 +3,7 @@
 /**
  * File: dict.hpp
  * Description: 
- *
+ * 
  * Copyright (c) 2011 Jadesoul (Home Page: http://jadesoul.org)
  * Licensed under the GNU General Public License:
  * http://www.gnu.org/licenses/gpl.html
