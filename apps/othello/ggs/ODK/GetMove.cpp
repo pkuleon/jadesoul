@@ -5,6 +5,9 @@
 
 #include "GetMove.h"
 #include "OsObjects.h"
+#include "windows.h"
+
+typedef char* (__stdcall *  DealFunction)(char* state);
 
 int Evaluate(const COsBoard& board);
 
@@ -23,7 +26,8 @@ void GetMove(const COsGame& game, COsMoveListItem& mli) {
 	eval=-1000;
 	mli.mv.fPass=true;
 	mli.dEval=0;	// return eval of 0 if we are forced to pass;
-	mli.tElapsed=3.0;
+	mli.tElapsed=0.01;
+
 	/*
 	game.pos包含了当前局面的情况
 	game.pos.board.sBoard描述了盘面各个位置的棋子分布
@@ -40,7 +44,57 @@ void GetMove(const COsGame& game, COsMoveListItem& mli) {
 	mli.dEval为c这步棋的估值，这是可选的项。
 
 	*/
+
+	int error;
+	DealFunction pFunc;
+	HMODULE hdll_lib =::LoadLibraryEx(TEXT("engine.dll"), NULL, 0);  
+	if(hdll_lib == NULL)
+	{
+		error = GetLastError();  
+		cout<<"can not LoadLibraryEx engine.dll"<<error<<endl;  
+		FreeLibrary(hdll_lib);
+	}
+	pFunc=(DealFunction)GetProcAddress(hdll_lib, "engine");
+	if (!pFunc) {
+		error = GetLastError();  
+		cout<<"can not GetProcAddress deal"<<error<<endl;
+		FreeLibrary(hdll_lib);
+	}
 	
+	char buf[66];
+	memset(buf, 0, 66);
+
+	int i=0;
+	for (row=0; row<nBoardSize; row++) {
+		for (col=0; col<nBoardSize; col++) {
+			char p=game.pos.board.Piece(row, col);
+			if (p=='*') buf[i]='1';
+			else if (p=='O') buf[i]='2';
+			else buf[i]='0';
+			++i;
+		}
+	}
+	buf[i]=game.pos.board.fBlackMove?'1':'2';
+	//strcpy(buf, "00000000000000000000100000011000002222000010000000000000000000001");
+	
+	cout<<"engine input="<<buf<<endl;
+	char* a=pFunc(buf);
+	cout<<"engine output="<<a<<endl;
+
+	if (strlen(a)==1) {
+		mli.mv.fPass=true;
+	} else {
+		row=a[0]-'1';
+		col=a[1]-'1';
+		cout<<"we move in "<<row<<","<<col<<endl;
+		COsMove mv(row,col);
+		mli.mv=mv;
+		mli.dEval=0;
+		mli.mv.fPass=false;
+	}
+	FreeLibrary(hdll_lib);
+	return;
+
 	for (row=0; row<nBoardSize; row++) {
 		for (col=0; col<nBoardSize; col++) {
 			COsMove mv(row,col);

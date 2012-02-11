@@ -27,7 +27,7 @@ void deal(char* state) {
 int main() {
 	init();
 	char s[]="00000000000000000000100000011000002222000010000000000000000000001";
-	// deal(s);
+	deal(s);
 	cout<<s;
 	return 0;
 }
