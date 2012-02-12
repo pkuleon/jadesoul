@@ -475,7 +475,7 @@ def generate_template_constructors():
 };
 
 #define Macro__typedefs_of_list__Element_Name_Alias(E, N, A)\
-typedef list<E> N;\
+typedef ::list<E> N;\
 typedef N A;
 
 Macro__typedefs_of_list__Element_Name_Alias(char, listchar, Lchar)
