@@ -301,7 +301,8 @@ namespace othello {
 		}
 		
 		void evaluate_move() {
-			e=1.0*next->mobilities.size() - 1.0*mobilities.size();
+			// e=1.0*next->mobilities.size() - 1.0*mobilities.size();
+			e=1.0*next->yours.size();
 			// e=1.0*next->mobilities.size();
 		}
 	};
