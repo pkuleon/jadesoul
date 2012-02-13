@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>E:\svnprojects-linux\jadesoul\apps\othello\coefficients;c:\devl\sirius_stl;E:\svnprojects-linux\jadesoul\apps\othello\ntest;E:\svnprojects-linux\jadesoul\apps\othello\gdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\occ.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\occ.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\occ.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>.\Release\occ.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;WS2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <StringPooling>true</StringPooling>
+      <AdditionalIncludeDirectories>c:\devl\occ;c:\devl\sirius_stl;c:\devl\othello;c:\devl\GDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\occ.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\occ.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\occ.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>.\Debug\occ.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;WS2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\GDK\AmsObjects.cpp" />
+    <ClCompile Include="..\othello\BitBoard.cpp" />
+    <ClCompile Include="..\othello\BitBoardBlock.cpp" />
+    <ClCompile Include="..\othello\Book.cpp" />
+    <ClCompile Include="..\othello\Cache.cpp" />
+    <ClCompile Include="..\GDK\CksObjects.cpp" />
+    <ClCompile Include="Coeffs.cpp" />
+    <ClCompile Include="..\othello\Evaluator.cpp" />
+    <ClCompile Include="..\othello\FastFlip.cpp" />
+    <ClCompile Include="..\othello\FastFlipPatterns.cpp" />
+    <ClCompile Include="..\othello\FastFlipTables.cpp" />
+    <ClCompile Include="..\othello\flipfuncBB.cpp" />
+    <ClCompile Include="..\othello\Games.cpp" />
+    <ClCompile Include="..\GDK\GGSMessage.cpp" />
+    <ClCompile Include="..\GDK\GGSObjects.cpp" />
+    <ClCompile Include="..\GDK\ggsstream.cpp" />
+    <ClCompile Include="..\othello\Maps.cpp" />
+    <ClCompile Include="..\othello\Moves.cpp" />
+    <ClCompile Include="..\othello\MPCStats.cpp" />
+    <ClCompile Include="..\othello\Negamax.cpp" />
+    <ClCompile Include="..\othello\NodeStats.cpp" />
+    <ClCompile Include="..\othello\off.cpp" />
+    <ClCompile Include="..\othello\off_dualuse.cpp" />
+    <ClCompile Include="..\othello\options.cpp" />
+    <ClCompile Include="..\GDK\OsObjects.cpp" />
+    <ClCompile Include="..\othello\PatternCoeffCalc.cpp" />
+    <ClCompile Include="..\othello\Patterns.cpp" />
+    <ClCompile Include="..\othello\Player.cpp" />
+    <ClCompile Include="..\othello\Pos2.cpp" />
+    <ClCompile Include="..\othello\Pos2Helpers.cpp" />
+    <ClCompile Include="..\othello\QPosition.cpp" />
+    <ClCompile Include="..\GDK\SGBase.cpp" />
+    <ClCompile Include="..\GDK\SGMessages.cpp" />
+    <ClCompile Include="..\GDK\SGObjects.cpp" />
+    <ClCompile Include="..\GDK\sockbuf.cpp" />
+    <ClCompile Include="..\othello\stabn.cpp" />
+    <ClCompile Include="..\Off\SV.CPP" />
+    <ClCompile Include="..\othello\Timing.cpp" />
+    <ClCompile Include="..\othello\treedebug.cpp" />
+    <ClCompile Include="..\othello\Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\othello\BitBoard.h" />
+    <ClInclude Include="..\othello\BitBoardBlock.h" />
+    <ClInclude Include="..\othello\Book.h" />
+    <ClInclude Include="..\othello\Cache.h" />
+    <ClInclude Include="Coeffs.h" />
+    <ClInclude Include="..\othello\Evaluator.h" />
+    <ClInclude Include="..\othello\FastFlip.h" />
+    <ClInclude Include="..\othello\FastFlipPatterns.h" />
+    <ClInclude Include="..\othello\FastFlipTables.h" />
+    <ClInclude Include="..\othello\flipfuncBB.h" />
+    <ClInclude Include="..\othello\Games.h" />
+    <ClInclude Include="..\othello\Moves.h" />
+    <ClInclude Include="..\othello\MPCStats.h" />
+    <ClInclude Include="..\othello\Negamax.h" />
+    <ClInclude Include="..\othello\NodeStats.h" />
+    <ClInclude Include="..\othello\options.h" />
+    <ClInclude Include="..\GDK\OsObjects.h" />
+    <ClInclude Include="..\othello\PatternCoeffCalc.h" />
+    <ClInclude Include="..\othello\Patterns.h" />
+    <ClInclude Include="..\othello\Player.h" />
+    <ClInclude Include="..\othello\Pos2.h" />
+    <ClInclude Include="..\othello\Pos2All.h" />
+    <ClInclude Include="..\othello\Pos2Helpers.h" />
+    <ClInclude Include="..\othello\Pos2HelpersInline.h" />
+    <ClInclude Include="..\othello\Pos2Inlines.h" />
+    <ClInclude Include="..\othello\Pos2Internal.h" />
+    <ClInclude Include="..\othello\QPosition.h" />
+    <ClInclude Include="..\GDK\SG.h" />
+    <ClInclude Include="..\GDK\SGObjects.h" />
+    <ClInclude Include="..\othello\Timing.h" />
+    <ClInclude Include="..\othello\TreeDebug.h" />
+    <ClInclude Include="..\othello\Utils.h" />
+    <ClInclude Include="..\othello\Window.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -108,7 +108,7 @@ void GetMove(const COsGame& game, COsMoveListItem& mli) {
 }
 
 
-void GetMove_old(const COsGame& game, COsMoveListItem& mli) {
+void GetMove_dll(const COsGame& game, COsMoveListItem& mli) {
 	int row, col;
 	int eval, evalSubnode;
 	int nBoardSize=game.mt.bt.n;

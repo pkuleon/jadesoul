@@ -30,8 +30,8 @@ namespace othello {
 		COLOR_SIZE
 	};
 	
-	#define OPPO(C) (C==BLACK?WHITE:BLACK)
-	#define COLOR(c) (c=='1'?BLACK:(c=='2'?WHITE:EMPTY))
+	#define OPPO(color) (color==BLACK?WHITE:BLACK)
+	#define COLOR(char) (char=='1'?BLACK:(char=='2'?WHITE:EMPTY))
 	
 	enum direction {
 		RIGHT, 
