@@ -12,17 +12,26 @@
 
 namespace sgf {
 
-	class SGFParser {
-	public:
-		
+	enum PropertyID {
+		COMMENT,
+		TOTAL_PROPERTY_NUM
 	};
 	
-	class Collection {
-	public:
-		
+	str PropertyNames[]={
+		"C",
+		""
 	};
 	
-	class GameTree {
+	typedef str PropertyValue;
+	typedef list<PropertyValue> PropertyValueList;
+	
+	class Property {
+	public:
+		PropertyID id;
+		PropertyValueList values;
+	};
+	
+	class Node {
 	public:
 		
 	};
@@ -32,22 +41,20 @@ namespace sgf {
 		
 	};
 	
-	class Node {
+	class Tree {
 	public:
 		
 	};
 	
-	enum PropertyID {
+	class Collection {
+	public:
+		list<Tree> trees;
+	};
+	
+	class Parser {
+	public:
 		
 	};
-	
-	class Property {
-	public:
-		PropertyID pid;
-		list<>
-	};
-
-	
 }
 
 int main () {
