@@ -1,0 +1,6605 @@
+(;AP[MultiGo:3.9.4]SZ[19]
+;B[qd];W[oc]C[白2小飞挂是对付黑1小目的最基本的挂角方法. 小飞挂已经沿用了四个多世纪, 有难以胜数的变化和定式, 并且还有新变化不断被发现. 白2小飞挂可以说是定式里最丰富的宝库.
+
+黑的应手繁多, 有a位的秀策之尖, b位小飞, c位拆二, d位一间低夹, e位二间低夹, f位三间低夹, g位一间高夹, h位二间高夹, i位三间高夹, j位靠压, k位肩和l位尖顶. 其中k位肩是骗招, 黑征子有利才能这样下. 黑l尖顶是特定场合下的着法. 黑m位飞镇也是骗招.
+
+a1 -尖,  黑得右边.
+b2 - 小飞, 黑得右边.
+c3 - 拆二, 黑得右边.
+d4 - 一间低夹, 黑选择. 
+e5 - 二间低夹, 黑选择. 
+f6 -  三间低夹, 根据变化.
+g7 - 一间高夹, 黑选择.  
+h8 - 二间高夹, 黑选择. 
+i9 - 三间高夹, 黑选择. 
+j10 - 靠压, 黑得右边.
+k11 - 肩, 骗着, 黑得外势, 白得大角.
+l12 - 尖顶, 场合定式, 黑得右边. 
+m13 - 飞镇, 骗着, 黑得右边, 白得上边.
+]
+N[小飞挂]LB[pe:a][pf:b][qg:c][mc:d][lc:e][kc:f][md:g][ld:h][kd:i][od:j][nd:k][pc:l]
+[oe:m]
+(;B[pe]C[黑3尖, 是著名的秀策之尖. 是对付白飞挂的一种稳健的着法. 接下来黑可以拆, 也可以飞压白2一子.
+
+白的应法有a位飞, b位拆二, c位拆三, d位拆四或脱先. 在日本江户时代(1600-1867) , 还有f位尖的走法, 后来被认为白不利, 所以被淘汰.
+
+a1 - 飞, 战斗.
+b2 - 拆二, 稳健.
+c3 - 拆三, 作好打入的准备.
+d4 - 拆四, 左上应该有配合, 作好打入的准备.
+e5 - 脱先.
+f6 - 尖, 白不利.
+]
+N[尖 (a)]LB[md:a][lc:b][kc:c][jc:d][dp:e][nd:f]
+(;W[md]C[白4尖要作好战斗的准备. 黑a拆相安无事, b位逼将引发冲突.
+
+a1 - 拆.
+b2 - 逼.]
+N[小飞 (a)]LB[qj:a][kc:b]
+(;B[qj]N[拆至星下 (a)];W[ic];B[pc]C[黑7是很大的一手, 与白R18飞角想比, 大概有20目的出入.
+]
+;W[od];B[pb])
+(;B[kc]C[黑5逼, 有重视左上的打算. 如果左上没有配合, 黑5很无理. 白一般会在a位反夹还击, b位飞就太软弱了.
+
+a1 - 反夹, 正着.
+b2 - 飞, 软弱.]
+N[逼,战斗 (b)]LB[hd:a][qb:b]
+(;W[hd]N[反夹(a)];B[ke];W[mf])
+(;W[qb]N[飞角,不好(b)];B[qi]C[黑7拆后, 白应手穷. 白a飞补效率太低, b位尖顶或c位靠压都是帮黑走棋.
+]
+LB[mb:a][lc:b][kd:c])))
+(;W[lc]C[黑的应手有a位尖顶或b位拆. 也有可能脱先.
+
+a1 - 尖顶.
+b2 - 拆.
+c3 - 脱先.]
+N[拆二,稳健 (b)]LB[pc:a][qj:b][dp:c]
+(;B[pc]N[尖顶(a)];W[od];B[pg])
+(;B[qj]C[白一般在a位飞镇, b位飞角有可能被黑成模样.
+
+a1 - 飞镇.
+b2 - 飞角.]N[拆(b)]
+LB[ne:a][qb:b]
+(;W[ne]N[飞镇(a)];B[pc];W[ob];B[pg])
+(;W[qb]N[飞角(b)];B[nd];W[nc];B[le]))
+(;N[黑脱先(c)];W[qb]C[白5飞角形态漂亮, 所以黑一般不要脱先.
+];B[qi]))
+(;W[kc]C[白4拆三是轻快的着法, 在实战中极为常见. 黑如果在a位尖顶, 白b位立起就成好形, 所以黑一定要打入.
+]
+N[拆三 (c)]LB[pc:a][od:b];B[mc]C[白的应手有a位靠压或b位托. 白a靠声东击西, 为的是吃住黑5一子. 白b位可以走厚自己, 但要付出代价.
+
+a1 - 靠压.
+b2 - 托.]
+LB[oe:a][mb:b]
+(;W[oe]N[靠压(a)];B[of];W[ne];B[pg];W[ld];B[pc];W[ob])
+(;W[mb]C[黑a位外扳正着, b位内扳恶手.
+
+a1 - 外扳正着.
+b2 - 内扳恶手.]N[托(b)]
+LB[lb:a][nb:b]
+(;B[lb]N[外扳,正着(a)];W[lc];B[nb];W[md];B[nc];W[nd]C[黑a位断正着, b位爬恶手.
+
+a1 - 断, 正着.
+b2 - 爬, 恶手.]
+LB[od:a][kb:b]
+(;B[od]N[断,正着(a)];W[ob];B[ma];W[oa];B[na];W[kb];B[pc];W[oe];B[pd];W[of])
+(;B[kb]N[爬,错误 (b)];W[ob];B[ma];W[oe]C[不管黑怎么走, 白可以走到a位长或b位长, 对黑来说都很难忍受.
+]
+LB[jc:a][of:b]))
+(;B[nb]N[内扳,错误 (b)];W[nc];B[lb];W[md];B[lc];W[ld];B[ob];W[kb];B[ma];W[ke];B[pc]
+C[白先手获得好形, 如果黑再a位打, 白可以弃两子.
+]LB[nd:a])))
+(;W[jc]C[白4拆得很远, 一般是兼顾到左上的情形. 由于开拆过远, 黑打入是白很难有确切的应有. 所以白要做好一切思想准备. 黑的应手有a位飞压取势, 或b位打入.
+
+a1 - 飞压, 取势.
+b2 - 打入.]
+N[拆四 (d)]LB[nd:a][lc:b]
+(;B[nd]N[飞压(a)];W[nc]C[黑a跳正着, b位长不好.
+
+a1 - 跳, 正着.
+b2 - 长, 不好.]
+LB[ld:a][md:b]
+(;B[ld]C[白a位长正着, b位冲俗手.
+
+a1 - 长, 正着.
+b2 - 冲, 俗手.]N[跳,正着(a)]
+LB[mc:a][od:b]
+(;W[mc]N[长,正着(a)];B[ne];W[lc];B[qj])
+(;W[od]N[冲,俗手 (b)];B[oe];W[md];B[me];W[ne];B[nf]C[白a位虎正着, b位反打不行.
+
+a1 - 虎, 正着.
+b2 - 反打, 不行.
+]
+LB[lc:a][le:b]
+(;W[lc]N[虎,正着(a)];B[nd];W[mc])
+(;W[le]N[反打,错误 (b)];B[nd];W[mc];B[kd]C[黑得到了外势, 白形还不完全.
+])))
+(;B[md]N[长,错误(b)];W[mc];B[ld];W[lc]C[白a虎鼓和b位见和, 黑不好.
+]LB[kd:a][qj:b]))
+(;B[lc]N[打入(b)];W[oe];B[of];W[ne]C[黑应该先在a位尖顶取先手利, 直接在b位跳出不行.
+
+a1 - 尖顶, 正着.
+b2 - 跳出, 不行.]
+LB[pc:a][le:b]
+(;B[pc]C[白a位扳正着, b位尖不好.
+
+a1 - 扳, 正着.
+b2 - 尖, 不好.]N[尖顶,正着(a)]
+LB[pb:a][nb:b]
+(;W[pb]N[扳,正着(b)];B[qb];W[le])
+(;W[nb]N[尖,不好(b)]))
+(;B[le]N[跳出,错误 (b)];W[pf];B[pg];W[qf];B[qg];W[re]C[白a位虎和b位爬见合, 所以基本已经吃住黑两子.
+]
+LB[rg:a][rd:b])))
+(;C[白脱先, 黑的应手有a位飞压取势, 但白可以得到实地,  黑b位逼或c位逼时, 白可以选择取地还是战斗.
+
+a1 - 飞压, 
+b2 - 逼.
+c3 - 逼.
+]
+N[白脱先(e)]LB[nd:a][lc:b][kc:c]
+(;B[nd]C[白a跳是形, b位长滞重.
+
+a1 - 跳, 正着.
+b2 - 长, 不好.]N[飞压(a)]LB[mc:a]
+[nc:b]
+(;W[mc]C[白5跳是在这种场合下典型的应法. 当今棋手不大喜欢黑4和白5的交换, 让白轻易脱身, 所以这种下法现在并不多见. 黑现在可以脱先, 局部的应手有a位再跳或b位逼.
+
+a1 - 跳.
+b2 - 逼.
+]
+N[跳,正着(a)]LB[ld:a][kc:b]
+(;B[ld]C[白的应手有a位尖或c位托. 其中c位托可以先手做活. b位冲进入圈套.
+
+a1 - 尖.
+b2 - 托.
+c3 - 冲, 不行.]
+N[跳封(a)]LB[lb:a][md:b][qc:c]
+(;W[lb]N[尖(a)];B[md];W[jc])
+(;W[md]N[冲,错误(b)];B[me];W[le];B[lc]C[白只有a位接, b位断不行, 白c位立则被封在里头.
+
+a1 - 接, 正着.
+b2 - 断, 错误.
+c3 - 立, 不好.]
+LB[nc:a][ne:b][mb:c]
+(;W[nc]N[接,正着(a)];B[ne];W[lb];B[kb];W[ma];B[jd];W[qb])
+(;W[ne]N[断,错误 (b)];B[mf];W[od];B[nf];W[oe];B[mb]C[白只好a位提, b位冲出是个错误.
+
+a1 - 提, 正着.
+b2 - 冲, 错误.]
+LB[nc:a][of:b]
+(;W[nc]N[提,正着(a)];B[of])
+(;W[of]N[冲,错误 (b)];B[nc];W[pf];B[qf];W[qg];B[rg]C[白a退正着, b位打不行.
+
+a1 - 退, 正着.
+b2 - 打, 不行.]
+LB[qh:a][rf:b]
+(;W[qh]N[退,正着(a)];B[rh];W[qi];B[ri];W[qj];B[qc])
+(;W[rf]N[打,不行 (b)];B[qe];W[rh];B[pg];W[qh];B[og];W[qc];B[rc];W[qb];B[rb];W[re]
+;B[rd];W[ob];B[ra]C[黑36立要紧, 不能在a位扳, 如此对杀白不行.
+]LB[qa:a])))
+(;W[mb]N[立,不好(c)];B[ke];W[lf];B[lb]C[白也许可以a位断打或b位托.
+
+a1 - 断打.
+b2 - 托.]
+LB[ne:a][qc:b]
+(;W[ne]N[断打(a)];B[mf];W[nf];B[mg];W[od];B[ng]C[无论白走a位曲或b位靠都没有好结果.
+
+a1 - 曲.
+b2 - 靠.]
+LB[of:a][pf:b]
+(;W[of]N[曲(a)];B[pg])
+(;W[pf]N[靠(b)];B[qf];W[pg];B[qg];W[ph];B[of];W[oe];B[og]
+(;W[qb];B[pi]C[黑31鼻顶是手筋.
+];W[qh];B[qi];W[oh];B[rh]C[白5子苦.])
+(;W[qh];B[qc])))
+(;W[qc]N[托(b)];B[rc];W[pc];B[nf];W[rb];B[rd];W[sb];B[kf];W[lg];B[kg];W[lh];B[nh])))
+(;W[qc]N[托(c)];B[rc];W[pb];B[qb];W[pc]C[黑a接本手, b位粘是恶手.
+
+a1 - 接, 本手.
+b2 - 粘, 恶手.]
+LB[md:a][rb:b]
+(;B[md]N[接,正着(a)];W[rb];B[sb];W[ra];B[re])
+(;B[rb]N[粘,错误 (b)];W[oe]C[白可以突破黑的防线.])))
+(;B[kc]C[黑6逼, 有加强上边的打算. 白的应手有a位挺头或b位反夹挫败白的打算. 
+
+a1 - 挺头.
+b2 - 反夹.]
+N[逼(b)]LB[md:a][ic:b]
+(;W[md]N[挺头(a)];B[hc])
+(;W[ic]N[反夹(b)];B[ld];W[qc]C[白9托, 试图做活.];B[rc];W[rb])))
+(;W[nc]N[长,不好(b)];B[md]C[白一般在a位继续爬, b位跳有征子.
+
+a1 - 爬.
+b2 - 跳, 有征子.]
+LB[mc:a][lc:b]
+(;W[mc]N[长(a)];B[ld];W[kc])
+(;W[lc]C[黑征子有利可以在a位冲, 否则在b位继续压.
+
+a1 - 冲, 征子黑有利.
+b2 - 压, 征子黑不利.
+]
+N[跳,有征子(b)]LB[mc:a][ld:b]
+(;B[mc]C[黑征子有利才能这么下.]N[冲,征子黑有利(a)];W[mb];B[nb]C[白内断准备征吃白7一子. 白的应手有a位打或b位接.
+
+a1 - 打.
+b2 - 接.]
+LB[ob:a][lb:b]
+(;W[ob]N[打(a)];B[lb];W[na];B[kc])
+(;W[lb]N[接(b)];B[ob];W[pc];B[pb];W[qc];B[qb];W[rb];B[rc];W[rd];B[sc];W[sd];B[re]
+;W[sb];B[rc]C[大头鬼, 白不行.]))
+(;B[ld]N[压,征子黑不利(b)];W[kc];B[mc];W[mb];B[lb];W[nb];B[jc]C[黑14靠是手筋, 白只好a位拐打屈服. b位拐不行.
+
+a1 - 拐打, 正着.
+b2 - 拐, 不行.]
+LB[kb:a][kd:b]
+(;W[kb]N[打,正着(a)];B[kd])
+(;W[kd]C[白15拐不行, 上面白四子凶多吉少.]N[拐,错误 (b)];B[kb]))))
+(;W[qc]N[活角];B[rc];W[pb]
+(;B[qb];W[pc];B[mc];W[rb];B[sb];W[qa];B[re];W[nb])
+(;B[rb];W[mc])))
+(;B[lc]C[白的应手有a位尖或b位飞角. c位靠压是恶手.
+
+a1 - 尖.
+b2 - 飞角.
+c3 - 靠压, 恶手.]
+N[逼(b)]LB[nd:a][qb:b][oe:c]
+(;W[nd]C[黑的应手有a位尖顶或b位拆二.
+
+a1 - 尖顶.
+b2 - 拆二.]N[尖(a)]LB[pc:a]
+[ic:b]
+(;B[pc]N[尖顶(a)];W[id];B[le];W[nf];B[lg];W[nh])
+(;B[ic]N[拆二(b)];W[qb];B[qi];W[rc]))
+(;W[qb]N[飞角(b)];B[nd];W[nc];B[md];W[rc])
+(;W[oe]N[考压,错误(c)];B[of];W[ne];B[le];W[nf];B[og]))
+(;B[kc]C[白的应手有a位拆一或b位飞角. 如果白对左上很看重, c位反逼也有可能.
+
+a1 - 拆一.
+b2 - 飞角.
+c3 - 反逼, 特殊场合下法.]
+N[逼(c)]LB[mc:a][qb:b][ic:c]
+(;W[mc]N[拆一(a)];B[pc];W[me];B[ke];W[mg])
+(;W[qb]N[飞角(b)];B[nd];W[nc];B[md];W[lb];B[kb];W[lc];B[ld];W[rc];B[je])
+(;W[ic]N[反逼(c)];B[nd];W[mc];B[ld]C[这个变化跟变化2-1-1-5-1-1-2-2相同.];W[qc];B[rc]
+;W[rb])
+(;B[kc]N[三间夹]
+(;W[ic]N[夹击];B[nd];W[mc];B[ld]C[白配合左方局势，成飞罩之还原，白可托角腾挪])
+(;W[ld]C[要注意黑左方成厚势]N[肩冲可])
+(;W[mc]N[拆一];B[pc];W[me];B[ke];W[mg]C[一型])
+(;W[qb]N[飞角];B[nd];W[nc];B[md];W[lb]
+(;B[kb]N[挡旧走法];W[lc];B[ld];W[rc];B[je]C[旧定式，白先手活，黑很厚])
+(;B[lc]N[压新走法];W[kb];B[jb];W[mc];B[ka];W[ma];B[jc])))))
+(;W[nd]C[白4尖, 结果对白不利, 已经基本被淘汰.
+]N[尖,不好 (f)];B[ne];W[me];B[nf]
+;W[kc];B[mf])
+(;W[qc]N[托角少见]
+(;B[nd];W[od];B[oe];W[rc])
+(;B[rc];W[pc]
+(;B[re];W[lc]C[白好])
+(;B[rb];W[oe];B[of];W[nf]C[白好]))))
+(;B[pf]C[黑3小飞应是对白2小飞挂比较温和的反应. 小飞虽然没有秀策之尖坚实, 但更灵活. 将来在右边可以大步开拆. 
+
+小飞与小尖最大的区别就是白现在可以在a位托三三了, 白b拆二或c拆三是另外的方案. 有时根据情况也有马上d位逼的.
+
+a1 - 托.
+b2 - 拆二.
+c3 - 拆三.
+d4 - 逼.
+e5 - 脱先.]
+N[小飞 (b)]LB[qc:a][lc:b][kc:c][qh:d][dp:e]
+(;W[qc]N[托三三(a)];B[rc];W[pd]C[黑可以a退, 也可以b打.
+
+a1 - 退.
+b2 - 打.]LB[qe:a]
+[qb:b]
+(;B[qe]N[退(a)];W[qb];B[qj])
+(;B[qb]C[白a反打正着, 死也不能在b位粘.
+
+a1 - 反打, 正着.
+b2 - 粘, 别看定式了,先学基础吧.]
+N[打(b)]LB[qe:a][pc:b]
+(;W[qe]N[反打,正着(a)];B[pc];W[rd]C[黑a粘是本手, b位断打试图开劫,由于开局无劫, 黑一般不能这样做.
+
+a1 - 粘, 本手.
+b2 - 断打, 不行.]
+LB[qc:a][od:b]
+(;B[qc]N[粘,本手(a)];W[pe];B[od];W[oe];B[nd];W[lc];B[ne];W[of];B[nc])
+(;B[od]C[黑11不合棋理, 由于开局无劫, 黑打不了这个劫.
+]N[断打,错误 (b)];W[qc]))
+(;W[pc]N[粘,恶手 (b)];B[qe];W[lc])))
+(;W[lc]C[黑a尖顶是好棋, 黑如果马上在b位开拆就错过良机.
+
+a1 - 尖顶, 正着.
+b2 - 拆三, 不好.
+]
+N[拆二 (b)]LB[pc:a][qj:b]
+(;B[pc]N[尖顶,正着(a)];W[od];B[ph])
+(;B[qj]C[黑5拆三过早.]N[拆三,不好 (b)];W[qc];B[rc];W[pd];B[qe]C[现在白可以脱先了, 如果黑a打, 白可以在b位劫应,
+弹性十足.
+]
+LB[qb:a][pb:b]))
+(;W[kc]C[黑可以在a位逼, 也可以在b位打入.
+
+a1 - 逼.
+b2 - 打入.]N[拆三 (c)]LB[ic:a]
+[mc:b]
+(;B[ic]N[逼(a)];W[qc];B[rc];W[pd];B[qe];W[qb];B[qj])
+(;B[mc]C[黑打入的时候, 白可以在a位托, 也可以在b位托腾挪.
+
+a1 - 托.
+b2 - 托.]
+N[打入(b)]LB[mb:a][qc:b]
+(;W[mb]N[托(a)];B[lb];W[lc];B[nb];W[md];B[nc];W[nd];B[od];W[ob];B[ma];W[oa];B[na]
+;W[kb];B[pc];W[oe];B[pd])
+(;W[qc]N[托(b)];B[rc];W[pd]C[黑a打正着, b位退软弱.
+
+a1 - 打, 正着.
+b2 - 退, 软弱.]
+LB[qb:a][qe:b]
+(;B[qb]N[打,正着(a)];W[qe];B[pc];W[rd];B[qc];W[pe];B[od];W[oe];B[nd])
+(;B[qe]N[退,不好 (b)];W[mb])))
+(;B[qj];W[qc];B[rc];W[pd];B[qe]C[白6以下先手便宜后可脱先]))
+(;W[qh]C[白4充分重视右边.
+]N[右边逼 (d)];B[kc]C[黑根据全局情况, 可以选择在5位夹或在a位夹.
+]
+LB[pk:a])
+(;C[白脱先的时候, 黑a位夹或b位尖顶都是可能的后续手段.
+
+a1 - 夹.
+b2 - 尖顶.]N[白脱先(e)]
+LB[kc:a][pc:b]
+(;B[kc]C[白的应手有a位托, b拆一或c位肩冲.
+]N[夹(a)]LB[qc:a][mc:b][ld:c])
+(;B[pc]C[白a位三间拆轻灵转身, 有是也可以脱先, 走b位长则重.
+
+a1 - 拆三, 轻灵.
+b2 - 长, 重.]
+N[尖顶(b)]LB[kc:a][od:b]
+(;W[kc]N[拆三,轻灵 (a)])
+(;W[od]C[白5立起恶手, 白变重了, 将成为黑攻击的靶子.
+]N[长,错误 (b)];B[ld]))))
+(;B[qg]C[黑3拆二的目的是安顿自己而不是攻击对方.如果白在右下方有势力的话, 黑3先安顿自己,顺便也消了白势. 总体来讲, 黑3显得消极.
+
+白局部的应手有a位大飞压, b位拆三或c位拆四. 当然白也可以脱先, 因为白2与黑3交换已经便宜.
+
+a1 - 大飞压.
+b2 - 拆三.
+c3 - 拆四.]
+N[拆二 (c)]LB[pf:a][kc:b][jc:c]
+(;W[pf]N[大飞压(a)]
+(;B[qf];W[qc];B[rc];W[pd]C[黑a接正着, b位打不能成立.
+
+a1 - 接, 正着.
+b2 - 打, 不行.]
+LB[qe:a][qb:b]
+(;B[qe]N[接,正着(a)];W[qb])
+(;B[qb]N[打,错误(b)];W[qe];B[pc];W[rd];B[qc];W[rf];B[od];W[pe];B[nc]C[黑味道不佳, 因为白还有a位立下的手段.
+]
+LB[ob:a]))
+(;B[pc]C[征子不利时不成立]N[尖顶]
+(;W[od]N[长被利];B[qf];W[kc]C[黑5、6的交换先手防白进角])
+(;W[qf]N[冲下场合手段];B[od];W[pg];B[md]C[黑充分])
+(;W[pd]N[挤正确]
+(;B[pe]N[打];W[od];B[qf];W[oe];B[qe];W[qc];B[rc];W[pb]C[白满意])
+(;B[qc]N[粘];W[qf]C[白充分];B[pe];W[oe];B[od];W[nd];B[of]
+(;W[pd]N[提大恶手];B[qe];W[pg];B[nf]
+(;W[ne];B[mf];W[ld];B[rf];W[rg];B[qh];W[re];B[sf];W[se];B[ph];W[og];B[nh];W[sg]
+;B[rf];W[rb];B[ob];W[nb];B[od];W[nc];B[oh];W[sf];B[ng];W[rf];B[rd];W[sd];B[sc];W[rc]
+;B[rh]C[白被杀])
+(;W[qh];B[ne];W[od];B[md]))
+(;W[ne]N[当粘];B[pg];W[qe];B[pd];W[rg]
+(;B[rh];W[og];B[nf];W[qh]C[征子关系])
+(;B[og];W[rh];B[rd];W[rf];B[nc];W[mc];B[ob];W[nb]C[白好])))
+(;B[od]C[征子不利时的最佳走法]N[断打];W[pe];B[qc];W[nd];B[rf]C[白稍有利])))
+(;B[qe]N[并被利];W[kc]C[白好])
+(;B[od]N[靠出稍无理];W[nd];B[oe];W[pc];B[qc];W[qf]))
+(;W[kc]N[拆三(b)];B[mc]C[白的应手有a位托渡或b位大飞压.
+
+a1 - 托渡.
+b2 - 大飞压.]
+LB[mb:a][pf:b]
+(;W[mb]N[扳下(a)];B[lb];W[lc];B[nb];W[md];B[nc];W[nd];B[od];W[ob];B[ma];W[oa];B[na]
+;W[kb];B[pc];W[oe];B[pd]C[拆二子较小飞差，较尖稍好，两分])
+(;W[pf]C[黑有两种选择\: a位挡或b位靠压.
+
+a1 - 挡.
+b2 - 靠压.
+]N[大飞压(b)]LB[qf:a]
+[od:b]
+(;B[qf]N[挡(a)];W[mb]C[黑a虎鼓是正着, b位再扳下就要出事了.
+
+a1 - 虎鼓, 正着.
+b2 - 扳下, 恶手.]
+LB[pe:a][lb:b]
+(;B[pe]N[虎鼓,正着(a)];W[md])
+(;B[lb]C[黑9现在扳下已经不行了.]N[扳下,错误 (b)];W[lc];B[nb];W[md];B[nc];W[nd];B[od]
+;W[pd];B[oe];W[pe]))
+(;B[od]C[白应该在a位挡下转换, b位扳出则显得思路不连贯.
+
+a1 - 挡下, 正着.
+b2 - 扳出, 不好.]
+N[靠压(b)]LB[qf:a][nd:b]
+(;W[qf]N[挡下(a)];B[pc]C[这个转化局部看来黑有利, 但如果白在右下有配合的话, 白还是很充分的.
+])
+(;W[nd]N[扳出,错误 (b)];B[oe];W[nc];B[pc]C[黑11虎使黑成好形, 白a拐本手, b位再挡就不好了.
+
+a1 - 拐, 本手.
+b2 - 挡下, 不行.]
+LB[md:a][qf:b]
+(;W[md]N[拐, 正着(a)];B[qf])
+(;W[qf]N[挡下,错误(b)];B[ne];W[md];B[rf];W[re];B[rh]C[如果白胆敢a位粘, 黑b一封白就麻烦大了.
+]
+LB[qe:a][og:b])))))
+(;W[jc]N[拆四(c)];B[lc]C[白的应手有a位大飞压, b拆二或c位大跳.
+
+a1 - 大飞压.
+b2 - 拆二.
+c3 - 大跳.]
+LB[pf:a][gc:b][of:c]
+(;W[pf]C[黑a挡正着, b位靠压是不成立.
+
+a1 - 挡, 正着.
+b2 - 靠, 不行.]N[大飞压(a)]
+LB[qf:a][od:b]
+(;B[qf]N[挡,正着(a)];W[qc];B[rc];W[pd]C[黑可以a位接, 也可以b位打.
+
+a1 - 接.
+b2 - 打.]
+LB[qe:a][qb:b]
+(;B[qe]N[接(b)];W[qb];B[le])
+(;B[qb]N[打(b)];W[qe];B[pc];W[rd];B[qc];W[rf];B[od];W[pe];B[nd];W[qi]C[定式]))
+(;B[od]N[靠压,错误 (b)];W[nd];B[oe];W[pc];B[nc];W[ne]C[白12贴以后, a位打和b位冲见合, 黑陷入困境.
+]
+LB[mc:a][pd:b]))
+(;W[gc]N[拆二(b)];B[pc];W[od];B[pf];W[me];B[le];W[lf];B[ke];W[mg])
+(;W[of]C[下面的应法参见变化2-1-5-1.
+]N[大跳(c)];B[me])))
+(;B[mc]C[黑3一间低夹是利用黑先占角的优势, 对白2最严厉的夹击. 黑3一间低夹的特点就是不容白棋轻易转身. 很多善战的职业棋手喜欢这个夹法.
+
+白可能的应手有a位飞压, b位跳, c位靠压, d位托三三. ,f位飞出是趣向, g位尖顶偶尔出现在业余比赛中. 白也有脱先的.
+
+a1 - 飞压, 白得上边.
+b2 - 跳, 白得上边.
+c3 - 外靠, 结果根据变化.
+d4 - 托三三, 根据黑的选择, 白得右边或角上.
+e5 - 脱先.
+f6 - 飞出, 趣向.
+g7 - 尖顶,俗手. 
+]
+N[一间低夹 (d)]LB[pe:a][oe:b][md:c][qc:d][dp:e][ne:f][pd:g]
+(;W[pe]C[白4飞压, 如果黑不理的话, 下一步白准备在b位挡下, 黑的应手有a位冲和b位挡. 黑c二间跳是有名的骗招, 引诱白在b位冲断, 黑好利用角里的黑子, 铸成铜墙铁壁. 黑d跳是恶手.
+
+a1 - 冲.
+b2 - 挡.
+c3 - 二间跳, 骗招.
+d4 - 跳.]
+N[飞压 (a)]LB[pd:a][qe:b][qg:c][qf:d]
+(;B[pd]N[冲(a)];W[od];B[oe];W[ne];B[of];W[md]C[黑a位抱吃简明, b位扳复杂.
+
+a1 - 抱吃, 简明.
+b2 - 扳, 复杂.]
+LB[pf:a][ld:b]
+(;B[pf]N[抱吃,简明(a)];W[lc]C[a位是双方势力消长的要点. 黑a位挡是本手, 如果脱先, 让白抢到a位, 白中央大好. 
+
+a1 - 挡, 本手.
+b2 - 脱先, 错误.]
+LB[nf:a][dp:b]
+(;B[nf]C[白a位虎本手, 如果脱先, 白形崩溃.b
+
+a1 - 虎, 本手.
+b2 - 脱先, 错误.]
+N[挡,本手(a)]LB[mf:a][dp:b]
+(;W[mf]N[虎,本手(a)];B[mg];W[lf];B[lg];W[kf];B[qk])
+(;N[白脱先,错误(b)];B[me];W[nd];B[le];W[ld];B[ke]))
+(;B[dp]N[黑脱先,错误 (b)];W[nf]C[黑只好在a位跳, b位扳过分.
+
+a1 - 跳, 本手.
+b2 - 扳, 过分.
+]
+LB[oh:a][ng:b]
+(;B[oh]N[跳,本手(a)];W[ng];B[ph]C[黑17最好不要下在a位尖, 给白留下b位觑的手段.
+]
+LB[pi:a][qh:b])
+(;B[ng]N[扳,错误 (b)];W[og];B[oh];W[pg];B[qf];W[qg]C[黑可以试走a位立, 或b位尖封.
+
+a1 - 立.
+b2 - 尖封.]
+LB[rf:a][pi:b]
+(;B[rf]N[立下(a)];W[pi])
+(;B[pi]N[尖封(b)];W[rf];B[qe];W[rh];B[qi];W[ri]C[黑应手穷. 如果黑a位跳封, 则白b位飞夺黑角上眼位. 如果黑b位跳活角, 白a位飞出后, 黑失败.]
+N[尖封(b)]LB[qk:a][qb:b]))))
+(;B[ld]N[扳,复杂(b)];W[le];B[kd]
+(;W[ke]N[压];B[jd]
+(;W[re]C[白16跳是筋.]N[跳];B[qb]C[黑17往角上跳是形. 白可以选择a位接或b位贴.
+
+a1 - 接.
+b2 - 贴.]
+LB[qe:a][pf:b]
+(;W[qe]N[接(a)];B[ob];W[pc];B[qc];W[pb];B[nc];W[nd];B[pa];W[nb];B[oa];W[mb];B[lc]
+;W[nf];B[og];W[rc]C[白32夹的时候, 黑a位尖是筋. 如果黑试图在b位挡, 将导致崩溃. 黑急着在c位吃两白子也会招致不利.
+
+a1 - 尖, 手筋.
+b2 - 挡, 恶手.
+c3 - 挡, 恶手.]
+LB[ra:a][rd:b][lb:c]
+(;B[ra]N[尖,正着(a)]
+(;W[ng]N[压];B[oh];W[qh])
+(;W[rd]N[接];B[lb];W[rb];B[qa]C[定式]))
+(;B[rd]N[挡,不行(b)];W[rb];B[sd];W[ra];B[qa];W[se])
+(;B[lb]C[黑33将使黑落后手.]N[挡,不好 (c)];W[ra]C[白34占据要津, 黑a位接本手, b位冲招致不必要的劫争.
+
+a1 - 接, 本手.
+b2 - 冲, 恶手. ]
+LB[qa:a][rb:b]
+(;B[qa]N[接,本手(a)];W[rb];B[ma];W[rd];B[na])
+(;B[rb]C[黑35导致劫争.]N[冲,错误 (b)];W[sb]C[成劫.])))
+(;W[pf]N[贴(b)];B[og];W[pc];B[qc]C[白a位飞出安定右边, 也可以b位挡阻黑归路, 相互对杀.
+
+a1 - 飞, 安定右边.
+b2 - 挡, 对杀.]
+LB[qh:a][pb:b]
+(;W[qh]N[飞出(a)];B[nc];W[nd];B[ob];W[pi])
+(;W[pb]C[白22挡住黑的联络, 如果右边白棋虚弱, 黑角上做活没问题.
+ ]N[挡,对杀(b)]
+;B[qe];W[qf];B[rf];W[rg];B[sf]C[白a位跳出是正着, 如果在b位或c位贪吃黑两子, 就会被黑扑吃.
+]
+LB[ph:a][sg:b][se:c];W[ph];B[rd];W[qi])))
+(;W[qf]N[尖];B[qg];W[rg];B[pg];W[qe]
+(;B[rd]N[立];W[rh];B[qi];W[pc])
+(;B[qb]N[跳];W[rh];B[nc];W[nd];B[ob]))
+(;W[je]C[实战]N[压];B[id];W[re];B[qb];W[pf];B[og];W[pg]
+(;B[mf]N[刺];W[me];B[nc];W[nd];B[ob];W[oh];B[ng];W[pc];B[qc]
+(;W[oi]N[并];B[mh];W[ie];B[hd];W[ji];B[li];W[he];B[ge];W[gf];B[lk]C[两分])
+(;W[ki]N[罩天真]
+(;B[mi]N[飞不好];W[oi]C[黑听任白棋摆布])
+(;B[li]C[瞄着A的断点，将成复杂战斗]N[碰]LB[ph:A])))
+(;B[oh]N[长不好];W[pc];B[qc];W[pb];B[ph];W[rg];B[rh];W[rd]C[黑角被吃很大])))
+(;W[qf]N[尖]
+(;B[qg]C[白征子有利黑不利]N[靠征子关系];W[ke];B[jd];W[qe];B[pb];W[ob]
+(;B[rd]N[角上立征子关系];W[pg]
+(;B[mf]N[刺];W[nf];B[og];W[qh];B[oh];W[ng];B[qi];W[ri];B[rg];W[ph]C[白成功])
+(;B[og]N[夹不利];W[qh];B[rg];W[pf]C[黑不利]))
+(;B[rg]N[边上立不行];W[rd];B[qc];W[rc];B[rb];W[re];B[sc];W[pg];B[og];W[pf];B[ph]
+;W[qh]C[黑不行]))
+(;B[qb]C[实战]N[跳];W[pb]
+(;B[qg]N[靠];W[ke];B[jd];W[je];B[id];W[qe];B[rg];W[rd];B[qc];W[re];B[oh];W[pg];B[ph]
+;W[og];B[ng];W[pf];B[nf];W[rb];B[mi]C[两分。以后……];W[tt];B[nb]C[尖是先手];W[tt]
+;B[pa];W[oa];B[ra])
+(;B[pc]N[活角缓];W[ob];B[rc];W[re];B[rd]
+(;W[ng]N[枷好];B[pg];W[ph];B[qg];W[qh];B[rg];W[rh]C[白好])
+(;W[ph]C[实战]N[飞出缓];B[ng];W[mg];B[ni];W[ke];B[jd];W[mh];B[nh];W[pj])))
+(;B[ph]N[飞不行];W[ke];B[jd];W[je];B[id];W[og];B[pg];W[pf];B[nf];W[ng];B[mf];W[mg]
+;B[lf];W[kg]))))
+(;B[qe]N[挡(b)];W[pf];B[qg]C[白a位夹正着, b位托时机不成熟.
+
+a1 - 夹, 正着.
+b2 - 托, 不好.]
+LB[jc:a][qc:b]
+(;W[jc]N[夹,正着(a)];B[me];W[pg];B[qh];W[ph];B[pi];W[qf];B[rf];W[rg];B[rh];W[re]
+;B[sg];W[qc];B[rd];W[oi])
+(;W[qc]C[白8过早.]N[托,不好 (b)];B[pd]C[白只好在A位挡, B位挡则是恶手.
+
+A1 - 挡, 正着.
+B2 - 挡, 恶手.]
+LB[od:A][pc:B]
+(;W[od]N[挡,正着(a)];B[pc];W[pb];B[qb];W[qf]C[黑a位断打是正着, b位试图挡住是恶手.
+
+a1 - 断打, 正着.
+b2 - 挡, 恶手.]
+LB[ob:a][rf:b]
+(;B[ob]N[断打,正着(a)];W[rg])
+(;B[rf]C[黑15挡下大恶.]N[挡,错误 (b)];W[rc];B[rd];W[rb]C[白不仅活了角, 外头还得到了外势. 黑颓势.
+]))
+(;W[pc]C[白10挡角是恶手, 黑将得到相当的厚势.
+]N[挡,错误 (b)];B[od];W[nc];B[nd]
+;W[mb];B[lc];W[lb];B[kc]))
+(;W[qf]N[冲征子关系];B[rf];W[qc]C[白如征子不利不成立]
+(;B[pd]N[冲征子关系];W[od];B[pc];W[pb];B[qb]
+(;W[rc]N[立征子关系];B[re];W[rb];B[ob];W[qa];B[oe];W[nb];B[of]C[双方可下])
+(;W[pg]N[先压防征];B[qh];W[rc];B[re];W[rb];B[ob];W[qa];B[nb];W[ne];B[ph];W[oh];B[oi]
+;W[nh];B[ni];W[mh];B[jc];W[mi]C[两分]))
+(;B[ne]N[飞攻不行];W[rg]
+(;B[pd];W[od]
+(;B[oe];W[re];B[rd];W[sf];B[pc];W[pb])
+(;B[re];W[oe];B[qh];W[nf]))
+(;B[rh];W[pg];B[qh];W[re];B[sg];W[rd]))
+(;B[pg]N[贴];W[pd];B[ng];W[rc]C[两分])))
+(;B[qg]C[黑5二间跳反常, 实际上是有名的骗招. 一般情况下白都会在a位挡下, 只要白小心行事, a位挡下也是没问题的. 白也可以在b位镇. c位压也是一种有趣的下法.
+
+a1 - 挡下.
+b2 - 镇.
+c3 - 靠压.]
+N[二间跳,骗招 (c)]LB[qe:a][me:b][md:c]
+(;W[qe]C[黑有可能走a位贴或b位扳.
+
+a1 - 贴.
+b2 - 扳.]N[挡下(a)]LB[pd:a][re:b]
+(;B[pd]N[扳(a)];W[od];B[re]C[白a扳下上当, 白应该在b位虎补是本手.
+
+a1 - 扳, 上当.
+b2 - 虎补, 本手.]
+LB[rf:a][of:b]
+(;W[rf]N[扳下,上当(a)];B[rd];W[qf];B[oe];W[of];B[ne];W[qb];B[rg]C[无论黑走a立也好, b扳也好, 没啥好结果.
+
+a1 - 立, 不行.
+b2 - 扳, 不行.]
+LB[sf:a][sg:b]
+(;W[sf]C[还是"十八目半的骗招".]N[立,不行(a)];B[pg];W[pf];B[pc];W[pb];B[ob];W[nb]
+;B[nc];W[oa];B[nd];W[ob];B[ng];W[rc];B[nf];W[sd];B[og];W[se];B[sg];W[qc])
+(;W[sg]N[扳,不行(b)];B[pg];W[pf];B[rb];W[qc];B[rc]C[无论白a位尖也好, b位扳也好, 都不会成功.
+
+a1 - 尖, 不行.
+b2 - 扳, 不行.]
+LB[nb:a][ra:b]
+(;W[nb]N[尖,不行(a)];B[se];W[sf];B[ra]C[黑角已经作活, 现在改轮到白为角上五个子找出路了.
+]
+;W[mb]C[二路爬痛苦.];B[lc];W[lb];B[kc];W[kb];B[jc])
+(;W[ra]N[扳,不行(b)];B[pc];W[pb];B[ob];W[nb];B[oa];W[na];B[nc];W[pa];B[ob];W[oa]
+;B[nd])))
+(;W[of]N[虎补,本手(b)];B[rc]C[黑11不可缺少.];W[ld]C[白12飞压, 可以满意.]))
+(;B[re]C[白的应手有a位拐或b位跳. 当太田雄藏下出黑5这招骗招的时候, 本因坊秀策走的是c位靠压, 效果看来并不是很好, 黑d位扳下就上钩了, 将被黑一口气走成十八目半的骗招.
+
+a1 - 拐.
+b2 - 跳.
+c3 - 靠压.
+d4 - 扳下, 上当.]
+N[扳(b)]LB[pd:a][ne:b][md:c][rf:d]
+(;W[pd]N[拐(a)];B[rd];W[qc];B[rc];W[qb])
+(;W[ne]N[跳(b)];B[rc];W[ld])
+(;W[md]N[靠压(c)];B[pd];W[lc];B[oe])
+(;W[rf]C[白掉入陷阱, 没法补救了. 这是有名的"十八目半的骗招". 黑将得到铜墙铁壁. 最要命之处是白没有明显走错的地方.]
+N[扳下,上当 (d)];B[rd];W[qf];B[pd];W[od];B[oe];W[of];B[ne];W[qb];B[pc];W[pb];B[ob]
+;W[nb];B[nc];W[oa];B[nd];W[ob];B[rg];W[sf];B[pg];W[pf];B[ng];W[rc];B[og];W[qc];B[nf]
+;W[sd])))
+(;W[me]N[镇(b)];B[qe];W[jd])
+(;W[md]N[靠压(c)];B[ld];W[me];B[nc];W[nd];B[kc];W[qe];B[ob];W[pc]))
+(;B[qf]C[黑5跳恶手.  白A位冲正着, B位压就错失良机了.
+
+A1 - 冲, 正着.
+B2 - 压, 恶手.]
+N[跳,错误 (d)]LB[qe:A][pf:B]
+(;W[qe]N[冲,正着(a)];B[re];W[pd]C[黑a位并准备弃角, b位粘则会让白走厚.
+
+a1 - 并, 弃角.
+b2 - 粘. 
+]
+LB[qc:a][rd:b]
+(;B[qc]C[黑9弃子战略.]N[并,弃角(a)];W[rf];B[rg];W[rd];B[sf];W[rc])
+(;B[rd]C[黑9不愿意放弃任何一颗黑子.]N[粘(b)];W[ph];B[qh];W[pi];B[qi];W[pj]))
+(;W[pf]C[白6没有抓住黑跳的缺陷, 现在黑可以从容补病了.
+]N[压,恶手 (b)];B[qg];W[pg]
+;B[qh])))
+(;W[oe]C[白4跳是最普通最流畅的应法, 在实战中最为多见. 白4是为以后的反击做准备. 黑a位飞本手, b位拆二缓, c位尖顶是骗招, d位大飞则过分.
+
+a1 - 飞, 正着.
+b2 - 拆二, 缓.
+c3 - 尖顶, 骗招.
+d4 - 大飞, 过分.]
+N[跳 (b)]LB[pf:a][qg:b][pc:c][pg:d]
+(;B[pf]C[黑5小飞是唯一的正着. 白的应手有a位肩冲或b位逼. b位逼相当严厉. 白c位托三三则是骗招.
+
+a1 - 肩冲.
+b2 - 逼, 严厉.
+c3 - 托, 骗招.]
+N[小飞(a)]LB[ld:a][ph:b][qc:c]
+(;W[ld]C[黑a为尖顶是正着, 黑b长则有点随手. 如果黑征子不利, 黑会遭受重大损失.
+
+a1 - 尖顶, 正着.
+b2 - 长, 随手.]
+N[肩冲(a)]LB[pc:a][md:b]
+(;B[pc]C[白a位扳定型, b位立变化相对复杂.
+
+a1 - 扳, 定型.
+b2 - 立, 复杂.]N[尖顶,正着(a)]
+LB[pb:a][ob:b]
+(;W[pb]N[扳(a)];B[qb];W[pd];B[qc];W[md])
+(;W[ob]C[黑一般应该在a位长, 只有在右边极端重要的情况下才可以在b位压, 因为白在a位挡下后, 黑局部损失不小. 黑c冲恶手.
+
+a1 - 长, 正着.
+b2 - 压, 重视右边, 局部受损.
+c3 - 冲, 恶手.]
+N[立,复杂(b)]LB[lc:a][of:b][md:c]
+(;B[lc]N[长,正着(a)];W[kd];B[md];W[me]C[黑a长是定式, b位刺俗手.
+
+a1 - 长, 定式.
+b2 - 刺, 俗手.]
+LB[kc:a][nd:b]
+(;B[kc]N[长,定式(a)];W[jd]C[黑一般走a位跳, 也有在b位继续长的.
+
+a1 - 跳.
+b2 - 长.]
+LB[ic:a][jc:b]
+(;B[ic]N[跳(a)]
+(;W[nd];B[ph])
+(;W[ph];B[of];W[ne]C[白也是一法]))
+(;B[jc]C[黑15没有跳而单长是, 白要小心. 白应该在a位压而不是在b位长. 白a虽然压四路虽然不好, 但接下来白b位长和黑15的交换黑也损. 双方仍然均势.
+
+a1 - 压, 正着.
+b2 - 长, 不好.]
+N[长(b)]LB[of:a][id:b]
+(;W[of]C[黑的应手有a位长或b位扳起.
+
+a1 - 长.
+b2 - 扳起.]N[压,正着(a)]LB[pg:a]
+[id:b]
+(;B[pg]N[长(a)];W[id];B[hc])
+(;B[id]N[扳起(b)];W[pg];B[qg];W[pe];B[qf];W[qe];B[re];W[qh]C[白在右边形成势力, 这是一种转化.
+]
+N[扳起(b)]))
+(;W[id]N[长,错误 (b)];B[ne]C[黑17挖后, 白不能善后. 白a冲也许是最善的应手, 但让黑中心开花, 黑b扳打留下了多处断点, 无法善后, 白c看上去不错,  但黑趁势在外面走得铁厚.
+
+a1 - 冲.
+b2 - 打.
+c3 - 断打.]
+LB[pe:a][nf:b][nd:c]
+(;W[pe]N[冲(a)];B[qe]
+(;W[of];B[mf]C[白a打让黑先手在b位中心开花, 痛苦. 如果白b位接 后, 白虽然能够先手活角, 损失已经没法弥补.况且一旦次序走错, 白将崩溃.
+
+a1 - 打.
+b2 - 粘.]
+LB[pg:a][le:b]
+(;W[pg]N[打(a)];B[qf];W[og];B[le])
+(;W[le]N[粘(b)];B[od];W[pd];B[nd];W[qc];B[og];W[pb];B[nf];W[pc];B[pg]))
+(;W[nd];B[nf];W[of];B[og];W[ng];B[mf];W[pg];B[od];W[oh];B[pd];W[qf];B[le]))
+(;W[nf]N[打(b)];B[nd]C[白a和b两处断点无法两全.]LB[od:a][of:b])
+(;W[nd]N[断打(c)];B[nf];W[of];B[og];W[ng];B[mf];W[pg];B[oh];W[pe];B[qf];W[qe];B[re]
+C[黑虽然有毛病, 但白气短, 无法用强.
+];W[rf];B[qg];W[rd];B[od];W[se];B[pd];W[re]
+;B[ph]C[黑棋外面走得铁厚, 白虽然能在a位滚打黑棋, 顺势在角上做活, 但代价付得太大了.
+]
+LB[pb:a]))))
+(;B[nd]C[黑13刺有俗手意味, 但结果不一定坏.
+]N[刺(b)];W[od];B[ne];W[of];B[nf];W[pg]
+;B[qg];W[ng];B[mf];W[qe];B[ph];W[og];B[re];W[pd];B[qc];W[rf];B[qf];W[pe];B[sd];W[qh]
+;B[rg];W[rh];B[sf];W[pi]))
+(;B[of]N[压,局部受损(b)];W[lc]C[白10挡下后, 白已经安定. 所以只有在右边非常重要的情况下黑才可以在9位压.
+])
+(;B[md]C[黑9冲恶手. 白a位贴正着, b位扳则不好.
+
+a1 - 贴, 正着.
+b2 - 扳, 不好.]
+N[冲,错误 (c)]LB[lc:a][me:b]
+(;W[lc]C[黑可以尝试a位长或b位扳.
+
+a1 - 长.
+b2 - 扳.]N[贴,正着(a)]LB[me:a][lb:b]
+(;B[me]N[长(a)];W[mb];B[of];W[kb]C[白14确保联络, 黑三子失去作用.
+])
+(;B[lb]N[扳(b)];W[me];B[kc];W[le]C[黑形薄.]N[扳(b)]))
+(;W[me]C[白10没有让黑9的恶手受到惩罚.
+]N[扳,不好 (b)];B[lc];W[kd];B[kc];W[jd];B[ic]))))
+(;B[md]N[冲,不好(b)];W[me];B[le]C[如果白征子有利, 白可以在a位贴, 否则, b位压.
+
+a1 - 贴, 白征子有利.
+b2 - 压, 白征子不利.]
+LB[lc:a][of:b]
+(;W[lc]C[黑可以常识a位打或b位扳.
+
+a1 - 打.
+b2 - 扳.]N[贴,白征子有利(a)]LB[ne:a]
+[lb:b]
+(;B[ne]N[打(a)];W[mf];B[nd];W[nf];B[od];W[mb];B[pc];W[ke])
+(;B[lb]N[扳(b)];W[mb];B[nb];W[nc];B[ma];W[nd];B[mb];W[jc]C[黑棋势必要在二路爬活, 非常痛苦. 
+]))
+(;W[of]N[压,白征子不利(b)];B[pg];W[lc]))
+(;B[lc]N[爬];W[kd];B[md];W[me];B[kc];W[jd];B[ic]
+(;W[nd]C[定式]N[虎])
+(;W[ph];B[pg];W[ne];B[qh];W[he];B[hc];W[qi]C[定式])))
+(;W[ph]N[逼(b)];B[of];W[md]
+(;B[lc]N[退];W[nf]C[黑的应手有a位扳或b位靠压.
+
+a1 - 扳.
+b2 - 靠压.]LB[ng:a][oh:b]
+(;B[ng]C[白可以a位退, 也可以严厉地在b位断. b位断是1971年名人赛中由藤择秀行对林海峰时所创.
+]
+N[扳(a)]LB[mf:a][og:b]
+(;W[mf]C[白6显示了现代围棋追求严厉的着法. 这个变化白如果左上角有配合的话, 白的效果会相当好.
+]
+N[退(a)];B[oh]C[白接下来根据情况, 可以选择a位跳或b位夹. 如果右边有配合, 选择a位跳, 如果左上有配合, 则选择b位夹
+
+a1 - 跳, 重视右边.
+b2 - 夹, 重视上边.]
+LB[pj:a][ic:b]
+(;W[pj]N[跳,重视右边(a)];B[pc];W[nc]
+(;B[ic])
+(;B[le]N[严厉]
+(;W[lf];B[ke]C[黑左上有配合时17有力])
+(;W[ld]N[冲断不成立];B[kd];W[kc]
+(;B[jc];W[kb];B[me];W[nd];B[jb];W[lb];B[ke])
+(;B[kb];W[jc];B[jb];W[ic];B[nd];W[me];B[od]))))
+(;W[ic]N[夹,重视上边(b)]))
+(;W[og]C[藤泽秀行当时走了白12断, 以下的研讨显示黑b位打比a位拐要好.
+
+a1 - 打.
+b2 - 拐, 不好.]
+N[断(b)]LB[pe:a][pg:b]
+(;B[pe]N[拐(a)];W[mf];B[nh];W[pj];B[pc];W[od];B[jd];W[lg])
+(;B[pg]N[打(b)];W[oh];B[ne];W[mf];B[nd];W[qc];B[od];W[rd];B[pd];W[mh]C[这个变化可以暂时告一段落, 黑以后可以在a位冲或b位扳.
+
+a1 - 冲.
+b2 - 扳.]
+LB[pc:a][re:b]
+(;B[pc]N[冲(a)];W[rb];B[qb];W[rc];B[pb];W[rf];B[rg];W[qh];B[qg];W[qe];B[pe];W[ra])
+(;B[re]N[扳(b)];W[pc]))))
+(;B[oh]C[白的选择有a位挡和b位跳.
+
+a1 - 挡.
+b2 - 跳.]N[靠压(b)]LB[pe:a][pj:b]
+(;W[pe]N[挡(a)];B[qe];W[og];B[ng];W[pg];B[qf];W[mf];B[pi];W[nh];B[oi];W[mg];B[qh]
+;W[ic])
+(;W[pj]N[跳(b)];B[ng];W[mf];B[pc];W[nc];B[ic])))
+(;B[pc]N[尖顶]
+(;W[nc]N[顶厚];B[mf];W[lc]C[定式];B[pk])
+(;W[pb]N[扳步调快];B[qb];W[lc];B[mf];W[ql])))
+(;W[qc]C[白6托三三是骗招, 应该是不能成功的. 黑a长正着, b位扳就软弱了.
+
+a1 - 长, 正着.
+b2 - 扳, 软弱.]
+N[托,骗招 (c)]LB[pd:a][rc:b]
+(;B[pd]C[白一般在a位接, b位顶不好.
+
+a1 - 接, 本手.
+b2 - 顶, 不好.]N[长,正着(a)]
+LB[pc:a][nc:b]
+(;W[pc]N[接,本手(a)];B[od];W[nd];B[nc];W[rd];B[re];W[rc];B[qg]C[黑明显有利.])
+(;W[nc]N[顶,不好 (b)];B[pc];W[md];B[lc]C[白一无所获.]))
+(;B[rc]C[黑7软弱, 让白6成好棋.]N[扳,错误 (b)];W[qb];B[pd];W[nc];B[md];W[ne])))
+(;B[qg]C[黑5拆二缓招. 白可以先在a位尖, 逼黑在右边应后, 再整形.  也可以直接在b位或c位夹击黑3, 当然白2和白4可能会受损.
+
+a1 - 尖.
+b2 - 二间高夹.
+c3 - 二间低夹.]
+N[拆二,缓(b)]LB[pf:a][jd:b][jc:c]
+(;W[pf]N[尖(a)];B[qf];W[qc]C[黑a扳是正着, b位长是骗招.
+
+a1 - 扳, 正着.
+b2 - 长, 骗招.]
+LB[rc:a][pd:b]
+(;B[rc]N[扳,正着(a)];W[pd];B[qe];W[qb]C[白成安定之形.];B[jc])
+(;B[pd]C[白A位挡是正着, 在B位挡就上当.
+
+A1 - 挡, 正着.
+B2 - 挡, 上当.]N[长,骗招 (b)]
+LB[od:A][pc:B]
+(;W[od]N[挡,正着(a)];B[pc];W[pb]C[黑只能在a位挡, b位断打不能成立.
+
+a1 - 打, 正着.
+b2 - 断打, 不行.]
+LB[rc:a][qb:b]
+(;B[rc]N[打,正着(a)];W[qb])
+(;B[qb]N[断打,不行(b)];W[rc];B[ob];W[qe]C[白16挖手筋, 黑只有在A位立, B位托打不行.
+
+A1 - 立, 本手.
+B2 - 托打, 恶手.]
+LB[rd:A][re:B]
+(;B[rd]N[立下,本手(a)];W[re])
+(;B[re]N[托打,错误 (b)];W[rd];B[pa];W[pe];B[pb];W[rf])))
+(;W[pc]N[挡,上当 (b)];B[od];W[nd];B[nc];W[rd];B[qe];W[ne];B[kd])))
+(;W[jd]AW[cc]C[白左上有配合的时候, 白6夹是拆兼夹的好棋.]N[二间高夹(b)];B[me];W[og])
+(;W[jc]AW[dd]C[左上角白位置比较高的时候, 白6二间低夹比较合适.]N[二间低夹(c)];B[pc]
+C[黑7尖顶, 白可以A位立下, 也可以B位扳阻渡.
+
+A1 - 立下.
+B2 - 扳.]LB[ob:A][pb:B]
+(;W[ob]C[白8立分断黑的联络.]N[立下(a)];B[me];W[og];B[je];W[hc])
+(;W[pb]N[扳(b)];B[qb];W[pd];B[qc]C[白a位跳出是本手, b位封住黑3不好, 因为右边的白有缺陷.
+
+a1 - 跳, 本手.
+b2 - 尖封, 不好.]
+LB[og:a][ld:b]
+(;W[og]N[跳,本手(a)];B[le];W[lg];B[je];W[hc])
+(;W[ld]N[尖封,不好(b)];B[ob];W[nb];B[pa];W[nc]C[白成凝形.]))))
+(;B[pc]C[黑5尖顶是骗招, 白a位扳是正着, b位立则不好.
+
+a1 - 扳, 正着.
+b2 - 立, 不好.]
+N[尖顶,骗招 (c)]LB[pb:a][ob:b]
+(;W[pb]C[黑可以走a虎挡或b位挖虎.
+
+a1 - 虎挡.
+b2 - 挖虎.]N[扳,正着(a)]LB[qb:a]
+[od:b]
+(;B[qb]N[虎挡(a)];W[pd];B[qc];W[qe];B[re];W[qf];B[rf];W[qg])
+(;B[od]N[挖虎(b)];W[nd];B[pd];W[nc];B[ne];W[md];B[nf];W[qb]))
+(;W[ob]N[立,不好 (b)];B[pf]C[黑7再飞, 调子很好. 白无趣.
+]))
+(;B[pg]C[黑5大飞过分, 形薄. 白a位横顶是正着, b位靠下则不好.
+
+a1 - 横顶, 正着.
+b2 - 靠下, 不好.]
+N[大飞,形薄 (d)]LB[nc:a][qe:b]
+(;W[nc]C[白6看上去似乎很缓, 但其实蕴育着力量,让黑无法兼顾两边.
+
+黑可以尝试a位尖补右边, 或b位立补上边.
+
+a1 - 尖顶, 补右边.
+b2 - 立, 补上边.]
+N[横顶,正着(a)]LB[pe:a][md:b]
+(;B[pe]N[尖顶,补右边(a)];W[md]C[白8扳头, 白棋顿成好形.])
+(;B[md]N[立,补上边(b)];W[qe];B[pe];W[pd];B[pf];W[qc];B[rd];W[re];B[rc];W[rb]C[白16是筋.]
+;B[qb];W[pc];B[ra];W[sb]C[黑被大头鬼扑杀.]))
+(;W[qe]N[靠下,不好 (b)];B[pd];W[pe];B[od];W[nd];B[nc];W[rd];B[pb]C[黑13是手筋, 黑三子安然无恙. 这个结果黑有利.
+])))
+(;W[md]N[靠压 (c)];B[ld]C[白的应手有a位退和b位长.
+
+a1 - 退.
+b2 - 长, 强硬.]LB[nd:a]
+[me:b]
+(;W[nd]C[黑可以选择a位拆二或b位虎, 征子有利时, 黑一定要在a位拆二.
+
+a1 - 拆二.
+b2 - 虎, 征子不利.]
+N[退(a)]LB[qg:a][kc:b]
+(;B[qg]N[拆二(a)];W[lc];B[kc];W[lb]C[黑a粘是本手, b位挡下后在a位留下一个断点, 如果补则落后手.
+]
+LB[kd:a][kb:b];B[kd]C[白a位抱吃黑3是本手, b位拐想占便宜则不好.
+
+a1 - 抱吃, 本手.
+b2 - 拐, 不好.]
+LB[mb:a][kb:b]
+(;W[mb]C[定式。以后……]N[抱吃,本手(a)]
+(;B[gd])
+(;B[pc];W[pb];B[qb];W[pd];B[qc];W[pf];B[qf])
+(;W[hd])
+(;W[qc];B[rc];W[rb];B[rd]))
+(;W[kb]C[就是征子有利时, 白12拐也不好.
+]N[拐,不好 (b)];B[jb];W[jc];B[ib]C[黑15退假设黑征子不利.]
+;W[mb];B[id]C[即使黑落后手, 但黑很坚实. 白无趣.
+]))
+(;B[kc]C[白对角上黑1的手段有a位小飞压, b位大飞压, c位逼, d位靠. 白e位二间逼则不好.
+
+a1 - 小飞压.
+b2 - 大飞压.
+c3 - 逼.
+d4 - 靠.
+e5 - 二间逼, 不好.]
+N[虎,征子不利(b)]LB[pf:a][pg:b][qf:c][qe:d][qg:e]
+(;W[pf]C[白征子有利的情况下才能在8位小飞压.
+黑a位挡正着, b位尖顶则不好.
+
+a1 - 挡, 正着.
+b2 - 尖顶, 不好.]
+N[小飞,有征子 (a)]LB[qf:a][pe:b]
+(;B[qf]N[挡,正着(a)];W[qg];B[pg];W[qe];B[rf];W[of]C[黑a打是定式, b位打让黑在角上遭受损失.
+
+a1 - 打, 定式.
+b2 - 打, 恶手.]
+LB[re:a][qh:b]
+(;B[re]N[打,正着(a)];W[ph];B[qb];W[og])
+(;B[qh]C[黑15把角当大礼送给白.]N[打,错误 (b)];W[re];B[rg];W[pd]))
+(;B[pe]C[黑9尖顶不好.
+
+白a位退是本手, b位虎挡是恶手, 因为黑可得实地, 而白建立的外势没什么用.
+
+a1 - 退, 本手.
+b2 - 虎挡, 恶手.]
+N[尖顶,不好 (b)]LB[of:a][oe:b]
+(;W[of]C[黑a位虎正着, b位冲不好.
+
+a1 - 虎, 正着.
+b2 - 冲, 不好.]N[长,正着(a)]
+LB[qf:a][oe:b]
+(;B[qf]N[虎,正着(a)];W[qg];B[rf];W[ph];B[qb]C[黑15要紧, 活角不可缺少.];W[lf])
+(;B[oe]C[黑11冲在这儿并不好.
+]N[冲,不好 (b)];W[nf];B[ne];W[me];B[mf];W[le]C[白16顺势拐出.
+]
+;B[qf];W[ph];B[qg];W[oi]))
+(;W[oe]N[虎挡,不好 (b)];B[qf];W[pg];B[qg];W[ph];B[ri]C[白的厚墙用处不大.]))
+(;B[rf]C[下一手A、B见合]N[飞,征子不利一法]LB[qb:A][qg:B]))
+(;W[pg]C[黑的应手有a位尖顶或b位尖.
+
+a1 - 尖顶.
+b2 - 尖.]N[大飞压(b)]LB[pc:a]
+[pe:b]
+(;B[pc]N[尖顶(a)];W[pb];B[qb];W[pd];B[qc];W[pe];B[rf];W[qh])
+(;B[pe]N[尖(b)];W[nf];B[pc];W[ob];B[pb];W[lf]))
+(;W[qf]N[逼(c)];B[pf]C[黑9外靠时, 白a位扳是正着, b位顶是恶手.
+
+a1 - 扳, 正着.
+b2 - 顶, 恶手.]
+LB[pg:a][qe:b]
+(;W[pg]N[扳(a)];B[pe]C[白走a长是后手, b位跳可得先手.
+
+a1 - 长, 后手.
+b2 - 跳, 先手.]
+LB[og:a][mf:b]
+(;W[og]N[长,后手(a)];B[qg];W[qh];B[rg];W[rh];B[rf];W[mf])
+(;W[mf]N[跳,先手(b)];B[qg];W[qh];B[rg];W[ph];B[rf]N[跳,先手(b)]))
+(;W[qe]N[顶,错误 (b)];B[pe];W[pd];B[qc]C[白棋很难吃到角上两黑子, 如果白下狠心硬吃两子, 黑弃子可以在外面形成厚势. 无论如何, 黑轻松作战.
+]))
+(;W[qe]C[黑a下扳是本手, b位长则是俗手.
+
+a1 - 下扳, 本手.
+b2 - 长, 俗手.]N[靠(d)]
+LB[re:a][pd:b]
+(;B[re]N[下扳,正着(a)];W[pd];B[qf];W[pe];B[qc]C[如果白征子有利, 白可以在a位断, 否则, 白只能在b位断. 
+
+a1 - 内断, 征子白有利.
+b2 - 外断, 征子白不利.]
+LB[rd:a][rf:b]
+(;W[rd]N[内断,征子白有利 (a)];B[rc];W[rf];B[sd];W[qg])
+(;W[rf]N[外断,征子黑有利 (b)];B[rg];W[rd];B[sf];W[rc]C[白18长可以吃住角上黑两子.]))
+(;B[pd]N[长,错误 (b)];W[pe]C[黑a位顶断势在必行, b位下扳则不好.
+
+a1 - 顶断. 
+b2 - 下扳, 不好.]
+LB[od:a][re:b]
+(;B[od]N[顶断(a)];W[oe];B[nc];W[rd]C[这种形黑a位跳是正着, b位打和c位打都不好.
+
+a1 - 跳, 本手.
+b2 - 打, 不好.
+c3 - 打, 不好.]
+LB[pb:a][pc:b][ob:c]
+(;B[pb]N[跳,本手(a)];W[qc];B[pc];W[qb];B[ob];W[qj])
+(;B[pc]N[打,不好(b)];W[pb])
+(;B[ob]N[打,不好(c)];W[qc]))
+(;B[re]N[下扳,不好(b)];W[rf];B[oe];W[od];B[rd];W[pg])))
+(;W[qg]C[白8二间逼不好, 白将被分断.]N[二间逼,不好(e)];B[pf];W[pg];B[of];W[qf];B[qe]
+;W[mf];B[og])))
+(;W[me]C[压长要比压退积极. 
+]N[长,强硬(b)];B[nc]C[白一般在a位退, 如果征子有利, 也可以在b位飞压.
+
+a1 - 退.
+b2 - 飞压, 有征子.]
+LB[od:a][pe:b]
+(;W[od]C[白取势并伺机攻击两边的黑棋, 黑的应手有a位小飞, b位跳, 或c位直接冲. d位拆则不好, 因为角里的黑子将遭受猛烈的攻击.
+
+黑c冲虽然是俗手, 但很有力.  黑准备弃角与白决战.
+
+a1 - 小飞.
+b2 - 跳, 作战.
+c3 - 冲, 弃角.
+d4 - 拆, 不好.]
+N[退(a)]LB[pf:a][qf:b][nd:c][ic:d]
+(;B[pf]N[小飞(a)];W[of];B[pg];W[jd];B[le];W[lf];B[ke];W[qc];B[rc];W[rd]
+(;B[qb]C[白a位立是正着, b位退是恶手.
+
+a1 - 立, 正着.
+b2 - 退, 恶手.]LB[ob:a]
+[pc:b]
+(;W[ob]N[立,正着(a)];B[qe];W[lc];B[kc];W[lb];B[jc];W[mb];B[id])
+(;W[pc]N[退,错误 (b)];B[re];W[rb];B[sd]C[白在角上做不出两眼, 下面的次序显示了这一点.
+]
+;W[sb];B[ra];W[pb];B[qa]))
+(;B[re];W[pd];B[sd];W[qe]))
+(;B[qf]N[跳(b)];W[pe];B[ic]C[黑补上边, 白的应手有a位冲, b位跳压, 和c位逼. 
+
+a1 - 冲. 
+b2 - 跳压.
+c3 - 逼.]
+LB[qe:a][pg:b][qh:c]
+(;W[qe]N[冲(a)];B[re];W[rd]C[黑可以在a位打, 也可以在b位接.
+
+a1 - 打.
+b2 - 接.]
+LB[rc:a][rf:b]
+(;B[rc]N[打(a)];W[rf];B[sd];W[qg]
+(;B[qb]N[迟早须补];W[pf])
+(;B[tt];W[qb];B[pb];W[qc];B[pc];W[pd];B[ob];W[rd]))
+(;B[rf]N[接(b)];W[qc];B[qj]C[两分]))
+(;W[pg]N[跳压(b)];B[qh];W[qe];B[re];W[rd];B[rf];W[qc])
+(;W[qh]N[逼(c)]
+(;B[qe]N[粘本手];W[oh];B[qb]C[白重视右边])
+(;B[qc]N[并争先];W[oh];B[qg];W[ph])))
+(;B[nd]C[黑9冲吹响了战斗的号角.]N[冲,作战(c)];W[ne];B[oe];W[pe];B[of];W[pd]
+(;B[kc]N[虎];W[mg];B[oh];W[qe];B[kf];W[ng];B[og];W[mi];B[oj])
+(;B[pf]N[先拐];W[qe];B[qf];W[re];B[kc];W[mg];B[pi]))
+(;B[ic]C[黑9拆不好, 角上的黑1会遭受猛烈的攻击.]N[拆,不好 (d)];W[qe];B[re];W[qf]
+;B[rf];W[qg];B[qc];W[kf]))
+(;W[pe]C[白8飞压带有骗招的意味, 这个变化出现于1910年.
+黑a扳简明, b位挡可能会引发冲突.
+
+a1 - 扳, 简明.
+b2 - 挡, 危险.]
+N[飞压,骗招,有征子 (b)]LB[ob:a][qe:b]
+(;B[ob]N[扳,简明(a)];W[pc];B[pb];W[qc];B[le]C[黑角受损，扩大上边])
+(;B[qe]N[挡,危险(b)];W[pf]C[黑a位再爬一手是正着, 如果黑b位跳, 白就有严厉的手段, 但白一定要征子有利.
+
+a1 - 再爬, 正着.
+b2 - 跳, 不行.
+]
+LB[qf:a][qg:b]
+(;B[qf]C[白可以在a位长, 但b位挡似乎更好.
+
+a1 - 长.
+b2 - 挡.]N[长,正着(a)]LB[pg:a]
+[nd:b]
+(;W[pg]N[(a)];B[qh])
+(;W[nd]C[黑a位虎引发战斗, 黑b位拐则是弃子战术.
+
+a1 - 虎, 战斗.
+b2 - 拐, 弃子.]
+N[挡(b)]LB[kc:a][pd:b]
+(;B[kc]N[虎,战斗(a)];W[qh]C[黑可以选择a位并或b位顶.
+
+a1 - 并.
+b2 - 顶.]LB[qc:a]
+[qg:b]
+(;B[qc]N[并(a)];W[pb];B[qg]C[黑冲断好象并不明智.];W[pg];B[ph];W[qi];B[oh];W[le])
+(;B[qg]N[顶(b)];W[pg]C[黑a夹是筋, b位扳则胆怯.
+
+a1 - 夹, 手筋.
+b2 - 扳, 胆小.]
+LB[qi:a][rh:b]
+(;B[qi]N[夹,手筋(a)];W[rh];B[ph]C[黑有a位的先手和b位的长出, 只要黑不犯错误, 作战应该黑有利.
+]
+LB[pd:a][oh:b])
+(;B[rh]C[黑二路爬总不是什么好事.]N[扳,错误 (b)];W[qi];B[ri];W[qj])))
+(;B[pd]N[拐,弃子(b)];W[od];B[pg];W[lc];B[pb];W[ob])))
+(;B[qg]N[跳,不行 (b)];W[ob]C[如果白征子有利, 无论黑a位虎也好, b位跳也好, 都没有好下场. 
+
+a1 - 虎. 
+b2 - 跳下.]
+LB[kc:a][qb:b]
+(;B[kc]N[虎(a)];W[qf]C[白必须征子有利.];B[rf];W[re]C[黑a接不行.如果黑b打, 白a断打征吃黑11.
+
+a1 - 接, 不行.
+b2 - 打, 有征子.]
+LB[rg:a][rd:b]
+(;B[rg]N[接,不行(a)];W[rd];B[qc];W[rc];B[rb];W[qb];B[pb];W[qa];B[ra];W[pc];B[pa]
+;W[qb];B[qa];W[pd])
+(;B[rd]N[打,有征子(b)];W[rg];B[se];W[qh]))
+(;B[qb]N[跳下(b)];W[lc];B[kc];W[lb];B[kb];W[mb]))))))
+(;W[qc]C[白在三三位托的目的就是尽快安定自己.
+]N[托三三 (d)]
+(;B[rc]C[白a位虎是正着, b位扳则会让黑筑成厚势.
+
+a1 - 虎, 正着.
+b2 - 扳, 恶手.]
+LB[pd:a][rb:b]
+(;W[pd]C[黑可以在a位退, 也可以在b位打.
+
+a1 - 退.
+b2 - 打.]N[虎,正着(a)]LB[qe:a]
+[qb:b]
+(;B[qe]N[退(a)];W[qb];B[pg]C[白a拐是本手, 从此白彻底安定. 白脱先很不好, 因为黑可以攻击这一块白棋, 并先手获得厚势.
+
+a1 - 拐, 本手.
+b2 - 脱先, 错误.
+]
+LB[rb:a][dp:b]
+(;W[rb]N[拐,本手(a)];B[qk])
+(;C[白10会追悔莫及.]N[白脱先,错误 (b)];B[rb];W[md];B[ld];W[nd];B[kc];W[pe];B[pf]
+;W[nf]))
+(;B[qb]N[打(b)];W[qe];B[pc]C[白a位打是正着, b位打似乎差不多, 但它是个美丽的错误.
+
+a1 - 打, 正着.
+b2 - 打, 错误.]
+LB[rd:a][pb:b]
+(;W[rd]C[黑a位粘是本手, b位断打是恶手.
+
+a1 - 粘, 本手.
+b2 - 断打, 恶手.]N[打,正着(a)]
+LB[qc:a][od:b]
+(;B[qc]N[粘,本手(a)];W[oe];B[nd];W[od];B[ob];W[qi]C[黑度前刺一手必要，白不可多拆一路])
+(;B[od]C[黑11断打, 但黑打不起这个劫, 所以黑11是恶手.
+]N[断打,错误 (b)];W[qc];B[pb]
+;W[pe]C[黑可以选择a位贴长, 或b位退.
+
+a1 - 贴长.
+b2 - 退.]LB[oe:a][nd:b]
+(;B[oe]N[贴长(a)];W[of];B[me];W[qi])
+(;B[nd]N[退(b)];W[qi])))
+(;W[pb]C[白10打恶手, 黑a位断打是正着, b位粘则遂白心愿.
+
+a1 - 断打, 正着.
+b2 - 粘, 恶手.]
+N[打,错误 (b)]LB[pe:a][qc:b]
+(;B[pe]N[断,正着(a)];W[qc];B[rd]C[白a靠压是白最好的善后工作, b位粘则不好, c位打则更糟糕.
+
+a1 - 靠压, 正着.
+b2 - 粘, 不好.
+c3 - 打, 恶手.]
+LB[md:a][od:b][oe:c]
+(;W[md]N[靠压,正着(a)];B[oe];W[lc];B[od];W[nc];B[pc])
+(;W[od]N[粘,不好(b)];B[qf])
+(;W[oe]C[白14打别指望得当好结果.
+]N[打,错误 (b)];B[pf];W[qf];B[pc];W[od];B[qg]
+;W[pg];B[of]))
+(;B[qc]C[黑11恶手, 正是白所期望的.]N[粘,错误 (b)];W[oe];B[re];W[qf]C[白大获成功.]))))
+(;W[rb]C[白6恶手, 黑可以得到理想的外势.
+]N[扳,恶手(b)];B[pc];W[qb];B[pd];W[pb]
+;B[od];W[nc];B[nd]))
+(;B[pd]N[简明];W[pc];B[od]))
+(;C[白脱先的话, 如果白征子不利, 会有不小的损失. 黑的应手有a位靠压和b位尖顶.
+
+a1 - 靠压.
+b2 - 尖顶.
+]
+N[白脱先(e)]LB[od:a][pc:b]
+(;B[od]C[白如果征子有利, 可以在a位挖, 否则只能在b位长, 由此可见白征子不利时, 最好不要脱先.白c显示白再次脱先时, 黑具有的后续手段.
+
+a1 - 挖, 有征子.
+b2 - 长.
+c3 - 脱先.]
+N[靠压(a)]LB[pd:a][pc:b][cq:c]
+(;W[pd]C[白一定要征子有利时才能在5位挖, 黑也只能在a位外打, 如果黑征子有利, 黑b位内打则白崩溃.
+
+a1 - 外打, 白征子有利.
+b2 - 内打, 黑征子有利.]
+N[挖,有征子(a)]LB[pe:a][pc:b]
+(;B[pe]N[外打,白征子有利(a)];W[pc];B[nd];W[qc];B[re]C[白a再立是正着, b位打虽然能先手快感一下, 但有风险.
+
+a1 - 立, 正着.
+b2 - 打, 不好.]
+LB[rc:a][rd:b]
+(;W[rc]C[白12稳健, 白已经铁活.]N[立,正着(a)])
+(;W[rd]N[打,不好 (b)];B[qe];W[cq]C[白如果脱先.];B[rc];W[rb];B[sd];W[sb];B[pa]C[黑18一路点是筋.]
+;W[nb];B[mb];W[oa]C[黑先在a位挤和b位立都成先手, 白c位断的味道基本已经消失.
+]LB[nc:a]
+[ma:b][oe:c]))
+(;B[pc]N[内打,黑征子有利 (b)];W[pe];B[qc]))
+(;W[pc]N[长(b)];B[pd]C[黑在a位爬是正着, b位顶只能增大损失.
+
+a1 - 爬, 正着.
+b2 - 顶, 恶手.]
+LB[qc:a][nc:b]
+(;W[qc]N[爬,正着(a)];B[nc];W[rd];B[re];W[rc];B[qf])
+(;W[nc]C[White 8 is a mistake.]N[顶,错误 (b)];B[nd];W[mb];B[lc];W[lb];B[kc];W[qc]))
+(;N[白再脱先(c)];B[nc]C[白a位再长的话, 黑可以在b位挡了.]LB[pc:a][qc:b]))
+(;B[pc]N[尖顶(b)];W[od];B[pf];W[ne];B[ph];W[ld];B[jc]C[黑试图救出黑3的念头是愚蠢的. 黑走10轻灵跳出是好棋, 当然也可以下在a位.
+]
+LB[ic:a];W[lc]))
+(;W[ne]C[白4飞出最初出现在二十世纪二十年代后期, 但这一步有点怪, 很难说是定式. 黑的应手有a位小飞或b位靠断.
+
+a1 - 小飞.
+b2 - 靠断.]
+N[飞出,趣向 (f)]LB[pf:a][od:b]
+(;B[pf]C[白的应手有a位飞压和b位托三三.
+
+a1 - 飞压.
+b2 - 托三三.]N[飞(a)]LB[ld:a]
+[qc:b]
+(;W[ld]N[飞压(a)];B[pc];W[od];B[ph])
+(;W[qc]C[黑a并是正着, b位扳则软弱.
+
+a1 - 并. 正着.
+b2 - 扳, 软弱.]N[托三三(b)]
+LB[pd:a][rc:b]
+(;B[pd]N[并,正着(a)];W[pc];B[od]C[如果白a则黑b断, 白角上需要做活. 所以白也许不会做这个交换, 直接在c位消黑势, 但黑得到a位穿透, 很满意.
+]
+LB[nd:a][nc:b][pj:c])
+(;B[rc]C[黑7太软弱.]N[扳,错误 (b)];W[pd];B[qe];W[ld])))
+(;B[od]N[靠断(b)];W[nd];B[nc];W[pd];B[oe];W[pe];B[of];W[pc];B[pf];W[qe];B[qf]C[如果黑15下在a位枷吃白两子, 则白在15位拐很大, 结果不能说黑有利. ]
+LB[mf:a][re:b];W[lf];B[re];W[rd];B[rf];W[rc];B[kd];W[nf];B[qj]C[黑21和23同时在两边给中央的白棋施加压力. 黑23拆后, 所获得的地域已经基本上和角上的白棋持平. 同时黑还有攻击中央白棋的乐趣.
+])
+(;B[pe]N[尖也可];W[oe];B[pc];W[ob];B[pg];W[jc];B[ld]))
+(;W[pd]C[白4尖顶不是定式.]N[尖顶,不好(h)];B[qc]C[黑5并必然, 黑走a位并则缺乏胆量(参见变化
+2-1-8-3).]
+LB[qe:a];W[qe];B[pe]C[白可以试下a位立或b位打, 都不会成功.
+
+a1 - 立下, 不行.
+b2 - 打, 不行.]
+LB[re:a][oe:b]
+(;W[re]N[立下,不行(a)];B[ob]C[黑9托以后, 白无论如何也得不到好结果.
+];W[nb];B[pb]
+;W[nc];B[rd];W[rb];B[qb];W[ra];B[oa];W[sc];B[sd]C[白角上已死. 白a爬和b位粘都不会成功.
+
+a1 - 爬, 不行.
+b2 - 粘, 不行.]
+LB[qa:a][rc:b]
+(;W[qa]N[爬,不行(a)];B[sb])
+(;W[rc]N[粘,不行(b)];B[qa]))
+(;W[oe]N[打,不行(b)];B[pf];W[qf];B[qg];W[rg];B[pg];W[rd];B[rc];W[re];B[pc];W[od]
+;B[ob];W[nb];B[pb];W[nc];B[rh];W[sd];B[sg];W[sc];B[rb];W[sb];B[qa];W[oa];B[rf])))
+(;B[lc]C[黑3二间低夹以前是最流行的, 但随着现代围棋讲求速度和效率, 二间高夹逐级替代了二间低夹.
+
+白的应手也是繁多, 有a位大跳, b位飞压, c位托角, d位反夹, e位尖, f位走象步, g位靠压. 也可以脱先. 黑一般只有在征子有利的时候才能走d位反夹或脱先. 注意, 黑二间低夹的时候, 白i位跳不是定式. 白j位飞和k位尖顶都是恶手.
+
+a1 - 大跳, 白出头后夹击上边黑子.
+b2 - 飞压, 白出头后夹击上边黑子.
+c3 - 托, 结果多变.
+d4 - 反夹, 白得右边.
+e5 - 尖, 白出头并分角.
+f6 - 象步, 白取右边.
+g7 - 靠压, 局部受损, 一般白取右边.
+h8 - 脱先. 
+i9 -  跳, 不是定式.
+j10 - 飞角, 不好.
+k11 - 尖靠, 不好.
+]
+N[二间低夹 (e)]LB[of:a][pe:b][qc:c][qg:d][nd:e][me:f][ld:g][dp:h][oe:i][qb:j][pd:k]
+(;W[of]N[二间跳 (a)]
+(;B[qg];W[ic]
+(;B[me]C[黑7飞是要紧的一招, 冲击白的薄味. 白的应手有a位尖顶或b位托, 大部分变化都跟二间高夹时一样, 详情请参见变化2-1-8.
+]
+LB[qc:a][pd:b];W[qc];B[rc];W[pd];B[qe];W[pf];B[qb];W[qf];B[rf];W[pc]
+(;B[re];W[oh];B[nd];W[oe])
+(;B[rd]N[粘错地方];W[oh];B[nd];W[oe]C[以后];W[qh];W[rg];B[sg];W[rh]C[黑不得不作23、24的交换，失去了24断的余味]))
+(;B[mf]
+(;W[qc];B[rc];W[pd];B[qe]
+(;W[oh]N[出头好];B[qb];W[nd])
+(;W[pf]N[刺笨重];B[qf]))
+(;W[pd];B[qc];W[qe];B[re];W[rf];B[qf];W[pe];B[rd];W[oh])))
+(;B[oe]N[参考二间高夹])
+(;B[pg]N[参考二间高夹]))
+(;W[pe]C[白飞压这招在江户时代(1600-1867)非常普遍. 白试图取势, 并准备夹击黑3一子. 跟白二间跳的思路是一样的, 但更有力. 
+
+黑的应手有a位挡和b位冲. b位冲是难解的定式.
+
+a1 - 挡.
+b2 - 冲.]
+N[飞压 (b)]LB[qe:a][pd:b]
+(;B[qe]N[挡(a)];W[pf];B[qg];W[jc];B[le]C[白可以选择a位继续压或b位跳.
+
+a1 - 压
+b2 - 跳.]
+LB[pg:a][je:b]
+(;W[pg]N[压(a)];B[qh];W[ph];B[pi];W[oi]C[黑可以a位退, 也可以强硬地在b位连扳.
+
+a1 - 退.
+b2 - 连扳, 强硬.]
+LB[pj:a][oj:b]
+(;B[pj]N[退(a)];W[qf];B[rf];W[rg]C[黑可以走a位接, 也可以走b位打.
+
+a1 - 接.
+b2 - 打.]
+LB[re:a][rh:b]
+(;B[re]N[接(a)];W[je];B[lg];W[nh])
+(;B[rh]N[打(b)];W[re];B[sg];W[qc];B[rd]))
+(;B[oj]N[连扳,强硬(b)]
+(;W[qf];B[rf];W[re];B[rg];W[qc]C[黑可以选择a位挡打或b位打.
+
+a1 - 挡打.
+b2 - 打.]
+LB[rd:a][ni:b]
+(;B[rd]N[挡打(a)];W[pj];B[qi];W[ni];B[je])
+(;B[ni]N[打(b)];W[rd];B[oh]))
+(;W[md]C[先刺损,但以下有骗着]N[先刺];B[ld];W[qf];B[rf];W[re];B[rg];W[rd];B[qc];W[rc]
+;B[rb];W[qb];B[pb];W[qa];B[ra];W[pc];B[pa];W[qb];B[qa];W[pd];B[qb];W[qi];B[pj];W[sf]
+;B[ri];W[sb];B[ma]C[绝妙破套];W[mb];B[lb];W[na];B[nb];W[la];B[ob]
+(;W[mc];B[sd]C[黑长一气])
+(;W[nc];B[mc];W[kb];B[sd]C[仍吃白]))))
+(;W[je]C[黑a跳方是正着, b位继续跳将被白利用.
+
+a1 - 跳方, 正着.
+b2 - 跳, 恶手.]
+N[跳(b)]LB[ne:a][lg:b]
+(;B[ne]C[白a位冲正是时候, 如果在b位退,将会被黑封塞.
+
+a1 - 冲, 正着.
+b2 - 退, 恶手.]
+N[跳方,正着(a)]LB[qf:a][pd:b]
+(;W[qf]N[冲,正着(a)];B[rf];W[pg]C[黑可以走a冲, 或b位长.
+
+a1 - 冲.
+b2 - 长.]LB[pd:a]
+[qh:b]
+(;B[pd]N[冲(a)];W[od];B[oe];W[rg];B[re];W[qh])
+(;B[qh]N[长(b)];W[pd];B[qc]C[黑17长是搜根的好手.];W[md]))
+(;W[pd]N[退,错误 (b)];B[pg];W[qf];B[rf];W[qc];B[og];W[rc]))
+(;B[lg]C[黑11松缓.]N[跳,错误 (a)];W[nf])))
+(;B[pd]N[冲(b)];W[od];B[oe]C[弦绷得很紧, 双方都要小心. 白a位长是正着, b位挡是恶手.
+
+a1 - 长, 正着.
+b2 - 挡, 恶手.]
+LB[pf:a][qe:b]
+(;W[pf]C[白8只此一手. 黑a位挡正着, b位长是恶手, c位扳也不好.
+
+a1 - 挡, 正着.
+b2 - 长, 恶手.
+c3 - 扳, 不好, 有征子.]
+N[长,正着(a)]LB[of:a][ne:b][nd:c]
+(;B[of]C[黑9也是仅此一手.]N[挡,正着(a)];W[pg];B[og]C[白a位跳下是正着, 在浑浑噩噩地长下去就出事了.
+
+a1 - 跳, 正着.
+b2 - 长, 恶手.]
+LB[re:a][ph:b]
+(;W[re]C[黑可以选择a位挡或b位挡.
+
+a1 - 挡.
+b2 - 挡.]N[跳,正着(a)]LB[rd:a][pc:b]
+(;B[rd]C[白a拐是正着, b位飞缓.
+
+a1 - 拐, 正着.
+b2 - 飞, 缓.]N[挡(a)]LB[pc:a]
+[qb:b]
+(;W[pc]C[黑a挡是正着, b位跳恶手.
+
+a1 - 挡, 正着.
+b2 - 跳, 恶手.]N[拐,正着(a)]
+LB[qc:a][qb:b]
+(;B[qc]N[挡,正着(a)];W[qb];B[rb];W[pa];B[rf];W[qe];B[se];W[ph];B[nd];W[sc];B[sd]
+;W[ra];B[sb];W[nc];B[mc];W[rg];B[nb];W[ob];B[na];W[oa];B[lb];W[ne];B[md];W[qf];B[mf]
+;W[sf];B[rc]C[角里是双活. 这个结果被认为是白稍有利.
+])
+(;B[qb]N[跳,错误 (b)];W[qc];B[rc];W[rb];B[sb];W[ra];B[qa];W[sd]C[黑提后, 白在18位扑, 黑被吃.
+]))
+(;W[qb]C[白14飞缓. 黑弃子在外面筑成厚势.
+]N[飞,缓 (b)];B[ph];W[rf];B[rb];W[qc]
+;B[rc];W[ra];B[md]C[白a接迫不得已, 在上面脱先的话就会犯大错误.
+
+a1 - 接, 必要.
+b2 - 扳, 恶手.]
+LB[pc:a][qh:b]
+(;W[pc]N[接,正着(a)];B[oi])
+(;W[qh]N[扳,错误 (b)];B[pc];W[pb];B[ob]C[大头鬼.];W[nb];B[oa];W[na];B[nc];W[pa]
+;B[ob];W[oa];B[nd];W[ob];B[mb])))
+(;B[pc]N[挡(b)];W[md];B[ph];W[qh];B[qi];W[rd];B[ob];W[mc];B[qb];W[rh];B[ri];W[rg]
+;B[rc];W[nb];B[oa];W[sb]C[白28点是白活棋的手筋. 白a接是定式, b位挡试图阻止白做活是不能成功的.
+
+a1 - 接, 定式.
+b2 - 长, 不好.]
+LB[oh:a][sc:b]
+(;B[oh]C[黑不需要在角上应, 所以29位接补断是本手.
+]N[接,定式(a)])
+(;B[sc]N[长,不好(b)];W[mf];B[oh];W[jc]C[定式];B[sh];W[qe];B[sd];W[se];B[rb];W[sg])))
+(;W[ph]C[White 12 is a mistake.]N[长,错误 (b)];B[nd];W[nc];B[mc];W[qb];B[rb];W[ne]
+;B[md];W[oh];B[mf];W[ra]C[白做劫, 但很难打赢.];B[pb];W[pc];B[qc];W[pa]C[无理劫]
+;B[qa];W[ng];B[nf];W[qb];B[ob];W[nb];B[qa]))
+(;B[ne]C[黑9长不紧凑.]N[长,错误 (b)];W[pb];B[rf];W[md]C[如果黑a位冲, 白将在b位退. 黑难办.
+]
+LB[nd:a][mc:b])
+(;B[nd]C[黑9扳是最新的变化, 结果还是不如原定式(变化2-1-5-2-2-1-1-1-1-1-1), 因为白在右边得到了更厚的外势. 黑并且要征子有利才能在9位扳.
+下面的次序比较复杂, 任何一方稍有差错就会崩溃.
+]
+N[扳,不好,有征子 (c)];W[nc];B[md];W[qb];B[rb];W[pb];B[rf];W[rg];B[re];W[ne];B[of]
+;W[pg];B[rc];W[mc];B[ld];W[ng]C[白征子不利的时候, 在24位枷. 否则, 直接征吃黑亮子连通.
+]
+;B[nf];W[mf];B[me];W[og];B[ne];W[lb];B[kb];W[la];B[jc];W[ra];B[sd];W[nb]))
+(;W[qe]C[白8挡过分.]N[挡,错误 (b)];B[re]C[白可以试走a位外扳或b位扳断, 都不会成功.
+
+a1 - 外扳, 不行.
+b2 - 扳断, 不行.]
+LB[rf:a][rd:b]
+(;W[rf]N[歪扳,不行(a)];B[rd])
+(;W[rd]C[白10是1924年4月木谷石(执白)跟向井一男对局是所下.
+]N[扳断,不行(b)];B[rc]
+;W[qc];B[sd];W[pc];B[rd];W[pg];B[ne];W[qg];B[rb];W[md];B[me];W[ld];B[nd];W[mc];B[nc]
+;W[nb];B[ob]C[白a位打是正着, b位打试图救4子不好.
+
+a1 - 打, 正着.
+b2 - 打, 不好.
+]
+LB[lb:a][pb:b]
+(;W[lb]N[打,正着(a)];B[na];W[mb];B[pb])
+(;W[pb]N[打,不好 (b)];B[mb];W[oa]C[征子有利的时候, 黑可以直接在a位征吃白3子, 否则, 黑b位虎.
+
+a1 - 征, 征子黑有利.
+b2 - 虎, 征子黑不利.]
+LB[kd:a][kb:b]
+(;B[kd]N[征,征子黑有利 (a)])
+(;B[kb]N[虎,征子黑不利(b)];W[le];B[mg];W[qa];B[jc]C[黑35虎补, 让白活角.];W[qb];B[rg]
+C[黑37跳挡也作活. 在将来的作战中, 白有两队白棋, 黑只有一队, 当然黑有利.
+]))))))
+(;W[qc]N[托 (c)];B[rc];W[pd]C[黑的应手有a位退和b位打.
+
+a1 - 退.
+b2 - 打.]LB[qe:a]
+[qb:b]
+(;B[qe]N[退(a)];W[qb];B[pg]C[白的应手有a位拐或b位逼. 如果黑走a位爬, 白可以在d位尖成形. 如果黑脱先, 就给了黑可乘之机.
+
+a1 - 拐, 厚实.
+b2 - 逼.
+c3 - 脱先.
+]
+LB[rb:a][qk:b][dp:c][nd:d]
+(;W[rb]N[拐(a)])
+(;W[qk]N[逼(b)];B[rb];W[nd])
+(;C[白也可以脱先, a和b见合.
+
+a1 - 爬.
+b2 - 飞.]N[白脱先 (c)]LB[nd:a][rb:b]
+(;B[nd]N[飞封,重视中央 (a)];W[pe];B[pf];W[rb]C[如果白a曲, 黑可以在b位封.]LB[oe:a]
+[mf:b])
+(;B[rb]N[爬,重视角地 (b)];W[nd])))
+(;B[qb]C[黑7打也是可以的. 但是在二间低夹的情况下, 黑7在a位退更为普遍. 白的应手有a位反打, 征子有利的情况下,也可以b位长.
+
+a1 - 反打.
+b2 - 长, 征子.]
+N[打(b)]LB[qe:a][pe:b]
+(;W[qe]N[反打(a)];B[pc];W[rd]C[黑a结实地粘是正着, b位断打不好.
+
+a1 - 粘, 正着.
+b2 - 断打, 不好.]
+LB[qc:a][od:b]
+(;B[qc]N[粘,正着(a)];W[oe]C[黑暂时可以脱先了. 在a位扳, b位夹或c位飞显得位置太低了.
+]
+LB[ob:a][nc:b][nb:c])
+(;B[od]N[断打,不好(b)];W[qc];B[pb];W[pe];B[nc];W[oe];B[nd];W[qi]C[白右边成势, 并且还有a位断的手段.]
+LB[rb:a]))
+(;W[pe]C[白征子有利才能在8位长.]N[长,有征子 (b)];B[pc];W[pb];B[qc];W[qf];B[ic];W[nd])))
+(;W[qg]C[白征子有利才能在4位反夹. 黑的应手有a位尖或b位靠压.
+
+a1 - 尖.
+b2 - 靠压.]
+N[反夹,有征子 (d)]LB[pe:a][od:b]
+(;B[pe]N[尖(a)];W[qj]C[黑可以选择a位飞封或b位尖顶.
+
+a1 - 飞封.
+b2 - 尖顶.]LB[nd:a]
+[pc:b]
+(;B[nd]C[白2一子虽然被封, 但还有活力. 将来白还可以在a位飞, 但时机一定要掌握好, 因位黑可以获得超强外势.
+
+a1 - 飞.
+b2 - 脱先.]
+N[飞封(a)]LB[qb:a][dp:b]
+(;W[qb]C[黑a位挡或b位托是正着, c位尖缓.
+
+a1 - 挡, 正着.
+b2 - 托, 正着.
+c3 - 尖, 缓.]
+N[飞(a)]LB[nc:a][rb:b][rc:c]
+(;B[nc]C[白的应手有a位尖或b位立下.
+
+a1 - 尖.
+b2 - 立下.]N[挡下,正着(a)]LB[rc:a]
+[ob:b]
+(;W[rc]N[尖(a)];B[ob];W[re])
+(;W[ob]N[立下(b)];B[rc];W[rb];B[sb];W[od];B[oe];W[nb];B[mb];W[qc];B[re];W[pa]))
+(;B[rb]N[托,正着(b)];W[rc]C[黑a位夹手筋, b位断恶手.
+
+a1 - 夹, 手筋. 
+b2 - 断, 恶手.]
+LB[pb:a][qc:b]
+(;B[pb]N[夹,手筋(a)];W[ra];B[sb];W[sc];B[pc];W[re];B[qh]C[黑以后有靠的手筋]
+(;W[qi];B[qf];W[rf];B[pg];W[rg];B[oh];W[rh])
+(;W[ph]C[扳无理];B[rd];W[sd];B[qi];W[pi];B[rf];W[qf];B[qe];W[se];B[rg];W[pg];B[rj]))
+(;B[qc]C[黑11错误.]N[断,错误 (b)];W[ra];B[sb];W[sc];B[pb];W[sa];B[pc];W[rf]))
+(;B[rc]C[黑9尖是恶手. 黑吃不了白子.
+]N[尖,错误 (c)];W[mb];B[lb];W[od];B[oe];W[rb]
+;B[sb];W[qc];B[re];W[nc];B[mc];W[ma]))
+(;N[白脱先 (b)];B[rd]C[黑8并相当大. 如果下在a位, 虽然坚实, 但成凝形. 
+b位虎也有可能, 但角里总有味道.
+]
+LB[pc:a][re:b]))
+(;B[pc]C[黑7重视实地.]N[尖顶(b)];W[pb];B[qb];W[of]C[白10经营模样. 白8扳后, 将来瞄着a位点觑.
+]
+LB[rc:a];B[nd]))
+(;B[od]C[白a位挖是定式, 白b位拆二不好.
+
+a1 - 挖, 定式.
+b2 - 拆二, 不好.]N[靠压(b)]
+LB[pd:a][qj:b]
+(;W[pd]C[白征子有利才能在6位挖, 黑只好在a位打, 否则, 黑b位打严厉, 白难办.
+
+a1 - 外打, 征子黑不利.
+b2 - 内打, 征子黑有利.]
+N[挖,有征子 (a)]LB[pe:a][pc:b]
+(;B[pe]N[外打,征字黑不利(a)];W[pc]C[黑a位倒虎是手筋, 黑b粘或c位挡都是恶手.
+
+a1 - 倒虎, 手筋.
+b2 - 粘, 恶手.
+c3 - 挡, 恶手.]
+LB[re:a][oe:b][qc:c]
+(;B[re]C[白可以选择a位碰或b位扳打.
+
+a1 - 碰.
+b2 - 扳打.]N[倒虎,手筋(a)]LB[mc:a]
+[nd:b]
+(;W[mc]C[黑的应手有a位立起, 征子有利时可以b位长.
+
+a1 - 立起.
+b2 - 长, 有征子.]
+N[碰(a)]LB[ld:a][nd:b]
+(;B[ld]C[白a位跳是定式, 白b打不大好.
+
+a1 - 跳, 定式.
+b2 - 打, 不好.]N[立起(a)]
+LB[me:a][oe:b]
+(;W[me]C[黑a位挡可以在角上安定, b位粘就重了.
+
+a1 - 挡, 活角.
+b2 - 粘. 重.]N[跳,正着(a)]
+LB[qc:a][oe:b]
+(;B[qc]N[挡,正着(a)];W[oe];B[of];W[nd];B[pf])
+(;B[oe]N[粘,错误 (b)];W[md]))
+(;W[oe]N[打,不好 (b)];B[nd];W[md];B[ne];W[me];B[of]C[白可以a位继续长或b位夹.
+
+a1 - 长.
+b2 - 夹.]
+LB[mf:a][jd:b]
+(;W[mf]N[长(a)];B[id])
+(;W[jd]N[夹(b)];B[mf]C[黑弃两子.])))
+(;B[nd]C[如果黑征子有利, 黑可以在11位长]N[长,有征子 (b)];W[md];B[nc];W[nb];B[ob]
+;W[lb];B[pb];W[mf]))
+(;W[nd]C[白10求战.]N[扳打,战斗 (b)];B[oe];W[ne];B[nf];W[ld];B[kd];W[le];B[mc];W[nc]
+;B[qb];W[id]))
+(;B[oe]N[粘,错误 (b)];W[qe];B[qf];W[re];B[rf];W[rd];B[pg])
+(;B[qc]N[挡,错误 (c)];W[qe]))
+(;B[pc]C[如果征子黑有利, 黑7内打是绝对的一手. 白将陷入困境.
+]N[内打,征子黑有利 (b)]
+;W[pe];B[qc]C[白征子有利, 在a位打正好, 黑失败.
+]LB[nd:a];W[nd];B[ob]C[黑征子不利时只好11为渡过, 结果白有利.
+]
+;W[nc];B[nb]))
+(;W[qj]N[拆二,不好 (b)];B[pc]C[白局部受损.])))
+(;W[nd]C[黑的正确应手有a位飞和b位尖顶. 黑c跳不好, 因为百可以通过压迫角上一子整形. 黑d飞也不好, 因为白很容易获安定.
+
+a1 - 飞, 正着.
+b2 - 尖顶, 正着.
+c3 - 跳, 不好.
+d4 - 飞, 不好.]
+N[尖 (e)]LB[pf:a][pc:b][le:c][oe:d]
+(;B[pf]N[飞(a)];W[qb];B[qj];W[dp]C[如果白脱先的话, 黑将来可以在a位飞封, 建立模样. 
+缺点是右边的棋形将边薄.
+]
+LB[me:a];B[me];W[ne];B[mf];W[nf];B[mg])
+(;B[pc]N[尖顶,正着(b)];W[pb];B[qb];W[pd];B[qc];W[pe];B[qf])
+(;B[le]C[黑5跳不好.
+白a位飞压正着, b位尖冲和c位逼都是恶手.
+
+a1 - 
+b2 - 
+c3 - ]
+N[跳,不好 (c)]LB[pf:a][pe:b][qf:c]
+(;W[pf]N[飞压,正着(a)];B[pc];W[pb];B[qb];W[pd];B[qc];W[qe])
+(;W[pe]C[白6轻易让黑在边上安定.]N[尖冲,错误 (b)];B[qe];W[pf];B[qg])
+(;W[qf]C[白6过分.]N[逼,错误 (c)];B[pe]C[白被分断, 难办.]))
+(;B[oe]C[白a飞轻易安定, b位挡则是坏棋.
+
+a1 - 飞, 正着.
+b2 - 挡, 错误.]N[飞,不好 (d)]
+LB[qb:a][ne:b]
+(;W[qb]C[黑a位拆正着, b位封过分.
+
+a1 - 拆, 正着.
+b2 - 飞封, 过分. ]N[飞,正着(a)]
+LB[pj:a][me:b]
+(;B[pj]C[这个结果显然黑不好, 黑右边形还是薄, 白基本已经安定, 上边的黑3将遭受夹击.
+]
+N[拆,正着(a)])
+(;B[me]N[飞封,错误 (b)];W[ne];B[nf];W[md];B[ld];W[of]))
+(;W[ne]C[白6是恶手, 因为黑两边都能走好.
+]N[挡,错误 (b)];B[of];W[le];B[jd])))
+(;W[me]C[白4走象步是二间低夹时的定式.  如果黑c位穿象眼, 正中白的下怀.黑的应手有a位靠压和b位靠. 黑c穿和d位尖都不好.
+
+a1 - 靠压.
+b2 - 靠.
+c3 - 穿象眼, 不好.
+d4 - 尖, 不好.]
+N[象步 (f)]LB[od:a][le:b][nd:c][pe:d]
+(;B[od]C[白a位碰是定式, b位扳形恶.
+
+a1 - 碰, 正着.
+b2 - 扳, 恶手.
+]N[靠压(a)]
+LB[mc:a][nd:b]
+(;W[mc]C[黑a虎是定式下法, b位立起则不好.
+
+a1 - 虎, 正着.
+b2 - 立起, 不好.]N[碰,正着(a)]
+LB[pc:a][ld:b]
+(;B[pc]N[虎,正着(a)];W[ld]C[黑在a位打比较好, b位长出不是很好.
+
+a1 - 打, 正着.
+b2 - 长出, 不好.]
+LB[nc:a][kc:b]
+(;B[nc]N[打,正着(a)])
+(;B[kc]N[长出,不好 (b)];W[id]))
+(;B[ld]C[白a位挖是正着, b位接是恶手.
+
+a1 - 挖, 正着. 
+b2 - 接, 恶手.]N[立起,不好 (b)]
+LB[pd:a][md:b]
+(;W[pd]N[挖,正着(a)];B[pe];W[pc];B[oe];W[md];B[qc];W[jd];B[ke];W[mg])
+(;W[md]N[接,错误 (b)];B[pc];W[jd];B[ke]C[白棋形薄.])))
+(;W[nd]N[扳,错误 (b)];B[oe];W[pc];B[qc]C[白4的位置不对, 应该在标号处. 黑9挡后, 下一不可以在a位并, 瞄着b位的断, 白应手穷.
+]
+CR[ne]LB[ld:a][nc:b]))
+(;B[le]N[靠(b)];W[lf];B[ke];W[md];B[qg];W[ld];B[kd];W[kc];B[jc];W[kb];B[jb];W[lb]
+;B[id])
+(;B[nd]C[黑5穿象眼不好. 白a位飞压是手段, b位挡则是恶手.
+
+a1 - 飞压, 正着.
+b2 - 挡, 错误.]
+N[穿象眼,不好 (c)]LB[pe:a][md:b]
+(;W[pe]C[黑a位挡本手, b位长稍差, c位压是无谋.
+
+a1 - 挡, 本手.
+b2 - 长, 不好.
+c3 - 压, 恶手.]
+N[飞压,正着(a)]LB[qe:a][ne:b][od:c]
+(;B[qe]N[挡,本手(a)];W[pf];B[qg];W[ne])
+(;B[ne]C[黑7长不好, 白的应手有a位退或b位挡下.
+
+a1 - 退.
+b2 - 挡下.]N[长,不好 (b)]
+LB[pd:a][qe:b]
+(;W[pd]N[退(a)];B[qe];W[qf];B[qc];W[pf])
+(;W[qe]N[挡下(b)];B[mf];W[rd]C[白10扳得大角.]))
+(;B[od]N[压,错误 (c)];W[pd];B[pc];W[nc];B[md];W[qc];B[pb];W[qb]))
+(;W[md]N[挡,错误 (b)];B[nc];W[mc];B[mb];W[lb];B[ob];W[kc];B[of]C[黑13飞后, 角上成了大空. 白失败.
+]))
+(;B[pe]C[黑5缓.]N[尖,缓 (d)];W[mc];B[ld];W[md];B[hc];W[qb]))
+(;W[ld]C[白4是二间低夹定式特有的应手, 局部受损, 所以很少采用.
+
+黑如果重视上边, 则a位扳较好, b位长则是普通的着法, 黑一定要有征子才能在c位扳断.
+
+a1 - 扳, 重视上边.
+b2 - 长, 普通.
+c3 - 扳断, 有征子.]
+N[靠压 (g)]LB[kd:a][mc:b][md:c]
+(;B[kd]N[扳,重视上边(a)];W[mc];B[kc]C[黑在上边成了一个小堡垒, 白接下来应该对黑1有所表示. 白一般在b位夹击, 征子有利时可以在a位夹击, c位夹过分.
+
+a1 - 一间高夹, 有征子. 
+b2 - 二间高夹.
+c3 - 二间低夹, 过份.]
+LB[pf:a][pg:b][qg:c]
+(;W[pf]C[黑的应手有a位托, b位尖顶和c位尖顶. d位压味恶.
+
+a1 - 托.
+b2 - 尖顶.
+c3 - 尖顶.
+d4 - 靠压, 不好.]
+N[一间高夹,有征子(a)]LB[qf:a][pe:b][pc:c][od:d]
+(;B[qf]N[托(a)];W[qg];B[pg];W[qe];B[rf];W[of];B[re];W[ph]C[白征子有利才能在16位打.]
+;B[pb];W[og])
+(;B[pe]N[尖顶(b)];W[oe];B[qf]C[白a打正着, b位长则是恶手.
+
+a1 - 打, 正着.
+b2 - 长, 恶手.]
+LB[pd:a][pg:b]
+(;W[pd]N[打,正着(a)];B[qe];W[qc];B[rc];W[rb];B[pg];W[of]C[黑a位粘是本手, b位打过分.
+
+a1 - 粘, 本手.
+b2 - 打, 过分.]
+LB[rd:a][qb:b]
+(;B[rd]N[粘,本手(a)])
+(;B[qb]C[黑19打过分.]N[打,错误 (b)];W[pc];B[sb];W[qg];B[qh];W[rg];B[ra];W[qi]C[白26夹是手筋.]
+;B[og];W[rh]))
+(;W[pg]C[白12长让黑净得实地, 白建立的外势,由于上边黑三子, 用处不大.
+]N[长,错误 (b)]
+;B[qg];W[ph];B[qh];W[pi];B[qj]))
+(;B[pc]N[尖顶(c)];W[oe];B[rf];W[qg];B[rg];W[qi])
+(;B[od]C[黑9试图与优势兵力的白作战, 不妥.
+]N[靠压,不好 (d)];W[pc];B[pd];W[nd]C[白a长和b位挡见合, 白轻松作战.
+]
+LB[le:a][qc:b]))
+(;W[pg]N[二间高夹(b)];B[pe];W[me];B[pc];W[ng]C[以后黑a位大飞极大.]LB[rg:a])
+(;W[qg]N[二间低夹,过分(c)];B[pf]C[白a位托是正着, b位挡的话, 就会兄弟打架, 顾此失彼.
+
+a1 - 托, 正着. 
+b2 - 挡, 恶手.]
+LB[qc:a][pg:b]
+(;W[qc]C[黑a位挡是正着, b位扳不好.
+a1 - 挡, 正着.
+b2 - 扳, 不好.]N[托,正着(a)]
+LB[qf:a][rc:b]
+(;B[qf]N[挡,正着(a)];W[pd];B[re];W[rd];B[sd]
+(;W[qe]N[定式];B[rg])
+(;W[rc];B[qi]N[定式]))
+(;B[rc]N[扳,不好 (b)];W[pd];B[qe];W[pg];B[of];W[le]C[如果黑a位打的话, 白会作劫.]
+LB[qb:a]))
+(;W[pg]N[挡,错误 (b)];B[of]C[白可以试走a位长或b位拐.
+
+a1 - 长.
+b2 - 拐.]LB[le:a]
+[qf:b]
+(;W[le]N[长(a)];B[pc];W[od];B[qf])
+(;W[qf]N[拐(b)];B[od];W[pc];B[pd];W[md];B[qc];W[lf];B[og]))))
+(;B[mc]N[长,普通(b)]
+(;W[oe]C[黑a位飞本手, 只有在上边极其重要的时候才能b位扳, 因为角里的黑1将会受煎熬.
+
+a1 - 飞, 本手.
+b2 - 扳, 重视上边.]
+LB[pf:a][kd:b]
+(;B[pf]N[飞,本手(a)];W[kd])
+(;B[kd]N[扳,重视上边(b)];W[qf]))
+(;W[pe]N[飞压，实战];B[pd];W[od];B[oe];W[ne];B[of];W[md]AB[qo][no][qi]AW[pq][ql]
+[mq]C[秀荣对秀甫实战。右边有黑子夹攻右下白子时，白腾挪];B[kc];W[ph]))
+(;B[md]C[黑5扳断和一间高夹的定式一样, 请参见变化2-1-7-4-2.]N[扳断,有征子(c)];W[mc]
+;B[nc];W[mb];B[me];W[nd];B[ne];W[nb];B[pe];W[kd];B[qj]))
+(;C[白最好在征子有利的情况下才能脱先. 黑接下来的应手有a位压和b位尖顶.
+
+a1 - 压.
+b2 - 尖顶.]
+N[白脱先 (h)]LB[od:a][pc:b]
+(;B[od]C[白如果征子有利,可以先在a位挖, 否则只能在b位扳出. 白c爬, 试图在里面做活, 将会让黑成铁厚的外势.
+
+a1 - 挖, 征子白有利.
+b2 - 扳出.
+c3 - 爬, 黑成厚势.
+]
+N[压(a)]LB[pd:a][nd:b][pc:c]
+(;W[pd]N[挖,有征子(a)];B[pe];W[pc];B[nd];W[qc];B[re]C[白a尖是正着. b位长是老定式, 结果不佳.
+
+a1 - 尖, 正着.
+b2 - 长, 老定式.]
+LB[rb:a][nc:b]
+(;W[rb]N[尖,正着(a)])
+(;W[nc]C[黑可以选择走a位挡, b位退或c位扳虎. 黑a位挡虽然对角的压力大, 但也留下了断点.
+
+a1 - 挡.
+b2 - 退.
+c3 - 扳虎]
+N[长,老定式(b)]LB[mc:a][md:b][rc:c]
+(;B[mc]N[挡(a)];W[rc])
+(;B[md]N[退(b)];W[rd]C[白13打先手活角. 但现在黑在外头铁厚.
+];B[qe])
+(;B[rc]C[黑12扳角, 给白施加更大的压力.
+]N[扳虎(c)];W[mc];B[md];W[lb];B[kc]C[白只好撞后再爬.]
+;W[kb];B[jc])))
+(;W[nd]N[扳出(b)];B[nc]C[白a位打是正着, b位挖打是俗手加恶手.
+
+a1 - 打, 正着.
+b2 - 挖打, 恶手. ]
+LB[mc:a][pd:b]
+(;W[mc]N[打,正着(a)];B[nb];W[pd];B[oe];W[pe];B[pc];W[of]C[黑可以在a位拐打, 也可以在b位提.
+
+a1 - 拐打.
+b2 - 提.]
+LB[ne:a][ob:b]
+(;B[ne]N[拐打(a)];W[qc];B[ob];W[qe];B[pf];W[rd];B[pg];W[rg])
+(;B[ob]N[提(b)];W[ne];B[oc];W[nf];B[pf];W[pg];B[qf];W[qg];B[rf]))
+(;W[pd]C[白7恶手.]N[挖打,错误 (b)];B[oe];W[pc];B[pe];W[nb];B[mc]C[白只好在a位挡, b位断则过分.
+
+a1 - 挡, 本手.
+b2 - 断, 过分.]
+LB[qc:a][qe:b]
+(;W[qc]N[挡,本手(a)];B[re];W[rd];B[qe]C[白虽先手活，但黑外面太厚，白不好])
+(;W[qe]C[白13不行.]N[断,错误 (b)];B[qc])))
+(;W[pc]C[白5爬, 让黑在外面筑成厚墙.]N[爬(c)];B[pd];W[mc];B[md];W[nc];B[ld];W[qc]
+;B[rd];W[rc];B[qj]))
+(;B[pc]N[尖顶(b)];W[od];B[pf]C[白一般在a位飞, b位镇不大好.
+
+a1 - 飞, 正着.
+b2 - 镇, 不好.
+]
+LB[me:a][le:b]
+(;W[me]N[飞,正着(a)];B[le];W[lf];B[ke];W[md]C[黑一般会在a位跳, 如果征子有利, 也有可能在b位拆.
+
+a1 - 跳.
+b2 - 拆二, 有征子.]
+LB[ph:a][ic:b]
+(;B[ph]N[跳(a)];W[ld];B[kd];W[kc];B[jc];W[kb];B[jb];W[lb];B[kf])
+(;B[ic]C[黑征子有利时才能在12位拆二.]N[拆二,有征子 (b)];W[qe]C[黑征子有利时可以在a位挡, 否则只能在b位夹.
+
+a1 - 挡, 征子黑有利.
+b2 - 夹, 征子白有利.]
+LB[pe:a][qf:b]
+(;B[pe]C[黑征子有利才能这么下.]N[挡,征子黑有利 (a)];W[pd]C[黑a位粘是正着, b位打就把角出卖了.
+
+a1 - 粘, 正着.
+b2 - 打, 恶手.]
+LB[qc:a][qf:b]
+(;B[qc]N[接,正着(a)];W[qf];B[pg];W[qg];B[qh];W[rh];B[ri]C[白a打弃三子, 在外头拔花. 如果黑征子不利, 白b打, 黑崩溃.
+
+a1 - 打, 黑征子有利.
+b2 - 打, 白征子有利.]
+LB[qi:a][ph:b]
+(;W[qi]N[打,黑征子有利(a)];B[ph];W[rj];B[rg];W[si];B[re])
+(;W[ph]N[打,白征子有利(b)];B[qi];W[og];B[oh];W[pi];B[of];W[ng];B[nf];W[mf];B[nh]
+;W[mg];B[pj]))
+(;B[qf]N[打,错误 (b)];W[qc]))
+(;B[qf]N[夹,征子白有利(b)];W[pe];B[re];W[rf];B[rd];W[of];B[rg];W[pg];B[qg];W[ph])))
+(;W[le]C[由于是小目定式, 白7镇后, 没有在a位靠下的手段.
+
+]N[镇,不好(b)]LB[qe:a]
+;B[jd];W[qe]C[白9靠下不能成功.
+];B[pe];W[pd];B[qc];W[qf];B[ne]C[黑14跳是先手, 所以接下来黑可以连扳.
+]
+;W[md]C[白15联络无奈.];B[qg];W[rg];B[rh])))
+(;W[oe]C[二间低夹的情形下, 白跳不是定式.
+]N[一间跳,不好 (i)];B[pf];W[ic];B[le]
+;W[of]C[白只好在后面推车, 由于上边的黑两子离得远了点, 白推车的效果不大好.
+];B[pg])
+(;W[qb]C[白这么急于飞二路, 不是很吉利吧.]N[飞角,错误 (j)];B[od]C[白a位挖是正着, b位扳不行.
+
+a1 - 挖, 正着.
+b2 - 扳出, 不行.]
+LB[pd:a][nd:b]
+(;W[pd]N[挖,正着(a)];B[pe];W[pc];B[nd];W[qe];B[qf];W[re];B[pf];W[rd])
+(;W[nd]C[白6扳出过分.]N[扳出,错误 (b)];B[pc];W[pb];B[nc];W[ob];B[nb];W[oe];B[pd]))
+(;W[pd]C[白4尖靠是恶手. 黑a位往角里长是正着, b位长出则没胆.
+
+a1 - 长, 正着.
+b2 - 长出, 胆小.]
+N[尖靠,错误 (k)]LB[qc:a][qe:b]
+(;B[qc]C[白a跳是正着, b位扳住则过分.
+
+a1 - 跳, 正着.
+b2 - 扳住, 过分.]N[长,正着(a)]
+LB[pf:a][qe:b]
+(;W[pf]N[跳,正着(a)];B[qe];W[nf];B[qg]C[白形薄.])
+(;W[qe]N[扳住,过分 (b)];B[pe];W[re];B[oe];W[pc];B[qb]C[黑11立后, 白三子将被吃.
+]
+;W[rd];B[nc];W[nb];B[od]))
+(;B[qe]N[长出,错误 (b)];W[qc];B[rc];W[qb])))
+(;B[kc]C[黑3三间夹据说是四世本因坊道策(1645-1702)所创. 这是夹攻的同时又维持全局平衡的一着. 当左上角有白子的时候, 黑经常这么下.
+
+白的应手有a位托, b位尖顶, c位飞压, d位大跳, e位大飞压, f位反夹或g位反夹. 当然脱先也是一种策略. 白征子有利时, 才能在c位飞压.
+
+十九世纪时在日本白也有走i位镇的.
+
+a1 - 托, 黑选择.
+b2 - 尖顶, 黑选择.
+c3 - 飞压, 白选择
+d4 - 大跳, 黑选择.
+e5 - 大飞, 大斜定式.
+f6 - 反夹, 黑上边, 白右边.
+g7 - 反夹, 白左上, 和右边, 黑得角与右上.
+h8 - 脱先, 白得上边.
+i9 - 镇, 罕见.]
+N[三间低夹 (f)]LB[qc:a][pd:b][pe:c][of:d][pf:e][qg:f][ic:g][dp:h][ke:i]
+(;W[qc]C[白a扳正着, b位挖过分.
+
+a1 - 扳, 正着.
+b2 - 挖, 过分.]N[托三三(a)]LB[rc:a]
+[pc:b]
+(;B[rc]N[扳,本手(a)];W[pd]C[黑可以a位退, 也可以b位打. 这种形出现了好多次了.
+
+a1 - 退.
+b2 - 打.]
+LB[qe:a][qb:b]
+(;B[qe]N[退(a)];W[qb]C[黑可以在a位飞或b位拆二.
+
+a1 - 飞.
+b2 - 拆二.]LB[pg:a]
+[qh:b]
+(;B[pg]N[飞(a)]
+(;W[tt];B[nd];W[pe];B[pf];W[mb];B[ld];W[rb])
+(;W[pe]C[实战]N[顶];B[pf];W[qi];B[nd];W[rg]
+(;B[qg]N[团正确];W[rf];B[qf];W[ne]C[短兵相接];B[pi];W[qj];B[pj];W[pk];B[me];W[of]
+;B[mf];W[og];B[qk];W[ql];B[rk];W[qh];B[ph];W[rl];B[ok];W[pl];B[nc])
+(;B[rf]N[普通下法不好];W[qg];B[qf];W[mb]C[黑整体不安])))
+(;B[qh]N[拆二(b)]
+(;W[pe]N[压];B[pf];W[of];B[pg];W[ic]C[定式。以后……];B[ke]C[实战];W[ie];B[nd];W[nc]
+;B[md];W[og];B[oe];W[oh];B[od];W[pc];B[nf];W[mc];B[lc];W[rb];B[qj];W[lh];B[mg];W[pi]
+;B[qi];W[mh];B[kg];W[kh];B[jg];W[jh];B[ig])
+(;W[ic];B[of]))
+(;B[of]C[黑的意图是弃子走厚中央]N[飞封变着];W[pe];B[pf];W[qf];B[rf];W[qg];B[rg]
+;W[qh];B[rb];W[ld];B[oh];W[pj];B[kd];W[le];B[oe]C[急所]
+(;W[mc]N[只有尖];B[lg];W[ke];B[id]C[黑可战])
+(;W[lc]N[挡无理];B[od];W[pc];B[nc];W[nb];B[mb])
+(;W[od]N[团不好];B[mc]C[急所];W[lc];B[lb];W[md];B[nb]C[白连根飘起,不利.下面,白A罩不住黑棋,至D,黑可出头.]
+LB[ni:A][nh:B][mi:C][lg:D];W[ke];B[id];W[je];B[lh];W[jh];B[lj]C[黑可战.对白A的冲断,顺序进行下去,黑有F压的强手]
+LB[jd:A][jc:B][ic:C][ib:D][hc:E][hd:F])))
+(;B[qb]N[打(b)];W[qe];B[pc]C[白一定要在a位打, b位打想占更大的便宜,结果会适得其反.
+
+a1 - 打, 正着.
+b2 - 打, 恶手.]
+LB[rd:a][pb:b]
+(;W[rd]N[打,正着(a)];B[qc];W[oe]C[黑可以脱先.];W[nb]C[黑脱先后, 白13尖比a位立下好, 黑只好吃白10一子做活.
+]
+LB[ob:a];B[re];W[rf];B[sd];W[qf])
+(;W[pb]C[白10打是恶手, 黑3夹依然有效. 黑a位反打是正着, b位粘就中计了.
+
+a1 - 反打, 正着.
+b2 - 粘, 恶手.]
+N[打,错误 (b)]LB[pe:a][qc:b]
+(;B[pe]N[反打,正着(a)];W[qc];B[rd]C[白只好a位粘了, b位长反抗只会恶化局势.
+
+a1 - 粘, 本手.
+b2 - 长, 不好.
+]
+LB[od:a][qf:b]
+(;W[od]N[粘,本手(a)];B[qf]C[黑15取利, 而黑3夹之子依然有效.
+])
+(;W[qf]C[白14长出不好, 白又添一队弱子.]N[长,不好 (b)];B[oe]C[黑15声援黑3夹之子. 在未来的战斗里, 黑将占据上风. 白不大可能开劫攻击角上黑子, 而白两边的棋都需要处理.
+]))
+(;B[qc]N[粘,错误 (b)];W[oe]C[现在白10扳比在另外一边扳更加有效了. 黑3一子显得越发孤单了.
+]))))
+(;B[pc]C[黑5挖过强, 白A位打是正着, B位打凑黑好形.
+
+A1 - 上打, 正着.
+B2 - 下打, 软弱.]
+N[挖,不好 (b)]LB[pd:A][pb:B]
+(;W[pd]N[上打,正着(a)];B[pb];W[qe];B[rd];W[qb]C[黑a单拐要比b位断打好.
+
+a1 - 单拐, 正着.
+b2 - 断打, 俗手.]
+LB[ob:a][pe:b]
+(;B[ob]N[单拐,正着(a)];W[re];B[od];W[pe])
+(;B[pe]C[黑11不如在X位单拐好. 最多, 黑11只能在特定场合下才能采用.
+]N[断打,不好(b)]
+MA[ob];W[od];B[qf]))
+(;W[pb]C[白6软弱.]N[下打,错误 (b)];B[pd];W[rb];B[rc];W[qb];B[od];W[nc];B[nd])))
+(;W[pd]C[黑的应手有a位长出或b位长进. c位扳则过分, d位飞少见.
+
+a1 - 长出, 黑得右边, 白得角.
+b2 - 长进, 黑得上边而白将得大角.
+c3 - 扳, 过分.
+d4 - 飞, 罕见.]
+N[尖顶(b)]LB[qe:a][qc:b][pe:c][pf:d]
+(;B[qe]N[长出(a)];W[qc];B[rc];W[qb];B[pg])
+(;B[qc]N[长进(b)];W[qe]C[黑在a位断是正着, b位下扳屈服.
+
+a1 - 断, 反击.
+b2 - 下扳, 屈服.]
+LB[pe:a][re:b]
+(;B[pe]N[断,正着(a)];W[re];B[oe];W[pc];B[qb]
+(;W[rd]
+(;B[nc]N[靠];W[nb]
+(;B[mc]N[长]
+(;W[pb]C[二间高夹也有这个变化, 请参见二间高夹的变化2-1-6-2-2-1.
+];B[mb];W[rb]C[黑有利])
+(;W[mb]N[先爬不好];B[od];W[pb];B[pa];W[ob];B[rc];W[lc];B[ld];W[lb];B[qf];W[rf];B[qg]
+;W[rg];B[rh];W[qh];B[ri];W[pf];B[pg];W[of];B[og];W[nf];B[nd];W[sb];B[sc];W[sd];B[ra]
+;W[oa];B[ng]C[白角上需花二手补。这是旧定式，白不利显然。]))
+(;B[mb]C[征子关系。但征子不利也可行]N[连扳强手]
+(;W[nd]N[打];B[mc];W[od];B[me]
+(;W[ne]N[冲];B[nf];W[of];B[pf];W[og];B[pg];W[ph];B[qg];W[oh]
+(;B[md]C[白如征不掉21,已经崩了]
+(;W[mf]N[立即征吃不好];B[ob];W[ng];B[pb];W[nf];B[qh])
+(;W[ob]N[接];B[qh];W[mf];B[pi];W[ng];B[rc]C[以后\:]
+(;W[rg]N[吃角得不偿失];B[rh];W[rf];B[sg];W[sb];B[sc];W[qi];B[qj];W[ri];B[rj];W[pb]
+;B[sf];W[sd])
+(;W[pk];B[oi];W[ni];B[oj])))
+(;B[mf]N[接上面不行];W[rg];B[qh];W[qi];B[rh];W[ri];B[rf];W[qf];B[sg];W[si];B[sh]
+;W[sf]))
+(;W[md]N[冲]
+(;B[ld]N[挡];W[ne];B[nf];W[of];B[pf];W[mf];B[og];W[le]
+(;B[qf];W[rf];B[rg];W[rb];B[na]
+(;W[pa];B[mg];W[lg];B[mh];W[kd];B[lc];W[jd];B[ic];W[pb])
+(;W[ob];B[rc];W[sc];B[ra];W[sb];B[pa];W[oa];B[sf]))
+(;B[na];W[ob];B[qf];W[rb];B[rc];W[sc];B[ra];W[sb];B[pa];W[oa];B[rf];W[ma];B[se]
+;W[jd]C[白稍好]))
+(;B[le]N[退征子关系];W[ld];B[kd];W[ne];B[nf];W[of];B[pf];W[og];B[pg];W[ph];B[qg]
+;W[ob];B[lc];W[oh]
+(;B[na]N[征子关系];W[mf])
+(;B[mg];W[rg];B[qh];W[qi];B[rh];W[ri];B[rf];W[sh];B[sg];W[si];B[qf];W[sf];B[se]
+;W[sd]C[黑不行]))))
+(;W[ob]N[接征子关系];B[md];W[nd];B[mc]
+(;W[rb]N[征子不利只有补];B[od];W[rc]C[黑好])
+(;W[ne]N[冲征子关系];B[nf];W[od];B[me];W[of];B[pf];W[og];B[pg];W[ph];B[qg];W[oh]
+;B[rg]))))
+(;B[mc]N[逼]
+(;W[rb]N[吃角];B[nc];W[pb])
+(;W[nd]N[尖出痛苦];B[nc];W[od];B[me];W[md];B[ld];W[ne];B[nf];W[mf];B[ob];W[le];B[pb]
+;W[me];B[og]C[黑可战])
+(;W[mb]C[山城宏所创]N[托];B[nb];W[nc];B[lb];W[pb]
+(;B[nd]N[扳不好];W[rb]C[留有断点])
+(;B[md]N[长不利];W[tt];B[pa];W[ra];B[oa];W[ob];B[ma];W[qa])
+(;B[pa]N[扳试应手];W[oa];B[md]C[白角上留着劫,黑好])
+(;B[ma]N[提不好];W[nd];B[mf]C[白可脱先];W[tt];B[pa];W[oa];B[ra];W[rc];B[rb];W[sb]
+;B[sc];W[sd];B[qf]C[黑外围有些利用]))))
+(;W[mc]N[拆一]
+(;B[nd]N[尖];W[nc]
+(;B[rd]N[挡];W[qg]
+(;B[ld]N[尖封有力];W[md];B[me];W[pb];B[rb];W[kb];B[jb];W[lb];B[jc]
+(;W[le]C[实战]N[断];B[mf];W[ke];B[kg]C[战斗，黑主动])
+(;W[sc]N[吃角有顾虑];B[sd];W[qa];B[ra];W[sb];B[pa];W[oa];B[nb]C[白也不活，劫。但黑有右边挖的劫材]
+TR[qf]))
+(;B[pb]N[活角乱战];W[md]))
+(;B[qf]N[吃二子不成立];W[rf];B[qg];W[rg];B[rh];W[rd];B[rc];W[qh];B[ph];W[qi];B[ri]
+;W[rj];B[qj];W[pi];B[rk];W[pj];B[qk];W[pf];B[pg];W[of];B[nf];W[og];B[oh];W[ng];B[nh]
+;W[mg];B[le];W[od];B[ne];W[me]))
+(;B[md]N[碰];W[nd];B[ne]
+(;W[rd]N[拐];B[lc]C[还原])
+(;W[ld]N[打不成立];B[me];W[lc];B[qf]C[二子被吃])))
+(;W[nd]N[尖]
+(;B[ne]N[挡]
+(;W[rd]N[拐];B[md];W[mc]
+(;B[lc]N[顶]
+(;W[mb]N[立];B[rc]C[瞄着A托]LB[ob:A]
+(;W[pb]N[挡];B[qg];W[rg];B[rh]C[复杂]
+(;W[rf]N[单接被利]
+(;B[ra]C[好手！]N[尖妙];W[sb];B[pa];W[sc];B[na]C[妙手];W[rb];B[qa]
+(;W[ob]N[团];B[od];W[oa];B[nc];W[nb]C[黑好。马晓对小林实战])
+(;W[oa]N[扑，立即崩];B[ob];W[sd];B[nc];W[nb];B[od]))
+(;B[qh]N[接缓];W[sb];B[me]C[两分]))
+(;W[qh]N[断征子关系];B[ph];W[qi];B[rf];W[qf];B[sg];W[pg];B[rg];W[pf];B[og]
+(;W[oh]N[断打];B[pi];W[nh];B[ng];W[pj]C[谁征子不利则崩])
+(;W[sc]N[扳];B[sb];W[me];B[of];W[ld]C[实战，黑大成功]))
+(;W[me]N[先断吃]
+(;B[qf]N[顶];W[ld];B[rf]C[转换，局部黑不错])
+(;B[ld]N[接]
+(;W[qh]N[断]
+(;B[pg]N[长]
+(;W[rf]N[只有接];B[ra];W[sb];B[pa]
+(;W[sc];B[na];W[ob];B[od];W[rb];B[qa];W[oa];B[nc];W[nb];B[ri]C[黑好])
+(;W[oa];B[qi]C[左上白要补]))
+(;W[qf];B[sg];W[rf];B[qi];W[ph];B[oh];W[pf];B[og];W[pi];B[ri];W[of];B[nf];W[ng]
+;B[mf]))
+(;B[ph]N[上打不成立];W[qi];B[rf];W[qf];B[sg];W[pg];B[rg];W[pf];B[og];W[of]))
+(;W[mf]C[实战，最终白吃亏]N[长出];B[og];W[rf];B[ra];W[sb];B[pa]
+(;W[oa]C[实战]N[挡];B[qh]
+(;W[sc]C[黑好]N[必须补])
+(;W[tt];B[sc];W[sd]C[缓气劫，黑无本生意]))
+(;W[sc]N[连回];B[na];W[ob];B[od]C[黑吃通后24、26变成无用之子])))))
+(;W[qg]N[跳无理];B[ob];W[pb];B[pa];W[ra];B[qa];W[sc];B[sb];W[sd];B[od];W[nc];B[lb]))
+(;W[pb]N[挡安全];B[mb];W[nc];B[me]))
+(;B[ld]N[退缓]
+(;W[pb]C[DS。以后的官子……]N[吃角];B[nb];W[nc];B[mb];W[rb];B[lc])
+(;W[tt]N[脱先也行]
+(;B[pb]N[拐];W[ob]
+(;B[mb];W[rb];B[nb];W[rc];B[nc];W[qa]C[白有利。以下是了效分析];B[od];W[pa];AE[pa]
+[qa][rb][rd][md][mc][mb]C[白脱先一手成此型，当然好])
+(;B[rc];W[pa]C[黑气不够]))
+(;B[nb]N[点];W[nc];B[mb];W[pb];B[pa];W[oa]
+(;B[ra]C[宽一气劫];W[rc];B[rb];W[qa];B[pa];W[sb];B[lc];W[qa])
+(;B[qa];W[rb]C[黑被吃])))))
+(;W[ld]N[跳不行];B[qf];W[rf];B[qg];W[rg];B[rh];W[qh];B[ph];W[qi];B[ri]))
+(;B[mc]N[逼];W[pb];B[rd];W[qg];B[pg];W[qh];B[mf]
+(;W[md]C[实战]N[压];B[nc];W[od];B[ld];W[nf];B[ng]
+(;W[nb]N[扳]
+(;B[pa]N[扳好手];W[mb];B[lc];W[rb];B[ra]
+(;W[ne]N[只有接];B[of];W[mg];B[me];W[ob];B[nh]
+(;W[lg]N[长];B[le];W[sc];B[sd];W[oa];B[qf];W[rf];B[qa];W[se];B[rg];W[pf];B[og];W[sa]
+;B[sb];W[lb];B[qf];W[kb];B[sf];W[jc];B[jd];W[ic];B[jf]C[黑大好])
+(;W[sc]N[作劫不行];B[sd];W[oa];B[qa];W[se];B[lg]C[白只有AB的损劫，不能开劫]LB[le:A]
+[og:B]))
+(;W[sc]N[作劫不行];B[sd];W[oa];B[qa];W[se];B[me];W[sa];B[sb];W[ne];B[of]))
+(;B[mb]N[挡不利];W[rb];B[ra];W[sc];B[sd];W[pa];B[qa];W[se];B[of];W[sa];B[sb];W[lb]
+;B[rc];W[lc];B[kb];W[ma]C[白不坏]))
+(;W[rb]N[夹不利];B[ra];W[sc];B[sd];W[pa];B[qa];W[se]
+(;B[of]N[单补好]
+(;W[le]N[造劫];B[me];W[sa];B[sb];W[kd];B[lc];W[sa];B[ke];W[rc];B[lf]C[黑好])
+(;W[sa]N[作劫仍不利];B[sb];W[le];B[rc];W[me]C[有挖的缺陷，白仍不好]TR[qf]))
+(;B[qf]N[挖不利];W[rf]
+(;B[pf]N[接不利];W[sg];B[me];W[sa];B[sb];W[ne];B[rc];W[og];B[ph];W[oh];B[pi];W[of]
+;B[rh];W[ri];B[qi];W[rg];B[rj];W[si];B[nj];W[mi]C[白成功])
+(;B[of]N[补不好];W[pf];B[me];W[sa];B[sb];W[ne];B[qf];W[sa]C[白成功]))))
+(;W[ra]N[点杀不好];B[rb];W[sc];B[qa];W[sd];B[nc];W[od];B[ne];W[md];B[ld];W[pa];B[me]
+;W[sb];B[sa]C[黑有利]))))
+(;B[re]N[下扳,不好 (b)];W[rf];B[qf];W[pe]C[黑只有弃角在a位打吃了, b位接的话, 即使征子有利, 棋也已经很难下了.
+
+a1 - 打, 正着.
+b2 - 接, 恶手.
+]
+LB[rg:a][rd:b]
+(;B[rg]N[打,正着(a)];W[rd];B[sf];W[rc])
+(;B[rd]N[接,错误 (b)];W[rg]C[黑必须活角, 白可以趁此收拾黑9断之子, 白大获成功.
+])))
+(;B[pe]C[黑5过分. 白a位虎正着, b位马上断则效果不是很好.
+
+a1 - 虎, 正着.
+b2 - 断, 不好.]
+N[扳起,不好 (c)]LB[qc:a][qe:b]
+(;W[qc]C[黑a位接是正着, b位打是大俗手.
+
+a1 - 接, 正着.
+b2 - 打, 俗手.]N[虎,正着(a)]
+LB[qe:a][od:b]
+(;B[qe]N[粘,正着(a)];W[oe];B[of];W[ne];B[rc];W[qb];B[qh]C[黑的结果要比定式好.])
+(;B[od]C[黑7粗俗.]N[打,错误 (b)];W[pc];B[nd];W[re]C[白10点是手筋, 白得了不少实地, 而黑形不算很完整.
+]))
+(;W[qe]C[白6断又回到了定式的着法, 白失去了惩罚黑5断的机会.
+]N[断,不好(b)];B[qc]
+;W[re];B[oe];W[pc];B[qb];W[rd];B[nc]C[到这里, 以下的变化请参见变化
+2-1-6-2-2-1.]
+;W[nb];B[mc];W[pb]))
+(;B[pf]C[白还是在a位虎, b位断则上当.
+
+a1 - 虎, 正着.
+b2 - 断, 错误.]N[飞,罕见(d)]
+LB[qc:a][qe:b]
+(;W[qc]C[黑a退是正着, b位挡不是很好.
+
+a1 - 退, 正着.
+b2 - 挡, 不好.]N[虎,正着(a)]
+LB[qe:a][pe:b]
+(;B[qe]N[退,正着(a)];W[rc])
+(;B[pe]N[挡,不好 (b)];W[rd];B[qe];W[nd]))
+(;W[qe]N[断,不行 (b)];B[pe];W[qc];B[rd];W[re];B[od];W[pc];B[rf]C[黑13使黑得到了相当的外势.])))
+(;W[pe]C[白征子有利的时候, 可以在4位飞压. 黑一般在a位挡, 在征子有利的情形下可以b位冲断, 黑c远拆则是瞄着b位的冲断.
+
+a1 - 挡.
+b2 - 冲断, 有征子.
+c3 - 远拆.]
+N[飞压,有征子 (c)]LB[qe:a][pd:b][qj:c]
+(;B[qe]C[白可以在a位长, 也可以在b位托.
+
+a1 - 长.
+b2 - 托.]N[挡(a)]LB[pf:a][qc:b]
+(;W[pf]N[长(a)];B[qg];W[ic];B[ke];W[qc]C[白一定要征子有利才能在10位托. 黑a位挡正着, b位扳是恶手.
+
+a1 - 挡, 正着.
+b2 - 扳, 恶手.]
+LB[pg:a][rc:b]
+(;B[pg]N[挡,正着(a)];W[pd];B[ng];W[qf];B[rf];W[rc])
+(;B[rc]N[扳,错误 (b)];W[qf];B[rf];W[rg];B[re];W[qh]))
+(;W[qc]C[黑的应手有a位扳或b位扳, c位冲是恶手.
+
+a1 - 扳.
+b2 - 扳.
+c3 - 冲, 恶手.]
+N[托(b)]LB[rc:a][pf:b][pd:c]
+(;B[rc]C[黑A长出是正着, B位立下则是恶手.
+
+A1 - 长出, 正着.
+B2 - 立下, 恶手.]
+N[扳(a)]LB[pf:A][qb:B]
+(;W[pf]N[长出,正着(a)];B[pd];W[od];B[pc];W[nf];B[hc])
+(;W[qb]C[白8立下虽然自然, 但不好.]N[立下,不好 (b)];B[pf];W[pd];B[qg]C[黑有利.]))
+(;B[pf]C[白a位挡正着, b位接虽然坚实, 但缺乏胆气.
+
+a1 - 挡, 正着.
+b2 - 接, 不好.]
+N[扳(b)]LB[pd:a][pc:b]
+(;W[pd]C[黑a位虎坚实, b位扳则引起是非, 黑不一定有利.
+
+a1 - 虎, 坚实.
+b2 - 扳, 作战.]
+N[挡,正着(a)]LB[qg:a][rc:b]
+(;B[qg]N[虎,坚实(a)];W[rf];B[qf];W[rc];B[qj])
+(;B[rc]C[黑9强硬, 但有点过分了.]N[扳,作战(b)];W[qf];B[qb];W[pc];B[re];W[rf];B[se]
+;W[qh];B[of];W[ld]))
+(;W[pc]C[白8没胆.]N[接,不好(b)];B[qi]))
+(;B[pd]N[冲,错误 (c)];W[pc];B[od];W[nd];B[ne];W[md]C[白不错.])))
+(;B[pd]C[黑5冲断使局面紧张, 但黑3又是休闲的一着, 思路不能算连贯. 由于黑3离得远, 白可以一战.
+]
+N[冲,有征子(b)];W[od];B[oe];W[pf];B[ne];W[qb];B[rf];W[mc]C[白易腾挪])
+(;B[qj]C[由于有了黑5, 下一步黑可以大胆地在a位冲了.
+]N[远拆(c)]LB[pd:a];W[pi]C[白6肩冲针锋相对, 不怕黑冲断.
+]
+LB[pd:a];B[pd];W[od];B[oe];W[pf];B[ne];W[qb];B[rf]))
+(;W[of]C[黑可以在a位拆二, b位跨断, 也可以在c位拆二.
+
+a1 - 拆二.
+b2 - 跨断.
+c3 - 拆二.]
+N[大跳(d)]LB[qg:a][oe:b][hc:c]
+(;B[qg]N[拆二(a)];W[ic]C[白6反夹时, 黑可以a位跳出, 也可以b位拆一.
+
+a1 - 跳出.
+b2 - 拆一.]
+LB[ke:a][mc:b]
+(;B[ke]N[跳出(a)]
+(;W[ie]N[关];B[kg]C[白可以在a位托, 也可以在b位再跳.
+
+a1 - 托.
+b2 - 跳.]LB[qc:a]
+[ig:b]
+(;W[qc]N[托(a)];B[rc]C[白a位虎正着, b位扭断则不好.
+
+a1 - 虎, 正着.
+b2 - 扭断, 不好.]
+LB[pd:a][rd:b]
+(;W[pd]C[黑可以在a位退, 或b位打.
+
+a1 - 退.
+b2 - 打.
+]N[虎(a)]LB[qe:a][qb:b]
+(;B[qe]N[退(a)];W[qb])
+(;B[qb]N[打(b)];W[qe];B[pc];W[rd];B[qc];W[qf];B[od];W[nd];B[pe];W[pf];B[ne];W[qi]))
+(;W[rd]C[白12一厢情愿. 白希望黑b位打, 但黑可以在a位退.
+
+a1 - 退, 正着.
+b2 - 打, 恶手.]
+N[扭断,不好 (b)]LB[qe:a][re:b]
+(;B[qe]N[退,正着(a)];W[rb];B[pc];W[qb];B[od];W[pb];B[nd];W[pd];B[pe])
+(;B[re]N[打,错误 (b)];W[pd];B[qe];W[rb])))
+(;W[ig]N[跳(b)];B[pc]C[白可以a位并或b位尖.
+
+a1 - 并.
+b2 - 尖.]LB[od:a][pe:b]
+(;W[od]N[并(a)];B[pe];W[oe];B[ph];W[mh];B[ki];W[oh];B[pj];W[mj])
+(;W[pe]N[尖(b)];B[qe];W[pb]C[黑的应手有a位虎挡或b位夹.
+
+a1 - 虎挡.
+b2 - 夹.]
+LB[qb:a][nc:b]
+(;B[qb]N[虎挡(a)];W[pd];B[qc];W[mc])
+(;B[nc]N[夹(b)];W[qc];B[pd];W[od];B[nb];W[ob];B[qb];W[oh]))))
+(;W[kg]C[实战。
+白保留右边飞压的变化单镇，瞄着右边的逼是赵治勋的发明。]N[镇];B[ie]
+;W[gc];B[me];W[pe];B[qe];W[ph];B[qh];W[pi];B[mg];W[qi];B[pc];W[pb];B[od];W[pd];B[oe]
+;W[qc];B[pf];W[pc];B[og];W[qm]C[两分]))
+(;B[mc]C[白可以在a位托, 也可以在b位尖顶.
+
+a1 - 托.
+b2 - 尖顶.]N[拆一(b)]LB[qc:a]
+[pd:b]
+(;W[qc]N[托(a)];B[rc];W[pd];B[qb];W[qe];B[pc];W[rd];B[qc];W[qf];B[od];W[nd];B[pe]
+;W[pf];B[nc];W[qi])
+(;W[pd]N[尖顶(b)];B[qc];W[qe];B[re];W[rf];B[qf];W[pe];B[rd];W[oh])))
+(;B[oe]N[跨断(b)];W[ne];B[pe]C[白可以在a位退, 也可以在b位碰.
+
+a1 - 退.
+b2 - 碰.]
+LB[nd:a][lc:b]
+(;W[nd]N[退(a)];B[nf]
+(;W[og]C[黑可以在a位长, 也可以在b位贴长.
+
+a1 - 长.
+b2 - 贴长.]LB[mf:a][ng:b]
+(;B[mf]N[长(a)];W[ld])
+(;B[ng]N[贴长(b)];W[oh];B[nh];W[qf];B[pf];W[qg];B[qe];W[pg];B[pc];W[le]))
+(;W[mf]N[白难下];B[ng];W[le];B[og]))
+(;W[lc]C[黑的应手有a位断, 或b位并.
+
+a1 - 断.
+b2 - 并.]N[碰(b)]LB[nf:a][kd:b]
+(;B[nf]N[断(a)]
+(;W[kd];B[og];W[jc])
+(;W[me]N[长];B[ng];W[kb]C[白好]))
+(;B[kd]N[并(b)];W[nf]C[接下来黑的应手有a位飞或b位扳.
+
+a1 - 飞出.
+b2 - 扳.]LB[qg:a]
+[lb:b]
+(;B[qg]N[飞出(a)];W[lb])
+(;B[lb]N[扳(b)];W[mc];B[qg];W[hd])
+(;B[nd]N[扳断不成立];W[md];B[nc];W[od]))
+(;B[lb]N[扳有力]
+(;W[mc]N[长不好];B[nf];W[me];B[ng]C[黑满足])
+(;W[kd]N[连扳]
+(;B[mc]N[打不好];W[ld];B[jc];W[mb];B[nb];W[nc];B[ma];W[md]C[白成功整形])
+(;B[jc]C[不让白借劲]N[单长好];W[mb]
+(;B[nf]N[断有疑问];W[md];B[ng];W[jd];B[ic];W[gd])
+(;B[ld];W[mc];B[ke];W[nf];B[qg];W[qb];B[jd]C[黑厚])))
+(;W[mb]N[连扳];B[kb];W[nf];B[qg];W[ld];B[hc]C[黑充分]))))
+(;B[hc]N[拆二(c)];W[qf]C[黑一般在a位尖顶求活. 即使黑脱先, 角上一子还有利用.
+
+a1 - 尖顶.
+b2 - 脱先.]
+LB[pc:a][dp:b]
+(;B[pc]N[尖顶(a)];W[od];B[ob];W[nb];B[pb])
+(;B[dp]N[脱先(b)];W[qc];B[pc]C[黑9挖, 白a位打是正着, b位打则中计.
+
+a1 - 打, 正着.
+b2 - 打, 不行.]
+LB[pb:a][pd:b]
+(;W[pb]N[打,正着(a)];B[pd];W[qb];B[od]C[黑逸出.];W[nc];B[nd];W[md]C[黑应该在a位扳, b位曲则不好.
+
+a1 - 扳, 正着.
+b2 - 曲, 不好.]
+LB[me:a][ne:b]
+(;B[me]C[白a位虎本手, b位断则贪心.
+
+a1 - 虎, 本手.
+b2 - 断, 不好.]N[扳,正着(a)]
+LB[lc:a][ne:b]
+(;W[lc]N[虎,正着(a)];B[nf];W[kd])
+(;W[ne]C[白18引发战斗, 但白不利.]N[断,不好(b)];B[mc];W[ld];B[mb]))
+(;B[ne]C[黑17曲形愚.]N[曲,不好 (b)];W[mc];B[pg];W[pf];B[nf];W[og];B[le]))
+(;W[pd]N[打,错误(b)];B[pb]
+(;W[qb];B[od];W[pe];B[ob];W[nc];B[nb]C[白a长的话, 黑能吃住角上两白子, 白如b位打的话, 
+黑能吃住白2和16两子.
+
+a1 - 长, 不行.
+b2 - 打, 不行.]
+LB[mc:a][rd:b]
+(;W[mc]N[长,不行(a)];B[rd])
+(;W[rd]N[打,不行(b)];B[nd]))
+(;W[ob]N[白外挡坏];B[pe];W[od];B[qe];W[rc];B[pf]))))
+(;B[pg]N[肩冲]
+(;W[qe]N[碰]
+(;B[pd];W[pf];B[od];W[ld];B[nc];W[lc]C[白好])
+(;B[od];W[pf];B[pc];W[ld];B[nc];W[lc];B[qg];W[re];B[me]C[黑可战]))
+(;W[pf]N[冲断];B[qf];W[qg];B[qh];W[rg];B[rf];W[rh];B[qi];W[qc]
+(;B[pd];W[pc];B[ri];W[ic];B[ke];W[og];B[ph];W[od];B[rd])
+(;B[rc];W[pd];B[re]
+(;W[ph];B[og];W[pi]C[征子问题])
+(;W[ic]C[瞄着右边先手利])))
+(;W[og]N[压]
+(;B[pf]N[贴正确];W[oh];B[oe];W[ne];B[nd])
+(;B[ph]N[长];W[qe]
+(;B[pd];W[pf];B[od];W[ld])
+(;B[od]
+(;W[pf];B[pc];W[ld];B[nc];W[lc];B[me])
+(;W[pd];B[pe];W[pc];B[re];W[nd];B[qf]C[黑好]))))))
+(;W[pf]C[白4大飞是有名的大斜定式, 变化繁多, 号称"大斜千变".]N[大斜 (e)];B[od]C[黑5压必然. 白征子有利时,可以在b位扳, 否则, 只能在a位挖.
+
+a1 - 挖, 征子白不利.
+b2 - 扳, 征子白有利.
+]
+LB[pd:a][nd:b]
+(;W[pd]N[挖(b)];B[pe];W[pc];B[qe];W[oe];B[nd];W[qc]C[白12挡后, 黑的应手有a挡, b扳和c愚形立
+
+a1 - 挡.
+b2 - 扳.
+c3 - 立.]
+LB[qf:a][rc:b][re:c]
+(;B[qf]N[挡(a)];W[of];B[qh]C[白一般在a位飞, 如果征子有利, 也可以在b位跳.
+
+a1 - 飞.
+b2 - 跳, 有征子.]
+LB[mb:a][mc:b]
+(;W[mb]N[飞(a)];B[ld]C[
+
+];W[oh];B[pj];W[lg];B[je])
+(;W[mc]C[白征子有利才能在16位跳.]N[跳,有征子 (b)];B[md];W[ld]C[黑a位断正着, b位冲的话将落入圈套.
+
+a1 - 断, 正着.
+b2 - 冲, 不行.]
+LB[lc:a][nc:b]
+(;B[lc]N[断,正着(a)];W[nc]C[白下18跳的时候, 一般都是白征子有利, 所以黑没法征吃白18.
+]
+LB[le:a])
+(;B[nc]C[黑19自己撞气.]N[冲,错误 (b)];W[nb];B[mb];W[lc];B[ob];W[na]C[ 黑可以尝试在a位打或b位长出, 都没有好下场, 也许b位长出稍好一点吧.
+
+a1 - 打, 不行.
+b2 - 长, 不行.]
+LB[ma:a][me:b]
+(;B[ma]N[打,不行(a)];W[me];B[oa];W[nb];B[na];W[ne];B[nb];W[lb];B[rc];W[qb];B[rb]
+;W[pa])
+(;B[me]N[长,不行(b)];W[lb];B[rc];W[pb]))))
+(;B[rc]N[扳(b)];W[rb];B[qg];W[mb];B[ld];W[of];B[rd]C[白a跳是定式走法.
+
+1835年赤星因彻与本因坊丈和对局时, 赤星下出了b位逼的下法. 那一局被称为"赤星吐血的一局". 因为赤星最后无法挽回局势, 吐血认输, 一个月后含恨离世了.
+
+a1 - 跳, 正着.
+b2 - 逼, 不好.]
+LB[ph:a][qi:b]
+(;W[ph]N[跳,正着(a)];B[qh];W[pi];B[rj];W[lg];B[je])
+(;W[qi]C[白20不是定式. 黑能得到满意的结果.
+]N[逼,不好(b)];B[ph];W[pi];B[oh];W[mf]
+;B[qb]C[黑25是机敏的一手. 白a打是正着, b打就被利用了.
+
+a1 - 打, 正着.
+b2 - 打, 不好.]
+LB[pb:a][qa:b]
+(;W[pb]N[打,正着(a)];B[ra]C[白a位挡是正着, 白b立的话就成了黑的看花劫, 白不行.
+
+a1 - 挡, 正着.
+b2 - 立, 恶手.]
+LB[nc:a][sb:b]
+(;W[nc]N[挡,正着(a)];B[me];W[sb];B[lf];W[mg];B[lg];W[mh];B[oi]
+(;W[lh]N[直接拐不好];B[pk])
+(;W[ri]
+(;B[rg];W[lh];B[pk];W[ql]C[如此黑稍好])
+(;W[ne];B[md];W[qf];B[rf];W[qh];B[pg];W[rg])))
+(;W[sb]C[白28立太随手了.]N[立,错误 (b)];B[nc];W[nb];B[pa]))
+(;W[qa]C[白26虽然消除了劫争, 但付出了相当的代价.
+]N[打,不好(b)];B[sb];W[ra];B[nb]
+;W[nc];B[mc];W[ob];B[lb];W[na])))
+(;B[re]C[白a位飞是正着, b位立则不好.
+
+]N[愚形立(c)]LB[mb:a][rc:b];W[mb];B[md]
+;W[nf];B[rc];W[rb];B[sb];W[ra];B[qh]C[黑21跳出后, 白a位顶是正着, b位跳虽然能壮大中央, 但边上的白将被先手挤压.
+
+a1 - 顶, 正着.
+b2 - 跳, 恶手.]
+LB[mc:a][lf:b]
+(;W[mc]N[顶,正着(a)];B[le];W[lg])
+(;W[lf]N[跳,错误 (b)];B[qb];W[pb];B[nb];W[nc];B[mc];W[lb];B[pa];W[qa];B[oa];W[ma]
+;B[kb];W[na])))
+(;W[nd]C[白征子有利时才能在6位扳.]N[扳,征子白有利 (b)];B[oe];W[pc]C[征子不利时(黑5和黑7被征), 黑只有在a位双, 否则, 黑可以在b挡.所以征子对白不利时,白不能在6位扳.
+1974年桥本宇太郎对梶原武雄时曾经下过黑c位长.
+
+a1 - 双.
+b2 - 扳, 征子白有利.
+c3 - 长.]
+LB[qe:a][qc:b][of:c]
+(;B[qe]N[双(a)];W[qc];B[qi])
+(;B[qc]N[挡,有征子(b)];W[pd];B[pe];W[qe];B[qf];W[re];B[rf];W[of])
+(;B[of]C[白a挡正着, b位长或c位冲都不好.
+
+a1 - 挡.
+b2 - 长, 不好.
+c3 - 冲, 不好.]
+N[长(c)]LB[qc:a][pg:b][pd:c]
+(;W[qc]N[挡,正着(a)];B[re]C[黑a挤要比单在b位立生动.
+
+a1 - 挤, 正着.
+b2 - 立, 不好.]
+LB[rd:a][rc:b]
+(;W[rd]N[挤,正着(a)];B[qe];W[mc])
+(;W[rc]C[如果黑征子有利,将来黑可以在a位断.
+]N[立,不好(b)]LB[nc:a]))
+(;W[pg]N[长,不好(b)];B[qc]C[白再也不能冲断了,因为征子已经不成立了.])
+(;W[pd]C[白10过分.]N[冲,错误 (c)];B[pe];W[qe];B[qf];W[re]C[黑a断正着, b位提随手.
+
+a1 - 断, 正着.
+b2 - 提, 随手.]
+LB[nc:a][pg:b]
+(;B[nc]C[白a位拐打正着, b位打是恶手.
+
+a1 - 拐打, 正着.
+b2 - 打, 恶手.]N[断,正着(a)]
+LB[rd:a][qc:b]
+(;W[rd]N[拐打,正着(a)];B[pb]C[黑17碰是手筋.];W[qc];B[pg];W[mc];B[nb];W[mb];B[md]
+;W[ne];B[ob])
+(;W[qc]N[打,错误 (b)];B[rf];W[rd];B[pg];W[mc];B[nb];W[mb];B[md];W[ne];B[mf]))
+(;B[pg]N[提,错误 (b)];W[rd])))))
+(;W[qg]N[二间低夹 (f)];B[pe];W[qj]C[黑可以在a位飞压, 也可以在b位尖顶.
+
+a1 - 飞压.
+b2 - 尖顶.]
+LB[nd:a][pc:b]
+(;B[nd]N[飞压(a)];W[mc]C[黑的应手有a位冲, b位压, 和c位跳封.
+
+a1 - 冲.
+b2 - 压.
+c3 - 跳封.]
+LB[nc:a][md:b][ld:c]
+(;B[nc]N[冲(a)];W[nb];B[md];W[lc];B[ld];W[kb];B[jb];W[jc];B[kd];W[lb];B[ic]C[黑可以征吃白16.]
+;W[qb];B[pc];W[pb];B[od]C[白a位接是正着, b位尖想贪便宜, 会出事.
+
+a1 - 接, 正着.
+b2 - 尖, 不行.]
+LB[ob:a][rc:b]
+(;W[ob]N[粘,正着(a)];B[jd])
+(;W[rc]N[尖,错误 (b)];B[ob];W[oa];B[ma];W[na];B[ka];W[mb]C[如果白a长出, 黑可以在b位虎了.]
+LB[jd:a][hb:b]))
+(;B[md]N[压(b)];W[lc]C[黑a挡正着, b位并则过分.
+
+a1 - 挡, 正着.
+b2 - 并, 过分.]
+LB[ld:a][kd:b]
+(;B[ld]N[挡,正着(a)];W[kb]C[黑a位连扳正着, b位退软弱.
+
+a1 - 连扳, 正着.
+b2 - 退, 软弱.]
+LB[jb:a][jc:b]
+(;B[jb]N[连扳,正着(a)];W[jc];B[kd]C[白只好a位打, b位接也不好.
+
+a1 - 打.
+b2 - 接, 稍差.
+]
+LB[ib:a][lb:b]
+(;W[ib]N[打(a)];B[nc])
+(;W[lb]N[接,稍差(b)];B[ic];W[qb];B[rb]C[白a位顶要比b位退好.
+
+a1 - 顶, 本手.
+b2 - 退, 稍差.]
+LB[qc:a][pb:b]
+(;W[qc]N[顶,正着(a)];B[rc];W[re];B[rd];W[pc]C[如果黑a冲, 白b位挡. 白24似乎没有必要.实际上如果没有白24, 黑在c位扳就能杀白.
+]
+LB[nc:a][nb:b][qa:c])
+(;W[pb]N[退,稍差(b)];B[qc]C[白一定要在a位补, 如果脱先, 就要出人命.
+
+a1 - 挡, 本手.
+b2 - 脱先, 不行.]
+LB[nc:a][dp:b]
+(;W[nc]N[接,正着(a)])
+(;C[白不能脱先.]N[白脱先,错误 (b)];B[nb];W[nc];B[ka];W[la];B[oa]))))
+(;B[jc]N[退,错误 (b)];W[jb];B[ic];W[pb]))
+(;B[kd]N[并,错误 (b)];W[kb];B[jb];W[ld];B[le];W[ke];B[lf];W[lb];B[id];W[qc];B[rc]
+;W[pc];B[re]C[黑23虎迫不得已, 护住a位的断点.]LB[oe:a]))
+(;B[ld]N[封(c)];W[qb];B[rb];W[kb];B[jb]C[白先在a位冲是次序, 如果直接在b位退就落后手, 或者导致劫争.
+
+a1 - 冲, 正着.
+b2 - 退, 不好.]
+LB[md:a][lb:b]
+(;W[md]N[冲,正着(a)];B[me];W[lb];B[jc];W[qc];B[rc];W[pc];B[ne]C[定式到此为止, 白得先手.]
+;C[白脱先. 以后黑有如下的手段.]N[White tenuki];B[nc];W[nb];B[ka]C[白a位虎本手, b位挡则是致命的昏招.
+
+a1 - 虎, 本手.
+b2 - 挡, 恶手.]
+LB[ma:a][la:b]
+(;W[ma]N[虎,正着(a)];B[lc];W[oa])
+(;W[la]N[挡,错误 (b)];B[oa];W[pa];B[ob];W[na];B[mb]C[白不活.]))
+(;W[lb]N[退,错误 (b)]
+(;B[md]C[白一定要后手补棋.];C[白脱先的话,...]N[White tenuki\: mistake];B[nc];W[nb]
+;B[ka];W[ma];B[lc];W[oa];B[mb]C[白棋劫活, 不行.])
+(;B[jc];W[qc];B[rc];W[pc];B[md]))))
+(;B[pc]C[白可以在a位扳或b位肩冲, c位并就走重了.
+
+a1 - 扳.
+b2 - 肩冲.
+c3 - 并, 不好.]
+N[尖顶(b)]LB[pb:a][ld:b][od:c]
+(;W[pb]N[扳(a)];B[qb];W[of];B[nd])
+(;W[ld]N[肩冲(b)];B[kd];W[le];B[ke];W[lf];B[jg];W[lh])
+(;W[od]C[白8重.]N[并,不好 (c)];B[md];W[oe];B[pf];W[nf];B[pg])))
+(;W[ic]C[如果左手有白子, 那么白4夹恰到好处.
+黑a位飞正着, b位尖缓.
+
+a1 - 飞, 正着.
+b2 - 尖, 缓.]
+N[反夹 (g)]LB[pf:a][pe:b]
+(;B[pf]N[飞,正着(a)];W[qc];B[rc];W[pd];B[qb];W[qe];B[pc];W[rd];B[qc];W[pe];B[od]
+C[白征子有利时, 可以在a位扳, 否则只能在b位打.
+
+a1 - 扳, 白征子有利.
+b2 - 打, 白征子不利.]
+LB[of:a][oe:b]
+(;W[of]C[白征子有利才能在16位扳, 黑依然应该在a位断, b位长出软弱.
+
+a1 - 断, 正着.
+b2 - 长, 软弱.]
+N[扳,白征子有利 (a)]LB[oe:a][nd:b]
+(;B[oe]N[断,正着(a)];W[qf];B[pg];W[og];B[oh];W[nh]C[黑a位打正着, b位跳是恶手. 黑c断打的话, 将给白以超强的外势,而白仅得二十目的实地.
+
+a1 - 打, 正着.
+b2 - 跳, 恶手.
+c3 - 断打,不好.]
+LB[nf:a][md:b][ng:c]
+(;B[nf]N[打,正着(a)];W[ng];B[mi];W[mf];B[nc];W[nd];B[ob];W[ne];B[oc];W[oi];B[ph]
+;W[pi];B[rg];W[rh];B[qg];W[ni]C[结果黑稍好.])
+(;B[md]C[黑23跳出太松缓了.
+]N[跳,错误 (b)];W[ph];B[qg];W[rg];B[qh];W[qi];B[pi]
+;W[rh])
+(;B[ng]C[黑23断打将给白厚势.]N[断打,不好 (c)];W[nf];B[mf];W[mg];B[ne];W[ng];B[qg]
+;W[rg];B[rh];W[me];B[nd];W[mc];B[nc];W[nb];B[ob];W[md];B[oc];W[oi];B[qh];W[lf]))
+(;B[nd]C[黑17长屈服, 白成好形.
+]N[长,错误 (b)];W[pg];B[ld]))
+(;W[oe]N[打,黑征子有利 (b)];B[nd]C[白可以a拐或b位肩冲.
+
+a1 - 拐.
+b2 - 肩冲.]
+LB[of:a][ld:b]
+(;W[of]N[拐(a)];B[ld])
+(;W[ld]C[白18试图让黑难受, 并留下味道.
+]N[肩冲(b)];B[ne];W[of];B[kd])))
+(;B[pe]C[黑5尖在古时相当流行, 但现在看来有些缓.
+]N[尖,缓 (b)];W[nd];B[ke];W[ld]
+;B[kd];W[qb]))
+(;N[白脱先 (h)];B[pc];W[od];B[pf]C[白a位大飞或b位镇较好, c位肩冲不好.
+
+a1 - 大飞.
+b2 - 镇.
+c3 - 肩冲, 不好.]
+LB[le:a][ke:b][ld:c]
+(;W[le]C[黑的应手有a位尖, b位靠或c位拆二.
+
+a1 - 尖.
+b2 - 靠.
+c3 - 拆二.]N[大飞(a)]
+LB[jd:a][ke:b][hc:c]
+(;B[jd]N[尖(a)];W[jf];B[ph])
+(;B[ke]N[靠(b)];W[kf];B[je];W[ld];B[lc];W[mc];B[hc];W[lg];B[ph])
+(;B[hc]N[拆二(c)];W[id];B[ic];W[lc];B[lb];W[kd]
+(;B[jc];W[mc];B[ph])
+(;B[mc];W[md])))
+(;W[ke]C[黑一般在a位靠作战或b位飞.
+
+a1 - 靠, 作战.
+b2 - 飞.]N[镇(b)]LB[le:a]
+[id:b]
+(;B[le]N[靠(a)];W[lf];B[me];W[of];B[kf];W[pg];B[qf];W[qg];B[je];W[pd];B[qc];W[rf]
+;B[re];W[qe];B[pe];W[oe];B[qe];W[nh])
+(;B[id]N[飞(b)];W[lc]C[黑a位扳出作战是正着, b位下扳软弱.
+
+a1 - 扳出, 作战.
+b2 - 下扳, 软弱.]
+LB[ld:a][lb:b]
+(;B[ld]C[黑10扳出引起冲突. 白a位拐试应手是正着, b位直接断则不行.
+
+a1 - 拐, 正着.
+b2 - 断, 不行.]
+N[扳出,正着(a)]LB[pd:a][kd:b]
+(;W[pd]C[黑选择a位退让,或b位粘强硬.
+
+a1 - 退.
+b2 - 粘, 强硬.]N[拐,正着(a)]LB[qe:a]
+[qc:b]
+(;B[qe]C[白a断吃黑4一子是正着, b位断不行.
+
+a1 - 断打, 正着.
+b2 - 断, 不行.]N[退(a)]
+LB[qc:a][kd:b]
+(;W[qc]N[断打,正着(a)];B[rc];W[pb];B[mc];W[rb]C[定式])
+(;W[kd]N[断,不行 (b)];B[mc];W[lb];B[mb];W[md];B[le];W[kb];B[jc];W[jb];B[ib];W[nb]
+;B[me];W[nd];B[pb];W[of];B[kf];W[og];B[qh]))
+(;B[qc]N[粘,强硬(b)];W[kd];B[mc];W[lb];B[mb]C[白a打是正着, b位拐打是恶手.
+
+a1 - 打, 正着.
+b2 - 拐打, 恶手.]
+LB[md:a][kb:b]
+(;W[md]N[打,正着(a)];B[le];W[kb];B[jc];W[jb];B[ib];W[nb];B[me];W[nd]
+(;B[nf];W[pb];B[qb];W[pa];B[qg]C[黑30防a位断点, 不可省.]LB[qe:a];W[jf])
+(;B[pb];W[of];B[kf];W[og];B[qh]C[黑好]))
+(;W[kb]N[拐打,错误 (b)];B[me];W[jc];B[nf])))
+(;W[kd]N[断,错误 (b)];B[mc];W[lb];B[mb]
+(;W[md]N[断];B[le];W[kb];B[jc];W[jb];B[ib];W[nb];B[me];W[nd];B[nf];W[pd];B[qe];W[qc]
+;B[rc];W[pb];B[kf]C[黑好])
+(;W[kb]N[不断损];B[me];W[jc];B[nf])))
+(;B[lb]N[下扳,不好 (b)];W[ld]C[黑a位虎本手, 但也让白先鞭右边, 如果b位跳的话, 黑上边会出问题, 所以黑10下扳有问题.
+
+a1 - 虎.
+b2 - 跳.]
+LB[jb:a][ph:b]
+(;B[jb]N[虎(a)];W[qe]C[白13跨作战, 黑只好在a位挡, b位夹过于屈服, 不能考虑.
+
+a1 - 挡, 正着.
+b2 - 夹, 屈服.]
+LB[pe:a][qf:b]
+(;B[pe]N[挡,正着(a)];W[pd]C[黑a位粘正着, b位打弃角太大.
+
+a1 - 粘, 正着.
+b2 - 打, 恶手.]
+LB[qc:a][qf:b]
+(;B[qc]N[粘,正着(a)];W[qf]C[对于这场战斗, 黑并不乐观.])
+(;B[qf]N[打,错误 (b)];W[qc];B[re];W[rc]))
+(;B[qf]N[夹,不好(b)];W[pe];B[re]C[根据情况, 白可以选择a位外断或b位内断.
+
+]LB[rf:a]
+[rd:b]))
+(;B[ph]N[跳(b)];W[jc];B[jd];W[kb];B[kd];W[ib]C[白好]))))
+(;W[ld]C[白7肩冲结果不是很好.]N[肩冲,不好 (c)];B[kd];W[le];B[ke];W[lf]C[黑在a位拆三可以满意, 当然也可以b位飞继续对白施压.
+]
+LB[gc:a][jg:b];B[gc];W[qe];B[qf];W[pe];B[re];W[rf]C[黑a位粘保角, 有时也可以在b位打重视右边.
+
+a1 - 粘, 护角.
+b2 - 打, 重视右边.]
+LB[rd:a][rg:b]
+(;B[rd]N[粘, 护角(a)];W[of];B[rg])
+(;B[rg]N[打,弃角(b)];W[rd];B[sf];W[qc]C[黑接下来在a,b或c位拆.
+]LB[ph:a][pi:b][oh:c])))
+(;W[ke]AB[fn][fo][do][cr][bq][cp][dq][dc]AW[fm][gn][go][fp][ep][eq][pq]C[白4镇曾经出现在1822年本因坊秀和(白)和
+Toyama Sansetsu (黑)的对局中.
+]
+N[镇,少见(i)];B[je];W[jf];B[jd];W[if];B[he];W[pe];B[qe];W[pg];B[pf];W[of];B[qf]
+;W[qh]C[白16一般来说是过分之着, 因为黑可以断. 但白中腹很厚, 并且在下边有白势力的情况下, 白16尖就成为可能了.
+]
+;B[pc]C[黑17尖靠活角.];W[pn]C[白18建立模样, 白16就成了好手.];B[kq];W[mq];B[hq];W[dl]
+;B[dm];W[em];B[dn];W[ip];B[mr];W[iq];B[nq];W[no];B[mp];W[ln];B[pr];W[mf];B[hf];W[de]
+;B[ce];W[cf];B[cd];W[hg];B[gg];W[hh];B[gh];W[gi];B[eh];W[ci];B[qq];W[dg];B[ef];W[eg]
+;B[ff];W[df];B[fi];W[ec];B[ed];W[dd];B[cc];W[ee];B[fd];W[fe];B[ge];W[gd];B[fc];W[ie]
+;B[hd];W[gc];B[eb];W[id];B[hc];W[ic];B[ib];W[gj];B[rn];W[ro];B[qi];W[pi];B[qj];W[rh]
+;B[qn];W[qo];B[pm];W[pp];B[on];W[po];B[om];W[ql];B[rl];W[or];B[oo];W[qr];B[pj];W[np]
+;B[nr];W[op];B[jr];W[ir];B[lp];W[oi];B[pl];W[ob];B[od];W[mc];B[pb]C[图中黑103(实战中的119)是这盘棋的最后一手,
+这是一盘"没有下完的一局".
+])
+(;W[ld]C[场合下法]N[尖冲];B[kd];W[ke];B[lc];W[md];B[mc];W[nd];B[je];W[jf];B[kf]
+;W[le];B[ie];W[qf])
+(;W[qb]N[飞角];B[od];W[pd];B[pe];W[pc];B[nd];W[qe];B[qf];W[re];B[pf];W[rf];B[rg]
+;W[rd])
+(;W[mc]N[拆一];B[pc];W[pe];B[qe];W[pb];B[pf];W[qb];B[qj]))
+(;B[md]C[黑3是典型的现代围棋紧迫的棋风. 白一般不能脱先. 白的应手有a位跳, b位外飞, c位托三三, d位托. e位飞压是骗招, 不是定式.
+
+a1 - 跳. 
+b2 - 外飞.
+c3 - 托三三.
+d4 - 托.
+e5 - 飞压, 骗招.
+f6 - 脱先, 少见.]
+N[一间高夹(g)]LB[oe:a][ne:b][qc:c][mc:d][pe:e][dp:f]
+(;W[oe]N[跳(a)];B[pf]C[黑5飞, 白的应手有a位反夹和c位靠压. 白b位反夹在一间高夹的情形下效果不好.
+
+a1 - 反夹.
+b2 - 反夹.
+c3 - 靠压.]
+LB[kd:a][ph:b][me:c]
+(;W[kd]C[最稳妥，特别是左上是白势力时最理想]N[反夹(a)];B[mf]LB[mc:a][of:b]
+(;W[mc]N[托渡,正着(a)];B[nd];W[nc];B[od]C[白a长是定式走法, b位挖白白遭受损失.
+
+a1 - 长, 正着.
+b2 - 挖, 恶手.]
+LB[pc:a][pd:b]
+(;W[pc]C[黑可以选择a接或b位挡. a位接是新定式, b位挡是老定式, 黑可以得到更多的角地, 但落后手, 并且失去了标记处扳下的味道.
+
+a1 - 接.
+b2 - 挡.]
+N[长,正着(a)]CR[lc]LB[pd:a][qc:b]
+(;B[pd]C[以后A极大]N[接(a)]LB[qc:A];W[tt]C[白占三三是后手，但如脱先];B[qc]
+(;W[ic]C[被黑拐后必须补。])
+(;W[tt];B[lc];W[ld];B[lb];W[kc];B[mb];W[kb];B[nb]))
+(;B[qc]N[挡(b)];W[pd];B[pe];W[ld];B[of]C[与13在14接相比，黑角上多了些空，但黑由于有A的断点，多少有余味，而白很厚]))
+(;W[pd]C[黑一定要在a位打惩罚白的恶手, 如果黑在b位打, 那么白a粘很开心.
+]N[挖,错误(b)]
+LB[pc:a][pe:b];B[pc];W[pe];B[qe];W[of];B[og]C[白可以试走a断打或b位断打, 都没有好结果.
+
+a1 - 断打, 不好.
+b2 - 断打, 不好.]
+LB[qf:a][qc:b]
+(;W[qf]N[断大,不好(a)];B[nf];W[pg];B[ne];W[pf];B[qc]C[a和b见合.]LB[lc:a][ph:b])
+(;W[qc]N[断打,不好(b)];B[pb];W[qf];B[nf];W[pg];B[ne];W[pf];B[rc];W[ld];B[ph];W[oh]
+;B[ng];W[qh];B[pi];W[re];B[rd];W[rg];B[se];W[rf];B[ri];W[qi];B[qj];W[pj];B[oi];W[rj]
+;B[qk];W[rh];B[rk];W[si];B[nh]C[白一无所获.])))
+(;W[of]C[实战，常昊对加藤正夫]N[连压];B[pg];W[og];B[ph];W[oh];B[pi];W[kf]C[战斗]))
+(;W[ph]C[黑a位挡比较好, b位顶也有可能.
+
+a1 - 挡, 本手.
+b2 - 顶, 稍差.]N[反夹(b)]
+LB[of:a][pg:b]
+(;B[of]N[挡,正着(a)];W[ne]
+(;B[ng]N[尖];W[qc];B[rc];W[qb];B[pj];W[kd]C[定式])
+(;B[pc]N[尖顶];W[ob];B[ng];W[me]
+(;B[kd]C[定式])
+(;B[oi]C[定式])
+(;B[pk]C[定式])))
+(;B[pg]N[顶,稍差(b)];W[oh];B[nf];W[qc];B[rc];W[ne]C[黑a双是本手, b位挡不住.
+
+a1 - 双, 本手.
+b2 - 挡, 恶手.]
+LB[ng:a][me:b]
+(;B[ng]N[双,正着(a)];W[me];B[pc])
+(;B[me]C[黑13想封住白棋, 可黑自身有毛病.]N[挡,错误 (b)];W[of];B[og];W[ng];B[mf]
+;W[qe]C[黑棋陷入困境.])))
+(;W[me]C[可]N[靠];B[le];W[mf]
+(;B[kd]
+(;W[ph];B[of];W[nd];B[mc];W[nh];B[qb];W[lh]C[一型])
+(;W[nd]C[A、B见合。]LB[mc:A][qh:B]))
+(;B[ld];W[nd];B[lf];W[mg];B[qi])
+(;B[mc];W[nd]C[A、B见合。]LB[kd:A][qh:B])
+(;B[pc];W[ld];B[kd]C[11可脱先，保留A的立下。]LB[mc:A];W[lc];B[kc];W[mc]C[看周围配置。])
+(;B[nd];W[od];B[ld]
+(;W[qh]C[黑有些难受。];B[ph];W[pi];B[of];W[ne];B[oh];W[rg];B[qf];W[mh];B[ni];W[ql]
+C[看周围配置])
+(;W[ph]
+(;B[pg]
+(;W[qh];B[rg];W[rh];B[qc])
+(;W[oh];B[qh];W[qi];B[ri]C[连扳不成立。]
+(;W[qe];B[pe];W[pd];B[re];W[qc];B[qf];W[rh];B[qg];W[rj]C[黑亏损。])
+(;W[rh];B[qg];W[rj];B[pi];W[qj];B[ne];W[of];B[og];W[nf];B[ng]C[白味道很坏，无趣])))
+(;B[of];W[ne];B[oh];W[oi];B[nh];W[qh];B[rg];W[rh];B[ni];W[oj];B[qc]C[以后白A，黑只能B，黑不太舒服。]
+LB[qf:A][pe:B]))))
+(;W[oh];B[of];W[ne];B[pc];W[qh];B[qg];W[rg];B[rf];W[pg];B[qf];W[pb];B[qb];W[pd]
+;B[qc];W[me]C[一型];B[kd]))
+(;W[ne]C[白4外飞时, 黑的应手有a位飞, b位拆二, c位尖. d位靠压是场合定式, 一般情况下是不好的.
+
+a1 - 飞.
+b2 - 拆二.
+c3 - 尖.
+d4 - 靠压, 场合定式.]
+N[外飞(b)]LB[pf:a][qg:b][pe:c][me:d]
+(;B[pf]C[白可以a位压, 也可以b位托三三.
+
+a1 - 压.
+b2 - 托三三.]N[飞(a)]LB[me:a]
+[qc:b]
+(;W[me]N[压(a)]
+(;B[pc]N[尖顶保角]
+(;W[od]C[也成立]N[长稍重]
+(;B[ph];W[jd])
+(;B[kd];W[ph];B[qf]))
+(;W[ld]C[未定形。以后……]N[扳]
+(;B[ob]N[扳];W[nb];B[nc];W[mc];B[od];W[nd])
+(;B[kc]N[逼]
+(;W[kd]N[压];B[jc];W[lc];B[gc])
+(;W[lc]N[挡麻木];B[kd];W[ke];B[lb])))
+(;W[ob]N[立]))
+(;B[kd]N[跳出作战];W[ld];B[lc];W[le];B[jc];W[qc];B[rc];W[pd];B[qe]C[下面白在上边夹击作战]))
+(;W[qc]C[黑可以在a位扳, 也可以b位并.
+
+a1 - 扳.
+b2 - 并.]N[托三三(b)]LB[rc:a]
+[pd:b]
+(;B[rc]N[扳(a)];W[pd];B[qe]C[白可以a位立, 也可以b位压.
+
+a1 - 立.
+b2 - 压.]LB[qb:a]
+[me:b]
+(;W[qb]C[接下来黑一般会在a一带拆, 当然根据情况, 也有在b位贴长的变化.
+
+a1 - 拆.
+b2 - 贴长.]
+N[立(a)]LB[qj:a][me:b]
+(;B[qj]N[拆(a)];W[dp]C[白脱先];B[me];W[og];B[pg];W[oh];B[ph];W[oi])
+(;B[me]N[贴长(b)]
+(;W[of]N[尖顶];B[og];W[pe];B[nf];W[qf];B[oe];W[rf];B[qg];W[rg];B[qh];W[rh];B[qi])
+(;W[nf]N[长];B[mf];W[ng];B[nd];W[oe];B[qi])))
+(;W[me]N[压(b)]))
+(;B[pd]N[并(b)];W[pc];B[nd];W[od];B[oe]C[这是强硬的着法. 藤泽秀行和坂田荣男在二十世纪六十年代的名人赛上经常下这个变化.
+]
+;W[nf]
+(;B[nb]C[跳下是好次序]N[跳下];W[nc];B[mc];W[ob];B[ph];W[lf];B[jd])
+(;B[ph]N[先拆边不好];W[mb]))))
+(;B[qg]C[白的应手有a位飞压和b位压. 白a飞压能够走厚自己,但同时也让黑得到相当大的角地, 总体来说是白稍吃亏. 白b压则是重视上边. 白c托也曾出现在职业比赛中(1965年1月13日第四届名人赛林海峰(黑)对藤泽秀行(白)). 白可以在角里安顿, 黑得到右边.
+
+a1 - 飞压.
+b2 - 压.
+c3 - 托三三.]
+N[拆二,(b)]LB[pf:a][me:b][qc:c]
+(;W[pf]N[飞压(a)];B[qf];W[qc];B[rc];W[pd];B[qb];W[qe];B[pc];W[rd];B[qc];W[rf];B[od]
+;W[pe];B[nd];W[qi]C[结果黑稍有利.])
+(;W[me]N[压(b)]
+(;B[kd]N[跳]
+(;W[mc]C[两分])
+(;W[ld]
+(;B[lc];W[le];B[mc];W[qc];B[rc];W[pd];B[qb];W[qe];B[pc];W[rd];B[qc];W[pe]
+(;B[qj])
+(;B[ob]))
+(;B[kc];W[mc])))
+(;B[pc]N[尖顶];W[ld]))
+(;W[qc]N[托三三(c)];B[rc];W[pd]C[黑a退的话, 双方安定. 黑b打强手, 变换行棋方向,但会使黑3和5的子效降低.
+
+a1 - 退,本手.
+b2 - 打,不好.]
+LB[qe:a][qb:b]
+(;B[qe]N[退,本手(a)];W[qb])
+(;B[qb]N[打,不好(b)];W[qe];B[pc];W[rd];B[qc];W[pe]C[黑3和5两子落空.])))
+(;B[pe]N[尖(c)]
+(;W[me]C[黑可以在a位尖顶取利,也可以b位退.
+
+a1 - 尖顶.
+b2 - 退.]N[压]LB[pc:a]
+[ld:b]
+(;B[pc]N[尖顶(a)]
+(;W[ob];B[ph];W[ld])
+(;W[ld];B[ob];W[nb];B[nc];W[mc];B[od];W[nd]))
+(;B[ld]N[退(b)];W[nd];B[le];W[lf];B[kf];W[kg];B[lg];W[mf];B[jf];W[lh];B[qh]))
+(;W[oe]N[顶];B[pg]
+(;W[kd]C[定式]N[夹])
+(;W[pd]N[挤];B[pc];W[od];B[qc];W[pf];B[qf];W[qe];B[re])))
+(;B[me]N[挡(d)]
+(;W[nf]C[黑a二间跳是当急之务, b位贴长则缓.
+
+a1 - 拆二, 正着.
+b2 - 贴长, 缓手.
+]
+LB[qg:a][mf:b]
+(;B[qg]N[拆二,正着(a)];W[mf];B[ke])
+(;B[mf]N[再贴复杂]
+(;W[qf]
+(;B[ng];W[pe]C[黑角被吃，损])
+(;B[pe];W[pf];B[nd];W[od];B[oe];W[of];B[qc];W[mb];B[lb]
+(;W[nb];B[lc];W[pb];B[qb];W[qe];B[pd];W[rd];B[rc];W[re];B[pa];W[oa];B[qa]
+(;W[ma]C[双活];B[nc];W[ra])
+(;W[nc]C[劫];B[ma];W[ra]C[劫]))
+(;W[lc];B[nb];W[kb];B[nc];W[hc]C[视上边情况可转身。])))
+(;W[ng];B[qg]C[白争得先手])))
+(;W[pe]N[尖冲];B[qe];W[pg];B[qf];W[ng];B[qh];W[mf]))
+(;B[pc]N[尖顶];W[pe];B[qe];W[pf];B[qg]))
+(;W[qc]C[黑可以a位扳, 也可以b位并.
+
+a1 - 扳.
+b2 - 并.]N[托三三(c)]LB[rc:a][pd:b]
+(;B[rc]C[白a虎是定式, b位扳当然也有可能.
+
+a1 - 虎, 定式.
+b2 - 扳.
+]N[扳(a)]
+LB[pd:a][rb:b]
+(;W[pd]N[虎,定式(a)]
+(;B[qe];W[qb]
+(;B[pg]C[白在a位拐很厚实, 但白也可以脱先.
+
+a1 - 拐.
+b2 - 脱先.]LB[rb:a][dp:b]
+(;W[rb]N[拐,厚实(a)];B[qk])
+(;C[白脱先后, 黑可以在a位挡或b位尖靠.
+
+a1 - 挡.
+b2 - 尖靠.
+
+]N[白脱先 (b)]
+LB[rb:a][nc:b]
+(;B[rb]N[挡(a)];W[mb])
+(;B[nc]N[尖靠(b)];W[rb];B[ob];W[rd];B[re];W[sc]C[黑可以脱先, 也可以在a位虎打.]LB[od:a]
+;B[od];W[pc];B[pe])))
+(;B[oe];W[pe];B[pf];W[qf];B[rf];W[qg];B[rb];W[mb];B[rg];W[qh];B[of]C[战斗]))
+(;B[qb];W[qe];B[pc];W[rd];B[qc];W[oe]C[黑3重复。]))
+(;W[rb]C[藤泽秀行在1964年7月3日和吴清源的对局中下出了白6扳.
+]N[扳(b)];B[pc];W[qb]
+;B[pd];W[rd];B[re];W[sc]C[白活角, 当然黑也并无不满.
+]))
+(;B[pd]N[并(b)];W[pc];B[od]C[白可以a位挖和b位长. 当然a位挖似乎更好一点, 但能引起复杂的变化.
+
+a1 - 挖, 复杂.
+b2 - 长, 简明.]
+LB[nd:a][nc:b]
+(;W[nd]C[黑可以a位外打, 也可以b位断打.
+
+a1 - 外打.
+b2 - 断打.]N[挖需左边配合(a)]
+LB[ne:a][nc:b]
+(;B[ne]C[黑9有点消极, 但黑还是获取了相当的外势, 白当然也得到了不少实地.
+]N[外打稍弱(a)]
+;W[nc];B[me];W[lc];B[pj])
+(;B[nc]N[断打必然(b)];W[ne]C[黑可以选择a粘或b位虎.
+
+a1 - 粘.
+b2 - 虎.]LB[mc:a]
+[mb:b]
+(;B[mc]N[粘(a)];W[rd];B[re];W[rc];B[pf];W[ng];B[ph])
+(;B[mb]N[虎(b)];W[rd];B[re];W[rc];B[pf]C[白可以a位立先活角, 也可以先b位拐弃角取势, 增强中央的势力.
+
+a1 - 立, 活角.
+b2 - 拐, 取势.
+]
+LB[ob:a][me:b]
+(;W[ob]N[立,活角 (a)];B[me];W[nf];B[mf];W[ng];B[ph])
+(;W[me]C[白选择外势.]N[拐,取势 (b)];B[ob];W[ld];B[pb];W[mc];B[nb];W[lb];B[qb]))))
+(;W[nc]N[长不利(b)];B[nd];W[lc];B[pj])))
+(;W[mc]C[黑一般在a位长, 如果征子有利, 可以在b位扳.
+
+a1 - 长.
+b2 - 扳, 有征子.
+]
+N[托(d)]LB[nd:a][lc:b]
+(;B[nd]N[长(a)];W[nc];B[od]C[白无论如何都应该在a位挖, 如果在b位扳或c位长都很不好.
+
+a1 - 挖, 正着.
+b2 - 扳, 不好.
+c3 - 长, 不好.]
+LB[pd:a][ld:b][pc:c]
+(;W[pd]C[黑一定要a位打, b位打就缺乏胆气.
+
+a1 - 打, 正着.
+b2 - 打, 胆小.]N[挖,正着(a)]
+LB[pc:a][pe:b]
+(;B[pc]N[打,正着(a)];W[pe];B[qc]C[白在a位长稳健, b位扳强硬.
+
+a1 - 长, 稳健.
+b2 - 扳, 强硬.]
+LB[lc:a][ld:b]
+(;W[lc]N[长,稳健(a)];B[rf]C[白a跳是定式下法, 1964年7月3日藤泽秀行和吴清源在第3届名人赛上下出了b位飞.
+
+a1 - 跳, 定式.
+b2 - 飞.]
+LB[pg:a][nf:b]
+(;W[pg]N[跳,定式(a)];B[mf])
+(;W[nf]AB[pq][co]AW[cc][po][dq]C[这个局面是1964年7月3日藤泽秀行和吴清源在第3届名人赛上下出了的, 当时的黑白与现在的图例相反.
+
+]
+N[飞(b)];B[ld];W[kd];B[mf];W[ng];B[kf];W[ke];B[le];W[jf];B[kg];W[pj];B[dd];W[dc]
+;B[ed];W[be];B[dg];W[ie];B[ec];W[fp];B[mp];W[hc];B[cf];W[ce];B[de];W[bf];B[ch];W[cp]
+;B[pm];W[qg];B[rg];W[do];B[nm];W[mj];B[mg];W[qq];B[qr];W[rr];B[qp];W[rq];B[pp];W[pr]
+;B[or];W[qs];B[nh];W[oh];B[ni];W[nj];B[oi];W[pi];B[og];W[ph];B[of];W[oj];B[qk];W[rh]
+;B[kj];W[ml];B[dn];W[cn];B[cm];W[bo];B[bn];W[mm];B[nn];W[rp];B[qo];W[ip];B[co];W[qf]
+;B[qe];W[cn]C[白最后两目胜.]))
+(;W[ld]N[扳,强硬 (b)];B[nf];W[qe];B[lc];W[lb];B[kc];W[kb];B[jc];W[pb];B[qb]C[白a长可以做活, b位粘强硬.
+
+a1 - 长, 做活.
+b2 - 粘, 强硬.]
+LB[jb:a][ob:b]
+(;W[jb]N[长,做活(a)];B[ic];W[ob];B[re];W[rf];B[se];W[pg];B[sb])
+(;W[ob]C[1958年坂田荣男对局吴清源时下出了白22粘.
+]N[粘,强硬(b)];B[re];W[rf];B[se]
+;W[pg];B[jb]C[黑27一挡下, 白做不出两眼来.];W[sc]C[白28点角, 做劫.])))
+(;B[pe]C[黑9胆小怕事.]N[打,不好 (b)];W[pc];B[qe];W[ld]))
+(;W[ld]C[白8把角卖了, 并让黑得到强大的外势.
+]N[扳,不好 (b)];B[pc];W[kc])
+(;W[pc]C[黑a接成长墙已经非常好了, b位长就弄巧成拙了.
+
+a1 - 长, 恶手.
+b2 - 接, 正着.]
+N[长,不好 (c)]LB[pd:a][ld:b]
+(;B[pd]N[接,正着(a)]
+(;W[ld];B[le];W[ke];B[kd];W[lc];B[lf];W[je];B[pj])
+(;W[kc];B[qj]C[实战]))
+(;B[ld]C[黑9并不很好.]N[长,错误 (b)];W[pd];B[pe];W[qe];B[qf];W[re];B[pf];W[rd];B[lc])))
+(;B[lc]C[黑5一定要征子有利才能下.]N[扳,有征子 (b)];W[ld]C[白6扭断. 黑一般在a位挖打, b位长能够获取外势,但白得到的实利超过黑的外势. 黑a挖一定要征子有利才行.
+
+a1 - 挖, 有征子.
+b2 - 长, 不好.]
+LB[nc:a][kc:b]
+(;B[nc]C[黑一定要征子有利才能这样挖.]N[挖,有征子 (a)];W[mb];B[me]C[白a位上打是正着, b位下打征子有关.
+
+a1 - 上打, 正着.
+b2 - 下打,征子关系.]
+LB[nd:a][nb:b]
+(;W[nd]C[黑应该变换方向, 在a位打声援角里, b位打则是恶手.
+
+a1 - 打, 正着.
+b2 - 打, 恶手.
+]
+N[上打,正着(a)]LB[ne:a][kd:b]
+(;B[ne]N[打,正着(a)];W[nb];B[pe];W[kd];B[qj]C[以后……];B[gc]C[黑走16一带是先手]
+(;W[ic])
+(;W[tt]C[白一般不能脱先];B[kb]
+(;W[kc];B[jb];W[lb];B[pb])
+(;W[jb];B[jc];W[kc];B[ib];W[lb];B[ja];W[qb])))
+(;B[kd]N[打,错误(b)];W[ne];B[lb];W[nb]
+(;B[le];W[qf]C[黑如果再想在角里做活的话, 将会得不偿失.
+])
+(;B[mf];W[qf];B[pf]C[小林光一对赵治勋实战])))
+(;W[nb]N[下打征子关系(b)]
+(;B[kd];W[pe];B[qe];W[pf];B[qg])
+(;B[pe];W[kd])))
+(;B[kc]C[黑7将让白在角里获取很大的实利. 白a飞压是正着, b位靠是老定式, 不一定有利.
+
+a1 - 飞压, 定式.
+b2 - 靠, 老式.]
+N[长,不好(b)]LB[pe:a][qe:b]
+(;W[pe]C[黑a长是正着, b位挡过分.
+
+a1 - 长, 正着.
+b2 - 挡, 过分.]N[飞压,正着(a)]
+LB[me:a][qe:b]
+(;B[me]N[长,正着(a)];W[qe];B[nc];W[ob];B[nb];W[nd];B[mb];W[qg])
+(;B[qe]C[黑9挡有点太贪了.]N[挡,错误 (b)];W[me];B[nd];W[ne]C[黑可以尝试a冲或b打.
+
+a1 - 冲.
+b2 - 打.]
+LB[od:a][nc:b]
+(;B[od]N[冲(a)];W[pd];B[nc];W[nb];B[mb];W[oe];B[mc];W[qf])
+(;B[nc]N[打(b)];W[od];B[nb];W[ob];B[mb];W[qg])))
+(;W[qe]C[黑应该在a位扳, b位长不大好.
+
+a1 - 扳, 正着.
+b2 - 长, 不好.]N[靠,极复杂(b)]
+LB[pe:a][pd:b]
+(;B[pe]N[扳,正着(a)];W[pd];B[qf];W[re]
+(;B[rf]C[不明，可能黑好下]
+(;W[me]
+(;B[nd]
+(;W[od]
+(;B[pf]
+(;W[qc]
+(;B[rd];W[rc];B[se];W[ne]C[白好])
+(;B[ne];W[rd];B[mf]C[黑稍好]))
+(;W[ne];B[kd];W[le];B[qc]C[双方可下，看上边配合。])
+(;W[rd];B[qc];W[rc];B[ne];W[oe];B[nf];W[of];B[og];W[ng];B[nc]C[实战]))
+(;B[rd];W[ne];B[kd];W[le];B[hd]C[看上边配合]))
+(;W[oe];B[pf];W[ne];B[qc]C[白大坏]))
+(;B[qc];W[pf];B[oe];W[of];B[se];W[ne]C[白有利]))
+(;W[oe];B[pf];W[qc]
+(;B[rd];W[rc];B[se];W[me];B[nd];W[ne];B[kd];W[le]C[白形有A的余味，不充分。]LB[nc:A])
+(;B[me];W[rd];B[of]C[黑厚])))
+(;B[me];W[oe];B[pf];W[rf]C[角太大])
+(;B[pf];W[rf];B[od];W[pc];B[nc];W[oe];B[nd];W[qg];B[of]C[黑看似委屈，但角上留着味道]
+;B[qb];W[qc];B[ob]
+(;W[rc]C[先手官子])
+(;W[pb];B[rc]
+(;W[pa];B[rd];W[rb];B[ra];W[qa];B[sb])
+(;W[rd];B[pa];W[qd];B[rb]C[白无根，黑外边也产生A的弱点。黑22应把握时机。]LB[nf:A])))
+(;B[qc];W[oe];B[pf];W[rf];B[of];W[qg];B[ne];W[pc];B[qb];W[nc];B[nf];W[pb]C[白好]))
+(;B[pd]C[这是个老定式, 但结果黑并不好.]N[长,不好(b)]
+(;W[me];B[nd];W[od];B[ne];W[oe];B[nf];W[pe])
+(;W[pe]
+(;B[od];W[nd];B[me];W[ne];B[oe];W[mf];B[le];W[of]C[黑也不行])
+(;B[me];W[od]C[黑11可将损失减至最低，黑留着活角的手段。])))))))
+(;W[pe]C[在一间高夹的情形下, 白4飞压是骗招.
+黑a冲是正着, b位挡就中计了.
+
+a1 - 冲, 正着.
+b2 - 挡, 中计.]
+N[飞压,骗招(e)]LB[pd:a][qe:b]
+(;B[pd]N[冲,正着(a)];W[od];B[oe]C[白只有硬着头皮在a位长了, b位打则相当损.
+
+a1 - 长, 正着.
+b2 - 打, 恶手.]
+LB[pf:a][ne:b]
+(;W[pf]N[长,正着(a)];B[of];W[pg]C[黑一定要继续在b位压, a位跳过早了.
+
+a1 - 跳, 恶手.
+b2 - 贴, 正着.]
+LB[pb:a][og:b]
+(;B[pb]N[跳下,错误(a)];W[ob];B[mb];W[pc];B[qc];W[qb];B[rb];W[pa];B[ra];W[re]C[黑只有在a位挤打了, 角上最多是双活. 黑如b位接和c位紧气都不能成功. 
+
+a1 - 挤打, 不行.
+b2 - 接, 不行.
+c3 - 紧气, 正着.]
+LB[qa:a][rc:b][nd:c]
+(;B[nd]N[紧气,正着(c)];W[rc];B[rd];W[sd];B[sc];W[se];B[na];W[qe];B[rc];W[oa];B[nb]
+;W[sb]C[角上是双活.])
+(;B[rc]C[白a位接是恶手, b位扳出是当急之务.
+
+a1 - 接, 恶手.
+b2 - 扳, 正着.]N[接,不行(b)]
+LB[qe:a][ne:b]
+(;W[qe]N[接,错误 (a)];B[nd];W[rd];B[nb];W[sc];B[na];W[oa];B[qa];W[sb];B[pb])
+(;W[ne]N[扳,正着(b)];B[nf];W[mc];B[lc];W[me];B[nd];W[le];B[nh];W[ld];B[nc];W[nb]
+;B[mc];W[na];B[qa];W[kc];B[kb];W[lb];B[la];W[ma]))
+(;B[qa]N[挤打,不行 (a)];W[rd];B[rc];W[qe];B[nd];W[sc];B[nb];W[sb];B[pb];W[oa];B[nc]
+;W[qb]))
+(;B[og]C[白可以在a位跳下或b位飞, 结果都不能满意.
+
+a1 - 跳.
+b2 - 飞.]N[压,正着(b)]
+LB[re:a][qb:b]
+(;W[re]N[跳下(a)];B[pb];W[pc];B[qc];W[ob];B[qb];W[mb];B[rd];W[kc];B[ph];W[qh];B[qi]
+;W[pi];B[oh];W[ri];B[qg];W[qj];B[rg])
+(;W[qb]N[飞(b)];B[ph];W[rf];B[re];W[qh];B[qi];W[pi];B[oh];W[rh];B[ri];W[qj];B[rj]
+;W[rk];B[pj];W[si];B[qk];W[sj];B[oi];W[rl];B[pb];W[pc];B[qc]C[白无论走a位打, 或b位长, 都不行.
+
+a1 - 打, 不行.
+b2 - 长, 不行.]
+LB[ob:a][rb:b]
+(;W[ob]N[打,不行(a)];B[rb];W[pa];B[ra])
+(;W[rb]N[长,不行(b)];B[ob]))))
+(;W[ne]N[打,错误 (b)];B[of];W[nd];B[pf];W[mc]))
+(;B[qe]N[挡,错误 (b)];W[pf];B[qg];W[qf];B[rf];W[rg];B[rh];W[pg];B[qh];W[re];B[sg]
+;W[qc];B[rd];W[jd]))
+(;C[白一般不能脱先.]N[白脱先,少见(f)]
+(;B[od];W[pc];B[pd];W[nc];B[nd])
+(;B[pc];W[od];B[pf];W[ne]C[5、7的攻击也严厉。])))
+(;B[ld]C[二间高夹在现代围棋里最为常见. 这种夹充分体现了现代围棋的精髓, 即维持势力和实地的平衡, 保留足够多的变化,所以二间高夹毛病很少.
+
+白的应手很多, 有a位托, b位尖, c位尖顶, d位飞压, e位大跳, f位跳, g位走象步, h位靠, i位反夹, j位二间低夹, k位二间高夹, 也有脱先的. 特定场合下还有m位二路飞就地做活, n位飞不是定式.
+
+a1 - 托.
+b2 - 尖.
+c3 - 尖顶.
+d4 - 飞压.
+e5 - 大跳.
+f6 - 跳.
+g7 - 象步.
+h8 - 靠.
+i9 - 夹.
+j10 - 二间低夹.
+k11 - 二间高夹.
+l12 - 脱先.
+m13 - 二路大飞.
+n14 - 外飞, 不是定式.]
+N[二间高夹 (h)]LB[nd:b][pd:c][pe:d][of:e][oe:f][me:g][md:h][qf:i][qg:j][pg:k][dp:l]
+[lb:m][ne:n][qc:a]
+(;W[qc]C[黑a扳正着, b位长不好.
+
+a1 - 扳, 正着.
+b2 - 长, 不好.]N[托三三(a)]LB[rc:a]
+[pd:b]
+(;B[rc]N[扳,正着(a)];W[pd]C[黑可以a位退或b位打.
+
+a1 - 退.
+b2 - 打.]LB[qe:a][qb:b]
+(;B[qe]N[退(a)];W[qb];B[pg])
+(;B[qb]C[白一般a位反打, 征子有利时也可以b位长.
+
+a1 - 反打.
+b2 - 长, 有征子.]
+N[打(b)]LB[qe:a][pe:b]
+(;W[qe]N[反打(a)];B[pc];W[rd];B[qc]C[白一般在a位虎, 征子有利时可以b位粘.
+
+a1 - 虎.
+b2 - 粘, 有征子.]
+LB[oe:a][pe:b]
+(;W[oe]C[黑a虎渡正着, 脱先后果严重, c位刺有点过分.
+
+a1 - 虎渡, 正着.
+b2 - 脱先, 不好.
+c3 - 刺, 过分.]
+N[虎(a)]LB[ob:a][dp:b][pf:c]
+(;B[ob]N[虎渡,正着(a)];W[nc];B[mb]C[定式到此为止.];W[nb]C[白以后可能的手段...];B[na]
+;W[mc];B[lc];W[lb];B[ma];W[kb];B[jc])
+(;N[黑脱先,不好 (b)];W[nb];B[re];W[rf];B[sd];W[qf])
+(;B[pf]N[刺,过分 (c)];W[pe];B[nd]C[白可以a粘或b压.
+
+a1 - 粘.
+b2 - 压.]LB[od:a]
+[ne:b]
+(;W[od]N[粘(a)];B[ph]C[由于白a和b基本都是先手, 所以白要安顿并不困难.
+]LB[nb:a]
+[rf:b])
+(;W[ne]N[压(b)];B[nc];W[me];B[kc];W[pj]C[白在右边形成模样. 并且黑上边a附近还有弱点.
+]
+LB[lb:a])))
+(;W[pe]N[粘,有征子 (b)];B[nc];W[qi];B[ob]))
+(;W[pe]N[长,有征子 (b)];B[pc];W[pb];B[qc];W[qf];B[nc];W[od];B[ob];W[me];B[mc];W[pi]
+C[两分])))
+(;B[pd]N[长,不好 (b)];W[pc];B[od];W[nd];B[ne]C[白一般a位接就不错, 当然征子有利时, b位连扳也有可能.
+
+a1 - 接.
+b2 - 连扳, 有征子.]
+LB[nc:a][me:b]
+(;W[nc]N[接(a)];B[me];W[qj])
+(;W[me]N[连扳,有征子(b)];B[nc];W[md];B[mc]C[如果征子白有利, 那么白a位断当然, 否则, 白只能b位打.
+
+a1 - 断, 征子白有利.
+b2 - 打, 征子白不利.]
+LB[lc:a][nf:b]
+(;W[lc]N[断,征子白有利(a)];B[lb];W[kc];B[kd]C[如果征子对白不利, 白将崩溃, 因为a和b见合.
+]
+LB[jc:a][mf:b])
+(;W[nf]N[打,征子白不利(b)];B[rc];W[rb];B[rd];W[nb];B[mb];W[na];B[kc]C[白a立活角的话有点委屈, 但如果白角上脱先, 就会被劫杀.
+
+a1 - 立.
+b2 - 飞, 角上成劫.]
+LB[sb:a][pg:b]
+(;W[sb]N[立(a)];B[qh])
+(;W[pg]C[白角成劫杀, 白a夹是手筋, b位扳不行.
+
+a1 - 夹, 正着.
+b2 - 扳, 错误.]
+N[飞,成劫(b)]LB[ra:a][sb:b]
+(;B[ra]N[夹,正着(a)];W[sb];B[pa];W[pb];B[ma];W[ob];B[qb]C[虽然是白的先提劫, 但黑在a位有劫材.
+]
+LB[mf:a])
+(;B[sb]N[扳,错误 (b)];W[ra]C[白成木梳形, 净活.]))))))
+(;W[nd]C[黑的应手有a位飞, b位大飞, c位尖顶, d位飞逼和e位下飞. 其中黑d位飞逼难解.
+
+a1 - 飞.
+b2 - 大飞.
+c3 - 尖顶.
+d4 - 飞逼.
+e5 - 下飞.]
+N[尖(b)]LB[pf:a][pg:b][pc:c][oe:d][pb:e]
+(;B[pf]C[白的应手有a位托三三, b位飞角, c位反夹. 基本没有脱先的.
+
+a1 - 托.
+b2 - 飞.
+c3 - 反夹.
+d4 - 脱先, 不妥.]
+N[飞(a)]LB[qc:a][qb:b][jc:c][dp:d]
+(;W[qc]N[托(a)];B[rc];W[pd]C[黑a退正着, b位打随手.
+
+a1 - 退, 正着.
+b2 - 打, 不行.]
+LB[qe:a][qb:b]
+(;B[qe]N[退,正着(a)];W[qb];B[qj])
+(;B[qb]N[打,错误 (b)];W[qe];B[pc];W[rd];B[qc];W[pe]))
+(;W[qb]N[飞(b)];B[qj]C[白棋的后续手段有 b位反夹或c位反夹. 如果想要获得中央的势力,也可以a位跳出. 当然脱先也是可以的.
+
+a1 - 跳出.
+b2 - 一间低夹.
+c3 - 二间高夹.
+d4 - 脱先.]
+LB[nf:a][jc:b][id:c][dp:d]
+(;W[nf]C[白跳出防止被黑封头.]N[跳出 (a)])
+(;W[jc]N[一间低夹 (b)])
+(;W[id]N[二间高夹 (c)];B[nf]
+(;W[me];B[ke]C[9、11是调子];W[mf];B[jf])
+(;W[og];B[of];W[me]C[10为以后打入右边作准备];B[ke];W[mf];B[jf];W[ng];B[pg];W[if]
+;B[ig];W[hf];B[jg];W[mg]))
+(;N[白脱先 (d)]
+(;B[mc]C[白可以在a位尖轻松安定, 白也有再次脱先的.
+
+a1 - 尖.
+b2 - 脱先.]N[尖攻击]
+LB[rc:a][cq:b]
+(;W[rc]N[尖(a)];B[rd];W[nb];B[mb];W[oe])
+(;C[白再度脱先时, 黑a位并是形, b位托看似严厉, 其实白有妙手可解危.
+
+a1 - 并, 正着.
+b2 - 托, 恶手.]
+N[白再脱先 (b)]LB[pd:a][ob:b]
+(;B[pd]C[黑11看上去好象闲棋一着, 但实际上是急所. 白只好a位立防守, b位尖不好.
+
+a1 - 立, 正着.
+b2 - 尖, 不好.]
+N[并,正着(a)]LB[ob:a][rc:b]
+(;W[ob]N[立,正着(a)];B[rc])
+(;W[rc]C[黑a位再托是次序, b位挤会落后手.
+
+a1 - 托, 正着.
+b2 - 挤, 俗手.]N[尖,不好(b)]
+LB[ob:a][nc:b]
+(;B[ob]C[白a扳下必然, b位挡不能考虑.
+
+a1 - 扳下, 正着.
+b2 - 挡, 恶手.]N[托,正着(a)]
+LB[nb:a][pb:b]
+(;W[nb]N[扳下,正着(a)];B[nc];W[pb];B[od];W[oa])
+(;W[pb]N[挡,错误 (b)];B[nb]))
+(;B[nc]C[黑11落后手, 所以并不很好.]N[挤,不好 (b)];W[ob];B[od])))
+(;B[ob]N[托,错误 (b)];W[nb];B[nc]C[白a位尖顶是手筋, b位打就正中黑下怀.
+
+a1 - 尖顶, 手筋.
+b2 - 打, 恶手.]
+LB[pd:a][pb:b]
+(;W[pd]C[白12尖顶是双方的急所.]N[尖顶,手筋 (a)];B[pb];W[pc];B[mb];W[qe];B[qf];W[re]
+C[黑角被鲸吞.])
+(;W[pb]C[白12打不行, 白上面被切断.
+]N[打,错误 (b)];B[od];W[pc];B[pd]))))
+(;B[nf]N[重视右边])
+(;B[rb]N[角上定型];W[qc];B[rc];W[pd];B[qe]))
+(;W[pg]C[严厉]N[碰征子有关]
+(;B[qg]N[下扳];W[qh];B[ph];W[og]
+(;B[oh]N[贴妥协];W[qf];B[rg];W[ng];B[rf];W[nh];B[oj])
+(;B[qf]C[征子有利也不行]N[粘不行];W[pi];B[oh];W[qi])
+(;B[of]N[里面贴不成立];W[pi];B[oh];W[ng];B[qi];W[rh];B[rg];W[ni]))
+(;B[og]N[上扳];W[ph];B[of]C[战斗，白可战])
+(;B[of]N[长];W[pi];B[pj];W[oi]C[战斗])))
+(;W[jc]N[反夹(c)]
+(;B[ke]N[尖];W[hd])
+(;B[mc]N[尖下面阻渡稍过分]
+(;W[qc]N[托角不好];B[rc];W[pd];B[qb];W[qe];B[pc];W[rd];B[qc];W[pe];B[ob];W[of]C[黑厚，白6孤单])
+(;W[of]N[先靠好];B[pg];W[ke]C[10飞封严厉];B[le];W[lf];B[mf];W[kf];B[me];W[qc]C[白10至黑15，白先手得利后再在角上托]
+;B[rc];W[pd];B[qb];W[pb]C[做劫好手，这个劫对白已经很轻];B[pc];W[mg]))
+(;B[pc]N[尖顶简明];W[lc])
+(;B[nf];W[lc])
+(;B[lb]N[跳下急战];W[nf];B[ke]))
+(;C[白脱先后果严重.]N[白脱先,错误 (d)];B[pc];W[nf];B[ph]C[白苦.])
+(;W[nf]N[跳有点损]
+(;B[ph])
+(;B[id])))
+(;B[pg]C[白可以a位飞先安定自己, b位逼, c位夹. d位托三三会让黑得到好结果.
+
+a1 - 飞.
+b2 - 逼.
+c3 - 夹.
+d4 - 托三三, 不好.]
+N[大飞(b)]LB[qb:a][qi:b][jc:c][qc:d]
+(;W[qb]C[黑可以在a位远拆, 也可以在b位封.
+
+a1 - 远拆.
+b2 - 封.]N[飞(a)]LB[qk:a]
+[mf:b]
+(;B[qk]C[白将来伺机可以在a位点, 但要掌握时机, 不要过早下手.
+]N[斜拆三(a)]LB[qf:a]
+;W[qf]C[黑a压可以在中央走厚, b位挡能得先手, 但是白角地大增.
+
+a1 - 压, 取势.
+b2 - 挡, 先手.]
+LB[pf:a][qg:b]
+(;B[pf]N[压,取势(a)];W[qe];B[pe];W[rd];B[pd];W[qc];B[qg])
+(;B[qg]N[挡,先手(b)];W[qe];B[of];W[pd]))
+(;B[mf]C[黑7封,意图建立模样. 白在a位分投是本手, b位靠正是黑所希望的.
+
+a1 - 分投, 正着.
+b2 - 靠, 不好.]
+N[封 (b)]LB[qi:a][nf:b];W[qi];B[pl];W[oi];B[oe])
+(;B[oe]N[肩冲]
+(;W[ne]
+(;B[lf];W[ng];B[pi]C[两分])
+(;B[nf];W[le];B[jd];W[mf];B[ng];W[lc]C[黑好]))
+(;W[tt];B[mc];W[rc];B[ob];W[nb];B[nc]
+(;W[od];B[mb];W[pb];B[na];W[qe];B[pe];W[rd];B[qf];W[re];B[ne]C[黑好])
+(;W[pb];B[od];W[oa]C[两分]))))
+(;W[qi]C[黑一般会在a位跳或b位尖顶.其中a位跳黑可得先手.
+
+a1 - 跳, 先手.
+b2 - 尖顶.]
+N[逼(b)]LB[qb:a][pc:b]
+(;B[qb]C[白一般在a位跳出, 有些场合b位反夹也有可能.
+
+a1 - 跳.
+b2 - 反夹.]N[跳,黑先手 (a)]
+LB[nf:a][jc:b]
+(;W[nf]N[跳(a)];B[oe];W[ne];B[oh];W[lf];B[id])
+(;W[jc]AB[pq][cp][dq][eq]AW[dd][ep][fq][qo]C[白8是由高川格在1969年10月2,3日第8届名人赛第5局对林海峰时下出来的. 以下是进程.
+]
+N[反夹 (b)];B[ke];W[lb];B[id];W[jd];B[je];W[ie];B[gd];W[if];B[ic];W[ib];B[hb];W[jb]
+;B[gf];W[fe];B[ge];W[ih];B[oe];W[ne];B[kh];W[ng];B[pi];W[pj];B[oi];W[qh];B[og];W[lf]
+;B[jg];W[ig];B[lg];W[mg];B[mh];W[nh];B[ni];W[pl];B[mi];W[le];B[kd];W[mc];B[gh];W[ij]
+;B[cf];W[fb];B[ef];W[ce];B[bf];W[hc];B[hd];W[gc]))
+(;B[pc]N[尖顶(b)];W[pb];B[qb];W[pd];B[qc];W[pe];B[qf];W[nf]))
+(;W[jc]C[如果白在左上角有配合, 白6是拆兼夹的好棋.
+]N[反夹(c)];B[ke];W[hd];B[qb]
+;W[nf];B[oe];W[ne];B[kg];W[nh];B[pi])
+(;W[qc]C[白6强化对方.]N[托,不好 (d)];B[rc];W[pd];B[qe];W[qb];B[qk]))
+(;B[pc]C[白的应手有a位扳或b位飞镇.
+
+a1 - 扳.
+b2 - 飞镇.]N[尖顶(c)]LB[pb:a][pe:b]
+(;W[pb]N[扳(a)];B[qb];W[pd];B[qc];W[pe];B[qf]C[白接下来a位跳是本手, b位压和c位飞都不好.
+
+a1 - 跳, 正着.
+b2 - 压, 不好.
+c3 - 飞, 不好.
+d4 - 脱先.]
+LB[pg:a][pf:b][og:c][dp:d]
+(;W[pg]N[跳,正着(a)]
+(;B[pf]N[定式];W[of];B[qe];W[ng];B[oh];W[og];B[qh];W[ph];B[qi])
+(;B[tt];W[pf];B[rf])
+(;B[qg]N[爬不如脱先];W[ph];B[qh];W[pi]))
+(;W[pf]C[白12在后面推车.]N[压,不好 (b)];B[qg];W[pg];B[ph];W[oh];B[oi];W[nh];B[pi])
+(;W[og]N[飞,不好 (c)];B[qg]C[白应手穷.])
+(;C[如果白脱先, 黑应该在a位并, b位压是俗手.
+
+a1 - 并, 正着.
+b2 - 压, 俗手.]N[白脱先 (d)]
+LB[qg:a][pf:b]
+(;B[qg]N[并,正着(a)];W[nf])
+(;B[pf]C[黑12压看上去严厉, 实际上帮白整形. 黑12是俗手.
+]N[压,俗手 (b)];W[of];B[og]
+;W[nf];B[ng];W[mf]))
+(;W[jc]C[12夹是考虑到以后走A。黑可考虑BC的应手]LB[og:A][ke:B][lb:C])
+(;W[id];B[lf]
+(;W[og]N[飞不好];B[qg]C[留下A位急所，白形不好]LB[nf:A])
+(;W[nf]C[瞄着A的靠，黑可脱先]N[跳正形]LB[qg:A])))
+(;W[pe]C[黑a位团是看似愚形的急所, b位挡是恶手.
+
+a1 - 团, 急所. 
+b2 - 挡, 恶手.]
+N[飞镇(b)]LB[pd:a][qe:b]
+(;B[pd]N[团,急所(a)];W[qe]C[黑a位冲是正着, b位扳屈服.
+
+a1 - 冲, 正着.
+b2 - 扳, 不好.]
+LB[od:a][ob:b]
+(;B[od]N[冲,正着(a)];W[oe];B[nc];W[mc];B[ob]C[白a粘是本手, b位粘是恶手.
+
+a1 - 粘, 本手.
+b2 - 粘, 恶手.]
+LB[ne:a][md:b]
+(;W[ne]N[粘,正着(a)];B[mb];W[pj])
+(;W[md]C[黑仍然能断.]N[粘,错误 (b)];B[ne];W[me];B[nf];W[pg];B[mb];W[lc];B[mf];W[le]
+;B[lf]))
+(;B[ob]N[扳,不好(b)];W[oe];B[mc];W[pi];C[黑脱先]N[Black tenuki];W[pb]C[白有13位断的手段, 黑a打是正着, b位打不大好.
+
+a1 - 打, 正着.
+b2 - 打, 不好.]
+LB[qb:a][nc:b]
+(;B[qb]N[打,正着(a)];W[nb];B[nc];W[oa];B[od];W[rd])
+(;B[nc]N[打,不好(b)];W[rd]C[白可以乘势进角.])))
+(;B[qe]N[挡,错误 (b)];W[pd];B[qc];W[pf];B[qg];W[id])))
+(;B[oe]C[白a尖顶是正着, b位托和c位压都不好.
+
+a1 - 尖顶, 正着.
+b2 - 托, 不好.
+c3 - 压, 不好.]
+N[飞压,复杂(d)]LB[pd:a][qc:b][ne:c]
+(;W[pd]C[黑可以选择a位退或b位挡.
+
+a1 - 退.
+b2 - 挡.]N[尖顶(a)]LB[qe:a][pe:b]
+(;B[qe]C[白a位虎是本手, b位冲俗手, 黑有利.
+
+a1 - 虎, 本手.
+b2 - 冲, 俗手.]N[退(a)]
+LB[qc:a][pe:b]
+(;W[qc]C[白可以a位扳或b位接.
+
+a1 - 扳.
+b2 - 接.]N[虎,本手(a)]LB[rc:a][pe:b]
+(;B[rc]N[扳(a)];W[pe]C[黑可以在a位退, 也可以在b位挡.
+
+a1 - 退.
+b2 - 挡.]LB[qf:a]
+[pf:b]
+(;B[qf]N[退(a)];W[pf];B[pg]C[白可以选择a位立就地做活, b位扳出作战, 脱先不好.
+
+a1 - 立.
+b2 - 扳.
+c3 - 脱先, 不好.]
+LB[qb:a][og:b][dp:c]
+(;W[qb]N[立(a)]
+(;B[og];W[of];B[ng])
+(;B[tt];W[of]
+(;B[qi])
+(;B[tt];W[rh])))
+(;W[og]N[扳出(b)];B[ph];W[qb])
+(;N[白脱先,不好(c)];B[og];W[of]C[白15迫不得已.];B[ng]C[黑挺头,很满意.];W[qg]C[白17断, 但效果不会太好,最多成劫.]
+;B[qh];W[rg];B[rf];W[rh];B[qi]C[白只好a位扳了, b位爬是恶手.
+
+a1 - 扳, 正着.
+b2 - 爬, 恶手.]
+LB[sf:a][ri:b]
+(;W[sf]C[白23扳,做出一劫.]N[扳,成劫 (a)];B[se];W[rd];B[sg];W[sh];B[ri];W[sf])
+(;W[ri]C[白23自紧一气.]N[爬,恶手 (b)];B[rj];W[rd];B[sg]C[白被吃.])))
+(;B[pf]C[黑11挡难解.]N[挡(b)];W[qf]C[黑可以在a位打, 也可以在b位打.
+
+a1 - 打.
+b2 - 打.]
+LB[qb:a][rf:b]
+(;B[qb]N[打(a)];W[pc];B[re];W[rf];B[se];W[qh]C[黑a位飞正着, b位跳是骗招, 白有办法.
+
+a1 - 飞, 正着.
+b2 - 跳, 骗招.]
+LB[mf:a][me:b]
+(;B[mf]C[白只有在a位跨, b位断打不行.
+
+a1 - 跨, 正着.
+b2 - 断, 不行.]N[飞,正着(a)]
+LB[nf:a][of:b]
+(;W[nf]C[白20是手筋. 黑可以选择a位长或b位跳压. c位扳不行.
+
+a1 - 长.
+b2 - 跳压.
+c3 - 扳, 不行.]
+N[跨,正着(a)]LB[pg:a][ph:b][ng:c]
+(;B[pg]C[白可以在a位接或b位尖顶.
+
+a1 - 接.
+b2 - 尖顶.]N[长(a)]LB[ne:a][me:b]
+(;W[ne]N[接(a)];B[ph];W[qi];B[pi];W[qj];B[mg];W[lc];B[kc]C[白可以在a位立, 或b为长.
+
+a1 - 立.
+b2 - 长.]
+LB[lb:a][ng:b]
+(;W[lb]N[立(a)];B[kd])
+(;W[ng]N[长(b)]))
+(;W[me]C[黑a位压正着, b位挡不好.
+
+a1 - 压, 正着.
+b2 - 挡, 不好.]N[尖顶(b)]LB[ph:a]
+[le:b]
+(;B[ph]C[白a位穿是正着, b位长恶手.
+
+a1 - 穿, 正着.
+b2 - 长, 恶手.]N[压,正着(a)]
+LB[le:a][qi:b]
+(;W[le]N[穿,正着(a)];B[qi];W[kd])
+(;W[qi]C[白24过分, 白棋不能两全.]N[长,错误 (b)];B[le];W[pi];B[ng]))
+(;B[le]C[但白要小心劫材]N[挡,不好 (b)];W[ph];B[ng];W[mg];B[lf];W[og];B[of];W[nh]
+;B[ne];W[md];B[ng];W[rb];B[oh];W[sb];B[oi]C[白在a位跳不可少.
+
+a1 - 跳, 本手.
+b2 - 脱先, 不行.]
+LB[qj:a][dp:b]
+(;W[qj]N[跳,本手(a)];B[pj]C[白a位虎补是本手, b位长不行.
+
+a1 - 虎补, 正着.
+b2 - 长, 不行.]
+LB[ri:a][qk:b]
+(;W[ri]N[虎,急所(a)])
+(;W[qk]N[长,错误 (b)];B[ri];W[rh];B[qi];W[pi];B[sh]C[无论白走a打, b接, c扳打都不行.
+
+a1 - 打.
+b2 - 接.
+c3 - 扳打.]
+LB[rj:a][rg:b][sg:c]
+(;W[rj]N[打(a)];B[rg])
+(;W[rg]N[接(b)];B[sg])
+(;W[sg]N[扳打(c)];B[qg])))
+(;C[白不能脱先.]N[白脱先,不行 (b)];B[qg];W[rg];B[ri];W[rh];B[qi];W[sf];B[pi];W[sd]))))
+(;B[ph]C[白a位尖顶是正着, b位打不行.
+
+a1 - 尖顶, 正着.
+b2 - 打, 不行.]N[跳压(b)]
+LB[me:a][pg:b]
+(;W[me]N[尖顶(a)];B[pg];W[le];B[qi];W[kd])
+(;W[pg]C[白22打不行, 步入黑的调子.]N[打,错误 (b)];B[of];W[og];B[ne];W[me];B[ng]
+C[白应手穷.]))
+(;B[ng]N[扳,错误 (c)];W[og];B[of];W[ne];B[pg];W[oh];B[ph];W[pi];B[oi];W[nh];B[qi]
+;W[pj];B[qg];W[mg]))
+(;W[of]N[断打,错误 (b)];B[pg]C[白a抱吃和b位顶都不能突围.
+
+a1 - 抱吃, 不行.
+b2 - 顶, 不行.]
+LB[ne:a][nf:b]
+(;W[ne]N[抱吃,不行(a)];B[ph];W[qi];B[nf];W[og];B[nh])
+(;W[nf]N[顶,不行(a)];B[ph];W[qi];B[mg])))
+(;B[me]C[白a位点仅此一手, b位断和c位冲都不行.
+
+a1 - 点, 手筋.
+b2 - 断打, 不行.
+c3 - 冲, 不行.]
+N[跳,骗招 (c)]LB[nf:a][of:b][ne:c]
+(;W[nf]N[点,手筋(a)];B[ne];W[of];B[pg];W[oh]C[黑棋被枷吃.])
+(;W[of]N[断打,错误 (b)];B[pg];W[ne];B[ph];W[qi];B[pi];W[qj];B[nf];W[og];B[ng];W[oh]
+;B[ni])
+(;W[ne]C[白20是大恶手.]N[冲,错误 (c)];B[nf])))
+(;B[rf]N[打(b)];W[qg];B[pg];W[qh];B[ph];W[qi]C[黑可以选择a打,或b压.
+
+a1 - 打.
+b2 - 压.]
+LB[qb:a][pi:b]
+(;B[qb]N[打(a)];W[pc];B[rb]C[白a位拐正着, b位尖一般不打好.
+
+a1 - 拐, 正着.
+b2 - 尖, 不好.]
+LB[pi:a][me:b]
+(;W[pi]N[拐,正着(a)]
+(;B[mf]N[飞];W[lb];B[kb];W[kc];B[lc];W[jb];B[mb];W[ka];B[mc];W[kd];B[le];W[jf])
+(;B[ng];W[me];B[le];W[mf];B[oi];W[oj];B[ni];W[lf];B[nj];W[ok];B[kf];W[kg];B[jf]
+;W[lh];B[lj];W[ih]))
+(;W[me]C[白22尖不好, 因为黑抢先占到a位压对白右边四子很不利.]N[尖,不好 (b)]LB[pi:a]
+;B[pi];W[qj];B[ok])
+(;W[nf]N[跳错着];B[pi];W[qj];B[mf];W[ne];B[mg]))
+(;B[pi]N[压(b)]
+(;W[rb]C[黑只有在a位打, b位扳不行.
+
+a1 - 打, 正着.
+b2 - 扳,不行.]N[连扳]LB[qb:a]
+[qj:b]
+(;B[qb]N[打,正着(a)];W[pc];B[re]C[白只有在a位长出了, b位打太小, 黑弃子吃住白四子.
+
+a1 - 长, 正着.
+b2 - 打, 恶手.]
+LB[qj:a][sc:b]
+(;W[qj]N[长,正着(a)];B[sb];W[pj];B[mf];W[lb])
+(;W[sc]N[打,错误 (b)];B[qj];W[rj];B[rk]C[白只有在a位打劫了.]LB[sd:a]))
+(;B[qj]N[扳,错误(b)];W[sd];B[re];W[rg];B[qb];W[pc]C[黑只有在a位打了, b位接不行.
+
+a1 - 打, 正着.
+b2 - 接, 不行.]
+LB[sb:a][rd:b]
+(;B[sb]N[打,正着(a)];W[rd];B[ra];W[sf]C[黑4子被吃,损失不菲,还留下了a位的断点.]LB[pj:a])
+(;B[rd]N[接,错误 (b)];W[sc];B[ra];W[sb])))
+(;W[qj]N[长也可];B[qb];W[pc];B[rb];W[me])))))
+(;B[pe]N[接(b)];W[rc];B[ne]C[结果被认为白稍有利.]))
+(;W[pe]N[冲,不好(b)];B[pf];W[qc];B[qg];W[rf];B[qf];W[rc];B[ne]C[结果黑稍有利.]))
+(;B[pe]C[白a位虎扳是正着, b位断无理.
+
+a1 - 虎扳, 正着.
+b2 - 断, 无理.]N[挡(b)]
+LB[qc:a][qe:b]
+(;W[qc]C[黑可以a位倒虎, 也可以b位连扳.
+
+a1 - 倒虎.
+b2 - 莲扳.]N[虎挡,正着(a)]
+LB[re:a][rc:b]
+(;B[re]C[白选择走a位立或b位长.
+
+a1 - 立.
+b2 - 长.]N[倒虎(a)]LB[rc:a][ne:b]
+(;W[rc]N[立(a)];B[ne]C[黑构筑了相当的外势,白也得到了一定的地盘.
+])
+(;W[ne]C[白向中央挺进, 还隔断了黑3的联络, 但也花出了代价. 黑的应手有a位扳或b位虎.
+
+a1 - 扳.
+b2 - 虎.]
+N[长(b)]LB[nf:a][rc:b]
+(;B[nf]N[扳(a)];W[mf];B[ng];W[le];B[rc];W[kd])
+(;B[rc]N[虎(b)];W[ng];B[id]C[白最好不要在a位点刺, 因为黑b位打后, 白将落后手.
+]
+LB[qf:a][od:b])))
+(;B[rc]C[黑9扳毫不妥协, 乃梶原武雄九段首创.]N[连扳(b)];W[rd];B[qe]C[白a打正着, b位爬想占便宜, 是过分之着.
+
+a1 - 打, 正着.
+b2 - 爬, 过分.]
+LB[rb:a][re:b]
+(;W[rb]N[打,正着(a)];B[od];W[pc];B[re];W[ne];B[nf];W[mf];B[ng];W[le];B[mg];W[ke]
+C[两分])
+(;W[re]N[爬,错误 (b)];B[qb];W[pc];B[sb]C[白只好a位扳出, b位点想吃黑是错误的想法, 白两子反而被吃.
+
+a1 - 扳出, 正着.
+b2 - 点, 错误.
+]
+LB[qf:a][ra:b]
+(;W[qf]N[扳,正着(a)];B[ra])
+(;W[ra]N[爬,错误 (b)];B[rf]))))
+(;W[qe]C[白8断让黑得到厚势.]N[断,不好 (b)];B[qf];W[re];B[qc];W[rf];B[ne];W[pc];B[qb]
+C[白只好在a位挡, b位打不行.
+
+a1 - 挡, 正着.
+b2 - 打, 不行.]LB[pb:a][qg:b]
+(;W[pb]N[挡,正着(a)];B[qg];W[rg];B[qh];W[rd];B[md]C[以后黑a点是先手.]LB[nb:a])
+(;W[qg]N[打,错误 (b)];B[nb]C[白被杀, 无论a粘或b尖都不行.
+
+a1 - 粘, 不行.
+b2 - 尖, 不行.]
+LB[nc:a][mc:b]
+(;W[nc]N[粘,不行(a)];B[mb];W[pb];B[pa]C[白慢一气被吃.])
+(;W[mc]N[尖,不行(b)];B[lc];W[mb];B[lb];W[pb];B[pa];W[oa];B[qa];W[la]C[黑a位长正着, b位挡成劫.
+
+a1 - 长, 正着.
+b2 - 挡, 成劫.]
+LB[na:a][ka:b]
+(;B[na]N[长(a)];W[ma];B[jb])
+(;B[ka]N[打,成劫 (b)];W[na]))))))
+(;W[qc]C[白6托是次序错误, 黑可以取得优势.
+]N[托,错误 (b)];B[rc];W[pd];B[qb];W[pe]
+;B[pc];W[pb];B[qc];W[of];B[qf];W[pf];B[qg])
+(;W[ne]C[白6很糟糕的一手.]N[压,错误 (c)];B[of]C[白a贴长要比b位尖顶更糟糕.
+
+a1 - 贴长, 不行.
+b2 - 尖顶, 不好.]
+LB[nf:a][pd:b]
+(;W[nf]N[贴长,不好(a)];B[og]C[白应该走a位跳镇或b位尖顶. c位托恶手.
+
+a1 - 跳镇.
+b2 - 尖顶.
+c3 - 托, 恶手.]
+LB[lf:a][pd:b][qc:c]
+(;W[lf]N[跳镇(a)];B[id])
+(;W[pd]N[尖顶(b)];B[qe];W[qc];B[rc];W[qb]C[白接下来不能在a位二路大飞, 因为黑b位尖就切断联络了.
+]
+LB[lb:a][mc:b])
+(;W[qc]N[托,错误 (c)];B[rc];W[pd];B[qb]C[白可以试走a打或b冲.
+
+a1 - 打.
+b2 - 冲.]
+LB[qe:a][pe:b]
+(;W[qe]N[打(a)];B[pc];W[rd];B[qc]C[补不胜补])
+(;W[pe]N[冲(b)];B[pc];W[od];B[qf])))
+(;W[pd]N[尖顶,不好(b)];B[qe];W[qc];B[rc];W[qb];B[qh]C[黑a位尖后, 白仍然缺乏眼位.
+]
+LB[mc:a])))
+(;B[pb]C[黑5下飞是赵治勋近来新的尝试.
+]N[下飞(e)]
+(;W[qc]N[跨];B[pc];W[pd];B[pe];W[od];B[rc];W[qe];B[rd]C[白a挡下正着, b位直接打吃是恶手.
+
+a1 - 挡下, 正着.
+b2 - 打, 恶手.]
+LB[ob:a][pf:b]
+(;W[ob]N[挡,正着(a)];B[qf];W[qb];B[rb];W[pa]C[白4虽然形态不佳, 但黑夹之子失去意义.]
+TR[ld])
+(;W[pf]N[打,错误 (b)];B[ob]C[黑15先手拐到, 满意. 如果白不应, 下一步黑a尖就能联络.]
+LB[mc:a]))
+(;W[og]C[实战]
+(;B[ob]C[实战]N[爬];W[qg];B[mc])
+(;B[pe]C[实战]N[尖];W[nf];B[qg];W[id])
+(;B[qg]N[拆二]
+(;W[qh]N[靠];B[ph];W[pg];B[qi];W[qf];B[rh];W[rg];B[qh];W[re])
+(;W[qc]N[跨];B[pc];W[pd];B[pe];W[od];B[rc];W[qe];B[rd];W[pf];B[ob];W[re]C[两分]))))
+(;B[qb]N[跳]
+(;W[qf]
+(;B[pe]N[尖]
+(;W[nf]N[跳];B[pf];W[pg];B[og];W[ph];B[of];W[lc];B[kc];W[kd])
+(;W[pf]N[贴];B[oe];W[me];B[of];W[og];B[ng];W[oh];B[nh];W[oi];B[ni];W[oj];B[le]
+(;W[rc]
+(;B[pc];W[lb];B[mf];W[hc]C[白有利])
+(;B[rd]N[挡无理];W[qc];B[rb];W[pc];B[sc];W[mf]))
+(;W[mf]N[出动无理];B[lf];W[mg];B[li];W[lh];B[nj];W[pc];B[nf]C[黑充分])))
+(;B[pf]N[靠];W[pg]
+(;B[pe]
+(;W[nf];B[og];W[ph];B[of];W[lc];B[kc];W[kd])
+(;W[og];B[ne];W[me];B[nf];W[md]
+(;B[lc];W[le];B[jd]
+(;W[ke];B[ng];W[hd];B[ie];W[he];B[if];W[kg];B[pi]C[白苦战])
+(;W[mh]
+(;B[jf];W[lg];B[qg];W[qh];B[rg];W[pi];B[rf])
+(;B[lg]N[分断无理];W[mg];B[mf];W[lf];B[kg];W[je]C[白可战])))
+(;B[ng];W[pi];B[lc];W[le];B[jd];W[lg];B[ni]C[白苦])))
+(;B[of];W[qe];B[pd];W[me];B[od];W[le]C[白好])))
+(;W[pe];B[pd];W[qe]
+(;B[od];W[oe];B[md])
+(;B[oe]N[黑征子有利扳出,白不行];W[od];B[re]))
+(;W[og];B[qg])))
+(;W[pd]C[白4尖顶已经逐级被淘汰了, 因为黑3的夹正好抵消了白4的势力. 黑a往角里长是定式, 由此展开了激烈的战斗, b位往外长, 正好凑白一虎, 根本不能考虑.
+
+a1 - 里长, 正着.
+b2 - 外长, 错误.]
+N[尖顶 (c)]LB[qc:a][qe:b]
+(;B[qc]C[白a断势所必然, b位跳的话,局部遭受损失.
+
+a1 - 断, 正着.
+b2 - 跳, 不好.]
+N[里长,正着(a)]LB[qe:a][pf:b]
+(;W[qe]C[黑a位断也是必然, b位下扳过于软弱.
+
+a1 - 断, 正着.
+b2 - 下扳, 软弱.]
+N[扳下,正着(a)]LB[pe:a][re:b]
+(;B[pe]N[断,正着(a)];W[re]C[现在局势成骑虎之势, 黑可以选择a位长, b位飞或c位长. 其中a位长最为严厉, b飞允许白安顿, c位长后, 黑可以走二二位尖做活自己.
+
+a1 - 长, 严厉.
+b2 - 飞.
+c3 - 长.]
+LB[oe:a][nd:b][pf:c]
+(;B[oe]C[白a位团是正着, b位鼻顶使自己处低位.
+
+a1 - 团, 正着.
+b2 - 鼻顶, 不好.]
+N[长(a)]LB[pc:a][qb:b]
+(;W[pc]N[团,正着(a)];B[qb]C[此时白应当a拐, b位跳贻误战机.
+
+a1 - 拐, 正着.
+b2 - 跳, 恶手.]
+LB[rd:a][mc:b]
+(;W[rd]C[黑可以选择a位点或b位靠, 但b位靠更好一点.
+
+a1 - 点, 不好.
+b2 - 靠, 较好.]
+N[拐,正着(a)]LB[nb:a][nc:b]
+(;B[nb]N[点(a)];W[nc];B[mc];W[pb];B[nd];W[rb])
+(;B[nc]C[白征子有利可以直接在b位挡, 否则只能在a位扳.
+
+a1 - 扳, 征子黑不利.
+b2 - 挡, 征子黑有利.]
+N[靠,较好(b)]LB[nb:a][pb:b]
+(;W[nb]C[黑a位退是老定式, 简明,  新定式是在b位扳. 
+
+a1 - 退, 简明.
+b2 - 扳, 新型.]
+N[扳,征子白有利(a)]LB[mc:a][mb:b]
+(;B[mc]N[退,简明(a)];W[pb];B[mb];W[rb])
+(;B[mb]C[白征子有利时, 可以在b位打, 否则只能在a位粘.
+
+a1 - 粘. 
+b2 - 打, 有征子.
+]
+N[扳(b)]LB[ob:a][nd:b]
+(;W[ob]N[粘(a)];B[rc];W[sb];B[md];W[sc];B[qf];W[rf];B[qg];W[rg];B[qh])
+(;W[nd]N[打,有征子(b)];B[mc];W[ne];B[nf];W[od]
+(;B[og];W[me];B[lf]C[白a位挡正着, b位冲是随手.
+
+a1 - 挡, 正着.
+b2 - 冲, 恶手.]
+LB[pb:a][le:b]
+(;W[pb]N[挡,正着(a)];B[le])
+(;W[le]N[冲,错误 (b)];B[ke];W[kd];B[mf];W[lc];B[ob];W[pb];B[na];W[md];B[pa];W[ld]
+;B[jd]C[白全军覆没.]))
+(;B[me]N[扳不好];W[of];B[pf];W[og];B[pg];W[ph];B[qg];W[oh]
+(;B[pb];W[ob];B[oa];W[mf];B[na];W[ng];B[md];W[nf]C[白厚];B[qh];W[qi];B[ri];W[rj]
+;B[qj];W[pi];B[rh];W[rk];B[rf]C[角的味道……];W[rc];B[rb];W[sb];B[pa];W[sf];B[sg]
+;W[sd];B[qf]C[缓气劫])
+(;B[mf];W[rg];B[qh];W[qi];B[rh];W[ri];B[rf];W[sh];B[sg];W[si];B[qf];W[sf];B[se]
+;W[sd]))
+(;B[mf]N[长也可下];W[rb];B[na];W[pg];B[og];W[qf];B[of];W[pb];B[me];W[pa]C[均势]))))
+(;W[pb]C[黑一般在a位立, b位点是鬼手.
+
+a1 - 立, 一般手段.
+b2 - 点, 手筋, 有征子.]
+N[挡,征子黑有利(b)]LB[nb:a][oa:b]
+(;B[nb]N[立,征子白有利(a)];W[rb];B[od];W[rc])
+(;B[oa]C[黑15是1959年杉内雅男发现的鬼手, 征子有利与否是成败的关键.
+]N[点,征子黑有利 (b)]
+;W[nb];B[mb]C[征子白不利时只能a位粘, 否则可以b位打出.
+
+a1 - 粘, 征子白不利.
+b2 - 打, 征子白有利.]
+LB[ob:a][nd:b]
+(;W[ob]N[粘,征子黑有利(a)];B[ma];W[mc];B[nd];W[lb];B[lc];W[rb]C[黑三子被吃, 但黑在外面已经得到了补偿.])
+(;W[nd]C[征子有利与否是成败的关键.]N[打,征子白有利 (b)];B[mc];W[ne];B[nf];W[od]
+C[黑只有a位扳, 如果黑b位长或c位粘, 那么白d位夹黑就完了.
+]LB[me:a][mf:b][of:c][rb:d]
+;B[me]C[白a位夹慢一气被吃, 所以白只能b位断打是唯一的希望, 白征子有利时成劫.
+
+a1 - 夹, 不行.
+b2 - 打, 有征子.
+]
+LB[rb:a][of:b]
+(;W[rb]N[夹,不行 (a)];B[pa];W[rc];B[qa])
+(;W[of]N[打,有征子(b)];B[pf];W[og];B[pg];W[ph];B[qg];W[oh]C[如果白征不掉黑21, 那么黑可以直接在a位接紧气, 否则, 只能在b位粘了.
+
+a1 - 接, 征子黑有利.
+b2 - 粘, 征子白有利.]
+LB[md:a][mf:b]
+(;B[md]C[白能不能在a位征掉黑21子成为成败的关键.]N[接,征子黑有利(a)]LB[mf:a])
+(;B[mf]C[征子对黑不利时, 黑只能在31位粘.]N[粘,征子白有利(b)];W[rg];B[qh];W[qi];B[rh]
+;W[ri];B[rf];W[sh];B[sg];W[si];B[qf];W[sf];B[se];W[sd]C[成白先提的大劫.])))))))
+(;W[mc]N[跳,错误 (b)];B[qf];W[rf]C[黑a长方为正着, b位觑试图便宜的想法是错误的.
+
+a1 - 长, 正着.
+b2 - 觑, 恶手.]
+LB[qg:a][nd:b]
+(;B[qg]N[长,正着(a)];W[rg];B[rh];W[qh];B[ph];W[qi];B[ri];W[rj];B[qj];W[pi];B[rk]
+;W[pj];B[qk];W[pf];B[pg];W[of];B[nf];W[og];B[oh];W[ng];B[nh];W[mg]C[白不能a位枷, 因为黑可以在b位夹,所以白只有吃上边三子.
+]
+LB[mi:a][oj:b])
+(;B[nd]N[觑,错误 (b)];W[pb];B[rd];W[qg];B[nc];W[nb];B[lb];W[mb];B[lc];W[pa];B[qa]
+;W[sd];B[sc];W[rb];B[ra];W[sb];B[se];W[sf]C[结果是劫.])))
+(;W[qb]C[白10使自己处于低位, 所以不好.]N[鼻顶,不好 (b)];B[pc];W[pb];B[od];W[rc]
+C[黑可以在a打或b位冲. 黑a打能获先手, 但损失将近20目, b位冲后手.
+
+a1 - 打, 先手.
+b2 - 冲, 后手.]
+LB[nc:a][rd:b]
+(;B[nc]N[打,先手 (a)];W[ob];B[ph];W[rd])
+(;B[rd]N[冲,后手 (b)];W[sd];B[pd];W[qg];B[rb];W[sc];B[ob];W[ra];B[nc])))
+(;B[nd]N[飞(b)];W[qb]C[白10鼻顶是手筋, 黑a位打是正着, b位扳是恶手.
+
+a1 - 打, 正着.
+b2 - 扳, 恶手.]
+LB[pc:a][pb:b]
+(;B[pc]N[打,正着(a)];W[od];B[pb]C[白a位枷吃黑7一子是正着, b位挡无理.
+
+a1 - 枷, 正着.
+b2 - 挡, 无理.]
+LB[of:a][ob:b]
+(;W[of]N[枷,正着(a)];B[pf];W[pg];B[qf];W[qg];B[rf];W[rg];B[rd];W[oe];B[se];W[nh])
+(;W[ob]N[挡,错误 (b)];B[oe];W[rc];B[rb];W[rd];B[qa];W[oa];B[pa];W[sb];B[nc];W[ra]
+C[白只有扑劫了.];B[sa]C[白没有劫材.]))
+(;B[pb]N[扳,错误 (b)];W[pc];B[rb];W[qa];B[ra];W[rc];B[pa];W[qb];B[qa];W[rd];B[qb]
+;W[ob]))
+(;B[pf]C[白a跳本手, b团和c拐都是问题手.
+
+a1 - 跳, 本手.
+b2 - 团, 问题手.
+c3 - 拐, 问题手.]
+N[长(c)]LB[qg:a][pc:b][rd:c]
+(;W[qg]N[跳,正着(a)];B[pg];W[qh];B[nd]C[白a位曲是正着, b位团是恶手, c位鼻顶将使白处低位.
+
+a1 - 曲, 正着.
+b2 - 团, 恶手.
+c3 - 鼻顶, 不好.]
+LB[od:a][pc:b][qb:c]
+(;W[od]N[曲,正着(a)];B[oe];W[pb];B[qb];W[nb]C[黑a位挡正着, b位虎不行.
+
+a1 - 挡, 正着.
+b2 - 虎, 不行.]
+LB[mb:a][mc:b]
+(;B[mb]N[挡,正着(a)];W[mc];B[lb];W[md];B[me];W[lc];B[kc];W[nc];B[le];W[ne];B[nf]
+;W[kb];B[jb];W[rd];B[oa];W[pa];B[qa];W[rc];B[pc];W[ob];B[nd];W[na]C[攻杀白胜, 但黑a位提成先手, 黑不错.]
+LB[ka:a])
+(;B[mc]N[虎,错误 (b)];W[mb];B[lb];W[rd];B[rc];W[sb]C[攻杀黑负, 以后白还有a位刺的便宜.]
+LB[kc:a]))
+(;W[pc]N[团,恶手 (b)];B[qb]C[白a飞较好, b位挡不好.
+
+a1 - 飞, 较好.
+b2 - 挡, 不好.]
+LB[mb:a][pb:b]
+(;W[mb]N[飞,较好(a)];B[mc];W[pb]C[黑a点手筋, b位扳下恶手, 攻杀黑负.
+
+a1 - 点, 手筋.
+b2 - 扳下, 恶手.]
+LB[oa:a][nb:b]
+(;B[oa]N[点,手筋 (a)];W[nb];B[lb];W[pa];B[qa]C[无论白走a拐, 还是b粘, 都不会成功.
+
+a1 - 拐,不行.
+b2 - 粘,不行.]
+LB[rd:a][nc:b]
+(;W[rd]N[拐,不行(a)];B[nc];W[la];B[ka];W[na]C[白勉强做了一个缓气劫, 但基本打不赢.])
+(;W[nc]N[粘,不行(b)];B[od]))
+(;B[nb]N[扳下,错误 (b)];W[ra]C[白20点手筋, 黑不行.]))
+(;W[pb]N[挡,不好(b)];B[nc]))
+(;W[qb]N[鼻顶,不好(c)];B[pc]C[白a位挡正着, b位粘是恶手.
+
+a1 - 挡, 正着.
+b2 - 粘, 恶手.]
+LB[pb:a][od:b]
+(;W[pb]N[挡,正着(a)];B[od];W[rc];B[ob];W[rd];B[nc])
+(;W[od]N[粘,错误 (b)];B[pb];W[ob];B[rb];W[oe]C[黑可以选择a位压或b位封, 白没眼位, 很苦.
+
+a1 - 压.
+b2 - 封.]
+LB[ph:a][nf:b]
+(;B[ph]N[压(a)])
+(;B[nf]N[封(b)]))))
+(;W[pc]N[团,不好(b)];B[rb];W[rd];B[rc]C[白只有在a位跳出, b位立无理手.
+
+a1 - 跳, 正着.
+b2 - 立, 过分.]
+LB[qg:a][pb:b]
+(;W[qg]N[跳,正着(a)];B[pb];W[ob];B[pa]C[白只有在a位长弃右边四子, b位尖看起来可以突围, 但实际上不行.
+
+a1 - 长, 正着.
+b2 - 尖, 无理.]
+LB[pg:a][nd:b]
+(;W[pg]C[白18迫不得已.]N[长,正着(a)];B[ne];W[og];B[nf];W[kc];B[lc];W[lb]C[黑根据场合可以选择a位扳吃白四子, 也可以b位压让白在上边救回四子, 让黑得到相当的外势.
+
+a1 - 扳, 吃四子.
+b2 - 压, 取势.]
+LB[mb:a][kd:b]
+(;B[mb]N[扳(a)];W[kb];B[ma];W[kd]C[白28贴长是先手, 黑一定要应一手, 使棋形完整.])
+(;B[kd]N[压,取势(b)];W[kb];B[jc];W[jb];B[ic];W[mc];B[md];W[nc]C[白活了, 但黑也厚了.]))
+(;W[nd]N[尖,错误 (b)];B[ne];W[md];B[me];W[lc];B[kc];W[kb];B[kd];W[jb];B[qi]C[由于白a位有断点, 所以黑b位接是先手, 黑可以大胆地在27位夹.
+]
+LB[mc:a][oe:b])
+(;W[oe]N[扳];B[pg];W[qh];B[ph];W[qi];B[nd];W[od];B[nf])
+(;W[ne]N[飞];B[pg];W[qh];B[ph];W[qi];B[nd];W[oe];B[me];W[od];B[mg]))
+(;W[pb]N[立,过分 (b)];B[qf]))
+(;W[rd]C[黑a位拐挡正着, b位打是恶手.
+
+a1 - 拐, 正着.
+b2 - 打, 恶手.
+]N[拐,不好(c)]
+LB[rc:a][pc:b]
+(;B[rc]N[挡,(a)];W[pc]C[黑a位立二二延气是正着, b位拐是恶手.
+
+a1 - 立, 正着.
+b2 - 拐, 恶手.]
+LB[rb:a][qf:b]
+(;B[rb]C[这个变化跟变化2-1-8-3-1-1-1-3-2一样, 接下来白只有a位跳出, b位长是不行的.]
+N[(a)]LB[qg:a][pb:b])
+(;B[qf]N[拐,错误(b)];W[rb]C[黑被吃.]))
+(;B[pc]N[打,错误 (b)];W[od];B[ob];W[nb];B[pb];W[mc];B[qf];W[rc];B[rb];W[sb];B[qa]
+;W[rf];B[rg];W[ra]C[角上是连环劫, 通常情形下白是很不利的, 但现在白有a位打的劫材.
+]
+LB[qg:a])))
+(;B[rd]N[可以挡];W[oe];B[pf];W[qg];B[pg];W[qh];B[ph];W[qi];B[mg];W[lb];B[nb];W[jc]
+;B[nc];W[gc]C[白还有A的余味，双方可下]LB[nd:A]))
+(;B[re]C[黑二路爬味道很坏.
+]N[下扳,不好 (b)];W[qf];B[rf];W[qg]))
+(;W[pf]C[白6局部受损.]N[跳,不好(b)];B[qe]C[白a跳虽然不好, 但是正是形之要点, b位挡过分.
+
+a1 - 跳, 正着.
+b2 - 挡, 无理.]
+LB[nf:a][qf:b]
+(;W[nf]N[跳,正着(a)];B[qg])
+(;W[qf]N[挡,无理(b)];B[pe];W[oe];B[of];W[ne];B[og]C[黑a位跳封和b位飞封见合.]LB[mf:a]
+[qh:b])))
+(;B[qe]N[外长,错误 (b)];W[qc];B[rc];W[qb];B[pg]C[黑9只好拆, 白先手安定.]))
+(;W[pe]C[黑可以a位冲断, 也可以b位挡.
+
+a1 - 冲断.
+b2 - 挡.]N[飞压 (d)]LB[pd:a]
+[qe:b]
+(;B[pd]N[冲断,强硬(a)];W[od];B[oe]C[白a靠是定式, 无论b位挡下, c位长出或d位打都不行.
+
+a1 - 靠, 正着.
+b2 - 挡下, 不行.
+c3 - 长出, 不行.
+d4 - 打, 不行.]
+LB[md:a][qe:b][pf:c][ne:d]
+(;W[md]C[黑的选择有a位长, b位长或c位长. 黑b打吃恶手.
+
+a1 - 长.
+b2 - 长.
+c3 - 长.
+d4 - 打, 恶手.
+]
+N[靠,正着(a)]LB[of:a][le:b][ne:c][pf:d]
+(;B[of]N[长(a)];W[me]C[黑a位飞枷是本手, 不能脱先.
+
+a1 - 飞枷, 本手.
+b2 - 脱先, 错误.]
+LB[qg:a][dp:b]
+(;B[qg]C[白a位扳本手, 脱先不行.
+
+a1 - 扳, 本手.
+b2 - 脱先, 不行.]N[飞枷,正着(a)]
+LB[lc:a][dp:b]
+(;W[lc]N[扳,本手(a)])
+(;N[白脱先,错误 (b)];B[lc]C[白只好在a位并, 脱先不行.
+
+a1 - 并, 本手.
+b2 - 脱先, 不行.]
+LB[mc:a][cq:b]
+(;W[mc]C[黑a位跳下是正着, b位拆二不好, 白可以轻松安定.
+
+a1 - 跳下, 正着.
+b2 - 拆二, 不好.]
+N[并,正着(a)]LB[pb:a][ic:b]
+(;B[pb]N[跳下,正着(a)])
+(;B[ic]N[拆二,不好 (b)];W[qb]))
+(;N[白脱先,错误 (b)];B[mc]C[白陷入困境.])))
+(;N[黑脱先,错误(b)];W[re]C[黑a位飞是正着, b位冲恶手.
+
+a1 - 飞, 正着.
+b2 - 冲, 恶手.]
+LB[qg:a][qe:b]
+(;B[qg]C[白a位爬是正着, b位接不行.
+
+a1 - 爬, 正着.
+b2 - 接, 不行.]N[飞,正着(a)]
+LB[rd:a][qe:b]
+(;W[rd]N[爬,正着(a)];B[qe];W[qc])
+(;W[qe]N[接,错误 (b)];B[rd]))
+(;B[qe]N[冲,错误 (b)];W[pf]))
+(;B[lc]N[立难解];W[le];B[mc]
+(;W[nc]N[先顶次序不对];B[ke];W[kf];B[je];W[re];B[qe];W[pf];B[rf];W[pg];B[og]C[因有A的断点，白作战勉强]
+LB[lf:A])
+(;W[kd]N[先扳好];B[kc];W[nc];B[jd];W[ke];B[ic]
+(;W[re]N[跳下];B[qe];W[pf];B[qf];W[pg];B[qg];W[ph];B[qi];W[pi];B[qj]C[两分])
+(;W[qf]N[尖也有力];B[ph]
+(;W[qe]N[先团次序好];B[rd];W[qh];B[qi];W[pg];B[og];W[ri];B[pi];W[rj]C[两分];B[pc])
+(;W[qh]N[先托错误];B[qg];W[pg];B[rg];W[pf];B[rf];W[og];B[oh];W[ng];B[qi])))))
+(;B[le]N[长(b)];W[of];B[ne];W[me];B[nf];W[mf];B[ng];W[lc];B[pf];W[lf])
+(;B[ne]N[长(c)];W[me];B[pf]C[白a位扳是本手, 白不能脱先, c位扳也是无理手.
+
+a1 - 扳, 本手.
+b2 - 脱先, 不行.
+c3 - 扳, 无理.]
+LB[lc:a][dp:b][nf:c]
+(;W[lc]C[黑可以在a位扳补一手, 也可以脱先.
+
+a1 - 扳.
+b2 - 脱先.]N[下扳,本手(a)]
+LB[mf:a][dp:b]
+(;B[mf]N[扳(a)];W[lf];B[lg];W[kf];B[mg])
+(;N[黑脱先 (b)];W[nf];B[of];W[ng];B[ph];W[ni]))
+(;N[白脱先,错误 (b)];B[mc]C[黑12扳后, 白苦. 白只能在a位接, b位断更不好.
+
+a1 - 接, 正着.
+b2 - 断, 不好.]
+LB[nd:a][lc:b]
+(;W[nd]N[接,正着(a)];B[jd])
+(;W[lc]N[断,不好(b)];B[lb];W[kc];B[nd]))
+(;W[nf]N[扳,过分 (c)];B[mf]C[由于白没有在a位扳, 所以黑可以在13位断.
+]LB[lc:a];W[of]
+;B[qe];W[nd];B[pe];W[lf];B[mg];W[le];B[nh]C[黑21有时也下在a位.]LB[oh:a]))
+(;B[pf]C[黑9打俗手, 白将得到整形.]N[打,错误 (d)];W[ne];B[of];W[le]))
+(;W[qe]N[挡下,错误 (b)];B[re]C[白可以试一下a位扳或b位断.
+
+a1 - 扳.
+b2 - 断.]
+LB[rf:a][rd:b]
+(;W[rf]N[扳(a)];B[rd];W[pg];B[pc])
+(;W[rd]N[断(b)];B[rc];W[qc];B[sd];W[pc];B[rd];W[pg];B[ne]C[白可以选择a位双或b位扳.
+
+a1 - 双.
+b2 - 扳. ]
+LB[qg:a][rb:b]
+(;W[qg]N[双(a)];B[qb];W[pb];B[rb];W[lb];B[kb])
+(;W[rb]N[扳(b)];B[qg];W[pf];B[ph])))
+(;W[pf]N[长出,错误 (c)];B[ne];W[qb];B[rf];W[qg];B[rb];W[pb];B[rg];W[qi];B[rc];W[lb]
+;B[kb]C[白a顶可以做活, b位扳出的话, 只能弃子了.
+
+a1 - 顶, 做活.
+b2 - 扳出, 弃子.]
+LB[lc:a][kc:b]
+(;W[lc]N[顶,做活(a)];B[kc];W[nb];B[mc];W[mb];B[kd];W[la];B[og])
+(;W[kc]N[扳出,弃子(b)];B[mb];W[lc];B[mc];W[kd];B[le]))
+(;W[ne]N[打,错误 (d)];B[of];W[md];B[le]C[白只好a位扳先安定自己了, b位贴长是恶手.
+
+a1 - 扳, 正着.
+b2 - 贴长, 恶手.
+]
+LB[lc:a][nf:b]
+(;W[lc]N[扳,正着(a)])
+(;W[nf]N[贴长,错误(b)];B[og];W[ng];B[oh];W[id];B[lg]C[黑17跳后, 白必须在a位继续贴, 非常痛苦.
+]
+LB[nh:a];W[nh];B[oi])))
+(;B[qe]C[白可以在a位长, 也可以在b位跳.
+
+a1 - 长.
+b2 - 跳.]N[挡(b)]LB[pf:a][pg:b]
+(;W[pf]N[长(a)];B[qg];W[jd]C[黑一般走a位跳或b位飞.
+
+a1 - 跳.
+b2 - 飞.]LB[lf:a]
+[ne:b]
+(;B[lf]N[跳(a)];W[nf])
+(;B[ne]N[飞(b)];W[pd]C[黑a位长比较厚实, b位长则是重视实利的下法.
+
+a1 - 长, 重视势力. 
+b2 - 长, 重视实地.
+]
+LB[pg:a][qc:b]
+(;B[pg]N[长,重视厚势 (a)];W[qf];B[rf];W[qc];B[og];W[rc])
+(;B[qc]N[长,重视实地 (b)];W[pg];B[qh]C[接下来白应该从攻击黑两子中得到补偿.])))
+(;W[pg]N[跳(b)];B[pf];W[of];B[qf]
+(;W[ng]N[虎]
+(;B[pc];W[nd]C[黑可以直接a位拆二, 也可以在b位先刺
+
+a1 - 拆二.
+b2 - 刺.]LB[id:a]
+[oh:b]
+(;B[id]N[拆二(a)];W[qg])
+(;B[oh]C[黑13刺防止白在右边封住黑, 但左边的黑3难免受攻.
+]N[刺(b)];W[og];B[qh];W[jd]
+;B[lf];W[jf];B[lh];W[ph];B[qi];W[oj]))
+(;B[oh];W[og];B[qh];W[jd];B[lf];W[jf];B[lh];W[ph];B[qi];W[oj]C[黑右边出头，则白中腹主动]))
+(;W[og]N[粘];B[qh]))))
+(;W[of]C[白4大跳是二间高夹最正统的应法. 黑的应手有a位拆二, b位靠, c位大飞, d位靠压, e位跳. e位跳略显缓慢, 但很坚实.
+
+a1 - 拆二.
+b2 - 顶.
+c3 - 大飞.
+d4 - 靠压.
+e5 - 跳, 稍缓.]
+N[二间跳 (e)]LB[qg:a][oe:b][pg:c][od:d][qf:e]
+(;B[qg]C[白的应手有a位二间夹, b位一间夹或c位飞压.
+
+a1 - 二间夹.
+b2 - 一间夹.
+c3 - 飞压.]
+N[拆二(a)]LB[id:a][jd:b][ph:c]
+(;W[id]N[二间夹(a)]
+(;B[mf]C[此时白的应手有a位托, b位尖顶, c位尖或d位肩冲.
+
+a1 - 托.
+b2 - 尖顶.
+c3 - 尖.
+d4 - 肩冲.]
+N[飞]LB[qc:a][pd:b][nd:c][pe:d]
+(;W[qc]C[黑可以a位扳或b位并.
+
+a1 - 扳.
+b2 - 并.]N[托(a)]LB[rc:a][pd:b]
+(;B[rc]C[白a位虎正着, b位靠是骗招.
+
+a1 - 虎, 正着.
+b2 - 靠, 骗招.]N[扳(a)]LB[pd:a]
+[qf:b]
+(;W[pd]C[黑的应手有a退或b打.
+
+a1 - 退.
+b2 - 打.]N[虎,正着(a)]LB[qe:a][qb:b]
+(;B[qe]C[白a并本手, b位立是恶手.
+
+a1 - 并, 本手.
+b2 - 立, 恶手.]N[退(a)]LB[pf:a]
+[qb:b]
+(;W[pf]C[黑可以选择a位接或b位打.
+
+a1 - 接.
+b2 - 打.]N[并,正着(a)]LB[qf:a][qb:b]
+(;B[qf]N[接(a)];W[qb];B[nd];W[od])
+(;B[qb]N[打(b)];W[qf];B[rf];W[pc];B[rd];W[oh];B[nd];W[oe];B[qi]))
+(;W[qb]N[立,错误 (b)];B[oe];W[pe];B[pf];W[pg];B[qf];W[ne];B[og];W[nf];B[ng];W[nd]
+C[白不得不在22位补, 如果让黑再走到22位, 白形就崩了.
+]))
+(;B[qb]N[打(b)];W[qe];B[pc];W[rd];B[qc]C[白a位横顶是形, b位虎不好.
+
+a1 - 横顶, 正着.
+b2 - 虎, 不好.]
+LB[qf:a][oe:b]
+(;W[qf]N[横顶,正着(a)];B[od];W[nd];B[pe];W[pf];B[ne];W[qi]C[白时机适当时再在a位断.]
+LB[oe:a])
+(;W[oe]N[虎,不好 (b)];B[ob];W[nc];B[mb];W[ph])))
+(;W[qf]C[黑a打正着, b位扳上当.
+
+a1 - 打, 正着.
+b2 - 扳, 上当.]N[靠,骗招(b)]LB[pc:a]
+[rf:b]
+(;B[pc]N[打,正着(a)];W[pg];B[od];W[qh])
+(;B[rf]C[黑11正中白下怀.]N[扳,错误 (b)];W[qe];B[re];W[pd];B[rd];W[nd])))
+(;B[pd]C[黑的策略是取外势, 但白可以先手获利.
+]N[并(b)];W[pc];B[od];W[rd];B[re]
+;W[rc];B[nd]))
+(;W[pd]C[黑可以a位退, 也可以b位长.
+
+a1 - 退.
+b2 - 长.]N[尖顶 (b)]LB[qe:a][qc:b]
+(;B[qe]N[退(a)];W[qc];B[rc]C[这个次序跟变化2-1-8-5-1-1-1-1-1-1一样.]LB[pf:a])
+(;B[qc]N[长(b)];W[qe];B[re];W[rf];B[qf];W[pe];B[rd];W[oh]C[黑a飞正着, b位跳不好.
+
+a1 - 飞, 正着.
+b2 - 跳, 不好.]
+LB[pi:a][mh:b]
+(;B[pi]N[飞,正着(a)])
+(;B[mh]N[跳,不好(b)];W[qh]C[黑a位抱吃正着, b位扳俗手.
+
+a1 - 抱吃, 正着.
+b2 - 扳, 俗手.]
+LB[rg:a][rh:b]
+(;B[rg]N[抱吃,正着(a)];W[oj])
+(;B[rh]N[扳,不好 (b)];W[qi]))))
+(;W[nd]C[黑的应手有a位象步, 征子有利时可以在b位并.
+
+a1 - 象步.
+b2 - 并, 有征子.]
+N[尖(c)]LB[jf:a][pd:b]
+(;B[jf]N[象步(a)];W[qc];B[rc];W[pd];B[qe];W[qb]C[黑可以在a位靠, 但不能在b位跨.
+
+a1 - 靠, 正着.
+b2 - 跨, 恶手.]
+LB[og:a][oe:b]
+(;B[og]C[黑15把白封在里面, 但白已经没有生命危险了.]N[靠,正着(a)])
+(;B[oe]N[跨,错误 (b)];W[pe];B[pf];W[nf]))
+(;B[pd]N[并,有征子 (b)];W[le];B[me];W[md];B[ke];W[lc];B[lf];W[kc]))
+(;W[pe]N[肩冲(d)];B[qe];W[ph];B[pg];W[og];B[oh];W[nh];B[oi];W[mg]))
+(;B[lf]N[跳];W[ph]
+(;B[qh]N[爬];W[pi];B[qi];W[pj];B[qk];W[pe];B[qe];W[lh];B[jf];W[jc]C[实战])
+(;B[pg]N[冲断];W[og];B[oh]
+(;W[pe]C[以下结果白稍好]N[尖];B[qe];W[qh]
+(;B[rh];W[ri];B[rg];W[mg];B[oi];W[mi];B[qi];W[jg]C[白好])
+(;B[rg];W[mg];B[oi];W[mi];B[jf];W[pj]
+(;B[pi];W[qi];B[qj];W[qk];B[rj];W[oj]C[白好])
+(;B[oj];W[pk];B[ok];W[pl];B[mk];W[qb]C[黑不充分])))
+(;W[qe]C[实战]N[碰]
+(;B[pd]N[长强手];W[qf];B[pf];W[pe];B[oe];W[od];B[ne];W[rd]
+(;B[rg]N[定型不好];W[qc];B[ng])
+(;B[ng]C[两分形]N[当单吃];W[rg];B[nf];W[rh]C[白后手且不净];B[re]C[黑的手段];W[rf]
+;B[rc]
+(;W[se];B[pb];W[ob];B[rb];W[pc];B[qc];W[qa];B[nb])
+(;W[qc];B[sd];W[pc];B[qb];W[sb];B[rb];W[rd];B[sa];W[ra];B[qa]C[AB见合]LB[nb:A][sc:B])))
+(;B[re]N[扳软弱];W[pe];B[rf];W[qc];B[rd];W[mg];B[oi])
+(;B[od]N[压出];W[qh]
+(;B[rh]N[扳];W[pd]
+(;B[pi]N[吃右边];W[oe]C[两分])
+(;B[pe]N[吃上边];W[pf];B[pc];W[rg];B[nc]C[两分]))
+(;B[rg]N[立有力]
+(;W[rd]N[扳不好];B[pd];W[pf];B[rh];W[pj];B[nh];W[mg];B[qj];W[mf];B[pi];W[md];B[rc]
+;W[mc];B[re]C[黑稍有利])
+(;W[re]N[立];B[pd];W[rh];B[qj];W[pi];B[rd];W[pf];B[mc]))))))
+(;B[lg]N[大跳];W[ph];B[pg];W[og];B[oh];W[pe]C[次序]
+(;B[nh]N[长];W[qe]
+(;B[pi]N[抱吃];W[re]C[两分])
+(;B[re]N[活角不好];W[rf];B[rd];W[qf];B[rg];W[sg];B[pb];W[pi];B[ri];W[qj]))
+(;B[qe]N[挡不好];W[mg];B[lf];W[nh];B[oi];W[nj];B[li];W[ni];B[pi];W[pk]))
+(;B[od]N[靠];W[nd];B[pc];W[nb];B[ne];W[oe];B[pd];W[me];B[nf];W[md];B[ng]))
+(;W[jd]N[一间夹(b)];B[lf]C[白一般在a位托或b位尖顶. a位托的变化请参见2-1-8-1, b位尖顶的变化请参见2-1-8-3. 白有时也有走c位飞压的, d位跳则不好.
+
+a1 - 见2-1-8-1.
+b2 - 见2-1-8-3.
+c3 - 飞压.
+d4 -  跳, 不好.]
+LB[qc:a][pd:b][ph:c][oh:d]
+(;W[ph]C[黑a冲是正着, b位挡软弱.
+
+a1 - 冲, 正着.
+b2 - 挡, 软弱.]N[飞压(c)]LB[pg:a]
+[qh:b]
+(;B[pg]N[冲,正着(a)];W[og]C[白可以a位断或b位尖补.
+
+a1 - 断.
+b2 - 尖补.]LB[oh:a]
+[pe:b]
+(;B[oh]N[断(a)];W[qe]C[黑的应手有a位长, b位靠压, c位扳或d位长出.
+
+a1 - 长.
+b2 - 靠压.
+c3 - 下扳.
+d4 - 长出.]
+LB[pd:a][od:b][re:c][nh:d]
+(;B[pd]N[并(a)];W[qf];B[od];W[qh])
+(;B[od]C[白a位贴是正着, b位扳是恶手, c位拐也不好.
+
+a1 - 贴, 正着.
+b2 - 扳, 恶手.
+c3 - 拐, 不好.]
+N[靠压(b)]LB[qh:a][nd:b][pf:c]
+(;W[qh]N[贴,正着(a)];B[rg];W[pd];B[pe];W[pf];B[pc];W[qf];B[nc];W[rh])
+(;W[nd]N[扳,错误 (b)];B[pe];W[pf];B[qf])
+(;W[pf]C[白活小角, 黑得强大外势.]N[拐,不好 (c)];B[pi];W[pd];B[pc];W[nd];B[pe];W[oe]
+;B[pd];W[qf];B[qh];W[pb];B[ob];W[rd];B[nc];W[qc];B[oc];W[rb];B[pa];W[qb]))
+(;B[re]C[这个型刚出现时, 下扳被认为是标准应法.]N[下扳(c)];W[pe]C[黑的应手a位退, b位打或c位粘. 其中a和c比较平和, b打强硬.
+
+a1 - 退.
+b2 - 打, 强硬.
+c3 - 粘.]
+LB[rf:a][pi:b][rd:c]
+(;B[rf]N[退(a)];W[qc]C[白16夹, 黑有点难受.];B[rd];W[mg];B[oi];W[nh];B[jf])
+(;B[pi]N[打,战斗 (b)];W[nh];B[oi];W[rf];B[rd];W[qf];B[pc])
+(;B[rd]C[白a跳出正着, b位长不好.
+
+a1 - 跳出, 正着.
+b2 - 长, 不好.]N[粘(c)]LB[mg:a]
+[pi:b]
+(;W[mg]N[跳,正着(a)];B[pi];W[nh];B[oi]C[白a跳起正着, b位尖刺不好.
+
+a1 - 跳起, 正着.
+b2 - 尖刺, 不好.]
+LB[jf:a][ke:b]
+(;W[jf]N[跳,正着(a)];B[lg];W[lh];B[jg];W[ke]C[黑a虎正着, b位接恶手.
+
+a1 - 虎, 正着.
+b2 - 接, 错误.]
+LB[kh:a][le:b]
+(;B[kh]N[虎,正着(a)];W[le];B[mf];W[me];B[li];W[mh];B[ni])
+(;B[le]N[接,不好 (b)];W[kg];B[kf];W[kh];B[jc];W[ic];B[id];W[je]C[黑很难做出两眼来.
+]))
+(;W[ke]N[尖刺,不好 (b)];B[le];W[kg];B[jc];W[ic];B[id];W[ie];B[hd];W[kc];B[jb];W[kd]
+;B[kb];W[lc];B[lb];W[mc];B[gc]C[白成凝形.]))
+(;W[pi]N[长,不好(b)];B[nh];W[me]C[黑a位压正着, b位接恶手.
+
+a1 - 压, 正着.
+b2 - 接, 恶手.]
+LB[mf:a][le:b]
+(;B[mf]N[压,正着(a)];W[le];B[ke];W[kd];B[ne];W[md];B[nd];W[mc];B[nc])
+(;B[le]N[接,错误 (b)];W[mg]))))
+(;B[nh]N[长出(d)];W[pd];B[re];W[rd];B[qc];W[qf];B[rf];W[rc];B[pi]))
+(;B[pe]N[尖补(b)];W[oe];B[oh];W[pj];B[nh];W[qh]C[黑可以选择a位刺或b位挖.
+
+a1 - 刺.
+b2 - 挖.]
+LB[nd:a][od:b]
+(;B[nd]N[刺(a)];W[od];B[qc];W[re];B[rf];W[pf];B[qe];W[rh];B[qf];W[pb];B[qb]C[白a位点是正着, b位穿是恶手.
+
+a1 - 点, 正着.
+b2 - 穿, 恶手.]
+LB[mc:a][mg:b]
+(;W[mc]C[如果黑a打, 那么白b穿就可以突破了, 如果黑b位尖, 白a托,上面很好处理.
+]N[点(a)]
+LB[lc:a][mg:b])
+(;W[mg]C[白28穿次序错误.]N[穿,错误 (b)];B[ng];W[mc];B[mf];W[lc];B[kc]))
+(;B[od]N[挖(b)];W[nd];B[pd])))
+(;B[qh]C[黑9屈服.]N[挡,错误 (b)];W[pi];B[qi];W[pj];B[qk];W[pe];B[qe];W[jf]))
+(;W[oh]C[白8不免受攻.]N[跳,不好(d)];B[oe];W[ne];B[nd];W[pe];B[od];W[pd];B[pf];W[qe]
+C[黑可以a打或b断.
+
+a1 - 打.
+b2 - 断.]LB[og:a][pc:b]
+(;B[og]N[打(a)];W[pc];B[nf])
+(;B[pc]C[白可以a位打取角, 也可以b位打取外势.
+
+a1 - 打, 取角.
+b2 - 打, 取外势.]
+N[断(b)]LB[qc:a][pg:b]
+(;W[qc]N[打,取角 (a)];B[pb];W[rd];B[og]C[白a长冷静, b位粘不行.
+
+a1 - 长, 正着.
+b2 - 粘, 不行.]
+LB[nh:a][nf:b]
+(;W[nh]N[长,正着(a)])
+(;W[nf]N[粘,错误 (b)];B[ng];W[md];B[nc];W[mc];B[nb];W[me];B[lc]))
+(;W[pg]N[打,取外势 (b)];B[re];W[qf];B[rf];W[pf];B[qc];W[md];B[nc];W[mc];B[nb];W[mf]
+;B[mb];W[lc])))
+(;W[pd]))
+(;W[ph]C[黑可以选择a位挡或b位冲断.
+
+a1 - 挡.
+b2 - 冲.]N[飞压(c)]LB[qh:a][pg:b]
+(;B[qh]N[挡(a)];W[pi];B[qi];W[pj];B[qk]C[白a位肩冲正着, b位夹过于性急.
+
+a1 - 肩冲, 正着.
+b2 - 夹, 恶手.]
+LB[pe:a][id:b]
+(;W[pe]N[肩冲,正着(a)];B[qe]
+(;W[id])
+(;W[jd]
+(;B[lf]N[跳]
+(;W[lh]N[镇当然]
+(;B[jf]N[曲镇];W[hd]C[下一步黑需补A的双刺]LB[ke:A]
+(;B[kh];W[ki];B[jh];W[li];B[kd])
+(;B[nd]C[实战，加藤的新手]
+(;W[pd]N[贴];B[pf]
+(;W[qc]N[活角];B[oe];W[nf];B[nc];W[rd];B[re];W[nb];B[mb];W[ob];B[mf]C[先手补断]
+;W[nh])
+(;W[oe]N[粘恶];B[mg]C[黑不但消除了A的弱点，还生出B的手段，白不能忍受]LB[ke:A][og:B]))
+(;W[qc]N[靠不好];B[oe];W[pf];B[pd];W[od];B[ne];W[pc];B[qf];W[mb]C[白有A的弱点]LB[nh:A])))
+(;B[je]N[靠]
+(;W[ie]N[扳];B[jf];W[kd];B[le]
+(;W[fd];B[jh])
+(;W[jh];B[ig]))
+(;W[id]N[退]
+(;B[jg])
+(;B[kd];W[ie];B[jg];W[hg];B[ji])))
+(;B[kg]N[尖出稍重];W[ji]))
+(;W[jf]N[跟着跳缓 ];B[lh];W[pk];B[ql];W[pl];B[jg];W[if];B[jh]C[黑形结实]))
+(;B[jf]C[实战]N[镇]
+(;W[hd])
+(;W[ke]N[穿不成立];B[ic]))
+(;B[tt]N[脱先一法];W[jf];B[ob]C[以后黑有托的手筋（也有A的手段）]LB[nc:A]
+(;W[pb]N[外扳];B[nc];W[pc];B[mb];W[oa];B[na])
+(;W[nb]N[内扳];B[nc];W[nd];B[mc];W[pb]C[20、22最强手];B[od];W[pc];B[pd];W[ne];B[qb]
+;W[oa];B[ra]))))
+(;W[id]N[夹,错误 (b)];B[oe];W[ne];B[nd];W[pe];B[od];W[pd];B[pf];W[qe];B[pc];W[qc]
+;B[pb]C[白可以选择a提或b位打.
+
+a1 - 提.
+b2 - 打.]LB[rd:a][nc:b]
+(;W[rd]N[提(a)];B[ob])
+(;W[nc]N[打(b)];B[md];W[qb];B[re];W[rd];B[qf];W[qd];B[og];W[nf];B[mg];W[ng];B[nh]
+;W[oh];B[mf];W[pg];B[me];W[og];B[ni]C[白贪小失大.])))
+(;B[pg]N[冲(b)];W[og];B[oh]C[白a跳是正着, b位长俗手.
+
+a1 - 跳, 正着.
+b2 - 长, 不好.]
+LB[pj:a][pi:b]
+(;W[pj]C[白a长正着, b位打俗手.
+
+a1 - 长, 正着.
+b2 - 打, 俗手.]N[跳,正着(a)]LB[nh:a]
+[pi:b]
+(;B[nh]N[长,正着(a)];W[qh];B[rh];W[ri];B[rg];W[mf];C[黑脱先,]N[Black tenuki];W[qc]
+;B[rc];W[qe]C[黑只能a位虎忍耐, b位长不好.
+
+a1 - 虎, 正着.
+b2 - 长, 不好.]LB[re:a]
+[pd:b]
+(;B[re]N[虎,正着(a)];W[pd];B[rd])
+(;B[pd]N[长,不好(b)];W[re]C[黑在a位断可以活棋, 但白可以趁此走厚右边.]LB[qi:a]))
+(;B[pi]AW[pp]C[黑11一般情况下是俗手, 但有时侯也很有力. 以下以右下星位有白子为例来分析一下过程.
+]
+N[打,不好 (b)];W[oi];B[qh];W[nh];B[oj];W[ph];B[qi]C[白a打正着, b位跳不好.
+
+a1 - 打, 正着.
+b2 - 跳, 不好.
+]
+LB[nj:a][pl:b]
+(;W[nj]N[打,正着(a)];B[ok];W[nk];B[ol]C[白这时在a位夹正是时候, b位跳封已经意义不大了.
+
+a1 - 夹, 正着.
+b2 - 跳封, 不好.]
+LB[id:a][nm:b]
+(;W[id]N[夹,正着(a)];B[nl]C[白可以A位扳或B位大飞守角.
+
+A1 - 扳.
+B2 - 大飞.]LB[ml:A]
+[mq:B]
+(;W[ml]N[扳(A)];B[mm];W[nm])
+(;W[mq]N[大飞(B)];B[ll];W[jg]C[白26围, 形势不错.]))
+(;W[nm]AB[co][dq]AW[cc]C[白22收效不大.]N[跳封,不好 (b)];B[om];W[on];B[pn];W[nn]
+;B[hc]C[黑27抢到拆, 黑满意.];W[iq];B[nl];W[ml];B[qm];W[po];B[jp];W[ip];B[jo];W[io]
+;B[jn];W[kr];B[in];W[qn];B[pm];W[rn];B[rm];W[jc];B[jd];W[kc];B[kd];W[lc];B[ic];W[lm]
+;B[gn];W[cj];B[pc];W[ob];B[mc];W[mb];B[jb];W[kb];B[ka];W[lb];B[nc];W[md];B[nd];W[od]
+;B[nb];W[ib];B[na];W[ja];B[ne];W[pd];B[hb];W[ia];B[re];W[qc];B[rc];W[pf];B[qb];W[df]
+;B[cl];W[ej];B[ec];W[ed];B[dc];W[cd];B[rp];W[qq];B[gq];W[go];B[jk];W[kg];B[ig];W[ih]
+;B[hh];W[ii];B[jg];W[kh];B[hi];W[ij];B[gg];W[eo];B[fn];W[hn];B[hm];W[ho];B[gl];W[fo]
+;B[dp];W[dm];B[cm];W[hj];B[dl];W[il];B[ik];W[hk];B[jl];W[kf];B[ie];W[hl];B[im];W[km]
+;B[jm];W[el];B[fl];W[em];B[fj];W[do];B[gj];W[er];B[fr];W[eq];B[dr];W[fq];B[es];W[ro]
+;B[lk];W[kj];B[mk];W[kk];B[ll];W[kl];B[mm];W[lo];B[mi];W[mf];B[lp];W[mq];B[mp];W[np]
+;B[lq];W[mr];B[lr];W[ls];B[jq];W[ir];B[jr];W[js];B[so];W[sn];B[sm];W[sp];B[bk];W[bj]
+;B[cb];W[bb];B[db];W[me];B[oa];W[fi];B[gi];W[cp];B[bo];W[gr];B[fs];W[gs];B[ds];W[is]
+;B[ba];W[bc];B[dd];W[de];B[ee];W[ef];B[ha];W[la];B[fe];W[pb];B[pa];W[fh];B[fg];W[eg]
+;B[aj]C[白中盘认输.]))
+(;W[pl]C[黑a位长出是正着, b位打恶手.
+
+a1 - 长出, 正着.
+b2 - 打, 恶手.]N[跳,不好(b)]
+LB[nj:a][pk:b]
+(;B[nj]N[长出,正着(a)];W[qj];B[lh]C[白被围住,战斗不是很有利. 黑还有a位打的利用, 以后还有b位打入的余地.
+]
+LB[ni:a][pn:b])
+(;B[pk]N[打,错误 (b)];W[ok];B[qj];W[nj]))))
+(;W[pi]N[长,缓 (b)];B[nh];W[mf];B[ok]C[黑13跳攻白两子, 显示了白10不是好棋. 因为白a贴有先手意味, 但现在明显不是好棋了.
+]
+LB[qh:a]))))
+(;B[oe]C[白a位外扳是最普通的应手, 但当右边变得很重要时, 白也可以b位跳.
+
+a1 - 扳, 普通.
+b2 - 跳, 重视右边.]
+N[靠(b)]LB[ne:a][qf:b]
+(;W[ne]C[黑a退是定式, b位反扳是骗招. 
+
+a1 - 退, 正着.
+b2 - 反扳, 骗招.]N[扳(a)]
+LB[pe:a][nd:b]
+(;B[pe]C[白的应手有a位长, b位跳, c位尖顶.
+
+a1 - 长.
+b2 - 跳.
+c3 - 尖顶.]N[退,正着(a)]
+LB[nd:a][mc:b][md:c]
+(;W[nd]N[长(a)];B[nf];W[mf];B[ng];W[le]C[黑a打简明, b位跳引起争端.
+
+a1 - 打, 简明.
+b2 - 跳, 强硬.]
+LB[og:a][jd:b]
+(;B[og]N[抱吃(a)];W[kd])
+(;B[jd]C[既然黑上边不肯相让, 那白右边也不能放弃了.
+白a位跳下是正着, b位贴长俗手, c位尖不行.
+
+a1 - 跳, 正着.
+b2 - 贴长, 俗手.
+c3 - 尖, 不行.]
+N[跳,强硬(b)]LB[qf:a][og:b][pg:c]
+(;W[qf]C[黑只有在a位打了, b位打不能奏效, 否则白14跳就是恶手了. 类似的c位飞, 跟b位打一样, 不会奏效.
+
+a1 - 打, 正着.
+b2 - 打, 恶手.
+c3 - 飞, 恶手.]
+N[跳,正着(a)]LB[pf:a][og:b][ph:c]
+(;B[pf]N[打,正着(a)];W[og]C[黑a打或b长是正着, c位打是恶手.
+
+a1 - 打, 正着.
+b2 - 长, 正着.
+c3 - 打, 恶手.]
+LB[pg:a][nh:b][oh:c]
+(;B[pg]N[冲打(a)];W[oh];B[qi]C[接下来的问题是白该怎样处置黑两子. 白a位枷吃时, 黑可以在b位顶. 白也可以在b位长或c位跳.
+
+a1 - 枷.
+b2 - 长.
+c3 - 跳.]
+LB[mh:a][oi:b][oj:c]
+(;W[mh]N[枷(a)];B[oi];W[nh])
+(;W[oi]N[长(b)])
+(;W[oj]N[跳(c)])
+(;W[hd]N[逼上边]
+(;B[ke]N[鼓不好];W[mh]C[20、21交换是补棋的调子])
+(;B[nh]N[黑反击];W[oi];B[ni];W[oj]
+(;B[nj]C[实战];W[ok];B[jf];W[ke];B[je];W[kd];B[jc];W[qj];B[rj];W[ri]C[32、34是巧妙的手段]
+;B[rh];W[nk];B[lj];W[qb]C[38是先手，这是32、34之功]
+(;B[si]C[两分])
+(;B[tt];W[qh];B[si];W[qg];B[ph];W[pi]
+(;B[rg]C[白无忧劫])
+(;B[ri]N[粘不成立];W[qe];B[pd];W[rd])))
+(;B[li]C[战斗]))))
+(;B[nh]C[白可以在a位挡, 或b位贴长.]N[长,正着(b)]LB[pg:a][oh:b]
+(;W[pg]N[挡(a)];B[qg];W[qh];B[rg];W[oi];B[rh]
+(;W[qi];B[ri];W[qj];B[ni];W[oj])
+(;W[oh];B[qi];W[qj];B[ph];W[pi]))
+(;W[oh]N[贴(b)];B[oi];W[qg]C[黑a位冲是正着, b位靠或c位立不行.
+
+a1 - 冲, 正着.
+b2 - 靠, 不行.
+c3 - 立, 不行.]
+LB[pg:a][qh:b][pi:c]
+(;B[pg]N[冲,正着(a)];W[ph];B[qh];W[pi];B[rh];W[ni];B[lg];W[oj];B[ke];W[rc]C[白30是白活角的手筋. 黑a团是正着, b位挡抵抗是徒劳的.
+
+a1 - 团, 正着.
+b2 - 挡, 不行.]
+LB[qe:a][qc:b]
+(;B[qe]N[团,正着(a)];W[qc])
+(;B[qc]N[挡,错误 (b)];W[qe];B[pd];W[rd];B[rb]
+(;W[qb]C[白36大头鬼杀黑.];B[pb];W[qa];B[ra];W[pc];B[pa];W[qb];B[qa];W[od];B[qb]
+;W[sb])
+(;W[rg];B[pb];W[ri];B[nb];W[mg])))
+(;B[qh]N[碰,错误 (b)];W[pi])
+(;B[pi]N[立,错误 (c)];W[qh];B[qi];W[rd];B[rc];W[re];B[qc];W[qe];B[pd];W[ri];B[rj]
+;W[si]C[白已经活定, 角上的黑棋就会无疾而终.])))
+(;B[oh]N[扳打,错误 (c)];W[pg];B[ph];W[qg];B[qh]C[白不能在标记位出托, 因为白气太紧.]
+CR[rd];W[qe];B[pd];W[rd];B[rc];W[re];B[qc];W[rh];B[ri];W[rg];B[qj];W[sf]C[黑角死.]))
+(;B[og]N[打,错误 (b)];W[pf];B[qh];W[rd];B[rc];W[re];B[qc];W[qe];B[pd];W[rh];B[ri]
+;W[rg];B[qi];W[sf]C[白活了, 黑角也就死了.])
+(;B[ph]N[飞,错误(c)];W[pf];B[qh];W[rd];B[rc];W[re];B[qc];W[qe];B[pd];W[pb]C[白快一气吃黑.]))
+(;W[og]C[白14贴长俗手, 但黑也得小心应付.]N[贴长,俗手 (b)];B[oh];W[pg];B[ph];W[qg]
+C[黑a位尖是正着, b位挡恶手.
+
+a1 - 尖, 正着.
+b2 - 挡, 恶手.]LB[qi:a][qh:b]
+(;B[qi]N[尖,正着(a)];W[ri];B[rj];W[nh];B[mg];W[qh];B[pj];W[ni]C[白应该不能成功.])
+(;B[qh]N[挡,错误 (b)];W[rh];B[ri];W[rf];B[sh];W[rg];B[qj];W[rd];B[rc];W[qe]C[白棋成功.]))
+(;W[pg]N[尖,错误 (c)];B[ph];W[qh];B[pi]C[a挡和b断见合.]LB[qi:a][qg:b])
+(;W[hd]N[逼简明];B[ke];W[mh]
+(;B[og]N[抱吃本手];W[mg]
+(;B[oi])
+(;B[mc];W[oi];B[pg]))
+(;B[mg]N[冲不对];W[lg];B[og];W[kf];B[jf];W[jg];B[if];W[qk]C[黑不满])
+(;B[nh]N[俗长也可];W[ni];B[oi];W[mg];B[ph];W[nj];B[pk])))
+(;B[ke]N[扳也有];W[kf];B[je]))
+(;W[mc]N[跳(b)]
+(;B[nf];W[me]C[黑的应手有a打或b长.
+
+a1 - 打.
+b2 - 长.]LB[og:a][ng:b]
+(;B[og]N[打(a)];W[mf];B[ng]C[白a飞是稳健的下法, 脱先也是可能的.
+
+a1 - 飞, 稳健.
+b2 - 脱先.]
+LB[kb:a][dp:b]
+(;W[kb]N[飞,稳健(a)])
+(;N[白脱先 (b)];B[lc]C[白一般在a位立下, 有时也可以脱先, 结果是劫.
+
+a1 - 立下.
+b2 - 脱先, 劫.]
+LB[mb:a][cq:b]
+(;W[mb]N[立下(a)];B[pb]C[白局部没有眼位, 所以只有向中央发展, 黑可以在攻击中渔利, 所以一般白不要脱先.
+])
+(;N[白脱先,劫 (b)];B[mb];W[nb];B[md];W[nd])))
+(;B[ng]N[长(b)];W[id]C[接下来白瞄着a位的跳.]LB[qf:a];C[黑脱先以后, ]N[Black tenuki]
+;W[qf];B[pf];W[og];B[ph]C[黑只有在16位跳. ];W[oh];B[oi];W[nh];B[pg];W[mh]))
+(;B[nd]N[一变];W[md];B[me];W[nf];B[nc];W[nb];B[od];W[lb];B[pc];W[pf];B[ob];W[jc]
+;B[le];W[lg]))
+(;W[md]C[黑a位断正着, b位长正是白所希望的.
+
+a1 - 断, 正着.
+b2 - 长, 恶手.]N[尖顶(c)]
+LB[nf:a][le:b]
+(;B[nf]C[白a位虎是正着, b位虎非常糟糕.
+
+a1 - 虎, 正着.
+b2 - 虎, 糟糕.]N[断,正着(a)]
+LB[le:a][mf:b]
+(;W[le]N[虎,正着(a)];B[mf];W[kd];B[og];W[lc])
+(;W[mf]N[虎,错误 (b)];B[ng];W[mg];B[nh];W[lc];B[mh]))
+(;B[le]N[长,错误 (b)];W[nf];B[qg];W[id];B[lg];W[oi])))
+(;B[nd]C[黑7相当过分, 白a打是正着, b位打则中计.
+
+a1 - 打, 正着.
+b2 - 打, 上当.]
+N[反扳,骗招(b)]LB[pe:a][od:b]
+(;W[pe]N[打,正着(a)];B[od];W[pd]C[黑可以试下a位断或b位断, 都不会有好下场.
+
+a1 - 断, 不好.
+b2 - 断, 不好.]
+LB[pf:a][pc:b]
+(;B[pf]N[断,不好(a)];W[qe];B[qf];W[qc]C[白得到了大角, 黑还被分断, 优劣自明.])
+(;B[pc]N[断,不好(b)];W[qc];B[pb];W[qe]C[白满意.]))
+(;W[od]N[打,上当 (b)];B[pe];W[md];B[nf]C[黑可以封塞白棋.];W[nc];B[me])))
+(;W[qf]N[跳,重视右边(b)];B[nf];W[pf]C[黑可以a位顶, 也可以b位粘.
+
+a1 - 顶.
+b2 - 粘.]
+LB[od:a][ne:b]
+(;B[od]N[顶(a)];W[ng];B[mg];W[nh])
+(;B[ne]N[粘(b)];W[qj];B[pb])))
+(;B[pg]C[黑5非常积极. 白可以在a位压, 征子有利时可以在b位挡, c位靠时机不对.
+
+a1 - 压.
+b2 - 挡, 有征子.
+c3 - 靠.]
+N[大飞(c)]LB[og:a][pf:b][qe:c]
+(;W[og]C[黑a位退方为正着, b位长过分.
+
+a1 - 退, 正着.
+b2 - 长, 过分.]N[压(a)]
+LB[pf:a][ph:b]
+(;B[pf]C[白a位长正着, b位扳或c位退都不好.
+
+a1 - 长, 正着.
+b2 - 扳, 不好.
+c3 - 退, 不好.]
+N[退,正着(a)]LB[oh:a][pe:b][oe:c]
+(;W[oh]N[长,正着(a)];B[oe];W[ne];B[nd];W[od];B[pe];W[md]C[黑可以a位贴或b位打.
+
+a1 - 贴.
+b2 - 打.]
+LB[nc:a][me:b]
+(;B[nc]N[贴(a)];W[mc];B[nb];W[me]C[黑a位内拐正着, b位外拐不好.
+
+a1 - 内拐, 正着.
+b2 - 外拐, 不好.]
+LB[ob:a][mb:b]
+(;B[ob]N[内拐,正着(a)];W[ph])
+(;B[mb]C[白a顺势长很好, b位扳住则漏出破绽.
+
+a1 - 长, 本手.
+b2 - 扳, 不好.
+]
+N[外拐,不好 (b)]LB[lc:a][lb:b]
+(;W[lc]N[拐,正着(a)];B[lb];W[kc]C[白22顺势长满意.];B[qi])
+(;W[lb]C[白20没必要自找麻烦.]N[扳,不好 (b)];B[lc];W[kb];B[ob];W[ke];B[qi];W[dp]
+C[白脱先.];B[le]C[黑27是随手, 白放弃两子筑成厚势.
+];W[lf];B[mf];W[nf];B[kf];W[lg]
+;B[kd];W[je];B[jd];W[id];B[ie];W[jf];B[ic];W[hd];B[jc];W[hc];B[jb])))
+(;B[me]N[打(b)];W[nc];B[nf];W[nd];B[lf];W[lc];B[kd];W[kc];B[jd];W[ic];B[qi];W[mg]
+;B[mf];W[kh]))
+(;W[pe]C[白8看上去没什么问题, 实际上让白失去了a位托角的好棋.
+]N[扳,不好 (b)]LB[qc:a]
+;B[qe];W[oh];B[ph];W[oi];B[qj];W[dp]C[白脱先.];B[od]C[黑15靠压, 反攻倒算.];W[nd]
+;B[ne])
+(;W[oe]C[白8过于软弱, 黑得好形.]N[退,不好 (c)];B[ph]C[白明显不好.]))
+(;B[ph]N[长,错误 (b)];W[qe];B[pd];W[pf];B[od];W[oh]C[黑a位尖吃住白2一子方为上策, b位长贪, 白2仍然有活力.
+
+a1 - 尖, 正着.
+b2 - 长, 恶手.]
+LB[mc:a][pi:b]
+(;B[mc]N[尖,正着(a)];W[pj]C[白的厚势可以抵消黑的实利.])
+(;B[pi]N[长,错误(b)];W[ok];B[qk];W[nd]C[黑无论走a位扳或b位断, 都无好结果.
+
+a1 - 扳.
+b2 - 断.]
+LB[ne:a][nc:b]
+(;B[ne]N[扳(a)];W[nc]C[如果黑a长出或b位接, 白可以c位飞活棋.
+]LB[me:a][oe:b][lb:c])
+(;B[nc]N[断(b)];W[mc];B[nb];W[md];B[ob]))))
+(;W[pf]C[白征子有利才能在6位挡.]N[挡,有征子 (b)];B[qf];W[qg];B[qh];W[rg]C[黑可以在a位挡或b位挡.
+
+a1 - 挡.
+b2 - 挡.]
+LB[rf:a][rh:b]
+(;B[rf]N[挡(a)];W[rh];B[qi]C[白a位托是正着, b位断打俗手.
+
+a1 - 托, 正着.
+b2 - 断打, 俗手.]
+LB[qc:a][ph:b]
+(;W[qc]C[黑a长正着, b位扳恶手.
+
+a1 - 长, 正着.
+b2 - 扳, 恶手.]N[托,正着(a)]LB[pd:a]
+[rc:b]
+(;B[pd]N[长,正着(a)];W[pc];B[ri];W[og];B[ph];W[rd];B[re];W[rc];B[id]C[由于黑气紧, 黑不能在a位或b位分断白棋.]
+LB[od:a][ne:b])
+(;B[rc]C[黑15扳正中白计.]N[扳,错误 (b)];W[pd];B[re];W[ph];B[og];W[pi]C[如果黑还在a位扳的话, 白b位扳吃黑两子满意.
+]
+LB[nf:a][qj:b]))
+(;W[ph]N[断打,错误 (b)];B[og];W[pi];B[nf];W[qj];B[oe]))
+(;B[rh]C[接下来白一般在a位打头, b位拐打也有可能, 但黑能得到很强的外势.
+
+a1 - 打.
+b2 - 拐打, 黑得外势.]
+N[挡(b)]LB[og:a][rf:b]
+(;W[og]N[打(a)];B[ph];W[qe];B[rf];W[re];B[sg];W[pd])
+(;W[rf]C[黑可以得到强大的外势.]N[拐打,黑得外势(b)];B[qe];W[ph];B[og];W[ng];B[oh]
+;W[pi];B[nh];W[qi];B[nf];W[ne];B[mg];W[od];B[me];W[qb];B[re];W[ri];B[rb];W[pb];B[rc]
+;W[lb];B[ra])))
+(;W[qe]C[白6靠下时机太早.]N[靠下,不好 (c)];B[pd];W[pf];B[od];W[qg];B[mc]C[白成凝形, 黑大满意.]))
+(;B[od]C[黑5强手, 只有在黑周围有强大的势力时才有效果.]N[靠压(d)];W[nd]C[黑一般在a扳, 但被白打头有点讨厌. b位顶是俗手, c位扳看上去很奇怪, 但征子有利时黑可以这么下.
+
+a1 - 扳.
+b2 - 顶, 不好.
+c3 - 扳, 有征子.]
+LB[pc:a][oe:b][ne:c]
+(;B[pc]N[虎挡(a)];W[oe];B[pd]C[征子有利时白可以在a位倒虎, 否则只能在b位飞整形或c位横顶. d位虎恶手.
+
+a1 - 倒虎, 有征子.
+b2 - 飞.
+c3 - 横顶
+d4 - 虎, 恶手.]
+LB[nb:a][mf:b][md:c][me:d]
+(;W[nb]C[白10倒虎是形, 但白必须能在b位征吃黑a断之子, 否则白不能选择这个变化.
+]
+N[倒虎,有征子 (a)]LB[ne:a][me:b];B[ne]C[如果白征子不利...];W[me];B[nf];W[md];B[og]
+C[角上至少是双活.];W[pb];B[qb];W[pf];B[pg];W[qf];B[qg];W[rg];B[rh];W[re];B[sg];W[rf]
+;B[ng];W[rc];B[rd];W[sd];B[rb];W[sb];B[pa];W[ob];B[ra];W[se];B[lc]C[白上边七颗白子一下子成了攻击对象, 白不利甚明.
+])
+(;W[mf]C[黑一般在a位断打, b位打是趣向.
+
+a1 - 断打.
+b2 - 打, 趣向.]N[飞(b)]LB[nc:a]
+[ob:b]
+(;B[nc]N[断打(a)];W[mc]C[黑a位提本手, b位断打过分.
+
+a1 - 提, 本手.
+b2 - 断打, 过分.
+]
+LB[ob:a][md:b]
+(;B[ob]N[提,本手(a)];W[md];B[mb];W[lc])
+(;B[md]N[断打,错误(b)];W[nb];B[ne];W[nc];B[nf];W[ng];B[me];W[og];B[kc];W[pb];B[qb]
+;W[kb];B[jb];W[lb];B[jc];W[qa];B[ra];W[pa];B[rc]))
+(;B[ob]N[打,趣向(b)];W[nc];B[nb]C[a扳和b立见合.]LB[mc:a][lc:b]))
+(;W[md]C[黑可以a位长或b位立.
+
+a1 - 长.
+b2 - 立.]N[横顶(c)]LB[le:a][lc:b]
+(;B[le]N[长(a)];W[mf];B[qg]C[根据情况以后白可以在a位虎或b位夹或下在其他地方.]LB[nb:a]
+[hd:b])
+(;B[lc]N[立(b)];W[mc];B[qg];W[le];B[ke];W[lf];B[jd]))
+(;W[me]N[虎,错误 (d)];B[nc];W[mc];B[ob]C[白a打成劫, 如果没有希望打赢劫, 白只有b位呆粘.
+
+a1 - 打, 劫.
+b2 - 粘.]
+LB[nb:a][md:b]
+(;W[nb]N[打,劫(a)];B[qg]C[黑在适当的时机会在a位开劫, 对白来说, 这是个定时炸弹.
+]
+LB[md:a])
+(;W[md]N[粘(b)];B[mb];W[lc]C[对于这个变化, 明显白10应该在a位较好.]LB[mf:a])))
+(;B[oe]N[顶,味恶 (b)];W[ne]C[黑二子头被紧住, 味道总是不大好. 接下来黑可以选择在a断或b断. 黑a位断的变化比较多.
+
+a1 - 断.
+b2 - 断.]
+LB[nc:a][nf:b]
+(;B[nc]N[断(a)];W[mc];B[nb]C[白的应手有a位挡, b位横长或c位接, d位横长过分.
+
+a1 - 挡.
+b2 - 横长.
+c3 - 接.
+d4 - 横长, 过分.]
+LB[ob:a][lc:b][md:c][pc:d]
+(;W[ob]N[挡(a)];B[mb];W[lc]C[黑a位虎挡稳健, b位爬严厉.
+
+a1 - 虎挡, 稳健.
+b2 - 爬, 严厉.]
+LB[pc:a][lb:b]
+(;B[pc]N[虎挡(a)];W[nf]C[这个型对白来说, a位的断点是个毛病, 当然目前白并不怕被断, 但随着局势的发展,也许情况会发生变化.
+
+白棋的优点是如果黑脱先, 白将来可以在标记位拐.
+
+黑在c位爬是恶手.
+
+a1 - 断.
+b2 - 脱先.
+c3 - 爬, 恶手.]
+MA[pb]LB[md:a][dp:b][lb:c]
+(;B[md]N[断(a)];W[lb];B[pb];W[kd];B[le];W[jc])
+(;N[黑脱先 (b)];W[pb];B[qb];W[qe])
+(;B[lb]N[爬,错误 (c)];W[kc]C[白18长出后, a位断点已经不复存在. 以后白在右边可以用强了.
+]
+LB[md:a];B[qf];W[qg];B[rg];W[pf];B[qe];W[qh]C[黑位置偏低.]))
+(;B[lb]N[爬,严厉(b)];W[kc];B[nf]C[白a打是正着, 虽然后面的次序很要紧, b位跳时机太早.
+
+a1 - 打, 正着.
+b2 - 跳, 不行.]
+LB[mf:a][qb:b]
+(;W[mf]N[打,正着(a)];B[ng];W[qb];B[kb];W[jc];B[mg];W[le];B[lf];W[me];B[ke];W[md]
+;B[jb];W[ic]C[黑a尖正着, b位托不行.
+
+a1 - 尖, 正着.
+b2 - 托, 不行.]LB[rc:a][rb:b]
+(;B[rc]N[尖,正着(a)];W[rb];B[sb]C[对杀角上白四子肯定不行, 所以白只能采取弃子战术. 白a位长正着, b位曲不行.
+
+a1 - 长, 正着.
+b2 - 曲, 不行.]
+LB[pf:a][pc:b]
+(;W[pf]N[长,正着(a)];B[qe];W[qf];B[rf];W[rg];B[pc];W[pb];B[re];W[ib]C[黑a位立正着, b位扳成劫.
+
+a1 - 立, 正着.
+b2 - 扳, 成劫.]
+LB[na:a][oa:b]
+(;B[na]C[黑43立, 快一气吃白.]N[立,正着(a)];W[ph]C[黑必须收气吃白五子, 并没有占大便宜, 白可以攻击外面的黑棋, 所以白完全可下.])
+(;B[oa]N[扳,成劫 (b)];W[na]))
+(;W[pc]N[曲,不行 (b)];B[pd];W[pa];B[ib]C[白两难, a位立可以活角, 但被黑b位扳白很痛苦.
+]
+LB[ra:a][hc:b]))
+(;B[rb]N[托,不行(b)];W[qc];B[rc];W[pd];B[pe];W[qe];B[pc];W[pf])
+(;B[ib]N[黑无法收拾];W[pf];B[qe];W[rc]))
+(;W[qb]N[跳,错误(b)];B[md];W[me];B[kd]C['a' and 'b' are miai. This is what White must guard against (and does so in the other variation). From here, White is lost.]
+LB[jc:a][mf:b])))
+(;W[lc]N[横长(b)];B[ob];W[nf])
+(;W[md]N[接(c)];B[ob];W[ng])
+(;W[pc]C[白12横长,不愿放弃白2, 是错误的想法.
+]N[横长,错误 (d)];B[mb]
+(;W[pd];B[pe];W[qe];B[pf]C[白可能在a位打, 或者在b位打也许要好一点.
+
+a1 - 打.
+b2 - 打.]
+LB[rd:a][qf:b]
+(;W[rd]N[打(a)];B[qf];W[re];B[nf];W[me];B[og]C[白不能在a位长出, 因为黑可以在b位断. 白中央的棋成为负担, 白也没有合适的处理手段.
+]
+LB[lc:a][md:b])
+(;W[qf]N[打(b)];B[pg];W[rd];B[qg];W[nf];B[md];W[nh];B[re];W[qc];B[rf];W[ob];B[pj]
+C[白角也就10目左右.]))
+(;W[qc]N[无理];B[qe])))
+(;B[nf]N[断(b)];W[pc]C[黑a位挡本手, b位双略显胆怯, c位长不好.
+
+a1 - 挡, 本手.
+b2 - 双, 胆小.
+c3 - 长, 不好.]
+LB[qc:a][qe:b][mf:c]
+(;B[qc]N[挡,正着(a)];W[og];B[pd]C[白a位虎是本手, b位打恶手.
+
+a1 - 虎, 本手.
+b2 - 打, 恶手.]
+LB[mc:a][mf:b]
+(;W[mc]N[虎,本手(a)];B[mf];W[kc]C[白a跳是先手.]LB[qf:a])
+(;W[mf]N[打,错误 (b)];B[nc]C[白两子被吃,黑获大利.]))
+(;B[qe]N[双,胆小(b)];W[qc])
+(;B[mf]N[长,不好(c)];W[pd];B[pe];W[qe];B[pf];W[qf];B[pg];W[mc];B[qg];W[rd]C[白的实利超过黑的外势.])))
+(;B[ne]C[黑征子有利才能在7位反扳, 对此白a位打正着, b位打恶手, 帮黑在a位接.
+
+a1 - 打, 正着.
+b2 - 打, 恶手.]
+N[反扳,有征子 (c)]LB[pd:a][oe:b]
+(;W[pd]N[打,正着(a)];B[oe];W[pe];B[pc];W[qc];B[pb];W[qe]C[黑A位断打正着, B位拐俗手.
+
+A1 - 断打, 正着.
+B2 -  拐, 俗手.]
+LB[nc:A][qb:B]
+(;B[nc]N[断打,正着(a)];W[qb];B[ob];W[pg])
+(;B[qb]N[拐,不好(b)];W[rc]C[白a位断点不复存在.]LB[pf:a]))
+(;W[oe]N[打,错误 (b)];B[pd];W[me];B[nc];W[nf];B[mc])))
+(;B[qf]C[黑5不是定式, 显得有点缓. 白a位肩冲是正着, b位托和c位尖都不好.
+
+a1 - 肩冲, 正着.
+b2 - 托, 不好.
+c3 - 尖, 不好.]
+N[一间跳,不好 (e)]LB[pe:a][qc:b][nd:c]
+(;W[pe]C[白6确保联络.]N[肩冲,正着(a)];B[qe];W[jd];B[lf];W[oh])
+(;W[qc]N[托,错误 (b)];B[od]C[黑7靠压严厉.];W[pc];B[oe]C[黑满意.])
+(;W[nd]C[白6落后手.]N[尖,错误 (c)];B[pb]C[局部而言, 黑7飞是理想的一手, 角上尽归黑.])))
+(;W[oe]C[白4跳是一间高夹或低夹时的标准应法, 但是二间低夹或三间夹时白一般不会一间跳. 二间高夹时有时白也会单跳, 黑的应手有 a位飞或b位拆二.
+
+a1 - 飞.
+b2 - 拆二.]
+N[跳 (f)]LB[pf:a][qg:b]
+(;B[pf]C[白a托正着, b位压恶手.
+
+a1 - 托, 正着.
+b2 - 压, 恶手.]N[飞(a)]LB[qc:a]
+[of:b]
+(;W[qc]C[黑a扳正着, b位并不好.
+
+a1 - 扳, 正着.
+b2 - 并, 错误.]N[托,正着(a)]LB[rc:a]
+[pd:b]
+(;B[rc]C[白a位立正着, b位虎不行.
+
+a1 - 立, 正着.
+b2 - 虎, 不行.]N[扳,正着(a)]
+LB[qb:a][pd:b]
+(;W[qb]C[白8要紧. 白可以在a位并, 也可以简单在b位拆.
+
+a1 - 并.
+b2 - 拆三.]N[立,正着(a)]
+LB[pd:a][qj:b]
+(;B[pd]N[并(a)];W[od]C[黑接下来的应手有a位拆二, b位飞封或c位拆三. 黑b飞封是老定式, 现在被认为黑不好, 白可以整形.
+
+a1 - 拆二.
+b2 - 飞封, 不好.
+c3 - 拆三.]
+LB[qi:a][mf:b][qj:c][pg:d]
+(;B[qi]C[黑11也可以在a拆三或b位并.]N[拆二(a)]LB[qj:a][pg:b];W[lb])
+(;B[mf]N[飞封(b)];W[ng];B[pg];W[nf];B[qj]C[黑缺乏好的后续手段.])
+(;B[qj]AB[pq][ce]AW[dp][dc]C[1974年13届名人赛石田芳夫对林海峰.]N[拆三(c)];W[dh]
+;B[hc];W[lb];B[ed];W[ec];B[fd];W[fc];B[gd];W[cd];B[bd];W[bc];B[dd];W[cc];B[fq];W[dn]
+;B[dr];W[cq];B[iq];W[cf];B[be];W[df];B[de];W[dk];B[po];W[kd];B[ke];W[je];B[kf];W[jd]
+;B[ef];W[qm];B[of];W[qp];B[qo];W[ro];B[rn];W[qi];B[pj];W[rp];B[qn];W[pp];B[op];W[oq]
+;B[qq];W[rq];B[or];W[nq];B[np];W[rm];B[rr];W[rj];B[rk];W[rh];B[pl];W[qr];B[pr];W[rs]
+;B[sr];W[mp];B[on];W[nr];B[qs];W[qf];B[pe];W[re];B[pc];W[pb];B[rd];W[sk];B[sl];W[sj]
+;B[pi];W[ph];B[sh];W[sg];B[rg];W[qk];B[qg];W[pk];B[ok];W[ql];B[sm];W[pm];B[mo];W[rl]
+;B[sn];W[qh];B[sf];W[ni];B[oj];W[pg];B[se];W[ng];B[nf];W[om];B[nm];W[nl];B[ol];W[nn]
+;B[mm];W[so];B[lp];W[nk];B[lc];W[kb];B[mb];W[mc];B[nc];W[nb];B[md];W[ma];B[ib];W[jb]
+;B[gb];W[fb];B[fo];W[jf];B[ac];W[ab];B[eh];W[di];B[cr];W[br];B[kg];W[jg];B[fm];W[kh]
+;B[mg];W[ip];B[jq];W[bg];B[gi];W[hj];B[gj];W[hi];B[gk];W[hk];B[hh];W[ih];B[hg];W[hm]
+;B[dm];W[cm];B[cn];W[em];B[en];W[do];B[el];W[dl];B[dq];W[bp];B[in];W[hn];B[ho];W[io]
+;B[im];W[hp];B[go];W[kn];B[jo];W[lo];B[ln];W[jn];B[il];W[jl];B[jp];W[ik];B[hq];W[hl]
+;B[gp];W[ko];B[mq];W[ll];B[lh];W[li];B[mi];W[lj];B[ki];W[jh];B[mj];W[nj];B[lk];W[kj]
+;B[kk];W[jj];B[mk];W[cs];B[ek]C[黑中盘胜.]))
+(;B[qj]C[白可以在a位夹压迫黑, 也可以脱先, c位虎不好, 凑黑在a位退.
+
+a1 - 夹, 正着.
+b2 - 脱先.
+c3 - 虎, 错误.]
+N[拆三(b)]LB[qe:a][dp:b][pd:c]
+(;W[qe]N[夹,正着(a)];B[pe];W[rd];B[pd];W[re];B[od];W[nc];B[nd]C[白虽然在角上获利, 但黑外势更好.])
+(;W[dp]N[脱先 (b)];B[pe]C[黑11可以先手便宜.])
+(;W[pd]C[白10下不得.]N[虎,错误 (c)];B[qe])))
+(;W[pd]N[虎,错误(b)];B[qe];W[qb];B[qj]C[白4位置不好, 应该在a位才合适.]LB[nd:a]))
+(;B[pd]N[并,错误 (b)];W[pc];B[od];W[nd]C[黑只能在a位断, b位断无理.
+
+a1 - 断, 正着.
+b2 - 断, 无理.]
+LB[ne:a][nc:b]
+(;B[ne]N[断,正着(a)];W[me];B[nf];W[md])
+(;B[nc]N[断,错误 (b)];W[mc];B[ne];W[md];B[me];W[of]C[黑很薄.])))
+(;W[of]N[压,错误(b)];B[pg]C[黑跟着在四路长舒服.]))
+(;B[qg]C[白的应手有a位托或b位尖冲.
+
+a1 - 托.
+b2 - 尖冲.]N[拆二 (b)]LB[qc:a][pf:b]
+(;W[qc]N[托(a)];B[rc];W[qb]C[黑一般在a位并, b位刺也可以.
+
+a1 - 并.
+b2 - 刺.]
+LB[pd:a][nd:b]
+(;B[pd]N[并(a)];W[od]C[黑必须在a位补一手, 脱先后果很严重.
+
+a1 - 拆一.
+b2 - 脱先, 不行.]
+LB[qi:a][dp:b]
+(;B[qi]N[拆一,正着(a)])
+(;N[黑脱先,错误 (b)];W[re];B[rd];W[qf];B[pf];W[rg];B[qh];W[rh]C[黑只有在a位接了, b位长则无理.
+
+a1 - 接, 本手.
+b2 - 长, 无理.]
+LB[pe:a][qi:b]
+(;B[pe]N[接,本手(a)];W[qi])
+(;B[qi]C[黑19过分.]N[长,错误 (b)];W[pe];B[qe];W[rf];B[ri];W[rb])))
+(;B[nd]N[刺(b)];W[od];B[re];W[lb]C[白12也有在a位飞的.]LB[mb:a]))
+(;W[pf]C[白只有在需要尽快安定时才这样迅速定型, 因为可能的变化被走掉了, 对黑棋有好处.
+]
+N[尖冲(b)];B[qf];W[qc];B[rc];W[pd];B[qe];W[qb])))
+(;W[me]C[白4飞象步体现了现代围棋的严厉性. 白在左上角有配合的情形下才可以这么下. 黑的应手有a位靠压, b位飞, c位拆二.  黑d位挡是特殊下法, e位穿象眼和f位爬都不能成立. 
+
+a1 - 靠压. 
+b2 - 飞, 重视右边.
+c3 - 拆二.
+d4 - 挡, 特殊策略.
+e5 - 不好.
+f6 - 不好.]
+N[象步 (g)]LB[od:a][pf:b][qg:c][le:d][nd:e][md:f]
+(;B[od]C[白的应手有a位挡, b位挖或c位爬. d位扳不行.
+
+a1 - 挡.
+b2 - 挖.
+c3 - 爬, 有征子.
+d4 - 扳, 错误]
+N[靠压 (a)]LB[md:a][pd:b][nc:c][nd:d]
+(;W[md]C[黑a虎挡正着, b位扳断俗手.
+
+a1 - 虎挡, 正着.
+b2 - 扳断, 俗手.
+
+
+]
+N[挡(a)]LB[pc:a][nc:b]
+(;B[pc]C[白a立最佳.  b位退重, c位扳是老定式, 现在基本被淘汰了, 因为结果没有a立好, d夹也不好, 白不能简单安定.
+
+a1 - 立, 正着.
+b2 - 退, 重.
+c3 - 扳, 老定式.
+d4 - 夹, 不好.]
+N[虎挡,正着(a)]LB[ob:a][nc:b][lc:c][oe:d]
+(;W[ob]C[黑a位扳不屈服, b位挡软弱.
+
+a1 - 扳, 正着.
+b2 - 挡, 屈服.]N[立,正着(a)]
+LB[mc:a][pb:b]
+(;B[mc]C[白a位愚形曲是正着, b位断看上去不错, 实际上不好.
+
+a1 - 曲, 正着.
+b2 - 断, 不好.]
+N[扳,正着(a)]LB[nd:a][lc:b]
+(;W[nd]C[黑a长正着, b位断不好, 因为黑吃两子的代价比较高.
+
+a1 - 长, 正着.
+b2 - 断, 不好.]
+N[曲,正着(a)]LB[oe:a][nc:b]
+(;B[oe]N[长,正着(a)];W[lc]C[黑可以在a位打或b位挡.
+
+a1 - 打.
+b2 - 挡.]LB[kc:a]
+[pb:b]
+(;B[kc]N[打(a)];W[lb];B[kd];W[mb])
+(;B[pb]C[白a位横长是本手, 白不能脱先.
+
+a1 - 横长, 本手.
+b2 - 脱先,错误.]N[挡(b)]
+LB[kc:a][dp:b]
+(;W[kc]N[横长,本手(a)];B[jc]C[接下来黑有15靠的腾挪的手段.];W[jd];B[id])
+(;N[白脱先,错误 (b)];B[mb];W[lb];B[kd]C[白a位跳正着, b位接恶手.
+
+a1 - 跳, 正着.
+b2 - 接, 恶手.]
+LB[jc:a][nc:b]
+(;W[jc]N[跳,正着(a)];B[na]C[黑18尖是著名的"老鼠偷油"的手筋. 白只有在a位接.b位挡不行.
+
+a1 - 接, 正着.
+b2 - 挡, 不行.]
+LB[nc:a][oa:b];W[nc];B[oa]C[白被分断, 苦战.])
+(;W[nc]N[接,错误 (b)];B[kb];W[nb];B[kc];W[ma]C[黑得先手, 黑狠一点可以在a位扳破掉白的第二个眼.
+]
+LB[oa:a]))))
+(;B[nc]C[吃白两子代价不小.]N[断,不好 (b)];W[oe];B[pd];W[lc];B[lb];W[kc];B[nb];W[na]
+;B[mb];W[kb];B[pb];W[ke]))
+(;W[lc]N[断,不好 (b)];B[lb];W[kc];B[nd];W[mb];B[nc];W[kb];B[nb];W[la]))
+(;B[pb]N[挡,错误 (b)];W[oe]C[黑a位虎挡正着, b位冲恶手.
+]LB[pe:a][nd:b]
+(;B[pe]N[虎挡,正着(a)];W[nd]C[接下来如果黑a接, 白可以在b位跳, 如果黑让白在a位拔的话, 黑有些难办.]
+LB[pd:a][og:b])
+(;B[nd]C[黑11很俗.]N[冲,错误 (b)];W[ne];B[nc];W[mc];B[nb];W[qf])))
+(;W[nc]N[退,不好 (b)];B[oe];W[lc])
+(;W[lc]C[白8老定式, 相对新的定式, 结果不是很好.
+]N[扳,老定式(c)];B[nc];W[mc]C[如果局面没有非抢不可的大场, 黑应当在a位提, 如果脱先, 白有后续手段.
+
+a1 - 提.
+b2 - 脱先.]
+LB[ob:a][dp:b]
+(;B[ob]N[提(a)])
+(;N[黑脱先 (b)];W[ob];B[nb];W[nd]C[黑在a位长是一般分寸, b位打不好.
+
+a1 - 长, 正着.
+b2 - 打, 不好.]
+LB[oe:a][pb:b]
+(;B[oe]N[长,正着(a)];W[pb];B[qb];W[mb]C[白获取两子颇有收获, 但黑得先手, 也无不满.
+])
+(;B[pb]C[白可以压住黑的头了.]N[打,不好 (b)];W[oe];B[pd];W[qf]C[白可以在17位封, 也可以视全局而脱先他投.
+])))
+(;W[oe]C[白8夹华而不实.]N[夹,不好 (d)];B[nc];W[mc];B[ob]C[白接下来缺乏应手, 黑在a位跳倒是好手.
+]
+LB[jd:a]))
+(;B[nc]N[扳断,俗手 (b)];W[mc];B[pc];W[jd]))
+(;W[pd]N[挖(b)];B[pe];W[pc]C[接下来黑可以选择a位长或b位挡.
+
+a1 - 长.
+b2 - 挡.]
+LB[nd:a][qc:b]
+(;B[nd]C[白只有在a位断了, b位挡太屈服.
+
+a1 - 断, 正着.
+b2 - 挡, 屈服.]N[长(a)]
+LB[qe:a][qc:b]
+(;W[qe]C[黑a挡必然, b位打恶手.
+
+a1 - 挡, 正着.
+b2 - 打, 恶手.]N[(a)]LB[qc:a]
+[qf:b]
+(;B[qc]N[挡,正着(a)];W[qb];B[rb];W[re];B[pb]C[白a打正着, b位勒打看上去似乎很好,实际上过分.
+
+a1 - 打, 正着.
+b2 - 勒打, 过分.]
+LB[ob:a][rc:b]
+(;W[ob]N[打,正着(a)];B[qa];W[md];B[nc];W[mc];B[nb];W[pf];B[oe]C[这个定式深受梶原武雄所喜爱.]
+;W[of]C[白24贴长厚实, 但实战白经常脱先占其他大场.
+])
+(;W[rc]N[勒打,不好 (b)];B[qa];W[rd];B[qb]C[白只好a位冲了, b位打恶手.
+
+a1 - 冲, 正着.
+b2 - 打, 恶手.]
+LB[md:a][pf:b]
+(;W[md]N[冲,正着(a)];B[nc];W[pf]
+(;B[ob])
+(;B[oe]))
+(;W[pf]C[白20次序错误.]N[打,错误 (b)];B[oe];W[md];B[mc]C[黑23可以直接挡住了, 白现在只好a位贴长联络了, b位断不好.
+
+a1 - 贴长, 正着.
+b2 - 断, 不好.]
+LB[of:a][lc:b]
+(;W[of]N[贴长,正着(a)];B[nc])
+(;W[lc]N[断,不好(b)];B[nc]))))
+(;B[qf]N[打,错误 (b)];W[re]
+(;B[pf];W[rf];B[rg];W[rd])
+(;B[of]C[实战];W[rf];B[qg];W[rg];B[qh];W[nc];B[md])))
+(;W[qc]C[白10挡求活是下下之策.
+]N[挡,错误 (b)];B[re]C[白可以a打, 也可以直接b位尖.
+
+a1 - 打.
+b2 - 尖.]
+LB[rd:a][rb:b]
+(;W[rd]N[打(a)];B[qe];W[mb];B[md])
+(;W[rb]N[尖(b)];B[of];W[mb];B[md])))
+(;B[qc]C[如果白在a位断, 黑b位长, 结果与黑直接在b位长相同.
+]N[挡(b)]LB[qe:a][nd:b]
+;W[mc];B[oe];W[md]
+(;B[qg]C[定式])
+(;B[qh]C[定式])))
+(;W[nc]C[白6有点缓, 但也避开了复杂的变化. 白一定要征子有利才能这么下. 黑的应手有a位虎挡或b位并.
+
+a1 - 虎挡.
+b2 - 并.]
+N[长,有征子 (c)]LB[pc:a][oe:b]
+(;B[pc]N[虎挡(a)];W[oe]C[黑可以a位贴长,也可以b位扳虎成劫形.
+
+a1 - 贴长.
+b2 - 扳虎.]
+LB[nd:a][pe:b]
+(;B[nd]N[贴长(a)];W[md];B[mc];W[ne];B[pd];W[lc];B[mb];W[lb];B[ob];W[ma];B[nb];W[kd])
+(;B[pe]N[扳虎(b)];W[of];B[pf];W[og];B[pg];W[oh];B[qi]))
+(;B[oe]N[并(b)];W[pc];B[qc];W[le]))
+(;W[nd]C[不过也有实战这样走的。张栩对依田的实战]N[扳,错误(d)];B[oe];W[pc];B[qc]
+;W[le];B[jd];W[lc]C[实战左上是白的星]
+(;B[kc]C[白a立是正着, b位挡打恶手.
+
+a1 - 立, 正着.
+b2 - 挡打, 错误.]LB[lb:a]
+[md:b]
+(;W[lb]N[立,正着(a)])
+(;W[md]N[挡打,错误 (b)];B[lb];W[kd];B[ke]C[白不能接, 但白不能开这个劫, 这么大一个劫, 黑很可能万劫不应, 
+]))
+(;AW[dd];B[fc];W[qg];B[og];W[rf];B[qe];W[qj]C[白不好])))
+(;B[pf]C[黑5飞重视右边. 白可以在a位挡或b位托. 白c逼略显无理, 但有时后可以成立. 白d压恶手.
+
+a1 - 挡.
+b2 - 托.
+c3 - 逼, 场合下法.
+d4 - 恶手.]
+N[小飞,重视右边(b)]LB[md:a][qc:b][jd:c][le:d]
+(;W[md]C[黑可以选择a位拆或b位立. 黑b立是毫不妥协的下法.
+
+a1 - 拆.
+b2 - 立, 强硬.]
+N[挡(a)]LB[qj:a][lc:b]
+(;B[qj]N[拆(a)])
+(;B[lc]N[立,强硬(b)];W[mc];B[pc];W[jd]C[以下是可能的下法.];B[ke];W[mg]))
+(;W[qc]C[黑a扳正着, b位并弃角取外势并不很合算.
+
+a1 -扳, 正着.
+b2 - 并, 不好.]
+N[托(b)]LB[rc:a][pd:b]
+(;B[rc]N[扳,正着(a)];W[pd];B[qe];W[le];B[jd])
+(;B[pd]N[并,强硬(b)];W[pc];B[md]C[白a尖正着, b位拐错误.
+
+a1 - 尖, 正着.
+b2 - 拐, 错误.]
+LB[nd:a][od:b]
+(;W[nd]N[尖,正着(a)];B[ne])
+(;W[od]N[拐,错误(b)];B[oe];W[ne];B[nd]C[白两子贴着黑墙不好, 白4位置应该在a位. 以后的战斗白不利.
+]
+LB[nf:a])))
+(;W[jd]C[白6逼挑衅, 黑a挡接受挑衅, b位尖顶取利息事宁人, 也不坏.
+
+a1 - 挡.
+b2 - 尖顶.]
+N[逼,场合下法(c)]LB[le:a][pc:b]
+(;B[le]N[挡(a)];W[lf];B[ke]C[黑9是愚形的好手, 分断了白进行攻击.
+])
+(;B[pc]N[尖顶(b)];W[od];B[ph];W[le])
+(;B[nd]N[黑取大实地];W[md];B[nc];W[mc];B[nb]))
+(;W[le]C[白6压的坏处就是黑可以得大角.]N[压,错误 (d)];B[nd];W[md];B[nc];W[mc];B[nb]
+C[黑取了大角, 白外势不能抗衡.
+]LB[jd:a]))
+(;B[qg]C[白a反夹或b位肩冲都是可能的下法.
+
+a1 - 反夹.
+b2 - 肩冲.]N[拆二 (c)]LB[jd:a]
+[pf:b]
+(;W[jd]C[因为白a位和b位都是先手, 所以黑不能在c位穿象眼.
+]N[反夹(a)]LB[pe:a][pf:b]
+[nd:c])
+(;W[pf]N[尖冲(b)];B[qf];W[qc];B[rc];W[pd];B[qe];W[jd]C[如果黑b并, 那么白c扳头严厉. 与其与强大的白势作战, 黑a位托先安顿自己是理智的选择.
+]
+LB[jc:a][le:b][lf:c];B[jc]))
+(;B[le]C[除非黑在左上有配合, 否则黑5挡意义不大. 另一方面, 白4走象步一般表示白左上有配合.
+]
+N[挡,特殊策略 (d)];W[mf];B[lf]C[白接下来可以在a位继续长, 也可以在b位逼挑起时断事端.
+
+a1 - 长.
+b2 - 逼, 作战.]
+LB[mg:a][qf:b]
+(;W[mg]N[长(a)];B[kh];W[qf];B[pc];W[pe];B[ob];W[nb];B[nc];W[od];B[mb];W[pb];B[na]
+;W[qc]AW[dd]C[这个定式涉及到左上的形式. 如果左上有白子, 那么这个形被认为是两分. 接下来如果黑a位挂, 那么被b位飞可以侵消黑的模样. 如果左上是黑子, 那么白得不偿失, 将来面临严峻的考验.
+]
+LB[fc:a][fe:b])
+(;W[qf]N[逼,作战(b)];B[pe];W[pf];B[oe];W[md];B[of]C[如果白在a位长, 很可能会丢失右边白两子.]
+LB[mg:a];W[mg];B[ph]C[白很有可能转而攻击上边黑三子.]))
+(;B[nd]N[穿象眼,错误 (b)];W[pe];B[qe];W[pf];B[qg];W[md])
+(;B[md]N[爬,错误 (f)];W[nd];B[ne];W[oe];B[nf];W[of];B[ng];W[qf]C[虽然黑1一子还留有味道, 但黑还得花一手吃住白4(也许在a位枷).
+]
+LB[lf:a]))
+(;W[md]C[白4靠局部来说, 不是好棋, 但有时侯从全局看来非常合适. 典型的结果是黑在中间向左形成一道厚壁, 而白在右边和上边得到了加强. 围棋谚语云\:靠的手段在加强自身同时使对方得到了加强.
+
+黑的应手有a位并, b位扳或c位扳头.
+
+a1 - 并.
+b2 - 扳.
+c3 - 扳头.]
+N[靠 (h)]LB[le:a][mc:b][me:c]
+(;B[le]N[并(a)];W[me];B[lf]C[白可以a位夹, 也可以b位继续长. 
+
+a1 - 夹.
+b2 - 长.]
+LB[qf:a][mf:b]
+(;W[qf]N[夹(a)];B[pc];W[pe];B[ob];W[nb];B[nc];W[od];B[mb];W[pb];B[na];W[qc]C[定式到此为止. 但黑还有a位打的后续手段. 
+
+a1 - 打.
+b2 - 脱先.]
+LB[qb:a][dp:b]
+(;B[qb]N[打(a)];W[pd]C[黑a位渡已经侵消了白角, b位打则显得更为凶猛.
+
+a1 - 渡.
+b2 - 打, 强烈.]
+LB[pa:a][rc:b]
+(;B[pa]N[渡(a)];W[rb];B[pc];W[rc])
+(;B[rc]N[打,强硬(b)];W[pc];B[pa];W[rb];B[ra]C[黑得到一个观花劫.]))
+(;C[黑脱先, 白如果a位扳断...]N[黑脱先 (b)]LB[lc:a];W[lc]C[黑可以在a位扳或b位断.
+
+a1 - 扳.
+b2 - 断.]
+LB[kc:a][mc:b]
+(;B[kc]C[白只有在a位接了, b位冲没有好下场.
+
+a1 - 接, 正着.
+b2 - 冲, 不行.]N[扳(a)]
+LB[mc:a][lb:b]
+(;W[mc]N[接,正着(a)];B[lb])
+(;W[lb]N[冲,错误 (b)];B[mc];W[kb];B[jc];W[jb];B[ib]))
+(;B[mc]N[断(b)];W[kc];B[jd])))
+(;W[mf]C[黑应该继续在a位长, b位拆二太胆小.
+
+a1 - 长, 正着.
+b2 - 拆二, 不好.]
+N[长(b)]LB[lg:a][qg:b]
+(;B[lg]N[长,正着(a)];W[qf];B[pc];W[ob]C[黑a挡下比较稳健, b位靠挑起事端.
+
+a1 - 挡下, 稳健.
+b2 - 靠, 战斗.]
+LB[pb:a][pf:b]
+(;B[pb]N[挡下,稳健(a)];W[pe];B[rf]C[白可以a位外扳, 也可以b位扳断.
+
+a1 - 外扳.
+b2 - 扳断.]
+LB[rg:a][re:b]
+(;W[rg]N[外扳(a)];B[re];W[qh])
+(;W[re]N[扳断(b)];B[qe];W[rd];B[pf]C[白a位长出正着, b位反打不好.
+
+a1 - 长, 正着.
+b2 - 反打, 不好.]
+LB[qg:a][pd:b]
+(;W[qg]N[长,正着(a)];B[oe];W[pg];B[od];W[lc];B[kc];W[of];B[rc];W[rg];B[mc];W[nc]
+;B[mb];W[nd];B[rb])
+(;W[pd]N[反打,错误 (b)];B[qg];W[qc];B[qf];W[qb];B[mg]C[黑25是千金之拐. 白角地所得有限, 而黑外势强壮.
+])))
+(;B[pf]N[靠,战斗(b)];W[pe];B[qe];W[pg];B[of];W[qg];B[oe];W[od];B[pd];W[og];B[ng]
+;W[nf];B[pb];W[mg];B[nh];W[mh];B[ni];W[pj];B[nk]C[战斗会继续...]))
+(;B[qg]N[拆二,错误 (b)];W[lc];B[kc];W[lg];B[kg];W[kh]C[白连扳后, 黑的厚势不复存在.])))
+(;B[mc]C[白可以a位退, 也可以b位长.
+
+a1 - 退.
+b2 - 长.]N[扳(b)]LB[nd:a][me:b]
+(;W[nd]N[退(a)])
+(;W[me]N[长(b)];B[nc];W[od]))
+(;B[me]C[白一般在a位退, 有时也可以b位飞压.
+
+a1 - 退.
+b2 - 飞压.]N[扳头(c)]LB[nd:a]
+[pe:b]
+(;W[nd]N[退(a)];B[le]C[白a位飞压正着, b位飞出不好.
+
+a1 - 飞压, 正着.
+b2 - 飞出, 不好.]
+LB[pe:a][of:b]
+(;W[pe]N[飞压,正着(a)];B[qe];W[pg];B[pf];W[of];B[qf];W[qg];B[og];W[nf];B[oh];W[qi]
+C[黑可以在a位尖靠取角, 但b位尖压似乎更强烈.
+
+a1 - 尖压.
+b2 - 尖靠, 强烈.]LB[pc:a]
+[pi:b]
+(;B[pc]N[尖靠(a)];W[mg])
+(;B[pi]N[尖压(b)];W[rh];B[rg];W[qh];B[mg]C[白a扳先安顿自己是正着, b位飞太早.
+
+a1 - 扳, 正着.
+b2 - 飞, 不行.]
+LB[lc:a][qb:b]
+(;W[lc]C[白24仅此一手.]N[扳,正着(a)];B[kc];W[qb];B[rb]
+(;W[pb];B[ra];W[mb]C[白30虎是可能的应手.];B[lb];W[mc]C[黑a位粘正着, 脱先不行.
+
+a1 - 粘, 正着.
+b2 - 脱先, 错误.]
+LB[rf:a][dp:b]
+(;B[rf]N[粘,正着(a)];W[pj];B[mh]C[接下来白会在右边开拆, 而黑在a位补.
+]LB[jd:a]
+;W[qm];B[jd]C[黑好])
+(;N[黑脱先,错误 (b)];W[rc];B[qc];W[sb];B[rd];W[sc]C[黑必须在a位虎, b打不行.
+
+a1 - 虎, 正着.
+b2 - 打, 不行.]
+LB[sf:a][sd:b]
+(;B[sf]N[虎,正着(a)])
+(;B[sd]N[打,错误 (b)];W[rf]C[黑做不出两眼.])))
+(;W[rc]N[扳无理];B[pd];W[oe];B[pb]))
+(;W[qb]N[飞,不行 (b)];B[pc];W[pb];B[od]C[如果白a虎, 仅仅丢弃三子, 如果b位接, 将会全军覆没.
+
+a1 - 虎, 正着.
+b2 - 接, 不行.]
+LB[nb:a][ne:b]
+(;W[nb]N[虎,正着(a)];B[ne])
+(;W[ne]N[接,不行(b)];B[nc];W[ob];B[mc];W[lc];B[lb];W[kc];B[mb]C[对杀黑胜.
+]))))
+(;W[of]N[飞出,不好(b)];B[qg]C[白面临困境. 黑左右都展开得很好, 而白还得为生存而奔波. 
+
+如果当初白直接在8位大跳, 而黑在9位拆二, 那么白绝对不会再在4位靠加强黑3一子, 白一般会在a位夹黑3一子.
+]
+LB[id:a]))
+(;W[pe]N[飞压(b)];B[qe]C[白一般在a位长, 有时也有在b位跳的.
+
+a1 - 长.
+b2 - 跳.]
+LB[pf:a][pg:b]
+(;W[pf]N[长(a)];B[qf];W[pg];B[nd];W[qg];B[mc];W[od];B[qb]C[白接下来可以在右边拆.
+])
+(;W[pg]AB[cp][eq][ce]AW[dc][oq][qp]C[1967年第六界名人赛决赛第三盘. 白\: 石田芳夫本因坊, 黑\: 林海峰名人.
+]
+N[跳(b)];B[qf];W[mc]C[黑在a位大飞罩, 如果b位冲....
+
+a1 - 大飞罩.
+b2 - 冲.]LB[fd:a]
+[pf:b]
+(;B[fd]C[白a尖顶正着, b位靠压会引起不利的战斗.
+
+a1 - 尖顶, 正着.
+b2 - 靠压, 不好.]
+N[大飞罩(a)]LB[ed:a][de:b]
+(;W[ed]C[1967年第六界名人赛决赛第三盘(续).]N[尖顶,正着(a)];B[ee];W[de];B[df];W[dd]
+;B[ef];W[cf];B[be];W[bf];B[bc];W[cc];B[ch];W[bd];B[cg];W[ae];B[jp];W[dm];B[ge];W[le]
+;B[pf];W[ne];B[mq];W[eo];B[gp];W[go];B[hp];W[cn];B[do];W[dn];B[ck];W[dk];B[dj];W[ej]
+;B[ek];W[dl];B[fj];W[ei];B[gk];W[cj];B[di];W[bj];B[qn];W[ql];B[on];W[nq];B[mp];W[qb]
+;B[qi];W[pi];B[qh];W[pj];B[pp];W[qq];B[mf];W[ke];B[nd];W[jc];B[qj];W[ol];B[nj];W[nk]
+;B[qo];W[po];B[op];W[np];B[oo];W[pq];B[mj];W[mk];B[mo];W[lj];B[li];W[ki];B[mh];W[kj]
+;B[od];W[nc];B[pc];W[pb];B[bo];W[lh];B[mi];W[no];B[nn];W[pm];B[pn];W[mm];B[qk];W[pk]
+;B[nr];W[or];B[mr];W[rp];B[mn];W[fl];B[fk];W[hh];B[gh];W[mg];B[ng];W[lg];B[nf];W[ph]
+;B[nh];W[dq];B[ep];W[dp];B[co];W[cq];B[bq];W[br];B[ar];W[dr];B[cs];W[rk];B[hg];W[ig]
+;B[ih];W[hi];B[hf];W[qg];B[rg];W[rj];B[rh];W[jh];B[jd];W[kd];B[ic];W[jb];B[ib];W[id]
+;B[rm];W[rl];B[fo];W[en];B[if];W[jg];B[fb];W[bn];B[cr];W[rc];B[bk];W[sf];B[rd];W[sd]
+;B[se];W[re];B[rf];W[se];B[qc];W[sc];B[oi];W[ak];B[ca];W[eb];B[ea];W[fc];B[gb];W[gc]
+;B[hc];W[ia];B[hd];W[bb];B[gn];W[kn];B[ij];W[ii];B[ln];W[lm];B[ko];W[jn];B[jl];W[in]
+;B[il];W[kl];B[bg];W[cd];B[bi];W[ao];B[bp];W[bl];B[ro];W[os];B[sp];W[sq];B[so];W[rr]
+;B[rb];W[ra];B[ha];W[ja];B[ba];W[fa];B[da];W[gi];B[fi];W[gl];B[hl];W[oj];B[oh];W[ie]
+;B[el];W[fm];B[io];W[hn];B[ho];W[jj];B[sl];W[jk];B[hk];W[ns];B[ms];W[lf];B[jf];W[je]
+;B[gd];W[ec];B[fn];W[hm];B[of];W[kf];B[nm];W[nl];B[ci];W[cl];B[ai];W[ag];B[ah];W[cb]
+;B[hb];W[an];B[bs];W[ap];B[aq];W[af]C[最后黑赢6目.])
+(;W[de]C[这个战斗对白不利.]N[靠压,不好 (b)];B[dd];W[ed];B[cd]C[黑会将这个战斗波及到右边, 黑可以伺机在a位粘.
+]
+LB[le:a]))
+(;B[pf]N[冲(b)];W[ne])))))
+(;W[qf]C[白4反夹对角上黑子施加压力, 借此安顿白2一子.黑的应手是a位靠压, 当然b位尖出也是可能的.
+
+a1 - 靠压.
+b2 - 尖出.]
+N[一间反夹 (i)]LB[od:a][pe:b]
+(;B[od]C[白的应手有a位长或b位扳.
+
+a1 - 长.
+b2 - 扳.]N[靠压(a)]LB[pc:a][nd:b]
+(;W[pc]N[长(a)];B[pd];W[qc]C[黑的应手有a位长, b位外扳或c位内扳.
+
+a1 - 长.
+b2 - 外扳.
+c3 - 内扳.]
+LB[nd:a][nc:b][rc:c]
+(;B[nd]C[白接下来可以a位飞, 也可以b位拆.
+
+a1 - 飞.
+b2 - 拆.]N[长(a)]LB[mb:a]
+[pj:b]
+(;W[mb]N[飞(a)];B[qj])
+(;W[pj]C[如果白想阻止黑在右边夹击, 那么白可以先在10位拆.
+]N[拆三(b)];B[nc];W[rd]
+;B[re];W[rc];B[qe]))
+(;B[nc]N[外扳(b)];W[nb];B[mb];W[mc];B[nd];W[lb];B[md];W[ma];B[qj])
+(;B[rc]C[黑9内扳是重视实利的下法, 棋形有点薄.
+]N[内扳(c)];W[rb];B[rd];W[lb]))
+(;W[nd]C[白6扳有点贪, 既想出头, 又想活角.
+]N[扳(b)];B[oe];W[pc];B[qe]C[白再在a位长正着, b位贴长不好, 导致恶形.
+
+a1 - 长, 正着.
+b2 - 贴长, 不好.]
+LB[qc:a][ne:b]
+(;W[qc]C[黑接下来可以a长联络或b位远夹.
+
+a1 - 长.
+b2 - 远夹.]N[长,正着(a)]LB[ne:a]
+[qj:b]
+(;B[ne]C[白a位拆三, 有时侯也有在b位远拆的.
+
+a1 - 拆三.
+b2 - 远拆.]N[压(a)]LB[pj:a]
+[pk:b]
+(;W[pj]N[拆(a)];B[nc]C[黑的后续手段...];W[nb];B[mc];W[mb];B[lb];W[kc];B[lc])
+(;W[pk]AB[po][cp]AW[de][pq]C[1972年第九届十杰战第三局. 白\: 石田芳夫, 黑\: 岩田正达. 
+
+白12远拆兼夹. 
+]
+N[远拆(b)];B[pi]C[黑13有点让白惊讶, 因为白以为黑会在a位附近夹击.
+]LB[nq:a];W[np]))
+(;B[qj]N[远夹(b)];W[ne]C[黑11防止白4在右边开拆. 白12贴长当然.
+];B[og];W[nf];B[pg]
+;W[id]))
+(;W[ne]N[贴长,不好(b)];B[nf];W[me];B[qc]C[黑13长形之急所, 白失去根基.])))
+(;B[pe]N[尖出(b)];W[pf]C[黑a扳头是正着, b位长软弱.
+
+a1 - 扳头, 正着.
+b2 - 长, 软弱.]
+LB[of:a][oe:b]
+(;B[of]N[扳头,正着(a)];W[og];B[oe];W[ph]C[现在黑应当考虑怎样处理角地. a位飞比较坚实, 但白可以在黑3一子底下活动. 黑b尖也是可能的应手.
+
+a1 - 飞.
+b2 - 尖.]
+LB[pb:a][mc:b]
+(;B[pb]N[飞(a)];W[lb])
+(;B[mc]N[尖(b)];W[rc];B[rd];W[qb]C[黑已经无法净吃白子, 可以选择a挤或b尖. 白可以劫活或向中央出头.
+
+a1 - 挤.
+b2 - 尖.]
+LB[qc:a][nb:b]
+(;B[qc]C[白a虎急所, b位粘白净死.
+
+a1 - 虎, 正着.
+b2 - 粘, 不行.]N[挤(a)]LB[ra:a]
+[rb:b]
+(;W[ra]C[黑a打成劫, b位点的话, 白净活.
+
+a1 - 打, 劫.
+b2 - 点, 恶手.]N[虎,正着(a)]
+LB[sc:a][sb:b]
+(;B[sc]N[打,劫(a)];W[sb])
+(;B[sb]N[点,错误 (b)];W[sc]))
+(;W[rb]N[粘,错误(b)];B[nb]C[白净死.]))
+(;B[nb]N[尖(b)];W[ob];B[pc];W[pb];B[ra]C[黑19点试图破白眼位, 但白可以走a位靠, 因为b压和c顶都是先手. 中央的战斗将决定白的死活.
+]
+LB[ne:a][nc:b][od:c])))
+(;B[oe]C[黑7缺乏战斗的勇气.]N[长,不好 (b)];W[of];B[ne]C[白可以在a位单拆, 也可以b位点活角.
+
+a1 - 拆四.
+b2 - 点, 活角.]
+LB[qj:a][rc:b]
+(;W[qj]N[拆四(a)];B[mc]C[白a位是先手, 而且还可以b位托减小角地, 所以黑棋不一定有利.
+]
+LB[kc:a][rd:b])
+(;W[rc]N[点,活角(b)];B[rd];W[qc];B[mc];W[nb];B[pj];W[mg]))))
+(;W[qg]C[白征子有利时才能二间反夹, 黑的应手有a位压或b位尖.
+
+a1 - 压.
+b2 - 尖.]
+N[二间反夹,有征子 (j)]LB[od:a][pe:b]
+(;B[od]C[白可以在a位拆二, 局部受损. 因为白征子有利, 所以可以b位挖, 当然也能在c位扳.
+
+a1 - 拆二, 局部受损.
+b2 - 挖.
+c3 - 反扳.]
+N[靠压(a)]LB[qj:a][pd:b][nd:c]
+(;W[qj]C[白6拆对右下有帮助, 但局部来说, 白很损.
+]N[拆二(a)];B[pc])
+(;W[pd]C[黑因为征子不利只能在a位打, 在b位打不行.
+
+a1 - 外打, 正着.
+b2 - 内打, 不行.]
+N[挖(b)]LB[pe:a][pc:b]
+(;B[pe]N[外打,正着(a)];W[pc];B[re]C[白接下来可以a位长, b位靠或c位跳, d位打则是恶手.
+
+a1 - 长.
+b2 - 靠.
+c3 - 跳.
+d4 - 打, 恶手.]
+LB[nc:a][md:b][mc:c][nd:d]
+(;W[nc]C[黑的应手有a位飞或b位贴长, c位挡不好.
+
+a1 - 飞.
+b2 - 贴长.
+c3 - 挡, 不好.]
+N[长(a)]LB[me:a][nd:b][qc:c]
+(;B[me]N[飞(a)];W[rc]C[白12活角后, 下一步a位跨断相当严厉, 黑也许应该马上在b位补.
+]
+LB[ne:a][og:b])
+(;B[nd]N[贴长(b)];W[md];B[me];W[mc]C[黑a位粘本手, b位挡下过分, 因为白a位断严厉.
+
+a1 - 粘, 本手.
+b2 - 挡下, 不行.]
+LB[le:a][lc:b]
+(;B[le]C[白a位飞本手, b位拆也有可能, 但要付出代价.
+
+a1 - 飞, 本手.
+b2 - 拆, 重视右边.]
+N[粘,本手(a)]LB[kb:a][pk:b]
+(;W[kb]N[飞,本手(a)];B[pj]C[定式])
+(;W[pk]N[拆三,重视右边(b)];B[lc];W[rb];B[rc];W[sb];B[mb]C[白只有a位长, b位挡不行.
+
+a1 - 长, 本手.
+b2 - 挡, 不行.]
+LB[qb:a][nb:b]
+(;W[qb]C[黑a虎成先手.]N[长,正着(a)]LB[kb:a])
+(;W[nb]N[挡,错误 (b)];B[qb];W[qc];B[pb]C[白死定.])))
+(;B[lc]N[挡下,错误(b)];W[le];B[ne];W[lb];B[kb];W[ma];B[jc];W[rc];B[pj];W[oh]))
+(;B[qc]N[挡,不好(c)];W[oe];B[pf];W[ne]))
+(;W[md]C[黑的应手有a位顶或b位并.
+
+a1 - 顶.
+b2 - 并.]N[靠(b)]LB[nd:a][le:b]
+(;B[nd]C[白的应手有a位挡和b位长.
+
+a1 - 挡.
+b2 - 长.]N[顶(a)]LB[nc:a][mc:b]
+(;W[nc]N[挡(a)];B[me];W[mc];B[le];W[kb])
+(;W[mc]N[长(b)];B[me]C[白接下来可以a位飞,  一般只有在右边显得很重要时才在b位拐.
+
+a1 - 飞.
+b2 - 拐, 重视右边.]
+LB[lb:a][lc:b]
+(;W[lb]C[黑接下来可以a位粘或b位夹击.
+
+a1 - 粘.
+b2 - 夹击.]N[飞(a)]LB[le:a][pj:b]
+(;B[le]C[黑15粘后, a位挡和b位飞见合.]N[粘(a)]LB[qc:a][jc:b];W[pk])
+(;B[pj]C[黑15夹击全然不顾a位的断点, 所以白a断当仁不让.
+]N[夹击(b)]LB[le:a];W[le]
+;B[mf];W[ke]))
+(;W[lc]C[黑a位长取势, b位粘想取先手在右边动手.
+
+a1 - 长.
+b2 - 粘.]N[拐,重视右边(b)]
+LB[kd:a][le:b]
+(;B[kd]N[长(a)];W[kc];B[jd];W[pk])
+(;B[le]N[粘(b)];W[kc];B[pj]))))
+(;B[le]N[并(b)];W[oe]C[黑可以a位长或b位反打.
+
+a1 - 长.
+b2 - 反打.]LB[pf:a][of:b]
+(;B[pf]N[长(a)];W[mf])
+(;B[of]N[反打(b)];W[ne];B[nf];W[pf];B[qe];W[ph];B[mc];W[nc];B[qc];W[lb]C[这个结果需要从全局来判断优劣.
+])))
+(;W[mc]C[黑a位虎本手, b位挡下不好.
+
+a1 - 虎, 本手.
+b2 - 挡下, 不好.]N[跳(c)]
+LB[ne:a][lc:b]
+(;B[ne]N[虎,正着(a)];W[lc];B[kd];W[kc];B[jd];W[pk];B[jc])
+(;B[lc]N[挡下,不好 (b)];W[oe]C[黑只好a位长, b位长不行.
+
+a1 - 长, 本手.
+b2 - 长, 不行.]
+LB[pf:a][nd:b]
+(;B[pf]N[长,本手(a)];W[nd]C[白拔一子取得主动.])
+(;B[nd]N[长,错误 (b)];W[md];B[ne];W[me]C[白16出头重要.
+]LB[pf:a])))
+(;W[nd]C[白10打是典型的俗手, 白很容易变成愚形.
+]N[打,错误 (d)];B[oe];W[ne];B[nf]
+;W[me];B[qc];W[mc]C[接下来黑a虎比较厚实.]LB[og:a]))
+(;B[pc]N[内打,错误 (b)];W[pe];B[nc];W[qc];B[ob]C[白一般在a位长, b位打成劫. 
+
+a1 - 长.
+b2 - 打, 劫.]
+LB[qb:a][pb:b]
+(;W[qb]C[如果黑将来在a位靠, 白只能在b位挡忍耐.
+]N[长(a)]LB[pf:a][qf:b])
+(;W[pb]N[打,劫(b)])))
+(;W[nd]N[扳(c)];B[oe];W[pc];B[qc];W[ne]C[黑a位靠压正着, b位扳头不行.
+
+a1 - 靠压, 正着.
+b2 - 扳头, 不行.]
+LB[pg:a][nf:b]
+(;B[pg]C[白接下来可以a位尖或b位靠压.
+
+a1 - 尖.
+b2 - 靠压.]N[靠,正着(a)]LB[mf:a]
+[le:b]
+(;W[mf]N[尖(a)];B[ph])
+(;W[le]N[靠压(b)];B[ke];W[lf];B[kd];W[qh];B[nf];W[md];B[jg];W[lh]))
+(;B[nf]N[扳头,错误 (b)];W[mf]C[黑a断不好, b位长也许要好点.
+
+a1 - 断, 不好.
+b2 - 长.]
+LB[me:a][ng:b]
+(;B[me]N[断,不好(a)];W[of]C[黑可以试一下a打或b长.
+
+a1 - 打.
+b2 - 长.]LB[nc:a]
+[ng:b]
+(;B[nc]N[打(a)];W[ng];B[md];W[nf];B[pd];W[mc];B[nb];W[mb];B[pb];W[kc]C[白a位打是劫材, 黑需要处理上边三子.]
+LB[na:a])
+(;B[ng]N[长(b)];W[pd];B[pe];W[qe];B[pf];W[pg];B[og];W[qf];B[of];W[nc]C[接下来a托与b扳见合, 黑大败.
+]
+LB[lc:a][qb:b]))
+(;B[ng]N[长(b)];W[le];B[mg];W[lg];B[lh];W[kg]C[白好形.]))))
+(;B[pe]N[尖(b)];W[qj]C[黑接下来可以a位尖顶或b位飞罩.
+
+a1 - 尖顶.
+b2 - 飞罩.]
+LB[pc:a][nd:b]
+(;B[pc]N[尖顶(a)])
+(;B[nd]C[白可以在a位飞作活, 上边的门b位还开着.
+]N[飞罩(b)]LB[qb:a][lb:b])))
+(;W[pg]C[白4选择二间高夹还是二间低夹, 对以后的变化有很大的不同.  黑的应手还是a位靠压或b位尖.
+
+a1 - 靠压.
+b2 - 尖.
+]
+N[二间高夹 (k)]LB[od:a][pe:b]
+(;B[od]C[白a位挖正着, b位扳是恶手.
+
+a1 - 挖, 正着.
+b2 - 扳, 恶手.]N[靠压(a)]
+LB[pd:a][nd:b]
+(;W[pd]N[挖,正着(a)];B[pe];W[pc]C[黑的应手有a位挡或b位虎. 黑a挡是白4二间高夹下特有的走法(二间低夹时黑只能在b位虎). 黑c粘求简明, 但要付出代价.
+
+a1 - 挡.
+b2 - 虎.
+c3 - 粘, 简明.]
+LB[qc:a][re:b][oe:c]
+(;B[qc]C[白应该在a位扳, b位打是过去的定式. 
+
+a1 - 扳, 正着.
+b2 - 打, 老定式.]
+N[挡(a)]LB[qb:a][oe:b]
+(;W[qb]C[黑一般在a位虎, b位挡也可以吧?
+
+a1 - 虎, 正着.
+b2 - 挡, 还可以.]N[扳(a)]
+LB[qf:a][rb:b]
+(;B[qf]N[虎(a)]
+(;W[rb];B[nd];W[nb];B[rh])
+(;W[md];B[nd]
+(;W[mc];B[nc];W[nb];B[mb];W[ob];B[me];W[lc];B[kc];W[lb];B[kb];W[ma];B[le];W[qg]
+;B[of];W[qk]C[定式])
+(;W[nc];B[me];W[mc];B[le];W[rb];B[pj];W[qg];B[of];W[og];B[ng];W[nh];B[mg];W[rf]
+;B[mh];W[re];B[qe])))
+(;B[rb]N[挡,可以 (b)];W[qe];B[oe];W[pb];B[re];W[qf];B[rf];W[rg];B[qh];W[qg];B[ra]
+C[黑角里做活了, 上面的白也需要马上处理. 白可以a位靠或b位跳.
+
+a1 - 靠.
+b2 - 跳.
+]
+LB[md:A][mc:B]
+(;W[md]N[靠(a)];B[me];W[mc];B[lc];W[lb];B[kb];W[nb];B[la];W[mb];B[le];W[jc];B[kc]
+;W[nf];B[ne]C[结果白稍好? 我看未必.])
+(;W[mc]C[黑a挡正着, b位压不好.
+
+a1 - 挡, 正着.
+b2 - 压, 不好.]N[跳(b)]LB[lc:a]
+[md:b]
+(;B[lc]N[挡,正着(a)];W[md];B[me];W[lb];B[kb];W[nb];B[la];W[mb];B[le];W[jc];B[kc]
+;W[nf];B[ne])
+(;B[md]C[黑23看上去似乎很好, 实际上不好.]N[压,不好 (b)];W[lb]))))
+(;W[oe]N[打,老定式(b)];B[pf];W[nd];B[of]C[白可以a位虎或b位尖虎. b位尖虎的目的是不然黑顺势在右边走厚.
+
+a1 - 虎.
+b2 - 尖虎.]
+LB[nf:a][me:b]
+(;W[nf]N[虎(a)];B[og]C[这个结果被认为是黑有利.])
+(;W[me]N[尖虎(b)];B[qg])))
+(;B[re]C[白的应手有a位靠或b位打.
+
+a1 - 靠.
+b2 - 打.]N[虎(b)]LB[md:a][nd:b]
+(;W[md]N[靠(a)];B[le]C[白a扳正着, b位打在白4二间高夹的情况下不能成立.
+
+a1 - 扳, 正着.
+b2 - 打, 错误.]
+LB[lc:a][oe:b]
+(;W[lc]N[扳,正着(a)];B[kc];W[mc];B[jd])
+(;W[oe]N[打,错误(b)];B[of];W[ne];B[pf]))
+(;W[nd]C[白10也是特例, 一般情况下这是恶手.
+]N[打(b)];B[oe];W[md]C[黑可以a位立或b位扳头.
+
+a1 - 立.
+b2 - 扳头.]
+LB[le:a][me:b]
+(;B[le]C[白可以a位跳或b位跳.
+
+a1 - 跳.
+b2 - 跳.]N[立(a)]LB[mf:a][nf:b]
+(;W[mf]N[跳(a)];B[me];W[ne];B[nf]C[白只能a位扳, b位长出不行.
+
+a1 - 扳, 正着.
+b2 - 长, 不行.]
+LB[lc:a][mg:b]
+(;W[lc]N[扳,正着(a)];B[kc];W[mb];B[jd]C[黑最好不要在a位打, 帮白补断.]LB[lb:a])
+(;W[mg]C[白18不是先手, 所以不行.]N[长,错误 (b)];B[lc]C[如果白胆敢a位打, 黑b位反打太舒服了.
+]
+LB[of:a][nc:b];W[mb]C[所以白只有20位跳补断.];B[og];W[lb];B[kb];W[rb];B[ph]))
+(;W[nf]N[跳(b)];B[ne];W[me];B[mf];W[lc];B[lf];W[ng];B[qc];W[mb]))
+(;B[me]C[白可以选择a位冲或b位扳.
+
+a1 - 冲.
+b2 - 扳.]N[扳头(b)]LB[ne:a][lc:b]
+(;W[ne]N[冲(a)];B[nf];W[mf];B[le]
+(;W[lc];B[kc];W[mb];B[jd])
+(;W[mg]N[长出不利];B[lc];W[mb];B[og];W[lb];B[kb];W[rb];B[ph]C[黑好]))
+(;W[lc]N[扳(b)];B[ne];W[kd];B[le];W[jc]C[如果a再挡, 那么白可以b位扳.
+]LB[qc:a]
+[qb:b];B[qc];W[qb];B[rb];W[pb]C[两分]))))
+(;B[oe]N[粘,简明(c)]
+(;W[qe]C[黑可以A位打或B位贴.
+
+A1 - 打.
+B2 - 贴.]N[断好]LB[qf:A][qc:B]
+(;B[qf]N[打(a)];W[re];B[qg];W[rd];B[ph])
+(;B[qc]N[贴(b)];W[qb];B[rb];W[pb];B[re];W[qf];B[rf];W[rg];B[qh];W[qg];B[ra]C[黑角里已经安顿好了, 白的应手有a位靠或b位跳. 变化请见2-1-8-11-1-1-1-2.
+]
+LB[md:a][mc:b]
+(;W[md]C[碰好手];B[me];W[mc];B[lc];W[lb];B[kb];W[nb];B[la];W[mb];B[le];W[jc];B[kc]
+;W[nf];B[ne]C[白稍好])))
+(;W[qc]N[爬角缓，但也可行];B[re];W[rc]C[两分])))
+(;W[nd]C[高夹的情况下, 白6扳出毫无意义.]N[扳,错误 (b)];B[oe];W[pc]C[黑可以a位拐头, 也可以b位挡.
+
+a1 - 拐.
+b2 - 挡.]
+LB[ne:a][qc:b]
+(;B[ne]C[白可以走a位挡或b位冲, 总之, 白6扳已经造成损失.
+
+a1 - 挡.
+b2 - 冲.]N[拐(a)]
+LB[qc:a][pd:b]
+(;W[qc]N[挡(a)];B[qf];W[qg];B[nc];W[nb];B[mc];W[mb];B[lb];W[kc];B[lc];W[dp]C[白脱先...]
+;B[rg];W[rh];B[rc];W[rb];B[re];W[sc]C[白26打必不可少. 如果征子有利, 白可以在a位断, 否则b位觑.
+]
+LB[qh:a][qi:b])
+(;W[pd]N[冲(b)];B[pe];W[qe];B[re];W[qf];B[qc];W[qb];B[rb];W[pb];B[rf];W[rg];B[qh]
+;W[qg];B[ra]C[这个次序是一本道. 很明显, 白6在a位比较好, 现在上方的白很难安定.]LB[md:a]
+;W[lb];B[kb];W[kc];B[lc];W[jb];B[mb];W[ka];B[nc]C[白被吃. 接下来的变化表明白的努力是徒劳的.
+]
+;W[nb];B[mc];W[ma];B[pa]C[a和b见合, 白接不归.
+]LB[na:a][ob:b]))
+(;B[qc]N[挡(b)];W[ne];B[qf]C[黑11补断后, 下一手可以瞄着a位的扳和b位的断.
+]LB[nf:a]
+[nc:b])))
+(;B[pe]C[白a飞象步是正着, b位尖缓.
+
+a1 - 象步, 正着.
+b2 - 尖, 缓手.
+]N[尖(b)]
+LB[me:a][nd:b]
+(;W[me]C[白6象步是安顿自己的手筋. 黑a长正着, b位穿象眼上当, c位靠压也不好.
+
+a1 - 长, 正着.
+b2 - 穿象眼, 上当.
+c3 - 靠压, 不好.]
+N[象步,正着(a)]LB[le:a][nd:b][og:c]
+(;B[le]N[长,正着(a)];W[mf];B[pc];W[lf])
+(;B[nd]N[穿象眼,错误 (b)];W[md];B[nc];W[mc];B[nb];W[ne];B[mb];W[lc];B[oe];W[ng]
+C[在布局阶段下成这样, 相对来说白有利.
+])
+(;B[og]N[靠压,不好 (c)];W[oh];B[of];W[md];B[ph];W[pi];B[qh];W[qi];B[rg];W[rh];B[qg]
+;W[nh]C[下一手黑可能会在a位靠压出头, 但允许白b位拐头不好.
+]LB[mf:a][le:b])
+(;B[md]C[小林光一对加藤正夫]N[冲];W[nd];B[of];W[ne];B[og];W[jd];B[ke];W[fc];B[pb]
+;W[mg];B[hd]))
+(;W[nd]N[尖,不好 (b)];B[of]C[黑7尖出以后, 明显白6应该在a位更好.
+]LB[md:a];W[le]
+;B[ke];W[me];B[pc];W[kd];B[jd];W[kc];B[jc];W[lb];B[kb];W[lc]C[这个变化跟变化2-1-8-11-2-3一样, 白不太有利.
+])))
+(;C[如果白脱先, 黑可以a位尖顶或b位靠压.
+
+a1 - 尖顶.
+b2 - 靠压.]N[白脱先(l)]LB[pc:a]
+[od:b]
+(;B[pc]C[白的应手有a位并或b位肩冲.
+
+a1 - 并.
+b2 - 肩冲.]N[尖顶(a)]LB[od:a][pe:b]
+(;W[od]N[并(a)];B[pf]C[白的应手有a位尖或b位肩冲.
+
+a1 - 尖.
+b2 - 肩冲.]LB[ne:a]
+[me:b]
+(;W[ne]C[黑的应手有a位跳, b位飞封或c位拆.
+
+a1 - 跳.
+b2 - 尖.
+c3 - 拆.]N[尖(a)]
+LB[ph:a][mf:b][qi:c]
+(;B[ph]C[如果征子有利, 白可以b位靠压, 否则, 只好a尖
+
+a1 - 尖, 征子白不利.
+b2 - 靠压, 征子白有利.]
+N[跳(a)]LB[mf:a][le:b]
+(;W[mf]N[尖,征子白不利(a)];B[id])
+(;W[le]C[白征子有利才能靠压.]N[靠压,征子白有利 (b)];B[ke];W[kd];B[lc];W[je];B[kf]
+;W[lf];B[jd];W[kc]C[如果白征不掉黑10和14两子, 白可以在a位挡打, 否则, 只好b位尖.
+
+a1 - 挡打, 征子黑有利.
+b2 - 尖, 征子白有利.]
+LB[jc:a][mb:b]
+(;B[jc]C[黑一定要征子有利.]N[挡打,征子黑有利 (a)];W[kb];B[lb];W[jb];B[ib];W[ic]
+;B[id];W[ie];B[hd];W[kg])
+(;B[mb]N[尖,征子白有利(b)];W[jc];B[ob]
+(;W[lg]C[黑不行.])
+(;W[id]))))
+(;B[mf]C[白a飞正着, b位贴长让黑占了先机.
+
+a1 - 飞, 正着.
+b2 - 贴长,  不好.]N[飞封(b)]
+LB[og:a][nf:b]
+(;W[og]N[飞,正着(a)];B[pg]C[白a长正着, b位靠会导致恶形或成劫.
+
+a1 - 长, 正着.
+b2 - 靠, 不好.]
+LB[oh:a][mg:b]
+(;W[oh]N[长,正着(a)];B[qi];W[mg];B[lg];W[mh]C[两分])
+(;W[mg]N[靠需劫材有利(b)];B[lg]C[白a长形恶, b位虎成劫.
+
+a1 - 长, 恶形.
+b2 - 虎, 成劫.]
+LB[mh:a][nf:b]
+(;W[mh]N[长,恶形(a)];B[nf];W[of];B[pe];W[oe];B[oh];W[ng];B[lf])
+(;W[nf]N[虎,劫(b)];B[mh];W[nh]C[白劫材有利不坏])))
+(;W[nf]N[贴长,错误 (b)];B[mg];W[ng];B[mh]C[如果白a跨, 黑可以b位夹忍让.
+]LB[qe:a]
+[qf:b]))
+(;B[qi]C[黑8有点松, 但可下.]N[拆(c)];W[id];B[lf];W[ng]))
+(;W[me]N[肩冲(b)];B[le];W[mg]C[黑a长急所, b位跳缓, 白可以安定.
+
+a1 - 长, 急所.
+b2 - 跳, 缓.]
+LB[lf:a][ph:b]
+(;B[lf]N[长,正着(a)];W[mf];B[md];W[of];B[pe];W[oe];B[ph];W[lg])
+(;B[ph]N[跳,不好 (b)];W[lf])))
+(;W[pe]C[白征子要有利,黑a团正着, b位挡缺乏血气.
+
+a1 - 团, 正着.
+b2 - 挡, 软弱.]
+N[肩冲(b)]LB[pd:a][qe:b]
+(;B[pd]N[团,正着(a)];W[oe]C[黑可以a位冲或b位挡.
+
+a1 - 冲.
+b2 - 挡.]LB[od:a][qe:b]
+(;B[od]N[冲(a)];W[qe];B[nd];W[qi])
+(;B[qe]C[a和b见和.
+
+a1 - 接.
+b2 - 跳.]N[挡(b)]LB[od:a][pg:b]
+(;W[od]N[接(a)];B[pg])
+(;W[pg]N[跳(b)];B[od])))
+(;B[qe]N[挡,不好(b)];W[pb];B[qb];W[pd];B[qc];W[pf];B[qg])))
+(;B[od]C[对付黑的靠压, 白征子有利时可以b位挖, 否则只能a位长, c位扳出不好.
+
+a1 - 长.
+b2 - 挖, 有征子.
+c3 - 扳, 不好.]
+N[靠压(b)]LB[pc:a][pd:b][nd:c]
+(;W[pc]N[长(a)];B[pd];W[qc];B[nc];W[nb]C[黑可以a位退, 也可以b位连扳.
+
+a1 - 退.
+b2 - 连扳.]
+LB[mc:a][mb:b]
+(;B[mc]N[退(a)];W[mb];B[lb];W[kc];B[lc])
+(;B[mb]C[黑连扳可获先手.]N[连扳(b)];W[mc];B[nd];W[lb]C[接下来黑的应手有a位打或b位扳, 但现在就走, 就是浪费先手了.  如果抢先手不重要, 就不好选择这个变化. 
+]
+LB[lc:a][rc:b]))
+(;W[pd]C[白必须征子有利才能在5位挖.]N[挖,有征子 (b)];B[pe];W[pc]C[黑可以a位长或b位挡下.
+
+a1 - 长.
+b2 - 挡下.]
+LB[nd:a][qc:b]
+(;B[nd]C[白可以a位挡或b位断. b位断是准备弃三子, 经营右边.
+
+a1 - 挡.
+b2 - 断, 重视右边.]
+N[长(a)]LB[qc:a][qe:b]
+(;W[qc]N[挡(a)];B[re];W[rb]C[如果白a位立的话, 黑b挡是先手, 这对白来说有点痛苦. 如果白c位打的话又帮黑消除味道. 所以白11尖角正着.
+]
+LB[rc:a][nc:b][rd:c])
+(;W[qe]N[断(b)];B[qc];W[qb];B[rb];W[re];B[pb];W[rc];B[qa];W[rd];B[qb];W[pf];B[oe]
+;W[qi]C[白破坏黑右边成势的意图，但角上损地]))
+(;B[qc]C[白a跳可以救出白三子, 如果b位断, 则是弃子取势.
+
+a1 - 跳.
+b2 - 断, 重视右边.]
+N[挡下(b)]LB[mc:a][qe:b]
+(;W[mc]N[跳(a)];B[ne];W[lc];B[kd];W[kc];B[jd];W[ic];B[qj]C[黑取得了大模样, 但多花了两手棋.
+])
+(;W[qe]N[断,重视右边(b)];B[oe];W[qb];B[rb];W[re];B[pb];W[rc];B[qa];W[rd];B[qb];W[qh]
+;B[nc])))
+(;W[nd]C[白5不好, 白形恶.]N[扳,不好(c)];B[oe];W[pc];B[qc];W[ne];B[nf]C[白必须在a位愚形出头, b位扳不行.
+
+a1 - 愚形曲, 正着.
+b2 - 扳, 不行.]
+LB[me:a][mf:b]
+(;W[me]N[曲,正着(a)];B[of])
+(;W[mf]N[扳,错误 (b)];B[me]C[白只有在a位接, b位打无理手.
+
+a1 - 接, 正着.
+b2 - 打, 无理.]
+LB[nc:a][of:b]
+(;W[nc]N[接,正着(a)];B[of];W[lc];B[lf];W[kc];B[mg]C[中央拔花, 黑大优.])
+(;W[of]C[白13打是大随手.]N[打,错误 (b)];B[ng];W[pd];B[pe];W[qe];B[pf];W[qf];B[pg]
+;W[qb];B[rb];W[pb];B[qg];W[re];B[sd]C[黑26跳手筋, 攻杀白负.
+];W[rg];B[sf]C[黑28点是另一个绝妙手筋, a和b见合.
+
+a1 - 接, 不行.
+b2 - 长, 不行.]
+LB[rf:a][rh:b]
+(;W[rf]N[接(a)];B[rh])
+(;W[rh]N[长(b)];B[rf]))))))
+(;W[lb]C[白4二路大飞是特殊策略. 黑a跳封正着, b位飞不好.
+
+a1 - 跳封, 正着.
+b2 - 飞, 不好.]
+N[二路大飞 (m)]LB[nd:a][jc:b]
+(;B[nd]N[跳封,正着(a)];W[od];B[oe]C[白a拐正着, b位扳不好, 因为白不能突围.
+
+a1 - 拐, 正着.
+b2 - 扳, 不好.]
+LB[nc:a][pe:b]
+(;W[nc]N[拐,正着(a)];B[pe];W[nf])
+(;W[pe]C[白8白费心思, 白不能突破黑的包围.
+]N[扳,不好 (b)];B[pd];W[ne];B[of];W[md]
+;B[me];W[nc];B[nf]))
+(;B[jc]C[黑5飞太缓, 白能顺利进军中央.
+]N[飞,不好 (b)];W[oe];B[pf];W[qc];B[rc];W[qb]
+;B[pd];W[od]))
+(;W[ne]C[白4外飞趣向, 不好. 黑a尖正着, b位飞不好.
+
+a1 - 尖, 正着.
+b2 - 飞, 不好.]
+N[外飞,不好 (n)]LB[pe:a][pf:b]
+(;B[pe]C[黑5准备跨断白棋, 所以白只好a位顶确保联络, b位飞不行.
+
+a1 - 顶, 正着.
+b2 - 飞, 错误.]
+N[尖,正着(a)]LB[oe:a][qb:b]
+(;W[oe]C[白6顶显示了白4不是好棋.
+]N[顶,正着(a)];B[pg])
+(;W[qb]N[飞,错误 (b)];B[nd];W[od];B[oe];W[md];B[me];W[nc];B[nf]C[白被封, 不好.]))
+(;B[pf]C[黑5不好.]N[飞,不好 (b)];W[qc];B[rc];W[pd];B[qe];W[qb])))
+(;B[kd]C[黑三间高夹是比较新的变化(二十世纪50年代开始出现的). 现在下得比较多, 但确定的定式还不是很多. 黑选择这个定式通常是左上角有配合. 白的应手有a位托, b位尖顶, c位飞压, d位大跳, e位大飞压, f位二间反夹, g位飞角. 当然脱先也有可能. i位拆一是特定场合的特殊策略.
+
+a1 - 托三三.
+b2 - 尖顶.
+c3 - 飞压.
+d4 - 大跳.
+e5 - 大斜.
+f6 - 二间高夹.
+g7 - 飞角.
+h8 - 脱先.
+i9 - 拆一, 特殊.]
+N[三间高夹 (i)]LB[qc:a][pd:b][pe:c][of:d][pf:e][pg:f][qb:g][dp:h][mc:i]
+(;W[qc]C[白托想尽快安定.]N[托三三(a)];B[rc]C[白a虎正着, b位扳不行.
+
+a1 - 虎, 正着.
+b2 - 扳, 不行.]
+LB[pd:a][rb:b]
+(;W[pd]C[黑可以a位退或b位打.
+
+a1 - 退.
+b2 - 打.]N[虎,正着(a)]LB[qe:a][qb:b]
+(;B[qe]N[退(a)];W[qb]
+(;B[pg]N[飞])
+(;B[of]C[三间高夹比三间夹时更有力]N[飞起]
+(;W[pe]N[冲断];B[pf];W[qf];B[rf];W[qg];B[rg];W[qh];B[rb];W[md]C[由于黑3的位置,相比于三间低夹,白没有出头的好手]
+;B[oh];W[pj];B[lf])
+(;W[mc]N[拆一];B[qh]C[黑先手利])
+(;W[rb]N[拐角];B[pk]C[白再冲断,黑可弃子]))
+(;B[qh]N[拆]))
+(;B[qb]N[打(b)];W[qe];B[pc];W[rd];B[qc];W[oe]))
+(;W[rb]C[白6扳太缓. 黑a打好手, b位粘太软弱, c位打也是恶手.
+
+a1 - 打, 正着.
+b2 - 粘, 软弱.
+c3 - 打, 错误.]
+N[扳,错误 (b)]LB[pc:a][rd:b][qb:c]
+(;B[pc]N[打,正着(a)];W[qb];B[pd];W[pb];B[od];W[nc];B[nd]C[黑的外势压倒白的实地.])
+(;B[rd]N[粘,错误 (b)];W[pb])
+(;B[qb]N[打,错误(c)];W[pc];B[sb];W[rd];B[ra];W[qe]C[即使征子对白不利, 白也可以12位打.
+]
+;B[pd];W[oe]C[如果征子对白不利, 白可以14位枷后滚打.
+])))
+(;W[pd]C[黑a位长正着, b位长进角复杂.
+
+a1 - 长出, 正着.
+b2 - 长进角.]N[尖顶(b)]
+LB[qe:a][qc:b]
+(;B[qe]N[(a)];W[qc];B[rc];W[qb];B[pg])
+(;B[qc]N[长进角(b)];W[qe]C[黑有a位下扳, b位夹过分.
+
+a1 - 下扳.
+b2 - 夹, 错误.
+]
+LB[re:a][qf:b]
+(;B[re]C[白a连扳取角, 也可以b位长, 强迫黑爬二路.
+
+a1 - 连扳.
+b2 - 长.]N[下扳(a)]
+LB[rf:a][qf:b]
+(;W[rf]N[连扳(a)];B[qf];W[pe];B[rg];W[rd];B[sf];W[rc]C[白取角.])
+(;W[qf]N[长(b)];B[rf];W[qg]))
+(;B[qf]C[黑7夹过分, 白a位粘正着, b位下立则不好.
+
+a1 - 粘, 正着.
+b2 - 立, 不好.]
+N[夹,错误 (b)]LB[pe:a][re:b]
+(;W[pe]N[粘,正着(a)];B[re];W[rf]C[黑只有a位打弃角, b位粘恶手.
+
+a1 - 打, 正着.
+b2 - 粘, 恶手.]
+LB[rg:a][rd:b]
+(;B[rg]N[打,正着(a)];W[rd];B[sf];W[rc])
+(;B[rd]N[粘,错误 (b)];W[qg];B[rb];W[pf]C[白14提后, 白外势非常强大.]))
+(;W[re]C[白8下立正是黑所期待的.
+]N[下立,不好 (b)];B[pe];W[rf];B[oe];W[pc];B[qb]
+;W[rd];B[nc]))
+(;B[pe]C[实战]N[断];W[re]
+(;B[pf]N[长]
+(;W[qg]N[跳];B[pg]
+(;W[pc]N[团];B[qb];W[rd];B[nd];W[nc];B[mc];W[pb]
+(;B[qh]N[走右边];W[mb];B[md];W[lb];B[qf];W[rb])
+(;B[nb]N[走上边];W[rb];B[od];W[qa]))
+(;W[qh]N[长不行];B[ob];W[nb];B[pb]
+(;W[nc];B[md];W[oe];B[nf])
+(;W[nd];B[mc];W[nc];B[me];W[ne];B[nf])))
+(;W[pc]N[团不利]
+(;B[qb]N[立];W[rd];B[nd];W[pb];B[nc];W[rb]C[黑理想])
+(;B[rd]N[活角];W[qg];B[rb]C[白苦])))
+(;B[oe]N[长];W[pc];B[qb]
+(;W[nd]N[尖];B[ne];W[rd];B[md];W[mc];B[lc];W[mb]C[黑脱先])
+(;W[mc]N[拆一]
+(;B[md]N[靠];W[nd];B[ne]
+(;W[rd]N[补角还原];B[lc])
+(;W[ld]N[打出变化];B[me];W[lc];B[qf];W[le];B[rf]))
+(;B[nd]N[刺]
+(;W[nc]N[接不行];B[qf];W[rf];B[qg];W[rg];B[rh];W[rd];B[rc];W[qh];B[ph];W[qi];B[ri]
+;W[rj];B[qj];W[pi];B[rk];W[pj];B[qk];W[pf];B[pg];W[of];B[nf];W[og];B[oh];W[ng];B[nh]
+;W[mg];B[md])
+(;W[pb]N[挡唯一];B[rd];W[qg]
+(;B[nc]N[冲不对];W[nb];B[lc];W[md];B[me];W[mb];B[ld];W[lb];B[kb];W[jc];B[kc];W[jb]
+;B[ka];W[oa]C[白好])
+(;B[lc]N[尖顶];W[md];B[me];W[nc];B[ld];W[ra];B[rb];W[qa];B[sc];W[lb];B[kb]
+(;W[mb]N[粘软弱];B[ph]
+(;W[pg];B[og];W[oh];B[qh];W[rh];B[rg];W[sg];B[rf];W[qf];B[ri];W[sf];B[pj]C[黑好])
+(;W[qh];B[pi];W[qi];B[pj];W[qj];B[la];W[ma];B[ka];W[jc];B[kc];W[pa];B[pk]C[黑好,角不净]))
+(;W[la]N[立最强];B[ph];W[qh];B[pi];W[qi];B[pj];W[jc];B[kc];W[nb]C[白好])))))))))
+(;W[pe]C[白4飞压有点冒险, 虽然如果黑a位挡, 什么也不会发生. 
+
+a1 - 挡.
+b2 - 冲.
+]
+N[飞压(c)]LB[qe:a][pd:b]
+(;B[qe]N[挡(a)];W[pf];B[qg];W[id]C[接下来黑也许可以a位飞觑.]LB[ne:a])
+(;B[pd]C[黑强硬切断.]N[冲(b)];W[od];B[oe];W[pf]C[白8仅此一手.
+黑a位贴紧凑, b位长缓.
+
+a1 - 贴, 紧凑.
+b2 - 长, 不好.]
+LB[of:a][ne:b]
+(;B[of]N[贴,正着(a)];W[pg];B[og];W[ph];B[pc];W[pb];B[qb];W[ob];B[rc];W[re];B[rd]
+C[白a位扳正着, b位拆二或c位跳都不好, 因为黑将得到强大外势. 相对而言, b位拆二可能比c位跳好点.
+
+a1 - 扳, 正着.
+b2 - 拆二, 不好.
+c3 - 跳, 不大好]
+LB[ne:a][lc:b][md:c]
+(;W[ne]N[扳,正着(a)];B[oh]
+(;W[oi];B[mh];W[le];B[ld];W[md];B[mf];W[me];B[pi]C[白a打正着, b打过分.
+
+a1 - 打, 正着.
+b2 - 打, 错误.]
+LB[qi:a][pj:b]
+(;W[qi]N[打,正着(a)];B[pj];W[qj];B[pk])
+(;W[pj]C[白30不行,里面的五白子被吃.]N[打,错误 (b)];B[qi];W[qj];B[rh]C[黑33尖手筋, 白a立是最佳的应手了. 如果白b位挡, 黑
+a虎白更不行.]
+LB[rj:a][rg:b];W[rj];B[rg];W[rf];B[qe];W[qf];B[sg];W[sf];B[ri]))
+(;W[pi];B[lg]C[白被围，强行突围必将完蛋]))
+(;W[lc]N[拆二,不好 (b)];B[oh];W[pi];B[ld];W[kc];B[jc];W[jb];B[ib]C[白为了活棋, 不得不让黑取得强大外势.
+])
+(;W[md]N[跳,不大好(c)];B[me];W[ld];B[le];W[kb];B[kc];W[lb];B[ic];W[jb];B[ie]))
+(;B[ne]N[长,不好 (b)];W[qb];B[rf]C[白a位一跳就安顿了, 三间夹失去了效能, 白作战不难.
+]
+LB[mc:a];W[qg];B[rb];W[pb];B[rg];W[qi];B[qh];W[ph];B[rh];W[pi];B[rc];W[mc];B[le]
+;W[kb])))
+(;W[of]C[白4大跳是最普通的应手. 其变化跟其他夹法下的变化差不多. 黑的应手有a位拆二或b位跨.
+
+a1 - 拆二.
+b2 - 跨.]
+N[大跳 (d)]LB[qg:a][oe:b]
+(;B[qg]C[白的应手有a位反夹或b位飞压.
+
+a1 - 反夹.
+b2 - 飞压.]N[拆二(a)]LB[id:a]
+[ph:b]
+(;W[ph]C[白准备经营右边.]N[飞压(b)];B[pg];W[og];B[oh];W[pj];B[nh];W[qh])
+(;W[id]C[以后]N[夹定式];B[kf];W[if];B[ng]C[奇袭,正常是关出头]
+(;W[og]N[冲];B[od]
+(;W[nd]N[扳入套];B[oe];W[ne];B[nf];W[oh];B[pc];W[nc];B[lc]C[白入套])
+(;W[qf]N[靠转身]
+(;B[pc]N[各走各的];W[qh])
+(;B[rf]N[下扳不行];W[nd];B[oe];W[ne];B[nf];W[pd];B[pe];W[qe];B[pc];W[pf];B[pd];W[re]
+;B[nc];W[mc];B[ob];W[nb];B[oc];W[nh])))
+(;W[qc]N[托];B[rc];W[pd];B[qb];W[qe];B[pc];W[rd];B[qc];W[qf];B[og]C[黑充分])
+(;W[qf]N[靠下];B[rf];W[pg];B[qh];W[ph];B[pi];W[oi];B[qe]C[都薄])))
+(;B[oe]N[跨(b)];W[ne];B[pe]C[白的应手有a位长或b位跳.
+
+a1 - 长.
+b2 - 跳.]LB[nd:a]
+[mc:b]
+(;W[nd]N[长(a)];B[nf]C[白现在必须决定如果处理被切断的白4一子.白a长是正着, b位靠, 弃子不好.
+
+a1 - 长, 正着.
+b2 - 靠, 不好.]
+LB[og:a][ld:b]
+(;W[og]N[长,正着(a)];B[ng];W[oh];B[lf];W[qb];B[qg])
+(;W[ld]N[靠,不好 (b)];B[og];W[mf];B[ng];W[kc]C[与变化2-1-8-5-2-1-1-1相比, 白的结果不是很好.
+]))
+(;W[mc]C[白8避战.]N[跳(b)];B[nf];W[me]
+(;B[og];W[mf];B[ng]C[接下来白可以a位反夹.]LB[hd:a])
+(;B[ng]N[并,实战]
+(;W[mf]N[拐];AW[dd];B[fc];W[og];B[oh];W[nh];B[mg];W[ph];B[oi];W[qf];B[pi];W[pf]
+;B[pc];W[qi];B[qj];W[rh];B[ri];W[qh];B[pk];W[od];B[qe];W[rj];B[rk];W[si];B[rf];W[rg]
+C[白有A的点,黑需补]LB[rc:A];B[pb];W[lg];B[mh];W[ni]C[战斗])
+(;W[qf]C[极复杂]N[跳下]
+(;B[ph]N[飞不好];W[pf];B[qe];W[rf];B[qg]C[17如A跳下,白B靠,黑少一气]LB[rh:A][qc:B]
+;W[rh];B[rg];W[sg];B[qi];W[ri];B[qj];W[rj];B[qk];W[rk]C[黑再长角上不够气];B[rl]
+;W[ql];B[rm];W[og];B[oh];W[nh];B[mg];W[qh];B[pg];W[oi])
+(;B[pf]N[冲实战]
+(;W[og]N[长]
+(;B[ph]N[枷好手];W[oh];B[oi];W[nh];B[pg]
+(;W[mh]N[长恶手];B[lf];W[mf];B[lg];W[mg]C[白不利])
+(;W[ni]N[拐];B[oj];W[nj];B[ok];W[hd];B[lf];W[mf];B[mg];W[lg];B[mh];W[kg]C[白可战]))
+(;B[nh]N[长];W[pg];B[qg];W[qh];B[rg];W[oi];B[rh];W[oh]C[白不错]))
+(;W[ph]C[飞是好手,可以成立.实战]N[飞奇手];B[pg];W[oh];B[og]C[两分])))))
+(;W[ng]N[虎,一法];B[pg];W[lc];B[kc];W[lb])
+(;W[nf]N[粘征子关系];B[nd];W[md];B[nc];W[mc];B[nb];W[mb];B[me])))
+(;W[pf]C[白选择大斜, 黑可以走a也靠压或b位尖靠.
+
+a1 - 靠压.
+b2 - 尖靠.]N[大斜 (e)]
+LB[od:a][pe:b]
+(;B[od]N[靠压(a)];W[pd];B[pe];W[pc];B[qe];W[oe];B[nd];W[qc]C[黑一般走a位挡, b位愚形立是新手, 是聂卫平九段喜爱的下法.
+
+a1 - 挡.
+b2 - 愚形立.
+]
+LB[qf:a][re:b]
+(;B[qf]N[挡(a)];W[of];B[qh];W[mb];B[md];W[oh]C[黑不充分])
+(;B[re]AB[dq]AW[dd][pp]C[以下是实战经过, 黑白与当时的对局相反.
+]N[愚形立(b)];W[rc]
+;B[of];W[ne];B[md]
+(;W[og]N[打];B[nf];W[me];B[le];W[mf];B[ng];W[nh];B[mg];W[lf];B[pg];W[kf];B[nb];W[ob]
+;B[id];W[lh];B[oh];W[gc])
+(;W[le]N[刺]
+(;B[me]N[冲];W[nf]
+(;B[og]N[长];W[mf];B[lf];W[mg];B[lg];W[mh];B[ph]
+(;W[lh]N[拐头];B[jf];W[rh]
+(;B[qg]N[吃住唯一];W[pj]
+(;B[oj]N[靠];W[oi];B[pi];W[qj];B[ni];W[ok];B[nj];W[lj];B[nk];W[ol];B[nl];W[om]C[定式])
+(;B[qi]N[尖];W[qj];B[rj];W[rk];B[ri]C[定式]))
+(;B[qh]N[顶不成立];W[qj];B[ri];W[rj];B[qi];W[oi])
+(;B[qi]N[尖出不好];W[qg];B[qf];W[ri];B[pg];W[qj]C[黑虽出头，但无眼]))
+(;W[ke]N[长出];B[je];W[kf];B[ld];W[lh];B[nb];W[nc];B[mb];W[mc];B[lb];W[ob];B[kg]
+C[有问题];W[jf];B[if];W[jg];B[kh];W[ki];B[jh];W[ig];B[li];W[mi];B[ie];W[lj];B[jj]
+;W[hg];B[ji];W[lc];B[kc];W[ic]C[黑临于崩溃]))
+(;B[mf]C[实战]N[打];W[ng];B[qh];W[mg];B[lg];W[lh];B[kg];W[mi];B[qj];W[id];B[nb]
+;W[ob]))
+(;B[ld]N[接有力]
+(;W[pg]N[长];B[og]
+(;W[ph]N[长不行];B[me];W[nf];B[ng];W[mf];B[lg])
+(;W[oh]N[扳]
+(;B[ng]N[弯不行];W[me];B[ph];W[qh];B[pi];W[qg];B[qi];W[ri];B[rj];W[rh];B[qk];W[lg]
+;B[nh];W[rf]C[白很充分])
+(;B[me]N[冲手筋];W[nf];B[ng];W[mf];B[nh]C[黑瞄着A、B]LB[ph:A][lf:B]
+(;W[lg]N[虎];B[ph];W[qh];B[oi];W[qg];B[qi];W[ri];B[rj]
+(;W[qj]N[断]
+(;B[pj]N[作劫不好];W[pi];B[lh]
+(;W[kg]N[不能应劫];B[qi];W[qk];B[rh];W[pi];B[kh];W[jg];B[qi];W[si]
+(;B[sh]N[打];W[pi];B[mg];W[lf];B[qi];W[jd];B[sj];W[jc]C[黑不坏])
+(;B[rg]N[打好手];W[pi];B[mg]))
+(;W[oh]N[当消劫];B[kg];W[oj];B[ni];W[pk]C[白充分]))
+(;B[pi]N[粘好];W[rh];B[qk];W[rf];B[lh];W[kg];B[kh];W[jg];B[gc]C[黑有利]))
+(;W[rh]N[粘不行];B[qj];W[rf];B[lh];W[kg];B[kh];W[jg];B[gc]C[黑好]))
+(;W[lf]N[粘不行];B[kg]))))
+(;W[oh]N[飞]
+(;B[nf]N[打];W[me];B[pg];W[mg];B[qi]C[黑有利];W[og])
+(;B[pg]N[抱吃不好];W[nf];B[og];W[ng];B[ph];W[oi]C[白满足])))
+(;B[og]N[长简明];W[ld];B[me];W[lc]C[双方可下])))
+(;B[rc]N[扳];W[rb];B[qg];W[of];B[rd];W[mb];B[md];W[lc];B[ld];W[lg];B[sb];W[ra];B[kc]
+(;W[lb];B[gd];W[ph];B[qh];W[pi];B[rj]N[实战一例])
+(;W[kb]N[不可虎];B[jb]C[角没净，不能脱先];W[dp];B[nb];W[nc];B[mc];W[lb];B[ob];W[pb]
+;B[pa];W[qb];B[oa];W[ma];B[ka]C[角死])))
+(;B[pe]N[尖靠(b)];W[oe];B[qf]C[白a位长本手, b位连扳过分.
+
+a1 - 长, 本手.
+b2 - 连扳, 过分.
+]
+LB[pg:a][qg:b]
+(;W[pg]N[长,正着(a)];B[qg];W[ph]C[黑a位继续爬正着, b位跳太早.
+
+a1 - 爬, 正着.
+b2 - 跳, 恶手.]
+LB[qh:a][qi:b]
+(;B[qh]N[长,正着(a)];W[pi];B[qj];W[id])
+(;B[qi]N[跳,错误 (b)];W[pd];B[qe];W[qc];B[rc];W[rb];B[qb];W[pc]C[黑只好a位粘, b位打无理.
+
+a1 - 粘, 正着.
+b2 - 打, 无理.]
+LB[rd:a][sb:b]
+(;B[rd]N[粘,正着(a)])
+(;B[sb]N[打,错误 (b)];W[qh];B[rh]C[根据征子情况, 白可以a位内断或b位外断, 黑难办.
+]
+LB[rg:a][ri:b])))
+(;W[qg]C[白8连扳过分, 黑a挖正着, b位断打恶手.
+
+a1 - 挖, 正着.
+b2 - 断打, 恶手.]
+N[连扳,错误 (b)]LB[od:a][pg:b]
+(;B[od]C[无论白走a打或b粘, 损失在所难免.
+
+a1 - 打.
+b2 - 粘.]N[挖,正着(a)]LB[nd:a]
+[of:b]
+(;W[nd]N[打(a)];B[of];W[pd];B[pg])
+(;W[of]N[粘(b)];B[nd]))
+(;B[pg]N[断打,恶手 (b)];W[of];B[qh];W[rg];B[ph];W[qc];B[rf];W[rd]))))
+(;W[pg]N[超大飞 (f)];B[od]C[白可以a位扳或b位挖.
+
+a1 - 扳.
+b2 - 挖.]LB[nd:a][pd:b]
+(;W[nd]N[扳(a)];B[oe];W[pc]C[黑a压正着, b位挡不好.
+
+a1 - 压, 正着.
+b2 - 挡, 不好.]
+LB[ne:a][qc:b]
+(;B[ne]N[压,正着(a)];W[md];B[me]C[白的应手有a位挡或b位冲.
+
+a1 - 挡.
+b2 - 冲.]
+LB[qc:a][pd:b]
+(;W[qc]C[黑a觑正着, b位顶恶手.
+
+a1 - 觑, 正着.
+b2 - 顶, 恶手.]N[挡(a)]LB[mb:a]
+[ld:b]
+(;B[mb]C[白只好a位虎, b位尖恶手.
+
+a1 - 虎, 正着.
+b2 - 尖, 错误.]N[觑,正着(a)]
+LB[nb:a][lc:b]
+(;W[nb]N[虎,正着(a)];B[ld];W[pj])
+(;W[lc]N[尖,错误 (b)];B[kc];W[lb];B[kb];W[la];B[ld];W[mc]))
+(;B[ld]N[顶,错误 (b)];W[mb]))
+(;W[pd]N[冲(b)];B[pe];W[qe]C[黑a下打正着, b位打虽然简明, 但让白占了便宜.
+
+a1 - 下打, 正着.
+b2 - 打, 不好.]
+LB[re:a][qf:b]
+(;B[re]N[下打,正着(a)];W[qf];B[qc];W[qb];B[rb];W[pb];B[rf];W[rg];B[qh];W[qg];B[ra]
+;W[mb]C[接下来黑的应手根据全局情况可以选择a位跳下, b位或c位.
+Black continues with 'a' through 'c', depending on the overall situation.]
+LB[kb:a][oi:b][pk:c])
+(;B[qf]N[打,不好 (b)];W[re];B[qg];W[rd];B[ph])))
+(;B[qc]C[黑9挡不好, 白a虎太保守, 黑9成好棋, 白b飞压是轻灵的一着, 黑应手难.
+
+a1 - 虎, 不好.
+b2 - 飞压, 正着.]
+N[挡,不好 (b)]LB[mc:a][le:b]
+(;W[mc]N[虎,不好(a)];B[og];W[oh];B[ng])
+(;W[le]C[轻妙,黑难]N[飞压,正着(b)])))
+(;W[pd]N[挖(b)];B[pe];W[pc]C[黑a长简明, 但有点示弱, b位挡强硬, 变化复杂.
+
+a1 - 长, 简明.
+b2 - 挡, 复杂.]
+LB[nd:a][qc:b]
+(;B[nd]N[长,简明(a)];W[qe];B[qf];W[re];B[pf];W[rd];B[og])
+(;B[qc]C[白a跳本手, b位断打不好.
+
+a1 - 跳, 本手.
+b2 - 断打, 不好.]N[挡,强硬(b)]
+LB[mc:a][oe:b]
+(;W[mc]N[跳,正着(a)];B[oe];W[qb];B[rb];W[me];B[og];W[oh];B[ng]C[接下来白a尖或b断是可能的后续手段. a尖简明, b位断强硬, 变化复杂.
+
+a1 - 尖, 简明.
+b2 - 断, 强硬.]
+LB[lf:a][qe:b]
+(;W[lf]N[尖,简明(a)];B[ph];W[pi];B[qh];W[qi];B[rg];W[rh];B[qg])
+(;W[qe]N[断,强硬(b)];B[pb];W[ob];B[qf];W[re];B[qa];W[qg]C[黑a位飞封正着, b位冲下恶手.
+
+a1 - 飞封, 正着.
+b2 - 冲下, 恶手.]
+LB[lf:a][rf:b]
+(;B[lf]C[白的应手有点困难.]N[飞封,正着(a)])
+(;B[rf]N[冲下,错误 (b)];W[pf];B[rd];W[of];B[nf];W[ne];B[se];W[pi]C[白将在攻击黑三子中渔利.
+])))
+(;W[oe]C[白10断打曾经是二间夹定式里的变化, 但现在被认为白不利.
+]N[断打,不好 (b)]
+;B[pf]C[黑11顶, 白a提是正着, b位挡随手.
+
+a1 - 提, 正着.
+b2 - 挡, 随手.]LB[nd:a]
+[of:b]
+(;W[nd]N[提,正着(a)];B[of];W[me];B[qg])
+(;W[of]N[挡,错误 (b)];B[nd];W[qb];B[rf]C[以下黑a扳和b位断见合.]LB[rb:a][og:b])))))
+(;W[qb]N[飞角(g)];B[pf];W[mc];B[qj])
+(;N[白脱先 (h)];B[pc];W[od];B[pf];W[md];B[ph])
+(;W[mc]C[白4拆一很怪异, 但接下来白只要应付得当, 结果并不坏.
+]N[拆一(i)]
+(;B[pf]N[飞最简明]
+(;W[qb]N[飞];B[qj]C[黑有A-C的手段]LB[nd:a][nc:b][me:c])
+(;W[qc]N[托];B[rc];W[pd]
+(;B[qe]N[长本手];W[qb];B[qj])
+(;B[qb];W[qe];B[pc];W[rd];B[qc];W[pe];B[od];W[ne]C[黑坏])))
+(;B[nd]C[白a长本手, b位长不行.
+
+a1 - 长, 正着.
+b2 - 长, 不行.]N[刺]LB[od:a][md:b]
+(;W[od]N[(a)];B[oe];W[ne]C[黑a位长出是正着, b位退不好.
+
+a1 - 长, 正着.
+b2 - 退, 错误.]
+LB[md:a][pe:b]
+(;B[md]N[长,正着(a)];W[pe];B[of];W[pd])
+(;B[pe]N[退,错误(b)];W[me]))
+(;W[md]C[白6长方向错误.]N[长,不行 (b)];B[me];W[le];B[ne];W[ld];B[kc]))
+(;B[pc]N[尖顶]
+(;W[pe]N[罩]
+(;B[qe]N[爬];W[pf]
+(;B[qg]N[跳];W[pb];B[qb];W[pd];B[qc];W[id]C[白稍好])
+(;B[ob]N[扳];W[pd]
+(;B[qb]N[虎];W[nd])
+(;B[nc]N[打];W[od]
+(;B[qb]N[虎]
+(;W[me]N[跳转身];B[nb];W[qf]C[白转身黑角上虎比粘形好]TR[qb][pb])
+(;W[rc]C[实战]N[刺];B[qc];W[nb];B[nd];W[oa];B[pb];W[ne];B[md];W[ld];B[me];W[le]
+;B[mf];W[lb];B[rg];W[qh];B[qg];W[pg];B[mh];W[oi]C[两分])
+(;W[nb]N[直接打];B[nd];W[oa];B[pb];W[ne];B[md];W[ld];B[me];W[le];B[mf];W[lb];B[og]
+(;W[qf]N[拐不利]
+(;B[qh]N[飞攻急];W[rf];B[rc];W[rh];B[qi];W[ri];B[qj];W[rj];B[qk];W[rk];B[ql];W[lf]
+C[白满意.黑如不愿被白在这里挺而先作AB的交换,白可脱先]LB[mg:A][ke:B])
+(;B[pi]N[宽攻好];W[rf];B[rc];W[ri];B[qk];W[ph];B[oh];W[rk];B[qi];W[rj];B[qg];W[rg]
+;B[ql];W[rl];B[qm];W[qh];B[kc];W[lc];B[id]C[黑有利]))
+(;W[qh]C[以下变化正变都是局部两分]N[飞]
+(;B[pi]N[飞压];W[qi];B[pj];W[qj];B[pk];W[ql];B[qk];W[rk];B[rl];W[rm];B[pl];W[qm]
+;B[rj];W[sl];B[qg];W[rg];B[qf];W[ph];B[pg];W[oh];B[nh];W[oi];B[kc];W[lc];B[id]C[双方可下])
+(;B[ph]N[尖顶不好];W[qf];B[qi];W[ri]
+(;B[rh];W[qg];B[qj];W[rj];B[rk];W[rg];B[qk];W[re];B[rd];W[se];B[rb];W[lf]C[白满意])
+(;B[qg]N[强手];W[rh];B[rg];W[rf];B[pg];W[sg];B[lf];W[ke];B[kf];W[je];B[qj];W[rb]
+C[解围妙手]
+(;B[rc]N[黑不行];W[qa];B[ra];W[sa];B[sc];W[pa];B[qc];W[rj]
+(;B[rk];W[qk];B[rl];W[ng])
+(;B[qk];W[na]
+(;B[re];W[sh]C[黑差一气])
+(;B[sh];W[re])))
+(;B[ra]N[劫];W[rc];B[qc];W[rj];B[qk];W[rk]
+(;B[rl];W[ql];B[rm];W[rd];B[re];W[se];B[sd];W[sc];B[sb];W[pi])
+(;B[ql];W[sd];B[se];W[sb];B[rd];W[sf];B[sc];W[of];B[nf];W[sd];B[ma];W[mb];B[sc]
+;W[rl];B[qm];W[sd];B[re];W[pa];B[sc];W[qo];B[sa];W[rm])))))))
+(;B[pb]N[粘];W[me];B[nb];W[qf]))
+(;B[qc]N[粘];W[nb])))
+(;B[pd]C[实战]N[团];W[od];B[oe];W[qe];B[rd];W[pg];B[ne];W[ob];B[pb];W[me];B[ng]
+;W[lf];B[pj];W[oh];B[lg];W[kg];B[lh];W[oj]C[战斗])
+(;B[rf]N[飞];W[pb];B[qb];W[pd];B[qc];W[id]
+(;B[le];W[ne];B[lg])
+(;B[pg];W[kc])))
+(;W[od]N[长];B[qf];W[kb]))
+(;B[pe]N[尖]
+(;W[qb];B[nd]
+(;W[nc]N[接];B[me];W[qj]
+(;B[rb]C[靠是有力的手段，也可考虑A跳后让白B补]LB[kb:a][rc:b];W[qc];B[rc];W[kb];B[jb]
+C[黑好]))
+(;W[md]N[挺];B[me];W[le];B[ld];W[ne];B[mf];W[od];B[nf];W[oe];B[of];W[qg]
+(;B[pg];W[qf];B[qh];W[rh];B[qi];W[ri];B[qj];W[pf];B[rj];W[qe]C[黑外势有白A，黑B，白C的味道]
+LB[og:a][ph:b][lf:c])
+(;B[qf];W[pg];B[pf];W[qk]C[白稍好])))
+(;W[me];B[pc];W[id])))
+(;W[ph]N[三间高夹]
+(;B[pe]N[尖];W[mc];B[pc];W[me]C[白不错])
+(;B[pf]N[飞实战];W[qc];B[rc];W[qb];B[pd]
+(;W[mc];B[od];W[nd];B[pc];W[pb];B[ob];W[nc];B[rb];W[nb];B[qa];W[oa];B[nf])
+(;W[rb]))))
+(;B[od]C[当黑在右方有势力的时候, 黑3靠压是有力的下法. 
+]N[靠压 (j)];W[nd];B[oe]
+C[黑3和5是压长定式.];W[pc];B[qc]C[白的应手有a位拆或b位贴长.
+
+a1 - 拆.
+b2 - 贴长.]
+LB[kc:a][ne:b]
+(;W[kc]N[拆(a)];B[qj])
+(;W[ne]N[贴长(b)];B[nf]C[白的应手有a位飞补或b位断.
+
+a1 - 飞补.
+b2 - 断.]LB[lc:a]
+[of:b]
+(;W[lc]N[飞补(a)];B[qf])
+(;W[of]N[断(b)];B[qf];W[og];B[mf];W[lc]C[黑a靠压和白b靠分别是双方各自安定自己的手筋.
+]
+LB[ld:a][qg:b])))
+(;B[nd]C[黑3肩冲, 是非常露骨的构筑外势的手段, 通常被认为是骗招, 但白必须小心应付. 而且黑一定要征子有利才能走3位肩冲.
+白a位长仅此一手, b位托或c位尖顶都不好. d位爬也不好.
+
+a1 - 长, 正着.
+b2 - 托, 不好.
+c3 - 尖顶, 不好.
+d4 - 爬, 不好.]
+N[肩冲 (k)]LB[od:a][qc:b][pd:c][nc:d]
+(;W[od]N[长,正着(a)];B[oe]C[白有两种选择, a位断或b位扳. 其中a位断是正着, b位扳是恶手.
+
+a1 - 断, 正着.
+b2 - 扳, 恶手.]
+LB[ne:a][pe:b]
+(;W[ne]C[白6断仅此一手. 黑可以选择a位挡下或b位退. c位长是恶手.
+
+a1 - 挡下.
+b2 - 退.
+c3 - 长, 错误.]
+N[断,正着(a)]LB[nc:a][pe:b][md:c]
+(;B[nc]C[白可以选择a打或b扳.
+
+a1 - 打.
+b2 - 扳.]N[挡下(a)]LB[pe:a][nb:b]
+(;W[pe]N[打(a)];B[of];W[pd];B[pf];W[qe];B[qf];W[re];B[me])
+(;W[nb]N[扳(b)];B[me];W[nf];B[of]C[白a拐正着, b位长恶手.
+
+a1 - 拐, 正着.
+b2 - 长, 恶手.]
+LB[mf:a][ng:b]
+(;W[mf]N[拐,正着(a)];B[mb];W[pb];B[na];W[ob];B[mc];W[le]C[黑a跳出是正着, b并当然可以吃掉白五子, 但代价很大, c位靠也不行.
+
+a1 - 跳出, 正着.
+b2 - 并, 不好.
+c3 - 靠, 错误.]
+LB[jc:a][qc:b][qb:c]
+(;B[jc]N[跳出,正着(a)];W[qc])
+(;B[qc]N[并,错误 (b)];W[kc];B[kb];W[jb]C[黑a位接是正着, b位断是骗招.
+
+a1 - 接, 正着.
+b2 - 断, 骗着.]
+LB[lb:a][jc:b]
+(;B[lb]N[接,正着(a)];W[ic];B[qb];W[og];B[qf];W[lc];B[pd];W[md];B[pa])
+(;B[jc]C[白a位扳正着, b位退是恶手, c位并也是恶手.
+
+a1 - 扳, 正着.
+b2 - 退, 恶手.
+c3 - 并, 恶手.]
+N[断,骗招(b)]LB[og:a][kd:b][lc:c]
+(;W[og]C[黑a位顶正着, b位扳恶手.
+
+a1 - 顶, 正着.
+b2 - 扳, 恶手.]N[扳,正着(a)]
+LB[pd:a][pg:b]
+(;B[pd]N[顶,正着(a)];W[lc];B[lb];W[ib];B[qb];W[pg];B[qf];W[md];B[pa];W[id]C[黑23虽然还留有味道, 但显然白大获成功.
+])
+(;B[pg]N[扳,恶手 (b)];W[pf];B[pe];W[lc];B[lb];W[ib]C[黑无法象变化2-1-11-1-2-1-2-2-3那样征吃白棋, 所以黑崩溃.
+]))
+(;W[kd]N[退,错误 (b)];B[ib];W[lb];B[ja];W[lc];B[la];W[md];B[ma])
+(;W[lc]C[白24并不行, 白一定要先在a位扳, 预先解征. 这个变化显示为什么.]N[并,恶手 (c)]
+LB[og:a];B[lb];W[ib];B[ld];W[kd];B[ke];W[md];B[jd];W[ld];B[lf];W[me];B[mg]C[白被征吃.
+]
+LB[og:a])))
+(;B[qb]C[黑19靠错误. 白a位挖正着, b位飞封放弃白5子的想法是错误的.
+]N[靠,恶手 (c)]
+LB[qc:a][kc:b];W[qc];B[rc];W[rb]C[白22打正着, 白不能先走a位, 因为白可以走成先提劫.
+]
+LB[pd:a];B[pc];W[pd];B[qe];W[qc];B[qa];W[ra];B[pc];W[pe];B[pf];W[qc]C[黑没有劫材.]))
+(;W[ng]C[白12缓手.]N[长,错误 (b)];B[pd];W[pb];B[lc];W[rc];B[rd];W[mb];B[ke];W[rb]
+;B[og];W[nh];B[pi]C[黑右边获得了实地, 左边也不难安定, 而白什么也没有.
+])))
+(;B[pe]N[退(b)];W[md];B[nf];W[me])
+(;B[md]N[长,错误(c)];W[pe];B[of];W[pd];B[mf];W[qe]))
+(;W[pe]N[扳,错误 (b)];B[pd];W[ne];B[of];W[md];B[nf]C[白a位粘看上去比b位提似乎更好, 事实正好相反.
+
+a1 - 粘, 不好.
+b2 - 提, 正着.]
+LB[me:a][nc:b]
+(;W[me]N[粘,不好(a)];B[ob]C[黑13鼻顶是手筋, 也使得当初黑3的肩冲成了好手.无论白a位提或b位拐都无可挽回损失. 当然白a位提比b位拐要好.
+
+a1 - 提, 正着.
+b2 - 拐, 不行.]
+LB[nc:a][pc:b]
+(;W[nc]C[白14提正着.]N[提,正着 (a)];B[pb])
+(;W[pc]N[拐,不行(b)];B[nc]C[白a打看上去很好, 但实际上b位挡更好. 白也许可以c长,能够诱使黑犯错误.
+
+a1 - 打, 不行.
+b2 - 挡.
+c3 - 长.]
+LB[nb:a][pb:b][qc:c]
+(;W[nb]N[打,不行(a)];B[mc];W[pb];B[lc];W[qe];B[rd];W[re];B[qb];W[oa];B[rb]C[黑a跳觑和b为飞见合, 白不行.
+]
+LB[ma:a][qg:b])
+(;W[pb]N[挡,正着(b)];B[nb]C[白a挡不行, 白的正着应该是b位跳, 当然结果始终是黑有利.
+
+a1 - 挡, 不行.
+b2 - 跳, 正着.]
+LB[qc:a][rc:b]
+(;W[qc]C[白18挡不行. 黑a位扳正着, b位立恶手.
+
+a1 - 扳, 正着.
+b2 - 立, 恶手.]
+N[挡,错误 (a)]LB[rc:a][rd:b]
+(;B[rc]N[扳,正着(a)];W[rd];B[qe];W[rb];B[lc];W[pf];B[re];W[pg];B[sd];W[mg];B[pa]
+;W[qb];B[sb]C[黑杀白.])
+(;B[rd]N[立,错误 (b)];W[mc];B[rc];W[pa];B[qa];W[rb]C[对杀白胜.]))
+(;W[rc]N[跳,正着 (b)];B[rd];W[qc];B[lc];W[pf];B[pg];W[re];B[qg];W[rf];B[nh]))
+(;W[qc]C[黑的正着是a位扳, b位立看似很好, 但是个致命的错误.
+
+a1 - 挡, 正着.
+b2 - 立, 错误.]
+N[长(c)]LB[rc:a][rd:b]
+(;B[rc]C[黑17仅此一手.]N[扳,正着(a)];W[rd];B[qe];W[rb];B[qb];W[sc];B[pb];W[rc];B[re]
+;W[nb];B[mc];W[mb];B[lc];W[lb];B[kc];W[qa];B[lf])
+(;B[rd]N[立,错误 (b)];W[mc];B[nb];W[pb];B[rc];W[pa];B[qb];W[rb];B[ra];W[mb]))))
+(;W[nc]N[提,正着(b)];B[le];W[kd];B[qg])))
+(;W[qc]C[白4托缺乏勇气.]N[托,软弱 (b)];B[od]C[白的应手有a扳或b挖.
+
+a1 - 扳.
+b2 - 挖.]
+LB[rd:a][pd:b]
+(;W[rd]N[扳(a)];B[pc];W[pb];B[pd];W[rb];B[re];W[nc];B[md])
+(;W[pd]N[挖(b)];B[pe];W[pc];B[re]))
+(;W[pd]C[白4有点帮黑走棋的嫌疑.]N[尖顶,不好(c)];B[pe];W[qc];B[re];W[nc];B[md])
+(;W[nc]C[白4爬消极.]N[爬,不好(d)];B[md];W[mc];B[ld];W[kc];B[pe]))
+(;B[pc]AB[kc]C[只有当上边有黑子的时候, 黑3尖顶才是好棋. 当年木谷石非常钟爱这个尖顶.
+]
+N[尖顶(l)];W[od]C[黑可以a位尖, 也有走b位飞的.
+
+a1 - 尖.
+b2 - 飞.]LB[pe:a][pf:b]
+(;B[pe]N[尖(a)];W[le]C[根据不同的情况, 白6可以做适当的调整.
+])
+(;B[pf]C[黑5飞薄, 将来留有被跨断的危险.
+]N[飞(b)];W[le]))
+(;B[oe]C[黑3飞镇是骗招, 白a位托正着, b位飞应不好.
+
+a1 - 托, 正着.
+b2 - 飞应, 不好.]
+N[飞镇,骗招(m)]LB[qc:a][md:b]
+(;W[qc]C[黑a位并正着, b位托无理.
+
+a1 - 并, 正着.
+b2 - 托, 无理.]N[托,正着(a)]
+LB[pd:a][rc:b]
+(;B[pd]N[并,正着(a)];W[pc];B[me];W[lc])
+(;B[rc]N[托,错误 (b)];W[pd];B[pe];W[rd];B[qe];W[rb]))
+(;W[md]N[飞,不好(b)];B[pc];W[od];B[pd])))
