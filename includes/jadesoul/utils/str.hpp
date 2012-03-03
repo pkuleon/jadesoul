@@ -151,6 +151,7 @@ public:
 	inline str operator +(const str& r) {	//for connection
 		return str(s+r.s);
 	}
+	inline str added(const str& r) { return (*this)+r; }
 	inline str operator +(const char* r) {	//for connection
 		return clone()+=r;
 	}
@@ -158,6 +159,7 @@ public:
 		s+=r.s;
 		return *this;
 	}
+	inline str& add(const str& r) { return (*this)+=r; }
 	inline str& operator +=(const string& r) {
 		s+=r;
 		return *this;

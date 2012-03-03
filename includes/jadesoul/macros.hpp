@@ -21,7 +21,7 @@
 #define FOREVER         for (;;)
 
 //for i in 0-n
-#define for_n(i, n) for (int i=0; i<n; ++i)
+#define for_n(i, n) for (uint i=0; i<n; ++i)
 #define for_tn(type, i, n) for (type i=0; i<n; ++i)
 
 //for i in range start-step-stop

@@ -21,7 +21,8 @@
 #include "dict.hpp"
 
 #if defined(OS_WIN32)
-	#define ENDL "\r\n"
+	// #define ENDL "\r\n"
+	#define ENDL "\n"
 	#define SLASH "\\"
 #elif defined(OS_LINUX)
 	#define ENDL "\n"
