@@ -33,7 +33,12 @@ namespace sgf {
 	
 	class Node {
 	public:
-		
+		bool black;	//is this node a black move ? depth%2==0
+		bool pass;		//is this node a PASS ?
+		char a;		//the col index: a-s
+		char b;		//the row index: a-s
+		list<Property> properties;
+		dict<PropertyID, Property*> mapping;
 	};
 	
 	class Branch {
@@ -53,7 +58,11 @@ namespace sgf {
 	
 	class Parser {
 	public:
+		Parser(const str& s, Collection& c) {}
 		
+		uint parseNode() {
+			
+		}
 	};
 }
 
