@@ -67,8 +67,7 @@ int main() {
 
 
 	//向表中插入数据
-	sqlstr =
-			"INSERT INTO user_info(user_name) VALUES('公司名称'),('一级部门'),('二级部门'),('开发小组'),('姓名');";
+	sqlstr ="INSERT INTO user_info(user_name) VALUES('公司名称'),('一级部门'),('二级部门'),('开发小组'),('姓名');";
 	if (0 == mysql_query(&mydata, sqlstr.c_str())) {
 		cout << "mysql_query() insert data succeed" << endl;
 	} else {
@@ -126,6 +125,8 @@ int main() {
 		mysql_close(&mydata);
 		return -1;
 	}
+	
+	//delete
 	mysql_free_result(result);
 	mysql_close(&mydata);
 	mysql_server_end();
