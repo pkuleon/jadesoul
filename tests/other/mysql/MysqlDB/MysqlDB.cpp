@@ -1,6 +1,6 @@
-
 #include "MysqlDB.h"
 #include <assert.h>
+
 /*构造函数，设定连接的服务器，用户名，密码和端口*/
 MysqlDB::MysqlDB(string host,string user,string password,unsigned int port=3306)
 {

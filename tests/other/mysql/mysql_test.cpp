@@ -60,7 +60,7 @@ int main() {
 	if (0 == mysql_query(&mydata, sqlstr.c_str())) {
 		cout << "mysql_query() create table succeed" << endl;
 	} else {
-		cout << "mysql_query() create table failed" << endl;
+		cout << "mysql_query() create table failed: " <<mysql_error(&mydata)<< endl;
 		mysql_close(&mydata);
 		return -1;
 	}
@@ -71,7 +71,7 @@ int main() {
 	if (0 == mysql_query(&mydata, sqlstr.c_str())) {
 		cout << "mysql_query() insert data succeed" << endl;
 	} else {
-		cout << "mysql_query() insert data failed" << endl;
+		cout << "mysql_query() insert data failed:" <<mysql_error(&mydata)<< endl;
 		mysql_close(&mydata);
 		return -1;
 	}

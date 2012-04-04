@@ -1,6 +1,6 @@
 #ifndef MYSQL_DB_H
 #define MYSQL_DB_H
-#include <mysql.h>
+#include <mysql/mysql.h>
 #include <string>
 #include <map>
 #include <vector>
