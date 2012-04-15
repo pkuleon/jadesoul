@@ -28,7 +28,7 @@ gtest(name) {\
 	__VA_ARGS__\
 }
 
-/*
+
 jtest(simple_demo,//this is the test name
 	var a=2;
 	cout<<a<<endl;
@@ -278,7 +278,7 @@ jtest(demo_sort2,
 	var f=list(d, e, 7);
 	f.dump();
 )
-*/
+
 
 
 jtest(demo_sort2,

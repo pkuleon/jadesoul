@@ -117,7 +117,7 @@ inline tuple<%s> TUPLE(%s) {
 
 '''
 
-for j in range(0, 20):
+for j in range(0, 100):
 	id=j+1
 	all=range(2, 2+j)
 	templates=', '.join(['class T1=str']+['class T%d=T1' % i for i in all])
